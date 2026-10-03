@@ -1,0 +1,615 @@
+{
+  "id": "05",
+  "name": "Mining of coal and lignite",
+  "section": "B",
+  "summary": "Coal producers write about AI in two ways. Western and Australian miners stress AI and data-centre electricity demand as a reason coal-fired generation and plant lives are being extended, alongside autonomous haulage, longwall automation and safety monitoring in their own operations. Chinese and Indian producers report intelligent-mine programmes: unmanned working faces, inspection robots, 5G and AI video surveillance, mining large models and intelligent coal preparation, often under regulatory acceptance schemes.",
+  "terms": [
+    {
+      "term": "data center",
+      "tier": "context",
+      "variants": [
+        "data centre"
+      ],
+      "why": "AI data centres cited as power-demand driver"
+    },
+    {
+      "term": "hyperscaler",
+      "tier": "context",
+      "variants": [
+        "hyperscale"
+      ],
+      "why": "large tech buyers of firm power"
+    },
+    {
+      "term": "electricity demand growth",
+      "tier": "context",
+      "variants": [
+        "load growth",
+        "power demand growth",
+        "growing electricity demand",
+        "rising power demand",
+        "electricity consumption growth"
+      ],
+      "why": "load-growth narrative linked to AI and electrification"
+    },
+    {
+      "term": "AI-driven power demand",
+      "tier": "ai",
+      "variants": [
+        "AI power demand",
+        "AI-related electricity demand",
+        "AI-driven electricity demand",
+        "power needs of artificial intelligence",
+        "AI energy demand",
+        "AI-driven load growth"
+      ],
+      "why": "explicit link from AI to electricity consumption"
+    },
+    {
+      "term": "baseload power",
+      "tier": "context",
+      "variants": [
+        "baseload generation",
+        "base load power",
+        "dispatchable generation",
+        "dispatchable power",
+        "firm power",
+        "reliable baseload"
+      ],
+      "why": "firm generation argument for coal amid AI load"
+    },
+    {
+      "term": "coal plant retirement deferral",
+      "tier": "context",
+      "variants": [
+        "delayed retirement",
+        "deferred retirement",
+        "retirement delay",
+        "plant life extension",
+        "postponed retirement",
+        "extended operating life"
+      ],
+      "why": "utilities delaying closures because of load growth"
+    },
+    {
+      "term": "grid reliability",
+      "tier": "context",
+      "variants": [
+        "resource adequacy",
+        "capacity shortfall",
+        "reliability crisis",
+        "capacity auction",
+        "capacity market price",
+        "grid emergency"
+      ],
+      "why": "reliability concerns as data-centre load rises"
+    },
+    {
+      "term": "thermal coal demand",
+      "tier": "context",
+      "variants": [
+        "coal-fired generation",
+        "coal burn",
+        "coal-fired power demand",
+        "domestic thermal coal",
+        "utility coal demand"
+      ],
+      "why": "demand outlook where AI power use is cited"
+    },
+    {
+      "term": "bitcoin mining",
+      "tier": "context",
+      "variants": [
+        "cryptocurrency mining",
+        "crypto mining",
+        "digital asset mining",
+        "high-performance computing hosting"
+      ],
+      "why": "crypto and compute loads on mine power assets"
+    },
+    {
+      "term": "on-site power generation",
+      "tier": "context",
+      "variants": [
+        "behind-the-meter",
+        "co-location",
+        "colocation",
+        "powered land",
+        "mine-mouth power"
+      ],
+      "why": "co-locating data centres at mine or plant sites"
+    },
+    {
+      "term": "intelligent mine",
+      "tier": "context",
+      "variants": [
+        "intelligent mining",
+        "smart mine",
+        "intelligent coal mine",
+        "intelligentization",
+        "intelligentisation",
+        "smart mining",
+        "digital mine"
+      ],
+      "why": "Chinese-style programme of unmanned, AI-assisted mining"
+    },
+    {
+      "term": "intelligent working face",
+      "tier": "ai",
+      "variants": [
+        "intelligent mining face",
+        "intelligent fully mechanized mining face",
+        "intelligent fully mechanised mining face",
+        "intelligent coal face",
+        "intelligent tunnelling",
+        "intelligent tunneling",
+        "intelligent heading face",
+        "intelligent excavation"
+      ],
+      "why": "automated longwall and heading faces with AI control"
+    },
+    {
+      "term": "unmanned mining",
+      "tier": "context",
+      "variants": [
+        "unmanned working face",
+        "fewer-person mining",
+        "unattended operation",
+        "unmanned operation",
+        "manless mining",
+        "unattended substation"
+      ],
+      "why": "few-person or unmanned operation as stated goal"
+    },
+    {
+      "term": "reducing personnel through automation",
+      "tier": "context",
+      "variants": [
+        "replacing people with machines",
+        "mechanization replacing people",
+        "automation reducing personnel",
+        "reduction of underground personnel",
+        "workforce reduction through automation"
+      ],
+      "why": "Chinese policy wording on replacing underground labour"
+    },
+    {
+      "term": "intelligent mine acceptance",
+      "tier": "context",
+      "variants": [
+        "national intelligent demonstration coal mine",
+        "intelligent demonstration mine",
+        "intelligent mine standard",
+        "intelligent construction acceptance"
+      ],
+      "why": "Chinese regulatory grading of intelligent coal mines"
+    },
+    {
+      "term": "mining large model",
+      "tier": "ai",
+      "variants": [
+        "Pangu mining model",
+        "mine large model",
+        "coal industry large model",
+        "mining foundation model",
+        "large model for mining"
+      ],
+      "why": "industry foundation models for mines"
+    },
+    {
+      "term": "5G smart mine",
+      "tier": "context",
+      "variants": [
+        "5G mine",
+        "underground 5G",
+        "5G private network",
+        "private LTE",
+        "industrial internet"
+      ],
+      "why": "private 5G enabling remote and AI applications underground"
+    },
+    {
+      "term": "inspection robot",
+      "tier": "ai",
+      "variants": [
+        "patrol robot",
+        "robotic inspection",
+        "mine robot"
+      ],
+      "why": "patrol robots for belts, substations and roadways"
+    },
+    {
+      "term": "AI video surveillance",
+      "tier": "ai",
+      "variants": [
+        "AI video recognition",
+        "intelligent video analysis",
+        "video analytics",
+        "intelligent video surveillance",
+        "AI video monitoring",
+        "violation recognition"
+      ],
+      "why": "computer vision detecting unsafe acts and hazards"
+    },
+    {
+      "term": "coal gangue identification",
+      "tier": "ai",
+      "variants": [
+        "intelligent gangue sorting",
+        "gangue sorting robot",
+        "coal-gangue recognition",
+        "intelligent dry separation",
+        "intelligent coal sorting",
+        "gangue separation system"
+      ],
+      "why": "image or X-ray recognition separating waste rock"
+    },
+    {
+      "term": "intelligent coal preparation",
+      "tier": "context",
+      "variants": [
+        "intelligent washing",
+        "smart coal preparation",
+        "intelligent coal washing",
+        "intelligent dense-medium control",
+        "unattended coal preparation"
+      ],
+      "why": "automated, model-controlled washing plants"
+    },
+    {
+      "term": "wash plant optimisation",
+      "tier": "context",
+      "variants": [
+        "wash plant optimization",
+        "CHPP optimisation",
+        "CHPP optimization",
+        "coal preparation plant optimisation",
+        "coal preparation plant optimization",
+        "yield optimisation",
+        "yield optimization"
+      ],
+      "why": "process control in coal handling and preparation"
+    },
+    {
+      "term": "advanced process control",
+      "tier": "context",
+      "variants": [
+        "model predictive control",
+        "process control optimisation",
+        "process control optimization"
+      ],
+      "why": "model-predictive control of preparation plants"
+    },
+    {
+      "term": "coal quality prediction",
+      "tier": "ai",
+      "variants": [
+        "coal blending optimisation",
+        "coal blending optimization",
+        "ash prediction",
+        "intelligent coal blending"
+      ],
+      "why": "ML models for ash, yield and blending"
+    },
+    {
+      "term": "intelligent ventilation",
+      "tier": "context",
+      "variants": [
+        "ventilation on demand",
+        "smart ventilation",
+        "intelligent gas drainage",
+        "automated ventilation control"
+      ],
+      "why": "sensor- and model-controlled mine ventilation"
+    },
+    {
+      "term": "gas outburst prediction",
+      "tier": "ai",
+      "variants": [
+        "gas early warning",
+        "outburst early warning",
+        "methane prediction",
+        "intelligent gas monitoring",
+        "gas disaster early warning"
+      ],
+      "why": "predictive warning of methane and outburst hazards"
+    },
+    {
+      "term": "methane monitoring",
+      "tier": "context",
+      "variants": [
+        "gas monitoring system",
+        "real-time gas monitoring",
+        "methane drainage monitoring",
+        "methane sensor"
+      ],
+      "why": "gas sensing network feeding safety analytics"
+    },
+    {
+      "term": "roof fall prediction",
+      "tier": "ai",
+      "variants": [
+        "rock burst early warning",
+        "rockburst prediction",
+        "strata monitoring analytics",
+        "roof pressure prediction",
+        "ground control prediction",
+        "microseismic monitoring"
+      ],
+      "why": "geotechnical ML for strata and rock-burst risk"
+    },
+    {
+      "term": "safety production monitoring",
+      "tier": "context",
+      "variants": [
+        "safety monitoring system",
+        "hidden danger identification",
+        "hazard identification system",
+        "safety risk early warning",
+        "intelligent safety monitoring",
+        "risk monitoring and early warning"
+      ],
+      "why": "Chinese wording for integrated hazard monitoring"
+    },
+    {
+      "term": "intelligent dispatching",
+      "tier": "context",
+      "variants": [
+        "intelligent dispatch",
+        "intelligent control centre",
+        "intelligent control center",
+        "integrated control platform",
+        "intelligent management and control platform",
+        "smart dispatching"
+      ],
+      "why": "integrated control centres scheduling production"
+    },
+    {
+      "term": "intelligent logistics",
+      "tier": "context",
+      "variants": [
+        "intelligent loading",
+        "unmanned loading",
+        "automated train loading",
+        "smart port",
+        "unmanned warehouse",
+        "intelligent transportation"
+      ],
+      "why": "automated loading, rail and port coal handling"
+    },
+    {
+      "term": "autonomous haulage",
+      "tier": "ai",
+      "variants": [
+        "autonomous haul truck",
+        "AHS",
+        "driverless mining truck",
+        "unmanned mining truck",
+        "autonomous truck",
+        "unmanned driving",
+        "driverless truck"
+      ],
+      "case_sensitive_variants": [
+        "AHS"
+      ],
+      "why": "driverless trucks in open-cut coal mines"
+    },
+    {
+      "term": "longwall automation",
+      "tier": "context",
+      "variants": [
+        "automated longwall",
+        "remote longwall operation",
+        "shearer automation",
+        "automated shearer",
+        "face alignment system",
+        "memory cutting"
+      ],
+      "why": "automated shearers and face alignment"
+    },
+    {
+      "term": "autonomous dozer",
+      "tier": "ai",
+      "variants": [
+        "remote-controlled dozer",
+        "autonomous bulldozer",
+        "semi-autonomous tractor system",
+        "dozer push automation"
+      ],
+      "why": "semi-autonomous and remote dozer push"
+    },
+    {
+      "term": "autonomous drilling",
+      "tier": "ai",
+      "variants": [
+        "autonomous drill",
+        "automated drill rig",
+        "autonomous blasthole drill",
+        "drill automation"
+      ],
+      "why": "automated blasthole and exploration drill rigs"
+    },
+    {
+      "term": "remote operations centre",
+      "tier": "context",
+      "variants": [
+        "remote operations center",
+        "remote operating centre",
+        "remote operating center",
+        "integrated operations centre",
+        "integrated operations center",
+        "remote control centre",
+        "remote control center"
+      ],
+      "why": "off-site control of mining equipment and plants"
+    },
+    {
+      "term": "tele-remote",
+      "tier": "context",
+      "variants": [
+        "teleremote",
+        "tele-operated",
+        "remote-controlled continuous miner",
+        "remote operated equipment",
+        "teleoperation"
+      ],
+      "why": "operators controlling machines from a safe distance"
+    },
+    {
+      "term": "continuous miner automation",
+      "tier": "context",
+      "variants": [
+        "automated continuous miner",
+        "automated roof bolting",
+        "autonomous bolter",
+        "automated shuttle car",
+        "roadway development automation"
+      ],
+      "why": "automated cutting and bolting in underground coal"
+    },
+    {
+      "term": "collision avoidance system",
+      "tier": "context",
+      "variants": [
+        "proximity detection",
+        "collision awareness",
+        "proximity warning",
+        "vehicle interaction control",
+        "personnel detection system"
+      ],
+      "why": "proximity sensing protecting people near machines"
+    },
+    {
+      "term": "fatigue monitoring",
+      "tier": "ai",
+      "variants": [
+        "fatigue detection",
+        "fatigue management technology",
+        "driver safety system",
+        "in-cab camera",
+        "distraction detection",
+        "driver monitoring system"
+      ],
+      "why": "in-cab cameras detecting drowsy or distracted operators"
+    },
+    {
+      "term": "predictive maintenance",
+      "tier": "ai",
+      "variants": [
+        "predictive asset maintenance",
+        "prognostics",
+        "failure prediction",
+        "predictive equipment health"
+      ],
+      "why": "ML failure prediction for mining equipment and conveyors"
+    },
+    {
+      "term": "condition monitoring",
+      "tier": "context",
+      "variants": [
+        "asset health monitoring",
+        "equipment health monitoring",
+        "conveyor monitoring",
+        "machine health"
+      ],
+      "why": "sensor data underpinning maintenance analytics"
+    },
+    {
+      "term": "fleet management system",
+      "tier": "context",
+      "variants": [
+        "dispatch system",
+        "dispatch optimisation",
+        "dispatch optimization",
+        "truck dispatch",
+        "fleet telematics",
+        "payload monitoring"
+      ],
+      "why": "dispatch and telemetry platform for mobile equipment"
+    },
+    {
+      "term": "mine planning optimisation",
+      "tier": "context",
+      "variants": [
+        "mine planning optimization",
+        "mine scheduling optimisation",
+        "mine scheduling optimization",
+        "short interval control",
+        "production scheduling optimisation",
+        "production scheduling optimization"
+      ],
+      "why": "algorithmic scheduling and sequencing of mining"
+    },
+    {
+      "term": "digital twin",
+      "tier": "context",
+      "variants": [
+        "virtual mine",
+        "3D mine model"
+      ],
+      "why": "virtual replica of mine, plant or supply chain"
+    },
+    {
+      "term": "drone survey",
+      "tier": "context",
+      "variants": [
+        "UAV survey",
+        "drone inspection",
+        "stockpile volume measurement",
+        "drone mapping",
+        "aerial survey",
+        "LiDAR survey"
+      ],
+      "why": "UAV mapping of pits, stockpiles and hazards"
+    },
+    {
+      "term": "slope stability radar",
+      "tier": "context",
+      "variants": [
+        "slope monitoring",
+        "highwall monitoring",
+        "slope stability monitoring",
+        "geotechnical monitoring",
+        "InSAR monitoring"
+      ],
+      "why": "geotechnical monitoring feeding predictive alarms"
+    },
+    {
+      "term": "spontaneous combustion detection",
+      "tier": "context",
+      "variants": [
+        "spontaneous combustion monitoring",
+        "fire early warning",
+        "thermal imaging",
+        "hot spot detection",
+        "goaf monitoring"
+      ],
+      "why": "thermal and gas monitoring of stockpiles and goaf"
+    }
+  ],
+  "class_terms": {
+    "0520": [
+      {
+        "term": "bucket-wheel excavator automation",
+        "tier": "context",
+        "variants": [
+          "automated bucket-wheel excavator",
+          "unmanned excavator",
+          "conveyor bridge automation",
+          "automated spreader"
+        ],
+        "why": "automation of continuous lignite mining systems"
+      },
+      {
+        "term": "mine-mouth power plant",
+        "tier": "context",
+        "variants": [
+          "lignite-fired generation",
+          "lignite power plant",
+          "mine-mouth generation"
+        ],
+        "why": "integrated lignite generation exposed to AI load growth"
+      }
+    ]
+  }
+}

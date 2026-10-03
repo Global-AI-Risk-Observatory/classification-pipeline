@@ -1,0 +1,1230 @@
+{
+ "id": "60",
+ "name": "Programming, broadcasting, news agency and other content distribution activities",
+ "section": "J",
+ "summary": "Broadcasters and streaming services write about AI in content discovery and recommendation, ad targeting and addressable advertising, dubbing, subtitling and production workflows, and about synthetic media, deepfakes and performer rights. Social networks and other content platforms are both heavy AI users and AI builders: ranking algorithms, AI content moderation, generative creator tools, AI advertising automation and the compute capex behind them, under platform regulation (DSA, Online Safety Act) and disputes over training on user and news content. News agencies focus on verification, licensing of archives to AI developers and automated reporting.",
+ "terms": [
+  {
+   "term": "recommendation algorithm",
+   "tier": "ai",
+   "variants": [
+    "recommendation engine",
+    "recommender system",
+    "recommendation system",
+    "content recommendation",
+    "personalised recommendations",
+    "personalized recommendations",
+    "AI-powered recommendations"
+   ],
+   "why": "ML ranking of what users see"
+  },
+  {
+   "term": "AI-driven personalisation",
+   "tier": "ai",
+   "variants": [
+    "AI-driven personalization",
+    "AI-powered personalisation",
+    "AI-powered personalization",
+    "personalised feed",
+    "personalized feed",
+    "hyper-personalisation",
+    "hyper-personalization"
+   ],
+   "why": "ML tailoring of content and experience"
+  },
+  {
+   "term": "content discovery",
+   "tier": "context",
+   "variants": [
+    "AI-powered discovery",
+    "AI-powered search",
+    "conversational discovery",
+    "voice search",
+    "semantic search",
+    "AI content discovery"
+   ],
+   "why": "ML surfacing of relevant programmes"
+  },
+  {
+   "term": "synthetic media",
+   "tier": "ai",
+   "variants": [
+    "AI-generated video",
+    "AI-generated audio",
+    "AI-generated imagery",
+    "synthetic content",
+    "manipulated media",
+    "AI-generated material"
+   ],
+   "why": "AI-generated audio and video"
+  },
+  {
+   "term": "deepfake detection",
+   "tier": "ai",
+   "variants": [
+    "deepfake video",
+    "deepfake audio",
+    "deepfakes of",
+    "deep fake",
+    "AI-manipulated",
+    "synthetic media detection",
+    "AI-generated fakes"
+   ],
+   "why": "tools identifying synthetic media"
+  },
+  {
+   "term": "AI-generated content",
+   "tier": "ai",
+   "variants": [
+    "AI content",
+    "AI slop",
+    "AI-generated programming",
+    "AI-created content",
+    "generated with AI"
+   ],
+   "why": "machine-made content in schedules and feeds"
+  },
+  {
+   "term": "content provenance",
+   "tier": "ai",
+   "variants": [
+    "content authenticity",
+    "C2PA",
+    "content credentials",
+    "AI watermarking",
+    "AI labelling",
+    "AI labeling",
+    "AI content label",
+    "provenance metadata",
+    "SynthID"
+   ],
+   "why": "proving origin and authenticity of content"
+  },
+  {
+   "term": "misinformation",
+   "tier": "context",
+   "variants": [
+    "disinformation",
+    "fake news",
+    "election integrity",
+    "information integrity",
+    "fact-checking",
+    "trusted news"
+   ],
+   "why": "context for authenticity and AI fakes"
+  },
+  {
+   "term": "AI dubbing",
+   "tier": "ai",
+   "variants": [
+    "AI-powered dubbing",
+    "AI voice translation",
+    "automated dubbing",
+    "AI lip-sync",
+    "AI localisation",
+    "AI localization",
+    "synthetic dubbing"
+   ],
+   "why": "synthetic voice translation of programmes"
+  },
+  {
+   "term": "automated subtitling",
+   "tier": "ai",
+   "variants": [
+    "AI subtitling",
+    "automatic captioning",
+    "AI-generated subtitles",
+    "automated captions",
+    "speech-to-text",
+    "AI transcription",
+    "live captioning"
+   ],
+   "why": "speech recognition for captions"
+  },
+  {
+   "term": "AI-assisted production",
+   "tier": "ai",
+   "variants": [
+    "AI in production",
+    "AI production tools",
+    "AI-assisted editing",
+    "AI-enabled production",
+    "AI in content creation",
+    "virtual production",
+    "AI-assisted post-production"
+   ],
+   "why": "AI in content production workflows"
+  },
+  {
+   "term": "automated metadata tagging",
+   "tier": "ai",
+   "variants": [
+    "AI tagging",
+    "AI metadata",
+    "automated metadata",
+    "AI archive search",
+    "AI-powered archive",
+    "content indexing using AI",
+    "automated highlights",
+    "AI-generated highlights"
+   ],
+   "why": "ML indexing of archives and footage"
+  },
+  {
+   "term": "AI licensing agreement",
+   "tier": "ai",
+   "variants": [
+    "AI licensing deal",
+    "AI content licensing",
+    "licensing content for AI training",
+    "AI training licence",
+    "AI training license",
+    "AI partnership agreement",
+    "AI data licensing"
+   ],
+   "why": "content or archive licensed to AI developers"
+  },
+  {
+   "term": "AI training on content",
+   "tier": "ai",
+   "variants": [
+    "training of AI models",
+    "train AI models",
+    "unauthorised use of content",
+    "unauthorized use of content",
+    "AI copyright",
+    "copyright infringement by AI",
+    "scraped content"
+   ],
+   "why": "use of content to train models"
+  },
+  {
+   "term": "content scraping",
+   "tier": "context",
+   "variants": [
+    "web scraping",
+    "data scraping",
+    "AI crawler",
+    "AI bot",
+    "robots.txt",
+    "unauthorised scraping",
+    "unauthorized scraping"
+   ],
+   "why": "bots harvesting content for AI"
+  },
+  {
+   "term": "text and data mining",
+   "tier": "context",
+   "variants": [
+    "TDM exception",
+    "fair use",
+    "copyright exception",
+    "rights reservation",
+    "opt-out mechanism"
+   ],
+   "why": "legal exception governing AI training"
+  },
+  {
+   "term": "digital replica",
+   "tier": "ai",
+   "variants": [
+    "digital likeness",
+    "voice cloning",
+    "cloned voice",
+    "AI voice clone",
+    "synthetic voice",
+    "synthetic performer",
+    "name, image and likeness",
+    "right of publicity"
+   ],
+   "why": "AI likeness of performers and presenters"
+  },
+  {
+   "term": "performers' rights",
+   "tier": "context",
+   "variants": [
+    "SAG-AFTRA",
+    "Writers Guild",
+    "WGA",
+    "performers' union",
+    "talent agreement",
+    "collective bargaining agreement",
+    "residuals"
+   ],
+   "case_sensitive_variants": [
+    "WGA"
+   ],
+   "why": "talent agreements covering AI use"
+  },
+  {
+   "term": "AI advertising",
+   "tier": "ai",
+   "variants": [
+    "AI-powered advertising",
+    "AI ad targeting",
+    "AI-driven advertising",
+    "AI ad tools",
+    "AI-generated ad creative",
+    "AI-powered ad products",
+    "AI campaign optimisation",
+    "AI campaign optimization"
+   ],
+   "why": "ML ad targeting, creative and buying"
+  },
+  {
+   "term": "addressable advertising",
+   "tier": "context",
+   "variants": [
+    "addressable TV",
+    "programmatic advertising",
+    "advanced advertising",
+    "targeted advertising",
+    "connected TV advertising",
+    "dynamic ad insertion",
+    "audience targeting"
+   ],
+   "why": "targeted TV ads driven by data and ML"
+  },
+  {
+   "term": "advertising revenue",
+   "tier": "context",
+   "variants": [
+    "ad revenue",
+    "advertising market",
+    "advertising demand",
+    "ad load",
+    "CPM",
+    "ad pricing"
+   ],
+   "case_sensitive_variants": [
+    "CPM"
+   ],
+   "why": "revenue line affected by AI ad platforms"
+  },
+  {
+   "term": "audience measurement",
+   "tier": "context",
+   "variants": [
+    "cross-platform measurement",
+    "audience data",
+    "first-party data",
+    "ad attribution",
+    "ratings currency"
+   ],
+   "why": "ratings and attribution being modelled by ML"
+  },
+  {
+   "term": "AI-driven churn prediction",
+   "tier": "ai",
+   "variants": [
+    "churn prediction",
+    "churn model",
+    "subscriber propensity model",
+    "predictive churn",
+    "retention model"
+   ],
+   "why": "ML models of subscriber cancellation"
+  },
+  {
+   "term": "subscriber churn",
+   "tier": "context",
+   "variants": [
+    "subscriber retention",
+    "viewing hours",
+    "viewer engagement",
+    "audience engagement"
+   ],
+   "why": "retention metric AI personalisation targets"
+  },
+  {
+   "term": "AI-enabled efficiency",
+   "tier": "ai",
+   "variants": [
+    "AI-driven efficiency",
+    "AI-driven productivity",
+    "AI productivity gains",
+    "AI-driven cost savings",
+    "AI-related efficiencies"
+   ],
+   "why": "cost savings attributed to AI"
+  },
+  {
+   "term": "workforce reduction",
+   "tier": "context",
+   "variants": [
+    "headcount reduction",
+    "redundancies",
+    "restructuring programme",
+    "restructuring program",
+    "layoffs",
+    "reskilling"
+   ],
+   "why": "restructuring alongside AI adoption"
+  },
+  {
+   "term": "AI editorial guidelines",
+   "tier": "ai",
+   "variants": [
+    "AI principles",
+    "AI guidelines",
+    "AI usage policy",
+    "AI editorial policy",
+    "human oversight of AI",
+    "human in the loop",
+    "AI disclosure"
+   ],
+   "why": "rules for AI use in programming and news"
+  },
+  {
+   "term": "editorial standards",
+   "tier": "context",
+   "variants": [
+    "editorial independence",
+    "due impartiality",
+    "Broadcasting Code",
+    "editorial integrity",
+    "Ofcom",
+    "public service remit"
+   ],
+   "why": "regulatory and trust context for AI use"
+  },
+  {
+   "term": "Digital Services Act",
+   "tier": "context",
+   "variants": [
+    "DSA",
+    "Online Safety Act",
+    "European Media Freedom Act",
+    "Audiovisual Media Services Directive",
+    "AVMSD",
+    "Digital Markets Act",
+    "Online Safety Bill"
+   ],
+   "case_sensitive_variants": [
+    "DSA"
+   ],
+   "why": "EU platform and media regulation"
+  },
+  {
+   "term": "intellectual property",
+   "tier": "context",
+   "variants": [
+    "copyright protection",
+    "content rights",
+    "copyright law",
+    "piracy",
+    "content protection"
+   ],
+   "why": "content rights exposed to AI use"
+  },
+  {
+   "term": "AI-based piracy detection",
+   "tier": "ai",
+   "variants": [
+    "AI anti-piracy",
+    "automated piracy detection",
+    "AI content protection",
+    "automated content recognition",
+    "content fingerprinting"
+   ],
+   "why": "ML finding illegal streams"
+  }
+ ],
+ "class_terms": {
+  "6010": [
+   {
+    "term": "AI radio host",
+    "tier": "ai",
+    "variants": [
+     "AI DJ",
+     "AI radio presenter",
+     "AI host",
+     "AI-generated voice",
+     "AI voice track",
+     "synthetic presenter",
+     "AI-generated radio"
+    ],
+    "why": "synthetic presenters on audio services"
+   },
+   {
+    "term": "AI-generated music",
+    "tier": "ai",
+    "variants": [
+     "AI music",
+     "AI-generated tracks",
+     "AI-generated songs",
+     "generative music",
+     "AI artists"
+    ],
+    "why": "machine-made tracks on audio services"
+   },
+   {
+    "term": "AI playlist",
+    "tier": "ai",
+    "variants": [
+     "AI-curated playlist",
+     "algorithmic playlist",
+     "personalised playlist",
+     "personalized playlist",
+     "automated music scheduling",
+     "AI music curation"
+    ],
+    "why": "ML-curated audio programming"
+   },
+   {
+    "term": "AI-generated podcast",
+    "tier": "ai",
+    "variants": [
+     "AI podcast",
+     "AI podcast translation",
+     "AI audio summary",
+     "AI-voiced",
+     "text-to-speech",
+     "AI voice translation of podcasts"
+    ],
+    "why": "synthetic or AI-assisted audio shows"
+   },
+   {
+    "term": "podcast",
+    "tier": "context",
+    "variants": [
+     "digital audio",
+     "audio streaming",
+     "streaming audio",
+     "on-demand audio",
+     "audio advertising"
+    ],
+    "why": "audio format using AI ads and transcription"
+   },
+   {
+    "term": "radio station",
+    "tier": "context",
+    "variants": [
+     "voice tracking",
+     "radio presenter",
+     "on-air talent",
+     "local radio",
+     "radio advertising"
+    ],
+    "why": "legacy audio where voice automation spreads"
+   },
+   {
+    "term": "dynamic audio advertising",
+    "tier": "ai",
+    "variants": [
+     "AI-generated audio ads",
+     "AI-voiced ads",
+     "programmatic audio",
+     "dynamic creative optimisation",
+     "dynamic creative optimization"
+    ],
+    "why": "ML-targeted and AI-voiced audio ads"
+   }
+  ],
+  "6020": [
+   {
+    "term": "FAST channel curation",
+    "tier": "ai",
+    "variants": [
+     "AI-curated channel",
+     "automated channel scheduling",
+     "AI scheduling",
+     "automated playout",
+     "AI-driven programming"
+    ],
+    "why": "ML scheduling of streaming channels"
+   },
+   {
+    "term": "streaming service",
+    "tier": "context",
+    "variants": [
+     "video on demand",
+     "SVOD",
+     "AVOD",
+     "FAST channels",
+     "direct-to-consumer",
+     "DTC streaming",
+     "over-the-top",
+     "broadcaster video on demand",
+     "BVOD"
+    ],
+    "case_sensitive_variants": [
+     "SVOD",
+     "AVOD",
+     "BVOD"
+    ],
+    "why": "video platforms relying on recommendation"
+   },
+   {
+    "term": "AI presenter",
+    "tier": "ai",
+    "variants": [
+     "AI anchor",
+     "AI news anchor",
+     "virtual presenter",
+     "AI avatar",
+     "virtual anchor",
+     "AI newsreader"
+    ],
+    "why": "synthetic news anchors and hosts"
+   },
+   {
+    "term": "AI in sports broadcasting",
+    "tier": "ai",
+    "variants": [
+     "automated sports production",
+     "AI camera",
+     "AI-generated commentary",
+     "AI commentary",
+     "automated highlight clipping",
+     "AI-powered graphics"
+    ],
+    "why": "automated production and highlights"
+   },
+   {
+    "term": "AI video compression",
+    "tier": "ai",
+    "variants": [
+     "AI upscaling",
+     "AI-based encoding",
+     "content-aware encoding",
+     "AI video enhancement",
+     "per-title encoding",
+     "AI-enhanced picture quality"
+    ],
+    "why": "ML encoding and upscaling"
+   },
+   {
+    "term": "content spend",
+    "tier": "context",
+    "variants": [
+     "content investment",
+     "programming costs",
+     "content costs",
+     "content budget",
+     "content amortisation",
+     "content amortization"
+    ],
+    "why": "programme budgets AI is meant to stretch"
+   },
+   {
+    "term": "linear television",
+    "tier": "context",
+    "variants": [
+     "linear TV",
+     "linear viewing",
+     "cord-cutting",
+     "pay-TV",
+     "pay TV subscribers",
+     "retransmission"
+    ],
+    "why": "declining base funding AI-led transformation"
+   },
+   {
+    "term": "contextual advertising with AI",
+    "tier": "ai",
+    "variants": [
+     "AI contextual targeting",
+     "shoppable TV",
+     "AI-powered ad insertion",
+     "AI-powered ad formats",
+     "contextual AI"
+    ],
+    "why": "scene-level ML ad matching"
+   },
+   {
+    "term": "AI-generated trailer",
+    "tier": "ai",
+    "variants": [
+     "AI-generated promo",
+     "AI-generated artwork",
+     "AI-generated thumbnail",
+     "personalised artwork",
+     "personalized artwork",
+     "AI recap"
+    ],
+    "why": "GenAI in promos and marketing assets"
+   },
+   {
+    "term": "set-top box",
+    "tier": "context",
+    "variants": [
+     "smart TV",
+     "connected TV",
+     "CTV",
+     "TV operating system",
+     "voice remote",
+     "viewing data"
+    ],
+    "case_sensitive_variants": [
+     "CTV"
+    ],
+    "why": "device data and voice assistants"
+   },
+   {
+    "term": "content delivery network",
+    "tier": "context",
+    "variants": [
+     "CDN",
+     "video delivery",
+     "streaming quality",
+     "adaptive bitrate",
+     "quality of experience"
+    ],
+    "case_sensitive_variants": [
+     "CDN"
+    ],
+    "why": "video distribution with ML optimisation"
+   }
+  ],
+  "6031": [
+   {
+    "term": "automated journalism",
+    "tier": "ai",
+    "variants": [
+     "robot journalism",
+     "automated news",
+     "automated reporting",
+     "AI-generated news",
+     "AI-written articles",
+     "automated news writing",
+     "AI-assisted reporting"
+    ],
+    "why": "machine-written news reports"
+   },
+   {
+    "term": "AI in the newsroom",
+    "tier": "ai",
+    "variants": [
+     "newsroom AI",
+     "AI-assisted journalism",
+     "AI in journalism",
+     "AI newsroom tools",
+     "AI-assisted translation",
+     "AI summarisation",
+     "AI summarization"
+    ],
+    "why": "editorial AI tools at agencies"
+   },
+   {
+    "term": "news archive licensing",
+    "tier": "ai",
+    "variants": [
+     "archive licensing for AI",
+     "licensing of news content to AI",
+     "AI licensing of archive",
+     "news content licence",
+     "news content license"
+    ],
+    "why": "agency archives sold for model training"
+   },
+   {
+    "term": "AI verification",
+    "tier": "ai",
+    "variants": [
+     "AI-based verification",
+     "image verification",
+     "video verification",
+     "synthetic image detection",
+     "AI fact-checking",
+     "AI detection tool"
+    ],
+    "why": "tools verifying user-generated footage"
+   },
+   {
+    "term": "news agency",
+    "tier": "context",
+    "variants": [
+     "newswire",
+     "wire service",
+     "news wire",
+     "news syndication",
+     "syndicated content",
+     "picture agency"
+    ],
+    "why": "wholesale news supplier to AI and media"
+   },
+   {
+    "term": "journalist",
+    "tier": "context",
+    "variants": [
+     "newsroom headcount",
+     "editorial staff",
+     "press freedom",
+     "source protection",
+     "National Union of Journalists"
+    ],
+    "why": "workforce affected by newsroom AI"
+   },
+   {
+    "term": "referral traffic",
+    "tier": "context",
+    "variants": [
+     "search referrals",
+     "search traffic",
+     "AI Overviews",
+     "zero-click",
+     "AI summaries",
+     "answer engine",
+     "news aggregator"
+    ],
+    "why": "news visits reduced by AI answers"
+   }
+  ],
+  "6039": [
+   {
+    "term": "ranking algorithm",
+    "tier": "ai",
+    "variants": [
+     "feed ranking",
+     "AI ranking",
+     "ranking system",
+     "ranking model",
+     "algorithmic feed",
+     "algorithmic ranking",
+     "algorithmic recommendation",
+     "algorithmic amplification"
+    ],
+    "why": "ML ordering of feeds and results"
+   },
+   {
+    "term": "AI content moderation",
+    "tier": "ai",
+    "variants": [
+     "automated content moderation",
+     "automated moderation",
+     "AI moderation",
+     "proactive detection",
+     "classifier",
+     "automated enforcement",
+     "AI-based content review",
+     "hash matching"
+    ],
+    "why": "ML detection of harmful content"
+   },
+   {
+    "term": "content moderation",
+    "tier": "context",
+    "variants": [
+     "trust and safety",
+     "content moderators",
+     "harmful content",
+     "community standards",
+     "community guidelines",
+     "content reviewers",
+     "integrity systems"
+    ],
+    "why": "trust and safety context for AI"
+   },
+   {
+    "term": "AI-generated content label",
+    "tier": "ai",
+    "variants": [
+     "AI info label",
+     "made with AI",
+     "AI-generated label",
+     "altered or synthetic",
+     "synthetic content disclosure",
+     "AI disclosure label"
+    ],
+    "why": "platform disclosure of synthetic content"
+   },
+   {
+    "term": "generative AI creator tools",
+    "tier": "ai",
+    "variants": [
+     "AI creator tools",
+     "AI creative tools",
+     "AI video generation",
+     "AI editing tools",
+     "AI stickers",
+     "AI effects",
+     "AI-generated captions"
+    ],
+    "why": "AI features for creators and advertisers"
+   },
+   {
+    "term": "AI assistant in apps",
+    "tier": "ai",
+    "variants": [
+     "Meta AI",
+     "My AI",
+     "Grok",
+     "AI characters",
+     "AI companion",
+     "AI personas",
+     "AI chat feature",
+     "AI studio"
+    ],
+    "case_sensitive_variants": [
+     "My AI",
+     "Grok"
+    ],
+    "why": "platform-owned conversational assistants"
+   },
+   {
+    "term": "AI companion safety",
+    "tier": "ai",
+    "variants": [
+     "AI companion chatbot",
+     "AI chatbot safety",
+     "chatbots and minors",
+     "AI chatbot interactions with minors",
+     "companion app"
+    ],
+    "why": "harms of AI chat to minors"
+   },
+   {
+    "term": "AI ad automation",
+    "tier": "ai",
+    "variants": [
+     "Advantage+",
+     "Performance Max",
+     "automated ad creation",
+     "AI-generated ads",
+     "automated campaign",
+     "AI ad ranking",
+     "ads ranking model",
+     "AI bidding"
+    ],
+    "why": "end-to-end ML campaign tools"
+   },
+   {
+    "term": "ad ranking model",
+    "tier": "ai",
+    "variants": [
+     "ads ranking",
+     "conversion prediction",
+     "ad delivery system",
+     "ad relevance model",
+     "ad auction model",
+     "ads retrieval model"
+    ],
+    "why": "ML predicting ad conversions"
+   },
+   {
+    "term": "AI capex",
+    "tier": "ai",
+    "variants": [
+     "AI infrastructure investment",
+     "AI capacity",
+     "AI compute investment",
+     "AI capital expenditure",
+     "AI infrastructure spending",
+     "investments in AI infrastructure"
+    ],
+    "why": "capital spending on AI compute"
+   },
+   {
+    "term": "GPU cluster",
+    "tier": "ai",
+    "variants": [
+     "GPU capacity",
+     "GPU fleet",
+     "AI supercluster",
+     "training cluster",
+     "AI compute",
+     "custom silicon",
+     "AI training infrastructure",
+     "AI chips"
+    ],
+    "why": "compute fleets for ranking and GenAI"
+   },
+   {
+    "term": "AI data centre",
+    "tier": "ai",
+    "variants": [
+     "AI data center",
+     "gigawatt-scale data centre",
+     "gigawatt-scale data center",
+     "AI supercomputer",
+     "AI datacenter"
+    ],
+    "why": "facilities built for platform AI"
+   },
+   {
+    "term": "data centre capacity",
+    "tier": "context",
+    "variants": [
+     "data center capacity",
+     "data centre investment",
+     "data center investment",
+     "server capacity",
+     "infrastructure expense",
+     "technical infrastructure"
+    ],
+    "why": "infrastructure commitments for AI"
+   },
+   {
+    "term": "capital expenditure guidance",
+    "tier": "context",
+    "variants": [
+     "capex guidance",
+     "infrastructure capex",
+     "purchase commitments",
+     "cloud commitments",
+     "non-cancellable commitments",
+     "non-cancelable commitments"
+    ],
+    "why": "spending outlook dominated by AI"
+   },
+   {
+    "term": "superintelligence",
+    "tier": "ai",
+    "variants": [
+     "personal superintelligence",
+     "superintelligence lab",
+     "frontier AI",
+     "AI research lab"
+    ],
+    "why": "platform ambition to build advanced AI"
+   },
+   {
+    "term": "open-source AI model",
+    "tier": "ai",
+    "variants": [
+     "Llama",
+     "open weights",
+     "open-source model",
+     "open model",
+     "openly available model"
+    ],
+    "case_sensitive_variants": [
+     "Llama"
+    ],
+    "why": "platforms releasing model weights"
+   },
+   {
+    "term": "user data for AI training",
+    "tier": "ai",
+    "variants": [
+     "train AI on user data",
+     "AI training on public posts",
+     "use of user content to train",
+     "training on user content",
+     "public content to train AI",
+     "AI training opt-out"
+    ],
+    "why": "training models on posts and messages"
+   },
+   {
+    "term": "user-generated content",
+    "tier": "context",
+    "variants": [
+     "UGC",
+     "user content",
+     "creator content",
+     "public posts",
+     "creator economy",
+     "creator monetisation",
+     "creator monetization"
+    ],
+    "case_sensitive_variants": [
+     "UGC"
+    ],
+    "why": "posts used for ranking and training"
+   },
+   {
+    "term": "platform data licensing",
+    "tier": "ai",
+    "variants": [
+     "data licensing revenue",
+     "data licensing agreement",
+     "API access for AI",
+     "data API",
+     "licensing of data for AI training",
+     "AI data partnership"
+    ],
+    "why": "selling platform data to AI developers"
+   },
+   {
+    "term": "inauthentic behaviour",
+    "tier": "ai",
+    "variants": [
+     "inauthentic behavior",
+     "coordinated inauthentic behaviour",
+     "coordinated inauthentic behavior",
+     "bot accounts",
+     "fake accounts",
+     "AI-generated spam",
+     "bot detection"
+    ],
+    "why": "bot networks and AI-driven manipulation"
+   },
+   {
+    "term": "AI-generated scam",
+    "tier": "ai",
+    "variants": [
+     "AI-enabled scam",
+     "scam ads",
+     "celebrity deepfake",
+     "AI impersonation",
+     "AI-generated fraud",
+     "deepfake scam",
+     "celeb-bait"
+    ],
+    "why": "synthetic content used for fraud"
+   },
+   {
+    "term": "non-consensual intimate imagery",
+    "tier": "ai",
+    "variants": [
+     "NCII",
+     "nudify",
+     "AI-generated CSAM",
+     "AI-generated child sexual abuse material",
+     "sexualised deepfake",
+     "sexualized deepfake",
+     "undress app"
+    ],
+    "case_sensitive_variants": [
+     "NCII"
+    ],
+    "why": "AI-generated abuse content"
+   },
+   {
+    "term": "child safety",
+    "tier": "context",
+    "variants": [
+     "age assurance",
+     "age verification",
+     "teen accounts",
+     "youth safety",
+     "child online safety",
+     "Children's Online Privacy Protection Act",
+     "Kids Online Safety Act"
+    ],
+    "why": "youth protection rules shaping AI features"
+   },
+   {
+    "term": "facial recognition",
+    "tier": "ai",
+    "variants": [
+     "face recognition",
+     "biometric data",
+     "biometric information privacy",
+     "BIPA",
+     "face matching"
+    ],
+    "case_sensitive_variants": [
+     "BIPA"
+    ],
+    "why": "biometric AI features and litigation"
+   },
+   {
+    "term": "algorithmic transparency",
+    "tier": "context",
+    "variants": [
+     "systemic risk assessment",
+     "recommender system transparency",
+     "very large online platform",
+     "VLOP",
+     "algorithmic accountability",
+     "algorithmic audit"
+    ],
+    "case_sensitive_variants": [
+     "VLOP"
+    ],
+    "why": "regulatory duty to explain ranking"
+   },
+   {
+    "term": "Section 230",
+    "tier": "context",
+    "variants": [
+     "intermediary liability",
+     "platform liability",
+     "safe harbour",
+     "safe harbor",
+     "publisher liability"
+    ],
+    "why": "platform liability shield and AI outputs"
+   },
+   {
+    "term": "user engagement",
+    "tier": "context",
+    "variants": [
+     "time spent",
+     "daily active people",
+     "daily active users",
+     "monthly active users",
+     "impressions",
+     "watch time",
+     "average revenue per user"
+    ],
+    "why": "metric ML ranking optimises"
+   },
+   {
+    "term": "AI glasses",
+    "tier": "ai",
+    "variants": [
+     "AI wearables",
+     "smart glasses",
+     "AI devices",
+     "Ray-Ban Meta",
+     "AI-powered glasses"
+    ],
+    "why": "AI-enabled wearables from platforms"
+   },
+   {
+    "term": "AI translation",
+    "tier": "ai",
+    "variants": [
+     "auto-translation",
+     "automatic dubbing",
+     "AI voice translation of video",
+     "real-time translation",
+     "auto-dubbing"
+    ],
+    "why": "automatic translation of posts and video"
+   },
+   {
+    "term": "AI search within apps",
+    "tier": "ai",
+    "variants": [
+     "AI-powered answers",
+     "AI answers",
+     "conversational search in app",
+     "AI summaries of posts",
+     "AI-generated summaries"
+    ],
+    "why": "generative answers over platform content"
+   },
+   {
+    "term": "privacy regulation",
+    "tier": "context",
+    "variants": [
+     "legitimate interest",
+     "Data Protection Commission",
+     "consent or pay",
+     "pay or consent",
+     "FTC consent order"
+    ],
+    "why": "data rules constraining AI training"
+   },
+   {
+    "term": "AI talent",
+    "tier": "ai",
+    "variants": [
+     "AI researchers",
+     "AI engineers",
+     "AI talent acquisition",
+     "competition for AI talent",
+     "AI research scientists"
+    ],
+    "why": "competition for AI researchers"
+   },
+   {
+    "term": "AI-driven engagement gains",
+    "tier": "ai",
+    "variants": [
+     "AI-driven recommendations",
+     "AI-recommended content",
+     "recommended content",
+     "unconnected content",
+     "AI-driven feed"
+    ],
+    "why": "ranking improvements lifting time spent"
+   }
+  ]
+ }
+}

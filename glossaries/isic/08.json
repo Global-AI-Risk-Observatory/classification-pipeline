@@ -1,0 +1,508 @@
+{
+  "id": "08",
+  "name": "Other mining and quarrying",
+  "section": "B",
+  "summary": "Aggregates, industrial-mineral, potash, salt and diamond producers mention AI mostly in plant and quarry automation, logistics and pricing tools, drone stockpile surveys and safety systems. Aggregates companies cite data-centre construction as a demand driver, high-purity quartz and specialty-mineral producers cite semiconductor demand, and potash miners describe tele-remote and autonomous underground mining. Diamond producers add automated sorting, grading and provenance technology.",
+  "terms": [
+    {
+      "term": "data center",
+      "tier": "context",
+      "variants": [
+        "data centre"
+      ],
+      "why": "data-centre construction lifting aggregates demand"
+    },
+    {
+      "term": "hyperscaler",
+      "tier": "context",
+      "variants": [
+        "hyperscale"
+      ],
+      "why": "tech buyers behind large construction projects"
+    },
+    {
+      "term": "heavy non-residential construction",
+      "tier": "context",
+      "variants": [
+        "heavy industrial project",
+        "large industrial project",
+        "mega-project",
+        "private non-residential demand",
+        "non-residential construction starts"
+      ],
+      "why": "end-market where data-centre projects are reported"
+    },
+    {
+      "term": "semiconductor demand",
+      "tier": "context",
+      "variants": [
+        "semiconductor fab construction",
+        "chip manufacturing",
+        "semiconductor plant",
+        "semiconductor industry",
+        "chip fabrication plant"
+      ],
+      "why": "chip fabs and AI chips as mineral demand"
+    },
+    {
+      "term": "plant automation",
+      "tier": "context",
+      "variants": [
+        "automated plant controls",
+        "plant control system",
+        "process automation",
+        "automated crushing plant",
+        "unattended plant operation",
+        "plant optimisation",
+        "plant optimization"
+      ],
+      "why": "automated crushing and screening plants"
+    },
+    {
+      "term": "crusher optimisation",
+      "tier": "context",
+      "variants": [
+        "crusher optimization",
+        "crushing circuit optimisation",
+        "crushing circuit optimization",
+        "automatic crusher setting",
+        "crusher control system"
+      ],
+      "why": "algorithmic control of crushing circuits"
+    },
+    {
+      "term": "autonomous haulage",
+      "tier": "ai",
+      "variants": [
+        "autonomous haul truck",
+        "autonomous hauler",
+        "driverless truck",
+        "autonomous truck",
+        "AHS"
+      ],
+      "case_sensitive_variants": [
+        "AHS"
+      ],
+      "why": "driverless trucks in quarries and pits"
+    },
+    {
+      "term": "automated drilling",
+      "tier": "ai",
+      "variants": [
+        "autonomous drill",
+        "drill automation",
+        "smart drill",
+        "automated drill rig"
+      ],
+      "why": "automated quarry and blasthole drill rigs"
+    },
+    {
+      "term": "tele-remote",
+      "tier": "context",
+      "variants": [
+        "teleremote",
+        "teleoperation",
+        "tele-operated",
+        "remote-controlled mining machine",
+        "remote operated equipment"
+      ],
+      "why": "remote operation of underground machines"
+    },
+    {
+      "term": "autonomous mining machine",
+      "tier": "ai",
+      "variants": [
+        "automated mining machine",
+        "autonomous continuous miner",
+        "automated borer",
+        "autonomous borer",
+        "automated cutting",
+        "autonomous mining"
+      ],
+      "why": "automated borers and continuous miners"
+    },
+    {
+      "term": "remote operations centre",
+      "tier": "context",
+      "variants": [
+        "remote operations center",
+        "integrated operations centre",
+        "integrated operations center",
+        "remote control room",
+        "central control room"
+      ],
+      "why": "central control of mines and plants"
+    },
+    {
+      "term": "drone survey",
+      "tier": "context",
+      "variants": [
+        "UAV survey",
+        "drone stockpile measurement",
+        "stockpile volumetrics",
+        "drone mapping",
+        "aerial survey",
+        "drone inspection",
+        "stockpile inventory measurement"
+      ],
+      "why": "UAV mapping and stockpile measurement"
+    },
+    {
+      "term": "blast optimisation",
+      "tier": "context",
+      "variants": [
+        "blast optimization",
+        "fragmentation analysis",
+        "blast design software",
+        "fragmentation optimisation",
+        "fragmentation optimization"
+      ],
+      "why": "drill-and-blast design and fragmentation analytics"
+    },
+    {
+      "term": "machine control",
+      "tier": "context",
+      "variants": [
+        "machine guidance",
+        "payload monitoring",
+        "onboard weighing",
+        "operator assist",
+        "load-out optimisation"
+      ],
+      "why": "GPS guidance and payload data on mobile plant"
+    },
+    {
+      "term": "automated load-out",
+      "tier": "context",
+      "variants": [
+        "automated loadout",
+        "unattended scale",
+        "automated scale",
+        "unattended weighbridge",
+        "automated ticketing",
+        "e-ticketing",
+        "electronic ticketing",
+        "paperless ticketing",
+        "self-service kiosk"
+      ],
+      "why": "unattended scales and ticketing at quarries"
+    },
+    {
+      "term": "logistics optimisation",
+      "tier": "context",
+      "variants": [
+        "logistics optimization",
+        "dispatch optimisation",
+        "dispatch optimization",
+        "truck dispatch",
+        "delivery optimisation",
+        "delivery optimization",
+        "route optimisation",
+        "route optimization"
+      ],
+      "why": "dispatch and delivery scheduling of bulk materials"
+    },
+    {
+      "term": "pricing analytics",
+      "tier": "context",
+      "variants": [
+        "pricing optimisation",
+        "pricing optimization",
+        "dynamic pricing",
+        "price optimisation tool",
+        "commercial excellence tools",
+        "pricing tool",
+        "sales analytics"
+      ],
+      "why": "data-driven pricing tools in aggregates"
+    },
+    {
+      "term": "predictive maintenance",
+      "tier": "ai",
+      "variants": [
+        "predictive asset maintenance",
+        "failure prediction",
+        "prognostics"
+      ],
+      "why": "ML failure prediction for plant and mobile fleet"
+    },
+    {
+      "term": "condition monitoring",
+      "tier": "context",
+      "variants": [
+        "asset health monitoring",
+        "equipment health monitoring",
+        "conveyor monitoring",
+        "machine health",
+        "vibration monitoring"
+      ],
+      "why": "sensor data for maintenance analytics"
+    },
+    {
+      "term": "fleet management system",
+      "tier": "context",
+      "variants": [
+        "fleet telematics",
+        "telematics data",
+        "equipment telematics",
+        "fleet monitoring"
+      ],
+      "why": "telematics platform for mobile equipment"
+    },
+    {
+      "term": "advanced process control",
+      "tier": "context",
+      "variants": [
+        "model predictive control",
+        "expert control system",
+        "process control optimisation",
+        "process control optimization",
+        "kiln optimisation",
+        "flotation optimisation",
+        "flotation optimization"
+      ],
+      "why": "model-predictive control of processing plants"
+    },
+    {
+      "term": "energy optimisation",
+      "tier": "context",
+      "variants": [
+        "energy optimization",
+        "kiln control optimisation",
+        "dryer optimisation",
+        "dryer optimization"
+      ],
+      "why": "algorithmic control of kilns, dryers and mills"
+    },
+    {
+      "term": "optical sorting",
+      "tier": "context",
+      "variants": [
+        "sensor-based sorting",
+        "ore sorting",
+        "X-ray sorting",
+        "XRT sorting",
+        "colour sorting",
+        "color sorting",
+        "laser sorting"
+      ],
+      "why": "sensor-based separation of minerals"
+    },
+    {
+      "term": "AI-based sorting",
+      "tier": "ai",
+      "variants": [
+        "AI-powered sorting",
+        "machine learning sorting",
+        "intelligent sorting",
+        "AI sorting"
+      ],
+      "why": "ML classification in mineral sorting"
+    },
+    {
+      "term": "quality prediction",
+      "tier": "ai",
+      "variants": [
+        "gradation analysis camera",
+        "online particle size analysis",
+        "grade prediction",
+        "automated quality control",
+        "real-time quality monitoring"
+      ],
+      "why": "ML models of product grade and gradation"
+    },
+    {
+      "term": "collision avoidance system",
+      "tier": "context",
+      "variants": [
+        "proximity detection",
+        "proximity warning",
+        "pedestrian detection",
+        "collision warning",
+        "vehicle interaction"
+      ],
+      "why": "proximity sensing around mobile plant"
+    },
+    {
+      "term": "fatigue monitoring",
+      "tier": "ai",
+      "variants": [
+        "fatigue detection",
+        "driver monitoring system",
+        "in-cab camera",
+        "distraction detection",
+        "driver safety camera"
+      ],
+      "why": "in-cab detection of drowsy or distracted drivers"
+    },
+    {
+      "term": "computer vision safety monitoring",
+      "tier": "ai",
+      "variants": [
+        "PPE detection",
+        "AI video analytics",
+        "AI camera",
+        "exclusion zone monitoring",
+        "safety video analytics"
+      ],
+      "why": "cameras detecting unsafe acts and conveyor hazards"
+    },
+    {
+      "term": "digital twin",
+      "tier": "context",
+      "variants": [
+        "virtual twin",
+        "digital replica"
+      ],
+      "why": "virtual plant, quarry or supply-chain model"
+    },
+    {
+      "term": "quarry planning optimisation",
+      "tier": "context",
+      "variants": [
+        "quarry planning optimization",
+        "mine planning optimisation",
+        "mine planning optimization",
+        "pit optimisation",
+        "pit optimization",
+        "3D quarry model",
+        "reserve modelling"
+      ],
+      "why": "algorithmic reserve and extraction planning"
+    },
+    {
+      "term": "slope monitoring",
+      "tier": "context",
+      "variants": [
+        "slope stability radar",
+        "highwall monitoring",
+        "geotechnical monitoring",
+        "ground movement monitoring",
+        "tailings monitoring"
+      ],
+      "why": "geotechnical and stability sensing"
+    },
+    {
+      "term": "intelligent mine",
+      "tier": "context",
+      "variants": [
+        "smart mine",
+        "smart quarry",
+        "digital quarry",
+        "intelligent mining",
+        "green and intelligent mine",
+        "quarry of the future",
+        "connected quarry"
+      ],
+      "why": "smart quarry and intelligent mine programmes"
+    }
+  ],
+  "class_terms": {
+    "0810": [
+      {
+        "term": "aggregates demand from data centers",
+        "tier": "context",
+        "variants": [
+          "aggregates demand from data centres",
+          "aggregates-intensive",
+          "data center starts",
+          "data centre starts",
+          "data center projects",
+          "data centre projects",
+          "data center activity"
+        ],
+        "why": "data-centre projects as shipment driver"
+      },
+      {
+        "term": "robotic stone cutting",
+        "tier": "context",
+        "variants": [
+          "stone cutting robot",
+          "CNC stone processing",
+          "automated block cutting",
+          "diamond wire saw automation"
+        ],
+        "why": "automated cutting and processing of dimension stone"
+      }
+    ],
+    "0891": [
+      {
+        "term": "precision agriculture",
+        "tier": "context",
+        "variants": [
+          "precision farming",
+          "digital agronomy",
+          "agronomic advice platform",
+          "variable rate application",
+          "crop nutrition model"
+        ],
+        "why": "digital agronomy services sold with fertiliser minerals"
+      },
+      {
+        "term": "potash mining automation",
+        "tier": "context",
+        "variants": [
+          "automated potash mining",
+          "continuous miner automation",
+          "remote mining machine",
+          "underground automation"
+        ],
+        "why": "automation of underground potash and phosphate mining"
+      }
+    ],
+    "0899": [
+      {
+        "term": "high-purity quartz",
+        "tier": "context",
+        "variants": [
+          "HPQ",
+          "high purity silica",
+          "semiconductor-grade quartz",
+          "fused silica",
+          "fused quartz"
+        ],
+        "case_sensitive_variants": [
+          "HPQ"
+        ],
+        "why": "crucible and wafer material tied to chip demand"
+      },
+      {
+        "term": "automated diamond sorting",
+        "tier": "ai",
+        "variants": [
+          "diamond sorting technology",
+          "AI diamond grading",
+          "automated diamond grading",
+          "synthetic diamond detection",
+          "XRT diamond recovery",
+          "diamond grading algorithm"
+        ],
+        "why": "X-ray and vision sorting and grading of diamonds"
+      },
+      {
+        "term": "diamond traceability",
+        "tier": "context",
+        "variants": [
+          "Tracr",
+          "diamond provenance",
+          "digital diamond passport",
+          "provenance platform"
+        ],
+        "why": "digital provenance platforms using scanning and AI"
+      },
+      {
+        "term": "energy storage demand",
+        "tier": "context",
+        "variants": [
+          "battery energy storage",
+          "stationary storage demand",
+          "BESS"
+        ],
+        "case_sensitive_variants": [
+          "BESS"
+        ],
+        "why": "battery minerals demand including data-centre storage"
+      }
+    ]
+  }
+}

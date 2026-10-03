@@ -1,0 +1,869 @@
+{
+  "id": "29",
+  "name": "Manufacture of motor vehicles, trailers and semi-trailers",
+  "section": "C",
+  "summary": "Car, truck and parts makers write about AI mostly as driver assistance and automated driving (ADAS, SAE levels, robotaxis, end-to-end driving models), the software-defined vehicle, intelligent cockpits and over-the-air updates, plus the chips, sensors and training compute behind them. In operations AI appears in smart factories, quality inspection, virtual validation and humanoid robot pilots. Risk and regulation sections cover safety investigations and liability for assisted driving, UNECE and NCAP rules, vehicle cyber security and data rules, dependence on chip suppliers and shortages, and competition for software talent.",
+  "terms": [
+    {
+      "term": "advanced driver assistance system",
+      "tier": "ai",
+      "variants": [
+        "ADAS",
+        "driver assistance system",
+        "driver assist",
+        "assisted driving"
+      ],
+      "case_sensitive_variants": [
+        "ADAS"
+      ],
+      "why": "core AI-based vehicle feature set"
+    },
+    {
+      "term": "autonomous driving",
+      "tier": "ai",
+      "variants": [
+        "automated driving",
+        "self-driving",
+        "autonomous vehicle",
+        "driverless",
+        "autonomous mobility"
+      ],
+      "why": "self-driving capability and programmes"
+    },
+    {
+      "term": "SAE Level",
+      "tier": "ai",
+      "variants": [
+        "Level 4 autonomous",
+        "Level 2+",
+        "L2+",
+        "conditionally automated",
+        "hands-free driving",
+        "eyes-off driving",
+        "hands-off driving"
+      ],
+      "why": "automation level vocabulary for driving systems"
+    },
+    {
+      "term": "intelligent driving",
+      "tier": "ai",
+      "variants": [
+        "smart driving",
+        "NOA",
+        "XNGP",
+        "God's Eye"
+      ],
+      "case_sensitive_variants": [
+        "NOA"
+      ],
+      "why": "Chinese makers' term for assisted and automated driving"
+    },
+    {
+      "term": "end-to-end driving",
+      "tier": "ai",
+      "variants": [
+        "end-to-end model",
+        "vision-language-action model",
+        "VLA model",
+        "world model",
+        "occupancy network",
+        "bird's-eye-view perception"
+      ],
+      "why": "neural-network driving stacks replacing rule-based code"
+    },
+    {
+      "term": "sensor fusion",
+      "tier": "ai",
+      "variants": [
+        "perception stack",
+        "perception software",
+        "perception system",
+        "environment perception"
+      ],
+      "why": "combining camera, radar and lidar into perception"
+    },
+    {
+      "term": "lidar",
+      "tier": "context",
+      "variants": [
+        "light detection and ranging"
+      ],
+      "why": "ranging sensor for automated driving"
+    },
+    {
+      "term": "imaging radar",
+      "tier": "context",
+      "variants": [
+        "4D radar",
+        "corner radar",
+        "front radar",
+        "radar sensor",
+        "mmWave radar",
+        "millimeter-wave radar",
+        "millimetre-wave radar"
+      ],
+      "why": "radar sensors for driver assistance"
+    },
+    {
+      "term": "front camera",
+      "tier": "context",
+      "variants": [
+        "surround-view camera",
+        "camera module",
+        "automotive camera",
+        "sensing camera",
+        "vision-only",
+        "camera-based perception",
+        "ultrasonic sensor"
+      ],
+      "why": "camera hardware feeding vision AI"
+    },
+    {
+      "term": "high-definition map",
+      "tier": "context",
+      "variants": [
+        "HD map",
+        "mapless",
+        "crowdsourced mapping"
+      ],
+      "why": "map data used by automated driving"
+    },
+    {
+      "term": "driver monitoring",
+      "tier": "ai",
+      "variants": [
+        "occupant monitoring",
+        "in-cabin sensing",
+        "in-cabin monitoring",
+        "interior sensing",
+        "drowsiness detection",
+        "child presence detection"
+      ],
+      "why": "camera AI watching driver attention"
+    },
+    {
+      "term": "automatic emergency braking",
+      "tier": "ai",
+      "variants": [
+        "AEB",
+        "autonomous emergency braking",
+        "forward collision warning",
+        "collision mitigation braking",
+        "pedestrian detection"
+      ],
+      "case_sensitive_variants": [
+        "AEB"
+      ],
+      "why": "AI-perception safety functions, increasingly mandated"
+    },
+    {
+      "term": "adaptive cruise control",
+      "tier": "ai",
+      "variants": [
+        "lane keeping assist",
+        "lane centering",
+        "lane centring",
+        "lane departure warning",
+        "blind spot detection",
+        "traffic jam assist",
+        "intelligent speed assistance",
+        "automated lane change"
+      ],
+      "why": "assistance functions listed in product and safety text"
+    },
+    {
+      "term": "automated parking",
+      "tier": "ai",
+      "variants": [
+        "automated valet parking",
+        "park assist",
+        "remote parking",
+        "self-parking",
+        "memory parking"
+      ],
+      "why": "self-parking and valet functions"
+    },
+    {
+      "term": "operational design domain",
+      "tier": "ai",
+      "variants": [
+        "ODD",
+        "minimal risk manoeuvre",
+        "minimal risk maneuver",
+        "takeover request"
+      ],
+      "case_sensitive_variants": [
+        "ODD"
+      ],
+      "why": "conditions in which an automated system may drive"
+    },
+    {
+      "term": "safety driver",
+      "tier": "context",
+      "variants": [
+        "disengagement rate",
+        "disengagement report",
+        "safety operator",
+        "driver-out"
+      ],
+      "why": "human backup in automated vehicle operations"
+    },
+    {
+      "term": "teleoperation",
+      "tier": "context",
+      "variants": [
+        "teledriving",
+        "remote driving",
+        "remote assistance",
+        "remote operator"
+      ],
+      "why": "remote support for driverless vehicles"
+    },
+    {
+      "term": "software-defined vehicle",
+      "tier": "context",
+      "variants": [
+        "SDV",
+        "software-defined car",
+        "vehicle operating system",
+        "vehicle OS"
+      ],
+      "case_sensitive_variants": [
+        "SDV"
+      ],
+      "why": "vehicle architecture enabling AI features and updates"
+    },
+    {
+      "term": "E/E architecture",
+      "tier": "context",
+      "variants": [
+        "electrical/electronic architecture",
+        "zonal architecture",
+        "centralized architecture",
+        "centralised architecture",
+        "central compute",
+        "domain controller",
+        "zone controller",
+        "high-performance computer"
+      ],
+      "why": "central computers that host AI functions"
+    },
+    {
+      "term": "over-the-air",
+      "tier": "context",
+      "variants": [
+        "OTA",
+        "FOTA"
+      ],
+      "case_sensitive_variants": [
+        "OTA",
+        "FOTA"
+      ],
+      "why": "delivery channel for AI feature updates"
+    },
+    {
+      "term": "intelligent cockpit",
+      "tier": "ai",
+      "variants": [
+        "smart cockpit",
+        "AI cockpit",
+        "in-car assistant",
+        "in-vehicle assistant",
+        "in-car voice assistant",
+        "MBUX Virtual Assistant",
+        "cockpit domain controller"
+      ],
+      "why": "AI assistants and personalisation in the cabin"
+    },
+    {
+      "term": "infotainment",
+      "tier": "context",
+      "variants": [
+        "digital cockpit",
+        "head-up display",
+        "human-machine interface"
+      ],
+      "why": "cabin systems carrying voice and AI features"
+    },
+    {
+      "term": "connected vehicle",
+      "tier": "context",
+      "variants": [
+        "connected car",
+        "connected services",
+        "vehicle connectivity",
+        "telematics",
+        "vehicle-to-everything",
+        "V2X",
+        "vehicle data"
+      ],
+      "case_sensitive_variants": [
+        "V2X"
+      ],
+      "why": "connectivity and vehicle data underlying AI services"
+    },
+    {
+      "term": "usage-based insurance",
+      "tier": "context",
+      "variants": [
+        "data monetisation",
+        "data monetization",
+        "driving behaviour data",
+        "driving behavior data",
+        "driver data"
+      ],
+      "why": "monetising driving data; privacy exposure"
+    },
+    {
+      "term": "automotive SoC",
+      "tier": "ai",
+      "variants": [
+        "self-developed chip",
+        "in-house chip",
+        "central compute platform",
+        "automotive-grade AI chip",
+        "driving computer"
+      ],
+      "why": "automotive AI compute hardware"
+    },
+    {
+      "term": "NVIDIA DRIVE",
+      "tier": "ai",
+      "variants": [
+        "DRIVE Orin",
+        "Orin-X",
+        "DRIVE Thor",
+        "Snapdragon Ride",
+        "Snapdragon Digital Chassis",
+        "EyeQ",
+        "Mobileye",
+        "Horizon Robotics",
+        "Momenta"
+      ],
+      "why": "third-party driving compute and software suppliers"
+    },
+    {
+      "term": "Waymo",
+      "tier": "ai",
+      "variants": [
+        "GM Cruise",
+        "Zoox",
+        "Aurora Innovation",
+        "Aurora Driver",
+        "Pony.ai",
+        "WeRide",
+        "Baidu Apollo",
+        "Wayve",
+        "Motional",
+        "May Mobility"
+      ],
+      "why": "autonomous driving companies named as partners or rivals"
+    },
+    {
+      "term": "robotaxi",
+      "tier": "ai",
+      "variants": [
+        "autonomous ride-hailing",
+        "robo-shuttle",
+        "autonomous shuttle",
+        "Cybercab",
+        "robobus"
+      ],
+      "why": "driverless ride services run or supplied by makers and suppliers"
+    },
+    {
+      "term": "humanoid robot",
+      "tier": "ai",
+      "variants": [
+        "Optimus",
+        "humanoid",
+        "embodied AI",
+        "embodied intelligence",
+        "Boston Dynamics",
+        "physical AI"
+      ],
+      "case_sensitive_variants": [
+        "Optimus"
+      ],
+      "why": "robots built, piloted or supplied by the industry"
+    },
+    {
+      "term": "semiconductor shortage",
+      "tier": "context",
+      "variants": [
+        "chip shortage",
+        "semiconductor supply",
+        "chip supply",
+        "Nexperia",
+        "memory prices",
+        "DRAM shortage",
+        "export controls",
+        "export restrictions"
+      ],
+      "why": "chip supply and AI-driven memory price risk"
+    },
+    {
+      "term": "smart factory",
+      "tier": "context",
+      "variants": [
+        "intelligent factory",
+        "digital factory",
+        "factory of the future",
+        "iFactory",
+        "lights-out factory",
+        "dark factory"
+      ],
+      "why": "plant programmes under which AI use is reported"
+    },
+    {
+      "term": "Industry 4.0",
+      "tier": "context",
+      "variants": [
+        "Industrie 4.0"
+      ],
+      "why": "umbrella label for connected, data-driven production"
+    },
+    {
+      "term": "digital twin",
+      "tier": "context",
+      "variants": [
+        "virtual factory",
+        "NVIDIA Omniverse",
+        "industrial metaverse"
+      ],
+      "why": "virtual plant and vehicle models paired with AI"
+    },
+    {
+      "term": "predictive maintenance",
+      "tier": "ai",
+      "variants": [
+        "predictive diagnostics",
+        "vehicle health monitoring",
+        "prognostics"
+      ],
+      "why": "ML on plant equipment and vehicle data"
+    },
+    {
+      "term": "automated visual inspection",
+      "tier": "ai",
+      "variants": [
+        "automated optical inspection",
+        "paint defect detection",
+        "weld inspection",
+        "AI-based quality inspection",
+        "acoustic inspection",
+        "end-of-line inspection",
+        "machine vision"
+      ],
+      "why": "AI quality checks in body, paint and assembly"
+    },
+    {
+      "term": "collaborative robot",
+      "tier": "context",
+      "variants": [
+        "cobot"
+      ],
+      "why": "flexible assembly robots"
+    },
+    {
+      "term": "autonomous mobile robot",
+      "tier": "ai",
+      "variants": [
+        "AMR"
+      ],
+      "case_sensitive_variants": [
+        "AMR"
+      ],
+      "why": "self-navigating plant logistics"
+    },
+    {
+      "term": "automated guided vehicle",
+      "tier": "context",
+      "variants": [
+        "AGV",
+        "driverless transport system"
+      ],
+      "case_sensitive_variants": [
+        "AGV"
+      ],
+      "why": "driverless plant logistics"
+    },
+    {
+      "term": "virtual validation",
+      "tier": "context",
+      "variants": [
+        "virtual testing",
+        "simulation-based validation",
+        "virtual homologation",
+        "scenario-based testing",
+        "hardware-in-the-loop",
+        "software-in-the-loop",
+        "virtual development"
+      ],
+      "why": "simulation replacing road testing of AI functions"
+    },
+    {
+      "term": "corner case",
+      "tier": "context",
+      "variants": [
+        "edge case",
+        "long-tail scenario"
+      ],
+      "why": "rare scenarios limiting automated driving safety"
+    },
+    {
+      "term": "generative design",
+      "tier": "ai",
+      "variants": [
+        "AI-assisted design",
+        "AI-generated design"
+      ],
+      "why": "algorithm-generated component designs"
+    },
+    {
+      "term": "automated lane keeping system",
+      "tier": "ai",
+      "variants": [
+        "ALKS",
+        "UN R157",
+        "UN Regulation No. 157",
+        "driver control assistance system",
+        "DCAS",
+        "UN R171"
+      ],
+      "case_sensitive_variants": [
+        "ALKS",
+        "DCAS"
+      ],
+      "why": "UN rules permitting Level 3 and assistance systems"
+    },
+    {
+      "term": "UN R155",
+      "tier": "context",
+      "variants": [
+        "UN R156",
+        "UNECE WP.29",
+        "cybersecurity management system",
+        "CSMS",
+        "software update management system",
+        "ISO/SAE 21434",
+        "vehicle cybersecurity",
+        "automotive cybersecurity"
+      ],
+      "case_sensitive_variants": [
+        "CSMS"
+      ],
+      "why": "vehicle cyber security and software update rules"
+    },
+    {
+      "term": "General Safety Regulation",
+      "tier": "context",
+      "variants": [
+        "GSR2",
+        "Euro NCAP",
+        "NCAP",
+        "five-star safety rating"
+      ],
+      "case_sensitive_variants": [
+        "GSR2",
+        "NCAP"
+      ],
+      "why": "EU and rating rules mandating assistance functions"
+    },
+    {
+      "term": "NHTSA",
+      "tier": "context",
+      "variants": [
+        "National Highway Traffic Safety Administration",
+        "Standing General Order",
+        "FMVSS 127",
+        "AV framework",
+        "AV STEP"
+      ],
+      "case_sensitive_variants": [
+        "NHTSA"
+      ],
+      "why": "US regulator investigating assisted and automated driving"
+    },
+    {
+      "term": "functional safety",
+      "tier": "context",
+      "variants": [
+        "ISO 26262",
+        "SOTIF",
+        "ISO 21448",
+        "safety of the intended functionality",
+        "ASIL",
+        "safety case"
+      ],
+      "case_sensitive_variants": [
+        "SOTIF",
+        "ASIL"
+      ],
+      "why": "safety standards for automated driving software"
+    },
+    {
+      "term": "product liability",
+      "tier": "context",
+      "variants": [
+        "liability for automated driving",
+        "autonomous vehicle liability",
+        "driver assistance litigation"
+      ],
+      "why": "litigation and liability over assistance systems"
+    },
+    {
+      "term": "Automated Vehicles Act",
+      "tier": "context",
+      "variants": [
+        "Autonomous Driving Act",
+        "Level 4 law",
+        "driverless testing permit",
+        "deployment permit",
+        "California DMV",
+        "CPUC"
+      ],
+      "case_sensitive_variants": [
+        "CPUC"
+      ],
+      "why": "national laws and permits for driverless operation"
+    },
+    {
+      "term": "ICTS rule",
+      "tier": "context",
+      "variants": [
+        "information and communications technology and services",
+        "foreign adversary"
+      ],
+      "why": "US ban on certain foreign vehicle software"
+    },
+    {
+      "term": "automotive data security",
+      "tier": "context",
+      "variants": [
+        "data localisation",
+        "data localization",
+        "in-cabin camera",
+        "important data"
+      ],
+      "why": "rules on vehicle data collection and transfer"
+    },
+    {
+      "term": "software talent",
+      "tier": "context",
+      "variants": [
+        "AI talent",
+        "software engineering talent",
+        "software engineers"
+      ],
+      "why": "competition for AI and software engineers"
+    },
+    {
+      "term": "battery management system",
+      "tier": "context",
+      "variants": [
+        "BMS",
+        "AI battery management",
+        "battery health prediction"
+      ],
+      "case_sensitive_variants": [
+        "BMS"
+      ],
+      "why": "battery software where ML estimation runs"
+    }
+  ],
+  "class_terms": {
+    "2910": [
+      {
+        "term": "Full Self-Driving",
+        "tier": "ai",
+        "variants": [
+          "FSD",
+          "Autopilot",
+          "Super Cruise",
+          "BlueCruise",
+          "DRIVE PILOT",
+          "ProPILOT",
+          "Highway Assist",
+          "Travel Assist"
+        ],
+        "case_sensitive_variants": [
+          "FSD"
+        ],
+        "why": "branded assisted and automated driving systems"
+      },
+      {
+        "term": "autonomous truck",
+        "tier": "ai",
+        "variants": [
+          "autonomous trucking",
+          "hub-to-hub",
+          "platooning",
+          "autonomous freight",
+          "Torc",
+          "Waabi",
+          "Kodiak"
+        ],
+        "why": "driverless trucking programmes"
+      },
+      {
+        "term": "fleet learning",
+        "tier": "ai",
+        "variants": [
+          "data engine",
+          "shadow mode",
+          "training cluster",
+          "Dojo",
+          "data closed loop",
+          "closed-loop data",
+          "intelligent computing center",
+          "intelligent computing centre"
+        ],
+        "why": "training driving models on fleet data and compute"
+      },
+      {
+        "term": "features on demand",
+        "tier": "context",
+        "variants": [
+          "function on demand",
+          "functions on demand",
+          "software-enabled services",
+          "recurring software revenue",
+          "driver assistance subscription"
+        ],
+        "why": "software revenue from assistance and cabin functions"
+      },
+      {
+        "term": "smart EV",
+        "tier": "context",
+        "variants": [
+          "smart electric vehicle",
+          "intelligent vehicle",
+          "intelligent electric vehicle"
+        ],
+        "why": "Chinese label for AI-equipped electric vehicles"
+      }
+    ],
+    "2920": [
+      {
+        "term": "smart trailer",
+        "tier": "context",
+        "variants": [
+          "connected trailer",
+          "intelligent trailer",
+          "autonomous-ready trailer"
+        ],
+        "why": "sensor-equipped trailers feeding fleet data services"
+      },
+      {
+        "term": "yard automation",
+        "tier": "context",
+        "variants": [
+          "automated coupling",
+          "autonomous yard"
+        ],
+        "why": "autonomous yard tractors and coupling"
+      }
+    ],
+    "2930": [
+      {
+        "term": "active safety",
+        "tier": "ai",
+        "variants": [
+          "integrated safety",
+          "safety domain controller",
+          "ADAS domain controller"
+        ],
+        "why": "suppliers' segment name for assistance systems"
+      },
+      {
+        "term": "content per vehicle",
+        "tier": "context",
+        "variants": [
+          "content growth",
+          "sensor content",
+          "electronics content",
+          "take rate",
+          "ADAS penetration"
+        ],
+        "why": "supplier growth from sensors and compute per car"
+      },
+      {
+        "term": "design win",
+        "tier": "context",
+        "variants": [
+          "program award",
+          "ADAS award",
+          "lifetime order intake",
+          "booked business"
+        ],
+        "why": "customer awards for assistance and compute programmes"
+      },
+      {
+        "term": "steer-by-wire",
+        "tier": "context",
+        "variants": [
+          "brake-by-wire",
+          "drive-by-wire",
+          "x-by-wire",
+          "redundant braking",
+          "redundant steering",
+          "rear-wheel steering"
+        ],
+        "why": "actuation needed for automated driving"
+      },
+      {
+        "term": "vehicle motion control",
+        "tier": "context",
+        "variants": [
+          "vehicle motion management",
+          "integrated chassis control",
+          "predictive suspension",
+          "road preview"
+        ],
+        "why": "chassis software coordinating automated manoeuvres"
+      },
+      {
+        "term": "camera monitor system",
+        "tier": "context",
+        "variants": [
+          "e-mirror",
+          "digital mirror",
+          "interior camera"
+        ],
+        "why": "camera-based mirrors and interior cameras"
+      },
+      {
+        "term": "adaptive driving beam",
+        "tier": "context",
+        "variants": [
+          "matrix headlamp",
+          "pixel light",
+          "digital light"
+        ],
+        "why": "camera-controlled headlamps"
+      },
+      {
+        "term": "automotive Ethernet",
+        "tier": "context",
+        "variants": [
+          "high-speed data cable",
+          "zonal wiring",
+          "in-vehicle network"
+        ],
+        "why": "in-vehicle data links for sensors and compute"
+      },
+      {
+        "term": "middleware",
+        "tier": "context",
+        "variants": [
+          "AUTOSAR",
+          "software stack",
+          "base software",
+          "software integration"
+        ],
+        "why": "supplier software stack hosting AI functions"
+      }
+    ]
+  }
+}

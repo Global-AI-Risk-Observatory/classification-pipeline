@@ -1,0 +1,708 @@
+{
+ "id": "49",
+ "name": "Land transport and transport via pipelines",
+ "section": "H",
+ "summary": "Rail, bus, trucking and pipeline operators write about AI in predictive maintenance and automated inspection of track, rolling stock and pipelines, in dispatching, routing and network planning, in driver safety (in-cab cameras, fatigue detection) and in autonomous driving and train operation, which is both an efficiency opportunity and a workforce and safety-regulation issue. Passenger operators add demand forecasting, dynamic fares and customer information; trucking adds dynamic freight pricing and load matching. Pipeline companies increasingly cite data centre and AI-driven power demand as a growth driver for gas volumes.",
+ "terms": [
+  {
+   "term": "predictive maintenance",
+   "tier": "ai",
+   "variants": [
+    "condition-based maintenance",
+    "predictive analytics for maintenance",
+    "AI-based maintenance",
+    "prescriptive maintenance",
+    "failure prediction",
+    "predictive asset management"
+   ],
+   "why": "ML forecasting of asset failures"
+  },
+  {
+   "term": "condition monitoring",
+   "tier": "context",
+   "variants": [
+    "remote condition monitoring",
+    "asset health monitoring",
+    "wayside detection",
+    "telematics",
+    "onboard diagnostics",
+    "remote diagnostics"
+   ],
+   "why": "sensor data feeding maintenance models"
+  },
+  {
+   "term": "route optimisation",
+   "tier": "ai",
+   "variants": [
+    "route optimization",
+    "AI-based routing",
+    "dynamic routing",
+    "network optimisation using AI",
+    "network optimization using AI",
+    "AI-driven scheduling",
+    "timetable optimisation",
+    "timetable optimization"
+   ],
+   "why": "ML planning of routes and schedules"
+  },
+  {
+   "term": "demand forecasting",
+   "tier": "ai",
+   "variants": [
+    "passenger demand prediction",
+    "ridership forecasting",
+    "AI-based forecasting",
+    "volume forecasting",
+    "AI forecasting",
+    "predictive demand model"
+   ],
+   "why": "ML prediction of passenger or freight volumes"
+  },
+  {
+   "term": "autonomous driving",
+   "tier": "ai",
+   "variants": [
+    "self-driving",
+    "driverless",
+    "autonomous vehicle",
+    "automated driving",
+    "autonomous operations",
+    "SAE Level 4",
+    "highly automated driving"
+   ],
+   "why": "self-driving vehicles in transport operations"
+  },
+  {
+   "term": "AI-based video analytics",
+   "tier": "ai",
+   "variants": [
+    "AI video analytics",
+    "AI cameras",
+    "computer vision system",
+    "AI-based intrusion detection",
+    "AI obstacle detection",
+    "machine vision",
+    "AI surveillance"
+   ],
+   "why": "vision AI for safety and security"
+  },
+  {
+   "term": "fuel optimisation using AI",
+   "tier": "ai",
+   "variants": [
+    "AI-based fuel optimisation",
+    "AI-based fuel optimization",
+    "energy-efficient driving system",
+    "driver advisory system",
+    "AI eco-driving",
+    "trip optimiser",
+    "Trip Optimizer"
+   ],
+   "why": "ML reducing fuel and traction energy"
+  },
+  {
+   "term": "AI dispatching",
+   "tier": "ai",
+   "variants": [
+    "automated dispatch",
+    "AI-based dispatch",
+    "AI crew scheduling",
+    "dispatch optimisation",
+    "dispatch optimization",
+    "AI-assisted dispatcher",
+    "automated planning"
+   ],
+   "why": "ML assignment of vehicles and crews"
+  },
+  {
+   "term": "AI-powered customer service",
+   "tier": "ai",
+   "variants": [
+    "AI customer service",
+    "AI travel assistant",
+    "AI-powered passenger information",
+    "virtual assistant for passengers",
+    "AI customer support"
+   ],
+   "why": "automated passenger and shipper support"
+  },
+  {
+   "term": "AI-driven efficiency",
+   "tier": "ai",
+   "variants": [
+    "AI-driven productivity",
+    "AI-enabled efficiency",
+    "AI productivity gains",
+    "AI-driven cost savings",
+    "AI use cases",
+    "AI-enabled productivity"
+   ],
+   "why": "cost savings attributed to AI"
+  },
+  {
+   "term": "workforce reduction",
+   "tier": "context",
+   "variants": [
+    "headcount reduction",
+    "job displacement",
+    "reskilling",
+    "crew size",
+    "union opposition to automation"
+   ],
+   "why": "automation effects on drivers and crews"
+  },
+  {
+   "term": "safety regulation",
+   "tier": "context",
+   "variants": [
+    "Federal Railroad Administration",
+    "FMCSA",
+    "Office of Rail and Road",
+    "safety authority",
+    "type approval",
+    "safety case"
+   ],
+   "case_sensitive_variants": [
+    "FMCSA"
+   ],
+   "why": "rules governing automated operation"
+  },
+  {
+   "term": "digital twin",
+   "tier": "context",
+   "variants": [
+    "digital twin of the network",
+    "network simulation",
+    "asset digital twin",
+    "infrastructure digital twin"
+   ],
+   "why": "virtual network model for planning and maintenance"
+  }
+ ],
+ "class_terms": {
+  "4911": [
+   {
+    "term": "automatic train operation",
+    "tier": "ai",
+    "variants": [
+     "driverless train",
+     "autonomous train",
+     "GoA4",
+     "grade of automation",
+     "unattended train operation",
+     "automated train"
+    ],
+    "why": "driverless or automated train driving"
+   },
+   {
+    "term": "train control system",
+    "tier": "context",
+    "variants": [
+     "ETCS",
+     "ERTMS",
+     "European Train Control System",
+     "CBTC",
+     "communications-based train control",
+     "digital signalling",
+     "digital signaling",
+     "positive train control"
+    ],
+    "case_sensitive_variants": [
+     "ETCS",
+     "ERTMS",
+     "CBTC"
+    ],
+    "why": "signalling base for automated operation"
+   },
+   {
+    "term": "AI traffic management for rail",
+    "tier": "ai",
+    "variants": [
+     "AI-based traffic management",
+     "AI train dispatching",
+     "AI-based rescheduling",
+     "capacity optimisation with AI",
+     "capacity optimization with AI",
+     "delay prediction",
+     "punctuality prediction"
+    ],
+    "why": "ML rescheduling and conflict resolution"
+   },
+   {
+    "term": "automated track inspection",
+    "tier": "ai",
+    "variants": [
+     "autonomous track inspection",
+     "AI-based track inspection",
+     "track geometry measurement",
+     "automated visual inspection",
+     "drone inspection",
+     "AI-based defect detection",
+     "machine vision inspection"
+    ],
+    "why": "vision and ML checking of infrastructure"
+   },
+   {
+    "term": "dynamic fare pricing",
+    "tier": "ai",
+    "variants": [
+     "yield management system",
+     "dynamic pricing",
+     "revenue management system",
+     "AI-based pricing",
+     "demand-based pricing"
+    ],
+    "why": "ML yield management for rail tickets"
+   },
+   {
+    "term": "punctuality",
+    "tier": "context",
+    "variants": [
+     "on-time performance",
+     "delay minutes",
+     "service reliability"
+    ],
+    "why": "service metric AI scheduling targets"
+   }
+  ],
+  "4912": [
+   {
+    "term": "precision scheduled railroading analytics",
+    "tier": "ai",
+    "variants": [
+     "AI-based yard planning",
+     "yard automation",
+     "automated hump yard",
+     "AI train planning",
+     "AI-based network planning",
+     "car trip plan prediction"
+    ],
+    "why": "data-driven freight rail planning"
+   },
+   {
+    "term": "machine vision inspection portal",
+    "tier": "ai",
+    "variants": [
+     "automated inspection portal",
+     "wayside inspection portal",
+     "machine vision portal",
+     "AI wheel defect detection",
+     "acoustic bearing detector",
+     "automated railcar inspection",
+     "train inspection portal"
+    ],
+    "why": "wayside cameras inspecting wagons with ML"
+   },
+   {
+    "term": "crew consist",
+    "tier": "context",
+    "variants": [
+     "two-person crew",
+     "one-person crew",
+     "train crew size",
+     "locomotive engineer",
+     "SMART-TD",
+     "BLET"
+    ],
+    "why": "union dispute over one-person and automated trains"
+   },
+   {
+    "term": "autonomous freight train",
+    "tier": "ai",
+    "variants": [
+     "AutoHaul",
+     "autonomous rail",
+     "self-driving railcar",
+     "autonomous locomotive",
+     "remote control locomotive"
+    ],
+    "why": "driverless heavy-haul and freight trains"
+   }
+  ],
+  "4921": [
+   {
+    "term": "autonomous shuttle",
+    "tier": "ai",
+    "variants": [
+     "autonomous bus",
+     "self-driving bus",
+     "driverless shuttle",
+     "robotaxi",
+     "autonomous minibus",
+     "automated metro",
+     "driverless metro"
+    ],
+    "why": "driverless buses and urban vehicles"
+   },
+   {
+    "term": "on-demand transit algorithm",
+    "tier": "ai",
+    "variants": [
+     "demand-responsive transport",
+     "on-demand transport",
+     "microtransit",
+     "ride pooling algorithm",
+     "dynamic ride-sharing",
+     "mobility as a service"
+    ],
+    "why": "ML pooling and routing of shared rides"
+   },
+   {
+    "term": "AI passenger counting",
+    "tier": "ai",
+    "variants": [
+     "automatic passenger counting",
+     "crowding prediction",
+     "occupancy prediction",
+     "passenger flow analytics",
+     "AI fare evasion detection",
+     "fare evasion detection"
+    ],
+    "why": "vision-based ridership measurement"
+   },
+   {
+    "term": "electric bus",
+    "tier": "context",
+    "variants": [
+     "bus electrification",
+     "smart charging",
+     "charging optimisation",
+     "charging optimization",
+     "depot management system",
+     "battery health prediction"
+    ],
+    "why": "fleet where ML manages charging"
+   },
+   {
+    "term": "public transport authority",
+    "tier": "context",
+    "variants": [
+     "public service contract",
+     "concession contract",
+     "rail franchise",
+     "transport authority"
+    ],
+    "why": "contracting bodies specifying technology"
+   }
+  ],
+  "4922": [
+   {
+    "term": "ride-hailing algorithm",
+    "tier": "ai",
+    "variants": [
+     "taxi dispatch algorithm",
+     "surge pricing",
+     "AI dispatch system",
+     "matching algorithm",
+     "dynamic coach pricing",
+     "AI-based fare"
+    ],
+    "why": "ML dispatch and pricing of taxis and coaches"
+   },
+   {
+    "term": "coach services",
+    "tier": "context",
+    "variants": [
+     "intercity bus",
+     "long-distance coach",
+     "school bus",
+     "charter services"
+    ],
+    "why": "long-distance bus using yield management"
+   }
+  ],
+  "4923": [
+   {
+    "term": "autonomous truck",
+    "tier": "ai",
+    "variants": [
+     "autonomous trucking",
+     "self-driving truck",
+     "driverless truck",
+     "truck platooning",
+     "autonomous freight",
+     "hub-to-hub autonomy",
+     "Aurora Driver",
+     "autonomous linehaul"
+    ],
+    "why": "self-driving heavy vehicles"
+   },
+   {
+    "term": "AI dash cam",
+    "tier": "ai",
+    "variants": [
+     "AI dashcam",
+     "in-cab camera",
+     "driver-facing camera",
+     "inward-facing camera",
+     "video telematics",
+     "AI-powered camera",
+     "event recorder"
+    ],
+    "why": "in-cab cameras with ML driver monitoring"
+   },
+   {
+    "term": "driver fatigue detection",
+    "tier": "ai",
+    "variants": [
+     "fatigue monitoring",
+     "drowsiness detection",
+     "distracted driving detection",
+     "driver monitoring system",
+     "driver behaviour scoring",
+     "driver behavior scoring",
+     "driver risk score"
+    ],
+    "why": "ML monitoring of drowsiness and distraction"
+   },
+   {
+    "term": "advanced driver assistance",
+    "tier": "ai",
+    "variants": [
+     "ADAS",
+     "collision mitigation",
+     "automatic emergency braking",
+     "lane departure warning",
+     "adaptive cruise control",
+     "collision avoidance system"
+    ],
+    "case_sensitive_variants": [
+     "ADAS"
+    ],
+    "why": "collision avoidance and lane-keeping systems"
+   },
+   {
+    "term": "dynamic freight pricing",
+    "tier": "ai",
+    "variants": [
+     "AI pricing",
+     "algorithmic pricing",
+     "dynamic pricing engine",
+     "AI-based quoting",
+     "automated quoting",
+     "yield management for freight",
+     "pricing science"
+    ],
+    "why": "ML spot and contract rate setting"
+   },
+   {
+    "term": "load matching",
+    "tier": "ai",
+    "variants": [
+     "digital freight matching",
+     "AI load matching",
+     "automated load board",
+     "empty mile reduction",
+     "backhaul optimisation",
+     "backhaul optimization",
+     "AI freight matching"
+    ],
+    "why": "ML matching of freight and capacity"
+   },
+   {
+    "term": "linehaul optimisation",
+    "tier": "ai",
+    "variants": [
+     "linehaul optimization",
+     "AI linehaul planning",
+     "AI dock management",
+     "pickup and delivery optimisation",
+     "pickup and delivery optimization",
+     "AI-based load planning",
+     "AI dimensioner"
+    ],
+    "why": "ML planning of LTL networks"
+   },
+   {
+    "term": "truckload",
+    "tier": "context",
+    "variants": [
+     "less-than-truckload",
+     "LTL",
+     "dedicated contract carriage",
+     "freight brokerage",
+     "spot rates",
+     "tractor count",
+     "empty miles"
+    ],
+    "case_sensitive_variants": [
+     "LTL"
+    ],
+    "why": "freight segment digitised with ML pricing"
+   },
+   {
+    "term": "driver shortage",
+    "tier": "context",
+    "variants": [
+     "driver turnover",
+     "driver retention",
+     "driver recruitment",
+     "hours of service",
+     "electronic logging device"
+    ],
+    "why": "labour constraint motivating autonomy"
+   },
+   {
+    "term": "nuclear verdict",
+    "tier": "context",
+    "variants": [
+     "accident claims",
+     "insurance and claims expense",
+     "accident frequency",
+     "preventable accidents",
+     "DOT recordable"
+    ],
+    "why": "litigation risk that camera AI aims to reduce"
+   },
+   {
+    "term": "fleet telematics AI",
+    "tier": "ai",
+    "variants": [
+     "AI-powered fleet management",
+     "AI fleet analytics",
+     "predictive fleet maintenance",
+     "connected fleet",
+     "AI-based fleet optimisation",
+     "AI-based fleet optimization"
+    ],
+    "why": "ML insights from vehicle data"
+   },
+   {
+    "term": "AI freight fraud detection",
+    "tier": "ai",
+    "variants": [
+     "cargo theft prediction",
+     "double brokering",
+     "carrier identity fraud",
+     "AI carrier vetting",
+     "fraudulent pickup detection"
+    ],
+    "why": "ML against cargo theft and identity fraud"
+   }
+  ],
+  "4930": [
+   {
+    "term": "AI-based leak detection",
+    "tier": "ai",
+    "variants": [
+     "machine learning leak detection",
+     "AI methane detection",
+     "AI-enabled leak detection",
+     "leak detection algorithm"
+    ],
+    "why": "ML detection of pipeline leaks"
+   },
+   {
+    "term": "leak detection system",
+    "tier": "context",
+    "variants": [
+     "computational pipeline monitoring",
+     "fibre-optic leak detection",
+     "fiber-optic leak detection",
+     "satellite leak detection",
+     "aerial leak detection",
+     "methane detection"
+    ],
+    "why": "monitoring domain where ML is applied"
+   },
+   {
+    "term": "in-line inspection analytics",
+    "tier": "ai",
+    "variants": [
+     "AI-based integrity management",
+     "pipeline integrity analytics",
+     "AI corrosion prediction",
+     "AI crack detection",
+     "machine learning for pipeline integrity"
+    ],
+    "why": "ML analysis of pipeline inspection data"
+   },
+   {
+    "term": "AI pipeline optimisation",
+    "tier": "ai",
+    "variants": [
+     "AI pipeline optimization",
+     "compressor optimisation",
+     "compressor optimization",
+     "AI-based flow optimisation",
+     "AI-based flow optimization",
+     "pipeline digital twin",
+     "AI-assisted control room"
+    ],
+    "why": "ML control of compressors and flows"
+   },
+   {
+    "term": "data centre power demand",
+    "tier": "context",
+    "variants": [
+     "data center power demand",
+     "data centre demand",
+     "data center demand",
+     "AI-driven power demand",
+     "AI power demand",
+     "demand from data centres",
+     "demand from data centers",
+     "power demand from AI"
+    ],
+    "why": "AI-driven electricity demand lifting gas volumes"
+   },
+   {
+    "term": "natural gas demand growth",
+    "tier": "context",
+    "variants": [
+     "gas-fired generation",
+     "power generation demand",
+     "behind-the-meter generation",
+     "load growth",
+     "electricity demand growth",
+     "lateral to data centre",
+     "lateral to data center"
+    ],
+    "why": "gas pipeline growth narrative tied to AI"
+   },
+   {
+    "term": "hyperscaler",
+    "tier": "context",
+    "variants": [
+     "hyperscale customer",
+     "data centre developer",
+     "data center developer",
+     "AI data centre",
+     "AI data center",
+     "data centre campus",
+     "data center campus"
+    ],
+    "why": "data centre developers as new pipeline customers"
+   },
+   {
+    "term": "control room management",
+    "tier": "context",
+    "variants": [
+     "SCADA",
+     "pipeline control centre",
+     "pipeline control center",
+     "operational technology",
+     "PHMSA"
+    ],
+    "case_sensitive_variants": [
+     "SCADA",
+     "PHMSA"
+    ],
+    "why": "operational setting for AI assistance"
+   },
+   {
+    "term": "pipeline integrity",
+    "tier": "context",
+    "variants": [
+     "integrity management",
+     "right-of-way monitoring",
+     "smart pig",
+     "intelligent pigging",
+     "in-line inspection",
+     "corrosion monitoring"
+    ],
+    "why": "safety domain where ML is applied"
+   }
+  ]
+ }
+}

@@ -1,0 +1,330 @@
+{
+  "id": "39",
+  "name": "Remediation and other waste management service activities",
+  "section": "E",
+  "summary": "Remediation and decommissioning firms mention AI sparingly: remote sensing and drone surveys for site characterisation, predictive contaminant and groundwater models, remote monitoring of treatment systems, and robotics for hazardous or nuclear clean-up. Classification algorithms are established in munitions response, asbestos analysis and spill detection. Brownfield redevelopment for data centres is the main demand-side link.",
+  "terms": [
+    {
+      "term": "site characterisation",
+      "tier": "context",
+      "variants": [
+        "site characterization",
+        "conceptual site model",
+        "site investigation data",
+        "subsurface characterisation",
+        "subsurface characterization"
+      ],
+      "why": "investigation data feeding models of contamination"
+    },
+    {
+      "term": "plume modelling",
+      "tier": "context",
+      "variants": [
+        "plume modeling",
+        "groundwater modelling",
+        "groundwater modeling",
+        "fate and transport model",
+        "contaminant transport model",
+        "plume prediction"
+      ],
+      "why": "predictive groundwater and fate-and-transport models"
+    },
+    {
+      "term": "predictive remediation analytics",
+      "tier": "ai",
+      "variants": [
+        "predictive contamination model",
+        "machine learning site model",
+        "AI-driven remediation",
+        "remediation analytics",
+        "contamination prediction",
+        "data-driven remediation"
+      ],
+      "why": "ML applied to contamination and remedy performance data"
+    },
+    {
+      "term": "remedy optimisation",
+      "tier": "context",
+      "variants": [
+        "remedy optimization",
+        "remediation optimisation",
+        "remediation optimization",
+        "treatment system optimisation",
+        "treatment system optimization",
+        "long-term monitoring optimisation",
+        "long-term monitoring optimization"
+      ],
+      "why": "algorithmic tuning of treatment systems"
+    },
+    {
+      "term": "remote telemetry",
+      "tier": "context",
+      "variants": [
+        "automated groundwater monitoring",
+        "real-time monitoring",
+        "sensor network",
+        "remote system monitoring",
+        "telemetry system",
+        "continuous monitoring"
+      ],
+      "why": "sensors and telemetry on treatment systems and wells"
+    },
+    {
+      "term": "drone survey",
+      "tier": "context",
+      "variants": [
+        "UAV survey",
+        "drone mapping",
+        "drone-based monitoring",
+        "aerial survey",
+        "LiDAR survey",
+        "unmanned aerial vehicle",
+        "drone inspection"
+      ],
+      "why": "UAV mapping of contaminated and reclaimed sites"
+    },
+    {
+      "term": "remote sensing",
+      "tier": "context",
+      "variants": [
+        "satellite imagery",
+        "hyperspectral imaging",
+        "multispectral imagery",
+        "InSAR",
+        "thermal imaging",
+        "earth observation"
+      ],
+      "why": "satellite and hyperspectral detection of contamination"
+    },
+    {
+      "term": "environmental data management system",
+      "tier": "context",
+      "variants": [
+        "environmental data platform",
+        "environmental database",
+        "GIS platform",
+        "geographic information system",
+        "data visualisation platform",
+        "3D site model"
+      ],
+      "why": "databases underpinning analytics and reporting"
+    },
+    {
+      "term": "digital twin",
+      "tier": "context",
+      "variants": [
+        "virtual twin",
+        "digital conceptual site model",
+        "digital replica"
+      ],
+      "why": "virtual site or facility model"
+    },
+    {
+      "term": "robotic decommissioning",
+      "tier": "context",
+      "variants": [
+        "decommissioning robot",
+        "robotic dismantling",
+        "robotic demolition",
+        "demolition robot",
+        "remote dismantling",
+        "nuclear robotics"
+      ],
+      "why": "robots dismantling contaminated plant"
+    },
+    {
+      "term": "remote handling",
+      "tier": "context",
+      "variants": [
+        "remotely operated vehicle",
+        "teleoperated",
+        "tele-operated manipulator",
+        "remote manipulation",
+        "robotic arm",
+        "glovebox robot",
+        "remotely operated equipment"
+      ],
+      "why": "teleoperated work in radioactive or toxic areas"
+    },
+    {
+      "term": "autonomous characterisation robot",
+      "tier": "ai",
+      "variants": [
+        "autonomous characterization robot",
+        "autonomous mapping robot",
+        "radiation mapping robot",
+        "autonomous survey robot",
+        "autonomous inspection",
+        "robotic characterisation"
+      ],
+      "why": "self-navigating robots mapping radiation and contamination"
+    },
+    {
+      "term": "radiation mapping",
+      "tier": "context",
+      "variants": [
+        "radiological characterisation",
+        "radiological characterization",
+        "gamma imaging",
+        "radiological survey",
+        "dose mapping"
+      ],
+      "why": "drone and sensor mapping of radiological hazards"
+    },
+    {
+      "term": "robotic tank cleaning",
+      "tier": "context",
+      "variants": [
+        "tank cleaning robot",
+        "no-man entry",
+        "non-entry cleaning",
+        "automated tank cleaning",
+        "robotic hydro-blasting",
+        "confined space robot"
+      ],
+      "why": "removing people from confined-space cleaning"
+    },
+    {
+      "term": "advanced geophysical classification",
+      "tier": "ai",
+      "variants": [
+        "UXO detection",
+        "unexploded ordnance detection",
+        "munitions classification",
+        "anomaly classification",
+        "digital geophysical mapping"
+      ],
+      "why": "classification algorithms separating munitions from clutter"
+    },
+    {
+      "term": "automated asbestos detection",
+      "tier": "ai",
+      "variants": [
+        "automated fibre counting",
+        "automated fiber counting",
+        "AI asbestos identification",
+        "asbestos recognition"
+      ],
+      "why": "image analysis identifying asbestos fibres or materials"
+    },
+    {
+      "term": "spill detection",
+      "tier": "ai",
+      "variants": [
+        "slick detection",
+        "satellite spill monitoring",
+        "spill surveillance"
+      ],
+      "why": "satellite and sensor detection of spills"
+    },
+    {
+      "term": "spill trajectory modelling",
+      "tier": "context",
+      "variants": [
+        "spill trajectory modeling",
+        "oil spill modelling",
+        "oil spill modeling",
+        "dispersion modelling",
+        "dispersion modeling",
+        "response planning model"
+      ],
+      "why": "predictive modelling for response planning"
+    },
+    {
+      "term": "litter detection",
+      "tier": "ai",
+      "variants": [
+        "plastic detection",
+        "debris detection",
+        "AI litter mapping",
+        "floating debris identification",
+        "litter monitoring camera"
+      ],
+      "why": "image recognition of plastic and debris"
+    },
+    {
+      "term": "automated sampling",
+      "tier": "context",
+      "variants": [
+        "robotic sampling",
+        "autonomous sampling",
+        "sampling drone",
+        "automated sample analysis",
+        "in-situ sensor",
+        "real-time sensing"
+      ],
+      "why": "robotic and autonomous environmental sampling"
+    },
+    {
+      "term": "sensor-based soil sorting",
+      "tier": "context",
+      "variants": [
+        "soil sorting system",
+        "automated soil segregation",
+        "radiological soil sorting",
+        "conveyor-based sorting",
+        "soil screening automation"
+      ],
+      "why": "automated segregation of contaminated soil"
+    },
+    {
+      "term": "rehabilitation monitoring",
+      "tier": "context",
+      "variants": [
+        "reclamation monitoring",
+        "revegetation monitoring",
+        "vegetation monitoring",
+        "closure monitoring",
+        "landform monitoring"
+      ],
+      "why": "satellite tracking of revegetation and landform stability"
+    },
+    {
+      "term": "connected worker",
+      "tier": "context",
+      "variants": [
+        "wearable sensor",
+        "exposure monitoring wearable",
+        "smart PPE",
+        "lone worker monitoring",
+        "worker location tracking"
+      ],
+      "why": "wearables monitoring exposure and safety of field crews"
+    },
+    {
+      "term": "environmental due diligence automation",
+      "tier": "ai",
+      "variants": [
+        "automated environmental due diligence",
+        "automated site assessment",
+        "AI-assisted site assessment",
+        "automated report generation",
+        "environmental risk screening tool"
+      ],
+      "why": "AI drafting and screening of site assessments"
+    },
+    {
+      "term": "brownfield redevelopment",
+      "tier": "context",
+      "variants": [
+        "brownfield site",
+        "site redevelopment",
+        "land regeneration",
+        "brownfield regeneration",
+        "former industrial site",
+        "site repurposing"
+      ],
+      "why": "contaminated sites reused for data centres and energy"
+    },
+    {
+      "term": "data center",
+      "tier": "context",
+      "variants": [
+        "data centre",
+        "hyperscaler"
+      ],
+      "why": "data-centre projects on remediated land"
+    }
+  ],
+  "class_terms": {}
+}

@@ -1,0 +1,543 @@
+{
+  "id": "43",
+  "name": "Specialized construction activities",
+  "section": "F",
+  "summary": "Electrical, mechanical and other specialty contractors report AI overwhelmingly as demand: data-centre, hyperscale and semiconductor projects drive backlog for electrical, cooling, fire-protection and modular fabrication work, with skilled labour, power availability and equipment lead times as constraints. Own use is modest: BIM and prefabrication automation, AI estimating, layout and drilling robots, and analytics in building controls and service such as fault detection and predictive maintenance. Demolition and site-preparation firms mention remote-controlled machines and machine control.",
+  "terms": [
+    {
+      "term": "data center",
+      "tier": "context",
+      "variants": [
+        "data centre"
+      ],
+      "why": "dominant growth end-market for specialty trades"
+    },
+    {
+      "term": "hyperscaler",
+      "tier": "context",
+      "variants": [
+        "hyperscale"
+      ],
+      "why": "tech clients behind data-centre backlog"
+    },
+    {
+      "term": "mission critical",
+      "tier": "context",
+      "variants": [
+        "critical facilities",
+        "critical environments",
+        "technology facilities",
+        "network and communications",
+        "high-tech facilities"
+      ],
+      "why": "contractor label for data-centre and similar facilities"
+    },
+    {
+      "term": "semiconductor fab",
+      "tier": "context",
+      "variants": [
+        "semiconductor fabrication plant",
+        "semiconductor facility",
+        "chip plant",
+        "chip factory",
+        "wafer fab",
+        "high-tech manufacturing",
+        "cleanroom"
+      ],
+      "why": "chip plant work linked to AI chip demand"
+    },
+    {
+      "term": "AI infrastructure",
+      "tier": "ai",
+      "variants": [
+        "AI-driven demand",
+        "AI build-out",
+        "AI factory",
+        "AI-related construction",
+        "AI investment boom",
+        "AI campus"
+      ],
+      "why": "AI investment named as backlog driver"
+    },
+    {
+      "term": "liquid cooling",
+      "tier": "context",
+      "variants": [
+        "direct-to-chip cooling",
+        "immersion cooling",
+        "rear-door heat exchanger",
+        "cooling distribution unit",
+        "chilled water plant",
+        "high-density cooling",
+        "liquid-cooled"
+      ],
+      "why": "cooling systems for dense AI racks"
+    },
+    {
+      "term": "power density",
+      "tier": "context",
+      "variants": [
+        "rack density",
+        "high-density rack",
+        "kilowatts per rack",
+        "compute density"
+      ],
+      "why": "rising rack loads increasing electrical and mechanical scope"
+    },
+    {
+      "term": "electrical infrastructure",
+      "tier": "context",
+      "variants": [
+        "switchgear",
+        "busway",
+        "uninterruptible power supply",
+        "backup generation",
+        "power distribution unit",
+        "medium-voltage",
+        "electrical fit-out"
+      ],
+      "why": "switchgear, busway and backup power for data halls"
+    },
+    {
+      "term": "data hall fit-out",
+      "tier": "context",
+      "variants": [
+        "white space",
+        "data hall",
+        "structured cabling",
+        "raised floor",
+        "containment system",
+        "server room"
+      ],
+      "why": "interior build of server rooms"
+    },
+    {
+      "term": "modular construction",
+      "tier": "context",
+      "variants": [
+        "prefabrication",
+        "offsite fabrication",
+        "off-site fabrication",
+        "modular build",
+        "prefabricated module",
+        "modular data hall",
+        "skid-mounted",
+        "modular power room",
+        "modular electrical room"
+      ],
+      "why": "offsite-built power and cooling modules for data centres"
+    },
+    {
+      "term": "equipment lead time",
+      "tier": "context",
+      "variants": [
+        "switchgear lead time",
+        "transformer lead time",
+        "generator lead time",
+        "long-lead equipment",
+        "chiller lead time"
+      ],
+      "why": "equipment shortages from data-centre boom"
+    },
+    {
+      "term": "skilled labour shortage",
+      "tier": "context",
+      "variants": [
+        "skilled labor shortage",
+        "craft labor",
+        "craft labour",
+        "electrician shortage",
+        "labor availability",
+        "labour availability",
+        "shortage of skilled workers",
+        "skilled trades shortage"
+      ],
+      "why": "workforce constraint as data-centre work scales"
+    },
+    {
+      "term": "power availability",
+      "tier": "context",
+      "variants": [
+        "grid connection delay",
+        "power constraint",
+        "utility interconnection",
+        "grid capacity constraint",
+        "energization delay",
+        "on-site power generation",
+        "behind-the-meter"
+      ],
+      "why": "grid capacity delaying customers' projects"
+    },
+    {
+      "term": "building information modelling",
+      "tier": "context",
+      "variants": [
+        "building information modeling",
+        "BIM",
+        "virtual design and construction",
+        "3D coordination",
+        "model-based coordination",
+        "clash detection"
+      ],
+      "case_sensitive_variants": [
+        "BIM"
+      ],
+      "why": "model data underpinning coordination and prefabrication"
+    },
+    {
+      "term": "prefabrication automation",
+      "tier": "context",
+      "variants": [
+        "robotic welding",
+        "automated pipe fabrication",
+        "automated fabrication",
+        "fabrication shop automation",
+        "robotic fabrication",
+        "CNC fabrication"
+      ],
+      "why": "automated shops for pipe, duct and electrical assemblies"
+    },
+    {
+      "term": "layout robot",
+      "tier": "ai",
+      "variants": [
+        "robotic layout",
+        "drilling robot",
+        "robotic total station",
+        "Jaibot",
+        "installation robot"
+      ],
+      "why": "robots marking and drilling installation points"
+    },
+    {
+      "term": "construction robotics",
+      "tier": "ai",
+      "variants": [
+        "construction robot",
+        "welding robot",
+        "site robot",
+        "robotic installation",
+        "robotic construction"
+      ],
+      "why": "robots performing site tasks"
+    },
+    {
+      "term": "AI estimating",
+      "tier": "ai",
+      "variants": [
+        "automated takeoff",
+        "automated quantity take-off",
+        "automated estimating",
+        "AI-assisted estimating",
+        "AI takeoff",
+        "estimating automation"
+      ],
+      "why": "automated take-off and bid preparation"
+    },
+    {
+      "term": "reality capture",
+      "tier": "context",
+      "variants": [
+        "laser scanning",
+        "3D scanning",
+        "point cloud",
+        "drone survey",
+        "photogrammetry",
+        "360-degree capture"
+      ],
+      "why": "scans and photos digitising site conditions"
+    },
+    {
+      "term": "digital twin",
+      "tier": "context",
+      "variants": [
+        "virtual twin",
+        "digital replica",
+        "building twin"
+      ],
+      "why": "virtual model of building systems"
+    },
+    {
+      "term": "building automation system",
+      "tier": "context",
+      "variants": [
+        "building management system",
+        "building controls",
+        "smart building",
+        "intelligent building",
+        "energy management controls",
+        "integrated building system"
+      ],
+      "why": "controls platform where analytics and AI are applied"
+    },
+    {
+      "term": "fault detection and diagnostics",
+      "tier": "ai",
+      "variants": [
+        "automated fault detection",
+        "FDD",
+        "fault detection analytics",
+        "smart building analytics",
+        "building analytics",
+        "analytics-driven maintenance"
+      ],
+      "case_sensitive_variants": [
+        "FDD"
+      ],
+      "why": "automated analytics finding HVAC and system faults"
+    },
+    {
+      "term": "HVAC optimisation",
+      "tier": "context",
+      "variants": [
+        "HVAC optimization",
+        "AI-optimised HVAC",
+        "AI-optimized HVAC",
+        "chiller plant optimisation",
+        "chiller plant optimization",
+        "energy optimisation",
+        "energy optimization",
+        "autonomous building controls"
+      ],
+      "why": "algorithmic control of heating and cooling plant"
+    },
+    {
+      "term": "predictive maintenance",
+      "tier": "ai",
+      "variants": [
+        "predictive service",
+        "predictive asset maintenance",
+        "failure prediction",
+        "prognostics"
+      ],
+      "why": "ML maintenance of installed building systems"
+    },
+    {
+      "term": "remote monitoring",
+      "tier": "context",
+      "variants": [
+        "connected services",
+        "remote diagnostics",
+        "remote service",
+        "connected equipment",
+        "monitoring-based commissioning",
+        "remote inspection"
+      ],
+      "why": "connected service on installed systems"
+    },
+    {
+      "term": "technician dispatch optimisation",
+      "tier": "context",
+      "variants": [
+        "technician dispatch optimization",
+        "field service scheduling",
+        "service scheduling optimisation",
+        "workforce scheduling",
+        "route optimisation",
+        "route optimization",
+        "field service management software"
+      ],
+      "why": "algorithmic scheduling of service technicians"
+    },
+    {
+      "term": "video analytics",
+      "tier": "ai",
+      "variants": [
+        "intelligent video surveillance",
+        "AI-enabled security system",
+        "video-based fire detection",
+        "smart security system",
+        "AI video",
+        "access control analytics"
+      ],
+      "why": "AI analysis in installed security and fire systems"
+    },
+    {
+      "term": "computer vision safety monitoring",
+      "tier": "ai",
+      "variants": [
+        "PPE detection",
+        "AI safety monitoring",
+        "AI camera",
+        "hazard detection camera",
+        "safety video analytics"
+      ],
+      "why": "cameras detecting hazards and missing PPE"
+    },
+    {
+      "term": "connected worker",
+      "tier": "context",
+      "variants": [
+        "wearable technology",
+        "smart helmet",
+        "wearable sensor",
+        "exoskeleton",
+        "worker location tracking"
+      ],
+      "why": "wearables and sensors on site personnel"
+    }
+  ],
+  "class_terms": {
+    "4311": [
+      {
+        "term": "demolition robot",
+        "tier": "context",
+        "variants": [
+          "robotic demolition",
+          "remote-controlled demolition machine",
+          "remote demolition",
+          "demolition robotics",
+          "unmanned demolition"
+        ],
+        "why": "remote-controlled machines for hazardous demolition"
+      }
+    ],
+    "4312": [
+      {
+        "term": "machine control",
+        "tier": "context",
+        "variants": [
+          "machine guidance",
+          "automated grade control",
+          "GPS grading",
+          "intelligent compaction",
+          "semi-autonomous machine"
+        ],
+        "why": "GPS-guided grading and earthmoving"
+      },
+      {
+        "term": "autonomous construction equipment",
+        "tier": "ai",
+        "variants": [
+          "autonomous dozer",
+          "autonomous excavator",
+          "autonomous compactor",
+          "autonomous haul truck",
+          "unmanned construction",
+          "autonomous construction machinery"
+        ],
+        "why": "self-operating earthmoving machinery"
+      },
+      {
+        "term": "site development",
+        "tier": "context",
+        "variants": [
+          "site preparation",
+          "mass grading",
+          "pad-ready site",
+          "campus site work",
+          "e-infrastructure"
+        ],
+        "why": "earthworks for data-centre campuses"
+      }
+    ],
+    "4321": [
+      {
+        "term": "smart home installation",
+        "tier": "context",
+        "variants": [
+          "smart home",
+          "home automation",
+          "home energy management",
+          "smart panel",
+          "smart charging",
+          "smart lighting control"
+        ],
+        "why": "connected-home and EV-charging installs with energy optimisation"
+      },
+      {
+        "term": "high-voltage installation",
+        "tier": "context",
+        "variants": [
+          "substation installation",
+          "medium-voltage switchgear installation",
+          "utility interconnection work"
+        ],
+        "why": "high-voltage scope for data-centre power connections"
+      }
+    ],
+    "4322": [
+      {
+        "term": "data center cooling",
+        "tier": "context",
+        "variants": [
+          "data centre cooling",
+          "process cooling",
+          "precision cooling",
+          "computer room air handler",
+          "CRAH",
+          "cooling tower installation"
+        ],
+        "case_sensitive_variants": [
+          "CRAH"
+        ],
+        "why": "mechanical cooling scope in data-centre projects"
+      },
+      {
+        "term": "smart thermostat",
+        "tier": "context",
+        "variants": [
+          "connected thermostat",
+          "smart heating control",
+          "intelligent heating control",
+          "smart HVAC"
+        ],
+        "why": "connected heating controls installed with optimisation features"
+      }
+    ],
+    "4330": [
+      {
+        "term": "drywall finishing robot",
+        "tier": "ai",
+        "variants": [
+          "painting robot",
+          "drywall robot",
+          "plastering robot",
+          "tiling robot",
+          "robotic finishing",
+          "spray robot"
+        ],
+        "why": "robots for finishing, painting and tiling"
+      }
+    ],
+    "4340": [
+      {
+        "term": "contractor marketplace",
+        "tier": "context",
+        "variants": [
+          "home services marketplace",
+          "tradesperson platform",
+          "matching algorithm",
+          "instant quote",
+          "lead generation platform",
+          "automated quoting"
+        ],
+        "why": "online matching of customers and tradespeople"
+      }
+    ],
+    "4390": [
+      {
+        "term": "autonomous pile driving",
+        "tier": "ai",
+        "variants": [
+          "autonomous pile driver",
+          "robotic piling",
+          "automated piling rig"
+        ],
+        "why": "automated piling and foundation rigs"
+      },
+      {
+        "term": "remote-operated crane",
+        "tier": "context",
+        "variants": [
+          "autonomous crane",
+          "crane automation",
+          "crane telematics",
+          "lift planning software",
+          "anti-collision system"
+        ],
+        "why": "crane automation and lift planning tools"
+      }
+    ]
+  }
+}

@@ -1,0 +1,704 @@
+{
+  "id": "32",
+  "name": "Other manufacturing",
+  "section": "C",
+  "summary": "Medical and dental device makers dominate the AI discussion here: robotic-assisted and digitally planned surgery, AI-enabled device software and its FDA/EU regulation, automated insulin delivery, AI treatment planning for aligners, AI glasses, with cyber security, patient data, reimbursement and software-recall liability as risks. Toy and game makers discuss AI toys, children's privacy and AI-generated art; sports goods makers AI-designed equipment and connected coaching; instrument makers AI music generation; jewellers AI grading, design and clienteling.",
+  "terms": [
+    {
+      "term": "automated visual inspection",
+      "tier": "ai",
+      "variants": [
+        "automated optical inspection",
+        "machine vision",
+        "vision inspection system",
+        "AI-based quality inspection",
+        "automated defect detection"
+      ],
+      "why": "AI quality inspection of small precision products"
+    },
+    {
+      "term": "predictive maintenance",
+      "tier": "ai",
+      "why": "ML on production equipment data"
+    },
+    {
+      "term": "smart factory",
+      "tier": "context",
+      "variants": [
+        "Industry 4.0",
+        "digital manufacturing",
+        "lights-out manufacturing",
+        "connected factory"
+      ],
+      "why": "plant programmes under which AI use is reported"
+    },
+    {
+      "term": "digital twin",
+      "tier": "context",
+      "why": "virtual product, patient or line models"
+    },
+    {
+      "term": "collaborative robot",
+      "tier": "context",
+      "variants": [
+        "cobot"
+      ],
+      "why": "flexible robots in assembly and packing"
+    },
+    {
+      "term": "mass customisation",
+      "tier": "context",
+      "variants": [
+        "mass customization",
+        "custom-fit",
+        "3D printing",
+        "additive manufacturing",
+        "3D scanning",
+        "made-to-measure"
+      ],
+      "why": "patient- or customer-specific products made from scan data"
+    },
+    {
+      "term": "virtual try-on",
+      "tier": "ai",
+      "variants": [
+        "augmented reality try-on",
+        "AR try-on",
+        "virtual fitting",
+        "virtual styling"
+      ],
+      "why": "AI and AR fitting of eyewear and jewellery"
+    },
+    {
+      "term": "trend forecasting",
+      "tier": "context",
+      "variants": [
+        "trend detection",
+        "social listening",
+        "demand sensing",
+        "sell-through forecasting"
+      ],
+      "why": "ML reading demand signals for short-lived products"
+    },
+    {
+      "term": "counterfeit detection",
+      "tier": "context",
+      "variants": [
+        "AI authentication",
+        "product authentication",
+        "anti-counterfeiting technology",
+        "brand protection monitoring"
+      ],
+      "why": "AI-based authentication and online brand protection"
+    }
+  ],
+  "class_terms": {
+    "3211": [
+      {
+        "term": "AI diamond grading",
+        "tier": "ai",
+        "variants": [
+          "automated diamond grading",
+          "automated grading",
+          "AI-based grading",
+          "diamond sorting machine",
+          "synthetic detection",
+          "automated stone sorting"
+        ],
+        "why": "automated grading and sorting of stones"
+      },
+      {
+        "term": "diamond traceability",
+        "tier": "context",
+        "variants": [
+          "blockchain traceability",
+          "Tracr",
+          "provenance platform",
+          "digital passport"
+        ],
+        "why": "provenance platforms using image matching"
+      },
+      {
+        "term": "clienteling",
+        "tier": "context",
+        "variants": [
+          "personalised recommendations",
+          "personalized recommendations",
+          "customer data platform"
+        ],
+        "why": "data-driven personal selling in luxury retail"
+      }
+    ],
+    "3212": [
+      {
+        "term": "AI-generated jewellery design",
+        "tier": "ai",
+        "variants": [
+          "AI-designed jewellery",
+          "AI-designed jewelry",
+          "generative jewellery design",
+          "generative jewelry design",
+          "AI-assisted design"
+        ],
+        "why": "generative tools in fashion jewellery design"
+      }
+    ],
+    "3220": [
+      {
+        "term": "AI music generation",
+        "tier": "ai",
+        "variants": [
+          "generative music",
+          "AI-generated music",
+          "AI composition"
+        ],
+        "why": "generative music as product feature and competitive threat"
+      },
+      {
+        "term": "singing synthesis",
+        "tier": "ai",
+        "variants": [
+          "VOCALOID",
+          "voice synthesis",
+          "AI singing",
+          "AI accompaniment",
+          "AI ensemble",
+          "stem separation"
+        ],
+        "why": "AI voice and accompaniment in instruments"
+      },
+      {
+        "term": "music learning app",
+        "tier": "context",
+        "variants": [
+          "AI music tutor",
+          "interactive lessons",
+          "smart piano",
+          "practice feedback",
+          "connected instrument",
+          "self-playing piano"
+        ],
+        "why": "connected instruments with AI practice feedback"
+      }
+    ],
+    "3230": [
+      {
+        "term": "AI-designed club face",
+        "tier": "ai",
+        "variants": [
+          "A.I. designed",
+          "Ai Smoke",
+          "Ai Smart Face",
+          "Flash Face",
+          "AI-designed golf club",
+          "supercomputer-designed"
+        ],
+        "why": "golf makers' machine-learning designed equipment"
+      },
+      {
+        "term": "AI coaching",
+        "tier": "ai",
+        "variants": [
+          "AI personal trainer",
+          "AI coach",
+          "virtual coach",
+          "form feedback",
+          "movement tracking",
+          "rep counting",
+          "Peloton IQ",
+          "personalised workout",
+          "personalized workout"
+        ],
+        "why": "AI trainers in connected fitness products"
+      },
+      {
+        "term": "connected fitness",
+        "tier": "context",
+        "variants": [
+          "smart home gym",
+          "connected bike",
+          "smart treadmill",
+          "fitness subscription",
+          "connected strength"
+        ],
+        "why": "equipment category carrying AI coaching"
+      },
+      {
+        "term": "ball tracking",
+        "tier": "context",
+        "variants": [
+          "shot tracking",
+          "swing analysis",
+          "launch monitor",
+          "Toptracer",
+          "performance tracking"
+        ],
+        "why": "tracking products using camera and radar algorithms"
+      },
+      {
+        "term": "connected ball",
+        "tier": "context",
+        "variants": [
+          "sensor-equipped ball",
+          "wearable tracker",
+          "athlete tracking",
+          "performance analytics"
+        ],
+        "why": "sensor-equipped equipment producing performance data"
+      }
+    ],
+    "3240": [
+      {
+        "term": "AI toy",
+        "tier": "ai",
+        "variants": [
+          "AI-powered toy",
+          "AI companion toy",
+          "AI plush",
+          "conversational toy",
+          "AI playmate",
+          "AI pet"
+        ],
+        "why": "toys with conversational or generative AI"
+      },
+      {
+        "term": "connected toy",
+        "tier": "context",
+        "variants": [
+          "smart toy",
+          "interactive toy",
+          "app-enabled toy",
+          "robotic toy",
+          "robot pet",
+          "coding robot",
+          "voice-enabled toy"
+        ],
+        "why": "app- and cloud-linked toys collecting child data"
+      },
+      {
+        "term": "children's privacy",
+        "tier": "context",
+        "variants": [
+          "COPPA",
+          "Children's Online Privacy Protection Act",
+          "children's data",
+          "age-appropriate design",
+          "children's online safety",
+          "KOSA"
+        ],
+        "case_sensitive_variants": [
+          "COPPA",
+          "KOSA"
+        ],
+        "why": "child data rules applying to AI and connected toys"
+      },
+      {
+        "term": "toy safety",
+        "tier": "context",
+        "why": "EU safety rules now covering connected and AI toys"
+      },
+      {
+        "term": "AI-generated art",
+        "tier": "ai",
+        "variants": [
+          "AI-generated artwork",
+          "AI art",
+          "human-created art"
+        ],
+        "why": "generative art in games and cards; creator backlash"
+      },
+      {
+        "term": "AI game master",
+        "tier": "ai",
+        "variants": [
+          "AI dungeon master",
+          "AI-driven NPC",
+          "non-player character AI",
+          "procedural content generation",
+          "AI-assisted game development"
+        ],
+        "why": "AI characters and content in games"
+      }
+    ],
+    "3250": [
+      {
+        "term": "robotic-assisted surgery",
+        "tier": "context",
+        "variants": [
+          "robotic surgery",
+          "surgical robot",
+          "robot-assisted surgery",
+          "surgical robotics",
+          "da Vinci",
+          "Mako SmartRobotics",
+          "Hugo RAS",
+          "VELYS",
+          "ROSA Knee",
+          "robotic arm-assisted"
+        ],
+        "why": "surgical robots, the platform for surgical AI"
+      },
+      {
+        "term": "surgical intelligence",
+        "tier": "ai",
+        "variants": [
+          "surgical video analysis",
+          "AI-assisted surgery",
+          "intraoperative decision support",
+          "Touch Surgery",
+          "Case Insights",
+          "surgical data science"
+        ],
+        "why": "AI analysis of surgical video and data"
+      },
+      {
+        "term": "digital surgery",
+        "tier": "context",
+        "variants": [
+          "connected operating room",
+          "smart operating room",
+          "digital operating room",
+          "smart implant",
+          "smart knee",
+          "Persona IQ"
+        ],
+        "why": "connected operating room and smart implant ecosystems"
+      },
+      {
+        "term": "surgical navigation",
+        "tier": "context",
+        "variants": [
+          "image-guided surgery",
+          "computer-assisted surgery",
+          "surgical planning software",
+          "preoperative planning",
+          "patient-specific instrumentation",
+          "enabling technology"
+        ],
+        "why": "image guidance and planning software"
+      },
+      {
+        "term": "patient-specific implant",
+        "tier": "context",
+        "variants": [
+          "personalised implant",
+          "personalized implant",
+          "3D-printed implant",
+          "patient-matched"
+        ],
+        "why": "implants designed from scans with automated planning"
+      },
+      {
+        "term": "AI-enabled medical device",
+        "tier": "ai",
+        "variants": [
+          "AI-enabled device",
+          "AI/ML-enabled",
+          "machine learning-enabled device",
+          "AI-powered diagnostic",
+          "adaptive algorithm",
+          "locked algorithm"
+        ],
+        "why": "regulatory category for devices with AI functions"
+      },
+      {
+        "term": "software as a medical device",
+        "tier": "context",
+        "variants": [
+          "SaMD",
+          "medical device software",
+          "software in a medical device"
+        ],
+        "case_sensitive_variants": [
+          "SaMD"
+        ],
+        "why": "regulatory class covering most clinical AI"
+      },
+      {
+        "term": "predetermined change control plan",
+        "tier": "ai",
+        "variants": [
+          "PCCP"
+        ],
+        "case_sensitive_variants": [
+          "PCCP"
+        ],
+        "why": "FDA mechanism for updating AI device software"
+      },
+      {
+        "term": "good machine learning practice",
+        "tier": "ai",
+        "variants": [
+          "GMLP",
+          "total product lifecycle approach",
+          "AI/ML action plan"
+        ],
+        "case_sensitive_variants": [
+          "GMLP"
+        ],
+        "why": "regulators' principles for AI device development"
+      },
+      {
+        "term": "EU MDR",
+        "tier": "context",
+        "variants": [
+          "Medical Device Regulation",
+          "notified body",
+          "post-market surveillance"
+        ],
+        "why": "device rules under which AI software is assessed"
+      },
+      {
+        "term": "computer-aided detection",
+        "tier": "ai",
+        "variants": [
+          "computer-aided diagnosis",
+          "CADe",
+          "CADx",
+          "AI-assisted detection",
+          "polyp detection",
+          "GI Genius",
+          "AI-aided endoscopy"
+        ],
+        "case_sensitive_variants": [
+          "CADe",
+          "CADx"
+        ],
+        "why": "AI flagging findings in endoscopy and imaging"
+      },
+      {
+        "term": "predictive monitoring",
+        "tier": "ai",
+        "variants": [
+          "hypotension prediction index",
+          "Acumen HPI",
+          "predictive algorithm",
+          "deterioration prediction",
+          "sepsis prediction"
+        ],
+        "why": "algorithms predicting patient deterioration from device data"
+      },
+      {
+        "term": "clinical decision support",
+        "tier": "context",
+        "variants": [
+          "decision support software",
+          "diagnostic decision support",
+          "treatment decision support",
+          "risk stratification"
+        ],
+        "why": "software category where diagnostic AI is sold"
+      },
+      {
+        "term": "automated insulin delivery",
+        "tier": "ai",
+        "variants": [
+          "AID system",
+          "closed-loop insulin",
+          "hybrid closed loop",
+          "artificial pancreas",
+          "Control-IQ",
+          "SmartGuard",
+          "Omnipod 5",
+          "insulin dosing algorithm"
+        ],
+        "why": "dosing algorithms in insulin pumps"
+      },
+      {
+        "term": "continuous glucose monitoring",
+        "tier": "context",
+        "variants": [
+          "CGM",
+          "glucose sensor",
+          "glucose prediction",
+          "predictive low glucose alert"
+        ],
+        "case_sensitive_variants": [
+          "CGM"
+        ],
+        "why": "sensor data feeding dosing and prediction algorithms"
+      },
+      {
+        "term": "remote patient monitoring",
+        "tier": "context",
+        "variants": [
+          "remote monitoring",
+          "connected care",
+          "wearable sensor",
+          "connected inhaler",
+          "smart inhaler",
+          "digital therapeutics"
+        ],
+        "why": "connected devices producing data for algorithms"
+      },
+      {
+        "term": "digital health",
+        "tier": "context",
+        "variants": [
+          "connected health",
+          "cloud-connected device",
+          "personalised therapy",
+          "personalized therapy",
+          "therapy adherence prediction",
+          "out-of-hospital software"
+        ],
+        "why": "device makers' software and data businesses"
+      },
+      {
+        "term": "clear aligner",
+        "tier": "context",
+        "variants": [
+          "digital treatment planning",
+          "ClinCheck",
+          "treatment planning software",
+          "intraoral scanner",
+          "iTero",
+          "digital dentistry",
+          "chairside CAD/CAM"
+        ],
+        "why": "aligner business built on digital treatment planning"
+      },
+      {
+        "term": "dental AI",
+        "tier": "ai",
+        "variants": [
+          "AI treatment planning",
+          "automated treatment planning",
+          "AI-assisted diagnostics",
+          "caries detection",
+          "automated tooth segmentation",
+          "smile simulation",
+          "outcome simulation",
+          "AI radiograph analysis"
+        ],
+        "why": "AI diagnosis and planning in dentistry and orthodontics"
+      },
+      {
+        "term": "AI glasses",
+        "tier": "ai",
+        "variants": [
+          "Ray-Ban Meta",
+          "Oakley Meta",
+          "wearable AI"
+        ],
+        "why": "eyewear with built-in AI assistant"
+      },
+      {
+        "term": "smart eyewear",
+        "tier": "context",
+        "variants": [
+          "smart glasses",
+          "connected eyewear",
+          "Nuance Audio",
+          "hearing glasses"
+        ],
+        "why": "connected eyewear and hearing glasses"
+      },
+      {
+        "term": "retinal image analysis",
+        "tier": "ai",
+        "variants": [
+          "diabetic retinopathy screening",
+          "AI-based retinal screening",
+          "automated refraction",
+          "fundus image analysis"
+        ],
+        "why": "AI screening from eye images"
+      },
+      {
+        "term": "tele-optometry",
+        "tier": "context",
+        "variants": [
+          "teleoptometry",
+          "remote eye exam",
+          "remote refraction"
+        ],
+        "why": "remote eye exams relying on automated measurement"
+      },
+      {
+        "term": "medical device cybersecurity",
+        "tier": "context",
+        "variants": [
+          "premarket cybersecurity",
+          "software bill of materials",
+          "SBOM",
+          "Section 524B"
+        ],
+        "case_sensitive_variants": [
+          "SBOM"
+        ],
+        "why": "security duties for connected, software-driven devices"
+      },
+      {
+        "term": "real-world evidence",
+        "tier": "context",
+        "variants": [
+          "real-world data",
+          "procedure data",
+          "clinical data registry"
+        ],
+        "why": "device and procedure data used to train and validate AI"
+      },
+      {
+        "term": "de-identified patient data",
+        "tier": "context",
+        "variants": [
+          "anonymised patient data",
+          "anonymized patient data",
+          "European Health Data Space",
+          "secondary use of health data"
+        ],
+        "why": "health data rights needed for AI development"
+      },
+      {
+        "term": "software reimbursement",
+        "tier": "context",
+        "variants": [
+          "reimbursement for AI-enabled devices",
+          "New Technology Add-on Payment",
+          "DiGA"
+        ],
+        "case_sensitive_variants": [
+          "DiGA"
+        ],
+        "why": "payment pathways for software and AI-based care"
+      },
+      {
+        "term": "software recall",
+        "tier": "context",
+        "variants": [
+          "software malfunction",
+          "algorithm error",
+          "software defect",
+          "software-related recall"
+        ],
+        "why": "liability and recalls from software and algorithm faults"
+      }
+    ],
+    "3290": [
+      {
+        "term": "connected worker",
+        "tier": "context",
+        "variants": [
+          "connected safety",
+          "smart PPE",
+          "smart helmet",
+          "connected PPE",
+          "lone worker monitoring",
+          "wearable safety device"
+        ],
+        "why": "sensor-equipped protective gear generating safety data"
+      },
+      {
+        "term": "PPE detection",
+        "tier": "ai",
+        "variants": [
+          "PPE compliance detection",
+          "computer vision safety",
+          "AI safety camera"
+        ],
+        "why": "camera AI checking protective equipment use"
+      }
+    ]
+  }
+}

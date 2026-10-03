@@ -1,0 +1,514 @@
+{
+  "id": "13",
+  "name": "Manufacture of textiles",
+  "section": "C",
+  "summary": "Textile mills describe AI chiefly as intelligent manufacturing: automated fabric inspection, yarn monitoring, AI colour matching, predictive maintenance and unmanned workshops that reduce labour dependence. Design and sales use 3D sampling, AI-generated patterns and trend forecasting, while sustainability rules bring traceability, digital product passports and automated textile sorting for recycling. A demand-side story exists for weavers of electronic-grade glass fabric used in AI-server circuit boards.",
+  "terms": [
+    {
+      "term": "automated fabric inspection",
+      "tier": "ai",
+      "variants": [
+        "fabric inspection system",
+        "fabric defect detection",
+        "AI fabric inspection",
+        "automatic cloth inspection",
+        "online fabric inspection",
+        "automatic fabric inspection"
+      ],
+      "case_sensitive_variants": [],
+      "why": "vision AI detecting weaving and knitting defects"
+    },
+    {
+      "term": "AI-powered quality control",
+      "tier": "ai",
+      "variants": [
+        "AI quality inspection",
+        "AI-based quality inspection",
+        "AI visual inspection",
+        "AI-based defect detection",
+        "deep learning defect detection"
+      ],
+      "case_sensitive_variants": [],
+      "why": "explicit AI inspection claim"
+    },
+    {
+      "term": "machine vision",
+      "tier": "ai",
+      "variants": [
+        "vision inspection",
+        "automated visual inspection",
+        "automated optical inspection"
+      ],
+      "case_sensitive_variants": [],
+      "why": "camera-based inspection of yarn and fabric"
+    },
+    {
+      "term": "yarn quality monitoring",
+      "tier": "context",
+      "variants": [
+        "online yarn monitoring",
+        "yarn clearer",
+        "electronic yarn clearing",
+        "yarn fault detection",
+        "spindle monitoring",
+        "end-break detection"
+      ],
+      "case_sensitive_variants": [],
+      "why": "sensor monitoring of spinning quality"
+    },
+    {
+      "term": "cotton contamination detection",
+      "tier": "context",
+      "variants": [
+        "contamination sorter",
+        "foreign fibre detection",
+        "foreign fiber detection",
+        "automated cotton grading",
+        "cotton classing instrument"
+      ],
+      "case_sensitive_variants": [],
+      "why": "optical sorting of foreign fibres"
+    },
+    {
+      "term": "colour matching",
+      "tier": "context",
+      "variants": [
+        "color matching",
+        "recipe prediction",
+        "shade matching",
+        "spectrophotometer"
+      ],
+      "case_sensitive_variants": [],
+      "why": "dye recipe prediction, increasingly ML-based"
+    },
+    {
+      "term": "AI colour matching",
+      "tier": "ai",
+      "variants": [
+        "AI color matching",
+        "AI-based recipe prediction",
+        "AI shade matching",
+        "AI-based colour formulation",
+        "AI-based color formulation"
+      ],
+      "case_sensitive_variants": [],
+      "why": "AI recipe and shade prediction"
+    },
+    {
+      "term": "smart dyeing",
+      "tier": "context",
+      "variants": [
+        "dyeing process optimisation",
+        "dyeing process optimization",
+        "right-first-time dyeing",
+        "automated dosing",
+        "automated dispensing",
+        "intelligent dyeing"
+      ],
+      "case_sensitive_variants": [],
+      "why": "data-driven dyeing and finishing control"
+    },
+    {
+      "term": "process optimisation",
+      "tier": "context",
+      "variants": [
+        "process optimization",
+        "production optimisation",
+        "production optimization",
+        "advanced process control"
+      ],
+      "case_sensitive_variants": [],
+      "why": "generic phrase around AI in production"
+    },
+    {
+      "term": "predictive maintenance",
+      "tier": "ai",
+      "variants": [
+        "prescriptive maintenance",
+        "predictive asset maintenance"
+      ],
+      "case_sensitive_variants": [],
+      "why": "ML-based prediction of equipment failure"
+    },
+    {
+      "term": "smart factory",
+      "tier": "context",
+      "variants": [
+        "smart manufacturing",
+        "factory of the future",
+        "connected factory",
+        "digital factory",
+        "intelligent manufacturing",
+        "intelligent factory",
+        "Industry 4.0",
+        "Industrie 4.0",
+        "fourth industrial revolution"
+      ],
+      "case_sensitive_variants": [],
+      "why": "connected-plant programmes framing AI use"
+    },
+    {
+      "term": "unmanned workshop",
+      "tier": "context",
+      "variants": [
+        "unmanned factory",
+        "lights-out factory",
+        "dark factory",
+        "lights-out manufacturing",
+        "black-light factory",
+        "unmanned production line"
+      ],
+      "case_sensitive_variants": [],
+      "why": "fully automated mills, common in Chinese filings"
+    },
+    {
+      "term": "intelligent spinning",
+      "tier": "context",
+      "variants": [
+        "automatic doffing",
+        "auto-doffer",
+        "automatic winding",
+        "auto-coner",
+        "automated bobbin transport",
+        "smart spinning",
+        "intelligent weaving",
+        "smart loom"
+      ],
+      "case_sensitive_variants": [],
+      "why": "automated spinning and weaving with data-driven control"
+    },
+    {
+      "term": "industrial internet platform",
+      "tier": "context",
+      "variants": [
+        "industrial internet",
+        "IIoT",
+        "industrial big data",
+        "manufacturing execution system",
+        "MES"
+      ],
+      "case_sensitive_variants": [
+        "MES"
+      ],
+      "why": "plant data backbone for AI applications"
+    },
+    {
+      "term": "digital twin",
+      "tier": "context",
+      "variants": [
+        "virtual twin"
+      ],
+      "case_sensitive_variants": [],
+      "why": "virtual plant, process or product model"
+    },
+    {
+      "term": "collaborative robot",
+      "tier": "context",
+      "variants": [
+        "cobot",
+        "industrial robot",
+        "robotic cell",
+        "robotic palletising",
+        "robotic palletizing",
+        "robotic arm"
+      ],
+      "case_sensitive_variants": [],
+      "why": "robots on production and packing lines"
+    },
+    {
+      "term": "labour-saving automation",
+      "tier": "context",
+      "variants": [
+        "labor-saving automation",
+        "automation of manual tasks",
+        "automation of repetitive tasks",
+        "machine substitution",
+        "reduce reliance on manual labour",
+        "reduce reliance on manual labor"
+      ],
+      "case_sensitive_variants": [],
+      "why": "automation motivated by labour cost and shortages"
+    },
+    {
+      "term": "automated warehouse",
+      "tier": "context",
+      "variants": [
+        "warehouse automation",
+        "automated storage and retrieval",
+        "automated distribution centre",
+        "automated distribution center",
+        "automated guided vehicle",
+        "AGV",
+        "autonomous forklift",
+        "autonomous mobile robot",
+        "intelligent warehousing"
+      ],
+      "case_sensitive_variants": [
+        "AGV"
+      ],
+      "why": "robotic storage and logistics"
+    },
+    {
+      "term": "energy optimisation",
+      "tier": "context",
+      "variants": [
+        "energy optimization",
+        "energy management system",
+        "smart energy management"
+      ],
+      "case_sensitive_variants": [],
+      "why": "AI used to cut plant energy use"
+    },
+    {
+      "term": "operational technology",
+      "tier": "context",
+      "variants": [
+        "OT security",
+        "OT cybersecurity",
+        "industrial control system",
+        "SCADA"
+      ],
+      "case_sensitive_variants": [],
+      "why": "plant control systems exposed to cyber risk"
+    },
+    {
+      "term": "3D sampling",
+      "tier": "context",
+      "variants": [
+        "virtual sampling",
+        "digital sampling",
+        "3D virtual prototyping",
+        "3D product development",
+        "digital product creation",
+        "digital fabric library",
+        "digital fabric twin"
+      ],
+      "case_sensitive_variants": [],
+      "why": "virtual product development replacing physical samples"
+    },
+    {
+      "term": "AI-generated design",
+      "tier": "ai",
+      "variants": [
+        "AI-generated pattern",
+        "AI-assisted design",
+        "AI-designed fabric",
+        "AI-driven design",
+        "AI design tool",
+        "generative design"
+      ],
+      "case_sensitive_variants": [],
+      "why": "generative tools for patterns and fabrics"
+    },
+    {
+      "term": "digital textile printing",
+      "tier": "context",
+      "variants": [
+        "digital printing",
+        "inkjet textile printing"
+      ],
+      "case_sensitive_variants": [],
+      "why": "digital workflow enabling AI-generated prints"
+    },
+    {
+      "term": "trend forecasting",
+      "tier": "context",
+      "variants": [
+        "trend prediction",
+        "fashion trend analytics",
+        "trend analysis tool"
+      ],
+      "case_sensitive_variants": [],
+      "why": "design input increasingly produced by AI"
+    },
+    {
+      "term": "digital showroom",
+      "tier": "context",
+      "variants": [
+        "virtual showroom",
+        "3D showroom",
+        "digital sell-in"
+      ],
+      "case_sensitive_variants": [],
+      "why": "virtual selling tools using 3D and AI content"
+    },
+    {
+      "term": "demand sensing",
+      "tier": "ai",
+      "variants": [],
+      "case_sensitive_variants": [],
+      "why": "ML short-term demand signal modelling"
+    },
+    {
+      "term": "demand forecasting",
+      "tier": "context",
+      "variants": [
+        "demand planning",
+        "sales forecasting"
+      ],
+      "case_sensitive_variants": [],
+      "why": "planning process where AI is commonly applied"
+    },
+    {
+      "term": "on-demand manufacturing",
+      "tier": "context",
+      "variants": [
+        "made-to-order production",
+        "mass customisation",
+        "mass customization",
+        "quick-response manufacturing",
+        "small-batch flexible production",
+        "flexible manufacturing"
+      ],
+      "case_sensitive_variants": [],
+      "why": "small-batch flexible production driven by data"
+    },
+    {
+      "term": "smart textile",
+      "tier": "context",
+      "variants": [
+        "e-textile",
+        "electronic textile",
+        "intelligent textile",
+        "smart fabric",
+        "sensor-embedded fabric",
+        "wearable textile sensor"
+      ],
+      "case_sensitive_variants": [],
+      "why": "sensor-embedded fabrics generating data"
+    },
+    {
+      "term": "automated textile sorting",
+      "tier": "context",
+      "variants": [
+        "automated fibre sorting",
+        "automated fiber sorting",
+        "NIR sorting",
+        "near-infrared sorting",
+        "textile sorting technology"
+      ],
+      "case_sensitive_variants": [],
+      "why": "NIR and AI sorting of waste textiles"
+    },
+    {
+      "term": "AI-based textile sorting",
+      "tier": "ai",
+      "variants": [
+        "AI textile sorting",
+        "AI-powered fibre sorting",
+        "AI-powered fiber sorting"
+      ],
+      "case_sensitive_variants": [],
+      "why": "learning-based recognition of fibre types for recycling"
+    },
+    {
+      "term": "digital product passport",
+      "tier": "context",
+      "variants": [
+        "product passport"
+      ],
+      "case_sensitive_variants": [],
+      "why": "EU rule driving product-level data"
+    },
+    {
+      "term": "fibre traceability",
+      "tier": "context",
+      "variants": [
+        "fiber traceability",
+        "digital traceability",
+        "blockchain traceability",
+        "traceable cotton",
+        "forensic traceability",
+        "DNA marker",
+        "supply chain traceability"
+      ],
+      "case_sensitive_variants": [],
+      "why": "supply chain data backbone"
+    }
+  ],
+  "class_terms": {
+    "1312": [
+      {
+        "term": "electronic-grade glass fabric",
+        "tier": "context",
+        "variants": [
+          "electronic glass cloth",
+          "electronic-grade glass cloth",
+          "glass fiber cloth",
+          "glass fibre cloth",
+          "low dielectric glass cloth",
+          "T-glass",
+          "NE-glass",
+          "electronic-grade glass fibre",
+          "electronic-grade glass fiber",
+          "glass fabric"
+        ],
+        "why": "PCB reinforcement; AI-server demand"
+      },
+      {
+        "term": "copper clad laminate",
+        "tier": "context",
+        "variants": [
+          "high-speed laminate",
+          "low-loss laminate",
+          "printed circuit board"
+        ],
+        "why": "downstream product for AI-server boards"
+      },
+      {
+        "term": "AI server",
+        "tier": "ai",
+        "variants": [
+          "AI-related demand",
+          "AI accelerator",
+          "AI data center",
+          "AI data centre"
+        ],
+        "why": "AI hardware demand pulling glass fabric"
+      }
+    ],
+    "1391": [
+      {
+        "term": "3D knitting",
+        "tier": "context",
+        "variants": [
+          "whole garment knitting",
+          "seamless knitting",
+          "computerised knitting",
+          "computerized knitting",
+          "digital knitting"
+        ],
+        "why": "computerised knitting enabling automated production"
+      }
+    ],
+    "1392": [
+      {
+        "term": "automated cut and sew",
+        "tier": "context",
+        "variants": [
+          "automated sewing",
+          "robotic sewing",
+          "automated cutting",
+          "automatic hemming",
+          "automated stitching"
+        ],
+        "why": "automation of home-textile making-up"
+      }
+    ],
+    "1393": [
+      {
+        "term": "room visualiser",
+        "tier": "context",
+        "variants": [
+          "room visualizer",
+          "flooring visualiser",
+          "flooring visualizer",
+          "augmented reality visualiser",
+          "augmented reality visualizer",
+          "virtual room design"
+        ],
+        "why": "AR and AI tools showing flooring in rooms"
+      }
+    ]
+  }
+}

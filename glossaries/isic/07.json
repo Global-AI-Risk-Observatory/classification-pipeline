@@ -1,0 +1,960 @@
+{
+  "id": "07",
+  "name": "Mining of metal ores",
+  "section": "B",
+  "summary": "Metal miners report AI in exploration targeting, autonomous haulage and drilling, remote operations centres, ore sorting, process-plant optimisation, predictive maintenance and safety monitoring, usually with the stated aim of removing people from hazardous areas. On the demand side, copper, silver, tin and rare-earth producers cite AI data centres, grid build-out, semiconductors and robotics, and uranium miners point to hyperscaler nuclear deals and data-centre power needs. Workforce change, union and community reactions to automation and cyber exposure of autonomous systems are the risk themes.",
+  "terms": [
+    {
+      "term": "autonomous haulage",
+      "tier": "ai",
+      "variants": [
+        "autonomous haul truck",
+        "AHS",
+        "driverless truck",
+        "autonomous truck",
+        "autonomous fleet",
+        "autonomous mining truck",
+        "unmanned mining truck",
+        "driverless haulage",
+        "unmanned driving"
+      ],
+      "case_sensitive_variants": [
+        "AHS"
+      ],
+      "why": "driverless mine trucks"
+    },
+    {
+      "term": "autonomous drilling",
+      "tier": "ai",
+      "variants": [
+        "autonomous drill",
+        "automated drill rig",
+        "autonomous blasthole drill",
+        "drill automation",
+        "automated drilling"
+      ],
+      "why": "automated production and blasthole drills"
+    },
+    {
+      "term": "autonomous loader",
+      "tier": "ai",
+      "variants": [
+        "autonomous LHD",
+        "automated loader",
+        "autonomous underground truck",
+        "autonomous load-haul-dump",
+        "automated LHD",
+        "autonomous mucking",
+        "autonomous tramming"
+      ],
+      "why": "self-driving underground loaders and trucks"
+    },
+    {
+      "term": "autonomous mining",
+      "tier": "ai",
+      "variants": [
+        "autonomous mine",
+        "autonomous operations",
+        "autonomous equipment",
+        "autonomous technology",
+        "fully autonomous"
+      ],
+      "why": "producer shorthand for autonomous fleets and equipment"
+    },
+    {
+      "term": "autonomous dozer",
+      "tier": "ai",
+      "variants": [
+        "remote-controlled dozer",
+        "autonomous bulldozer",
+        "semi-autonomous tractor system"
+      ],
+      "why": "semi-autonomous and remote dozer operation"
+    },
+    {
+      "term": "underground automation",
+      "tier": "context",
+      "variants": [
+        "automated hoisting",
+        "automated shaft",
+        "automated rock breaker",
+        "remote rock breaking",
+        "automated ore pass"
+      ],
+      "why": "automated hoisting, rock breaking and ore handling"
+    },
+    {
+      "term": "tele-remote",
+      "tier": "context",
+      "variants": [
+        "teleremote",
+        "tele-operated",
+        "teleoperation",
+        "remote-controlled loader",
+        "remote bogging",
+        "remote operated equipment",
+        "line-of-sight remote control"
+      ],
+      "why": "operators controlling machines from surface"
+    },
+    {
+      "term": "remote operations centre",
+      "tier": "context",
+      "variants": [
+        "remote operations center",
+        "IROC",
+        "integrated operations centre",
+        "integrated operations center",
+        "remote operating centre",
+        "remote operating center"
+      ],
+      "case_sensitive_variants": [
+        "IROC"
+      ],
+      "why": "off-site control of pits, plants and rail"
+    },
+    {
+      "term": "AI-driven exploration targeting",
+      "tier": "ai",
+      "variants": [
+        "AI-assisted exploration",
+        "machine learning targeting",
+        "AI-generated target",
+        "AI-driven exploration",
+        "predictive targeting",
+        "data-driven exploration",
+        "AI-assisted targeting",
+        "machine learning-assisted exploration",
+        "AI exploration"
+      ],
+      "why": "ML ranking of drill targets from geodata"
+    },
+    {
+      "term": "prospectivity mapping",
+      "tier": "ai",
+      "variants": [
+        "mineral prospectivity",
+        "prospectivity modelling",
+        "prospectivity modeling",
+        "prospectivity analysis",
+        "mineral potential mapping"
+      ],
+      "why": "ML mineral potential models"
+    },
+    {
+      "term": "drill target generation",
+      "tier": "context",
+      "variants": [
+        "target generation",
+        "drill targeting",
+        "target ranking",
+        "targeting model"
+      ],
+      "why": "targeting workflow where ML models are applied"
+    },
+    {
+      "term": "KoBold",
+      "tier": "ai",
+      "variants": [
+        "GoldSpot",
+        "VRIFY",
+        "Earth AI",
+        "SensOre",
+        "Windfall Geotek",
+        "Fleet Space",
+        "ExoSphere",
+        "GeologicAI",
+        "Minerva Intelligence"
+      ],
+      "case_sensitive_variants": [
+        "ExoSphere"
+      ],
+      "why": "AI exploration vendors named by miners"
+    },
+    {
+      "term": "geological modelling",
+      "tier": "context",
+      "variants": [
+        "geological modeling",
+        "implicit modelling",
+        "implicit modeling",
+        "3D geological model",
+        "orebody knowledge",
+        "geometallurgical model",
+        "machine learning resource model"
+      ],
+      "why": "3D orebody models, increasingly ML-built"
+    },
+    {
+      "term": "geophysical inversion",
+      "tier": "context",
+      "variants": [
+        "3D inversion",
+        "ambient noise tomography",
+        "machine learning inversion",
+        "magnetotelluric inversion"
+      ],
+      "why": "compute-heavy processing of survey data for targeting"
+    },
+    {
+      "term": "hyperspectral satellite imagery",
+      "tier": "context",
+      "variants": [
+        "satellite remote sensing",
+        "hyperspectral imagery",
+        "remote sensing data",
+        "satellite alteration mapping"
+      ],
+      "why": "remote sensing data used in exploration models"
+    },
+    {
+      "term": "measurement while drilling",
+      "tier": "context",
+      "variants": [
+        "MWD data",
+        "drill sensor data",
+        "rock hardness from drill data",
+        "orebody learning"
+      ],
+      "why": "drill sensor data feeding orebody models"
+    },
+    {
+      "term": "core scanning",
+      "tier": "context",
+      "variants": [
+        "automated core logging",
+        "core imaging",
+        "hyperspectral scanning",
+        "core logging automation",
+        "AI core logging"
+      ],
+      "why": "hyperspectral and image logging of drill core"
+    },
+    {
+      "term": "ore sorting",
+      "tier": "context",
+      "variants": [
+        "sensor-based sorting",
+        "bulk sorting",
+        "XRT sorting",
+        "particle sorting",
+        "X-ray transmission sorting",
+        "preconcentration"
+      ],
+      "why": "sensor-based rejection of waste before milling"
+    },
+    {
+      "term": "machine learning ore sorting",
+      "tier": "ai",
+      "variants": [
+        "AI ore sorting",
+        "AI-powered sorting",
+        "AI-based sorting",
+        "intelligent ore sorting",
+        "intelligent sorting"
+      ],
+      "why": "ML classification of ore and waste"
+    },
+    {
+      "term": "real-time grade sensing",
+      "tier": "context",
+      "variants": [
+        "real-time ore characterisation",
+        "real-time ore characterization",
+        "on-belt analyser",
+        "on-belt analyzer",
+        "shovel-mounted sensor",
+        "ore tracking",
+        "material tracking"
+      ],
+      "why": "sensor data on ore grade feeding models"
+    },
+    {
+      "term": "fleet management system",
+      "tier": "context",
+      "variants": [
+        "dispatch system",
+        "dispatch optimisation",
+        "dispatch optimization",
+        "truck dispatch",
+        "fleet telematics",
+        "payload optimisation",
+        "payload optimization"
+      ],
+      "why": "dispatch and telemetry backbone for optimisation"
+    },
+    {
+      "term": "mine planning optimisation",
+      "tier": "context",
+      "variants": [
+        "mine planning optimization",
+        "mine scheduling optimisation",
+        "mine scheduling optimization",
+        "short interval control",
+        "schedule optimiser",
+        "schedule optimizer",
+        "strategic mine planning"
+      ],
+      "why": "algorithmic scheduling and sequencing"
+    },
+    {
+      "term": "mine-to-mill",
+      "tier": "context",
+      "variants": [
+        "blast optimisation",
+        "blast optimization",
+        "fragmentation analysis",
+        "fragmentation optimisation",
+        "fragmentation optimization"
+      ],
+      "why": "integrated optimisation from blast to grinding"
+    },
+    {
+      "term": "image-based fragmentation analysis",
+      "tier": "ai",
+      "variants": [
+        "fragmentation camera",
+        "automated fragmentation measurement",
+        "particle size camera",
+        "AI fragmentation"
+      ],
+      "why": "computer vision measurement of rock size"
+    },
+    {
+      "term": "shovel tooth detection",
+      "tier": "ai",
+      "variants": [
+        "missing tooth detection",
+        "tooth detection system",
+        "tramp metal detection",
+        "oversize detection"
+      ],
+      "why": "vision detection of missing teeth and oversize rock"
+    },
+    {
+      "term": "advanced process control",
+      "tier": "context",
+      "variants": [
+        "model predictive control",
+        "expert control system",
+        "expert system",
+        "process control optimisation",
+        "process control optimization",
+        "real-time optimisation",
+        "real-time optimization"
+      ],
+      "why": "model-predictive control of mills and flotation"
+    },
+    {
+      "term": "grinding circuit optimisation",
+      "tier": "context",
+      "variants": [
+        "grinding circuit optimization",
+        "mill optimisation",
+        "mill optimization",
+        "SAG mill optimisation",
+        "SAG mill optimization",
+        "throughput optimisation",
+        "throughput optimization",
+        "comminution optimisation"
+      ],
+      "why": "throughput and energy optimisation in comminution"
+    },
+    {
+      "term": "flotation optimisation",
+      "tier": "context",
+      "variants": [
+        "flotation optimization",
+        "recovery optimisation",
+        "recovery optimization",
+        "concentrator optimisation",
+        "concentrator optimization",
+        "plant optimisation",
+        "plant optimization",
+        "reagent optimisation"
+      ],
+      "why": "recovery optimisation in concentrators"
+    },
+    {
+      "term": "froth camera",
+      "tier": "ai",
+      "variants": [
+        "froth imaging",
+        "froth vision",
+        "machine vision flotation",
+        "froth image analysis"
+      ],
+      "why": "machine vision on flotation cells"
+    },
+    {
+      "term": "soft sensor",
+      "tier": "ai",
+      "variants": [
+        "virtual sensor",
+        "inferential sensor",
+        "throughput prediction",
+        "recovery prediction model",
+        "grade prediction model"
+      ],
+      "why": "ML inference of unmeasured process variables"
+    },
+    {
+      "term": "predictive maintenance",
+      "tier": "ai",
+      "variants": [
+        "predictive asset maintenance",
+        "failure prediction",
+        "prognostics",
+        "predictive equipment health",
+        "predictive asset management"
+      ],
+      "why": "ML failure prediction for fleet and fixed plant"
+    },
+    {
+      "term": "condition monitoring",
+      "tier": "context",
+      "variants": [
+        "equipment health monitoring",
+        "asset health",
+        "conveyor monitoring",
+        "machine health",
+        "asset performance management"
+      ],
+      "why": "sensor data feeding maintenance analytics"
+    },
+    {
+      "term": "digital twin",
+      "tier": "context",
+      "variants": [
+        "virtual twin",
+        "digital replica",
+        "process twin"
+      ],
+      "why": "virtual replica of mine, plant or value chain"
+    },
+    {
+      "term": "integrated operations",
+      "tier": "context",
+      "variants": [
+        "integrated system optimisation",
+        "value chain optimisation",
+        "value chain optimization",
+        "pit-to-port",
+        "integrated planning and operations"
+      ],
+      "why": "value-chain control from pit to port"
+    },
+    {
+      "term": "logistics optimisation",
+      "tier": "context",
+      "variants": [
+        "logistics optimization",
+        "rail scheduling optimisation",
+        "port automation",
+        "automated ship loader",
+        "supply chain optimisation",
+        "supply chain optimization"
+      ],
+      "why": "rail, port and shipping scheduling models"
+    },
+    {
+      "term": "intelligent mine",
+      "tier": "context",
+      "variants": [
+        "smart mine",
+        "digital mine",
+        "connected mine",
+        "mine of the future",
+        "intelligent mining",
+        "smart mining",
+        "Mining 4.0",
+        "unmanned mining",
+        "intelligentization"
+      ],
+      "why": "programme label for digital and autonomous mines"
+    },
+    {
+      "term": "mining large model",
+      "tier": "ai",
+      "variants": [
+        "mine large model",
+        "large model for mining",
+        "mining foundation model",
+        "Pangu mining model"
+      ],
+      "why": "industry foundation models for mines"
+    },
+    {
+      "term": "private LTE",
+      "tier": "context",
+      "variants": [
+        "private 5G",
+        "underground 5G",
+        "private wireless network",
+        "underground LTE",
+        "5G mine"
+      ],
+      "why": "mine-wide wireless enabling autonomy and sensing"
+    },
+    {
+      "term": "electrification and automation",
+      "tier": "context",
+      "variants": [
+        "automation and electrification",
+        "automated and electrified",
+        "next-generation mining equipment"
+      ],
+      "why": "twin capex themes in mine modernisation"
+    },
+    {
+      "term": "ventilation on demand",
+      "tier": "context",
+      "variants": [
+        "smart ventilation",
+        "automated ventilation",
+        "intelligent ventilation",
+        "ventilation optimisation",
+        "ventilation optimization"
+      ],
+      "why": "algorithmic control of underground ventilation"
+    },
+    {
+      "term": "collision avoidance system",
+      "tier": "context",
+      "variants": [
+        "proximity detection",
+        "collision awareness",
+        "proximity warning",
+        "vehicle interaction control",
+        "personnel detection",
+        "pedestrian detection"
+      ],
+      "why": "proximity sensing around mobile equipment"
+    },
+    {
+      "term": "fatigue monitoring",
+      "tier": "ai",
+      "variants": [
+        "fatigue detection",
+        "fatigue management technology",
+        "driver safety system",
+        "in-cab camera",
+        "distraction detection",
+        "driver monitoring system",
+        "operator alertness"
+      ],
+      "why": "in-cab cameras detecting drowsy operators"
+    },
+    {
+      "term": "computer vision safety monitoring",
+      "tier": "ai",
+      "variants": [
+        "PPE detection",
+        "AI video analytics",
+        "intelligent video analytics",
+        "exclusion zone monitoring",
+        "AI camera",
+        "safety video analytics"
+      ],
+      "why": "video analytics for PPE, exclusion zones and hazards"
+    },
+    {
+      "term": "personnel tracking",
+      "tier": "context",
+      "variants": [
+        "underground tracking",
+        "connected worker",
+        "smart helmet",
+        "wearable technology",
+        "digital worker"
+      ],
+      "why": "location and wearable data on underground workers"
+    },
+    {
+      "term": "remove people from harm's way",
+      "tier": "context",
+      "variants": [
+        "out of harm's way",
+        "zero-entry mining",
+        "no-entry mining",
+        "removing people from hazardous",
+        "line of fire"
+      ],
+      "why": "safety rationale given for automation"
+    },
+    {
+      "term": "tailings monitoring",
+      "tier": "context",
+      "variants": [
+        "tailings dam monitoring",
+        "tailings storage facility monitoring",
+        "InSAR",
+        "satellite monitoring",
+        "piezometer network",
+        "tailings surveillance"
+      ],
+      "why": "sensors and satellites watching dam stability"
+    },
+    {
+      "term": "slope stability radar",
+      "tier": "context",
+      "variants": [
+        "slope monitoring",
+        "slope stability monitoring",
+        "geotechnical monitoring",
+        "ground movement monitoring",
+        "seismic monitoring",
+        "microseismic monitoring",
+        "rockburst prediction"
+      ],
+      "why": "geotechnical monitoring with predictive alarms"
+    },
+    {
+      "term": "drone survey",
+      "tier": "context",
+      "variants": [
+        "UAV survey",
+        "drone inspection",
+        "drone mapping",
+        "underground drone",
+        "autonomous drone",
+        "LiDAR scanning",
+        "stope scanning",
+        "aerial survey"
+      ],
+      "why": "UAV mapping, inspection and stope scanning"
+    },
+    {
+      "term": "robotic inspection",
+      "tier": "ai",
+      "variants": [
+        "inspection robot",
+        "robot dog",
+        "quadruped robot",
+        "robotic mill relining",
+        "mill relining robot",
+        "robotic sampling",
+        "laboratory automation",
+        "robotic laboratory"
+      ],
+      "why": "robots for inspection, relining and sampling"
+    },
+    {
+      "term": "workforce of the future",
+      "tier": "context",
+      "variants": [
+        "future of work",
+        "reskilling",
+        "upskilling programme",
+        "upskilling program",
+        "remote operator role"
+      ],
+      "why": "reskilling for automated and remote roles"
+    },
+    {
+      "term": "automation and employment",
+      "tier": "context",
+      "variants": [
+        "job losses from automation",
+        "impact of automation on jobs",
+        "union opposition to automation",
+        "labour displacement",
+        "labor displacement"
+      ],
+      "why": "labour and community concern over job losses"
+    },
+    {
+      "term": "operational technology",
+      "tier": "context",
+      "variants": [
+        "OT security",
+        "OT cybersecurity",
+        "industrial control system",
+        "process control network"
+      ],
+      "why": "autonomy increases cyber exposure of mine control systems"
+    },
+    {
+      "term": "data center",
+      "tier": "context",
+      "variants": [
+        "data centre"
+      ],
+      "why": "AI build-out as metal and power demand driver"
+    },
+    {
+      "term": "hyperscaler",
+      "tier": "context",
+      "variants": [
+        "hyperscale"
+      ],
+      "why": "tech companies driving power and metal demand"
+    },
+    {
+      "term": "AI-driven demand",
+      "tier": "ai",
+      "variants": [
+        "AI infrastructure",
+        "AI-related demand",
+        "demand from artificial intelligence",
+        "AI boom",
+        "AI supercycle",
+        "AI build-out"
+      ],
+      "why": "AI named as metal demand driver"
+    },
+    {
+      "term": "grid expansion",
+      "tier": "context",
+      "variants": [
+        "grid build-out",
+        "grid investment",
+        "power grid upgrade",
+        "transmission build-out",
+        "electricity demand growth",
+        "power infrastructure investment"
+      ],
+      "why": "power network build-out linked to AI load"
+    },
+    {
+      "term": "semiconductor demand",
+      "tier": "context",
+      "variants": [
+        "semiconductor industry demand",
+        "chip demand",
+        "advanced packaging",
+        "semiconductor supply chain",
+        "chip manufacturing",
+        "high-performance chip"
+      ],
+      "why": "AI chips as demand for specialty metals"
+    },
+    {
+      "term": "humanoid robot",
+      "tier": "ai",
+      "variants": [
+        "humanoid robotics",
+        "robotics demand",
+        "robot demand"
+      ],
+      "why": "robotics as demand for magnets and metals"
+    }
+  ],
+  "class_terms": {
+    "0710": [
+      {
+        "term": "autonomous train",
+        "tier": "ai",
+        "variants": [
+          "AutoHaul",
+          "driverless train",
+          "autonomous rail",
+          "automated train operation",
+          "autonomous heavy-haul"
+        ],
+        "why": "driverless heavy-haul rail"
+      },
+      {
+        "term": "automated stockyard",
+        "tier": "context",
+        "variants": [
+          "automated stacker",
+          "automated reclaimer",
+          "autonomous reclaimer",
+          "remote ship loading",
+          "automated car dumper"
+        ],
+        "why": "automated stackers, reclaimers and ship loading"
+      },
+      {
+        "term": "iron ore blending optimisation",
+        "tier": "context",
+        "variants": [
+          "blending optimisation",
+          "blending optimization",
+          "product quality prediction",
+          "grade blending model"
+        ],
+        "why": "grade blending models across pits and port"
+      }
+    ],
+    "0721": [
+      {
+        "term": "nuclear power purchase agreement",
+        "tier": "context",
+        "variants": [
+          "nuclear PPA",
+          "nuclear offtake agreement",
+          "nuclear energy agreement",
+          "nuclear-powered data center",
+          "nuclear-powered data centre",
+          "nuclear for data centers"
+        ],
+        "why": "hyperscaler nuclear offtake deals"
+      },
+      {
+        "term": "small modular reactor",
+        "tier": "context",
+        "variants": [
+          "SMR",
+          "advanced reactor",
+          "microreactor",
+          "advanced nuclear",
+          "next-generation reactor"
+        ],
+        "case_sensitive_variants": [
+          "SMR"
+        ],
+        "why": "SMRs backed by tech companies for AI power"
+      },
+      {
+        "term": "reactor restart",
+        "tier": "context",
+        "variants": [
+          "plant restart",
+          "reactor life extension",
+          "licence extension",
+          "license extension",
+          "nuclear uprate",
+          "power uprate",
+          "Three Mile Island",
+          "Crane Clean Energy Center",
+          "Palisades",
+          "Duane Arnold"
+        ],
+        "why": "restarts and life extensions justified by AI load"
+      },
+      {
+        "term": "nuclear renaissance",
+        "tier": "context",
+        "variants": [
+          "nuclear resurgence",
+          "nuclear revival",
+          "tripling nuclear capacity",
+          "triple nuclear energy",
+          "nuclear build-out"
+        ],
+        "why": "demand narrative tied to AI electricity needs"
+      },
+      {
+        "term": "clean firm power",
+        "tier": "context",
+        "variants": [
+          "carbon-free baseload",
+          "24/7 carbon-free",
+          "baseload power",
+          "firm clean power",
+          "around-the-clock clean energy",
+          "carbon-free energy"
+        ],
+        "why": "24/7 carbon-free supply sought by tech buyers"
+      },
+      {
+        "term": "AI-driven electricity demand",
+        "tier": "ai",
+        "variants": [
+          "AI power demand",
+          "AI energy demand",
+          "power demand from artificial intelligence",
+          "electricity demand from data centers",
+          "electricity demand from data centres",
+          "energy-intensive AI"
+        ],
+        "why": "AI named as driver of nuclear fuel demand"
+      },
+      {
+        "term": "big tech",
+        "tier": "context",
+        "variants": [
+          "tech giant",
+          "technology giant",
+          "large technology companies"
+        ],
+        "why": "technology buyers of nuclear power"
+      }
+    ],
+    "0729": [
+      {
+        "term": "copper demand from data centers",
+        "tier": "context",
+        "variants": [
+          "copper demand from data centres",
+          "data center copper demand",
+          "data centre copper demand",
+          "copper intensity",
+          "copper-intensive",
+          "copper in data centers",
+          "copper in data centres"
+        ],
+        "why": "AI data centres as copper demand driver"
+      },
+      {
+        "term": "silver industrial demand",
+        "tier": "context",
+        "variants": [
+          "industrial silver demand",
+          "silver demand from electronics",
+          "silver in electronics",
+          "photovoltaic and electronics demand"
+        ],
+        "why": "electronics and AI hardware use of silver"
+      },
+      {
+        "term": "tin solder demand",
+        "tier": "context",
+        "variants": [
+          "tin demand from semiconductors",
+          "solder demand",
+          "tin in electronics",
+          "semiconductor-driven tin demand"
+        ],
+        "why": "semiconductor and AI server demand for tin"
+      },
+      {
+        "term": "gallium",
+        "tier": "context",
+        "variants": [
+          "germanium",
+          "indium",
+          "export controls on critical minerals",
+          "high-purity metals for semiconductors"
+        ],
+        "why": "chip metals subject to export controls"
+      },
+      {
+        "term": "rare earth magnet demand",
+        "tier": "context",
+        "variants": [
+          "permanent magnet demand",
+          "NdFeB magnet",
+          "neodymium magnet",
+          "magnet demand from robotics",
+          "NdPr demand"
+        ],
+        "why": "magnets for robots, drones and data-centre drives"
+      },
+      {
+        "term": "energy storage demand",
+        "tier": "context",
+        "variants": [
+          "battery energy storage demand",
+          "BESS demand",
+          "stationary storage demand",
+          "data center backup batteries"
+        ],
+        "why": "battery metals demand including data-centre storage"
+      },
+      {
+        "term": "heap leach optimisation",
+        "tier": "context",
+        "variants": [
+          "heap leach optimization",
+          "leach recovery prediction",
+          "heap leach modelling",
+          "heap leach modeling"
+        ],
+        "why": "ML models of leach kinetics and recovery"
+      }
+    ]
+  }
+}

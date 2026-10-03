@@ -1,0 +1,359 @@
+{
+  "id": "31",
+  "name": "Manufacture of furniture",
+  "section": "C",
+  "summary": "Furniture makers mention AI mostly on the customer side: room planners, configurators, AI design assistants, generated product imagery, visual search and recommendation, plus demand forecasting, pricing and delivery routing. In production it appears as cutting and nesting optimisation, wood-defect scanning, batch-size-one lines and robotic finishing. Smart beds and sensor-equipped office furniture generate sleep and occupancy data, and office furniture demand is discussed in terms of how AI and hybrid work reshape offices.",
+  "terms": [
+    {
+      "term": "room planner",
+      "tier": "context",
+      "variants": [
+        "room visualiser",
+        "room visualizer",
+        "3D planning tool",
+        "kitchen planner",
+        "virtual room design"
+      ],
+      "why": "online planning tools increasingly AI-assisted"
+    },
+    {
+      "term": "AI design assistant",
+      "tier": "ai",
+      "variants": [
+        "AI interior design",
+        "AI-powered design tool",
+        "AI room design",
+        "virtual interior designer",
+        "AI-generated room"
+      ],
+      "why": "AI tools proposing room layouts and furnishing"
+    },
+    {
+      "term": "product configurator",
+      "tier": "context",
+      "variants": [
+        "3D configurator",
+        "online configurator",
+        "visual configurator"
+      ],
+      "why": "configurators feeding made-to-order production"
+    },
+    {
+      "term": "augmented reality",
+      "tier": "context",
+      "variants": [
+        "AR visualisation",
+        "AR visualization",
+        "view in your room",
+        "virtual showroom",
+        "3D visualisation",
+        "3D visualization"
+      ],
+      "why": "visualisation tools paired with AI recommendation"
+    },
+    {
+      "term": "AI-generated imagery",
+      "tier": "ai",
+      "variants": [
+        "AI-generated product images",
+        "AI-generated lifestyle images",
+        "synthetic product imagery"
+      ],
+      "why": "synthetic product and room images for marketing"
+    },
+    {
+      "term": "virtual photography",
+      "tier": "context",
+      "variants": [
+        "computer-generated imagery",
+        "CGI",
+        "3D rendering",
+        "digital product content"
+      ],
+      "case_sensitive_variants": [
+        "CGI"
+      ],
+      "why": "rendered product content, increasingly AI-produced"
+    },
+    {
+      "term": "visual search",
+      "tier": "ai",
+      "variants": [
+        "image-based search",
+        "shop the look",
+        "style matching",
+        "product recommendation engine",
+        "personalised recommendations",
+        "personalized recommendations"
+      ],
+      "why": "image-based product discovery and recommendation"
+    },
+    {
+      "term": "virtual sales assistant",
+      "tier": "ai",
+      "variants": [
+        "AI shopping assistant",
+        "virtual shopping assistant",
+        "AI sales assistant",
+        "conversational commerce"
+      ],
+      "why": "AI assistants advising shoppers"
+    },
+    {
+      "term": "virtual design consultation",
+      "tier": "context",
+      "variants": [
+        "online design service",
+        "remote design consultation",
+        "digital design studio"
+      ],
+      "why": "remote design services supported by AI tools"
+    },
+    {
+      "term": "demand forecasting",
+      "tier": "context",
+      "variants": [
+        "demand planning",
+        "inventory optimisation",
+        "inventory optimization",
+        "replenishment optimisation",
+        "replenishment optimization",
+        "AI-driven forecasting"
+      ],
+      "why": "ML forecasting for long-lead furniture supply chains"
+    },
+    {
+      "term": "dynamic pricing",
+      "tier": "context",
+      "variants": [
+        "price optimisation",
+        "price optimization",
+        "markdown optimisation",
+        "markdown optimization"
+      ],
+      "why": "algorithmic pricing and markdowns"
+    },
+    {
+      "term": "delivery route optimisation",
+      "tier": "context",
+      "variants": [
+        "delivery route optimization",
+        "last-mile optimisation",
+        "last-mile optimization",
+        "delivery scheduling"
+      ],
+      "why": "algorithmic routing of bulky home deliveries"
+    },
+    {
+      "term": "generative design",
+      "tier": "ai",
+      "variants": [
+        "AI-assisted product design",
+        "AI-generated design",
+        "computational design"
+      ],
+      "why": "AI-assisted product design"
+    },
+    {
+      "term": "design infringement",
+      "tier": "context",
+      "variants": [
+        "design copying",
+        "design piracy",
+        "knock-off"
+      ],
+      "why": "copying risk raised by AI image and design tools"
+    },
+    {
+      "term": "nesting optimisation",
+      "tier": "context",
+      "variants": [
+        "nesting optimization",
+        "cutting optimisation",
+        "cutting optimization",
+        "cut optimisation",
+        "automated nesting"
+      ],
+      "why": "algorithmic cutting plans for panels, fabric, leather"
+    },
+    {
+      "term": "machine vision",
+      "tier": "ai",
+      "variants": [
+        "automated surface inspection",
+        "surface defect detection",
+        "automated quality inspection"
+      ],
+      "why": "camera inspection of surfaces and parts"
+    },
+    {
+      "term": "batch size one",
+      "tier": "context",
+      "variants": [
+        "lot size one",
+        "mass customisation",
+        "mass customization",
+        "networked production"
+      ],
+      "why": "mass customisation lines driven by order data"
+    },
+    {
+      "term": "smart factory",
+      "tier": "context",
+      "variants": [
+        "Industry 4.0",
+        "digital factory",
+        "lights-out manufacturing",
+        "connected production"
+      ],
+      "why": "plant programmes under which AI use is reported"
+    },
+    {
+      "term": "robotic finishing",
+      "tier": "context",
+      "variants": [
+        "robotic sanding",
+        "robotic spraying",
+        "robotic sewing",
+        "collaborative robot",
+        "cobot",
+        "robotic palletising",
+        "robotic palletizing"
+      ],
+      "why": "robots for sanding, spraying and upholstery"
+    },
+    {
+      "term": "autonomous mobile robot",
+      "tier": "ai",
+      "variants": [
+        "AMR",
+        "automated guided vehicle",
+        "AGV"
+      ],
+      "case_sensitive_variants": [
+        "AMR",
+        "AGV"
+      ],
+      "why": "self-navigating transport in plants and warehouses"
+    },
+    {
+      "term": "warehouse automation",
+      "tier": "context",
+      "variants": [
+        "automated warehouse",
+        "automated storage and retrieval",
+        "automated distribution centre",
+        "automated distribution center",
+        "robotic picking"
+      ],
+      "why": "automated distribution centres for bulky goods"
+    },
+    {
+      "term": "predictive maintenance",
+      "tier": "ai",
+      "why": "ML on production equipment data"
+    },
+    {
+      "term": "digital twin",
+      "tier": "context",
+      "why": "virtual product and line models"
+    },
+    {
+      "term": "smart furniture",
+      "tier": "context",
+      "variants": [
+        "connected furniture",
+        "smart desk",
+        "smart office furniture",
+        "intelligent furniture"
+      ],
+      "why": "sensor-equipped furniture generating usage data"
+    },
+    {
+      "term": "space utilisation",
+      "tier": "context",
+      "variants": [
+        "space utilization",
+        "occupancy sensor",
+        "workplace analytics",
+        "occupancy analytics",
+        "workplace intelligence",
+        "desk booking"
+      ],
+      "why": "occupancy data services sold with office furniture"
+    },
+    {
+      "term": "hybrid work",
+      "tier": "context",
+      "variants": [
+        "return to office",
+        "office occupancy",
+        "future of work",
+        "white-collar employment"
+      ],
+      "why": "office demand outlook, including AI's effect on office jobs"
+    },
+    {
+      "term": "posture detection",
+      "tier": "ai",
+      "variants": [
+        "posture sensing",
+        "sit-stand reminder",
+        "ergonomic coaching"
+      ],
+      "why": "sensing and coaching features in seating and desks"
+    }
+  ],
+  "class_terms": {
+    "3101": [
+      {
+        "term": "wood scanner",
+        "tier": "ai",
+        "variants": [
+          "timber scanning",
+          "defect scanning",
+          "automated wood grading"
+        ],
+        "why": "vision AI grading timber and veneer"
+      },
+      {
+        "term": "automated panel processing",
+        "tier": "context",
+        "variants": [
+          "automated edge banding",
+          "automated drilling line",
+          "panel saw optimisation",
+          "panel saw optimization"
+        ],
+        "why": "highly automated panel lines driven by order data"
+      }
+    ],
+    "3102": [
+      {
+        "term": "smart bed",
+        "tier": "context",
+        "variants": [
+          "smart mattress",
+          "sleep tracking",
+          "sleep sensing",
+          "sleep data",
+          "sleep score",
+          "SleepIQ",
+          "smart adjustable base",
+          "connected bed"
+        ],
+        "why": "beds collecting sleep and biometric data"
+      },
+      {
+        "term": "pressure mapping",
+        "tier": "context",
+        "variants": [
+          "body mapping",
+          "sleep diagnostics",
+          "mattress matching"
+        ],
+        "why": "body-data tools matching customers to mattresses"
+      }
+    ]
+  }
+}

@@ -1,0 +1,902 @@
+{
+  "id": "06",
+  "name": "Extraction of crude petroleum and natural gas",
+  "section": "B",
+  "summary": "Oil and gas producers describe AI across the subsurface and operations: seismic interpretation, reservoir modelling, drilling and production optimisation, predictive maintenance, remote or unmanned facilities, robotics and methane detection. Gas-weighted producers and integrated majors increasingly cite AI data centres as a driver of gas and power demand and announce behind-the-meter power projects for hyperscalers. Risk language covers cyber exposure of operational technology and dependence on data-driven models; national oil companies add branded industry models and intelligent-oilfield programmes.",
+  "terms": [
+    {
+      "term": "seismic interpretation",
+      "tier": "context",
+      "variants": [
+        "seismic processing",
+        "seismic imaging",
+        "seismic data analysis",
+        "seismic inversion",
+        "subsurface imaging",
+        "4D seismic"
+      ],
+      "why": "core subsurface workflow now ML-assisted"
+    },
+    {
+      "term": "AI seismic interpretation",
+      "tier": "ai",
+      "variants": [
+        "automated fault interpretation",
+        "machine learning seismic",
+        "automated seismic interpretation",
+        "AI-assisted interpretation",
+        "automated horizon picking",
+        "seismic facies classification"
+      ],
+      "why": "ML fault, horizon and facies picking"
+    },
+    {
+      "term": "seismic foundation model",
+      "tier": "ai",
+      "variants": [
+        "subsurface foundation model",
+        "geoscience foundation model",
+        "geoscience AI assistant",
+        "subsurface AI"
+      ],
+      "why": "large pretrained models for subsurface data"
+    },
+    {
+      "term": "full waveform inversion",
+      "tier": "context",
+      "variants": [
+        "FWI",
+        "reverse time migration"
+      ],
+      "case_sensitive_variants": [
+        "FWI"
+      ],
+      "why": "compute-heavy imaging run on supercomputers"
+    },
+    {
+      "term": "high-performance computing",
+      "tier": "context",
+      "variants": [
+        "supercomputer",
+        "HPC",
+        "supercomputing",
+        "GPU cluster",
+        "exascale"
+      ],
+      "case_sensitive_variants": [
+        "HPC"
+      ],
+      "why": "supercomputers for seismic and simulation, now AI"
+    },
+    {
+      "term": "reservoir modelling",
+      "tier": "context",
+      "variants": [
+        "reservoir modeling",
+        "reservoir simulation",
+        "reservoir characterisation",
+        "reservoir characterization",
+        "history matching",
+        "reservoir model"
+      ],
+      "why": "simulation models increasingly ML-accelerated"
+    },
+    {
+      "term": "surrogate reservoir model",
+      "tier": "ai",
+      "variants": [
+        "proxy model",
+        "surrogate model",
+        "physics-informed machine learning",
+        "physics-informed neural network",
+        "hybrid physics and data-driven model",
+        "data-driven reservoir model"
+      ],
+      "why": "ML proxies replacing slow physics simulators"
+    },
+    {
+      "term": "well log interpretation",
+      "tier": "context",
+      "variants": [
+        "automated log interpretation",
+        "petrophysical interpretation",
+        "log analysis automation",
+        "core image analysis",
+        "digital rock analysis",
+        "facies prediction"
+      ],
+      "why": "petrophysical analysis automated with ML"
+    },
+    {
+      "term": "AI-assisted exploration",
+      "tier": "ai",
+      "variants": [
+        "prospect generation algorithm",
+        "sweet spot prediction",
+        "machine learning prospecting",
+        "exploration analytics",
+        "AI-driven exploration",
+        "play-based analytics"
+      ],
+      "why": "ML prospect screening and sweet-spot mapping"
+    },
+    {
+      "term": "subsurface data platform",
+      "tier": "context",
+      "variants": [
+        "OSDU",
+        "subsurface data universe",
+        "data lake for subsurface",
+        "subsurface data foundation",
+        "petrotechnical data platform"
+      ],
+      "case_sensitive_variants": [
+        "OSDU"
+      ],
+      "why": "cloud data foundations enabling subsurface AI"
+    },
+    {
+      "term": "drilling automation",
+      "tier": "ai",
+      "variants": [
+        "automated drilling",
+        "autonomous drilling",
+        "drilling advisory system",
+        "closed-loop drilling",
+        "closed-loop automation",
+        "automated directional drilling",
+        "autonomous well construction"
+      ],
+      "why": "algorithmic control of drilling parameters and steering"
+    },
+    {
+      "term": "drilling optimisation",
+      "tier": "context",
+      "variants": [
+        "drilling optimization",
+        "ROP optimisation",
+        "ROP optimization",
+        "rate of penetration optimisation",
+        "rate of penetration optimization",
+        "real-time drilling analytics",
+        "drilling performance analytics"
+      ],
+      "why": "real-time analytics on penetration rate and dysfunction"
+    },
+    {
+      "term": "geosteering",
+      "tier": "context",
+      "variants": [
+        "well placement optimisation",
+        "well placement optimization",
+        "real-time well placement"
+      ],
+      "why": "real-time well placement, increasingly automated"
+    },
+    {
+      "term": "stuck pipe prediction",
+      "tier": "ai",
+      "variants": [
+        "kick detection",
+        "drilling dysfunction detection",
+        "drilling hazard prediction",
+        "lost circulation prediction",
+        "drilling anomaly detection"
+      ],
+      "why": "ML early warning of drilling hazards"
+    },
+    {
+      "term": "automated well planning",
+      "tier": "ai",
+      "variants": [
+        "well planning automation",
+        "autonomous well design",
+        "AI well planning",
+        "well design optimisation",
+        "well design optimization",
+        "automated trajectory design"
+      ],
+      "why": "algorithmic well design and trajectory planning"
+    },
+    {
+      "term": "completion optimisation",
+      "tier": "context",
+      "variants": [
+        "completion optimization",
+        "frac optimisation",
+        "frac optimization",
+        "completion design optimisation",
+        "completion design optimization",
+        "well spacing optimisation",
+        "well spacing optimization",
+        "fracture design model"
+      ],
+      "why": "data-driven frac and spacing design"
+    },
+    {
+      "term": "real-time frac monitoring",
+      "tier": "context",
+      "variants": [
+        "fracture diagnostics",
+        "microseismic monitoring",
+        "frac hit detection",
+        "offset well monitoring"
+      ],
+      "why": "fracture diagnostics feeding completion models"
+    },
+    {
+      "term": "production optimisation",
+      "tier": "context",
+      "variants": [
+        "production optimization",
+        "well optimisation",
+        "well optimization",
+        "field optimisation",
+        "field optimization",
+        "integrated production modelling",
+        "integrated production modeling"
+      ],
+      "why": "analytics on wells, lift and facilities"
+    },
+    {
+      "term": "AI-driven production optimisation",
+      "tier": "ai",
+      "variants": [
+        "AI-driven production optimization",
+        "machine learning production optimisation",
+        "autonomous well control",
+        "autonomous production",
+        "self-optimising well",
+        "autonomous operations"
+      ],
+      "why": "ML set-point control of wells and facilities"
+    },
+    {
+      "term": "artificial lift optimisation",
+      "tier": "context",
+      "variants": [
+        "artificial lift optimization",
+        "gas lift optimisation",
+        "gas lift optimization",
+        "rod pump optimisation",
+        "rod pump optimization",
+        "plunger lift optimisation",
+        "plunger lift optimization",
+        "ESP optimisation",
+        "ESP optimization"
+      ],
+      "why": "algorithmic control of pumps and gas lift"
+    },
+    {
+      "term": "ESP failure prediction",
+      "tier": "ai",
+      "variants": [
+        "pump failure prediction",
+        "well failure prediction",
+        "artificial lift failure prediction",
+        "predictive well analytics"
+      ],
+      "why": "ML prediction of pump and well failures"
+    },
+    {
+      "term": "virtual flow metering",
+      "tier": "ai",
+      "variants": [
+        "virtual flow meter",
+        "virtual metering",
+        "soft sensor",
+        "virtual sensor"
+      ],
+      "why": "ML estimation of multiphase flow rates"
+    },
+    {
+      "term": "production forecasting",
+      "tier": "context",
+      "variants": [
+        "machine learning production forecast",
+        "decline curve analysis",
+        "type curve modelling",
+        "type curve modeling",
+        "automated forecasting"
+      ],
+      "why": "decline and type-curve forecasts, ML-augmented"
+    },
+    {
+      "term": "exception-based surveillance",
+      "tier": "context",
+      "variants": [
+        "surveillance by exception",
+        "pump by exception",
+        "management by exception",
+        "well surveillance",
+        "reservoir surveillance",
+        "operate by exception"
+      ],
+      "why": "analytics flagging wells needing attention"
+    },
+    {
+      "term": "wellsite automation",
+      "tier": "context",
+      "variants": [
+        "wellpad automation",
+        "automated well testing",
+        "automated tank gauging",
+        "remote well monitoring",
+        "well automation",
+        "SCADA optimisation",
+        "SCADA optimization"
+      ],
+      "why": "automated wellpad control and tank gauging"
+    },
+    {
+      "term": "well integrity monitoring",
+      "tier": "context",
+      "variants": [
+        "well integrity analytics",
+        "annulus pressure monitoring",
+        "automated well integrity"
+      ],
+      "why": "sensor surveillance of barriers and pressures"
+    },
+    {
+      "term": "route optimisation",
+      "tier": "context",
+      "variants": [
+        "route optimization",
+        "pumper route optimisation",
+        "dynamic routing",
+        "field workforce scheduling",
+        "logistics optimisation",
+        "logistics optimization"
+      ],
+      "why": "algorithmic scheduling of lease operators and trucks"
+    },
+    {
+      "term": "digital oilfield",
+      "tier": "context",
+      "variants": [
+        "intelligent oilfield",
+        "smart field",
+        "digital field",
+        "intelligent field",
+        "i-field",
+        "connected field",
+        "oilfield of the future"
+      ],
+      "why": "umbrella for instrumented, analytics-driven fields"
+    },
+    {
+      "term": "intelligent well",
+      "tier": "context",
+      "variants": [
+        "smart well",
+        "intelligent completion",
+        "smart completion",
+        "downhole monitoring",
+        "fibre-optic sensing",
+        "fiber-optic sensing",
+        "distributed acoustic sensing"
+      ],
+      "why": "downhole sensing and control for automated wells"
+    },
+    {
+      "term": "integrated operations",
+      "tier": "context",
+      "variants": [
+        "real-time operations center",
+        "real-time operations centre",
+        "collaboration centre",
+        "collaboration center",
+        "operations command centre",
+        "operations command center",
+        "decision support center",
+        "decision support centre"
+      ],
+      "why": "onshore collaboration centres running fields in real time"
+    },
+    {
+      "term": "remote operations",
+      "tier": "context",
+      "variants": [
+        "remote operating center",
+        "remote operating centre",
+        "remotely operated platform",
+        "remote control room",
+        "onshore control room",
+        "remote monitoring centre",
+        "remote monitoring center"
+      ],
+      "why": "controlling wells and platforms from distant centres"
+    },
+    {
+      "term": "normally unmanned installation",
+      "tier": "context",
+      "variants": [
+        "unmanned platform",
+        "unmanned wellhead platform",
+        "minimally manned",
+        "low-manned facility",
+        "uncrewed platform",
+        "typhoon production mode"
+      ],
+      "why": "platforms designed for minimal crew via automation"
+    },
+    {
+      "term": "advanced process control",
+      "tier": "context",
+      "variants": [
+        "model predictive control",
+        "real-time optimisation",
+        "real-time optimization",
+        "closed-loop optimisation",
+        "closed-loop optimization"
+      ],
+      "why": "model-predictive control of facilities and plants"
+    },
+    {
+      "term": "predictive maintenance",
+      "tier": "ai",
+      "variants": [
+        "predictive asset maintenance",
+        "failure prediction",
+        "prognostics",
+        "predictive reliability",
+        "proactive maintenance analytics"
+      ],
+      "why": "ML failure prediction for rotating and static equipment"
+    },
+    {
+      "term": "condition-based maintenance",
+      "tier": "context",
+      "variants": [
+        "condition monitoring",
+        "equipment health monitoring",
+        "asset health",
+        "rotating equipment monitoring",
+        "asset performance management",
+        "reliability analytics"
+      ],
+      "why": "sensor-driven maintenance regime preceding ML"
+    },
+    {
+      "term": "digital twin",
+      "tier": "context",
+      "variants": [
+        "virtual twin",
+        "digital replica"
+      ],
+      "why": "virtual replica of facilities, wells or reservoirs"
+    },
+    {
+      "term": "robotic inspection",
+      "tier": "ai",
+      "variants": [
+        "inspection robot",
+        "robot dog",
+        "crawler robot",
+        "quadruped robot",
+        "robotic crawler"
+      ],
+      "why": "autonomous robots inspecting facilities and tanks"
+    },
+    {
+      "term": "drone inspection",
+      "tier": "context",
+      "variants": [
+        "unmanned aerial vehicle",
+        "UAV inspection",
+        "drone surveillance",
+        "drone-based monitoring",
+        "aerial inspection"
+      ],
+      "why": "UAV surveys of flares, tanks and pipelines"
+    },
+    {
+      "term": "autonomous underwater vehicle",
+      "tier": "ai",
+      "variants": [
+        "AUV",
+        "subsea drone",
+        "resident subsea vehicle",
+        "underwater inspection drone",
+        "uncrewed surface vessel",
+        "subsea robotics"
+      ],
+      "case_sensitive_variants": [
+        "AUV"
+      ],
+      "why": "untethered subsea inspection"
+    },
+    {
+      "term": "methane detection",
+      "tier": "context",
+      "variants": [
+        "methane leak detection",
+        "leak detection and repair",
+        "LDAR",
+        "methane monitoring",
+        "continuous emissions monitoring",
+        "optical gas imaging",
+        "methane sensing"
+      ],
+      "case_sensitive_variants": [
+        "LDAR"
+      ],
+      "why": "leak sensing where AI analyses imagery and sensor data"
+    },
+    {
+      "term": "AI leak detection",
+      "tier": "ai",
+      "variants": [
+        "automated leak detection",
+        "AI-enabled methane detection",
+        "emissions analytics",
+        "leak detection algorithm",
+        "predictive emissions monitoring",
+        "flare monitoring analytics"
+      ],
+      "why": "ML detection and quantification of emissions and leaks"
+    },
+    {
+      "term": "pipeline leak detection",
+      "tier": "context",
+      "variants": [
+        "computational pipeline monitoring",
+        "pipeline monitoring system",
+        "fibre-optic leak detection",
+        "fiber-optic leak detection"
+      ],
+      "why": "monitoring of gathering lines and flowlines"
+    },
+    {
+      "term": "corrosion prediction",
+      "tier": "ai",
+      "variants": [
+        "predictive corrosion",
+        "corrosion analytics",
+        "pipeline integrity analytics",
+        "integrity prediction",
+        "risk-based inspection analytics",
+        "automated corrosion detection"
+      ],
+      "why": "ML integrity models for pipes and vessels"
+    },
+    {
+      "term": "computer vision safety monitoring",
+      "tier": "ai",
+      "variants": [
+        "PPE detection",
+        "AI video analytics",
+        "safety video analytics",
+        "red zone monitoring",
+        "intelligent video monitoring",
+        "hazard detection camera"
+      ],
+      "why": "video analytics for PPE and hazard compliance"
+    },
+    {
+      "term": "connected worker",
+      "tier": "context",
+      "variants": [
+        "remote expert assistance",
+        "smart glasses",
+        "wearable technology",
+        "digital worker"
+      ],
+      "why": "wearables and mobile tools linking field staff to analytics"
+    },
+    {
+      "term": "edge analytics",
+      "tier": "context",
+      "variants": [
+        "edge computing",
+        "edge device",
+        "wellsite edge",
+        "edge-based control"
+      ],
+      "why": "computing at wellsite or platform for real-time models"
+    },
+    {
+      "term": "data-driven model",
+      "tier": "context",
+      "variants": [
+        "data-driven modelling",
+        "data-driven modeling",
+        "data-driven decision",
+        "citizen data scientist",
+        "citizen developer"
+      ],
+      "why": "producer wording for ML models in operations"
+    },
+    {
+      "term": "automated lease abstraction",
+      "tier": "ai",
+      "variants": [
+        "lease data extraction",
+        "automated contract analysis",
+        "document intelligence",
+        "division order automation"
+      ],
+      "why": "AI extraction of terms from leases and contracts"
+    },
+    {
+      "term": "algorithmic trading",
+      "tier": "context",
+      "variants": [
+        "AI-driven trading",
+        "trading algorithm",
+        "automated trading",
+        "trading analytics",
+        "quantitative trading"
+      ],
+      "why": "automated commodity and power trading"
+    },
+    {
+      "term": "operational technology",
+      "tier": "context",
+      "variants": [
+        "OT security",
+        "OT cybersecurity",
+        "industrial control system",
+        "SCADA",
+        "process control network"
+      ],
+      "why": "control systems exposed to AI-enabled cyber threats"
+    },
+    {
+      "term": "digital upskilling",
+      "tier": "context",
+      "variants": [
+        "digital academy",
+        "digital skills programme",
+        "digital skills program",
+        "data literacy"
+      ],
+      "why": "reskilling engineers for data and AI tools"
+    },
+    {
+      "term": "digital and intelligent transformation",
+      "tier": "context",
+      "variants": [
+        "digital intelligence",
+        "digitalization and intelligentization",
+        "digitalisation and intelligentisation",
+        "intelligent transformation",
+        "smart oil and gas field",
+        "intelligent gas field"
+      ],
+      "why": "Chinese SOE phrasing for digital and AI programmes"
+    },
+    {
+      "term": "Kunlun large model",
+      "tier": "ai",
+      "variants": [
+        "Kunlun model",
+        "energy and chemical large model",
+        "industry large model"
+      ],
+      "why": "PetroChina industry LLM"
+    },
+    {
+      "term": "ENERGYai",
+      "tier": "ai",
+      "variants": [
+        "AIQ",
+        "Panorama Digital Command Center",
+        "Neuron 5"
+      ],
+      "case_sensitive_variants": [
+        "AIQ"
+      ],
+      "why": "ADNOC AI platform and related ventures"
+    },
+    {
+      "term": "Metabrain",
+      "tier": "ai",
+      "variants": [
+        "Aramco Digital"
+      ],
+      "why": "Aramco industrial LLM and digital arm"
+    },
+    {
+      "term": "Shell.ai",
+      "tier": "ai",
+      "variants": [
+        "Open AI Energy Initiative"
+      ],
+      "why": "Shell AI programme and industry consortium"
+    },
+    {
+      "term": "Cognite",
+      "tier": "context",
+      "variants": [
+        "Palantir Foundry",
+        "AVEVA",
+        "AspenTech",
+        "Aspen Mtell",
+        "Kelvin AI"
+      ],
+      "why": "industrial data platforms used for AI in operations"
+    },
+    {
+      "term": "data center",
+      "tier": "context",
+      "variants": [
+        "data centre"
+      ],
+      "why": "AI data centres as new gas and power demand"
+    },
+    {
+      "term": "hyperscaler",
+      "tier": "context",
+      "variants": [
+        "hyperscale"
+      ],
+      "why": "tech companies contracting gas-fired power"
+    },
+    {
+      "term": "AI-driven power demand",
+      "tier": "ai",
+      "variants": [
+        "AI power demand",
+        "AI-driven electricity demand",
+        "AI-related power demand",
+        "power for AI",
+        "powering AI",
+        "AI-driven gas demand",
+        "AI energy demand"
+      ],
+      "why": "explicit AI link to electricity and gas demand"
+    },
+    {
+      "term": "power demand growth",
+      "tier": "context",
+      "variants": [
+        "electricity demand growth",
+        "load growth",
+        "power generation demand",
+        "gas-fired power demand",
+        "power sector gas demand",
+        "gas for power"
+      ],
+      "why": "load-growth outlook lifting gas demand"
+    },
+    {
+      "term": "behind-the-meter",
+      "tier": "context",
+      "variants": [
+        "off-grid power",
+        "on-site power generation",
+        "co-located power",
+        "islanded power",
+        "dedicated power generation"
+      ],
+      "why": "on-site gas power directly serving data centres"
+    },
+    {
+      "term": "gas-fired generation",
+      "tier": "context",
+      "variants": [
+        "gas-fired power plant",
+        "combined cycle",
+        "gas turbine",
+        "natural gas power generation",
+        "gas-to-power"
+      ],
+      "why": "gas plants built for data-centre load"
+    },
+    {
+      "term": "gas with carbon capture",
+      "tier": "context",
+      "variants": [
+        "low-carbon power",
+        "power with carbon capture",
+        "decarbonised power",
+        "decarbonized power",
+        "lower-carbon power"
+      ],
+      "why": "abated gas power pitched to hyperscalers"
+    },
+    {
+      "term": "immersion cooling",
+      "tier": "context",
+      "variants": [
+        "data center cooling fluid",
+        "data centre cooling fluid",
+        "direct liquid cooling",
+        "liquid cooling",
+        "thermal management fluid"
+      ],
+      "why": "cooling fluids sold for AI servers"
+    }
+  ],
+  "class_terms": {
+    "0610": [
+      {
+        "term": "autonomous haulage",
+        "tier": "ai",
+        "variants": [
+          "autonomous haul truck",
+          "autonomous haul system",
+          "AHS",
+          "driverless truck"
+        ],
+        "case_sensitive_variants": [
+          "AHS"
+        ],
+        "why": "driverless trucks in oil sands mining"
+      },
+      {
+        "term": "steam allocation optimisation",
+        "tier": "context",
+        "variants": [
+          "steam allocation optimization",
+          "SAGD optimisation",
+          "SAGD optimization",
+          "steam-to-oil ratio optimisation",
+          "thermal production optimisation"
+        ],
+        "why": "ML optimisation of thermal oil sands wells"
+      },
+      {
+        "term": "waterflood optimisation",
+        "tier": "context",
+        "variants": [
+          "waterflood optimization",
+          "injection optimisation",
+          "injection optimization",
+          "enhanced oil recovery screening",
+          "EOR optimisation",
+          "EOR optimization"
+        ],
+        "why": "algorithmic injection management in mature oil fields"
+      }
+    ],
+    "0620": [
+      {
+        "term": "gas demand from data centers",
+        "tier": "context",
+        "variants": [
+          "gas demand from data centres",
+          "data center-driven gas demand",
+          "data centre gas demand",
+          "gas-fired data center",
+          "gas for data centers",
+          "gas for data centres"
+        ],
+        "why": "data centres as incremental natural gas demand"
+      },
+      {
+        "term": "in-basin demand",
+        "tier": "context",
+        "variants": [
+          "in-basin power",
+          "wellhead-to-data-center",
+          "direct supply agreement",
+          "power generation supply agreement"
+        ],
+        "why": "local gas demand from co-located power and compute"
+      },
+      {
+        "term": "power joint venture",
+        "tier": "context",
+        "variants": [
+          "power development partnership",
+          "integrated power solution",
+          "power generation joint venture"
+        ],
+        "why": "producers partnering to build data-centre power"
+      },
+      {
+        "term": "LNG plant optimisation",
+        "tier": "context",
+        "variants": [
+          "LNG plant optimization",
+          "liquefaction optimisation",
+          "liquefaction optimization"
+        ],
+        "why": "advanced control of liquefaction trains"
+      }
+    ]
+  }
+}

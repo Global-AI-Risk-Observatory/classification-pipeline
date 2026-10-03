@@ -1,0 +1,1412 @@
+{
+  "id": "64",
+  "name": "Financial service activities, except insurance and pension funding",
+  "section": "L",
+  "summary": "Banks, lenders, holding companies and funds describe AI mainly as own use in credit decisioning, fraud and financial-crime detection, customer service and software engineering, framed by model risk management and fair-lending supervision. Risk sections name AI-enabled fraud (deepfakes, voice cloning, synthetic identities), third-party and cloud concentration, and competition from fintech lenders. AI also appears as an exposure: lending to data-centre and GPU infrastructure, AI-driven equity valuation concentration in portfolios, and AI disruption of borrowers.",
+  "terms": [
+    {
+      "term": "AI credit scoring",
+      "tier": "ai",
+      "variants": [
+        "AI-based credit scoring",
+        "machine learning credit model",
+        "AI credit model",
+        "ML credit scoring"
+      ],
+      "why": "ML-based borrower scoring"
+    },
+    {
+      "term": "credit decisioning model",
+      "tier": "context",
+      "variants": [
+        "credit decision model",
+        "credit decisioning engine",
+        "credit decision engine"
+      ],
+      "why": "models that approve or price credit"
+    },
+    {
+      "term": "automated credit decisioning",
+      "tier": "context",
+      "variants": [
+        "automated credit decision",
+        "automated lending decision",
+        "automated loan decisioning",
+        "instant credit decision"
+      ],
+      "why": "credit approval without manual review"
+    },
+    {
+      "term": "AI-driven underwriting",
+      "tier": "ai",
+      "variants": [
+        "AI-powered underwriting",
+        "AI underwriting",
+        "machine learning underwriting",
+        "AI-based underwriting"
+      ],
+      "why": "AI used to underwrite loans"
+    },
+    {
+      "term": "algorithmic lending",
+      "tier": "ai",
+      "variants": [
+        "algorithmic credit decision",
+        "algorithmic underwriting"
+      ],
+      "why": "lending decisions made by models"
+    },
+    {
+      "term": "credit scoring",
+      "tier": "context",
+      "variants": [
+        "credit score model",
+        "scorecard model",
+        "credit scorecard"
+      ],
+      "why": "EU AI Act high-risk use case"
+    },
+    {
+      "term": "creditworthiness assessment",
+      "tier": "context",
+      "variants": [
+        "assessment of creditworthiness",
+        "evaluate the creditworthiness"
+      ],
+      "why": "AI Act Annex III wording for credit AI"
+    },
+    {
+      "term": "alternative data",
+      "tier": "context",
+      "variants": [
+        "alternative credit data",
+        "alternative data underwriting"
+      ],
+      "why": "non-bureau data feeding ML credit models"
+    },
+    {
+      "term": "cash flow underwriting",
+      "tier": "context",
+      "variants": [
+        "cash-flow-based underwriting"
+      ],
+      "why": "bank-transaction data used in model underwriting"
+    },
+    {
+      "term": "probability of default model",
+      "tier": "context",
+      "variants": [
+        "PD model",
+        "default prediction model"
+      ],
+      "why": "credit risk models increasingly ML-based"
+    },
+    {
+      "term": "IRB model",
+      "tier": "context",
+      "variants": [
+        "internal ratings-based model",
+        "internal ratings based approach",
+        "internal model approval"
+      ],
+      "why": "regulatory capital models; ML use scrutinised"
+    },
+    {
+      "term": "early warning system",
+      "tier": "context",
+      "variants": [
+        "early warning model",
+        "early warning indicator"
+      ],
+      "why": "predictive credit deterioration signals"
+    },
+    {
+      "term": "collections model",
+      "tier": "context",
+      "variants": [
+        "collections scoring",
+        "collections optimisation",
+        "collections optimization"
+      ],
+      "why": "models prioritising delinquent accounts"
+    },
+    {
+      "term": "automated valuation model",
+      "tier": "context",
+      "variants": [
+        "AVM",
+        "automated valuation"
+      ],
+      "case_sensitive_variants": [
+        "AVM"
+      ],
+      "why": "property valuation models in mortgage lending"
+    },
+    {
+      "term": "automated underwriting system",
+      "tier": "context",
+      "variants": [
+        "Desktop Underwriter",
+        "Loan Product Advisor"
+      ],
+      "why": "mortgage underwriting engines"
+    },
+    {
+      "term": "propensity model",
+      "tier": "context",
+      "variants": [
+        "propensity scoring",
+        "attrition model",
+        "churn model"
+      ],
+      "why": "predicts customer take-up or attrition"
+    },
+    {
+      "term": "next best action",
+      "tier": "context",
+      "variants": [
+        "next best offer",
+        "next-best-conversation"
+      ],
+      "why": "model-driven personalised offers"
+    },
+    {
+      "term": "hyper-personalisation",
+      "tier": "context",
+      "variants": [
+        "hyper-personalization",
+        "hyperpersonalisation",
+        "hyperpersonalization",
+        "personalised banking",
+        "personalized banking"
+      ],
+      "why": "model-driven tailoring of offers"
+    },
+    {
+      "term": "model risk management",
+      "tier": "context",
+      "variants": [
+        "model risk",
+        "model risk framework",
+        "model risk policy"
+      ],
+      "why": "governance framework covering AI/ML models"
+    },
+    {
+      "term": "SR 11-7",
+      "tier": "context",
+      "variants": [
+        "SR 11-07",
+        "SR Letter 11-7",
+        "OCC Bulletin 2011-12",
+        "supervisory guidance on model risk management"
+      ],
+      "why": "Fed model risk guidance cited for AI"
+    },
+    {
+      "term": "SS1/23",
+      "tier": "context",
+      "variants": [
+        "model risk management principles for banks",
+        "SS 1/23"
+      ],
+      "why": "PRA model risk principles, covers AI"
+    },
+    {
+      "term": "OSFI E-23",
+      "tier": "context",
+      "variants": [
+        "Guideline E-23"
+      ],
+      "why": "Canadian model risk guideline including AI"
+    },
+    {
+      "term": "model validation",
+      "tier": "context",
+      "variants": [
+        "independent model validation",
+        "model validation function"
+      ],
+      "why": "independent testing of models incl. ML"
+    },
+    {
+      "term": "model inventory",
+      "tier": "context",
+      "variants": [
+        "model register"
+      ],
+      "why": "register of models incl. AI"
+    },
+    {
+      "term": "model governance",
+      "tier": "context",
+      "variants": [
+        "model governance framework",
+        "model risk committee",
+        "model oversight committee"
+      ],
+      "why": "oversight of model lifecycle"
+    },
+    {
+      "term": "challenger model",
+      "tier": "context",
+      "variants": [
+        "champion-challenger"
+      ],
+      "why": "benchmark used to test ML models"
+    },
+    {
+      "term": "model drift",
+      "tier": "context",
+      "variants": [
+        "model performance monitoring",
+        "model decay"
+      ],
+      "why": "ML performance degradation over time"
+    },
+    {
+      "term": "black-box model",
+      "tier": "ai",
+      "variants": [
+        "black box credit model",
+        "opaque model"
+      ],
+      "why": "opaque ML model concern in lending"
+    },
+    {
+      "term": "model explainability",
+      "tier": "context",
+      "variants": [
+        "explainable credit decision",
+        "explainability of models",
+        "interpretable model"
+      ],
+      "why": "supervisors require explainable credit models"
+    },
+    {
+      "term": "adverse action notice",
+      "tier": "context",
+      "variants": [
+        "adverse action reason",
+        "adverse action requirement",
+        "adverse action notification"
+      ],
+      "why": "ECOA reasons required for model denials"
+    },
+    {
+      "term": "fair lending",
+      "tier": "context",
+      "variants": [
+        "fair lending risk",
+        "fair lending law",
+        "fair lending testing"
+      ],
+      "why": "discrimination risk in model-based lending"
+    },
+    {
+      "term": "disparate impact",
+      "tier": "context",
+      "variants": [
+        "disparate treatment",
+        "disparate outcome"
+      ],
+      "why": "bias liability for lending models"
+    },
+    {
+      "term": "Equal Credit Opportunity Act",
+      "tier": "context",
+      "variants": [
+        "ECOA",
+        "Regulation B"
+      ],
+      "case_sensitive_variants": [
+        "ECOA"
+      ],
+      "why": "US law applied to algorithmic credit"
+    },
+    {
+      "term": "less discriminatory alternative",
+      "tier": "context",
+      "variants": [
+        "LDA search"
+      ],
+      "why": "fair-lending model search requirement"
+    },
+    {
+      "term": "algorithmic redlining",
+      "tier": "ai",
+      "variants": [
+        "digital redlining",
+        "algorithmic discrimination in lending"
+      ],
+      "why": "discriminatory model outcomes in lending"
+    },
+    {
+      "term": "Consumer Duty",
+      "tier": "context",
+      "variants": [
+        "FCA Consumer Duty"
+      ],
+      "why": "UK outcomes rule applied to AI decisions"
+    },
+    {
+      "term": "automated decision-making",
+      "tier": "context",
+      "variants": [
+        "solely automated decision",
+        "automated individual decision-making"
+      ],
+      "why": "GDPR Article 22 limits on model decisions"
+    },
+    {
+      "term": "Digital Operational Resilience Act",
+      "tier": "context",
+      "variants": [
+        "DORA"
+      ],
+      "case_sensitive_variants": [
+        "DORA"
+      ],
+      "why": "EU ICT third-party rules covering AI vendors"
+    },
+    {
+      "term": "ICT third-party risk",
+      "tier": "context",
+      "variants": [
+        "critical third-party provider",
+        "ICT third-party service provider",
+        "critical third party regime"
+      ],
+      "why": "dependency on technology and AI vendors"
+    },
+    {
+      "term": "cloud concentration risk",
+      "tier": "context",
+      "variants": [
+        "concentration risk in cloud providers",
+        "hyperscaler dependency",
+        "third-party concentration risk"
+      ],
+      "why": "reliance on few cloud/AI providers"
+    },
+    {
+      "term": "regtech",
+      "tier": "context",
+      "variants": [
+        "regulatory technology",
+        "suptech",
+        "supervisory technology"
+      ],
+      "why": "compliance tooling, often ML-based"
+    },
+    {
+      "term": "MAS FEAT principles",
+      "tier": "context",
+      "variants": [
+        "FEAT principles",
+        "Veritas initiative"
+      ],
+      "why": "Singapore fairness/ethics rules for financial AI"
+    },
+    {
+      "term": "transaction monitoring",
+      "tier": "context",
+      "variants": [
+        "transaction monitoring system",
+        "transaction surveillance"
+      ],
+      "why": "AML surveillance increasingly ML-driven"
+    },
+    {
+      "term": "AI-powered fraud detection",
+      "tier": "ai",
+      "variants": [
+        "AI fraud detection",
+        "machine learning fraud detection",
+        "AI-based fraud prevention",
+        "AI-driven fraud detection"
+      ],
+      "why": "ML models flagging fraudulent activity"
+    },
+    {
+      "term": "fraud detection model",
+      "tier": "context",
+      "variants": [
+        "fraud scoring",
+        "fraud model",
+        "real-time fraud detection",
+        "fraud analytics"
+      ],
+      "why": "fraud scoring models"
+    },
+    {
+      "term": "anti-money laundering model",
+      "tier": "context",
+      "variants": [
+        "AML model",
+        "AML analytics",
+        "financial crime analytics",
+        "AI-powered AML"
+      ],
+      "why": "AML detection models"
+    },
+    {
+      "term": "financial crime detection",
+      "tier": "context",
+      "variants": [
+        "financial crime compliance",
+        "financial crime prevention"
+      ],
+      "why": "AML/fraud detection capability"
+    },
+    {
+      "term": "sanctions screening",
+      "tier": "context",
+      "variants": [
+        "name screening",
+        "payment screening",
+        "watchlist screening"
+      ],
+      "why": "name-matching systems using ML"
+    },
+    {
+      "term": "false positive reduction",
+      "tier": "context",
+      "variants": [
+        "false positive alert",
+        "reduce false positives",
+        "alert triage"
+      ],
+      "why": "main AML benefit claimed for ML"
+    },
+    {
+      "term": "suspicious activity report",
+      "tier": "context",
+      "variants": [
+        "suspicious transaction report",
+        "SAR narrative"
+      ],
+      "why": "AML output increasingly drafted with AI"
+    },
+    {
+      "term": "perpetual KYC",
+      "tier": "context",
+      "variants": [
+        "pKYC",
+        "continuous KYC"
+      ],
+      "why": "continuous model-driven customer review"
+    },
+    {
+      "term": "eKYC",
+      "tier": "context",
+      "variants": [
+        "electronic KYC",
+        "digital KYC",
+        "digital identity verification",
+        "digital onboarding"
+      ],
+      "why": "automated identity verification at onboarding"
+    },
+    {
+      "term": "liveness detection",
+      "tier": "ai",
+      "variants": [
+        "liveness check",
+        "presentation attack detection"
+      ],
+      "why": "ML check against spoofed faces"
+    },
+    {
+      "term": "behavioural biometrics",
+      "tier": "ai",
+      "variants": [
+        "behavioral biometrics"
+      ],
+      "why": "ML profiling of user behaviour for fraud"
+    },
+    {
+      "term": "voice biometrics",
+      "tier": "ai",
+      "variants": [
+        "voice authentication",
+        "voiceprint",
+        "voice ID"
+      ],
+      "why": "speaker recognition for authentication"
+    },
+    {
+      "term": "biometric authentication",
+      "tier": "context",
+      "variants": [
+        "biometric verification",
+        "facial verification"
+      ],
+      "why": "face/fingerprint login, exposed to deepfakes"
+    },
+    {
+      "term": "synthetic identity fraud",
+      "tier": "context",
+      "variants": [
+        "synthetic identity",
+        "synthetic ID"
+      ],
+      "why": "fabricated identities, increasingly AI-generated"
+    },
+    {
+      "term": "deepfake fraud",
+      "tier": "ai",
+      "variants": [
+        "deepfake scam",
+        "deepfake impersonation",
+        "deepfake attack",
+        "deepfake video"
+      ],
+      "why": "AI-generated impersonation of customers or staff"
+    },
+    {
+      "term": "voice cloning",
+      "tier": "ai",
+      "variants": [
+        "voice clone",
+        "cloned voice",
+        "AI voice scam",
+        "audio deepfake"
+      ],
+      "why": "AI-cloned voices used in scams"
+    },
+    {
+      "term": "AI-enabled fraud",
+      "tier": "ai",
+      "variants": [
+        "AI-enabled scam",
+        "AI-generated phishing",
+        "AI-powered scam",
+        "AI-driven fraud",
+        "AI-assisted fraud"
+      ],
+      "why": "fraud scaled by generative tools"
+    },
+    {
+      "term": "authorised push payment fraud",
+      "tier": "context",
+      "variants": [
+        "authorized push payment fraud",
+        "APP fraud",
+        "APP scam"
+      ],
+      "why": "scam type amplified by AI impersonation"
+    },
+    {
+      "term": "impersonation scam",
+      "tier": "context",
+      "variants": [
+        "impersonation fraud",
+        "CEO fraud",
+        "business email compromise"
+      ],
+      "why": "scam type amplified by generative AI"
+    },
+    {
+      "term": "account takeover",
+      "tier": "context",
+      "variants": [
+        "account takeover fraud"
+      ],
+      "why": "fraud type countered by ML detection"
+    },
+    {
+      "term": "money mule",
+      "tier": "context",
+      "variants": [
+        "mule account",
+        "mule detection"
+      ],
+      "why": "mule-account detection via network models"
+    },
+    {
+      "term": "social engineering",
+      "tier": "context",
+      "variants": [
+        "social engineering attack",
+        "social engineering fraud"
+      ],
+      "why": "attack vector enhanced by AI"
+    },
+    {
+      "term": "network analytics",
+      "tier": "context",
+      "variants": [
+        "graph analytics",
+        "entity resolution",
+        "link analysis"
+      ],
+      "why": "graph models for crime rings"
+    },
+    {
+      "term": "conversational banking",
+      "tier": "ai",
+      "variants": [
+        "virtual banking assistant",
+        "digital banking assistant",
+        "virtual financial assistant",
+        "AI banking assistant"
+      ],
+      "why": "AI assistants handling banking queries"
+    },
+    {
+      "term": "robo-advisor",
+      "tier": "ai",
+      "variants": [
+        "robo-adviser",
+        "robo-advisory",
+        "robo-advice",
+        "automated investment advice",
+        "digital investment advice"
+      ],
+      "why": "automated model-driven investment advice"
+    },
+    {
+      "term": "agentic banking",
+      "tier": "ai",
+      "variants": [
+        "agentic commerce",
+        "agentic payment",
+        "AI agents acting on behalf of customers"
+      ],
+      "why": "AI agents acting for customers"
+    },
+    {
+      "term": "intelligent document processing",
+      "tier": "ai",
+      "variants": [
+        "automated document processing",
+        "document intelligence",
+        "intelligent document extraction"
+      ],
+      "why": "ML extraction from loan and KYC documents"
+    },
+    {
+      "term": "robotic process automation",
+      "tier": "context",
+      "variants": [
+        "RPA",
+        "intelligent automation",
+        "hyperautomation"
+      ],
+      "case_sensitive_variants": [
+        "RPA"
+      ],
+      "why": "back-office bots, often paired with AI"
+    },
+    {
+      "term": "straight-through processing",
+      "tier": "context",
+      "variants": [
+        "straight through processing rate"
+      ],
+      "why": "no-touch processing enabled by models"
+    },
+    {
+      "term": "developer productivity",
+      "tier": "context",
+      "variants": [
+        "engineering productivity",
+        "software development productivity"
+      ],
+      "why": "AI coding tools for bank engineers"
+    },
+    {
+      "term": "legacy modernisation",
+      "tier": "context",
+      "variants": [
+        "legacy modernization",
+        "COBOL modernisation",
+        "COBOL modernization",
+        "mainframe modernisation"
+      ],
+      "why": "AI-assisted code migration off mainframes"
+    },
+    {
+      "term": "algorithmic trading",
+      "tier": "context",
+      "variants": [
+        "algo trading",
+        "algorithmic execution"
+      ],
+      "why": "automated order execution, may use ML"
+    },
+    {
+      "term": "trade surveillance",
+      "tier": "context",
+      "variants": [
+        "market abuse surveillance",
+        "communications surveillance",
+        "e-comms surveillance"
+      ],
+      "why": "market-abuse detection using ML"
+    },
+    {
+      "term": "predictive cash forecasting",
+      "tier": "ai",
+      "variants": [
+        "AI-powered cash forecasting"
+      ],
+      "why": "ML forecasting for treasury clients"
+    },
+    {
+      "term": "operational efficiency through AI",
+      "tier": "ai",
+      "variants": [
+        "AI-driven efficiency",
+        "AI productivity gain",
+        "AI-enabled productivity",
+        "AI-driven cost savings"
+      ],
+      "why": "cost savings attributed to AI"
+    },
+    {
+      "term": "workforce reskilling",
+      "tier": "context",
+      "variants": [
+        "reskilling",
+        "upskilling programme",
+        "upskilling program",
+        "AI upskilling"
+      ],
+      "why": "staff retraining for AI adoption"
+    },
+    {
+      "term": "AI-driven job reduction",
+      "tier": "ai",
+      "variants": [
+        "AI-related job cuts",
+        "AI-driven headcount reduction",
+        "roles displaced by AI",
+        "AI-related redundancies"
+      ],
+      "why": "headcount cuts attributed to AI"
+    },
+    {
+      "term": "data center financing",
+      "tier": "context",
+      "variants": [
+        "data centre financing",
+        "data center lending",
+        "data centre lending",
+        "data center loan",
+        "digital infrastructure financing"
+      ],
+      "why": "lending to AI infrastructure build-out"
+    },
+    {
+      "term": "AI infrastructure financing",
+      "tier": "ai",
+      "variants": [
+        "AI infrastructure lending",
+        "AI infrastructure investment",
+        "AI-related lending",
+        "AI financing"
+      ],
+      "why": "credit extended for AI capacity"
+    },
+    {
+      "term": "GPU-backed financing",
+      "tier": "ai",
+      "variants": [
+        "GPU-backed loan",
+        "GPU-backed debt",
+        "GPU-collateralized",
+        "chip-backed lending"
+      ],
+      "why": "loans collateralised by AI chips"
+    },
+    {
+      "term": "hyperscaler",
+      "tier": "context",
+      "variants": [
+        "hyperscale customer",
+        "hyperscaler capex"
+      ],
+      "why": "large cloud firms driving AI capex and credit demand"
+    },
+    {
+      "term": "neocloud",
+      "tier": "ai",
+      "variants": [
+        "AI cloud provider",
+        "GPU cloud provider"
+      ],
+      "why": "specialised AI cloud borrowers"
+    },
+    {
+      "term": "AI capital expenditure",
+      "tier": "ai",
+      "variants": [
+        "AI capex",
+        "AI investment boom",
+        "AI spending boom",
+        "AI investment cycle"
+      ],
+      "why": "AI investment cycle affecting markets and credit"
+    },
+    {
+      "term": "AI bubble",
+      "tier": "ai",
+      "variants": [
+        "AI-driven valuations",
+        "AI-related valuations",
+        "AI valuation risk",
+        "AI exuberance",
+        "AI-related equity valuations"
+      ],
+      "why": "valuation risk from AI enthusiasm"
+    },
+    {
+      "term": "Magnificent Seven",
+      "tier": "context",
+      "variants": [
+        "Magnificent 7",
+        "mega-cap technology stocks",
+        "megacap technology"
+      ],
+      "why": "AI-linked mega-cap concentration"
+    },
+    {
+      "term": "market concentration risk",
+      "tier": "context",
+      "variants": [
+        "concentration in technology stocks",
+        "equity market concentration",
+        "narrow market leadership"
+      ],
+      "why": "index weight concentrated in AI stocks"
+    },
+    {
+      "term": "AI disruption",
+      "tier": "ai",
+      "variants": [
+        "disruption from AI",
+        "AI-related disruption",
+        "disrupted by AI",
+        "AI displacement risk"
+      ],
+      "why": "AI undermining borrowers' or issuers' business models"
+    },
+    {
+      "term": "fintech competition",
+      "tier": "context",
+      "variants": [
+        "competition from fintechs",
+        "non-bank competitors",
+        "big tech competitors",
+        "technology company competitors"
+      ],
+      "why": "AI-native entrants competing for customers"
+    }
+  ],
+  "class_terms": {
+    "6411": [
+      {
+        "term": "nowcasting",
+        "tier": "context",
+        "variants": [
+          "nowcast model"
+        ],
+        "why": "ML-based real-time economic estimates"
+      },
+      {
+        "term": "text mining",
+        "tier": "ai",
+        "variants": [
+          "natural language analysis of supervisory data",
+          "text analytics"
+        ],
+        "why": "NLP on supervisory and policy documents"
+      },
+      {
+        "term": "financial stability implications of AI",
+        "tier": "ai",
+        "variants": [
+          "AI and financial stability",
+          "systemic risk from AI",
+          "AI-related financial stability risk"
+        ],
+        "why": "central-bank systemic AI risk analysis"
+      },
+      {
+        "term": "model herding",
+        "tier": "context",
+        "variants": [
+          "herding behaviour",
+          "herding behavior",
+          "model monoculture",
+          "correlated trading strategies"
+        ],
+        "why": "correlated behaviour from shared AI models"
+      },
+      {
+        "term": "supervisory use of AI",
+        "tier": "ai",
+        "variants": [
+          "AI in supervision",
+          "AI-enabled supervision"
+        ],
+        "why": "AI tools used by supervisors"
+      },
+      {
+        "term": "BIS Innovation Hub",
+        "tier": "context",
+        "variants": [
+          "Project Aurora",
+          "Project Gaia",
+          "Project Raven"
+        ],
+        "why": "runs central-bank AI projects"
+      },
+      {
+        "term": "AI and monetary policy",
+        "tier": "ai",
+        "variants": [
+          "AI productivity shock",
+          "AI and inflation",
+          "AI and the labour market"
+        ],
+        "why": "AI effects on inflation, productivity, transmission"
+      }
+    ],
+    "6419": [
+      {
+        "term": "LLM Suite",
+        "tier": "ai",
+        "variants": [
+          "COiN",
+          "IndexGPT"
+        ],
+        "case_sensitive_variants": [
+          "COiN"
+        ],
+        "why": "JPMorgan in-house generative AI tool"
+      },
+      {
+        "term": "relationship manager copilot",
+        "tier": "ai",
+        "variants": [
+          "banker copilot",
+          "advisor copilot",
+          "adviser copilot",
+          "AI-assisted relationship manager"
+        ],
+        "why": "AI assistant for bankers and advisers"
+      },
+      {
+        "term": "mobile banking assistant",
+        "tier": "ai",
+        "variants": [
+          "in-app virtual assistant",
+          "voice banking"
+        ],
+        "why": "in-app AI assistant for retail customers"
+      },
+      {
+        "term": "payment fraud",
+        "tier": "context",
+        "variants": [
+          "card fraud",
+          "cheque fraud",
+          "check fraud",
+          "payments fraud"
+        ],
+        "why": "fraud type screened by real-time ML"
+      },
+      {
+        "term": "contact centre transformation",
+        "tier": "context",
+        "variants": [
+          "contact center transformation",
+          "call deflection",
+          "call summarisation",
+          "call summarization"
+        ],
+        "why": "AI call handling in bank service centres"
+      },
+      {
+        "term": "deposit pricing model",
+        "tier": "context",
+        "variants": [
+          "deposit beta model",
+          "pricing optimisation model",
+          "pricing optimization model"
+        ],
+        "why": "models setting deposit rates"
+      },
+      {
+        "term": "credit memo generation",
+        "tier": "ai",
+        "variants": [
+          "automated credit memo",
+          "AI-drafted credit memo",
+          "credit paper drafting"
+        ],
+        "why": "generative drafting of credit papers"
+      },
+      {
+        "term": "know your customer",
+        "tier": "context",
+        "variants": [
+          "KYC process",
+          "KYC review",
+          "KYC remediation",
+          "customer due diligence"
+        ],
+        "why": "onboarding checks automated with AI"
+      },
+      {
+        "term": "BCBS 239",
+        "tier": "context",
+        "variants": [
+          "risk data aggregation"
+        ],
+        "why": "data aggregation rule underpinning AI readiness"
+      }
+    ],
+    "6421": [
+      {
+        "term": "portfolio company AI adoption",
+        "tier": "ai",
+        "variants": [
+          "AI adoption across portfolio companies",
+          "AI initiatives at subsidiaries",
+          "group-wide AI programme",
+          "group-wide AI program"
+        ],
+        "why": "holding firms report AI use at subsidiaries"
+      },
+      {
+        "term": "AI investment thesis",
+        "tier": "ai",
+        "variants": [
+          "AI-related investments",
+          "investments in AI companies",
+          "AI portfolio companies",
+          "AI holdings"
+        ],
+        "why": "holdings allocating capital to AI themes"
+      },
+      {
+        "term": "AI centre of excellence",
+        "tier": "ai",
+        "variants": [
+          "AI center of excellence",
+          "group AI office",
+          "AI competence centre",
+          "AI competence center"
+        ],
+        "why": "group-level AI capability hub"
+      },
+      {
+        "term": "group AI policy",
+        "tier": "ai",
+        "variants": [
+          "group-wide AI governance",
+          "group AI framework",
+          "group AI standard"
+        ],
+        "why": "holding-level governance of subsidiary AI"
+      }
+    ],
+    "6431": [
+      {
+        "term": "AI-driven market volatility",
+        "tier": "ai",
+        "variants": [
+          "AI-related market volatility",
+          "AI-led sell-off"
+        ],
+        "why": "AI news moving short-term markets"
+      }
+    ],
+    "6432": [
+      {
+        "term": "AI-themed fund",
+        "tier": "ai",
+        "variants": [
+          "AI thematic fund",
+          "AI ETF",
+          "artificial intelligence ETF",
+          "thematic AI strategy",
+          "AI-focused fund"
+        ],
+        "why": "funds investing in the AI theme"
+      },
+      {
+        "term": "semiconductor exposure",
+        "tier": "context",
+        "variants": [
+          "semiconductor holdings",
+          "exposure to chipmakers",
+          "chip stocks"
+        ],
+        "why": "portfolio weight in AI chipmakers"
+      },
+      {
+        "term": "technology sector concentration",
+        "tier": "context",
+        "variants": [
+          "technology sector exposure",
+          "information technology sector weighting",
+          "concentration in a small number of technology companies"
+        ],
+        "why": "fund concentration in AI-linked names"
+      },
+      {
+        "term": "systematic investment strategy",
+        "tier": "context",
+        "variants": [
+          "systematic strategy",
+          "quantitative investment strategy",
+          "quantitative strategy",
+          "quant fund"
+        ],
+        "why": "model-driven portfolio construction"
+      },
+      {
+        "term": "AI-driven stock selection",
+        "tier": "ai",
+        "variants": [
+          "machine learning stock selection",
+          "AI-powered investment process",
+          "AI-based portfolio construction"
+        ],
+        "why": "ML used to pick securities"
+      },
+      {
+        "term": "AI beneficiaries",
+        "tier": "ai",
+        "variants": [
+          "AI winners",
+          "AI enablers",
+          "AI adopters",
+          "AI-exposed companies",
+          "AI-related stocks"
+        ],
+        "why": "holdings positioned to gain from AI"
+      },
+      {
+        "term": "data center investment",
+        "tier": "context",
+        "variants": [
+          "data centre investment",
+          "digital infrastructure fund",
+          "data center assets",
+          "data centre assets"
+        ],
+        "why": "fund holdings in AI infrastructure assets"
+      }
+    ],
+    "6491": [
+      {
+        "term": "residual value forecasting",
+        "tier": "context",
+        "variants": [
+          "residual value model",
+          "residual value prediction"
+        ],
+        "why": "models estimating lease-end asset values"
+      },
+      {
+        "term": "GPU leasing",
+        "tier": "ai",
+        "variants": [
+          "GPU lease",
+          "AI server leasing",
+          "AI hardware leasing",
+          "compute leasing"
+        ],
+        "why": "leasing AI accelerators to compute users"
+      },
+      {
+        "term": "data center equipment leasing",
+        "tier": "context",
+        "variants": [
+          "data centre equipment leasing",
+          "IT equipment leasing",
+          "technology equipment finance"
+        ],
+        "why": "lease finance for AI infrastructure"
+      },
+      {
+        "term": "telematics data",
+        "tier": "context",
+        "variants": [
+          "connected asset data",
+          "usage-based leasing"
+        ],
+        "why": "connected-asset data feeding lease risk models"
+      },
+      {
+        "term": "automated lease decisioning",
+        "tier": "context",
+        "variants": [
+          "automated lease approval",
+          "instant lease decision"
+        ],
+        "why": "model-based lease approval"
+      }
+    ],
+    "6492": [
+      {
+        "term": "trade document digitisation",
+        "tier": "context",
+        "variants": [
+          "trade document digitization",
+          "automated document checking",
+          "document checking automation"
+        ],
+        "why": "ML extraction from trade documents"
+      },
+      {
+        "term": "trade-based money laundering",
+        "tier": "context",
+        "variants": [
+          "TBML detection"
+        ],
+        "why": "detection relies on ML document analysis"
+      }
+    ],
+    "6493": [
+      {
+        "term": "invoice fraud detection",
+        "tier": "context",
+        "variants": [
+          "duplicate invoice detection",
+          "fictitious invoice"
+        ],
+        "why": "models spotting fake or duplicate invoices"
+      },
+      {
+        "term": "automated invoice verification",
+        "tier": "context",
+        "variants": [
+          "automated invoice processing",
+          "invoice data extraction"
+        ],
+        "why": "machine reading of receivables"
+      },
+      {
+        "term": "debtor risk scoring",
+        "tier": "context",
+        "variants": [
+          "debtor scoring",
+          "receivables risk model"
+        ],
+        "why": "models rating receivable obligors"
+      }
+    ],
+    "6494": [
+      {
+        "term": "data center ABS",
+        "tier": "context",
+        "variants": [
+          "data centre ABS",
+          "data center securitization",
+          "data centre securitisation",
+          "data center CMBS"
+        ],
+        "why": "securitised AI infrastructure cash flows"
+      },
+      {
+        "term": "GPU-backed ABS",
+        "tier": "ai",
+        "variants": [
+          "GPU securitization",
+          "GPU-backed securities",
+          "compute-backed securities"
+        ],
+        "why": "securitisation of AI chip leases"
+      },
+      {
+        "term": "AI-originated loans",
+        "tier": "ai",
+        "variants": [
+          "loans originated using AI models",
+          "AI-underwritten loans",
+          "machine-learning-originated loans"
+        ],
+        "why": "collateral underwritten by AI models"
+      }
+    ],
+    "6495": [
+      {
+        "term": "AI lending platform",
+        "tier": "ai",
+        "variants": [
+          "AI lending marketplace",
+          "AI-native lender",
+          "AI-powered lending"
+        ],
+        "why": "fintech lenders selling AI underwriting"
+      },
+      {
+        "term": "thin-file borrower",
+        "tier": "context",
+        "variants": [
+          "thin file",
+          "credit invisible",
+          "no-file consumer"
+        ],
+        "why": "consumers scored via alternative-data models"
+      },
+      {
+        "term": "buy now, pay later underwriting",
+        "tier": "context",
+        "variants": [
+          "BNPL underwriting",
+          "BNPL credit decision",
+          "pay-later underwriting"
+        ],
+        "why": "real-time model approval at checkout"
+      },
+      {
+        "term": "percentage of loans fully automated",
+        "tier": "context",
+        "variants": [
+          "fully automated loans",
+          "instantly approved loans"
+        ],
+        "why": "KPI of AI lenders"
+      }
+    ],
+    "6499": [
+      {
+        "term": "proprietary trading algorithm",
+        "tier": "context",
+        "variants": [
+          "proprietary trading model",
+          "market-making algorithm",
+          "automated market making"
+        ],
+        "why": "model-driven trading by non-bank firms"
+      },
+      {
+        "term": "AI venture investment",
+        "tier": "ai",
+        "variants": [
+          "AI startup investment",
+          "investment in AI startups",
+          "AI venture portfolio",
+          "AI unicorn"
+        ],
+        "why": "venture and PE stakes in AI firms"
+      },
+      {
+        "term": "AI-driven deal sourcing",
+        "tier": "ai",
+        "variants": [
+          "AI deal sourcing"
+        ],
+        "why": "ML used to find investment targets"
+      }
+    ]
+  }
+}

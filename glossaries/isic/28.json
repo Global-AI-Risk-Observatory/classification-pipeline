@@ -1,0 +1,1411 @@
+{
+  "id": "28",
+  "name": "Manufacture of machinery and equipment n.e.c.",
+  "section": "C",
+  "summary": "Machinery makers write about AI as machine autonomy and operator assistance (autonomous tractors, haul trucks, forklifts, robots), as connected-machine services (condition monitoring, predictive maintenance, remote diagnostics) and as self-optimising process control, often justified by operator shortages. Demand effects are large: chip-making equipment for AI semiconductors, gas turbines and gensets for data center power, chillers, pumps and liquid cooling, and precision gears and screws for humanoid robots. Risks and rules include export controls on chip tools, the EU Machinery Regulation's treatment of self-evolving systems, functional safety, product liability and cyber security of connected machines.",
+  "terms": [
+    {
+      "term": "predictive maintenance",
+      "tier": "ai",
+      "variants": [
+        "prescriptive maintenance"
+      ],
+      "why": "ML on machine data, sold as a service"
+    },
+    {
+      "term": "condition monitoring",
+      "tier": "context",
+      "variants": [
+        "remote monitoring",
+        "remote diagnostics",
+        "vibration monitoring",
+        "asset health monitoring"
+      ],
+      "why": "sensor monitoring where predictive models run"
+    },
+    {
+      "term": "connected machine",
+      "tier": "context",
+      "variants": [
+        "connected equipment",
+        "connected fleet",
+        "machine connectivity",
+        "telematics",
+        "connected installed base"
+      ],
+      "why": "installed-base connectivity feeding data services"
+    },
+    {
+      "term": "digital twin",
+      "tier": "context",
+      "why": "virtual machine or line model paired with AI"
+    },
+    {
+      "term": "smart factory",
+      "tier": "context",
+      "variants": [
+        "smart manufacturing",
+        "intelligent factory",
+        "factory of the future",
+        "digital factory"
+      ],
+      "why": "customer programmes into which AI-enabled machines are sold"
+    },
+    {
+      "term": "Industry 4.0",
+      "tier": "context",
+      "variants": [
+        "Industrie 4.0",
+        "industrial internet of things",
+        "IIoT",
+        "industrial IoT"
+      ],
+      "case_sensitive_variants": [
+        "IIoT"
+      ],
+      "why": "umbrella label for connected, data-driven production"
+    },
+    {
+      "term": "edge computing",
+      "tier": "context",
+      "variants": [
+        "industrial edge",
+        "edge device",
+        "edge controller"
+      ],
+      "why": "on-machine computing hosting AI models"
+    },
+    {
+      "term": "machine vision",
+      "tier": "ai",
+      "variants": [
+        "vision system",
+        "3D vision",
+        "AI vision",
+        "automated visual inspection",
+        "automated optical inspection"
+      ],
+      "why": "camera AI guiding and inspecting machines"
+    },
+    {
+      "term": "collaborative robot",
+      "tier": "context",
+      "variants": [
+        "cobot"
+      ],
+      "why": "robots working beside people, easier to deploy with AI"
+    },
+    {
+      "term": "industrial robot",
+      "tier": "context",
+      "variants": [
+        "articulated robot",
+        "six-axis robot",
+        "SCARA",
+        "delta robot",
+        "robot arm"
+      ],
+      "why": "robot products and installations"
+    },
+    {
+      "term": "autonomous mobile robot",
+      "tier": "ai",
+      "variants": [
+        "AMR",
+        "mobile manipulator"
+      ],
+      "case_sensitive_variants": [
+        "AMR"
+      ],
+      "why": "self-navigating robots for material transport"
+    },
+    {
+      "term": "automated guided vehicle",
+      "tier": "context",
+      "variants": [
+        "AGV",
+        "driverless transport system"
+      ],
+      "case_sensitive_variants": [
+        "AGV"
+      ],
+      "why": "driverless transport vehicles in plants and warehouses"
+    },
+    {
+      "term": "humanoid robot",
+      "tier": "ai",
+      "variants": [
+        "humanoid",
+        "embodied AI",
+        "embodied intelligence",
+        "general-purpose robot"
+      ],
+      "why": "AI-driven general-purpose robots; new component market"
+    },
+    {
+      "term": "physical AI",
+      "tier": "ai",
+      "variants": [
+        "robot foundation model",
+        "vision-language-action",
+        "robot learning",
+        "sim-to-real",
+        "AI-driven robotics"
+      ],
+      "why": "AI models controlling machines and robots"
+    },
+    {
+      "term": "machine autonomy",
+      "tier": "ai",
+      "variants": [
+        "autonomous machine",
+        "autonomous equipment",
+        "autonomy solution",
+        "semi-autonomous",
+        "unmanned operation",
+        "autonomous operation"
+      ],
+      "why": "machines operating without an operator"
+    },
+    {
+      "term": "operator assistance system",
+      "tier": "context",
+      "variants": [
+        "operator assist",
+        "assistance function",
+        "teleoperation",
+        "remote operation",
+        "tele-remote"
+      ],
+      "why": "assist functions short of full autonomy"
+    },
+    {
+      "term": "self-learning machine",
+      "tier": "ai",
+      "variants": [
+        "self-optimising machine",
+        "self-optimizing machine",
+        "self-learning control",
+        "self-adjusting machine"
+      ],
+      "why": "machines that tune their own parameters"
+    },
+    {
+      "term": "adaptive process control",
+      "tier": "context",
+      "variants": [
+        "closed-loop control",
+        "model predictive control",
+        "advanced process control"
+      ],
+      "why": "closed-loop control where ML is embedded"
+    },
+    {
+      "term": "overall equipment effectiveness",
+      "tier": "context",
+      "variants": [
+        "OEE",
+        "unplanned downtime",
+        "machine availability"
+      ],
+      "case_sensitive_variants": [
+        "OEE"
+      ],
+      "why": "productivity metric AI services promise to raise"
+    },
+    {
+      "term": "generative design",
+      "tier": "ai",
+      "variants": [
+        "AI-assisted design",
+        "AI-driven design"
+      ],
+      "why": "algorithm-generated part and machine designs"
+    },
+    {
+      "term": "virtual commissioning",
+      "tier": "context",
+      "variants": [
+        "simulation-based commissioning",
+        "virtual prototyping"
+      ],
+      "why": "simulation-based start-up using machine models"
+    },
+    {
+      "term": "industrial metaverse",
+      "tier": "context",
+      "variants": [
+        "NVIDIA Omniverse",
+        "factory simulation",
+        "simulation-based training"
+      ],
+      "why": "simulation environments for training machines and robots"
+    },
+    {
+      "term": "automated fault diagnosis",
+      "tier": "ai",
+      "variants": [
+        "intelligent diagnostics",
+        "AI-based diagnostics",
+        "self-diagnosing machine"
+      ],
+      "why": "AI finding machine faults for service staff"
+    },
+    {
+      "term": "remote service",
+      "tier": "context",
+      "variants": [
+        "remote assistance",
+        "augmented reality service",
+        "service technician assistant",
+        "technician copilot"
+      ],
+      "why": "digital service channels using AI assistants"
+    },
+    {
+      "term": "industrial copilot",
+      "tier": "ai",
+      "variants": [
+        "PLC code generation",
+        "AI-assisted engineering",
+        "engineering copilot",
+        "no-code robot programming",
+        "machine copilot"
+      ],
+      "why": "generative AI assistants for engineering and operation"
+    },
+    {
+      "term": "robot-as-a-service",
+      "tier": "context",
+      "variants": [
+        "RaaS",
+        "equipment-as-a-service",
+        "machine-as-a-service",
+        "pay-per-use",
+        "outcome-based service"
+      ],
+      "case_sensitive_variants": [
+        "RaaS"
+      ],
+      "why": "usage-based models enabled by connected machines"
+    },
+    {
+      "term": "Machinery Regulation",
+      "tier": "context",
+      "variants": [
+        "Regulation (EU) 2023/1230",
+        "Machinery Directive"
+      ],
+      "why": "EU safety law covering AI-based machine functions"
+    },
+    {
+      "term": "self-evolving behaviour",
+      "tier": "ai",
+      "variants": [
+        "self-evolving behavior",
+        "self-evolving logic"
+      ],
+      "why": "Machinery Regulation term for learning systems"
+    },
+    {
+      "term": "functional safety",
+      "tier": "context",
+      "variants": [
+        "ISO 13849",
+        "safety-rated",
+        "ISO 10218",
+        "ISO/TS 15066"
+      ],
+      "why": "safety standards autonomous machines must meet"
+    },
+    {
+      "term": "product liability",
+      "tier": "context",
+      "variants": [
+        "liability for autonomous machines",
+        "strict liability for software"
+      ],
+      "why": "liability rules extended to software and AI"
+    },
+    {
+      "term": "Cyber Resilience Act",
+      "tier": "context",
+      "variants": [
+        "IEC 62443",
+        "OT security",
+        "operational technology security",
+        "industrial cybersecurity",
+        "machine cybersecurity"
+      ],
+      "why": "cyber duties for connected machines"
+    },
+    {
+      "term": "EU Data Act",
+      "tier": "context",
+      "variants": [
+        "machine data access",
+        "machine data sharing",
+        "machine-generated data"
+      ],
+      "why": "access rights to connected machine data"
+    },
+    {
+      "term": "labour shortage",
+      "tier": "context",
+      "variants": [
+        "labor shortage",
+        "operator shortage",
+        "driver shortage",
+        "skills shortage"
+      ],
+      "why": "stated driver for autonomous and automated machines"
+    },
+    {
+      "term": "data center",
+      "tier": "context",
+      "variants": [
+        "data centre",
+        "datacenter",
+        "datacentre"
+      ],
+      "why": "AI-driven end market for power, cooling and flow equipment"
+    },
+    {
+      "term": "hyperscaler",
+      "tier": "context",
+      "variants": [
+        "hyperscale"
+      ],
+      "why": "large cloud and AI customers behind orders"
+    },
+    {
+      "term": "AI data center",
+      "tier": "ai",
+      "variants": [
+        "AI data centre",
+        "AI infrastructure",
+        "AI factory",
+        "AI build-out",
+        "AI buildout"
+      ],
+      "why": "facilities built for AI training and inference"
+    },
+    {
+      "term": "load growth",
+      "tier": "context",
+      "variants": [
+        "electricity demand growth",
+        "power demand growth"
+      ],
+      "why": "electricity demand surge attributed to AI"
+    },
+    {
+      "term": "liquid cooling",
+      "tier": "context",
+      "variants": [
+        "direct-to-chip",
+        "cold plate",
+        "immersion cooling",
+        "coolant distribution unit",
+        "CDU",
+        "rear door heat exchanger"
+      ],
+      "case_sensitive_variants": [
+        "CDU"
+      ],
+      "why": "cooling shift forced by AI chip heat"
+    },
+    {
+      "term": "export controls",
+      "tier": "context",
+      "variants": [
+        "export restrictions",
+        "export licence",
+        "export license",
+        "dual-use",
+        "Entity List"
+      ],
+      "why": "limits on shipping chip tools and machine tools"
+    }
+  ],
+  "class_terms": {
+    "2811": [
+      {
+        "term": "gas turbine",
+        "tier": "context",
+        "variants": [
+          "aeroderivative",
+          "combined cycle",
+          "slot reservation",
+          "turbine slot"
+        ],
+        "why": "turbine orders driven by data center power needs"
+      },
+      {
+        "term": "genset",
+        "tier": "context",
+        "variants": [
+          "generator set",
+          "standby generator",
+          "backup generator",
+          "emergency power",
+          "high-speed engine"
+        ],
+        "why": "standby and prime power engines for data centers"
+      },
+      {
+        "term": "behind-the-meter",
+        "tier": "context",
+        "variants": [
+          "on-site power",
+          "onsite power generation",
+          "prime power",
+          "bridging power",
+          "bring your own power",
+          "time to power",
+          "speed to power"
+        ],
+        "why": "on-site generation because grid cannot serve AI load"
+      },
+      {
+        "term": "small modular reactor",
+        "tier": "context",
+        "variants": [
+          "microreactor",
+          "nuclear new build"
+        ],
+        "why": "nuclear orders tied to AI power demand"
+      }
+    ],
+    "2812": [
+      {
+        "term": "quick disconnect",
+        "tier": "context",
+        "variants": [
+          "quick coupling",
+          "UQD",
+          "blind-mate coupling"
+        ],
+        "case_sensitive_variants": [
+          "UQD"
+        ],
+        "why": "fluid connectors for liquid-cooled AI racks"
+      },
+      {
+        "term": "smart hydraulics",
+        "tier": "context",
+        "variants": [
+          "connected hydraulics",
+          "electro-hydraulic control",
+          "intelligent hydraulics"
+        ],
+        "why": "sensor-equipped fluid power with data services"
+      }
+    ],
+    "2813": [
+      {
+        "term": "coolant pump",
+        "tier": "context",
+        "variants": [
+          "cooling pump",
+          "CDU pump",
+          "facility water loop",
+          "cooling manifold"
+        ],
+        "why": "pumps and loops for data center cooling"
+      },
+      {
+        "term": "centrifugal compressor",
+        "tier": "context",
+        "variants": [
+          "oil-free compressor",
+          "magnetic bearing compressor",
+          "chiller compressor"
+        ],
+        "why": "chiller compressors for data center cooling"
+      },
+      {
+        "term": "smart valve",
+        "tier": "context",
+        "variants": [
+          "intelligent valve",
+          "valve diagnostics",
+          "smart positioner",
+          "smart pump",
+          "intelligent pump",
+          "connected pump"
+        ],
+        "why": "self-diagnosing valves and pumps"
+      },
+      {
+        "term": "vacuum pump",
+        "tier": "context",
+        "variants": [
+          "semiconductor vacuum",
+          "abatement system",
+          "vacuum valve"
+        ],
+        "why": "sold into chip fabs expanding for AI"
+      }
+    ],
+    "2814": [
+      {
+        "term": "sensorized bearing",
+        "tier": "context",
+        "variants": [
+          "sensorised bearing",
+          "smart bearing",
+          "sensor bearing",
+          "intelligent bearing"
+        ],
+        "why": "bearings generating condition data for ML"
+      },
+      {
+        "term": "strain wave gear",
+        "tier": "context",
+        "variants": [
+          "harmonic drive",
+          "precision reducer",
+          "precision gear",
+          "RV reducer",
+          "cycloidal reducer",
+          "robot joint"
+        ],
+        "why": "precision reducers for robot joints"
+      },
+      {
+        "term": "roller screw",
+        "tier": "context",
+        "variants": [
+          "ball screw",
+          "linear actuator",
+          "humanoid actuator",
+          "robot actuator",
+          "joint module"
+        ],
+        "why": "linear actuators for humanoid robots"
+      }
+    ],
+    "2816": [
+      {
+        "term": "warehouse automation",
+        "tier": "context",
+        "variants": [
+          "intralogistics",
+          "automated storage and retrieval system",
+          "AS/RS",
+          "shuttle system",
+          "goods-to-person",
+          "automated warehouse",
+          "fulfilment automation",
+          "fulfillment automation"
+        ],
+        "case_sensitive_variants": [
+          "AS/RS"
+        ],
+        "why": "intralogistics systems orchestrated by AI software"
+      },
+      {
+        "term": "autonomous forklift",
+        "tier": "ai",
+        "variants": [
+          "automated forklift",
+          "driverless forklift",
+          "automated truck",
+          "autonomous tugger"
+        ],
+        "why": "self-driving industrial trucks"
+      },
+      {
+        "term": "robotic picking",
+        "tier": "ai",
+        "variants": [
+          "piece picking",
+          "item picking robot",
+          "robotic depalletising",
+          "robotic depalletizing",
+          "AI-powered picking",
+          "bin picking"
+        ],
+        "why": "AI-vision robots handling individual items"
+      },
+      {
+        "term": "fleet management system",
+        "tier": "context",
+        "variants": [
+          "fleet orchestration",
+          "warehouse execution system",
+          "warehouse control system"
+        ],
+        "why": "software orchestrating robot and truck fleets"
+      },
+      {
+        "term": "connected elevator",
+        "tier": "context",
+        "variants": [
+          "connected lift",
+          "24/7 Connected Services",
+          "Otis ONE",
+          "Schindler Ahead",
+          "remote elevator monitoring"
+        ],
+        "why": "elevator services built on predictive maintenance"
+      },
+      {
+        "term": "destination dispatch",
+        "tier": "context",
+        "variants": [
+          "people flow",
+          "destination control"
+        ],
+        "why": "ML-optimised elevator traffic control"
+      },
+      {
+        "term": "automated crane",
+        "tier": "context",
+        "variants": [
+          "remote-operated crane",
+          "autonomous crane",
+          "automated stacking crane",
+          "automated container terminal",
+          "port automation"
+        ],
+        "why": "self-operating and remote-operated cranes"
+      },
+      {
+        "term": "pedestrian detection",
+        "tier": "ai",
+        "variants": [
+          "AI camera",
+          "operator assistance camera",
+          "proximity detection",
+          "collision avoidance"
+        ],
+        "why": "camera AI warning truck operators"
+      }
+    ],
+    "2817": [
+      {
+        "term": "intelligent document processing",
+        "tier": "ai",
+        "variants": [
+          "optical character recognition",
+          "OCR",
+          "AI-OCR",
+          "document capture",
+          "automated document workflow"
+        ],
+        "case_sensitive_variants": [
+          "OCR"
+        ],
+        "why": "AI capture and classification in office devices"
+      }
+    ],
+    "2818": [
+      {
+        "term": "connected tool",
+        "tier": "context",
+        "variants": [
+          "smart tool",
+          "tool tracking",
+          "connected jobsite",
+          "tool fleet management"
+        ],
+        "why": "sensor-equipped tools generating jobsite data"
+      },
+      {
+        "term": "construction robot",
+        "tier": "context",
+        "variants": [
+          "jobsite robot",
+          "drilling robot",
+          "semi-autonomous drilling",
+          "layout robot"
+        ],
+        "why": "semi-autonomous jobsite robots"
+      }
+    ],
+    "2819": [
+      {
+        "term": "chiller",
+        "tier": "context",
+        "variants": [
+          "computer room air conditioning",
+          "CRAC",
+          "CRAH",
+          "precision cooling",
+          "air handling unit",
+          "fan wall",
+          "thermal management",
+          "applied HVAC"
+        ],
+        "case_sensitive_variants": [
+          "CRAC",
+          "CRAH"
+        ],
+        "why": "cooling plant for AI data centers"
+      },
+      {
+        "term": "free cooling",
+        "tier": "context",
+        "variants": [
+          "economizer",
+          "adiabatic cooling",
+          "heat reuse",
+          "waste heat recovery",
+          "heat rejection"
+        ],
+        "why": "efficiency and heat-recovery features for data centers"
+      },
+      {
+        "term": "power usage effectiveness",
+        "tier": "context",
+        "variants": [
+          "PUE",
+          "water usage effectiveness",
+          "WUE"
+        ],
+        "case_sensitive_variants": [
+          "PUE",
+          "WUE"
+        ],
+        "why": "data center efficiency metrics"
+      },
+      {
+        "term": "building automation",
+        "tier": "context",
+        "variants": [
+          "building management system",
+          "smart building",
+          "autonomous building",
+          "HVAC optimisation",
+          "HVAC optimization",
+          "AI-driven HVAC"
+        ],
+        "why": "building controls where AI optimisation is sold"
+      },
+      {
+        "term": "X-ray inspection",
+        "tier": "context",
+        "variants": [
+          "checkweigher",
+          "foreign object detection",
+          "vision inspection",
+          "product inspection"
+        ],
+        "why": "product inspection machines using image recognition"
+      },
+      {
+        "term": "cleanroom",
+        "tier": "context",
+        "variants": [
+          "clean room",
+          "fan filter unit"
+        ],
+        "why": "fab environment equipment for AI chip capacity"
+      }
+    ],
+    "2821": [
+      {
+        "term": "precision agriculture",
+        "tier": "context",
+        "variants": [
+          "precision farming",
+          "precision ag",
+          "smart farming",
+          "digital farming",
+          "variable rate application",
+          "prescription map"
+        ],
+        "why": "data-driven farming where AI features are sold"
+      },
+      {
+        "term": "autonomous tractor",
+        "tier": "ai",
+        "variants": [
+          "driverless tractor",
+          "autonomous tillage",
+          "autonomous farming",
+          "autonomy-ready",
+          "autonomy kit",
+          "fully autonomous"
+        ],
+        "why": "driverless field machines"
+      },
+      {
+        "term": "auto-steer",
+        "tier": "context",
+        "variants": [
+          "autosteer",
+          "auto-guidance",
+          "AutoTrac",
+          "GPS guidance",
+          "hands-free steering",
+          "automatic steering"
+        ],
+        "why": "automatic guidance, the base layer of farm autonomy"
+      },
+      {
+        "term": "See & Spray",
+        "tier": "ai",
+        "variants": [
+          "selective spraying",
+          "spot spraying",
+          "targeted spraying",
+          "weed detection",
+          "plant-level management",
+          "sense and act",
+          "green-on-green"
+        ],
+        "why": "camera AI targeting individual weeds"
+      },
+      {
+        "term": "yield mapping",
+        "tier": "context",
+        "variants": [
+          "yield monitor",
+          "agronomic data",
+          "John Deere Operations Center",
+          "farm management information system",
+          "FMIS"
+        ],
+        "case_sensitive_variants": [
+          "FMIS"
+        ],
+        "why": "agronomic data feeding farm AI services"
+      },
+      {
+        "term": "combine automation",
+        "tier": "context",
+        "variants": [
+          "harvest automation",
+          "automated harvest settings",
+          "predictive ground speed",
+          "grain quality camera"
+        ],
+        "why": "self-adjusting harvest settings using cameras"
+      },
+      {
+        "term": "milking robot",
+        "tier": "context",
+        "variants": [
+          "robotic milking",
+          "automatic milking system",
+          "feeding robot",
+          "barn robot",
+          "herd management software"
+        ],
+        "why": "barn robots with animal-data algorithms"
+      },
+      {
+        "term": "robotic mower",
+        "tier": "context",
+        "variants": [
+          "robotic lawn mower",
+          "robotic lawnmower",
+          "wire-free mower",
+          "autonomous mower"
+        ],
+        "why": "autonomous lawn and turf machines"
+      },
+      {
+        "term": "agricultural drone",
+        "tier": "context",
+        "variants": [
+          "spraying drone",
+          "crop scouting",
+          "drone spraying"
+        ],
+        "why": "drones for scouting and spraying"
+      }
+    ],
+    "2822": [
+      {
+        "term": "numerical control",
+        "tier": "context",
+        "variants": [
+          "CNC"
+        ],
+        "case_sensitive_variants": [
+          "CNC"
+        ],
+        "why": "machine control layer where AI functions are added"
+      },
+      {
+        "term": "thermal displacement compensation",
+        "tier": "ai",
+        "variants": [
+          "AI thermal displacement",
+          "thermal compensation",
+          "AI servo tuning",
+          "AI servo monitor"
+        ],
+        "why": "AI correcting machine tool thermal drift"
+      },
+      {
+        "term": "tool wear prediction",
+        "tier": "ai",
+        "variants": [
+          "tool condition monitoring",
+          "tool life prediction",
+          "chatter detection",
+          "chatter suppression",
+          "spindle monitoring"
+        ],
+        "why": "ML monitoring of tools and spindles"
+      },
+      {
+        "term": "adaptive machining",
+        "tier": "context",
+        "variants": [
+          "adaptive feed control",
+          "in-process measurement",
+          "closed-loop machining"
+        ],
+        "why": "self-correcting machining from in-process measurement"
+      },
+      {
+        "term": "automated CAM programming",
+        "tier": "ai",
+        "variants": [
+          "AI-assisted CAM",
+          "toolpath generation",
+          "automatic NC programming",
+          "conversational programming"
+        ],
+        "why": "AI writing machining programmes"
+      },
+      {
+        "term": "unmanned machining",
+        "tier": "context",
+        "variants": [
+          "lights-out machining",
+          "lights-out manufacturing",
+          "unattended operation",
+          "machine tending",
+          "pallet automation",
+          "robot loading"
+        ],
+        "why": "unattended operation relying on self-monitoring"
+      },
+      {
+        "term": "nesting optimisation",
+        "tier": "context",
+        "variants": [
+          "nesting optimization",
+          "automated nesting",
+          "part sorting automation"
+        ],
+        "why": "algorithmic sheet layout on laser and punch machines"
+      }
+    ],
+    "2823": [
+      {
+        "term": "autonomous steel plant",
+        "tier": "ai",
+        "variants": [
+          "learning steel mill",
+          "zero-man operation",
+          "no-man-on-the-floor"
+        ],
+        "why": "plant builders' vision of AI-run mills"
+      },
+      {
+        "term": "process automation system",
+        "tier": "context",
+        "variants": [
+          "level 2 automation",
+          "metallurgical process model",
+          "mill automation",
+          "through-process optimisation",
+          "through-process optimization"
+        ],
+        "why": "mill control layer where ML models run"
+      }
+    ],
+    "2824": [
+      {
+        "term": "autonomous haulage",
+        "tier": "ai",
+        "variants": [
+          "AHS",
+          "autonomous haul truck",
+          "autonomous mining truck",
+          "autonomous hauling"
+        ],
+        "case_sensitive_variants": [
+          "AHS"
+        ],
+        "why": "driverless mining trucks"
+      },
+      {
+        "term": "autonomous drilling",
+        "tier": "ai",
+        "variants": [
+          "autonomous drill",
+          "automated drilling",
+          "AutoMine",
+          "autonomous loader",
+          "autonomous underground"
+        ],
+        "why": "self-operating drills and loaders"
+      },
+      {
+        "term": "autonomous construction equipment",
+        "tier": "ai",
+        "variants": [
+          "autonomous excavator",
+          "autonomous compactor",
+          "autonomous dozer",
+          "jobsite autonomy",
+          "autonomous worksite"
+        ],
+        "why": "self-operating earthmoving machines"
+      },
+      {
+        "term": "machine control",
+        "tier": "context",
+        "variants": [
+          "grade control",
+          "payload management",
+          "smart construction",
+          "grade assist",
+          "dig assist"
+        ],
+        "why": "assist features on the path to autonomy"
+      },
+      {
+        "term": "mine automation",
+        "tier": "context",
+        "variants": [
+          "fleet dispatch",
+          "mine digitalisation",
+          "mine digitalization",
+          "digital mine",
+          "connected mine",
+          "mine fleet management"
+        ],
+        "why": "fleet and mine systems orchestrating autonomous machines"
+      },
+      {
+        "term": "collision awareness",
+        "tier": "context",
+        "variants": [
+          "object detection system",
+          "people detection",
+          "proximity warning"
+        ],
+        "why": "detection systems protecting people around machines"
+      }
+    ],
+    "2825": [
+      {
+        "term": "optical sorting",
+        "tier": "context",
+        "variants": [
+          "sensor-based sorting",
+          "optical sorter",
+          "food sorting",
+          "laser sorting"
+        ],
+        "why": "food sorters using camera and AI classification"
+      },
+      {
+        "term": "AI grading",
+        "tier": "ai",
+        "variants": [
+          "automated grading",
+          "vision grading",
+          "hyperspectral imaging",
+          "defect sorting",
+          "foreign material detection"
+        ],
+        "why": "vision AI grading produce, meat and fish"
+      },
+      {
+        "term": "robotic food processing",
+        "tier": "context",
+        "variants": [
+          "robotic deboning",
+          "robotic portioning",
+          "robotic pick and place",
+          "automated poultry processing",
+          "robotic palletising",
+          "robotic palletizing"
+        ],
+        "why": "robots guided by vision in processing lines"
+      }
+    ],
+    "2826": [
+      {
+        "term": "automated fabric inspection",
+        "tier": "ai",
+        "variants": [
+          "fabric defect detection",
+          "yarn quality monitoring",
+          "automated cloth inspection"
+        ],
+        "why": "vision AI detecting textile defects"
+      },
+      {
+        "term": "sewing automation",
+        "tier": "context",
+        "variants": [
+          "sewing robot",
+          "automatic sewing",
+          "automated garment production"
+        ],
+        "why": "robotised garment and textile production"
+      },
+      {
+        "term": "smart spinning mill",
+        "tier": "context",
+        "variants": [
+          "spinning mill automation",
+          "mill monitoring system",
+          "self-optimising spinning",
+          "self-optimizing spinning"
+        ],
+        "why": "mill systems with self-optimising machines"
+      }
+    ],
+    "2829": [
+      {
+        "term": "wafer fab equipment",
+        "tier": "context",
+        "variants": [
+          "WFE",
+          "semiconductor equipment",
+          "semiconductor capital equipment",
+          "front-end equipment",
+          "back-end equipment"
+        ],
+        "case_sensitive_variants": [
+          "WFE"
+        ],
+        "why": "chip-making tools; AI drives customer capex"
+      },
+      {
+        "term": "AI accelerator",
+        "tier": "ai",
+        "variants": [
+          "AI chip",
+          "AI semiconductor",
+          "AI server",
+          "AI-related demand"
+        ],
+        "why": "chips whose demand drives tool orders"
+      },
+      {
+        "term": "EUV lithography",
+        "tier": "context",
+        "variants": [
+          "EUV",
+          "extreme ultraviolet",
+          "high-NA",
+          "DUV",
+          "immersion lithography"
+        ],
+        "case_sensitive_variants": [
+          "EUV",
+          "DUV"
+        ],
+        "why": "tools for leading-edge AI chips; export-controlled"
+      },
+      {
+        "term": "advanced packaging",
+        "tier": "context",
+        "variants": [
+          "hybrid bonding",
+          "thermocompression bonding",
+          "TC bonder",
+          "die attach",
+          "wafer-level packaging",
+          "panel-level packaging",
+          "CoWoS",
+          "2.5D"
+        ],
+        "case_sensitive_variants": [
+          "CoWoS"
+        ],
+        "why": "packaging tools demand from AI chips"
+      },
+      {
+        "term": "high bandwidth memory",
+        "tier": "context",
+        "variants": [
+          "HBM",
+          "TSV etch",
+          "through-silicon via"
+        ],
+        "case_sensitive_variants": [
+          "HBM"
+        ],
+        "why": "memory for AI driving etch and bonding tools"
+      },
+      {
+        "term": "leading-edge node",
+        "tier": "context",
+        "variants": [
+          "advanced node",
+          "gate-all-around",
+          "backside power delivery",
+          "2nm",
+          "angstrom era"
+        ],
+        "why": "process nodes where AI chips are made"
+      },
+      {
+        "term": "memory capex",
+        "tier": "context",
+        "variants": [
+          "memory investment",
+          "DRAM",
+          "NAND",
+          "foundry and logic",
+          "leading-edge foundry",
+          "fab capacity",
+          "new fab"
+        ],
+        "case_sensitive_variants": [
+          "DRAM",
+          "NAND"
+        ],
+        "why": "customer investment categories tool makers report"
+      },
+      {
+        "term": "defect inspection",
+        "tier": "context",
+        "variants": [
+          "e-beam inspection",
+          "optical inspection",
+          "overlay metrology",
+          "metrology and inspection"
+        ],
+        "why": "inspection and metrology tools for advanced chips"
+      },
+      {
+        "term": "computational lithography",
+        "tier": "context",
+        "variants": [
+          "optical proximity correction",
+          "inverse lithography",
+          "holistic lithography"
+        ],
+        "why": "ML-assisted modelling in chip patterning"
+      },
+      {
+        "term": "virtual metrology",
+        "tier": "ai",
+        "variants": [
+          "fault detection and classification",
+          "equipment intelligence",
+          "chamber matching",
+          "AI-enabled process control",
+          "self-aware tool",
+          "autonomous fab"
+        ],
+        "why": "ML embedded in chip tools and fab control"
+      },
+      {
+        "term": "recipe optimisation",
+        "tier": "ai",
+        "variants": [
+          "recipe optimization",
+          "virtual process development",
+          "Semiverse",
+          "AIx"
+        ],
+        "case_sensitive_variants": [
+          "AIx"
+        ],
+        "why": "AI-assisted process development for chip tools"
+      },
+      {
+        "term": "Wassenaar Arrangement",
+        "tier": "context",
+        "variants": [
+          "Foreign Direct Product Rule",
+          "US-person restrictions",
+          "affiliates rule",
+          "end-use controls",
+          "licence requirement for China",
+          "license requirement for China"
+        ],
+        "why": "export regimes restricting chip tool sales"
+      },
+      {
+        "term": "robot vision",
+        "tier": "ai",
+        "variants": [
+          "vision-guided robot",
+          "visual servoing",
+          "AI path planning",
+          "robot motion planning"
+        ],
+        "why": "perception and planning AI in industrial robots"
+      },
+      {
+        "term": "robot controller",
+        "tier": "context",
+        "variants": [
+          "robot programming",
+          "teach pendant",
+          "offline programming",
+          "robot simulation"
+        ],
+        "why": "robot programming layer where AI is added"
+      },
+      {
+        "term": "robot density",
+        "tier": "context",
+        "variants": [
+          "robot installations",
+          "robot adoption"
+        ],
+        "why": "robot adoption statistics cited as demand indicator"
+      },
+      {
+        "term": "dexterous hand",
+        "tier": "context",
+        "variants": [
+          "end effector",
+          "robotic hand",
+          "tactile sensing",
+          "robot gripper"
+        ],
+        "why": "end effectors for AI-driven robots"
+      },
+      {
+        "term": "service robot",
+        "tier": "context",
+        "variants": [
+          "cleaning robot",
+          "delivery robot",
+          "hospitality robot"
+        ],
+        "why": "non-industrial robots using AI navigation"
+      },
+      {
+        "term": "autonomous printing",
+        "tier": "ai",
+        "variants": [
+          "Push to Stop",
+          "autonomous print production"
+        ],
+        "why": "press makers' AI-run print production"
+      },
+      {
+        "term": "surface mount technology",
+        "tier": "context",
+        "variants": [
+          "SMT placement",
+          "SMT line",
+          "pick-and-place machine",
+          "smart SMT factory"
+        ],
+        "why": "placement lines building AI server boards"
+      }
+    ]
+  }
+}

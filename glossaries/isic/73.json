@@ -1,0 +1,652 @@
+{
+  "id": "73",
+  "name": "Activities of advertising, market research and public relations",
+  "section": "N",
+  "summary": "Agencies, ad-tech, out-of-home, market-research and PR firms describe AI in creative production, media planning and bidding, audience modelling, synthetic respondents and media monitoring, usually through named in-house AI platforms. The dominant risk theme is disintermediation: platform-native AI ad tools, clients in-housing, AI search eroding traffic and search advertising, and pressure on FTE-based fees and headcount. Filings also cover copyright in AI-generated work, likeness and digital-replica rights, brand safety against AI-generated content and ad fraud, and labelling and provenance rules.",
+  "terms": [
+    {
+      "term": "AI-generated creative",
+      "tier": "ai",
+      "variants": [
+        "AI-generated ad",
+        "generative creative",
+        "AI creative production",
+        "AI-generated advertising",
+        "AI-generated campaign",
+        "AI-generated content for campaigns"
+      ],
+      "why": "generative production of ads and assets"
+    },
+    {
+      "term": "creative automation",
+      "tier": "context",
+      "variants": [
+        "dynamic creative optimisation",
+        "dynamic creative optimization",
+        "automated creative",
+        "asset versioning",
+        "creative versioning"
+      ],
+      "why": "automated versioning of ad creative"
+    },
+    {
+      "term": "content supply chain",
+      "tier": "context",
+      "variants": [
+        "content production at scale",
+        "content at scale",
+        "production automation",
+        "automated content production"
+      ],
+      "why": "production workflow being automated with AI"
+    },
+    {
+      "term": "AI production studio",
+      "tier": "ai",
+      "variants": [
+        "AI studio",
+        "AI-powered production",
+        "generative production",
+        "AI content studio"
+      ],
+      "why": "agency units producing AI content"
+    },
+    {
+      "term": "synthetic media",
+      "tier": "ai",
+      "variants": [
+        "synthetic voice",
+        "AI avatar",
+        "virtual influencer",
+        "digital human",
+        "AI-generated influencer",
+        "AI-generated voiceover"
+      ],
+      "why": "AI-generated voices, faces and footage"
+    },
+    {
+      "term": "digital replica",
+      "tier": "ai",
+      "variants": [
+        "digital likeness",
+        "AI likeness"
+      ],
+      "why": "AI likeness of performers in ads"
+    },
+    {
+      "term": "name, image and likeness",
+      "tier": "context",
+      "variants": [
+        "right of publicity",
+        "unauthorised likeness",
+        "unauthorized likeness",
+        "NIL rights"
+      ],
+      "why": "likeness rights invoked against AI replicas"
+    },
+    {
+      "term": "SAG-AFTRA commercials contract",
+      "tier": "context",
+      "variants": [
+        "SAG-AFTRA",
+        "performer consent for AI",
+        "talent AI provisions"
+      ],
+      "why": "union AI terms for ad performers"
+    },
+    {
+      "term": "copyright in AI-generated work",
+      "tier": "ai",
+      "variants": [
+        "copyrightability of AI outputs",
+        "AI-generated content copyright",
+        "ownership of AI-generated content",
+        "AI copyright infringement",
+        "training data copyright"
+      ],
+      "why": "ownership uncertainty for AI outputs delivered to clients"
+    },
+    {
+      "term": "AI content labelling",
+      "tier": "ai",
+      "variants": [
+        "AI content labeling",
+        "AI-generated content disclosure",
+        "synthetic content labelling",
+        "synthetic content labeling",
+        "AI disclosure requirement"
+      ],
+      "why": "disclosure rules for AI-generated ads"
+    },
+    {
+      "term": "content provenance",
+      "tier": "context",
+      "variants": [
+        "C2PA",
+        "content credentials",
+        "watermarking of AI content"
+      ],
+      "why": "authenticity standards for AI media"
+    },
+    {
+      "term": "personalisation at scale",
+      "tier": "context",
+      "variants": [
+        "personalization at scale",
+        "hyper-personalisation",
+        "hyper-personalization",
+        "personalised creative",
+        "personalized creative"
+      ],
+      "why": "model-driven message tailoring"
+    },
+    {
+      "term": "programmatic advertising",
+      "tier": "context",
+      "variants": [
+        "programmatic buying",
+        "programmatic media",
+        "programmatic trading",
+        "real-time bidding"
+      ],
+      "why": "automated ad buying, ML-optimised"
+    },
+    {
+      "term": "AI-powered media buying",
+      "tier": "ai",
+      "variants": [
+        "AI media planning",
+        "AI-driven campaign optimisation",
+        "AI-driven campaign optimization",
+        "AI media optimisation",
+        "AI-powered media planning"
+      ],
+      "why": "AI planning and optimising media spend"
+    },
+    {
+      "term": "automated bidding",
+      "tier": "context",
+      "variants": [
+        "bidding algorithm",
+        "bid optimisation",
+        "bid optimization",
+        "predictive bidding",
+        "bid shading"
+      ],
+      "why": "ML bid optimisation in ad auctions"
+    },
+    {
+      "term": "audience modelling",
+      "tier": "context",
+      "variants": [
+        "audience modeling",
+        "lookalike audience",
+        "predictive audience",
+        "audience targeting",
+        "propensity audience"
+      ],
+      "why": "ML-built targeting segments"
+    },
+    {
+      "term": "identity graph",
+      "tier": "context",
+      "variants": [
+        "identity resolution",
+        "first-party data",
+        "consumer data asset",
+        "data clean room"
+      ],
+      "why": "consumer data spine for AI targeting"
+    },
+    {
+      "term": "signal loss",
+      "tier": "context",
+      "variants": [
+        "cookie deprecation",
+        "third-party cookie",
+        "modelled conversions",
+        "modeled conversions",
+        "conversion modelling",
+        "conversion modeling"
+      ],
+      "why": "cookie loss driving modelled measurement"
+    },
+    {
+      "term": "marketing mix modelling",
+      "tier": "context",
+      "variants": [
+        "marketing mix modeling",
+        "media mix modelling",
+        "media mix modeling",
+        "attribution model",
+        "multi-touch attribution"
+      ],
+      "why": "statistical/ML measurement of media effect"
+    },
+    {
+      "term": "contextual targeting",
+      "tier": "context",
+      "variants": [
+        "contextual advertising",
+        "contextual intelligence"
+      ],
+      "why": "ML content analysis for ad placement"
+    },
+    {
+      "term": "ad tech",
+      "tier": "context",
+      "variants": [
+        "adtech",
+        "demand-side platform",
+        "supply-side platform",
+        "advertising technology"
+      ],
+      "why": "advertising technology stack, ML-heavy"
+    },
+    {
+      "term": "WPP Open",
+      "tier": "ai",
+      "variants": [
+        "Publicis CoreAI",
+        "CoreAI",
+        "Omnicom Omni",
+        "Havas Converged.AI",
+        "Stagwell Marketing Cloud",
+        "Kokai",
+        "Koa"
+      ],
+      "case_sensitive_variants": [
+        "Kokai",
+        "Koa"
+      ],
+      "why": "agency AI platforms named in filings"
+    },
+    {
+      "term": "brand safety",
+      "tier": "context",
+      "variants": [
+        "brand suitability",
+        "made-for-advertising site",
+        "MFA site",
+        "AI-generated content farm",
+        "AI slop"
+      ],
+      "why": "protecting ads from harmful or AI-generated content"
+    },
+    {
+      "term": "ad fraud",
+      "tier": "context",
+      "variants": [
+        "invalid traffic",
+        "bot traffic",
+        "click fraud",
+        "AI-driven ad fraud"
+      ],
+      "why": "invalid traffic, increasingly AI-driven"
+    },
+    {
+      "term": "social listening",
+      "tier": "context",
+      "variants": [
+        "sentiment analysis",
+        "sentiment tracking",
+        "conversation analytics"
+      ],
+      "why": "NLP monitoring of consumer conversation"
+    },
+    {
+      "term": "platform-native AI tools",
+      "tier": "ai",
+      "variants": [
+        "Performance Max",
+        "Advantage+",
+        "PMax",
+        "fully automated ad creation",
+        "end-to-end AI advertising",
+        "AI ad tools from platforms"
+      ],
+      "why": "platforms automating agency tasks"
+    },
+    {
+      "term": "walled garden",
+      "tier": "context",
+      "variants": [
+        "closed ecosystem",
+        "platform dependence"
+      ],
+      "why": "platforms whose AI tools bypass agencies"
+    },
+    {
+      "term": "AI search",
+      "tier": "ai",
+      "variants": [
+        "generative engine optimisation",
+        "generative engine optimization",
+        "answer engine optimisation",
+        "answer engine optimization",
+        "AI Overviews",
+        "zero-click search",
+        "AI-driven search"
+      ],
+      "why": "AI answers reducing search traffic and ad inventory"
+    },
+    {
+      "term": "agentic advertising",
+      "tier": "ai",
+      "variants": [
+        "agentic commerce",
+        "AI shopping agent",
+        "ads in AI assistants",
+        "conversational advertising",
+        "agentic media buying"
+      ],
+      "why": "AI agents buying media or shopping for consumers"
+    },
+    {
+      "term": "in-housing",
+      "tier": "context",
+      "variants": [
+        "in-house agency",
+        "clients in-housing",
+        "insourcing of marketing"
+      ],
+      "why": "clients taking work in-house with AI tools"
+    },
+    {
+      "term": "FTE-based remuneration",
+      "tier": "context",
+      "variants": [
+        "time-based fee",
+        "hourly rate model",
+        "labour-based compensation",
+        "labor-based compensation"
+      ],
+      "why": "time-based agency fees threatened by AI"
+    },
+    {
+      "term": "output-based pricing",
+      "tier": "context",
+      "variants": [
+        "outcome-based remuneration",
+        "performance-based remuneration",
+        "output-based fee",
+        "value-based compensation"
+      ],
+      "why": "fee shift as AI cuts labour input"
+    },
+    {
+      "term": "AI-driven fee pressure",
+      "tier": "ai",
+      "variants": [
+        "AI-related pricing pressure",
+        "AI deflation",
+        "AI efficiency savings passed to clients"
+      ],
+      "why": "clients demanding AI savings"
+    },
+    {
+      "term": "AI-driven job reduction",
+      "tier": "ai",
+      "variants": [
+        "AI-related job cuts",
+        "roles displaced by AI",
+        "AI-driven headcount reduction",
+        "AI-related restructuring"
+      ],
+      "why": "headcount cuts attributed to AI"
+    },
+    {
+      "term": "AI upskilling",
+      "tier": "ai",
+      "variants": [
+        "AI training programme",
+        "AI training program",
+        "AI academy"
+      ],
+      "why": "training creative and media staff in AI"
+    },
+    {
+      "term": "automated decision-making technology",
+      "tier": "context",
+      "variants": [
+        "ADMT",
+        "profiling",
+        "targeted advertising restrictions",
+        "Digital Services Act"
+      ],
+      "case_sensitive_variants": [
+        "ADMT"
+      ],
+      "why": "privacy rules on profiling for ads"
+    }
+  ],
+  "class_terms": {
+    "7310": [
+      {
+        "term": "digital out-of-home",
+        "tier": "context",
+        "variants": [
+          "DOOH",
+          "programmatic out-of-home",
+          "programmatic DOOH"
+        ],
+        "case_sensitive_variants": [
+          "DOOH"
+        ],
+        "why": "screen inventory traded and optimised by ML"
+      },
+      {
+        "term": "audience measurement",
+        "tier": "context",
+        "variants": [
+          "audience analytics",
+          "footfall measurement",
+          "computer vision audience measurement"
+        ],
+        "why": "camera and mobile data modelling of viewers"
+      },
+      {
+        "term": "retail media",
+        "tier": "context",
+        "variants": [
+          "commerce media",
+          "sponsored product",
+          "retail media network"
+        ],
+        "why": "commerce ad inventory optimised by AI"
+      },
+      {
+        "term": "virtual production",
+        "tier": "context",
+        "variants": [
+          "AI-assisted post-production",
+          "AI dubbing",
+          "AI localisation",
+          "AI localization"
+        ],
+        "why": "studio technique merging with generative tools"
+      },
+      {
+        "term": "AI-powered recommendation",
+        "tier": "ai",
+        "variants": [
+          "product recommendation engine",
+          "predictive recommendation",
+          "recommendation model"
+        ],
+        "why": "ML ranking in commerce advertising"
+      }
+    ],
+    "7320": [
+      {
+        "term": "synthetic respondent",
+        "tier": "ai",
+        "variants": [
+          "synthetic panel",
+          "synthetic persona",
+          "synthetic audience",
+          "synthetic data for research",
+          "silicon sample",
+          "digital twin of consumers"
+        ],
+        "why": "LLM-simulated survey participants"
+      },
+      {
+        "term": "AI-moderated interview",
+        "tier": "ai",
+        "variants": [
+          "AI moderator",
+          "conversational survey",
+          "AI interviewer",
+          "AI-led qualitative research"
+        ],
+        "why": "conversational AI running qualitative research"
+      },
+      {
+        "term": "AI-generated survey response",
+        "tier": "ai",
+        "why": "bots and LLMs contaminating panels"
+      },
+      {
+        "term": "panel quality",
+        "tier": "context",
+        "variants": [
+          "survey fraud",
+          "bot respondent",
+          "fraudulent respondent",
+          "panel fraud",
+          "data quality check",
+          "respondent verification",
+          "sample quality"
+        ],
+        "why": "data-quality controls against AI contamination"
+      },
+      {
+        "term": "automated coding of open-ends",
+        "tier": "ai",
+        "variants": [
+          "text analytics",
+          "automated verbatim analysis"
+        ],
+        "why": "NLP coding of verbatim answers"
+      },
+      {
+        "term": "insights automation",
+        "tier": "context",
+        "variants": [
+          "automated insights",
+          "automated reporting",
+          "DIY research platform",
+          "self-serve research"
+        ],
+        "why": "automated reporting of research results"
+      },
+      {
+        "term": "AI-powered insights platform",
+        "tier": "ai",
+        "variants": [
+          "Ipsos Facto",
+          "AI research assistant",
+          "AI insights assistant",
+          "AI-enabled research products"
+        ],
+        "why": "research products built on generative tools"
+      },
+      {
+        "term": "data licensing to AI companies",
+        "tier": "ai",
+        "variants": [
+          "licensing data for AI training",
+          "AI data licensing",
+          "data licensing agreement with AI developer"
+        ],
+        "why": "selling research data for model training"
+      },
+      {
+        "term": "AI substitution of research",
+        "tier": "ai",
+        "variants": [
+          "AI-generated research",
+          "LLM substitute for syndicated research",
+          "free AI alternatives",
+          "AI-driven substitution"
+        ],
+        "why": "clients using LLMs instead of paid research"
+      },
+      {
+        "term": "syndicated research",
+        "tier": "context",
+        "variants": [
+          "subscription research",
+          "research subscription"
+        ],
+        "why": "subscription research exposed to AI substitution"
+      },
+      {
+        "term": "MRP model",
+        "tier": "context",
+        "variants": [
+          "multilevel regression and post-stratification",
+          "polling model",
+          "election forecasting model"
+        ],
+        "why": "model-based polling estimates"
+      }
+    ],
+    "7330": [
+      {
+        "term": "media monitoring",
+        "tier": "context",
+        "variants": [
+          "AI media monitoring",
+          "media intelligence",
+          "media analytics"
+        ],
+        "why": "automated tracking of coverage"
+      },
+      {
+        "term": "AI-generated disinformation",
+        "tier": "ai",
+        "variants": [
+          "AI-driven disinformation",
+          "deepfake campaign",
+          "AI-generated misinformation",
+          "synthetic disinformation"
+        ],
+        "why": "synthetic content attacking client reputation"
+      },
+      {
+        "term": "disinformation",
+        "tier": "context",
+        "variants": [
+          "misinformation",
+          "narrative attack",
+          "coordinated inauthentic behaviour",
+          "coordinated inauthentic behavior"
+        ],
+        "why": "reputation threat PR firms monitor"
+      },
+      {
+        "term": "AI visibility",
+        "tier": "ai",
+        "variants": [
+          "LLM visibility",
+          "reputation in AI search",
+          "brand visibility in AI assistants",
+          "share of model"
+        ],
+        "why": "managing how brands appear in AI answers"
+      },
+      {
+        "term": "AI-generated press release",
+        "tier": "ai",
+        "variants": [
+          "AI-drafted communications",
+          "AI-assisted content drafting",
+          "AI-written content"
+        ],
+        "why": "generative drafting of PR content"
+      }
+    ]
+  }
+}

@@ -1,0 +1,524 @@
+{
+  "id": "18",
+  "name": "Printing and reproduction of recorded media",
+  "section": "C",
+  "summary": "Printers write about AI in web-to-print design tools, automated prepress and workflow, autonomous presses, inline inspection and data-driven personalised print and direct mail, alongside marketing-services and document-processing offerings (intelligent document processing, AI-OCR). Risk sections discuss digital substitution of print and AI-enabled counterfeiting of secure documents. Large Japanese printing groups also report AI-driven semiconductor demand for photomasks and package substrates.",
+  "terms": [
+    {
+      "term": "web-to-print",
+      "tier": "context",
+      "variants": [
+        "web2print",
+        "online print platform",
+        "online printing",
+        "mass customisation platform",
+        "mass customization platform"
+      ],
+      "case_sensitive_variants": [],
+      "why": "online print ordering where AI design tools sit"
+    },
+    {
+      "term": "AI-powered design tool",
+      "tier": "ai",
+      "variants": [
+        "AI design assistant",
+        "AI-generated design",
+        "AI logo maker",
+        "AI logo generator",
+        "AI-assisted design",
+        "generative design tool",
+        "AI-generated artwork",
+        "AI-generated template"
+      ],
+      "case_sensitive_variants": [],
+      "why": "generative design aids for print customers"
+    },
+    {
+      "term": "automated quoting",
+      "tier": "context",
+      "variants": [
+        "instant quoting",
+        "automated estimating",
+        "dynamic pricing",
+        "price optimisation",
+        "price optimization"
+      ],
+      "case_sensitive_variants": [],
+      "why": "instant pricing driven by learned cost models"
+    },
+    {
+      "term": "automated prepress",
+      "tier": "context",
+      "variants": [
+        "prepress automation",
+        "automated preflight",
+        "preflight check",
+        "automated imposition",
+        "job ganging",
+        "gang-run printing",
+        "automated job batching",
+        "automated nesting",
+        "automated artwork checking"
+      ],
+      "case_sensitive_variants": [],
+      "why": "file checking and layout done by software"
+    },
+    {
+      "term": "print workflow automation",
+      "tier": "context",
+      "variants": [
+        "workflow automation",
+        "print MIS",
+        "touchless workflow",
+        "zero-touch workflow",
+        "lights-out production",
+        "automated job scheduling",
+        "smart print shop"
+      ],
+      "case_sensitive_variants": [],
+      "why": "end-to-end job automation in print plants"
+    },
+    {
+      "term": "autonomous printing",
+      "tier": "ai",
+      "variants": [
+        "autonomous press",
+        "navigated printing",
+        "push to stop",
+        "self-adjusting press",
+        "AI-assisted press",
+        "intelligent press control"
+      ],
+      "case_sensitive_variants": [],
+      "why": "self-adjusting presses using learned settings"
+    },
+    {
+      "term": "inline inspection",
+      "tier": "context",
+      "variants": [
+        "in-line inspection",
+        "print defect detection",
+        "print quality inspection",
+        "100% inspection",
+        "web inspection",
+        "automated print inspection"
+      ],
+      "case_sensitive_variants": [],
+      "why": "camera inspection of print quality"
+    },
+    {
+      "term": "machine vision",
+      "tier": "ai",
+      "variants": [
+        "vision inspection",
+        "automated visual inspection",
+        "AI visual inspection",
+        "automated optical inspection"
+      ],
+      "case_sensitive_variants": [],
+      "why": "camera-based inspection of printed products"
+    },
+    {
+      "term": "colour management",
+      "tier": "context",
+      "variants": [
+        "color management",
+        "closed-loop colour control",
+        "closed-loop color control",
+        "automated colour matching",
+        "automated color matching",
+        "inline colour measurement"
+      ],
+      "case_sensitive_variants": [],
+      "why": "measurement-based colour control"
+    },
+    {
+      "term": "digital printing",
+      "tier": "context",
+      "variants": [
+        "digital press",
+        "inkjet press",
+        "production inkjet",
+        "digital inkjet",
+        "digital print"
+      ],
+      "case_sensitive_variants": [],
+      "why": "data-driven production enabling variable content"
+    },
+    {
+      "term": "variable data printing",
+      "tier": "context",
+      "variants": [
+        "personalised print",
+        "personalized print",
+        "variable printing",
+        "one-to-one printing",
+        "versioned print"
+      ],
+      "case_sensitive_variants": [],
+      "why": "personalised output driven by customer data"
+    },
+    {
+      "term": "print-on-demand",
+      "tier": "context",
+      "variants": [
+        "on-demand printing",
+        "book-of-one",
+        "short-run digital",
+        "just-in-time printing"
+      ],
+      "case_sensitive_variants": [],
+      "why": "short-run production triggered by orders"
+    },
+    {
+      "term": "predictive maintenance",
+      "tier": "ai",
+      "variants": [
+        "prescriptive maintenance",
+        "predictive asset maintenance"
+      ],
+      "case_sensitive_variants": [],
+      "why": "ML-based prediction of equipment failure"
+    },
+    {
+      "term": "smart factory",
+      "tier": "context",
+      "variants": [
+        "smart manufacturing",
+        "factory of the future",
+        "connected factory",
+        "digital factory",
+        "intelligent manufacturing",
+        "intelligent factory",
+        "Industry 4.0",
+        "Industrie 4.0",
+        "fourth industrial revolution"
+      ],
+      "case_sensitive_variants": [],
+      "why": "connected-plant programmes framing AI use"
+    },
+    {
+      "term": "automated finishing",
+      "tier": "context",
+      "variants": [
+        "automated bindery",
+        "automated plate loading",
+        "automated material handling",
+        "automated guided vehicle",
+        "AGV",
+        "robotic palletising",
+        "robotic palletizing",
+        "collaborative robot",
+        "cobot"
+      ],
+      "case_sensitive_variants": [
+        "AGV"
+      ],
+      "why": "robotics in finishing and logistics"
+    },
+    {
+      "term": "digital twin",
+      "tier": "context",
+      "variants": [
+        "virtual twin"
+      ],
+      "case_sensitive_variants": [],
+      "why": "virtual plant, process or product model"
+    },
+    {
+      "term": "demand forecasting",
+      "tier": "context",
+      "variants": [
+        "demand planning",
+        "capacity planning optimisation",
+        "production scheduling optimisation",
+        "production scheduling optimization"
+      ],
+      "case_sensitive_variants": [],
+      "why": "planning process where AI is applied"
+    },
+    {
+      "term": "operational technology",
+      "tier": "context",
+      "variants": [
+        "OT security",
+        "OT cybersecurity",
+        "industrial control system",
+        "SCADA"
+      ],
+      "case_sensitive_variants": [],
+      "why": "plant control systems exposed to cyber risk"
+    },
+    {
+      "term": "data-driven direct mail",
+      "tier": "context",
+      "variants": [
+        "programmatic mail",
+        "programmatic direct mail",
+        "triggered mail",
+        "addressable mail",
+        "targeted mail",
+        "direct mail automation",
+        "personalised direct mail",
+        "personalized direct mail"
+      ],
+      "case_sensitive_variants": [],
+      "why": "mail targeted with consumer data and models"
+    },
+    {
+      "term": "audience targeting",
+      "tier": "context",
+      "variants": [
+        "audience analytics",
+        "audience segmentation",
+        "household-level data",
+        "consumer data stack",
+        "marketing data platform",
+        "data-driven marketing services",
+        "identity graph"
+      ],
+      "case_sensitive_variants": [],
+      "why": "marketing data services built on modelling"
+    },
+    {
+      "term": "marketing automation",
+      "tier": "context",
+      "variants": [
+        "omnichannel marketing",
+        "marketing technology",
+        "martech",
+        "campaign automation",
+        "content automation",
+        "dynamic content generation",
+        "creative automation",
+        "versioning automation"
+      ],
+      "case_sensitive_variants": [],
+      "why": "campaign and content production automation"
+    },
+    {
+      "term": "AI-generated marketing content",
+      "tier": "ai",
+      "variants": [
+        "AI-generated creative",
+        "AI content creation",
+        "AI copywriting",
+        "AI-generated copy",
+        "AI-generated imagery",
+        "AI-assisted content creation",
+        "AI-powered creative production"
+      ],
+      "case_sensitive_variants": [],
+      "why": "generative AI in content services"
+    },
+    {
+      "term": "intelligent document processing",
+      "tier": "ai",
+      "variants": [
+        "intelligent data capture",
+        "AI document processing",
+        "automated document classification",
+        "document AI",
+        "AI-based data extraction",
+        "cognitive capture"
+      ],
+      "case_sensitive_variants": [],
+      "why": "AI extraction and classification of documents"
+    },
+    {
+      "term": "AI-OCR",
+      "tier": "ai",
+      "variants": [
+        "AI-based OCR",
+        "AI character recognition"
+      ],
+      "case_sensitive_variants": [],
+      "why": "AI character recognition services"
+    },
+    {
+      "term": "optical character recognition",
+      "tier": "context",
+      "variants": [
+        "OCR",
+        "digital mailroom",
+        "document digitisation",
+        "document digitization",
+        "document scanning services",
+        "document process outsourcing",
+        "business process outsourcing"
+      ],
+      "case_sensitive_variants": [],
+      "why": "document capture where AI is applied"
+    },
+    {
+      "term": "customer communications management",
+      "tier": "context",
+      "variants": [
+        "omnichannel communications",
+        "e-delivery",
+        "multichannel customer communications",
+        "transactional communications"
+      ],
+      "case_sensitive_variants": [],
+      "why": "transactional communications shifting to digital channels"
+    },
+    {
+      "term": "DX solutions",
+      "tier": "context",
+      "variants": [
+        "DX business",
+        "DX services",
+        "digital transformation services"
+      ],
+      "case_sensitive_variants": [],
+      "why": "digital services lines of Japanese printers"
+    },
+    {
+      "term": "electronic substitution",
+      "tier": "context",
+      "variants": [
+        "digital substitution",
+        "shift to digital media",
+        "decline in print volumes",
+        "paperless billing",
+        "e-substitution",
+        "digital alternatives to print"
+      ],
+      "case_sensitive_variants": [],
+      "why": "digital and AI media displacing print demand"
+    },
+    {
+      "term": "authentication solution",
+      "tier": "context",
+      "variants": [
+        "brand authentication",
+        "product authentication",
+        "digital authentication",
+        "anti-counterfeiting solution",
+        "digital tax stamp",
+        "track and trace",
+        "document authentication",
+        "banknote authentication"
+      ],
+      "case_sensitive_variants": [],
+      "why": "secure print and digital authentication products"
+    },
+    {
+      "term": "AI-enabled counterfeiting",
+      "tier": "ai",
+      "variants": [
+        "AI-generated forgery",
+        "AI-assisted counterfeiting",
+        "deepfake document",
+        "synthetic identity document",
+        "AI-generated fake document",
+        "AI-based counterfeit detection",
+        "AI-based authentication"
+      ],
+      "case_sensitive_variants": [],
+      "why": "AI forgery threat and AI detection"
+    },
+    {
+      "term": "digital identity",
+      "tier": "context",
+      "variants": [
+        "digital ID",
+        "identity verification",
+        "eID",
+        "ePassport",
+        "biometric identity document",
+        "mobile driving licence",
+        "digital credential"
+      ],
+      "case_sensitive_variants": [
+        "eID"
+      ],
+      "why": "identity documents moving to digital verification"
+    },
+    {
+      "term": "smart packaging",
+      "tier": "context",
+      "variants": [
+        "connected packaging",
+        "intelligent packaging",
+        "RFID tag",
+        "NFC tag",
+        "IC tag",
+        "smart label",
+        "QR code packaging"
+      ],
+      "case_sensitive_variants": [],
+      "why": "printed packs and labels carrying data"
+    },
+    {
+      "term": "photomask",
+      "tier": "context",
+      "variants": [
+        "nanoimprint template",
+        "mask for advanced nodes"
+      ],
+      "case_sensitive_variants": [],
+      "why": "chip lithography masks; AI chip demand"
+    },
+    {
+      "term": "FC-BGA substrate",
+      "tier": "context",
+      "variants": [
+        "FC-BGA",
+        "flip-chip ball grid array",
+        "package substrate",
+        "glass core substrate",
+        "interposer",
+        "advanced semiconductor packaging",
+        "redistribution layer"
+      ],
+      "case_sensitive_variants": [],
+      "why": "package substrates for AI processors"
+    },
+    {
+      "term": "AI semiconductor demand",
+      "tier": "ai",
+      "variants": [
+        "AI server",
+        "AI-related demand",
+        "AI chip demand",
+        "AI accelerator",
+        "demand from AI data centers",
+        "demand from AI data centres"
+      ],
+      "case_sensitive_variants": [],
+      "why": "AI hardware demand for masks and substrates"
+    },
+    {
+      "term": "data center",
+      "tier": "context",
+      "variants": [
+        "data centre",
+        "hyperscaler",
+        "high-performance computing",
+        "HPC"
+      ],
+      "case_sensitive_variants": [
+        "HPC"
+      ],
+      "why": "end market for semiconductor-related products"
+    }
+  ],
+  "class_terms": {
+    "1820": [
+      {
+        "term": "digital watermarking",
+        "tier": "context",
+        "variants": [
+          "forensic watermarking",
+          "content provenance",
+          "content authentication",
+          "invisible watermark",
+          "anti-piracy technology",
+          "copy protection"
+        ],
+        "why": "content protection where AI detection is applied"
+      }
+    ]
+  }
+}

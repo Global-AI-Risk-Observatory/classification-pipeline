@@ -1,0 +1,1254 @@
+{
+  "id": "21",
+  "name": "Manufacture of basic pharmaceutical products and pharmaceutical preparations",
+  "section": "C",
+  "summary": "Pharmaceutical companies describe AI across the value chain: target identification, generative molecule and antibody design, protein structure prediction and in silico screening in discovery; trial design, patient recruitment, digital twins and synthetic control arms in development; and pharmacovigilance, medical writing, HCP engagement and Pharma 4.0 manufacturing downstream. Filings name AI-native discovery partners and compute investments, and discuss regulators' positions on AI in drug development (FDA credibility framework, EMA reflection paper, EU GMP Annex 22, non-animal methods). Risks include unproven AI-derived candidates, health-data privacy, inventorship of AI-assisted inventions and validation of AI in GxP settings.",
+  "terms": [
+    {
+      "term": "AI-enabled drug discovery",
+      "tier": "ai",
+      "variants": [
+        "AI drug discovery",
+        "AI-driven drug discovery",
+        "AI-powered drug discovery",
+        "AI-based drug discovery",
+        "AI-assisted drug discovery",
+        "AI-first drug discovery",
+        "AI-native drug discovery",
+        "machine learning drug discovery",
+        "AI-driven discovery",
+        "AI-enabled discovery",
+        "AIDD"
+      ],
+      "case_sensitive_variants": [
+        "AIDD"
+      ],
+      "why": "core phrase for AI in pharma R&D"
+    },
+    {
+      "term": "in silico screening",
+      "tier": "ai",
+      "variants": [
+        "virtual screening",
+        "in silico drug design",
+        "in silico design",
+        "in silico modelling",
+        "in silico modeling",
+        "in silico prediction",
+        "in silico method",
+        "in silico approach",
+        "in silico discovery"
+      ],
+      "case_sensitive_variants": [],
+      "why": "computational candidate selection"
+    },
+    {
+      "term": "computer-aided drug design",
+      "tier": "ai",
+      "variants": [
+        "CADD",
+        "computational drug design",
+        "computational drug discovery"
+      ],
+      "case_sensitive_variants": [
+        "CADD"
+      ],
+      "why": "computational design of drug candidates"
+    },
+    {
+      "term": "computational chemistry",
+      "tier": "context",
+      "variants": [
+        "molecular docking",
+        "molecular dynamics simulation",
+        "free energy perturbation",
+        "physics-based modelling",
+        "physics-based modeling",
+        "structure-based drug design",
+        "quantum chemistry"
+      ],
+      "case_sensitive_variants": [],
+      "why": "simulation methods combined with ML"
+    },
+    {
+      "term": "target identification",
+      "tier": "context",
+      "variants": [
+        "target discovery",
+        "target prioritisation",
+        "target prioritization",
+        "target deconvolution"
+      ],
+      "case_sensitive_variants": [],
+      "why": "discovery step where AI is widely applied"
+    },
+    {
+      "term": "machine learning target identification",
+      "tier": "ai",
+      "variants": [
+        "AI target identification",
+        "AI-driven target discovery",
+        "AI-identified target",
+        "AI-derived target",
+        "AI-enabled target discovery",
+        "computational target identification"
+      ],
+      "case_sensitive_variants": [],
+      "why": "AI finding and ranking drug targets"
+    },
+    {
+      "term": "AI-designed molecule",
+      "tier": "ai",
+      "variants": [
+        "AI-designed drug",
+        "AI-discovered molecule",
+        "AI-discovered drug",
+        "AI-generated molecule",
+        "AI-derived molecule",
+        "AI-designed candidate",
+        "AI-discovered candidate",
+        "AI-derived drug candidate",
+        "AI-designed antibody",
+        "AI-generated antibody",
+        "AI-designed protein",
+        "AI-designed therapeutic"
+      ],
+      "case_sensitive_variants": [],
+      "why": "candidates created with AI"
+    },
+    {
+      "term": "generative chemistry",
+      "tier": "ai",
+      "variants": [
+        "generative molecular design",
+        "de novo drug design",
+        "de novo molecular design",
+        "de novo protein design",
+        "de novo antibody design",
+        "generative biology",
+        "generative protein design",
+        "molecule generation"
+      ],
+      "case_sensitive_variants": [],
+      "why": "generative models proposing molecules and proteins"
+    },
+    {
+      "term": "protein structure prediction",
+      "tier": "ai",
+      "variants": [
+        "AlphaFold",
+        "protein folding prediction",
+        "structure prediction model",
+        "protein language model",
+        "RoseTTAFold",
+        "ESMFold",
+        "co-folding model"
+      ],
+      "case_sensitive_variants": [],
+      "why": "AI structure models used in design"
+    },
+    {
+      "term": "computational protein design",
+      "tier": "ai",
+      "variants": [
+        "AI protein design",
+        "AI-guided protein engineering",
+        "machine learning-guided protein engineering",
+        "computational antibody design",
+        "AI antibody discovery",
+        "AI-driven antibody discovery",
+        "in silico antibody design"
+      ],
+      "case_sensitive_variants": [],
+      "why": "AI in antibody and protein engineering"
+    },
+    {
+      "term": "foundation model for biology",
+      "tier": "ai",
+      "variants": [
+        "biological foundation model",
+        "biology foundation model",
+        "chemistry foundation model",
+        "single-cell foundation model",
+        "genomic foundation model",
+        "DNA language model",
+        "large quantitative model",
+        "virtual cell"
+      ],
+      "case_sensitive_variants": [],
+      "why": "large pretrained models on biological data"
+    },
+    {
+      "term": "ADMET prediction",
+      "tier": "ai",
+      "variants": [
+        "ADME prediction",
+        "toxicity prediction",
+        "predictive toxicology",
+        "in silico toxicology",
+        "in silico ADMET",
+        "pharmacokinetic prediction",
+        "binding affinity prediction",
+        "drug-target interaction prediction",
+        "molecular property prediction"
+      ],
+      "case_sensitive_variants": [],
+      "why": "models predicting drug-like properties and toxicity"
+    },
+    {
+      "term": "QSAR",
+      "tier": "context",
+      "variants": [
+        "quantitative structure-activity relationship",
+        "structure-activity relationship model"
+      ],
+      "case_sensitive_variants": [],
+      "why": "structure-activity models used in design and safety"
+    },
+    {
+      "term": "AI retrosynthesis",
+      "tier": "ai",
+      "variants": [
+        "computer-aided synthesis planning",
+        "synthesis route prediction",
+        "retrosynthesis prediction",
+        "reaction prediction",
+        "AI-assisted route design",
+        "AI-assisted synthesis planning"
+      ],
+      "case_sensitive_variants": [],
+      "why": "AI route and reaction prediction"
+    },
+    {
+      "term": "neoantigen prediction",
+      "tier": "ai",
+      "variants": [
+        "neoantigen selection algorithm",
+        "epitope prediction",
+        "immunogenicity prediction",
+        "mRNA sequence optimisation",
+        "mRNA sequence optimization",
+        "sequence design algorithm",
+        "codon optimisation algorithm",
+        "codon optimization algorithm"
+      ],
+      "case_sensitive_variants": [],
+      "why": "ML selecting sequences for vaccines and RNA drugs"
+    },
+    {
+      "term": "off-target prediction",
+      "tier": "ai",
+      "variants": [
+        "guide RNA design algorithm",
+        "AI-designed gene editor",
+        "AI-designed capsid",
+        "machine learning-guided capsid"
+      ],
+      "case_sensitive_variants": [],
+      "why": "ML in gene editing and vector design"
+    },
+    {
+      "term": "phenotypic screening",
+      "tier": "context",
+      "variants": [
+        "high-content screening",
+        "high-content imaging",
+        "cell painting",
+        "phenomics",
+        "image-based profiling",
+        "high-throughput screening"
+      ],
+      "case_sensitive_variants": [],
+      "why": "image-rich screening data feeding ML"
+    },
+    {
+      "term": "multi-omics",
+      "tier": "context",
+      "variants": [
+        "multiomics",
+        "omics data",
+        "genomic data",
+        "proteomics data",
+        "single-cell sequencing",
+        "transcriptomic data",
+        "biobank data",
+        "UK Biobank"
+      ],
+      "case_sensitive_variants": [],
+      "why": "biological data fuelling AI models"
+    },
+    {
+      "term": "DNA-encoded library",
+      "tier": "context",
+      "variants": [
+        "DNA-encoded chemical library",
+        "ultra-large library",
+        "make-on-demand library",
+        "virtual chemical library"
+      ],
+      "case_sensitive_variants": [],
+      "why": "ultra-large chemical libraries screened with ML"
+    },
+    {
+      "term": "biomedical knowledge graph",
+      "tier": "ai",
+      "variants": [
+        "biological knowledge graph",
+        "disease knowledge graph",
+        "drug knowledge graph"
+      ],
+      "case_sensitive_variants": [],
+      "why": "graph AI linking genes, diseases and drugs"
+    },
+    {
+      "term": "lab-in-a-loop",
+      "tier": "ai",
+      "variants": [
+        "closed-loop discovery",
+        "self-driving lab",
+        "self-driving laboratory",
+        "autonomous laboratory",
+        "automated closed-loop lab"
+      ],
+      "case_sensitive_variants": [],
+      "why": "AI predictions iterated with automated experiments"
+    },
+    {
+      "term": "laboratory automation",
+      "tier": "context",
+      "variants": [
+        "lab automation",
+        "robotic laboratory",
+        "automated laboratory",
+        "lab of the future",
+        "automated synthesis",
+        "high-throughput experimentation",
+        "design-make-test-analyse",
+        "design-make-test-analyze",
+        "DMTA cycle",
+        "automated wet lab",
+        "electronic lab notebook"
+      ],
+      "case_sensitive_variants": [],
+      "why": "robotic labs producing data for models"
+    },
+    {
+      "term": "discovery engine",
+      "tier": "context",
+      "variants": [
+        "integrated discovery platform",
+        "computational platform",
+        "dry lab",
+        "data flywheel",
+        "proprietary dataset",
+        "proprietary data moat"
+      ],
+      "case_sensitive_variants": [],
+      "why": "platform language of AI-driven biotechs"
+    },
+    {
+      "term": "techbio",
+      "tier": "ai",
+      "variants": [
+        "tech-bio",
+        "AI-native biotech",
+        "AI biotech",
+        "AI-first biotech",
+        "AI drug discovery company",
+        "AI drug discovery partner",
+        "AI drug discovery collaboration"
+      ],
+      "case_sensitive_variants": [],
+      "why": "label for AI-native drug developers"
+    },
+    {
+      "term": "computational biology",
+      "tier": "context",
+      "variants": [
+        "computational biologist",
+        "bioinformatics",
+        "computational sciences",
+        "quantitative sciences",
+        "data science team"
+      ],
+      "case_sensitive_variants": [],
+      "why": "data science disciplines in R&D"
+    },
+    {
+      "term": "quantum computing",
+      "tier": "context",
+      "variants": [
+        "quantum simulation",
+        "quantum algorithm",
+        "quantum-classical"
+      ],
+      "case_sensitive_variants": [],
+      "why": "emerging compute for molecular simulation"
+    },
+    {
+      "term": "supercomputer",
+      "tier": "context",
+      "variants": [
+        "supercomputing",
+        "high-performance computing",
+        "GPU cluster",
+        "compute infrastructure"
+      ],
+      "case_sensitive_variants": [],
+      "why": "compute capacity for simulation and AI"
+    },
+    {
+      "term": "AI supercomputer",
+      "tier": "ai",
+      "variants": [
+        "AI factory",
+        "Gefion",
+        "BioNeMo",
+        "GPU supercomputer"
+      ],
+      "case_sensitive_variants": [],
+      "why": "dedicated AI compute for drug R&D"
+    },
+    {
+      "term": "R&D productivity",
+      "tier": "context",
+      "variants": [
+        "time to candidate",
+        "discovery timelines",
+        "preclinical timelines",
+        "candidate nomination",
+        "Eroom's law",
+        "cycle time reduction"
+      ],
+      "case_sensitive_variants": [],
+      "why": "metrics AI is claimed to improve"
+    },
+    {
+      "term": "Isomorphic Labs",
+      "tier": "ai",
+      "variants": [],
+      "case_sensitive_variants": [],
+      "why": "AI drug discovery partner"
+    },
+    {
+      "term": "Recursion",
+      "tier": "ai",
+      "variants": [
+        "Recursion Pharmaceuticals",
+        "Recursion OS"
+      ],
+      "case_sensitive_variants": [
+        "Recursion"
+      ],
+      "why": "AI drug discovery company"
+    },
+    {
+      "term": "Exscientia",
+      "tier": "ai",
+      "variants": [],
+      "case_sensitive_variants": [],
+      "why": "AI drug design company"
+    },
+    {
+      "term": "Insilico Medicine",
+      "tier": "ai",
+      "variants": [
+        "Pharma.AI",
+        "Chemistry42",
+        "PandaOmics"
+      ],
+      "case_sensitive_variants": [],
+      "why": "AI drug discovery company"
+    },
+    {
+      "term": "Schrödinger",
+      "tier": "ai",
+      "variants": [
+        "Schrodinger"
+      ],
+      "case_sensitive_variants": [],
+      "why": "computational and ML drug design platform"
+    },
+    {
+      "term": "XtalPi",
+      "tier": "ai",
+      "variants": [],
+      "case_sensitive_variants": [],
+      "why": "AI and robotics drug discovery partner"
+    },
+    {
+      "term": "BenevolentAI",
+      "tier": "ai",
+      "variants": [],
+      "case_sensitive_variants": [],
+      "why": "AI target discovery company"
+    },
+    {
+      "term": "Absci",
+      "tier": "ai",
+      "variants": [],
+      "case_sensitive_variants": [],
+      "why": "generative AI antibody design company"
+    },
+    {
+      "term": "Generate:Biomedicines",
+      "tier": "ai",
+      "variants": [
+        "Generate Biomedicines"
+      ],
+      "case_sensitive_variants": [],
+      "why": "generative protein design company"
+    },
+    {
+      "term": "Insitro",
+      "tier": "ai",
+      "variants": [],
+      "case_sensitive_variants": [],
+      "why": "ML-driven drug discovery company"
+    },
+    {
+      "term": "Owkin",
+      "tier": "ai",
+      "variants": [],
+      "case_sensitive_variants": [],
+      "why": "AI biotech for trials and pathology"
+    },
+    {
+      "term": "Tempus AI",
+      "tier": "ai",
+      "variants": [
+        "Tempus"
+      ],
+      "case_sensitive_variants": [
+        "Tempus"
+      ],
+      "why": "AI and clinical-genomic data partner"
+    },
+    {
+      "term": "AI-enabled clinical trial",
+      "tier": "ai",
+      "variants": [
+        "AI clinical trial design",
+        "AI-driven clinical development",
+        "AI-optimised trial design",
+        "AI-optimized trial design",
+        "AI in clinical development",
+        "AI-powered patient recruitment",
+        "AI-assisted trial design",
+        "AI-driven site selection",
+        "AI patient matching",
+        "machine learning patient selection"
+      ],
+      "case_sensitive_variants": [],
+      "why": "AI in trial design and conduct"
+    },
+    {
+      "term": "in silico trial",
+      "tier": "ai",
+      "variants": [
+        "in silico clinical trial",
+        "virtual patient",
+        "clinical trial simulation",
+        "virtual trial population"
+      ],
+      "case_sensitive_variants": [],
+      "why": "simulated patients and trials"
+    },
+    {
+      "term": "patient digital twin",
+      "tier": "ai",
+      "variants": [
+        "digital twin control arm",
+        "AI-generated control arm",
+        "prognostic digital twin",
+        "digital twin of a patient",
+        "digital twin of patients"
+      ],
+      "case_sensitive_variants": [],
+      "why": "AI-generated patient counterparts in trials"
+    },
+    {
+      "term": "synthetic control arm",
+      "tier": "context",
+      "variants": [
+        "external control arm",
+        "synthetic control",
+        "historical control arm",
+        "synthetic data"
+      ],
+      "case_sensitive_variants": [],
+      "why": "external or modelled comparators replacing placebo"
+    },
+    {
+      "term": "model-informed drug development",
+      "tier": "context",
+      "variants": [
+        "MIDD",
+        "pharmacometrics",
+        "quantitative systems pharmacology",
+        "physiologically based pharmacokinetic",
+        "PBPK",
+        "exposure-response modelling",
+        "exposure-response modeling",
+        "modelling and simulation",
+        "modeling and simulation",
+        "ICH M15"
+      ],
+      "case_sensitive_variants": [
+        "MIDD"
+      ],
+      "why": "quantitative modelling accepted by regulators"
+    },
+    {
+      "term": "patient recruitment",
+      "tier": "context",
+      "variants": [
+        "patient identification",
+        "trial feasibility",
+        "protocol optimisation",
+        "protocol optimization",
+        "enrolment forecasting",
+        "enrollment forecasting",
+        "clinical trial optimisation",
+        "clinical trial optimization"
+      ],
+      "case_sensitive_variants": [],
+      "why": "trial step where predictive tools are applied"
+    },
+    {
+      "term": "decentralised clinical trial",
+      "tier": "context",
+      "variants": [
+        "decentralized clinical trial",
+        "remote patient monitoring",
+        "hybrid trial",
+        "eConsent",
+        "wearable sensor data",
+        "digital endpoint",
+        "digital health technology"
+      ],
+      "case_sensitive_variants": [],
+      "why": "remote trials generating sensor and digital data"
+    },
+    {
+      "term": "risk-based monitoring",
+      "tier": "context",
+      "variants": [
+        "centralised monitoring",
+        "centralized monitoring",
+        "risk-based quality management",
+        "clinical data management",
+        "automated data cleaning",
+        "electronic data capture"
+      ],
+      "case_sensitive_variants": [],
+      "why": "data-driven trial oversight"
+    },
+    {
+      "term": "real-world evidence",
+      "tier": "context",
+      "variants": [
+        "real-world data",
+        "RWE",
+        "RWD",
+        "electronic health records",
+        "EHR",
+        "claims data",
+        "patient registry"
+      ],
+      "case_sensitive_variants": [
+        "RWE",
+        "RWD",
+        "EHR"
+      ],
+      "why": "health data analysed with ML for evidence"
+    },
+    {
+      "term": "biomarker discovery",
+      "tier": "context",
+      "variants": [
+        "digital biomarker",
+        "predictive biomarker",
+        "biomarker identification",
+        "patient stratification",
+        "imaging biomarker",
+        "digital pathology",
+        "whole slide imaging"
+      ],
+      "case_sensitive_variants": [],
+      "why": "patient selection work where AI is applied"
+    },
+    {
+      "term": "computational pathology",
+      "tier": "ai",
+      "variants": [
+        "AI-powered pathology",
+        "AI pathology",
+        "digital pathology algorithm",
+        "AI-based biomarker",
+        "AI-derived biomarker",
+        "radiomics"
+      ],
+      "case_sensitive_variants": [],
+      "why": "AI reading pathology and imaging data"
+    },
+    {
+      "term": "AI-based image analysis",
+      "tier": "ai",
+      "variants": [
+        "AI imaging analysis",
+        "AI-assisted image reading",
+        "AI-assisted radiology",
+        "automated image analysis",
+        "AI-based endpoint assessment"
+      ],
+      "case_sensitive_variants": [],
+      "why": "AI reading scans for endpoints and diagnosis"
+    },
+    {
+      "term": "automated medical writing",
+      "tier": "ai",
+      "variants": [
+        "AI medical writing",
+        "AI-assisted medical writing",
+        "AI-generated clinical study report",
+        "automated clinical study report",
+        "AI-drafted regulatory submission",
+        "automated regulatory writing",
+        "AI-assisted regulatory writing",
+        "AI-generated regulatory document",
+        "automated document authoring"
+      ],
+      "case_sensitive_variants": [],
+      "why": "generative AI drafting clinical and regulatory documents"
+    },
+    {
+      "term": "AI to support regulatory decision-making",
+      "tier": "ai",
+      "variants": [
+        "artificial intelligence to support regulatory decision-making",
+        "credibility assessment framework",
+        "risk-based credibility assessment",
+        "AI model credibility",
+        "FDA AI guidance",
+        "FDA draft guidance on AI",
+        "AI/ML in drug development",
+        "use of AI in drug development",
+        "AI in the medicinal product lifecycle",
+        "EMA reflection paper",
+        "CDER AI Council"
+      ],
+      "case_sensitive_variants": [],
+      "why": "FDA and EMA positions on AI in drug development"
+    },
+    {
+      "term": "GMP Annex 22",
+      "tier": "ai",
+      "variants": [
+        "Annex 22 on artificial intelligence",
+        "Annex 22: Artificial Intelligence"
+      ],
+      "case_sensitive_variants": [],
+      "why": "EU GMP annex on AI in manufacturing"
+    },
+    {
+      "term": "GxP AI",
+      "tier": "ai",
+      "variants": [
+        "AI in GxP",
+        "GxP-compliant AI",
+        "validated AI system",
+        "AI validation in regulated"
+      ],
+      "case_sensitive_variants": [],
+      "why": "validation of AI in regulated processes"
+    },
+    {
+      "term": "computerised system validation",
+      "tier": "context",
+      "variants": [
+        "computerized system validation",
+        "computer software assurance",
+        "GMP Annex 11",
+        "GAMP 5",
+        "21 CFR Part 11"
+      ],
+      "case_sensitive_variants": [],
+      "why": "validation regime AI systems must fit"
+    },
+    {
+      "term": "AI-assisted regulatory review",
+      "tier": "ai",
+      "variants": [
+        "AI-assisted scientific review",
+        "AI-assisted review",
+        "regulator use of AI",
+        "FDA's AI tool"
+      ],
+      "case_sensitive_variants": [],
+      "why": "regulators using AI to review submissions"
+    },
+    {
+      "term": "new approach methodologies",
+      "tier": "context",
+      "variants": [
+        "new approach methods",
+        "NAMs",
+        "FDA Modernization Act 2.0",
+        "alternatives to animal testing",
+        "non-animal methods",
+        "organ-on-a-chip",
+        "organoid model",
+        "microphysiological system",
+        "animal testing phase-out"
+      ],
+      "case_sensitive_variants": [
+        "NAMs"
+      ],
+      "why": "regulators shifting from animal to computational models"
+    },
+    {
+      "term": "AI-enabled medical device",
+      "tier": "ai",
+      "variants": [
+        "AI/ML-enabled device",
+        "AI-enabled device software",
+        "predetermined change control plan",
+        "PCCP",
+        "AI-based diagnostic",
+        "AI-powered diagnostic",
+        "AI diagnostic algorithm",
+        "AI-assisted diagnosis"
+      ],
+      "case_sensitive_variants": [
+        "PCCP"
+      ],
+      "why": "AI diagnostics and devices alongside drugs"
+    },
+    {
+      "term": "software as a medical device",
+      "tier": "context",
+      "variants": [
+        "SaMD",
+        "digital therapeutic",
+        "digital health application",
+        "DiGA",
+        "companion app",
+        "connected drug delivery device",
+        "smart inhaler",
+        "connected injector",
+        "connected insulin pen"
+      ],
+      "case_sensitive_variants": [
+        "SaMD",
+        "DiGA"
+      ],
+      "why": "regulated software and connected drug delivery"
+    },
+    {
+      "term": "AI inventorship",
+      "tier": "ai",
+      "variants": [
+        "AI-generated invention",
+        "AI-assisted invention",
+        "inventorship of AI-generated",
+        "patentability of AI-generated",
+        "USPTO inventorship guidance",
+        "DABUS"
+      ],
+      "case_sensitive_variants": [],
+      "why": "patentability of AI-assisted inventions"
+    },
+    {
+      "term": "European Health Data Space",
+      "tier": "context",
+      "variants": [
+        "EHDS",
+        "secondary use of health data",
+        "health data access",
+        "de-identified patient data",
+        "anonymised patient data",
+        "anonymized patient data",
+        "tokenised patient data",
+        "tokenized patient data"
+      ],
+      "case_sensitive_variants": [],
+      "why": "health-data access rules for secondary use"
+    },
+    {
+      "term": "federated learning",
+      "tier": "ai",
+      "variants": [
+        "MELLODDY",
+        "federated data network",
+        "privacy-preserving machine learning"
+      ],
+      "case_sensitive_variants": [],
+      "why": "privacy-preserving ML across company data"
+    },
+    {
+      "term": "AI-driven prior authorization",
+      "tier": "ai",
+      "variants": [
+        "automated prior authorization",
+        "algorithmic coverage decision",
+        "AI-based utilization management",
+        "algorithmic utilisation management",
+        "AI-driven prior authorisation"
+      ],
+      "case_sensitive_variants": [],
+      "why": "payer algorithms affecting drug access"
+    },
+    {
+      "term": "AI-powered pharmacovigilance",
+      "tier": "ai",
+      "variants": [
+        "AI in pharmacovigilance",
+        "AI-enabled safety surveillance",
+        "AI case processing",
+        "AI signal detection",
+        "machine learning signal detection",
+        "AI adverse event detection"
+      ],
+      "case_sensitive_variants": [],
+      "why": "AI in adverse event processing"
+    },
+    {
+      "term": "pharmacovigilance automation",
+      "tier": "context",
+      "variants": [
+        "automated case processing",
+        "adverse event detection",
+        "safety signal detection",
+        "case intake automation",
+        "automated adverse event reporting",
+        "literature surveillance"
+      ],
+      "case_sensitive_variants": [],
+      "why": "safety case handling where AI is applied"
+    },
+    {
+      "term": "AI medical information assistant",
+      "tier": "ai",
+      "variants": [
+        "medical information chatbot",
+        "AI-powered medical inquiry",
+        "AI medical affairs",
+        "AI-generated medical content",
+        "AI medical insights"
+      ],
+      "case_sensitive_variants": [],
+      "why": "AI answering medical inquiries"
+    },
+    {
+      "term": "next best action",
+      "tier": "ai",
+      "variants": [
+        "next best engagement",
+        "AI-driven HCP engagement",
+        "AI-powered sales rep assistant",
+        "AI-suggested call plan",
+        "predictive HCP targeting",
+        "AI-driven omnichannel",
+        "dynamic targeting",
+        "AI field force assistant",
+        "rep copilot"
+      ],
+      "case_sensitive_variants": [],
+      "why": "ML recommendations for sales and medical teams"
+    },
+    {
+      "term": "omnichannel engagement",
+      "tier": "context",
+      "variants": [
+        "omnichannel HCP engagement",
+        "HCP engagement platform",
+        "digital HCP engagement",
+        "field force effectiveness",
+        "sales force effectiveness",
+        "closed-loop marketing",
+        "e-detailing",
+        "remote detailing",
+        "modular content",
+        "content personalisation",
+        "content personalization"
+      ],
+      "case_sensitive_variants": [],
+      "why": "digital HCP engagement where AI personalises content"
+    },
+    {
+      "term": "AI-generated promotional content",
+      "tier": "ai",
+      "variants": [
+        "AI-generated marketing content",
+        "AI-assisted MLR review",
+        "automated MLR review",
+        "AI-assisted promotional review",
+        "AI-generated HCP content"
+      ],
+      "case_sensitive_variants": [],
+      "why": "generative AI in promotional material and its review"
+    },
+    {
+      "term": "AI patient finding",
+      "tier": "ai",
+      "variants": [
+        "patient identification algorithm",
+        "patient-finding algorithm",
+        "predictive patient identification",
+        "undiagnosed patient identification",
+        "AI screening tool",
+        "disease prediction algorithm",
+        "AI-enabled screening"
+      ],
+      "case_sensitive_variants": [],
+      "why": "algorithms identifying undiagnosed patients"
+    },
+    {
+      "term": "digital patient engagement",
+      "tier": "context",
+      "variants": [
+        "patient support app",
+        "digital companion",
+        "patient adherence app",
+        "adherence prediction",
+        "digital adherence"
+      ],
+      "case_sensitive_variants": [],
+      "why": "patient apps and support using predictive tools"
+    },
+    {
+      "term": "demand forecasting",
+      "tier": "context",
+      "variants": [
+        "demand planning",
+        "demand sensing",
+        "sales forecasting",
+        "forecast accuracy",
+        "launch forecasting",
+        "integrated business planning"
+      ],
+      "case_sensitive_variants": [],
+      "why": "planning process where AI is commonly applied"
+    },
+    {
+      "term": "Pharma 4.0",
+      "tier": "context",
+      "variants": [
+        "smart factory",
+        "smart manufacturing",
+        "Industry 4.0",
+        "Industrie 4.0",
+        "facility of the future",
+        "digital plant",
+        "plant of the future",
+        "lighthouse factory",
+        "Global Lighthouse Network",
+        "intelligent manufacturing",
+        "lights-out manufacturing"
+      ],
+      "case_sensitive_variants": [],
+      "why": "connected-plant programmes framing AI use"
+    },
+    {
+      "term": "digital twin",
+      "tier": "context",
+      "variants": [
+        "virtual twin"
+      ],
+      "case_sensitive_variants": [],
+      "why": "virtual process or plant model"
+    },
+    {
+      "term": "process analytical technology",
+      "tier": "context",
+      "variants": [
+        "real-time release",
+        "inline monitoring",
+        "in-line monitoring",
+        "Raman spectroscopy",
+        "chemometrics",
+        "multivariate data analysis",
+        "quality by design"
+      ],
+      "case_sensitive_variants": [],
+      "why": "inline measurement feeding models"
+    },
+    {
+      "term": "continuous manufacturing",
+      "tier": "context",
+      "variants": [
+        "continuous processing",
+        "continuous bioprocessing",
+        "advanced manufacturing technology",
+        "flow chemistry"
+      ],
+      "case_sensitive_variants": [],
+      "why": "advanced manufacturing relying on model-based control"
+    },
+    {
+      "term": "advanced process control",
+      "tier": "context",
+      "variants": [
+        "model predictive control",
+        "process optimisation",
+        "process optimization",
+        "yield optimisation",
+        "yield optimization",
+        "golden batch",
+        "batch optimisation",
+        "batch optimization",
+        "bioprocess optimisation",
+        "bioprocess optimization"
+      ],
+      "case_sensitive_variants": [],
+      "why": "model-based control of batches and bioreactors"
+    },
+    {
+      "term": "soft sensor",
+      "tier": "ai",
+      "variants": [
+        "virtual sensor",
+        "hybrid process model",
+        "predictive bioprocess model",
+        "bioreactor prediction model",
+        "AI-driven bioprocess optimisation",
+        "AI-driven bioprocess optimization",
+        "machine learning process model",
+        "yield prediction model"
+      ],
+      "case_sensitive_variants": [],
+      "why": "ML models estimating bioprocess variables"
+    },
+    {
+      "term": "AI-driven formulation development",
+      "tier": "ai",
+      "variants": [
+        "AI-assisted formulation",
+        "formulation prediction",
+        "predictive formulation",
+        "AI in CMC",
+        "AI-enabled process development",
+        "AI-driven process development"
+      ],
+      "case_sensitive_variants": [],
+      "why": "AI in CMC, formulation and process development"
+    },
+    {
+      "term": "predictive maintenance",
+      "tier": "ai",
+      "variants": [
+        "prescriptive maintenance",
+        "predictive asset maintenance"
+      ],
+      "case_sensitive_variants": [],
+      "why": "ML-based prediction of equipment failure"
+    },
+    {
+      "term": "automated visual inspection",
+      "tier": "ai",
+      "variants": [
+        "AI visual inspection",
+        "AI-based visual inspection",
+        "deep learning visual inspection",
+        "automated inspection machine",
+        "vial inspection",
+        "particle detection",
+        "machine vision",
+        "vision inspection"
+      ],
+      "case_sensitive_variants": [],
+      "why": "vision AI inspecting vials and syringes"
+    },
+    {
+      "term": "AI-assisted deviation investigation",
+      "tier": "ai",
+      "variants": [
+        "AI-assisted batch review",
+        "AI-powered deviation management",
+        "AI-assisted quality review",
+        "AI root cause analysis",
+        "automated deviation triage",
+        "AI-enabled quality management",
+        "predictive quality",
+        "AI in GMP"
+      ],
+      "case_sensitive_variants": [],
+      "why": "AI in quality events and batch review"
+    },
+    {
+      "term": "batch record review",
+      "tier": "context",
+      "variants": [
+        "electronic batch record",
+        "review by exception",
+        "batch release automation",
+        "automated batch release",
+        "digital batch record",
+        "manufacturing execution system",
+        "deviation management"
+      ],
+      "case_sensitive_variants": [],
+      "why": "quality workflows being automated"
+    },
+    {
+      "term": "robotic aseptic filling",
+      "tier": "context",
+      "variants": [
+        "robotic filling",
+        "gloveless isolator",
+        "robotic fill-finish",
+        "automated fill-finish",
+        "laboratory robot",
+        "collaborative robot",
+        "cobot",
+        "automated guided vehicle",
+        "automated cell therapy manufacturing",
+        "automated cell processing"
+      ],
+      "case_sensitive_variants": [],
+      "why": "robotics in fill-finish and labs"
+    },
+    {
+      "term": "supply chain control tower",
+      "tier": "context",
+      "variants": [
+        "control tower",
+        "supply chain visibility",
+        "supply chain digital twin",
+        "serialisation",
+        "serialization",
+        "track and trace",
+        "cold chain monitoring",
+        "autonomous planning"
+      ],
+      "case_sensitive_variants": [],
+      "why": "visibility layer where predictive tools sit"
+    },
+    {
+      "term": "counterfeit detection",
+      "tier": "context",
+      "variants": [
+        "falsified medicine detection",
+        "anti-counterfeiting technology",
+        "product authentication",
+        "illicit online pharmacy monitoring"
+      ],
+      "case_sensitive_variants": [],
+      "why": "protection against falsified medicines"
+    },
+    {
+      "term": "operational technology",
+      "tier": "context",
+      "variants": [
+        "OT security",
+        "OT cybersecurity",
+        "industrial control system",
+        "SCADA"
+      ],
+      "case_sensitive_variants": [],
+      "why": "plant control systems exposed to cyber risk"
+    }
+  ],
+  "class_terms": {}
+}

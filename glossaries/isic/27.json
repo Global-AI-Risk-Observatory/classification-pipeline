@@ -1,0 +1,993 @@
+{
+  "id": "27",
+  "name": "Manufacture of electrical equipment",
+  "section": "C",
+  "summary": "Electrical equipment makers describe AI chiefly as a demand shock: data centers and the grid behind them need transformers, switchgear, UPS, busway, power supplies, batteries, cables, fibre and cooling, with rack power density, 800 VDC architectures, lead times and grid connection as recurring themes. Their own AI use is in grid and building software, predictive maintenance, engineering copilots and factory inspection. Appliance and lighting makers market AI features (recognition, voice, robot vacuums, connected lighting) and face connected-product cyber, data and privacy rules.",
+  "terms": [
+    {
+      "term": "data center",
+      "tier": "context",
+      "variants": [
+        "data centre",
+        "datacenter",
+        "datacentre"
+      ],
+      "why": "largest AI-driven end market for electrical equipment"
+    },
+    {
+      "term": "hyperscaler",
+      "tier": "context",
+      "variants": [
+        "hyperscale",
+        "colocation",
+        "colo provider",
+        "cloud service provider"
+      ],
+      "why": "largest buyers of data center power equipment"
+    },
+    {
+      "term": "AI data center",
+      "tier": "ai",
+      "variants": [
+        "AI data centre",
+        "AI factory",
+        "AI infrastructure",
+        "AI build-out",
+        "AI buildout",
+        "AI campus",
+        "gigawatt-scale campus"
+      ],
+      "why": "facilities built for AI training and inference"
+    },
+    {
+      "term": "load growth",
+      "tier": "context",
+      "variants": [
+        "electricity demand growth",
+        "power demand growth",
+        "surging power demand",
+        "rising electricity demand"
+      ],
+      "why": "electricity demand surge attributed to AI"
+    },
+    {
+      "term": "grid infrastructure",
+      "tier": "context",
+      "variants": [
+        "grid investment",
+        "grid expansion",
+        "grid modernisation",
+        "grid modernization",
+        "transmission and distribution",
+        "grid reinforcement"
+      ],
+      "why": "grid investment needed to connect AI load"
+    },
+    {
+      "term": "grid connection",
+      "tier": "context",
+      "variants": [
+        "interconnection queue",
+        "grid interconnection",
+        "large load",
+        "connection backlog",
+        "grid constraint",
+        "grid congestion"
+      ],
+      "why": "interconnection bottlenecks for large data center loads"
+    },
+    {
+      "term": "power density",
+      "tier": "context",
+      "variants": [
+        "rack density",
+        "kW per rack",
+        "high-density rack",
+        "megawatt rack",
+        "1 MW rack"
+      ],
+      "why": "rising rack power driven by AI accelerators"
+    },
+    {
+      "term": "white space",
+      "tier": "context",
+      "variants": [
+        "grey space",
+        "gray space"
+      ],
+      "why": "data hall segment vocabulary of power vendors"
+    },
+    {
+      "term": "grid-to-chip",
+      "tier": "context",
+      "variants": [
+        "chip-to-chiller",
+        "chip to grid"
+      ],
+      "why": "vendors' label for the full data center power chain"
+    },
+    {
+      "term": "uninterruptible power supply",
+      "tier": "context",
+      "variants": [
+        "UPS",
+        "static transfer switch",
+        "critical power",
+        "power protection"
+      ],
+      "case_sensitive_variants": [
+        "UPS"
+      ],
+      "why": "core data center power product"
+    },
+    {
+      "term": "power distribution unit",
+      "tier": "context",
+      "variants": [
+        "PDU",
+        "remote power panel",
+        "intelligent rack power"
+      ],
+      "case_sensitive_variants": [
+        "PDU"
+      ],
+      "why": "rack-level power product for AI servers"
+    },
+    {
+      "term": "busway",
+      "tier": "context",
+      "variants": [
+        "bus duct",
+        "busbar",
+        "bus bar"
+      ],
+      "why": "high-current distribution for dense AI halls"
+    },
+    {
+      "term": "switchgear",
+      "tier": "context",
+      "variants": [
+        "switchboard",
+        "circuit breaker",
+        "power distribution equipment",
+        "medium-voltage equipment",
+        "low-voltage equipment"
+      ],
+      "why": "distribution gear in short supply from data center orders"
+    },
+    {
+      "term": "power transformer",
+      "tier": "context",
+      "variants": [
+        "distribution transformer",
+        "transformer capacity",
+        "transformer shortage",
+        "transformer lead time",
+        "dry-type transformer",
+        "pad-mounted transformer"
+      ],
+      "why": "long-lead items constraining data center and grid build-out"
+    },
+    {
+      "term": "solid-state transformer",
+      "tier": "context",
+      "variants": [
+        "medium-voltage direct current",
+        "power electronic transformer"
+      ],
+      "why": "power electronics replacing transformers in AI data centers"
+    },
+    {
+      "term": "800 VDC",
+      "tier": "context",
+      "variants": [
+        "800V DC",
+        "DC power architecture",
+        "DC power distribution",
+        "400 VDC",
+        "direct current architecture"
+      ],
+      "why": "high-voltage DC rack power architecture for AI"
+    },
+    {
+      "term": "server power supply",
+      "tier": "context",
+      "variants": [
+        "power shelf",
+        "power sidecar",
+        "rectifier shelf",
+        "high-efficiency power supply",
+        "power supply unit"
+      ],
+      "why": "power conversion inside AI racks"
+    },
+    {
+      "term": "battery backup unit",
+      "tier": "context",
+      "variants": [
+        "BBU",
+        "backup battery",
+        "supercapacitor",
+        "ultracapacitor",
+        "capacitor shelf"
+      ],
+      "case_sensitive_variants": [
+        "BBU"
+      ],
+      "why": "rack-level energy buffering for AI loads"
+    },
+    {
+      "term": "backup power",
+      "tier": "context",
+      "variants": [
+        "standby power",
+        "backup generator",
+        "standby generator",
+        "genset",
+        "generator set"
+      ],
+      "why": "standby generation for data centers"
+    },
+    {
+      "term": "behind-the-meter",
+      "tier": "context",
+      "variants": [
+        "on-site power",
+        "onsite power",
+        "bring your own power",
+        "time to power",
+        "speed to power",
+        "power availability",
+        "prime power"
+      ],
+      "why": "on-site power because grid cannot serve AI load"
+    },
+    {
+      "term": "microgrid",
+      "tier": "context",
+      "variants": [
+        "fuel cell",
+        "on-site generation"
+      ],
+      "why": "on-site generation systems sold to data centers"
+    },
+    {
+      "term": "liquid cooling",
+      "tier": "context",
+      "variants": [
+        "direct-to-chip",
+        "cold plate",
+        "immersion cooling",
+        "coolant distribution unit",
+        "CDU",
+        "rear door heat exchanger",
+        "liquid-cooled"
+      ],
+      "case_sensitive_variants": [
+        "CDU"
+      ],
+      "why": "cooling shift forced by AI chip heat"
+    },
+    {
+      "term": "thermal management",
+      "tier": "context",
+      "variants": [
+        "precision cooling",
+        "chiller",
+        "computer room air handler",
+        "free cooling",
+        "heat rejection",
+        "in-row cooling"
+      ],
+      "why": "cooling product segment tied to AI data centers"
+    },
+    {
+      "term": "cooling fan",
+      "tier": "context",
+      "variants": [
+        "server fan",
+        "EC fan",
+        "fan module"
+      ],
+      "why": "fans and motors for servers and cooling units"
+    },
+    {
+      "term": "power usage effectiveness",
+      "tier": "context",
+      "variants": [
+        "PUE"
+      ],
+      "case_sensitive_variants": [
+        "PUE"
+      ],
+      "why": "data center efficiency metric"
+    },
+    {
+      "term": "heat reuse",
+      "tier": "context",
+      "variants": [
+        "waste heat recovery",
+        "Energy Efficiency Directive"
+      ],
+      "why": "data center waste heat duties and offerings"
+    },
+    {
+      "term": "prefabricated modular",
+      "tier": "context",
+      "variants": [
+        "power skid",
+        "e-house",
+        "eHouse",
+        "modular power",
+        "prefabricated power module",
+        "skid-mounted"
+      ],
+      "why": "factory-built power modules speeding data center delivery"
+    },
+    {
+      "term": "DCIM",
+      "tier": "context",
+      "variants": [
+        "electrical power monitoring system",
+        "EPMS",
+        "power monitoring software",
+        "infrastructure management software"
+      ],
+      "case_sensitive_variants": [
+        "DCIM",
+        "EPMS"
+      ],
+      "why": "software managing data center power and cooling"
+    },
+    {
+      "term": "reference design",
+      "tier": "context",
+      "variants": [
+        "reference architecture",
+        "validated design"
+      ],
+      "why": "joint designs with chip makers for AI racks"
+    },
+    {
+      "term": "building management system",
+      "tier": "context",
+      "variants": [
+        "smart building",
+        "building automation system",
+        "intelligent building",
+        "building energy management"
+      ],
+      "why": "building software where AI optimisation is sold"
+    },
+    {
+      "term": "smart grid",
+      "tier": "context",
+      "variants": [
+        "intelligent grid",
+        "digital grid",
+        "grid automation",
+        "digital substation",
+        "grid software",
+        "grid digitalisation",
+        "grid digitalization"
+      ],
+      "why": "grid software and automation where AI is applied"
+    },
+    {
+      "term": "self-healing grid",
+      "tier": "ai",
+      "variants": [
+        "autonomous grid",
+        "fault location, isolation and service restoration",
+        "AI-based grid management"
+      ],
+      "why": "automated fault isolation and restoration on grids"
+    },
+    {
+      "term": "predictive maintenance",
+      "tier": "ai",
+      "why": "ML on equipment data, sold as a service"
+    },
+    {
+      "term": "asset performance management",
+      "tier": "context",
+      "variants": [
+        "asset health",
+        "condition monitoring",
+        "transformer monitoring",
+        "dissolved gas analysis",
+        "online monitoring"
+      ],
+      "why": "monitoring software where predictive models run"
+    },
+    {
+      "term": "digital twin",
+      "tier": "context",
+      "why": "virtual model of equipment, plants or data centers"
+    },
+    {
+      "term": "load forecasting",
+      "tier": "context",
+      "variants": [
+        "energy forecasting",
+        "AI-based grid forecasting"
+      ],
+      "why": "grid forecasting increasingly ML-based"
+    },
+    {
+      "term": "virtual power plant",
+      "tier": "context",
+      "variants": [
+        "demand response",
+        "distributed energy resource management",
+        "DERMS",
+        "grid flexibility",
+        "flexibility services"
+      ],
+      "case_sensitive_variants": [
+        "DERMS"
+      ],
+      "why": "software-orchestrated flexible load and storage"
+    },
+    {
+      "term": "industrial copilot",
+      "tier": "ai",
+      "variants": [
+        "industrial AI",
+        "engineering copilot",
+        "AI-assisted engineering",
+        "energy copilot",
+        "AI-powered energy management"
+      ],
+      "why": "generative AI assistants for engineers and operators"
+    },
+    {
+      "term": "power quality",
+      "tier": "context",
+      "variants": [
+        "STATCOM",
+        "synchronous condenser",
+        "harmonic filter",
+        "ride-through",
+        "load fluctuation",
+        "voltage stability"
+      ],
+      "case_sensitive_variants": [
+        "STATCOM"
+      ],
+      "why": "grid stability gear for fluctuating AI loads"
+    },
+    {
+      "term": "HVDC",
+      "tier": "context",
+      "variants": [
+        "high-voltage direct current",
+        "converter station"
+      ],
+      "case_sensitive_variants": [
+        "HVDC"
+      ],
+      "why": "transmission technology in grid build-out for load growth"
+    },
+    {
+      "term": "electrical steel",
+      "tier": "context",
+      "variants": [
+        "transformer core steel",
+        "amorphous core"
+      ],
+      "why": "transformer input short as demand surges"
+    },
+    {
+      "term": "OT security",
+      "tier": "context",
+      "variants": [
+        "OT cybersecurity",
+        "operational technology security",
+        "IEC 62443",
+        "industrial cybersecurity",
+        "grid cybersecurity",
+        "NERC CIP"
+      ],
+      "why": "cyber risk of connected electrical products"
+    },
+    {
+      "term": "Cyber Resilience Act",
+      "tier": "context",
+      "variants": [
+        "NIS2",
+        "EU Data Act",
+        "connected product regulation"
+      ],
+      "why": "rules for connected, data-generating products"
+    },
+    {
+      "term": "humanoid robot",
+      "tier": "ai",
+      "variants": [
+        "humanoid",
+        "embodied intelligence",
+        "robot actuator",
+        "robot joint motor"
+      ],
+      "why": "new demand for motors, actuators and batteries"
+    },
+    {
+      "term": "smart factory",
+      "tier": "context",
+      "variants": [
+        "Industry 4.0",
+        "lights-out factory",
+        "lighthouse factory",
+        "digital factory"
+      ],
+      "why": "plant programmes under which AI use is reported"
+    },
+    {
+      "term": "machine vision",
+      "tier": "ai",
+      "variants": [
+        "automated optical inspection",
+        "automated visual inspection",
+        "AI-based quality inspection"
+      ],
+      "why": "camera AI inspecting own production"
+    }
+  ],
+  "class_terms": {
+    "2720": [
+      {
+        "term": "energy storage system",
+        "tier": "context",
+        "variants": [
+          "BESS",
+          "ESS",
+          "battery energy storage",
+          "grid-scale storage",
+          "stationary storage"
+        ],
+        "case_sensitive_variants": [
+          "BESS",
+          "ESS"
+        ],
+        "why": "storage demand from data centers and grids"
+      },
+      {
+        "term": "battery management system",
+        "tier": "context",
+        "variants": [
+          "BMS",
+          "cell monitoring",
+          "battery monitoring"
+        ],
+        "case_sensitive_variants": [
+          "BMS"
+        ],
+        "why": "battery software where ML estimation runs"
+      },
+      {
+        "term": "state of health estimation",
+        "tier": "ai",
+        "variants": [
+          "state-of-charge estimation",
+          "battery health prediction",
+          "battery lifetime prediction",
+          "AI-based battery diagnostics",
+          "battery analytics",
+          "battery degradation prediction"
+        ],
+        "why": "ML prediction of battery condition and life"
+      },
+      {
+        "term": "battery materials discovery",
+        "tier": "ai",
+        "variants": [
+          "AI-driven materials discovery",
+          "materials informatics",
+          "electrolyte discovery",
+          "accelerated materials discovery",
+          "AI-assisted cell design"
+        ],
+        "why": "AI search for cell chemistries and materials"
+      },
+      {
+        "term": "gigafactory",
+        "tier": "context",
+        "variants": [
+          "smart battery factory",
+          "cell yield",
+          "yield ramp",
+          "scrap rate",
+          "electrode inspection",
+          "X-ray cell inspection"
+        ],
+        "why": "cell plants using AI inspection to lift yield"
+      },
+      {
+        "term": "high-rate battery",
+        "tier": "context",
+        "variants": [
+          "high-power cell",
+          "thin plate pure lead",
+          "nickel-zinc battery",
+          "lithium-ion backup"
+        ],
+        "why": "batteries for data center UPS and backup"
+      },
+      {
+        "term": "peak shaving",
+        "tier": "context",
+        "variants": [
+          "load smoothing",
+          "power smoothing",
+          "AI load transient"
+        ],
+        "why": "storage buffering fluctuating AI training loads"
+      }
+    ],
+    "2731": [
+      {
+        "term": "optical fibre",
+        "tier": "context",
+        "variants": [
+          "optical fiber",
+          "fibre optic cable",
+          "fiber optic cable",
+          "high-fibre-count cable",
+          "high-fiber-count cable",
+          "ribbon cable",
+          "multi-core fibre",
+          "multicore fiber"
+        ],
+        "why": "fibre demand from AI data center connectivity"
+      },
+      {
+        "term": "hollow-core fibre",
+        "tier": "context",
+        "variants": [
+          "hollow-core fiber",
+          "hollow core optical"
+        ],
+        "why": "low-latency fibre developed for AI networks"
+      },
+      {
+        "term": "optical connectivity",
+        "tier": "context",
+        "variants": [
+          "structured cabling",
+          "MPO connector",
+          "MTP connector",
+          "fibre density",
+          "fiber density",
+          "preterminated"
+        ],
+        "why": "cabling systems inside and between AI data centers"
+      },
+      {
+        "term": "fibre shortage",
+        "tier": "context",
+        "variants": [
+          "fiber shortage",
+          "fibre demand",
+          "fiber demand",
+          "preform capacity",
+          "fibre capacity",
+          "fiber capacity"
+        ],
+        "why": "AI-driven tightness in fibre and preform supply"
+      }
+    ],
+    "2732": [
+      {
+        "term": "high-voltage cable",
+        "tier": "context",
+        "variants": [
+          "submarine cable",
+          "interconnector",
+          "grid cable",
+          "medium-voltage cable"
+        ],
+        "why": "grid cables for load growth and interconnection"
+      },
+      {
+        "term": "high-speed copper cable",
+        "tier": "context",
+        "variants": [
+          "direct attach cable",
+          "active electrical cable",
+          "twinax",
+          "active copper cable",
+          "internal server cable"
+        ],
+        "why": "copper interconnect inside AI racks"
+      },
+      {
+        "term": "winding wire",
+        "tier": "context",
+        "variants": [
+          "magnet wire",
+          "enamelled wire",
+          "enameled wire",
+          "transformer winding"
+        ],
+        "why": "wire for transformers in short supply"
+      }
+    ],
+    "2733": [
+      {
+        "term": "cable management",
+        "tier": "context",
+        "variants": [
+          "cable tray",
+          "raceway",
+          "wire basket",
+          "cable ladder",
+          "overhead cable routing"
+        ],
+        "why": "trays and routing sold into data halls"
+      },
+      {
+        "term": "power connector",
+        "tier": "context",
+        "variants": [
+          "quick disconnect",
+          "high-current connector",
+          "blind-mate connector"
+        ],
+        "why": "high-current and coolant connectors for AI racks"
+      },
+      {
+        "term": "rack enclosure",
+        "tier": "context",
+        "variants": [
+          "server rack",
+          "IT enclosure",
+          "server cabinet",
+          "aisle containment"
+        ],
+        "why": "racks and containment for AI hardware"
+      }
+    ],
+    "2740": [
+      {
+        "term": "connected lighting",
+        "tier": "context",
+        "variants": [
+          "smart lighting",
+          "intelligent lighting",
+          "lighting controls",
+          "networked lighting",
+          "human-centric lighting"
+        ],
+        "why": "networked lighting generating building data"
+      },
+      {
+        "term": "occupancy sensing",
+        "tier": "context",
+        "variants": [
+          "occupancy analytics",
+          "space utilisation",
+          "space utilization",
+          "presence detection",
+          "people counting"
+        ],
+        "why": "luminaire sensors feeding space-use algorithms"
+      },
+      {
+        "term": "smart street lighting",
+        "tier": "context",
+        "variants": [
+          "connected street lighting",
+          "smart pole",
+          "smart city lighting",
+          "adaptive street lighting"
+        ],
+        "why": "city lighting networks hosting sensors and cameras"
+      },
+      {
+        "term": "intelligent spaces",
+        "tier": "context",
+        "variants": [
+          "smart space",
+          "space intelligence",
+          "building intelligence"
+        ],
+        "why": "lighting makers' building-intelligence segment"
+      },
+      {
+        "term": "adaptive lighting",
+        "tier": "context",
+        "variants": [
+          "self-learning lighting",
+          "daylight harvesting"
+        ],
+        "why": "self-adjusting lighting control"
+      }
+    ],
+    "2750": [
+      {
+        "term": "AI-powered appliance",
+        "tier": "ai",
+        "variants": [
+          "AI appliance",
+          "AI home",
+          "AI washing machine",
+          "AI refrigerator",
+          "AI oven",
+          "Bespoke AI",
+          "AI-enabled appliance"
+        ],
+        "why": "appliances marketed on AI features"
+      },
+      {
+        "term": "smart appliance",
+        "tier": "context",
+        "variants": [
+          "connected appliance",
+          "smart home",
+          "connected home",
+          "SmartThings",
+          "ThinQ",
+          "Home Connect",
+          "hOn"
+        ],
+        "case_sensitive_variants": [
+          "hOn"
+        ],
+        "why": "connected appliances and their app ecosystems"
+      },
+      {
+        "term": "robot vacuum",
+        "tier": "context",
+        "variants": [
+          "robotic vacuum",
+          "floor cleaning robot",
+          "robotic lawn mower",
+          "robotic lawnmower",
+          "pool cleaning robot",
+          "household robot",
+          "home robot"
+        ],
+        "why": "consumer robots using AI navigation"
+      },
+      {
+        "term": "obstacle avoidance",
+        "tier": "ai",
+        "variants": [
+          "AI obstacle recognition",
+          "object recognition",
+          "visual navigation",
+          "SLAM",
+          "vSLAM",
+          "lidar navigation",
+          "room mapping"
+        ],
+        "case_sensitive_variants": [
+          "SLAM",
+          "vSLAM"
+        ],
+        "why": "vision and mapping AI in home robots"
+      },
+      {
+        "term": "voice control",
+        "tier": "ai",
+        "variants": [
+          "voice assistant",
+          "voice-enabled appliance",
+          "voice command"
+        ],
+        "why": "speech AI in appliances"
+      },
+      {
+        "term": "food recognition",
+        "tier": "ai",
+        "variants": [
+          "in-oven camera",
+          "camera-assisted cooking",
+          "AI cooking",
+          "automatic cooking programme",
+          "automatic cooking program",
+          "ingredient recognition"
+        ],
+        "why": "camera AI in ovens and refrigerators"
+      },
+      {
+        "term": "automatic dosing",
+        "tier": "context",
+        "variants": [
+          "auto-dosing",
+          "load detection",
+          "fabric recognition",
+          "AI wash",
+          "AI energy mode",
+          "adaptive wash cycle"
+        ],
+        "why": "sensor-adaptive wash and energy programmes"
+      },
+      {
+        "term": "remote diagnostics",
+        "tier": "context",
+        "variants": [
+          "predictive service",
+          "proactive service",
+          "appliance diagnostics",
+          "over-the-air update",
+          "connected service"
+        ],
+        "why": "connected-appliance service using fault prediction"
+      },
+      {
+        "term": "home energy management",
+        "tier": "context",
+        "variants": [
+          "HEMS",
+          "smart thermostat",
+          "energy-optimised operation",
+          "energy-optimized operation",
+          "dynamic tariff optimisation"
+        ],
+        "case_sensitive_variants": [
+          "HEMS"
+        ],
+        "why": "appliances optimised against tariffs and solar"
+      },
+      {
+        "term": "consumer IoT security",
+        "tier": "context",
+        "variants": [
+          "connected device security",
+          "in-home camera privacy",
+          "appliance usage data"
+        ],
+        "why": "privacy and security of in-home connected devices"
+      }
+    ],
+    "2790": [
+      {
+        "term": "smart charging",
+        "tier": "context",
+        "variants": [
+          "charging optimisation",
+          "charging optimization",
+          "load management",
+          "vehicle-to-grid",
+          "dynamic load balancing"
+        ],
+        "why": "algorithmic EV charging and load management"
+      },
+      {
+        "term": "robotic welding",
+        "tier": "context",
+        "variants": [
+          "cobot welding",
+          "welding automation",
+          "automated welding cell",
+          "welding robot"
+        ],
+        "why": "welding equipment sold with robots and sensing"
+      },
+      {
+        "term": "weld monitoring",
+        "tier": "context",
+        "variants": [
+          "weld data monitoring",
+          "adaptive welding",
+          "seam tracking",
+          "weld quality analytics"
+        ],
+        "why": "weld data and adaptive control, often ML based"
+      },
+      {
+        "term": "adaptive traffic signal",
+        "tier": "context",
+        "variants": [
+          "intelligent traffic system",
+          "smart intersection",
+          "traffic signal optimisation",
+          "traffic signal optimization"
+        ],
+        "why": "traffic control equipment with AI optimisation"
+      }
+    ]
+  }
+}

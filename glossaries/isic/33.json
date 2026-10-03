@@ -1,0 +1,604 @@
+{
+  "id": "33",
+  "name": "Repair, maintenance and installation of machinery and equipment",
+  "section": "C",
+  "summary": "Repair, maintenance and installation firms describe AI as predictive and condition-based maintenance, automated inspection (drones, borescopes, image-based defect recognition), AI assistants for technicians and digitised maintenance records, set against technician shortages and regulatory sign-off requirements. Aircraft, rail and ship MRO providers add health-monitoring platforms and removal forecasting. Demand-side effects include servicing data center power and cooling equipment and AI server fleets, life extension of turbines and transformers as power demand rises, and installing automation, robots and chip-fab tools.",
+  "terms": [
+    {
+      "term": "predictive maintenance",
+      "tier": "ai",
+      "variants": [
+        "predictive servicing"
+      ],
+      "why": "core AI use case and service offering"
+    },
+    {
+      "term": "prescriptive maintenance",
+      "tier": "ai",
+      "variants": [
+        "failure prediction",
+        "remaining useful life",
+        "fault prediction",
+        "predictive analytics"
+      ],
+      "why": "models recommending maintenance actions"
+    },
+    {
+      "term": "condition-based maintenance",
+      "tier": "context",
+      "variants": [
+        "condition monitoring",
+        "vibration analysis",
+        "oil analysis",
+        "thermography",
+        "asset health monitoring",
+        "online monitoring"
+      ],
+      "why": "monitoring-driven maintenance where predictive models run"
+    },
+    {
+      "term": "remote monitoring",
+      "tier": "context",
+      "variants": [
+        "remote diagnostics",
+        "remote service",
+        "remote support",
+        "remote operations centre",
+        "remote operations center",
+        "monitoring and diagnostics center"
+      ],
+      "why": "remote service channels using diagnostics models"
+    },
+    {
+      "term": "digital twin",
+      "tier": "context",
+      "variants": [
+        "digital thread",
+        "as-maintained configuration"
+      ],
+      "why": "virtual asset models used for maintenance prediction"
+    },
+    {
+      "term": "asset performance management",
+      "tier": "context",
+      "variants": [
+        "enterprise asset management",
+        "computerised maintenance management system",
+        "computerized maintenance management system",
+        "CMMS",
+        "reliability-centred maintenance",
+        "reliability-centered maintenance",
+        "asset integrity management"
+      ],
+      "case_sensitive_variants": [
+        "CMMS"
+      ],
+      "why": "maintenance software hosting predictive models"
+    },
+    {
+      "term": "maintenance copilot",
+      "tier": "ai",
+      "variants": [
+        "technician copilot",
+        "AI maintenance assistant",
+        "troubleshooting assistant",
+        "guided troubleshooting",
+        "AI-assisted fault diagnosis",
+        "automated fault diagnosis",
+        "intelligent diagnostics"
+      ],
+      "why": "generative AI assistants for technicians"
+    },
+    {
+      "term": "digitised maintenance records",
+      "tier": "context",
+      "variants": [
+        "digitized maintenance records",
+        "paperless maintenance",
+        "electronic task card",
+        "digital work order",
+        "technical records"
+      ],
+      "why": "paperless records that AI tools read"
+    },
+    {
+      "term": "intelligent document processing",
+      "tier": "ai",
+      "variants": [
+        "automated records review",
+        "AI records review",
+        "optical character recognition",
+        "document digitisation",
+        "document digitization"
+      ],
+      "why": "AI reading maintenance records and manuals"
+    },
+    {
+      "term": "augmented reality",
+      "tier": "context",
+      "variants": [
+        "AR-assisted maintenance",
+        "smart glasses",
+        "mixed reality",
+        "remote expert",
+        "assisted reality"
+      ],
+      "why": "wearable guidance for technicians, paired with AI"
+    },
+    {
+      "term": "drone inspection",
+      "tier": "context",
+      "variants": [
+        "drone-based inspection",
+        "UAV inspection",
+        "robotic inspection",
+        "inspection robot",
+        "crawler robot",
+        "autonomous inspection",
+        "remote visual inspection"
+      ],
+      "why": "drones and robots collecting inspection imagery"
+    },
+    {
+      "term": "automated visual inspection",
+      "tier": "ai",
+      "variants": [
+        "AI-based defect detection",
+        "automated defect recognition",
+        "assisted defect recognition",
+        "automated damage detection",
+        "AI-assisted inspection",
+        "automated borescope inspection",
+        "dent detection",
+        "corrosion detection"
+      ],
+      "why": "AI recognising damage in inspection images"
+    },
+    {
+      "term": "non-destructive testing",
+      "tier": "context",
+      "variants": [
+        "NDT",
+        "nondestructive testing",
+        "non-destructive examination",
+        "automated ultrasonic testing",
+        "phased array ultrasonic",
+        "digital radiography"
+      ],
+      "case_sensitive_variants": [
+        "NDT"
+      ],
+      "why": "inspection methods whose data AI evaluates"
+    },
+    {
+      "term": "spare parts optimisation",
+      "tier": "context",
+      "variants": [
+        "spare parts optimization",
+        "parts demand forecasting",
+        "inventory optimisation",
+        "inventory optimization",
+        "predictive parts planning"
+      ],
+      "why": "ML forecasting of parts demand and stock"
+    },
+    {
+      "term": "maintenance planning optimisation",
+      "tier": "context",
+      "variants": [
+        "maintenance planning optimization",
+        "work scope optimisation",
+        "workscope optimization",
+        "technician scheduling",
+        "field service scheduling",
+        "dynamic scheduling"
+      ],
+      "why": "algorithmic scheduling of work and technicians"
+    },
+    {
+      "term": "robotic repair",
+      "tier": "context",
+      "variants": [
+        "automated repair",
+        "robotic blending",
+        "robotic coating",
+        "automated blade repair",
+        "robotic paint stripping",
+        "cobot"
+      ],
+      "why": "robots performing repair and finishing steps"
+    },
+    {
+      "term": "technician shortage",
+      "tier": "context",
+      "variants": [
+        "mechanic shortage",
+        "shortage of skilled technicians",
+        "skilled labour shortage",
+        "skilled labor shortage",
+        "ageing workforce",
+        "aging workforce",
+        "knowledge retention",
+        "knowledge capture"
+      ],
+      "why": "stated reason for AI assistance and knowledge capture"
+    },
+    {
+      "term": "connected asset",
+      "tier": "context",
+      "variants": [
+        "connected equipment",
+        "connected machine",
+        "industrial internet of things",
+        "IIoT",
+        "telematics data",
+        "machine data",
+        "equipment data"
+      ],
+      "case_sensitive_variants": [
+        "IIoT"
+      ],
+      "why": "equipment connectivity supplying service data"
+    },
+    {
+      "term": "outcome-based service",
+      "tier": "context",
+      "variants": [
+        "performance-based contract",
+        "power-by-the-hour",
+        "availability-based contract",
+        "uptime guarantee",
+        "servitization",
+        "servitisation"
+      ],
+      "why": "uptime contracts made possible by prediction"
+    },
+    {
+      "term": "secure remote access",
+      "tier": "context",
+      "variants": [
+        "OT security",
+        "operational technology security",
+        "industrial cybersecurity",
+        "IEC 62443"
+      ],
+      "why": "cyber risk of remotely serviced equipment"
+    },
+    {
+      "term": "data center",
+      "tier": "context",
+      "variants": [
+        "data centre",
+        "datacenter",
+        "datacentre"
+      ],
+      "why": "servicing and installing AI data center equipment"
+    },
+    {
+      "term": "hyperscaler",
+      "tier": "context",
+      "variants": [
+        "hyperscale"
+      ],
+      "why": "large cloud and AI customers behind service demand"
+    },
+    {
+      "term": "mission-critical facility",
+      "tier": "context",
+      "variants": [
+        "critical power service",
+        "critical facilities",
+        "generator maintenance",
+        "switchgear maintenance",
+        "cooling system maintenance"
+      ],
+      "why": "service segment covering data center power and cooling"
+    },
+    {
+      "term": "liquid cooling",
+      "tier": "context",
+      "variants": [
+        "coolant distribution unit",
+        "direct-to-chip",
+        "immersion cooling",
+        "coolant management"
+      ],
+      "why": "new service work on AI server cooling"
+    },
+    {
+      "term": "smart factory",
+      "tier": "context",
+      "variants": [
+        "Industry 4.0",
+        "factory digitalisation",
+        "factory digitalization"
+      ],
+      "why": "customer programmes generating installation and retrofit work"
+    }
+  ],
+  "class_terms": {
+    "3312": [
+      {
+        "term": "gas turbine service",
+        "tier": "context",
+        "variants": [
+          "turbine upgrade",
+          "long-term service agreement",
+          "plant life extension",
+          "turbine uprate"
+        ],
+        "why": "life extension as AI power demand rises"
+      },
+      {
+        "term": "connected service",
+        "tier": "context",
+        "variants": [
+          "connected maintenance",
+          "remote elevator monitoring",
+          "smart service",
+          "service digitalisation",
+          "service digitalization"
+        ],
+        "why": "service models built on machine connectivity"
+      },
+      {
+        "term": "controls retrofit",
+        "tier": "context",
+        "variants": [
+          "automation retrofit",
+          "machine retrofit",
+          "sensor retrofit",
+          "brownfield modernisation",
+          "brownfield modernization"
+        ],
+        "why": "upgrading legacy machines with sensors and AI-ready controls"
+      },
+      {
+        "term": "robot maintenance",
+        "tier": "context",
+        "variants": [
+          "robot servicing",
+          "robot refurbishment"
+        ],
+        "why": "servicing the growing robot installed base"
+      }
+    ],
+    "3313": [
+      {
+        "term": "automated device grading",
+        "tier": "ai",
+        "variants": [
+          "automated cosmetic grading",
+          "AI grading of devices",
+          "robotic device testing",
+          "automated functional testing"
+        ],
+        "why": "AI testing and grading of used electronics"
+      },
+      {
+        "term": "third-party maintenance",
+        "tier": "context",
+        "variants": [
+          "server repair",
+          "GPU server maintenance",
+          "GPU repair",
+          "IT asset disposition",
+          "ITAD",
+          "hardware lifecycle services"
+        ],
+        "case_sensitive_variants": [
+          "ITAD"
+        ],
+        "why": "servicing AI server and data center hardware"
+      },
+      {
+        "term": "imaging equipment service",
+        "tier": "context",
+        "variants": [
+          "remote equipment diagnostics",
+          "uptime monitoring",
+          "multi-vendor service",
+          "biomedical equipment maintenance"
+        ],
+        "why": "medical equipment service using remote fault prediction"
+      }
+    ],
+    "3314": [
+      {
+        "term": "transformer refurbishment",
+        "tier": "context",
+        "variants": [
+          "transformer repair",
+          "transformer life extension",
+          "switchgear retrofit",
+          "grid asset maintenance"
+        ],
+        "why": "life extension as grid and data center load grows"
+      },
+      {
+        "term": "UPS service",
+        "tier": "context",
+        "variants": [
+          "UPS maintenance",
+          "battery replacement service",
+          "generator service"
+        ],
+        "why": "maintaining data center backup power systems"
+      },
+      {
+        "term": "motor current signature analysis",
+        "tier": "context",
+        "variants": [
+          "smart motor sensor",
+          "drive monitoring",
+          "motor diagnostics"
+        ],
+        "why": "sensor data for motor and drive fault models"
+      }
+    ],
+    "3315": [
+      {
+        "term": "digital MRO",
+        "tier": "context",
+        "variants": [
+          "AVIATAR",
+          "Skywise",
+          "MRO software",
+          "smart MRO",
+          "smart hangar",
+          "hangar of the future",
+          "digital hangar"
+        ],
+        "why": "MRO data platforms hosting predictive models"
+      },
+      {
+        "term": "aircraft health monitoring",
+        "tier": "context",
+        "variants": [
+          "engine health monitoring",
+          "engine trend monitoring",
+          "flight data analysis",
+          "health and usage monitoring",
+          "HUMS",
+          "prognostics and health management"
+        ],
+        "case_sensitive_variants": [
+          "HUMS"
+        ],
+        "why": "aircraft and engine data feeding fault prediction"
+      },
+      {
+        "term": "shop visit",
+        "tier": "context",
+        "variants": [
+          "removal forecasting",
+          "predictive removal",
+          "unscheduled removal",
+          "aircraft on ground",
+          "AOG"
+        ],
+        "case_sensitive_variants": [
+          "AOG"
+        ],
+        "why": "engine removals and visits forecast with ML"
+      },
+      {
+        "term": "Part-145",
+        "tier": "context",
+        "variants": [
+          "Part-66",
+          "certifying staff",
+          "release to service"
+        ],
+        "why": "approval regime limiting automated inspection sign-off"
+      },
+      {
+        "term": "rolling stock maintenance",
+        "tier": "context",
+        "variants": [
+          "train maintenance",
+          "wayside monitoring",
+          "wheelset monitoring",
+          "automated vehicle inspection",
+          "train scanner",
+          "digital depot",
+          "smart depot"
+        ],
+        "why": "train maintenance using automated inspection portals"
+      },
+      {
+        "term": "hull cleaning robot",
+        "tier": "context",
+        "variants": [
+          "robotic hull inspection",
+          "underwater inspection drone",
+          "ROV inspection",
+          "remote survey",
+          "tank inspection drone"
+        ],
+        "why": "robots and drones surveying ships"
+      },
+      {
+        "term": "predictive logistics",
+        "tier": "ai",
+        "variants": [
+          "CBM+",
+          "condition-based maintenance plus",
+          "AI-enabled sustainment",
+          "readiness prediction"
+        ],
+        "case_sensitive_variants": [
+          "CBM+"
+        ],
+        "why": "military sustainment using AI readiness prediction"
+      },
+      {
+        "term": "unmanned systems maintenance",
+        "tier": "context",
+        "variants": [
+          "UAV maintenance",
+          "drone maintenance",
+          "autonomous systems sustainment"
+        ],
+        "why": "sustainment of drone and autonomous fleets"
+      }
+    ],
+    "3320": [
+      {
+        "term": "robotic system integration",
+        "tier": "context",
+        "variants": [
+          "robot integration",
+          "automation system integrator",
+          "robotic cell installation",
+          "turnkey automation",
+          "line integration"
+        ],
+        "why": "installing robots and automation cells"
+      },
+      {
+        "term": "virtual commissioning",
+        "tier": "context",
+        "variants": [
+          "digital commissioning",
+          "remote commissioning",
+          "simulation-based commissioning"
+        ],
+        "why": "simulation-based start-up of installed lines"
+      },
+      {
+        "term": "tool hook-up",
+        "tier": "context",
+        "variants": [
+          "tool install",
+          "fab fit-out",
+          "cleanroom installation",
+          "equipment move-in",
+          "semiconductor fab construction"
+        ],
+        "why": "installing chip-fab tools as AI drives capacity"
+      },
+      {
+        "term": "warehouse automation",
+        "tier": "context",
+        "variants": [
+          "intralogistics installation",
+          "conveyor installation",
+          "automated warehouse installation"
+        ],
+        "why": "installing AI-orchestrated intralogistics systems"
+      },
+      {
+        "term": "prefabricated module",
+        "tier": "context",
+        "variants": [
+          "modular skid",
+          "power skid",
+          "modular plant",
+          "off-site fabrication"
+        ],
+        "why": "skids and modules installed in data centers and plants"
+      }
+    ]
+  }
+}

@@ -1,0 +1,352 @@
+{
+  "id": "79",
+  "name": "Travel agency, tour operator, and other travel related activities",
+  "section": "O",
+  "summary": "Online travel agencies, tour operators and reservation services deploy AI trip planners, personalised ranking, dynamic pricing and automated customer service, and partner with AI assistants as a new distribution channel. The central risk is disintermediation: AI search and agentic booking diverting traffic from paid search and metasearch; filings also cover AI-generated fake reviews and listings, booking fraud and ticket bots.",
+  "terms": [
+    {
+      "term": "AI trip planner",
+      "tier": "ai",
+      "variants": [
+        "AI travel assistant",
+        "AI travel agent",
+        "trip planning assistant",
+        "AI-powered trip planning",
+        "AI itinerary",
+        "AI-generated itinerary",
+        "AI travel planner"
+      ],
+      "why": "generative itinerary and booking assistants"
+    },
+    {
+      "term": "Romie",
+      "tier": "ai",
+      "variants": [
+        "TripGenie",
+        "Expedia Trip Matching",
+        "Kayak.ai"
+      ],
+      "case_sensitive_variants": [
+        "Romie"
+      ],
+      "why": "named travel AI assistants in filings"
+    },
+    {
+      "term": "agentic travel booking",
+      "tier": "ai",
+      "variants": [
+        "agentic booking",
+        "AI agents booking travel",
+        "agentic commerce",
+        "AI booking agent",
+        "agentic travel"
+      ],
+      "why": "AI agents searching and booking for travellers"
+    },
+    {
+      "term": "integration with AI assistants",
+      "tier": "ai",
+      "variants": [
+        "apps in AI assistants",
+        "AI assistant partnership",
+        "distribution through AI platforms",
+        "LLM partnership"
+      ],
+      "why": "distribution through third-party AI apps"
+    },
+    {
+      "term": "AI search disintermediation",
+      "tier": "ai",
+      "variants": [
+        "AI Overviews",
+        "zero-click search",
+        "generative engine optimisation",
+        "generative engine optimization",
+        "AI-driven search",
+        "traffic from AI assistants",
+        "LLM referral"
+      ],
+      "why": "AI answers diverting travel traffic"
+    },
+    {
+      "term": "performance marketing",
+      "tier": "context",
+      "variants": [
+        "paid search",
+        "search engine marketing",
+        "metasearch",
+        "traffic acquisition cost",
+        "marketing efficiency",
+        "search engine optimisation"
+      ],
+      "why": "paid traffic channel reshaped by AI search"
+    },
+    {
+      "term": "direct booking",
+      "tier": "context",
+      "variants": [
+        "direct traffic",
+        "direct channel",
+        "app bookings",
+        "direct mix",
+        "loyalty programme",
+        "loyalty program"
+      ],
+      "why": "direct traffic as defence against AI intermediaries"
+    },
+    {
+      "term": "online travel agency",
+      "tier": "context",
+      "variants": [
+        "OTA",
+        "online travel agent",
+        "travel marketplace"
+      ],
+      "case_sensitive_variants": [
+        "OTA"
+      ],
+      "why": "intermediary model exposed to AI agents"
+    },
+    {
+      "term": "personalised recommendation",
+      "tier": "context",
+      "variants": [
+        "personalized recommendation",
+        "recommendation engine",
+        "ranking algorithm",
+        "sort order",
+        "personalised offer",
+        "personalized offer",
+        "search ranking"
+      ],
+      "why": "ML ranking of properties and offers"
+    },
+    {
+      "term": "dynamic pricing",
+      "tier": "context",
+      "variants": [
+        "dynamic packaging",
+        "price prediction",
+        "fare prediction",
+        "price forecasting",
+        "revenue management system",
+        "yield management"
+      ],
+      "why": "model-driven fares and package prices"
+    },
+    {
+      "term": "AI-powered customer service",
+      "tier": "ai",
+      "variants": [
+        "AI customer service agent",
+        "AI agent handling customer contacts",
+        "virtual travel agent"
+      ],
+      "why": "virtual agents handling traveller contacts"
+    },
+    {
+      "term": "customer service cost",
+      "tier": "context",
+      "variants": [
+        "contact centre cost",
+        "contact center cost",
+        "cost per contact",
+        "customer service headcount"
+      ],
+      "why": "cost line where AI savings are reported"
+    },
+    {
+      "term": "AI-generated review",
+      "tier": "ai",
+      "variants": [
+        "AI-written review"
+      ],
+      "why": "synthetic reviews undermining trust"
+    },
+    {
+      "term": "fake review",
+      "tier": "context",
+      "variants": [
+        "review fraud",
+        "review moderation",
+        "review authenticity"
+      ],
+      "why": "review integrity problem worsened by generative tools"
+    },
+    {
+      "term": "fake listing",
+      "tier": "context",
+      "variants": [
+        "AI-generated fake listing",
+        "fraudulent listing",
+        "listing verification"
+      ],
+      "why": "fraudulent inventory, AI-generated images and text"
+    },
+    {
+      "term": "booking fraud",
+      "tier": "context",
+      "variants": [
+        "payment fraud",
+        "account takeover",
+        "phishing of guests",
+        "chargeback",
+        "AI-generated phishing"
+      ],
+      "why": "payment and account fraud scaled by AI"
+    },
+    {
+      "term": "machine translation of listings",
+      "tier": "ai",
+      "variants": [
+        "automatic translation of reviews",
+        "AI translation",
+        "real-time translation"
+      ],
+      "why": "automated translation of content and reviews"
+    },
+    {
+      "term": "AI-generated travel content",
+      "tier": "ai",
+      "variants": [
+        "AI-generated destination guide",
+        "AI-generated property description",
+        "AI review summary",
+        "AI-generated summaries"
+      ],
+      "why": "generative destination and property descriptions"
+    },
+    {
+      "term": "connected trip",
+      "tier": "context",
+      "variants": [
+        "one-stop travel platform",
+        "cross-sell recommendation"
+      ],
+      "why": "multi-product strategy powered by personalisation"
+    },
+    {
+      "term": "ranking transparency",
+      "tier": "context",
+      "variants": [
+        "Digital Markets Act",
+        "gatekeeper designation",
+        "platform-to-business regulation",
+        "algorithmic ranking disclosure"
+      ],
+      "why": "platform rules on algorithmic ranking"
+    },
+    {
+      "term": "voice search",
+      "tier": "context",
+      "variants": [
+        "conversational search",
+        "natural language search",
+        "voice booking"
+      ],
+      "why": "conversational interfaces for travel queries"
+    },
+    {
+      "term": "AI-driven efficiency",
+      "tier": "ai",
+      "variants": [
+        "AI productivity gain",
+        "AI-enabled productivity",
+        "AI-driven cost savings"
+      ],
+      "why": "productivity and cost gains from AI"
+    }
+  ],
+  "class_terms": {
+    "7911": [
+      {
+        "term": "corporate travel management",
+        "tier": "context",
+        "variants": [
+          "automated travel policy compliance",
+          "AI travel management",
+          "expense automation",
+          "travel management company"
+        ],
+        "why": "business travel with automated policy and expenses"
+      },
+      {
+        "term": "travel advisor",
+        "tier": "context",
+        "variants": [
+          "travel consultant",
+          "human travel agent",
+          "agent productivity",
+          "advisor copilot"
+        ],
+        "why": "human agents augmented or displaced by AI"
+      }
+    ],
+    "7912": [
+      {
+        "term": "tour operator",
+        "tier": "context",
+        "variants": [
+          "package holiday",
+          "AI-assisted itinerary design",
+          "dynamic package"
+        ],
+        "why": "package business adopting AI planning"
+      },
+      {
+        "term": "capacity planning model",
+        "tier": "context",
+        "variants": [
+          "demand forecasting",
+          "load factor forecasting",
+          "risk capacity"
+        ],
+        "why": "ML forecasting of flight and bed commitments"
+      }
+    ],
+    "7990": [
+      {
+        "term": "ticket bot",
+        "tier": "context",
+        "variants": [
+          "bot purchases",
+          "scalping bot",
+          "BOTS Act",
+          "bot mitigation",
+          "automated ticket purchasing"
+        ],
+        "why": "automated purchasing and scalping"
+      },
+      {
+        "term": "dynamic ticket pricing",
+        "tier": "context",
+        "variants": [
+          "demand-based ticket pricing",
+          "platinum pricing",
+          "ticket price optimisation",
+          "ticket price optimization"
+        ],
+        "why": "model-priced event tickets"
+      },
+      {
+        "term": "event recommendation",
+        "tier": "context",
+        "variants": [
+          "experience recommendation",
+          "AI-powered event discovery",
+          "personalised event discovery"
+        ],
+        "why": "ML discovery of events and experiences"
+      },
+      {
+        "term": "verified fan",
+        "tier": "context",
+        "variants": [
+          "fan verification",
+          "identity-based ticketing"
+        ],
+        "why": "identity and bot screening models"
+      }
+    ]
+  }
+}

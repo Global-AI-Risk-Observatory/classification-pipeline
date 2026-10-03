@@ -1,0 +1,434 @@
+{
+  "id": "88",
+  "name": "Social work activities without accommodation",
+  "section": "R",
+  "summary": "Home care, disability support, childcare and social service providers mention AI mainly for scheduling and matching carers, visit verification, remote monitoring of clients at home, case-note writing and predicting hospitalisation or safeguarding risk. Risks named are the vulnerability of clients, sensitive data, algorithmic needs assessment and funding decisions by public payers, digital exclusion, and loss of human contact.",
+  "terms": [
+    {
+      "term": "caregiver scheduling",
+      "tier": "context",
+      "variants": [
+        "visit scheduling",
+        "route optimisation",
+        "route optimization",
+        "shift fill",
+        "missed visit",
+        "schedule optimisation",
+        "schedule optimization",
+        "rostering"
+      ],
+      "why": "visit planning optimised by algorithms"
+    },
+    {
+      "term": "AI scheduling",
+      "tier": "ai",
+      "variants": [
+        "AI-powered scheduling",
+        "AI rostering",
+        "automated rostering",
+        "intelligent scheduling",
+        "AI-driven scheduling"
+      ],
+      "why": "AI allocating carers to visits"
+    },
+    {
+      "term": "caregiver matching",
+      "tier": "context",
+      "variants": [
+        "caregiver-client matching",
+        "carer matching",
+        "care worker matching",
+        "care marketplace",
+        "care matching",
+        "support worker matching"
+      ],
+      "why": "pairing carers and clients by algorithm"
+    },
+    {
+      "term": "caregiver shortage",
+      "tier": "context",
+      "variants": [
+        "care worker shortage",
+        "caregiver turnover",
+        "caregiver recruitment",
+        "direct care workforce",
+        "care workforce shortage",
+        "caregiver retention"
+      ],
+      "why": "labour gap motivating automation in care"
+    },
+    {
+      "term": "electronic visit verification",
+      "tier": "context",
+      "variants": [
+        "EVV",
+        "visit verification",
+        "telephony check-in",
+        "GPS check-in"
+      ],
+      "case_sensitive_variants": [
+        "EVV"
+      ],
+      "why": "mandated digital proof of home visits"
+    },
+    {
+      "term": "telecare",
+      "tier": "context",
+      "variants": [
+        "technology-enabled care",
+        "remote care",
+        "virtual care",
+        "virtual home care",
+        "remote care monitoring",
+        "assistive technology"
+      ],
+      "why": "remote monitoring services for people at home"
+    },
+    {
+      "term": "personal emergency response system",
+      "tier": "context",
+      "variants": [
+        "PERS",
+        "personal alarm",
+        "pendant alarm",
+        "medical alert device",
+        "fall detection",
+        "activity monitoring",
+        "in-home sensor"
+      ],
+      "case_sensitive_variants": [
+        "PERS"
+      ],
+      "why": "alarm devices adding fall and activity detection"
+    },
+    {
+      "term": "remote patient monitoring",
+      "tier": "context",
+      "variants": [
+        "vital signs monitoring",
+        "wearable device",
+        "passive monitoring",
+        "ambient monitoring",
+        "medication reminder",
+        "medication adherence"
+      ],
+      "why": "home vitals data feeding predictive alerts"
+    },
+    {
+      "term": "hospitalization risk",
+      "tier": "context",
+      "variants": [
+        "hospitalisation risk",
+        "change in condition",
+        "avoidable hospital admission",
+        "readmission",
+        "emergency department visit"
+      ],
+      "why": "outcome that home care predictive tools target"
+    },
+    {
+      "term": "client risk prediction",
+      "tier": "ai",
+      "variants": [
+        "predictive risk stratification",
+        "hospitalization risk prediction",
+        "hospitalisation risk prediction",
+        "change-in-condition alert",
+        "risk stratification model",
+        "predictive care alert"
+      ],
+      "why": "predictive models flagging client deterioration"
+    },
+    {
+      "term": "care documentation",
+      "tier": "context",
+      "variants": [
+        "care notes",
+        "case notes",
+        "care plan",
+        "digital care record",
+        "case management system",
+        "case recording",
+        "progress note"
+      ],
+      "why": "case recording burden targeted by generative AI"
+    },
+    {
+      "term": "AI case notes",
+      "tier": "ai",
+      "variants": [
+        "AI-generated case note",
+        "AI note-taking",
+        "AI-assisted case recording",
+        "automated case notes",
+        "ambient note-taking",
+        "Magic Notes",
+        "AI care plan"
+      ],
+      "case_sensitive_variants": [
+        "Magic Notes"
+      ],
+      "why": "AI transcribing and drafting social care records"
+    },
+    {
+      "term": "companion robot",
+      "tier": "ai",
+      "variants": [
+        "social robot",
+        "AI companion",
+        "companion AI",
+        "ElliQ",
+        "robotic pet",
+        "care robot"
+      ],
+      "why": "social robots and AI companions for isolated clients"
+    },
+    {
+      "term": "loneliness",
+      "tier": "context",
+      "variants": [
+        "social isolation",
+        "companionship service",
+        "befriending service"
+      ],
+      "why": "need addressed by companion technology"
+    },
+    {
+      "term": "needs assessment",
+      "tier": "context",
+      "variants": [
+        "care needs assessment",
+        "eligibility assessment",
+        "functional assessment",
+        "service authorization",
+        "service authorisation",
+        "authorised hours",
+        "authorized hours"
+      ],
+      "why": "eligibility and hours decisions increasingly algorithmic"
+    },
+    {
+      "term": "value-based care",
+      "tier": "context",
+      "variants": [
+        "value-based contract",
+        "value-based purchasing",
+        "managed care organization",
+        "managed care organisation",
+        "outcome-based commissioning"
+      ],
+      "why": "payer contracts requiring outcome data and prediction"
+    },
+    {
+      "term": "vulnerable client",
+      "tier": "context",
+      "variants": [
+        "vulnerable adult",
+        "vulnerable people",
+        "vulnerable service user",
+        "adult safeguarding",
+        "client confidentiality",
+        "sensitive personal data",
+        "beneficiary data"
+      ],
+      "why": "safeguarding duty heightening AI risk"
+    },
+    {
+      "term": "human touch",
+      "tier": "context",
+      "variants": [
+        "human connection",
+        "human contact",
+        "person-centred care",
+        "person-centered care",
+        "relationship-based care"
+      ],
+      "why": "relational care positioned against automation"
+    },
+    {
+      "term": "digital exclusion",
+      "tier": "context",
+      "variants": [
+        "digital inclusion",
+        "digital divide",
+        "digital poverty",
+        "digital literacy"
+      ],
+      "why": "clients unable to use automated services"
+    }
+  ],
+  "class_terms": {
+    "8810": [
+      {
+        "term": "NDIS",
+        "tier": "context",
+        "variants": [
+          "National Disability Insurance Scheme",
+          "NDIS plan",
+          "plan management",
+          "support coordination"
+        ],
+        "case_sensitive_variants": [
+          "NDIS"
+        ],
+        "why": "Australian disability scheme using algorithmic plan budgets"
+      },
+      {
+        "term": "robo-planning",
+        "tier": "ai",
+        "variants": [
+          "automated plan generation",
+          "algorithm-generated plan",
+          "computer-generated plan",
+          "automated budget calculation"
+        ],
+        "why": "algorithm-generated disability support plans"
+      },
+      {
+        "term": "home care technology",
+        "tier": "context",
+        "variants": [
+          "home care software",
+          "homecare management system",
+          "aging in place",
+          "ageing in place",
+          "smart speaker",
+          "voice-activated device"
+        ],
+        "why": "technology spending by home care operators"
+      }
+    ],
+    "8890": [
+      {
+        "term": "childcare management software",
+        "tier": "context",
+        "variants": [
+          "child care management software",
+          "parent communication app",
+          "parent engagement app",
+          "digital learning journal",
+          "learning story",
+          "daily report app"
+        ],
+        "why": "centre systems adding AI reporting features"
+      },
+      {
+        "term": "AI-assisted observation",
+        "tier": "ai",
+        "variants": [
+          "AI-generated learning story",
+          "AI-generated daily report",
+          "AI lesson planning for educators",
+          "AI-generated observation"
+        ],
+        "why": "AI drafting child observations and plans"
+      },
+      {
+        "term": "child safety",
+        "tier": "context",
+        "variants": [
+          "child safeguarding",
+          "CCTV in childcare",
+          "active supervision",
+          "supervision ratio",
+          "child-safe"
+        ],
+        "why": "safeguarding and supervision where camera AI is proposed"
+      },
+      {
+        "term": "occupancy forecasting",
+        "tier": "context",
+        "variants": [
+          "enrolment forecasting",
+          "enrollment forecasting",
+          "waitlist management",
+          "staff-to-child ratio planning"
+        ],
+        "why": "enrolment and staffing planning using prediction"
+      },
+      {
+        "term": "child protection",
+        "tier": "context",
+        "variants": [
+          "child welfare",
+          "safeguarding referral",
+          "family services",
+          "children's social care"
+        ],
+        "why": "social work domain using predictive screening"
+      },
+      {
+        "term": "predictive risk modelling",
+        "tier": "ai",
+        "variants": [
+          "predictive risk modeling",
+          "predictive risk model",
+          "family screening tool",
+          "Allegheny Family Screening Tool",
+          "child welfare screening tool"
+        ],
+        "why": "models scoring child-welfare or client risk"
+      },
+      {
+        "term": "jobseeker profiling",
+        "tier": "ai",
+        "variants": [
+          "job seeker profiling",
+          "statistical profiling",
+          "job seeker classification instrument",
+          "automated employability assessment"
+        ],
+        "why": "statistical scoring of unemployed clients"
+      },
+      {
+        "term": "employment services",
+        "tier": "context",
+        "variants": [
+          "job matching",
+          "vocational rehabilitation",
+          "welfare-to-work",
+          "jobseeker support",
+          "employability programme",
+          "employability program"
+        ],
+        "why": "job placement casework using matching tools"
+      },
+      {
+        "term": "donor engagement",
+        "tier": "context",
+        "variants": [
+          "donor segmentation",
+          "supporter data",
+          "grant application",
+          "donor data",
+          "charitable fundraising"
+        ],
+        "why": "charity fundraising work adopting AI tools"
+      },
+      {
+        "term": "helpline",
+        "tier": "context",
+        "variants": [
+          "crisis line",
+          "crisis text line",
+          "crisis chat",
+          "support line",
+          "counselling helpline",
+          "counseling helpline"
+        ],
+        "why": "crisis contact services piloting AI triage"
+      },
+      {
+        "term": "interpreter service",
+        "tier": "context",
+        "variants": [
+          "language access",
+          "AI interpreting",
+          "machine interpreting",
+          "translation service"
+        ],
+        "why": "language access being replaced by machine interpreting"
+      }
+    ]
+  }
+}

@@ -1,0 +1,66 @@
+{
+  "id": "99",
+  "name": "Activities of extraterritorial organizations and bodies",
+  "section": "V",
+  "summary": "International and supranational bodies (UN agencies, development banks, regional institutions) have no listed equity, but some publish annual reports or bond documentation. Where they mention AI it is as a policy topic: international AI governance, AI for development and the digital divide, plus modest own use in operations. The short list below covers that policy vocabulary only.",
+  "terms": [
+    {
+      "term": "international AI governance",
+      "tier": "ai",
+      "variants": [
+        "global AI governance",
+        "Hiroshima AI Process",
+        "Global Digital Compact",
+        "Independent International Scientific Panel on AI",
+        "Global Dialogue on AI Governance",
+        "Framework Convention on Artificial Intelligence"
+      ],
+      "why": "intergovernmental frameworks and bodies on AI"
+    },
+    {
+      "term": "AI for Good",
+      "tier": "ai",
+      "variants": [
+        "AI for development",
+        "AI for sustainable development",
+        "AI for the SDGs",
+        "AI capacity building",
+        "AI in humanitarian action",
+        "AI for social good"
+      ],
+      "why": "development and humanitarian AI programmes"
+    },
+    {
+      "term": "digital public infrastructure",
+      "tier": "context",
+      "variants": [
+        "digital public goods",
+        "digital transformation of member states",
+        "digital development"
+      ],
+      "why": "development agenda within which AI is funded"
+    },
+    {
+      "term": "digital divide",
+      "tier": "context",
+      "variants": [
+        "AI divide",
+        "compute divide",
+        "digital inclusion",
+        "connectivity gap"
+      ],
+      "why": "inequality frame for AI access between countries"
+    },
+    {
+      "term": "anticipatory action",
+      "tier": "context",
+      "variants": [
+        "early warning system",
+        "crisis forecasting",
+        "predictive humanitarian analytics"
+      ],
+      "why": "humanitarian forecasting using predictive models"
+    }
+  ],
+  "class_terms": {}
+}

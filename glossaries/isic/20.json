@@ -1,0 +1,1732 @@
+{
+  "id": "20",
+  "name": "Manufacture of chemicals and chemical products",
+  "section": "C",
+  "summary": "Chemical companies report AI in R&D (materials informatics, AI-driven formulation, inverse design, self-driving labs, in silico toxicology), in plant operations (advanced process control, autonomous plants, soft sensors, predictive maintenance) and in pricing and supply chain. AI is also a major demand driver: semiconductor materials, photoresists, specialty gases, low-dielectric resins, thermal interface materials and immersion cooling fluids for AI servers and data centres, with electricity cost and export controls as related risks. Sub-sectors add their own vocabulary: digital farming for agrochemicals and fertilisers, colour matching for coatings, beauty tech and AI fragrance creation for consumer chemicals, digital blasting for explosives.",
+  "terms": [
+    {
+      "term": "materials informatics",
+      "tier": "ai",
+      "variants": [
+        "material informatics",
+        "polymer informatics",
+        "chemical informatics",
+        "cheminformatics",
+        "chemoinformatics",
+        "materials data science"
+      ],
+      "case_sensitive_variants": [],
+      "why": "data-driven materials development, core R&D AI term"
+    },
+    {
+      "term": "process informatics",
+      "tier": "ai",
+      "variants": [
+        "process data science"
+      ],
+      "case_sensitive_variants": [],
+      "why": "data-driven process development"
+    },
+    {
+      "term": "AI-driven materials discovery",
+      "tier": "ai",
+      "variants": [
+        "AI materials discovery",
+        "AI-enabled material discovery",
+        "AI-accelerated materials development",
+        "AI-driven molecule discovery",
+        "AI-accelerated R&D",
+        "AI-enabled R&D",
+        "AI-powered R&D",
+        "AI in R&D",
+        "AI-driven chemistry",
+        "AI-assisted research"
+      ],
+      "case_sensitive_variants": [],
+      "why": "explicit AI claim in chemical R&D"
+    },
+    {
+      "term": "AI-driven formulation",
+      "tier": "ai",
+      "variants": [
+        "AI-assisted formulation",
+        "formulation prediction",
+        "predictive formulation",
+        "AI formulation",
+        "AI-optimised formulation",
+        "AI-optimized formulation",
+        "machine learning formulation",
+        "in silico formulation"
+      ],
+      "case_sensitive_variants": [],
+      "why": "AI proposing or optimising formulations"
+    },
+    {
+      "term": "inverse design",
+      "tier": "ai",
+      "variants": [
+        "inverse molecular design",
+        "generative molecular design",
+        "generative chemistry",
+        "de novo molecular design",
+        "AI-designed molecule",
+        "AI-generated molecule",
+        "molecule generation"
+      ],
+      "case_sensitive_variants": [],
+      "why": "generating molecules from target properties"
+    },
+    {
+      "term": "property prediction",
+      "tier": "ai",
+      "variants": [
+        "predictive modelling of properties",
+        "predictive modeling of properties",
+        "QSPR",
+        "performance prediction model"
+      ],
+      "case_sensitive_variants": [],
+      "why": "models predicting molecular and material properties"
+    },
+    {
+      "term": "AI catalyst design",
+      "tier": "ai",
+      "variants": [
+        "AI-accelerated catalyst design",
+        "computational catalyst design",
+        "catalyst informatics",
+        "machine learning catalyst",
+        "AI-guided catalyst discovery",
+        "catalyst screening model"
+      ],
+      "case_sensitive_variants": [],
+      "why": "AI in catalyst discovery"
+    },
+    {
+      "term": "computer-aided synthesis planning",
+      "tier": "ai",
+      "variants": [
+        "retrosynthesis prediction",
+        "AI retrosynthesis",
+        "synthesis route prediction",
+        "reaction prediction",
+        "reaction outcome prediction",
+        "AI-assisted synthesis planning"
+      ],
+      "case_sensitive_variants": [],
+      "why": "AI route and reaction prediction"
+    },
+    {
+      "term": "Bayesian optimisation",
+      "tier": "ai",
+      "variants": [
+        "Bayesian optimization",
+        "adaptive experimental design",
+        "AI-guided design of experiments"
+      ],
+      "case_sensitive_variants": [],
+      "why": "ML-guided choice of experiments"
+    },
+    {
+      "term": "self-driving laboratory",
+      "tier": "ai",
+      "variants": [
+        "self-driving lab",
+        "autonomous laboratory",
+        "autonomous lab",
+        "autonomous experimentation",
+        "closed-loop experimentation",
+        "AI-guided experimentation",
+        "robot scientist"
+      ],
+      "case_sensitive_variants": [],
+      "why": "closed-loop AI plus robotic experimentation"
+    },
+    {
+      "term": "laboratory automation",
+      "tier": "context",
+      "variants": [
+        "lab automation",
+        "robotic laboratory",
+        "automated laboratory",
+        "lab of the future",
+        "digital lab",
+        "smart lab",
+        "laboratory robot",
+        "automated synthesis",
+        "electronic lab notebook",
+        "digital laboratory"
+      ],
+      "case_sensitive_variants": [],
+      "why": "robotic labs producing data for models"
+    },
+    {
+      "term": "high-throughput experimentation",
+      "tier": "context",
+      "variants": [
+        "high-throughput screening",
+        "high throughput testing",
+        "combinatorial chemistry",
+        "parallel experimentation",
+        "automated experimentation"
+      ],
+      "case_sensitive_variants": [],
+      "why": "data-rich experimentation feeding models"
+    },
+    {
+      "term": "computational chemistry",
+      "tier": "context",
+      "variants": [
+        "molecular modelling",
+        "molecular modeling",
+        "molecular simulation",
+        "quantum chemistry",
+        "quantum chemical calculation",
+        "density functional theory",
+        "molecular dynamics simulation",
+        "computational materials science",
+        "multiscale modelling",
+        "multiscale modeling"
+      ],
+      "case_sensitive_variants": [],
+      "why": "simulation methods combined with ML"
+    },
+    {
+      "term": "quantum computing",
+      "tier": "context",
+      "variants": [
+        "quantum computer",
+        "quantum simulation",
+        "quantum algorithm"
+      ],
+      "case_sensitive_variants": [],
+      "why": "emerging compute for molecular simulation"
+    },
+    {
+      "term": "supercomputer",
+      "tier": "context",
+      "variants": [
+        "supercomputing",
+        "high-performance computing",
+        "Quriosity"
+      ],
+      "case_sensitive_variants": [],
+      "why": "compute capacity for simulation and AI"
+    },
+    {
+      "term": "digital R&D",
+      "tier": "context",
+      "variants": [
+        "R&D digitalisation",
+        "R&D digitalization",
+        "digital research",
+        "data-driven R&D",
+        "data-driven research",
+        "research data platform",
+        "FAIR data"
+      ],
+      "case_sensitive_variants": [],
+      "why": "R&D data programmes framing AI use"
+    },
+    {
+      "term": "in silico toxicology",
+      "tier": "ai",
+      "variants": [
+        "computational toxicology",
+        "in silico safety assessment",
+        "predictive toxicology",
+        "in silico prediction",
+        "in silico method",
+        "in silico model",
+        "in silico screening",
+        "toxicity prediction"
+      ],
+      "case_sensitive_variants": [],
+      "why": "computational safety assessment of substances"
+    },
+    {
+      "term": "QSAR",
+      "tier": "context",
+      "variants": [
+        "quantitative structure-activity relationship",
+        "(Q)SAR",
+        "read-across",
+        "structure-activity model"
+      ],
+      "case_sensitive_variants": [],
+      "why": "structure-activity models accepted by regulators"
+    },
+    {
+      "term": "new approach methodologies",
+      "tier": "context",
+      "variants": [
+        "new approach methods",
+        "NAMs",
+        "non-animal methods",
+        "alternatives to animal testing",
+        "animal-free safety assessment",
+        "non-animal testing",
+        "next generation risk assessment"
+      ],
+      "case_sensitive_variants": [
+        "NAMs"
+      ],
+      "why": "regulatory push to non-animal, computational methods"
+    },
+    {
+      "term": "AI protein design",
+      "tier": "ai",
+      "variants": [
+        "AI-driven enzyme design",
+        "AI-designed enzyme",
+        "computational protein design",
+        "protein structure prediction",
+        "machine learning-guided protein engineering",
+        "AI strain engineering",
+        "AI-guided strain development"
+      ],
+      "case_sensitive_variants": [],
+      "why": "AI in enzyme and strain engineering"
+    },
+    {
+      "term": "precision fermentation",
+      "tier": "context",
+      "variants": [
+        "strain engineering",
+        "synthetic biology",
+        "metabolic engineering",
+        "biofoundry"
+      ],
+      "case_sensitive_variants": [],
+      "why": "bio-manufacturing often paired with AI design"
+    },
+    {
+      "term": "advanced process control",
+      "tier": "context",
+      "variants": [
+        "APC",
+        "model predictive control",
+        "multivariable control"
+      ],
+      "case_sensitive_variants": [
+        "APC"
+      ],
+      "why": "model-based control of chemical units"
+    },
+    {
+      "term": "real-time optimisation",
+      "tier": "context",
+      "variants": [
+        "real-time optimization",
+        "closed-loop optimisation",
+        "closed-loop optimization",
+        "online optimisation",
+        "online optimization",
+        "plant-wide optimisation",
+        "plant-wide optimization"
+      ],
+      "case_sensitive_variants": [],
+      "why": "online optimisation layer above process control"
+    },
+    {
+      "term": "autonomous plant",
+      "tier": "ai",
+      "variants": [
+        "autonomous operations",
+        "autonomous control",
+        "self-optimising plant",
+        "self-optimizing plant",
+        "AI-controlled plant",
+        "reinforcement learning control",
+        "AI-driven process control",
+        "closed-loop AI",
+        "AI process optimisation",
+        "AI process optimization"
+      ],
+      "case_sensitive_variants": [],
+      "why": "learning systems operating chemical plants"
+    },
+    {
+      "term": "smart plant",
+      "tier": "context",
+      "variants": [
+        "smart manufacturing",
+        "smart factory",
+        "Industry 4.0",
+        "Industrie 4.0",
+        "plant of the future",
+        "digital plant",
+        "connected plant",
+        "intelligent manufacturing",
+        "intelligent plant",
+        "intelligent factory",
+        "smart chemical park",
+        "Chemistry 4.0",
+        "lighthouse factory"
+      ],
+      "case_sensitive_variants": [],
+      "why": "connected-plant programmes framing AI use"
+    },
+    {
+      "term": "digital twin",
+      "tier": "context",
+      "variants": [
+        "virtual plant",
+        "virtual twin"
+      ],
+      "case_sensitive_variants": [],
+      "why": "virtual plant, process or product model"
+    },
+    {
+      "term": "predictive maintenance",
+      "tier": "ai",
+      "variants": [
+        "prescriptive maintenance",
+        "predictive asset maintenance"
+      ],
+      "case_sensitive_variants": [],
+      "why": "ML-based prediction of equipment failure"
+    },
+    {
+      "term": "asset performance management",
+      "tier": "context",
+      "variants": [
+        "condition monitoring",
+        "condition-based maintenance",
+        "asset health monitoring",
+        "equipment health monitoring",
+        "reliability analytics",
+        "asset integrity management"
+      ],
+      "case_sensitive_variants": [],
+      "why": "reliability programmes using predictive models"
+    },
+    {
+      "term": "soft sensor",
+      "tier": "ai",
+      "variants": [
+        "virtual sensor",
+        "inferential sensor",
+        "virtual analyser",
+        "virtual analyzer",
+        "inferential model"
+      ],
+      "case_sensitive_variants": [],
+      "why": "ML estimate of unmeasured process values"
+    },
+    {
+      "term": "process anomaly detection",
+      "tier": "ai",
+      "variants": [
+        "equipment anomaly detection",
+        "early fault detection",
+        "early event detection",
+        "failure prediction",
+        "fouling prediction",
+        "run-length prediction",
+        "catalyst life prediction",
+        "abnormality prediction"
+      ],
+      "case_sensitive_variants": [],
+      "why": "ML detection and prediction of abnormal operation"
+    },
+    {
+      "term": "predictive quality",
+      "tier": "ai",
+      "variants": [
+        "quality prediction",
+        "off-spec prediction"
+      ],
+      "case_sensitive_variants": [],
+      "why": "models predicting product quality in real time"
+    },
+    {
+      "term": "process optimisation",
+      "tier": "context",
+      "variants": [
+        "process optimization",
+        "yield optimisation",
+        "yield optimization",
+        "production optimisation",
+        "production optimization",
+        "throughput optimisation",
+        "batch optimisation",
+        "batch optimization",
+        "golden batch",
+        "cracker optimisation",
+        "furnace optimisation"
+      ],
+      "case_sensitive_variants": [],
+      "why": "generic phrase around AI in production"
+    },
+    {
+      "term": "energy optimisation",
+      "tier": "context",
+      "variants": [
+        "energy optimization",
+        "steam optimisation",
+        "energy management system",
+        "power load optimisation",
+        "demand response",
+        "load shifting",
+        "electricity cost optimisation"
+      ],
+      "case_sensitive_variants": [],
+      "why": "AI used to cut energy cost and emissions"
+    },
+    {
+      "term": "process analytical technology",
+      "tier": "context",
+      "variants": [
+        "inline spectroscopy",
+        "in-line spectroscopy",
+        "online analyser",
+        "online analyzer",
+        "chemometrics",
+        "spectral analysis",
+        "NIR spectroscopy"
+      ],
+      "case_sensitive_variants": [],
+      "why": "inline measurement feeding models"
+    },
+    {
+      "term": "machine vision",
+      "tier": "ai",
+      "variants": [
+        "vision inspection",
+        "automated visual inspection",
+        "AI visual inspection",
+        "AI-based image analysis",
+        "automated optical inspection",
+        "image-based quality inspection"
+      ],
+      "case_sensitive_variants": [],
+      "why": "camera-based inspection of products and plants"
+    },
+    {
+      "term": "drone inspection",
+      "tier": "context",
+      "variants": [
+        "robotic inspection",
+        "inspection robot",
+        "crawler robot",
+        "unmanned aerial vehicle",
+        "UAV",
+        "autonomous inspection",
+        "quadruped robot"
+      ],
+      "case_sensitive_variants": [
+        "UAV"
+      ],
+      "why": "robotic inspection producing data for AI analysis"
+    },
+    {
+      "term": "AI safety camera",
+      "tier": "ai",
+      "variants": [
+        "AI video analytics",
+        "AI-enabled camera",
+        "AI-based safety monitoring",
+        "computer vision safety",
+        "PPE detection",
+        "intelligent video surveillance",
+        "AI-powered pedestrian detection"
+      ],
+      "case_sensitive_variants": [],
+      "why": "vision AI monitoring worker safety"
+    },
+    {
+      "term": "leak detection",
+      "tier": "context",
+      "variants": [
+        "LDAR",
+        "optical gas imaging",
+        "fugitive emissions monitoring",
+        "continuous emissions monitoring",
+        "emissions monitoring system"
+      ],
+      "case_sensitive_variants": [],
+      "why": "emissions and leak monitoring using sensors and imaging"
+    },
+    {
+      "term": "predictive emissions monitoring",
+      "tier": "ai",
+      "variants": [
+        "PEMS",
+        "emissions prediction model"
+      ],
+      "case_sensitive_variants": [
+        "PEMS"
+      ],
+      "why": "model-based emissions estimation"
+    },
+    {
+      "term": "remote operations centre",
+      "tier": "context",
+      "variants": [
+        "remote operations center",
+        "integrated operations centre",
+        "integrated operations center",
+        "centralised control room",
+        "centralized control room",
+        "remote monitoring centre",
+        "remote monitoring center",
+        "remote control centre",
+        "remote control center"
+      ],
+      "case_sensitive_variants": [],
+      "why": "centralised, data-driven plant operation"
+    },
+    {
+      "term": "connected worker",
+      "tier": "context",
+      "variants": [
+        "digital worker",
+        "smart glasses",
+        "augmented reality",
+        "wearable gas detector",
+        "digital permit to work",
+        "electronic permit to work",
+        "digital shift handover"
+      ],
+      "case_sensitive_variants": [],
+      "why": "digital field tools incl. AI assistance"
+    },
+    {
+      "term": "operator training simulator",
+      "tier": "context",
+      "variants": [
+        "immersive training",
+        "virtual reality training",
+        "VR training",
+        "simulation-based training"
+      ],
+      "case_sensitive_variants": [],
+      "why": "simulation-based training alongside AI tools"
+    },
+    {
+      "term": "AI operator assistant",
+      "tier": "ai",
+      "variants": [
+        "AI copilot for operators",
+        "AI maintenance assistant",
+        "AI knowledge assistant",
+        "AI assistant for chemists",
+        "AI lab assistant",
+        "AI research assistant",
+        "AI-assisted troubleshooting",
+        "AI-powered operator advisor"
+      ],
+      "case_sensitive_variants": [],
+      "why": "generative AI support for operators and chemists"
+    },
+    {
+      "term": "operational technology",
+      "tier": "context",
+      "variants": [
+        "OT security",
+        "OT cybersecurity",
+        "industrial control system",
+        "SCADA"
+      ],
+      "case_sensitive_variants": [],
+      "why": "plant control systems exposed to cyber risk"
+    },
+    {
+      "term": "distributed control system",
+      "tier": "context",
+      "variants": [
+        "DCS",
+        "safety instrumented system",
+        "process control network"
+      ],
+      "case_sensitive_variants": [
+        "DCS"
+      ],
+      "why": "core control layer; cyber and AI integration point"
+    },
+    {
+      "term": "industrial internet of things",
+      "tier": "context",
+      "variants": [
+        "IIoT",
+        "industrial IoT",
+        "industrial internet",
+        "wireless sensor network",
+        "smart sensors",
+        "connected sensors",
+        "tank telemetry",
+        "remote telemetry"
+      ],
+      "case_sensitive_variants": [],
+      "why": "plant sensor networks feeding models"
+    },
+    {
+      "term": "data historian",
+      "tier": "context",
+      "variants": [
+        "process historian",
+        "plant data platform",
+        "industrial data platform",
+        "manufacturing data lake",
+        "unified data platform"
+      ],
+      "case_sensitive_variants": [],
+      "why": "plant data foundation for AI models"
+    },
+    {
+      "term": "ageing workforce",
+      "tier": "context",
+      "variants": [
+        "aging workforce",
+        "knowledge capture",
+        "knowledge retention",
+        "knowledge transfer",
+        "skills gap",
+        "tacit knowledge",
+        "veteran operator know-how"
+      ],
+      "case_sensitive_variants": [],
+      "why": "knowledge loss that AI tools are meant to offset"
+    },
+    {
+      "term": "data scientist",
+      "tier": "context",
+      "variants": [
+        "data science team",
+        "digital academy",
+        "digital upskilling"
+      ],
+      "case_sensitive_variants": [],
+      "why": "digital and AI talent needs"
+    },
+    {
+      "term": "demand sensing",
+      "tier": "ai",
+      "variants": [],
+      "case_sensitive_variants": [],
+      "why": "ML short-term demand signal modelling"
+    },
+    {
+      "term": "demand forecasting",
+      "tier": "context",
+      "variants": [
+        "demand planning",
+        "demand prediction",
+        "sales forecasting",
+        "sales and operations planning",
+        "integrated business planning"
+      ],
+      "case_sensitive_variants": [],
+      "why": "planning process where AI is commonly applied"
+    },
+    {
+      "term": "dynamic pricing",
+      "tier": "context",
+      "variants": [
+        "price optimisation",
+        "price optimization",
+        "pricing analytics",
+        "value-based pricing tool",
+        "pricing excellence",
+        "algorithmic pricing"
+      ],
+      "case_sensitive_variants": [],
+      "why": "price setting where learning systems are used"
+    },
+    {
+      "term": "AI-driven pricing",
+      "tier": "ai",
+      "variants": [
+        "AI-powered pricing",
+        "AI pricing tool",
+        "machine learning pricing",
+        "AI-based price recommendation"
+      ],
+      "case_sensitive_variants": [],
+      "why": "explicit AI pricing tools"
+    },
+    {
+      "term": "supply chain control tower",
+      "tier": "context",
+      "variants": [
+        "control tower",
+        "supply chain visibility",
+        "supply chain optimisation",
+        "supply chain optimization",
+        "logistics optimisation",
+        "logistics optimization",
+        "route optimisation",
+        "route optimization",
+        "autonomous planning",
+        "touchless planning"
+      ],
+      "case_sensitive_variants": [],
+      "why": "visibility layer where predictive tools sit"
+    },
+    {
+      "term": "customer formulation tool",
+      "tier": "context",
+      "variants": [
+        "digital formulation assistant",
+        "virtual formulation assistant",
+        "online product selector",
+        "product recommendation tool",
+        "digital customer platform",
+        "virtual product advisor",
+        "digital sales assistant"
+      ],
+      "case_sensitive_variants": [],
+      "why": "digital advisory tools offered to customers"
+    },
+    {
+      "term": "AI-powered product recommendation",
+      "tier": "ai",
+      "variants": [
+        "AI product finder",
+        "AI formulation assistant",
+        "AI-powered customer assistant",
+        "AI sales assistant",
+        "AI-based product selector"
+      ],
+      "case_sensitive_variants": [],
+      "why": "AI advising customers on products and formulations"
+    },
+    {
+      "term": "semiconductor materials",
+      "tier": "context",
+      "variants": [
+        "semiconductor material",
+        "electronic materials",
+        "electronic chemicals",
+        "semiconductor process chemicals",
+        "high-purity chemicals",
+        "wet chemicals",
+        "silicon wafer",
+        "semiconductor-grade",
+        "electronics-grade",
+        "electronic grade"
+      ],
+      "case_sensitive_variants": [],
+      "why": "chip-making inputs whose demand follows AI"
+    },
+    {
+      "term": "photoresist",
+      "tier": "context",
+      "variants": [
+        "EUV resist",
+        "resist materials",
+        "lithography materials",
+        "photoacid generator"
+      ],
+      "case_sensitive_variants": [],
+      "why": "lithography materials for advanced chips"
+    },
+    {
+      "term": "CMP slurry",
+      "tier": "context",
+      "variants": [
+        "chemical mechanical planarization",
+        "chemical mechanical planarisation",
+        "CMP pad",
+        "CMP consumables",
+        "polishing slurry",
+        "post-CMP cleaner"
+      ],
+      "case_sensitive_variants": [],
+      "why": "planarisation consumables for advanced chips"
+    },
+    {
+      "term": "electronic specialty gases",
+      "tier": "context",
+      "variants": [
+        "electronic special gases",
+        "specialty gases for semiconductors",
+        "semiconductor gases",
+        "deposition precursor",
+        "ALD precursor",
+        "CVD precursor",
+        "high-purity gases",
+        "etching gas",
+        "ultra-high purity nitrogen",
+        "on-site gas supply"
+      ],
+      "case_sensitive_variants": [],
+      "why": "process gases for chip fabs"
+    },
+    {
+      "term": "advanced packaging materials",
+      "tier": "context",
+      "variants": [
+        "advanced packaging",
+        "semiconductor packaging materials",
+        "underfill",
+        "epoxy molding compound",
+        "epoxy moulding compound",
+        "die attach",
+        "build-up film",
+        "temporary bonding material",
+        "hybrid bonding",
+        "back-end materials",
+        "2.5D packaging",
+        "3D packaging"
+      ],
+      "case_sensitive_variants": [],
+      "why": "materials for AI chip packaging"
+    },
+    {
+      "term": "high-bandwidth memory",
+      "tier": "context",
+      "variants": [
+        "HBM",
+        "advanced memory"
+      ],
+      "case_sensitive_variants": [
+        "HBM"
+      ],
+      "why": "AI memory chips driving materials demand"
+    },
+    {
+      "term": "thermal interface material",
+      "tier": "context",
+      "variants": [
+        "thermal management material",
+        "thermal gap filler",
+        "thermally conductive",
+        "heat dissipation material",
+        "thermal grease",
+        "thermal pad"
+      ],
+      "case_sensitive_variants": [],
+      "why": "heat dissipation materials for AI servers"
+    },
+    {
+      "term": "low-dielectric material",
+      "tier": "context",
+      "variants": [
+        "low dielectric resin",
+        "low-Dk",
+        "low-Df",
+        "low-loss material",
+        "low-loss resin",
+        "low dielectric loss",
+        "PPE resin",
+        "hydrocarbon resin",
+        "copper clad laminate",
+        "high-speed laminate",
+        "high-frequency substrate"
+      ],
+      "case_sensitive_variants": [],
+      "why": "low-loss resins for AI server boards"
+    },
+    {
+      "term": "semiconductor fab",
+      "tier": "context",
+      "variants": [
+        "wafer fab",
+        "fab expansion",
+        "fab construction",
+        "chip fabrication",
+        "leading-edge node",
+        "advanced node",
+        "wafer starts"
+      ],
+      "case_sensitive_variants": [],
+      "why": "chip capacity build-out driving materials volumes"
+    },
+    {
+      "term": "immersion cooling",
+      "tier": "context",
+      "variants": [
+        "immersion coolant",
+        "dielectric fluid",
+        "dielectric coolant",
+        "liquid cooling",
+        "two-phase immersion",
+        "fluorinated cooling fluid",
+        "heat transfer fluid",
+        "direct-to-chip cooling",
+        "thermal management fluid"
+      ],
+      "case_sensitive_variants": [],
+      "why": "fluids for server and data centre cooling"
+    },
+    {
+      "term": "data center",
+      "tier": "context",
+      "variants": [
+        "data centre",
+        "hyperscaler",
+        "hyperscale"
+      ],
+      "case_sensitive_variants": [],
+      "why": "AI-related end market for materials and fluids"
+    },
+    {
+      "term": "AI server",
+      "tier": "ai",
+      "variants": [
+        "AI data center",
+        "AI data centre",
+        "AI accelerator",
+        "AI chip",
+        "AI semiconductor",
+        "AI-related demand",
+        "AI-driven demand",
+        "AI infrastructure demand",
+        "AI boom",
+        "AI hardware",
+        "demand from AI"
+      ],
+      "case_sensitive_variants": [],
+      "why": "explicit AI hardware demand"
+    },
+    {
+      "term": "wire and cable compound",
+      "tier": "context",
+      "variants": [
+        "cable insulation compound",
+        "cable jacketing",
+        "data cable",
+        "power cable insulation",
+        "wire and cable application"
+      ],
+      "case_sensitive_variants": [],
+      "why": "cable materials for data centre and grid build-out"
+    },
+    {
+      "term": "electricity demand growth",
+      "tier": "context",
+      "variants": [
+        "power demand growth",
+        "load growth",
+        "rising electricity demand",
+        "grid capacity constraint",
+        "power availability"
+      ],
+      "case_sensitive_variants": [],
+      "why": "AI-related load raising power cost and availability risk"
+    },
+    {
+      "term": "semiconductor export controls",
+      "tier": "context",
+      "variants": [
+        "chip export controls",
+        "export controls on semiconductors",
+        "advanced computing rule",
+        "export restrictions on advanced chips"
+      ],
+      "case_sensitive_variants": [],
+      "why": "chip trade rules affecting electronic materials"
+    },
+    {
+      "term": "AI-based sorting",
+      "tier": "ai",
+      "variants": [
+        "AI-powered sorting",
+        "AI waste sorting",
+        "AI sorting robot",
+        "robotic waste sorting",
+        "AI-enabled plastic sorting",
+        "object recognition sorting",
+        "deep learning sorting"
+      ],
+      "case_sensitive_variants": [],
+      "why": "learning-based recognition of plastic waste"
+    },
+    {
+      "term": "optical sorting",
+      "tier": "context",
+      "variants": [
+        "sensor-based sorting",
+        "NIR sorting",
+        "near-infrared sorting",
+        "digital watermark sorting",
+        "HolyGrail",
+        "tracer-based sorting"
+      ],
+      "case_sensitive_variants": [],
+      "why": "sensor sorting for recycling feedstock"
+    }
+  ],
+  "class_terms": {
+    "2011": [
+      {
+        "term": "air separation unit optimisation",
+        "tier": "context",
+        "variants": [
+          "air separation unit optimization",
+          "air separation optimisation",
+          "air separation optimization",
+          "load forecasting",
+          "power cost optimisation",
+          "power cost optimization",
+          "pipeline network optimisation"
+        ],
+        "why": "model-based operation of gas plants"
+      },
+      {
+        "term": "remotely operated plant",
+        "tier": "context",
+        "variants": [
+          "remote plant operation",
+          "remote operating centre",
+          "remote operating center",
+          "Smart Innovative Operations"
+        ],
+        "why": "gas plants run from central operations centres"
+      },
+      {
+        "term": "bulk delivery optimisation",
+        "tier": "context",
+        "variants": [
+          "bulk delivery optimization",
+          "delivery route optimisation",
+          "delivery route optimization",
+          "predictive delivery scheduling"
+        ],
+        "why": "telemetry-based gas delivery scheduling"
+      },
+      {
+        "term": "electronics end market",
+        "tier": "context",
+        "variants": [
+          "electronics segment",
+          "electronics customers",
+          "gases for electronics",
+          "electronics gases"
+        ],
+        "why": "gas supply to chip fabs; AI-related growth"
+      }
+    ],
+    "2012": [
+      {
+        "term": "precision agriculture",
+        "tier": "context",
+        "variants": [
+          "precision farming",
+          "digital agronomy",
+          "precision nutrient management",
+          "digital farming",
+          "digital agriculture",
+          "smart farming"
+        ],
+        "why": "data-driven fertiliser use"
+      },
+      {
+        "term": "variable rate application",
+        "tier": "context",
+        "variants": [
+          "variable-rate fertilisation",
+          "variable rate fertilization",
+          "variable rate technology",
+          "site-specific application",
+          "nitrogen sensor",
+          "N-Sensor"
+        ],
+        "why": "site-specific fertilisation from sensor data"
+      },
+      {
+        "term": "agronomic decision support",
+        "tier": "context",
+        "variants": [
+          "fertiliser recommendation engine",
+          "fertilizer recommendation engine",
+          "nutrient recommendation",
+          "digital agronomic advice",
+          "agronomic recommendation"
+        ],
+        "why": "digital advice tools for growers"
+      },
+      {
+        "term": "AI agronomist",
+        "tier": "ai",
+        "variants": [
+          "AI-powered agronomy",
+          "AI agronomic advisor",
+          "AI crop advisor"
+        ],
+        "why": "AI-based advice to farmers"
+      },
+      {
+        "term": "crop yield prediction",
+        "tier": "ai",
+        "variants": [
+          "yield forecasting model",
+          "crop modelling",
+          "crop modeling",
+          "yield prediction"
+        ],
+        "why": "models forecasting yield and nutrient need"
+      },
+      {
+        "term": "satellite imagery",
+        "tier": "context",
+        "variants": [
+          "remote sensing",
+          "crop monitoring",
+          "NDVI",
+          "drone imagery",
+          "biomass map"
+        ],
+        "why": "remote sensing analysed with ML"
+      }
+    ],
+    "2013": [
+      {
+        "term": "plastic waste sorting",
+        "tier": "context",
+        "variants": [
+          "plastics sorting",
+          "advanced sorting",
+          "recyclate quality"
+        ],
+        "why": "sorting technology for recycling feedstock"
+      },
+      {
+        "term": "compounding recipe optimisation",
+        "tier": "context",
+        "variants": [
+          "compound formulation optimisation",
+          "recipe optimisation",
+          "recipe optimization",
+          "polymer colour matching",
+          "polymer color matching"
+        ],
+        "why": "recipe and colour prediction for compounds"
+      },
+      {
+        "term": "liquid crystal polymer",
+        "tier": "context",
+        "variants": [
+          "LCP",
+          "high-speed connector",
+          "connector material",
+          "server connector"
+        ],
+        "case_sensitive_variants": [
+          "LCP"
+        ],
+        "why": "connector polymers for AI servers"
+      }
+    ],
+    "2021": [
+      {
+        "term": "AI-driven active ingredient discovery",
+        "tier": "ai",
+        "variants": [
+          "AI-enabled crop protection discovery",
+          "AI-designed active ingredient",
+          "AI-assisted molecule discovery",
+          "predictive crop protection R&D",
+          "AI-discovered herbicide",
+          "AI-discovered fungicide"
+        ],
+        "why": "AI in crop protection discovery"
+      },
+      {
+        "term": "biologicals discovery",
+        "tier": "context",
+        "variants": [
+          "microbial screening",
+          "biologicals screening",
+          "high-throughput biological screening"
+        ],
+        "why": "screening of biologicals using data-driven methods"
+      },
+      {
+        "term": "resistance prediction",
+        "tier": "ai",
+        "variants": [
+          "resistance modelling",
+          "resistance modeling",
+          "resistance management model"
+        ],
+        "why": "models predicting pest and weed resistance"
+      },
+      {
+        "term": "digital farming platform",
+        "tier": "context",
+        "variants": [
+          "farm management software",
+          "farm management platform",
+          "digital farming solution",
+          "xarvio",
+          "Cropwise",
+          "Climate FieldView",
+          "Arc farm intelligence"
+        ],
+        "why": "farm management tools from crop protection firms"
+      },
+      {
+        "term": "precision spraying",
+        "tier": "context",
+        "variants": [
+          "spot spraying",
+          "smart spraying",
+          "targeted spraying",
+          "see and spray",
+          "green-on-green",
+          "variable rate spraying",
+          "drone spraying",
+          "spray drone",
+          "precision application"
+        ],
+        "why": "camera-guided targeted application"
+      },
+      {
+        "term": "weed recognition",
+        "tier": "ai",
+        "variants": [
+          "weed detection",
+          "weed identification",
+          "pest recognition",
+          "disease recognition",
+          "plant disease detection",
+          "image-based crop diagnosis",
+          "AI scouting",
+          "digital scouting"
+        ],
+        "why": "vision AI identifying weeds, pests and disease"
+      },
+      {
+        "term": "disease prediction model",
+        "tier": "ai",
+        "variants": [
+          "pest forecasting",
+          "disease forecasting",
+          "pest pressure prediction",
+          "predictive disease model",
+          "spray timing recommendation",
+          "agronomic model"
+        ],
+        "why": "models forecasting pest and disease pressure"
+      }
+    ],
+    "2022": [
+      {
+        "term": "colour matching",
+        "tier": "context",
+        "variants": [
+          "color matching",
+          "colour retrieval",
+          "color retrieval",
+          "spectrophotometer",
+          "automated tinting",
+          "automatic mixing machine",
+          "automated paint mixing",
+          "digital colour tool",
+          "digital color tool"
+        ],
+        "why": "digital colour retrieval and tinting"
+      },
+      {
+        "term": "AI colour matching",
+        "tier": "ai",
+        "variants": [
+          "AI color matching",
+          "AI-powered colour prediction",
+          "AI-powered color prediction",
+          "colour prediction algorithm",
+          "color prediction algorithm",
+          "AI shade matching",
+          "AI-based colour formulation",
+          "AI-based color formulation"
+        ],
+        "why": "AI colour and formula prediction"
+      },
+      {
+        "term": "paint visualiser",
+        "tier": "context",
+        "variants": [
+          "paint visualizer",
+          "colour visualiser",
+          "color visualizer",
+          "augmented reality visualiser",
+          "virtual room painter",
+          "colour visualisation app",
+          "color visualization app"
+        ],
+        "why": "AR and AI tools showing colours in rooms"
+      },
+      {
+        "term": "digital body shop",
+        "tier": "context",
+        "variants": [
+          "collision repair software",
+          "refinish digital ecosystem",
+          "body shop management system"
+        ],
+        "why": "software ecosystem for refinish customers"
+      },
+      {
+        "term": "AI damage assessment",
+        "tier": "ai",
+        "variants": [
+          "AI-based repair estimating",
+          "photo-based estimating",
+          "AI collision estimating"
+        ],
+        "why": "AI estimating collision repair"
+      },
+      {
+        "term": "robotic painting",
+        "tier": "context",
+        "variants": [
+          "automated spray application",
+          "robotic coating application",
+          "overspray-free application",
+          "autonomous painting robot",
+          "drone painting"
+        ],
+        "why": "automated coating application"
+      },
+      {
+        "term": "coating performance prediction",
+        "tier": "ai",
+        "variants": [
+          "corrosion prediction",
+          "coating lifetime prediction",
+          "weathering prediction",
+          "predictive coating performance",
+          "durability prediction"
+        ],
+        "why": "models predicting coating durability"
+      }
+    ],
+    "2023": [
+      {
+        "term": "beauty tech",
+        "tier": "context",
+        "variants": [
+          "beauty technology",
+          "augmented beauty",
+          "tech-powered beauty",
+          "digital beauty services",
+          "connected beauty device"
+        ],
+        "why": "technology-led beauty services framing AI use"
+      },
+      {
+        "term": "AI skin diagnostic",
+        "tier": "ai",
+        "variants": [
+          "skin diagnostic",
+          "AI skin analysis",
+          "skin analysis tool",
+          "skin analysis app",
+          "AI-powered skin diagnosis",
+          "AI skincare advisor",
+          "skin scanner",
+          "hair diagnostic",
+          "scalp diagnostic",
+          "AI hair analysis"
+        ],
+        "why": "vision AI analysing skin and hair"
+      },
+      {
+        "term": "virtual try-on",
+        "tier": "ai",
+        "variants": [
+          "AR try-on",
+          "augmented reality try-on",
+          "ModiFace",
+          "shade finder",
+          "foundation shade matching"
+        ],
+        "why": "vision AI showing make-up and hair colour"
+      },
+      {
+        "term": "AI beauty advisor",
+        "tier": "ai",
+        "variants": [
+          "AI beauty assistant",
+          "virtual beauty advisor",
+          "virtual beauty assistant",
+          "Beauty Genius",
+          "AI fragrance advisor",
+          "conversational beauty advisor",
+          "AI skincare coach"
+        ],
+        "why": "conversational AI beauty assistants"
+      },
+      {
+        "term": "personalised beauty",
+        "tier": "context",
+        "variants": [
+          "personalized beauty",
+          "personalised skincare",
+          "personalized skincare",
+          "customised formulation",
+          "customized formula",
+          "custom-blended",
+          "personalised regimen",
+          "personalized regimen"
+        ],
+        "why": "individualised products driven by diagnostics data"
+      },
+      {
+        "term": "AI fragrance creation",
+        "tier": "ai",
+        "variants": [
+          "AI perfumery",
+          "AI-assisted perfumery",
+          "AI perfumer",
+          "AI-created fragrance",
+          "AI-designed fragrance",
+          "digital fragrance creation",
+          "AI scent design",
+          "algorithmic perfumery"
+        ],
+        "why": "AI-assisted perfumery"
+      },
+      {
+        "term": "AI-generated creative",
+        "tier": "ai",
+        "variants": [
+          "AI-generated advertising",
+          "AI-generated campaign",
+          "AI-generated imagery",
+          "AI content factory",
+          "AI-generated product imagery",
+          "AI content creation"
+        ],
+        "why": "generative AI in beauty and household advertising"
+      },
+      {
+        "term": "precision marketing",
+        "tier": "context",
+        "variants": [
+          "personalised marketing",
+          "personalized marketing",
+          "personalisation at scale",
+          "personalization at scale",
+          "hyper-personalisation",
+          "hyper-personalization"
+        ],
+        "why": "data-driven targeting and personalisation"
+      },
+      {
+        "term": "first-party data",
+        "tier": "context",
+        "variants": [
+          "consumer data platform",
+          "customer data platform",
+          "zero-party data",
+          "consumer data ecosystem"
+        ],
+        "why": "consumer data assets feeding AI marketing"
+      },
+      {
+        "term": "marketing mix modelling",
+        "tier": "context",
+        "variants": [
+          "marketing mix modeling",
+          "media mix modelling",
+          "media mix modeling",
+          "media optimisation",
+          "media optimization",
+          "marketing spend optimisation",
+          "marketing spend optimization"
+        ],
+        "why": "marketing spend models, increasingly ML-based"
+      },
+      {
+        "term": "social listening",
+        "tier": "context",
+        "variants": [
+          "trend prediction",
+          "trend forecasting",
+          "trend detection",
+          "influencer analytics",
+          "trend spotting"
+        ],
+        "why": "consumer trend mining, often AI-based"
+      },
+      {
+        "term": "revenue growth management",
+        "tier": "context",
+        "variants": [
+          "RGM",
+          "net revenue management",
+          "strategic revenue management"
+        ],
+        "case_sensitive_variants": [
+          "RGM"
+        ],
+        "why": "pricing, mix and promo discipline using ML"
+      },
+      {
+        "term": "trade promotion optimisation",
+        "tier": "context",
+        "variants": [
+          "promotion optimisation",
+          "promotion optimization"
+        ],
+        "why": "promo planning where AI is applied"
+      },
+      {
+        "term": "digital shelf",
+        "tier": "context",
+        "variants": [
+          "retail media",
+          "e-commerce content optimisation",
+          "e-commerce content optimization"
+        ],
+        "why": "e-commerce content where AI optimises listings"
+      },
+      {
+        "term": "agentic commerce",
+        "tier": "ai",
+        "variants": [
+          "AI shopping agent",
+          "AI-mediated shopping",
+          "agentic shopping",
+          "generative engine optimisation",
+          "generative engine optimization",
+          "answer engine optimisation",
+          "answer engine optimization"
+        ],
+        "why": "AI agents shopping on consumers' behalf"
+      },
+      {
+        "term": "connected dispenser",
+        "tier": "context",
+        "variants": [
+          "smart dispenser",
+          "smart dosing",
+          "connected dosing",
+          "IoT dispenser",
+          "data-driven cleaning",
+          "smart hygiene",
+          "hand hygiene monitoring"
+        ],
+        "why": "sensor-equipped dosing and hygiene systems"
+      },
+      {
+        "term": "counterfeit detection",
+        "tier": "context",
+        "variants": [
+          "product authentication",
+          "anti-counterfeiting",
+          "grey market monitoring",
+          "online brand protection"
+        ],
+        "why": "brand protection using data and AI"
+      }
+    ],
+    "2029": [
+      {
+        "term": "digital blasting",
+        "tier": "context",
+        "variants": [
+          "blast optimisation",
+          "blast optimization",
+          "blast design software",
+          "electronic blasting system",
+          "wireless initiating system",
+          "fragmentation analysis",
+          "blast modelling",
+          "blast modeling",
+          "orebody intelligence",
+          "automated explosives delivery"
+        ],
+        "why": "data-driven blast design for mining customers"
+      },
+      {
+        "term": "AI blast design",
+        "tier": "ai",
+        "variants": [
+          "AI-driven blast design",
+          "AI fragmentation analysis",
+          "machine learning blast optimisation",
+          "AI-based fragmentation measurement",
+          "automated blast design"
+        ],
+        "why": "AI in blast and fragmentation modelling"
+      },
+      {
+        "term": "AI flavour creation",
+        "tier": "ai",
+        "variants": [
+          "AI flavor creation",
+          "AI-assisted flavour design",
+          "AI-assisted flavor design",
+          "AI flavourist",
+          "AI flavorist",
+          "AI-designed flavour",
+          "AI-designed flavor",
+          "digital flavour creation",
+          "digital flavor creation",
+          "taste prediction",
+          "aroma prediction",
+          "odour prediction",
+          "odor prediction"
+        ],
+        "why": "AI-assisted flavour and taste design"
+      },
+      {
+        "term": "cooling water treatment",
+        "tier": "context",
+        "variants": [
+          "data center water management",
+          "data centre water management",
+          "cooling water management",
+          "chip cooling",
+          "cooling tower treatment",
+          "smart water management",
+          "digital water management",
+          "connected chemistry"
+        ],
+        "why": "water chemistry services for data centre cooling"
+      },
+      {
+        "term": "3D TRASAR",
+        "tier": "context",
+        "variants": [
+          "ECOLAB3D"
+        ],
+        "why": "sensor-based water treatment control brand"
+      }
+    ],
+    "2030": [
+      {
+        "term": "fibre spinning optimisation",
+        "tier": "context",
+        "variants": [
+          "fiber spinning optimization",
+          "spinning process control",
+          "filament defect detection",
+          "yarn defect detection",
+          "automated doffing",
+          "automatic package handling",
+          "intelligent spinning workshop"
+        ],
+        "why": "data-driven control of fibre production"
+      },
+      {
+        "term": "optical fibre cable reinforcement",
+        "tier": "context",
+        "variants": [
+          "optical fiber cable reinforcement",
+          "fibre optic cable reinforcement",
+          "fiber optic cable reinforcement"
+        ],
+        "why": "aramid demand from data centre cabling"
+      },
+      {
+        "term": "fibre identification technology",
+        "tier": "context",
+        "variants": [
+          "fiber identification technology",
+          "fibre traceability",
+          "fiber traceability",
+          "tracer fibre",
+          "tracer fiber",
+          "digital fibre tracking"
+        ],
+        "why": "tracer-based traceability data for fibres"
+      }
+    ]
+  }
+}

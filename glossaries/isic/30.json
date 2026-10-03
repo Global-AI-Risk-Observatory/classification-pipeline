@@ -1,0 +1,928 @@
+{
+  "id": "30",
+  "name": "Manufacture of other transport equipment",
+  "section": "C",
+  "summary": "Aerospace, defence, rail and shipbuilders write about AI as autonomy: uncrewed aircraft and loyal wingmen, autonomous ships and underwater vehicles, driverless trains, robotic combat vehicles, plus AI-assisted targeting, sensor fusion and decision support in command systems, with human-control and certification questions attached. Own use covers predictive maintenance and health monitoring services, digital engineering, automated inspection and smart shipyards. Engine and power-system makers also cite data center power demand, and motorcycle and bicycle makers describe rider-assistance and connected features.",
+  "terms": [
+    {
+      "term": "mission autonomy",
+      "tier": "ai",
+      "variants": [
+        "autonomous system",
+        "autonomy software",
+        "autonomy stack",
+        "autonomous platform",
+        "autonomous operations",
+        "autonomy kit"
+      ],
+      "why": "software letting platforms act without operators"
+    },
+    {
+      "term": "uncrewed system",
+      "tier": "context",
+      "variants": [
+        "unmanned system",
+        "unmanned platform",
+        "remotely piloted",
+        "optionally manned",
+        "optionally crewed",
+        "optionally piloted"
+      ],
+      "why": "remotely operated platforms gaining autonomy"
+    },
+    {
+      "term": "defence AI",
+      "tier": "ai",
+      "variants": [
+        "defense AI",
+        "military AI",
+        "AI-enabled warfare",
+        "algorithmic warfare",
+        "AI-enabled capability",
+        "battlefield AI",
+        "trusted AI",
+        "sovereign AI",
+        "mission AI"
+      ],
+      "why": "sector label for military AI applications"
+    },
+    {
+      "term": "human-in-the-loop",
+      "tier": "ai",
+      "variants": [
+        "human-on-the-loop",
+        "meaningful human control"
+      ],
+      "why": "human-control principle for AI-enabled weapons"
+    },
+    {
+      "term": "autonomous weapon",
+      "tier": "ai",
+      "variants": [
+        "killer robot",
+        "DoD Directive 3000.09",
+        "autonomy in weapon systems"
+      ],
+      "why": "weapons selecting targets with AI; ethical exposure"
+    },
+    {
+      "term": "automatic target recognition",
+      "tier": "ai",
+      "variants": [
+        "aided target recognition",
+        "automated target recognition",
+        "target detection and classification",
+        "AI-based target recognition",
+        "automated threat detection"
+      ],
+      "why": "AI detection and classification of targets"
+    },
+    {
+      "term": "sensor fusion",
+      "tier": "ai",
+      "variants": [
+        "data fusion",
+        "track fusion"
+      ],
+      "why": "merging sensor data into a machine-built picture"
+    },
+    {
+      "term": "command and control",
+      "tier": "context",
+      "variants": [
+        "C4ISR",
+        "battle management system",
+        "combat management system",
+        "multi-domain operations",
+        "combat cloud",
+        "JADC2"
+      ],
+      "case_sensitive_variants": [
+        "C4ISR",
+        "JADC2"
+      ],
+      "why": "networked systems hosting AI decision support"
+    },
+    {
+      "term": "decision advantage",
+      "tier": "context",
+      "variants": [
+        "decision superiority",
+        "sensor-to-shooter",
+        "kill chain",
+        "kill web",
+        "decision support system"
+      ],
+      "why": "claimed benefit of AI in command systems"
+    },
+    {
+      "term": "intelligence, surveillance and reconnaissance",
+      "tier": "context",
+      "variants": [
+        "ISR",
+        "ISTAR",
+        "signals intelligence",
+        "geospatial intelligence",
+        "imagery analysis"
+      ],
+      "case_sensitive_variants": [
+        "ISR",
+        "ISTAR"
+      ],
+      "why": "sensing missions analysed with AI"
+    },
+    {
+      "term": "cognitive electronic warfare",
+      "tier": "ai",
+      "variants": [
+        "cognitive EW",
+        "cognitive radar",
+        "adaptive radar",
+        "AI-enabled electronic warfare"
+      ],
+      "why": "AI-adaptive radar and jamming"
+    },
+    {
+      "term": "electronic warfare",
+      "tier": "context",
+      "variants": [
+        "electromagnetic spectrum operations",
+        "electronic attack",
+        "electronic support measures"
+      ],
+      "why": "spectrum systems where AI is applied"
+    },
+    {
+      "term": "swarming",
+      "tier": "ai",
+      "variants": [
+        "drone swarm",
+        "swarm technology",
+        "swarm intelligence",
+        "collaborative autonomy",
+        "autonomous swarm"
+      ],
+      "why": "coordinated autonomous drones and vehicles"
+    },
+    {
+      "term": "counter-UAS",
+      "tier": "context",
+      "variants": [
+        "C-UAS",
+        "counter-drone",
+        "counter-unmanned aircraft system",
+        "anti-drone",
+        "drone defence",
+        "drone defense",
+        "drone wall"
+      ],
+      "case_sensitive_variants": [
+        "C-UAS"
+      ],
+      "why": "drone defence relying on automated detection"
+    },
+    {
+      "term": "loitering munition",
+      "tier": "context",
+      "variants": [
+        "kamikaze drone",
+        "one-way attack drone",
+        "one-way effector"
+      ],
+      "why": "munitions with increasing onboard autonomy"
+    },
+    {
+      "term": "software-defined defence",
+      "tier": "context",
+      "variants": [
+        "software-defined defense",
+        "software-defined platform",
+        "open mission systems",
+        "modular open systems approach",
+        "MOSA",
+        "open architecture"
+      ],
+      "case_sensitive_variants": [
+        "MOSA"
+      ],
+      "why": "software-led platforms that host AI functions"
+    },
+    {
+      "term": "predictive maintenance",
+      "tier": "ai",
+      "variants": [
+        "predictive analytics for maintenance",
+        "failure prediction"
+      ],
+      "why": "ML on fleet and engine data, sold as service"
+    },
+    {
+      "term": "condition-based maintenance",
+      "tier": "context",
+      "variants": [
+        "health and usage monitoring system",
+        "HUMS",
+        "prognostics and health management",
+        "engine health monitoring",
+        "fleet health monitoring"
+      ],
+      "case_sensitive_variants": [
+        "HUMS"
+      ],
+      "why": "health monitoring services where predictive models run"
+    },
+    {
+      "term": "digital twin",
+      "tier": "context",
+      "variants": [
+        "digital thread",
+        "model-based systems engineering",
+        "MBSE",
+        "digital engineering",
+        "virtual twin"
+      ],
+      "case_sensitive_variants": [
+        "MBSE"
+      ],
+      "why": "virtual product models used with AI"
+    },
+    {
+      "term": "smart factory",
+      "tier": "context",
+      "variants": [
+        "factory of the future",
+        "Industry 4.0",
+        "digital factory"
+      ],
+      "why": "plant programmes under which AI use is reported"
+    },
+    {
+      "term": "automated visual inspection",
+      "tier": "ai",
+      "variants": [
+        "automated inspection",
+        "AI-assisted inspection",
+        "borescope inspection",
+        "automated non-destructive testing",
+        "drone-based inspection",
+        "robotic inspection"
+      ],
+      "why": "AI-assisted inspection of structures and engines"
+    },
+    {
+      "term": "collaborative robot",
+      "tier": "context",
+      "variants": [
+        "cobot"
+      ],
+      "why": "flexible robots in assembly and drilling"
+    },
+    {
+      "term": "generative design",
+      "tier": "ai",
+      "variants": [
+        "AI-assisted design",
+        "surrogate model",
+        "AI-based simulation"
+      ],
+      "why": "AI-generated structures and surrogate simulation models"
+    },
+    {
+      "term": "data center",
+      "tier": "context",
+      "variants": [
+        "data centre",
+        "datacenter",
+        "datacentre"
+      ],
+      "why": "power-system demand from AI data centers"
+    },
+    {
+      "term": "small modular reactor",
+      "tier": "context",
+      "variants": [
+        "microreactor",
+        "micro-reactor"
+      ],
+      "why": "nuclear business tied to AI power demand"
+    },
+    {
+      "term": "backup power",
+      "tier": "context",
+      "variants": [
+        "standby power",
+        "genset",
+        "generator set",
+        "emergency power system",
+        "aeroderivative"
+      ],
+      "why": "engines and turbines sold for data center power"
+    }
+  ],
+  "class_terms": {
+    "3011": [
+      {
+        "term": "autonomous ship",
+        "tier": "ai",
+        "variants": [
+          "autonomous vessel",
+          "autonomous shipping",
+          "maritime autonomous surface ship",
+          "MASS Code",
+          "autonomous navigation",
+          "collision avoidance system",
+          "remote-controlled vessel"
+        ],
+        "why": "self-navigating vessels and navigation systems"
+      },
+      {
+        "term": "unmanned surface vessel",
+        "tier": "context",
+        "variants": [
+          "USV",
+          "uncrewed surface vessel",
+          "unmanned underwater vehicle",
+          "UUV",
+          "autonomous underwater vehicle",
+          "AUV",
+          "XLUUV",
+          "naval drone",
+          "sea drone"
+        ],
+        "case_sensitive_variants": [
+          "USV",
+          "UUV",
+          "AUV",
+          "XLUUV"
+        ],
+        "why": "naval and commercial uncrewed vessels"
+      },
+      {
+        "term": "smart ship",
+        "tier": "context",
+        "variants": [
+          "digital ship",
+          "integrated bridge system",
+          "voyage optimisation",
+          "voyage optimization",
+          "weather routing",
+          "ship performance monitoring"
+        ],
+        "why": "connected ship systems using optimisation algorithms"
+      },
+      {
+        "term": "smart shipyard",
+        "tier": "context",
+        "variants": [
+          "digital shipyard",
+          "shipyard automation",
+          "welding robot",
+          "robotic welding",
+          "automated block assembly"
+        ],
+        "why": "yard digitalisation and robotised production"
+      },
+      {
+        "term": "autonomous mine countermeasures",
+        "tier": "ai",
+        "variants": [
+          "autonomous mine hunting",
+          "sonar classification",
+          "acoustic classification"
+        ],
+        "why": "uncrewed naval systems with AI sonar classification"
+      }
+    ],
+    "3012": [
+      {
+        "term": "assisted docking",
+        "tier": "ai",
+        "variants": [
+          "auto-docking",
+          "joystick docking",
+          "self-docking",
+          "DockSense"
+        ],
+        "why": "automated docking and piloting for boats"
+      },
+      {
+        "term": "connected boat",
+        "tier": "context",
+        "variants": [
+          "boat telematics",
+          "remote boat monitoring",
+          "digital helm"
+        ],
+        "why": "boat telematics and remote monitoring"
+      }
+    ],
+    "3020": [
+      {
+        "term": "automatic train operation",
+        "tier": "ai",
+        "variants": [
+          "ATO",
+          "driverless train",
+          "autonomous train",
+          "unattended train operation",
+          "GoA4",
+          "grade of automation",
+          "driverless metro",
+          "autonomous tram"
+        ],
+        "case_sensitive_variants": [
+          "ATO",
+          "GoA4"
+        ],
+        "why": "automated and driverless train driving"
+      },
+      {
+        "term": "communications-based train control",
+        "tier": "context",
+        "variants": [
+          "CBTC",
+          "ETCS",
+          "European Train Control System",
+          "ERTMS",
+          "digital interlocking",
+          "digital signalling",
+          "digital signaling",
+          "positive train control"
+        ],
+        "case_sensitive_variants": [
+          "CBTC",
+          "ETCS",
+          "ERTMS"
+        ],
+        "why": "signalling systems enabling automated operation"
+      },
+      {
+        "term": "obstacle detection",
+        "tier": "ai",
+        "variants": [
+          "trackside perception",
+          "driver advisory system",
+          "remote train operation",
+          "environment perception"
+        ],
+        "why": "perception AI for trains and trams"
+      },
+      {
+        "term": "wayside monitoring",
+        "tier": "context",
+        "variants": [
+          "trackside monitoring",
+          "track monitoring",
+          "Railigent",
+          "HealthHub",
+          "digital depot",
+          "rolling stock diagnostics",
+          "remote train diagnostics"
+        ],
+        "why": "sensor data for rolling stock and track health models"
+      },
+      {
+        "term": "digital automatic coupling",
+        "tier": "context",
+        "variants": [
+          "digital automatic coupler",
+          "intelligent freight train",
+          "smart freight wagon"
+        ],
+        "why": "freight automation generating wagon data"
+      },
+      {
+        "term": "traffic management system",
+        "tier": "context",
+        "variants": [
+          "rail traffic management",
+          "timetable optimisation",
+          "timetable optimization",
+          "energy-efficient driving"
+        ],
+        "why": "algorithmic rail traffic and energy optimisation"
+      },
+      {
+        "term": "automatic passenger counting",
+        "tier": "ai",
+        "variants": [
+          "onboard video analytics",
+          "passenger flow analysis"
+        ],
+        "why": "onboard video AI for passenger flow and security"
+      }
+    ],
+    "3030": [
+      {
+        "term": "unmanned aerial vehicle",
+        "tier": "context",
+        "variants": [
+          "UAV",
+          "UAS",
+          "unmanned aircraft system",
+          "uncrewed aerial system",
+          "RPAS",
+          "drone"
+        ],
+        "case_sensitive_variants": [
+          "UAV",
+          "UAS",
+          "RPAS"
+        ],
+        "why": "uncrewed aircraft products"
+      },
+      {
+        "term": "collaborative combat aircraft",
+        "tier": "ai",
+        "variants": [
+          "loyal wingman",
+          "remote carrier",
+          "autonomous wingman",
+          "uncrewed combat aircraft",
+          "autonomous collaborative platform",
+          "Ghost Bat"
+        ],
+        "why": "AI-flown aircraft teamed with crewed fighters"
+      },
+      {
+        "term": "manned-unmanned teaming",
+        "tier": "ai",
+        "variants": [
+          "MUM-T",
+          "crewed-uncrewed teaming",
+          "human-machine teaming"
+        ],
+        "case_sensitive_variants": [
+          "MUM-T"
+        ],
+        "why": "crewed aircraft directing autonomous ones"
+      },
+      {
+        "term": "Future Combat Air System",
+        "tier": "context",
+        "variants": [
+          "FCAS",
+          "Global Combat Air Programme",
+          "GCAP",
+          "Next Generation Air Dominance",
+          "NGAD",
+          "sixth-generation fighter",
+          "system of systems"
+        ],
+        "case_sensitive_variants": [
+          "FCAS",
+          "GCAP",
+          "NGAD"
+        ],
+        "why": "next-generation fighter programmes built around AI"
+      },
+      {
+        "term": "AI pilot",
+        "tier": "ai",
+        "variants": [
+          "AI-piloted",
+          "AI-flown",
+          "Hivemind",
+          "Skyborg",
+          "autonomy core"
+        ],
+        "why": "AI agents flying aircraft"
+      },
+      {
+        "term": "autonomous flight",
+        "tier": "ai",
+        "variants": [
+          "autonomous aircraft",
+          "pilotless aircraft",
+          "self-flying",
+          "automatic take-off and landing",
+          "Autoland",
+          "autonomous aerial refuelling",
+          "autonomous aerial refueling",
+          "A3R"
+        ],
+        "case_sensitive_variants": [
+          "A3R"
+        ],
+        "why": "automated flight, taxi, landing and refuelling"
+      },
+      {
+        "term": "single-pilot operations",
+        "tier": "context",
+        "variants": [
+          "reduced crew operations",
+          "extended minimum crew operations",
+          "eMCO"
+        ],
+        "case_sensitive_variants": [
+          "eMCO"
+        ],
+        "why": "reduced-crew concepts relying on automation"
+      },
+      {
+        "term": "virtual co-pilot",
+        "tier": "ai",
+        "variants": [
+          "digital co-pilot",
+          "cockpit assistant",
+          "pilot assistance system",
+          "intelligent flight assistant"
+        ],
+        "why": "AI assistants for flight crews"
+      },
+      {
+        "term": "eVTOL",
+        "tier": "context",
+        "variants": [
+          "electric vertical take-off and landing",
+          "advanced air mobility",
+          "urban air mobility",
+          "air taxi"
+        ],
+        "why": "air taxis planned for eventual pilotless flight"
+      },
+      {
+        "term": "detect and avoid",
+        "tier": "ai",
+        "variants": [
+          "sense and avoid",
+          "vision-based navigation",
+          "vision-based landing",
+          "GPS-denied navigation",
+          "terrain-relative navigation"
+        ],
+        "why": "perception and navigation AI for uncrewed flight"
+      },
+      {
+        "term": "beyond visual line of sight",
+        "tier": "context",
+        "variants": [
+          "BVLOS",
+          "unmanned traffic management",
+          "U-space",
+          "Part 108"
+        ],
+        "case_sensitive_variants": [
+          "BVLOS"
+        ],
+        "why": "rules gating autonomous drone operations"
+      },
+      {
+        "term": "learning assurance",
+        "tier": "ai",
+        "variants": [
+          "EASA AI Roadmap",
+          "certifiable AI",
+          "safety-critical AI",
+          "AI airworthiness",
+          "certification of machine learning",
+          "AI trustworthiness"
+        ],
+        "why": "certification concepts for AI in aviation"
+      },
+      {
+        "term": "DO-178C",
+        "tier": "context",
+        "variants": [
+          "design assurance level",
+          "airborne software certification",
+          "ARP4754"
+        ],
+        "why": "software assurance standard AI must satisfy"
+      },
+      {
+        "term": "aircraft health monitoring",
+        "tier": "context",
+        "variants": [
+          "Skywise",
+          "IntelligentEngine",
+          "EngineWise",
+          "aircraft health management",
+          "flight data analytics"
+        ],
+        "why": "data services predicting aircraft and engine faults"
+      },
+      {
+        "term": "onboard AI processing",
+        "tier": "ai",
+        "variants": [
+          "on-orbit AI",
+          "AI-enabled satellite",
+          "onboard processing",
+          "autonomous satellite operations",
+          "satellite autonomy",
+          "autonomous collision avoidance"
+        ],
+        "why": "AI running on satellites and spacecraft"
+      },
+      {
+        "term": "orbital compute",
+        "tier": "context",
+        "variants": [
+          "space-based compute",
+          "computing in orbit",
+          "space-based AI infrastructure"
+        ],
+        "why": "space-based data centers for AI workloads"
+      },
+      {
+        "term": "Earth observation",
+        "tier": "context",
+        "variants": [
+          "automated change detection",
+          "imagery intelligence",
+          "remote sensing"
+        ],
+        "why": "satellite imagery analysed with AI"
+      },
+      {
+        "term": "digital tower",
+        "tier": "context",
+        "variants": [
+          "remote tower",
+          "air traffic management",
+          "trajectory prediction"
+        ],
+        "why": "air traffic systems using automated detection"
+      }
+    ],
+    "3040": [
+      {
+        "term": "unmanned ground vehicle",
+        "tier": "context",
+        "variants": [
+          "UGV",
+          "uncrewed ground vehicle",
+          "robotic combat vehicle",
+          "unmanned ground system",
+          "robotic wingman"
+        ],
+        "case_sensitive_variants": [
+          "UGV"
+        ],
+        "why": "robotic land vehicles for combat and logistics"
+      },
+      {
+        "term": "autonomous convoy",
+        "tier": "ai",
+        "variants": [
+          "leader-follower",
+          "autonomous ground vehicle",
+          "autonomous resupply",
+          "autonomous driving kit",
+          "off-road autonomy"
+        ],
+        "why": "self-driving military ground vehicles"
+      },
+      {
+        "term": "AI-assisted targeting",
+        "tier": "ai",
+        "variants": [
+          "AI-assisted fire control",
+          "automated target tracking",
+          "target cueing",
+          "assisted target engagement"
+        ],
+        "why": "AI support for gunners and fire control"
+      },
+      {
+        "term": "active protection system",
+        "tier": "context",
+        "variants": [
+          "hard-kill",
+          "StrikeShield",
+          "automated threat response"
+        ],
+        "why": "automated threat detection and interception"
+      },
+      {
+        "term": "remote weapon station",
+        "tier": "context",
+        "variants": [
+          "remote controlled weapon station",
+          "RCWS",
+          "unmanned turret",
+          "remote turret"
+        ],
+        "case_sensitive_variants": [
+          "RCWS"
+        ],
+        "why": "remotely operated mounts with automated tracking"
+      },
+      {
+        "term": "vetronics",
+        "tier": "context",
+        "variants": [
+          "NATO Generic Vehicle Architecture",
+          "NGVA",
+          "digital backbone",
+          "digital turret",
+          "crew assistance system",
+          "see-through armour",
+          "see-through armor"
+        ],
+        "case_sensitive_variants": [
+          "NGVA"
+        ],
+        "why": "vehicle digital backbone hosting AI crew aids"
+      },
+      {
+        "term": "Main Ground Combat System",
+        "tier": "context",
+        "variants": [
+          "MGCS",
+          "next-generation main battle tank",
+          "KF51"
+        ],
+        "case_sensitive_variants": [
+          "MGCS"
+        ],
+        "why": "next-generation tank programmes with robotic elements"
+      }
+    ],
+    "3091": [
+      {
+        "term": "advanced rider assistance system",
+        "tier": "ai",
+        "variants": [
+          "ARAS",
+          "rider assistance system",
+          "rider assist",
+          "radar-assisted cruise control",
+          "adaptive cruise control",
+          "blind spot detection",
+          "forward collision warning"
+        ],
+        "case_sensitive_variants": [
+          "ARAS"
+        ],
+        "why": "radar-based assistance on motorcycles"
+      },
+      {
+        "term": "connected motorcycle",
+        "tier": "context",
+        "variants": [
+          "connected scooter",
+          "smart scooter",
+          "connected ride",
+          "smart helmet"
+        ],
+        "why": "connectivity and app services on two-wheelers"
+      },
+      {
+        "term": "battery swapping",
+        "tier": "context",
+        "variants": [
+          "swap station optimisation",
+          "swap station optimization",
+          "smart battery network"
+        ],
+        "why": "swap networks optimised with usage data"
+      },
+      {
+        "term": "self-balancing motorcycle",
+        "tier": "ai",
+        "variants": [
+          "riding assist",
+          "autonomous motorcycle"
+        ],
+        "why": "automated balancing and riding concepts"
+      }
+    ],
+    "3092": [
+      {
+        "term": "connected e-bike",
+        "tier": "context",
+        "variants": [
+          "smart e-bike",
+          "connected bike",
+          "e-bike app",
+          "theft detection",
+          "anti-theft tracking"
+        ],
+        "why": "app-linked bikes with adaptive motor software"
+      },
+      {
+        "term": "automatic shifting",
+        "tier": "context",
+        "variants": [
+          "automatic assist mode",
+          "automatic gear shifting",
+          "auto shifting",
+          "adaptive motor assistance"
+        ],
+        "why": "algorithmic gear and assist control"
+      },
+      {
+        "term": "smart wheelchair",
+        "tier": "context",
+        "variants": [
+          "autonomous wheelchair",
+          "robotic wheelchair",
+          "wheelchair obstacle detection"
+        ],
+        "why": "powered chairs with sensing and driving assistance"
+      }
+    ]
+  }
+}

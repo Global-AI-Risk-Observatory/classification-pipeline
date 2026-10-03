@@ -1,0 +1,417 @@
+{
+  "id": "12",
+  "name": "Manufacture of tobacco products",
+  "section": "C",
+  "summary": "Tobacco groups mention AI in consumer and trade analytics (revenue growth management, retailer platforms, connected smoke-free devices and their usage data), in age-verification technology such as facial age estimation, and in illicit-trade detection. R&D for reduced-risk products uses in silico and computational toxicology, while factories report vision inspection, predictive maintenance and Industry 4.0 programmes. Leaf sourcing brings precision agriculture and automated leaf grading; device supply chains expose them to semiconductor costs.",
+  "terms": [
+    {
+      "term": "age verification",
+      "tier": "context",
+      "variants": [
+        "age assurance",
+        "age-gating",
+        "age-gated",
+        "age-restricted technology",
+        "device age-lock"
+      ],
+      "case_sensitive_variants": [],
+      "why": "youth-access controls increasingly using AI"
+    },
+    {
+      "term": "facial age estimation",
+      "tier": "ai",
+      "variants": [
+        "facial age verification",
+        "AI age estimation",
+        "biometric age verification",
+        "AI-powered age verification",
+        "age estimation technology"
+      ],
+      "case_sensitive_variants": [],
+      "why": "AI age checks at point of sale or device"
+    },
+    {
+      "term": "youth access prevention",
+      "tier": "context",
+      "variants": [
+        "underage access prevention",
+        "retailer compliance monitoring",
+        "underage use prevention"
+      ],
+      "case_sensitive_variants": [],
+      "why": "compliance area where monitoring AI is used"
+    },
+    {
+      "term": "connected device",
+      "tier": "context",
+      "variants": [
+        "Bluetooth-enabled device",
+        "connected vapour device",
+        "connected vapor device",
+        "app-enabled device",
+        "device connectivity",
+        "smart vape"
+      ],
+      "case_sensitive_variants": [],
+      "why": "app-linked smoke-free devices producing usage data"
+    },
+    {
+      "term": "device usage data",
+      "tier": "context",
+      "variants": [
+        "consumer usage data",
+        "puff data",
+        "usage tracking",
+        "device telemetry"
+      ],
+      "case_sensitive_variants": [],
+      "why": "consumer telemetry from heated tobacco and vapes"
+    },
+    {
+      "term": "smart vending",
+      "tier": "context",
+      "variants": [
+        "age-verified vending",
+        "automated retail",
+        "unmanned store"
+      ],
+      "case_sensitive_variants": [],
+      "why": "age-verified automated retail"
+    },
+    {
+      "term": "in silico toxicology",
+      "tier": "ai",
+      "variants": [
+        "computational toxicology",
+        "in silico modelling",
+        "in silico modeling",
+        "systems toxicology",
+        "predictive toxicology",
+        "in silico screening",
+        "in silico assessment"
+      ],
+      "case_sensitive_variants": [],
+      "why": "computational assessment of reduced-risk products"
+    },
+    {
+      "term": "AI-driven product development",
+      "tier": "ai",
+      "variants": [
+        "AI-assisted product design",
+        "AI-enabled R&D",
+        "AI-accelerated R&D",
+        "AI-driven R&D",
+        "AI-enabled science"
+      ],
+      "case_sensitive_variants": [],
+      "why": "AI in smoke-free product R&D"
+    },
+    {
+      "term": "real-world evidence",
+      "tier": "context",
+      "variants": [
+        "post-market surveillance",
+        "real-world data",
+        "perception and behaviour study",
+        "perception and behavior study"
+      ],
+      "case_sensitive_variants": [],
+      "why": "post-market data analysed for regulatory submissions"
+    },
+    {
+      "term": "illicit trade detection",
+      "tier": "context",
+      "variants": [
+        "illicit trade monitoring",
+        "illicit trade intelligence",
+        "counterfeit detection",
+        "anti-illicit trade technology",
+        "empty pack survey"
+      ],
+      "case_sensitive_variants": [],
+      "why": "data tools and AI against counterfeit and contraband"
+    },
+    {
+      "term": "track and trace",
+      "tier": "context",
+      "variants": [
+        "product authentication",
+        "digital tax stamp",
+        "serialisation",
+        "serialization"
+      ],
+      "case_sensitive_variants": [],
+      "why": "product tracking systems generating supply data"
+    },
+    {
+      "term": "revenue growth management",
+      "tier": "context",
+      "variants": [
+        "RGM",
+        "net revenue management",
+        "price optimisation",
+        "price optimization",
+        "pricing analytics",
+        "dynamic pricing"
+      ],
+      "case_sensitive_variants": [
+        "RGM"
+      ],
+      "why": "pricing and mix discipline using ML"
+    },
+    {
+      "term": "retailer engagement platform",
+      "tier": "context",
+      "variants": [
+        "B2B retailer platform",
+        "digital trade engagement",
+        "retail ordering app",
+        "trade engagement platform",
+        "B2B e-commerce platform",
+        "digital B2B platform"
+      ],
+      "case_sensitive_variants": [],
+      "why": "B2B trade apps with data-driven recommendations"
+    },
+    {
+      "term": "route-to-market optimisation",
+      "tier": "context",
+      "variants": [
+        "route-to-market optimization",
+        "route optimisation",
+        "route optimization",
+        "field force optimisation",
+        "field force optimization",
+        "next best action",
+        "sales force automation"
+      ],
+      "case_sensitive_variants": [],
+      "why": "field force and distribution optimisation"
+    },
+    {
+      "term": "retail scan data",
+      "tier": "context",
+      "variants": [
+        "scan data",
+        "point-of-sale data",
+        "sell-out data",
+        "retail data analytics"
+      ],
+      "case_sensitive_variants": [],
+      "why": "point-of-sale data used for predictive models"
+    },
+    {
+      "term": "consumer data platform",
+      "tier": "context",
+      "variants": [
+        "first-party data",
+        "adult consumer database",
+        "consumer relationship management"
+      ],
+      "case_sensitive_variants": [],
+      "why": "adult consumer databases feeding personalisation"
+    },
+    {
+      "term": "precision marketing",
+      "tier": "context",
+      "variants": [
+        "personalised engagement",
+        "personalized engagement",
+        "one-to-one marketing",
+        "digital consumer engagement",
+        "personalised marketing",
+        "personalized marketing"
+      ],
+      "case_sensitive_variants": [],
+      "why": "personalised engagement with adult consumers"
+    },
+    {
+      "term": "AI-powered consumer insights",
+      "tier": "ai",
+      "variants": [
+        "AI-driven consumer insights",
+        "predictive consumer insights",
+        "AI-enabled insights",
+        "consumer insight analytics"
+      ],
+      "case_sensitive_variants": [],
+      "why": "AI analysis of consumer behaviour"
+    },
+    {
+      "term": "social listening",
+      "tier": "context",
+      "variants": [
+        "social media monitoring",
+        "online marketplace monitoring",
+        "trend detection"
+      ],
+      "case_sensitive_variants": [],
+      "why": "online monitoring of trends and youth appeal"
+    },
+    {
+      "term": "demand sensing",
+      "tier": "ai",
+      "variants": [],
+      "case_sensitive_variants": [],
+      "why": "ML short-term demand signal modelling"
+    },
+    {
+      "term": "demand forecasting",
+      "tier": "context",
+      "variants": [
+        "demand planning",
+        "sales forecasting",
+        "integrated business planning"
+      ],
+      "case_sensitive_variants": [],
+      "why": "planning process where AI is commonly applied"
+    },
+    {
+      "term": "automated leaf grading",
+      "tier": "ai",
+      "variants": [
+        "leaf grading system",
+        "tobacco leaf sorting",
+        "optical leaf sorting",
+        "AI leaf grading",
+        "leaf quality prediction"
+      ],
+      "case_sensitive_variants": [],
+      "why": "vision grading and sorting of tobacco leaf"
+    },
+    {
+      "term": "precision agriculture",
+      "tier": "context",
+      "variants": [
+        "smart farming",
+        "digital farming",
+        "crop monitoring",
+        "leaf yield prediction",
+        "digital agronomy",
+        "farmer app"
+      ],
+      "case_sensitive_variants": [],
+      "why": "data-driven leaf growing with contracted farmers"
+    },
+    {
+      "term": "predictive maintenance",
+      "tier": "ai",
+      "variants": [
+        "prescriptive maintenance",
+        "predictive asset maintenance"
+      ],
+      "case_sensitive_variants": [],
+      "why": "ML-based prediction of equipment failure"
+    },
+    {
+      "term": "machine vision",
+      "tier": "ai",
+      "variants": [
+        "vision inspection",
+        "automated visual inspection",
+        "inline quality inspection",
+        "in-line quality inspection",
+        "AI visual inspection"
+      ],
+      "case_sensitive_variants": [],
+      "why": "camera inspection on cigarette and device lines"
+    },
+    {
+      "term": "smart factory",
+      "tier": "context",
+      "variants": [
+        "smart manufacturing",
+        "factory of the future",
+        "connected factory",
+        "digital factory",
+        "intelligent manufacturing",
+        "intelligent factory",
+        "Industry 4.0",
+        "Industrie 4.0",
+        "fourth industrial revolution"
+      ],
+      "case_sensitive_variants": [],
+      "why": "connected-plant programmes framing AI use"
+    },
+    {
+      "term": "digital twin",
+      "tier": "context",
+      "variants": [
+        "virtual twin"
+      ],
+      "case_sensitive_variants": [],
+      "why": "virtual plant, process or product model"
+    },
+    {
+      "term": "supply chain control tower",
+      "tier": "context",
+      "variants": [
+        "control tower",
+        "supply chain visibility",
+        "supply chain digital twin",
+        "autonomous planning",
+        "touchless planning"
+      ],
+      "case_sensitive_variants": [],
+      "why": "visibility layer where predictive tools sit"
+    },
+    {
+      "term": "automated warehouse",
+      "tier": "context",
+      "variants": [
+        "warehouse automation",
+        "automated storage and retrieval",
+        "automated distribution centre",
+        "automated distribution center",
+        "automated guided vehicle",
+        "AGV",
+        "autonomous forklift",
+        "autonomous mobile robot",
+        "intelligent warehousing"
+      ],
+      "case_sensitive_variants": [
+        "AGV"
+      ],
+      "why": "robotic storage and logistics"
+    },
+    {
+      "term": "operational technology",
+      "tier": "context",
+      "variants": [
+        "OT security",
+        "OT cybersecurity",
+        "industrial control system",
+        "SCADA"
+      ],
+      "case_sensitive_variants": [],
+      "why": "plant control systems exposed to cyber risk"
+    },
+    {
+      "term": "global business services",
+      "tier": "context",
+      "variants": [
+        "shared service centre",
+        "shared service center",
+        "business process automation",
+        "process mining",
+        "hyperautomation"
+      ],
+      "case_sensitive_variants": [],
+      "why": "shared services where automation and AI replace tasks"
+    },
+    {
+      "term": "semiconductor supply",
+      "tier": "context",
+      "variants": [
+        "semiconductor shortage",
+        "chip shortage",
+        "memory chip prices",
+        "electronic component costs",
+        "battery cell supply"
+      ],
+      "case_sensitive_variants": [],
+      "why": "chips for devices; AI-driven component costs"
+    }
+  ],
+  "class_terms": {}
+}

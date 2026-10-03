@@ -1,0 +1,552 @@
+{
+  "id": "38",
+  "name": "Waste collection, treatment and disposal, and recovery activities",
+  "section": "E",
+  "summary": "Waste and recycling companies report AI in sorting plants (robotic pickers, optical sorters, material recognition), in collection (route optimisation, truck cameras detecting contamination and overfilled containers, driver-safety video) and in landfill or energy-from-waste process control. Automation is often presented as a way to cut labour dependency, injuries and fire risk. Metal and electronics recyclers add scrap identification and the decommissioning and recycling of data-centre hardware as an AI-driven volume line.",
+  "terms": [
+    {
+      "term": "robotic sorting",
+      "tier": "ai",
+      "variants": [
+        "sorting robot",
+        "robotic picker",
+        "robotic sorter",
+        "AI-powered sorting",
+        "AI sorting",
+        "robot-assisted sorting",
+        "intelligent sorting"
+      ],
+      "why": "AI-guided pickers on recycling lines"
+    },
+    {
+      "term": "optical sorter",
+      "tier": "context",
+      "variants": [
+        "optical sorting",
+        "near-infrared sorting",
+        "NIR sorting",
+        "sensor-based sorting",
+        "hyperspectral sorting",
+        "optical sortation"
+      ],
+      "why": "sensor-based separation, increasingly ML-driven"
+    },
+    {
+      "term": "automated material recovery facility",
+      "tier": "context",
+      "variants": [
+        "automated MRF",
+        "recycling automation",
+        "next-generation MRF",
+        "MRF automation",
+        "automated recycling facility",
+        "recycling facility automation",
+        "advanced recycling facility",
+        "automated sorting line"
+      ],
+      "why": "highly automated recycling plants cutting manual sorting"
+    },
+    {
+      "term": "material recognition",
+      "tier": "ai",
+      "variants": [
+        "waste recognition",
+        "waste composition analysis",
+        "material composition analytics",
+        "waste characterisation",
+        "waste characterization",
+        "AI waste analytics",
+        "material identification"
+      ],
+      "why": "computer vision identifying waste items and composition"
+    },
+    {
+      "term": "bale quality monitoring",
+      "tier": "ai",
+      "variants": [
+        "purity monitoring",
+        "bale quality analysis",
+        "material quality monitoring",
+        "AI quality control",
+        "recyclate quality analytics",
+        "output purity"
+      ],
+      "why": "vision systems measuring purity of sorted output"
+    },
+    {
+      "term": "AMP Robotics",
+      "tier": "ai",
+      "variants": [
+        "Greyparrot",
+        "ZenRobotics",
+        "EverestLabs",
+        "Recycleye"
+      ],
+      "why": "AI recycling vendors named by operators"
+    },
+    {
+      "term": "contamination detection",
+      "tier": "ai",
+      "variants": [
+        "contamination camera",
+        "bin contamination",
+        "contamination monitoring",
+        "recycling contamination analytics",
+        "contamination identification"
+      ],
+      "why": "cameras flagging wrong materials in bins and loads"
+    },
+    {
+      "term": "truck-mounted camera",
+      "tier": "context",
+      "variants": [
+        "onboard camera",
+        "in-cab camera",
+        "hopper camera",
+        "vehicle camera system",
+        "smart truck",
+        "service verification",
+        "camera-equipped truck",
+        "360-degree camera"
+      ],
+      "why": "onboard imaging for service verification and safety"
+    },
+    {
+      "term": "overfilled container detection",
+      "tier": "ai",
+      "variants": [
+        "overage detection",
+        "overfill detection",
+        "overloaded container",
+        "automated overage"
+      ],
+      "why": "image recognition of overloaded bins for billing"
+    },
+    {
+      "term": "video telematics",
+      "tier": "ai",
+      "variants": [
+        "AI dash cam",
+        "driver behaviour monitoring",
+        "driver behavior monitoring",
+        "in-cab video",
+        "driver coaching technology",
+        "event recorder",
+        "distracted driving detection"
+      ],
+      "why": "AI dash cameras scoring driver behaviour"
+    },
+    {
+      "term": "collision avoidance system",
+      "tier": "context",
+      "variants": [
+        "pedestrian detection",
+        "proximity warning",
+        "reversing camera",
+        "automatic emergency braking",
+        "advanced driver assistance",
+        "blind spot detection"
+      ],
+      "why": "proximity and pedestrian detection on collection vehicles"
+    },
+    {
+      "term": "route optimisation",
+      "tier": "context",
+      "variants": [
+        "route optimization",
+        "dynamic routing",
+        "routing software",
+        "automated routing",
+        "route planning software",
+        "route sequencing",
+        "AI-based routing"
+      ],
+      "why": "algorithmic collection routing and scheduling"
+    },
+    {
+      "term": "onboard computer",
+      "tier": "context",
+      "variants": [
+        "in-cab tablet",
+        "onboard technology",
+        "fleet telematics",
+        "telematics data",
+        "connected fleet",
+        "RISE platform",
+        "in-cab technology"
+      ],
+      "why": "in-cab tablets and telematics feeding analytics"
+    },
+    {
+      "term": "smart bin",
+      "tier": "context",
+      "variants": [
+        "bin sensor",
+        "fill-level sensor",
+        "smart container",
+        "smart compactor",
+        "fill level monitoring",
+        "connected container",
+        "container sensor"
+      ],
+      "why": "fill-level sensors driving dynamic collection"
+    },
+    {
+      "term": "automated collection",
+      "tier": "context",
+      "variants": [
+        "automated side loader",
+        "automated side-load",
+        "automated truck",
+        "single-operator vehicle",
+        "robotic arm collection"
+      ],
+      "why": "side-loaders and automation reducing crew size"
+    },
+    {
+      "term": "autonomous refuse truck",
+      "tier": "ai",
+      "variants": [
+        "autonomous collection vehicle",
+        "autonomous waste truck",
+        "self-driving refuse",
+        "autonomous yard truck",
+        "autonomous compactor"
+      ],
+      "why": "self-driving collection or yard vehicles"
+    },
+    {
+      "term": "unmanned sanitation",
+      "tier": "ai",
+      "variants": [
+        "autonomous sweeper",
+        "unmanned sweeper",
+        "driverless sanitation vehicle",
+        "sanitation robot",
+        "intelligent sanitation",
+        "smart sanitation"
+      ],
+      "why": "autonomous street sweeping and sanitation vehicles"
+    },
+    {
+      "term": "labor dependency",
+      "tier": "context",
+      "variants": [
+        "labour dependency",
+        "labor-intensive sorting",
+        "labour-intensive sorting",
+        "manual sorting position",
+        "manual sorter",
+        "attrition-based headcount reduction",
+        "hard-to-fill role"
+      ],
+      "why": "automation framed as reducing reliance on scarce labour"
+    },
+    {
+      "term": "pricing optimisation",
+      "tier": "context",
+      "variants": [
+        "pricing optimization",
+        "dynamic pricing",
+        "pricing analytics",
+        "pricing tool",
+        "customer lifetime value model",
+        "churn prediction",
+        "price increase analytics"
+      ],
+      "why": "data-driven pricing and customer analytics tools"
+    },
+    {
+      "term": "customer self-service",
+      "tier": "context",
+      "variants": [
+        "digital customer platform",
+        "e-commerce platform",
+        "online ordering",
+        "automated customer service",
+        "digital customer experience",
+        "customer experience automation"
+      ],
+      "why": "digital ordering and automated customer interactions"
+    },
+    {
+      "term": "landfill gas optimisation",
+      "tier": "context",
+      "variants": [
+        "landfill gas optimization",
+        "automated wellfield tuning",
+        "automated wellhead",
+        "wellfield automation",
+        "gas collection optimisation",
+        "landfill gas collection automation"
+      ],
+      "why": "automated wellfield tuning and gas collection"
+    },
+    {
+      "term": "landfill monitoring",
+      "tier": "context",
+      "variants": [
+        "drone survey",
+        "landfill drone",
+        "methane emissions monitoring",
+        "satellite methane detection",
+        "surface emissions monitoring",
+        "airspace measurement",
+        "drone methane survey"
+      ],
+      "why": "drone, satellite and sensor surveillance of landfills"
+    },
+    {
+      "term": "thermal fire detection",
+      "tier": "context",
+      "variants": [
+        "fire detection camera",
+        "thermal camera",
+        "hot spot detection",
+        "Fire Rover",
+        "early fire detection",
+        "automated fire suppression"
+      ],
+      "why": "camera systems spotting hot spots in waste"
+    },
+    {
+      "term": "lithium-ion battery detection",
+      "tier": "ai",
+      "variants": [
+        "battery detection",
+        "battery identification",
+        "X-ray battery detection",
+        "battery fire prevention technology",
+        "AI battery detection"
+      ],
+      "why": "X-ray and vision detection of batteries in waste"
+    },
+    {
+      "term": "predictive maintenance",
+      "tier": "ai",
+      "variants": [
+        "predictive fleet maintenance",
+        "failure prediction",
+        "prognostics",
+        "predictive asset maintenance"
+      ],
+      "why": "ML failure prediction for fleet and plant"
+    },
+    {
+      "term": "digital twin",
+      "tier": "context",
+      "variants": [
+        "virtual twin",
+        "digital replica"
+      ],
+      "why": "virtual plant or logistics model"
+    },
+    {
+      "term": "advanced process control",
+      "tier": "context",
+      "variants": [
+        "model predictive control",
+        "process control optimisation",
+        "process control optimization",
+        "plant optimisation",
+        "plant optimization"
+      ],
+      "why": "model-based control of treatment and recovery plants"
+    },
+    {
+      "term": "automated weighbridge",
+      "tier": "context",
+      "variants": [
+        "unmanned weighbridge",
+        "automated scale house",
+        "unattended scale",
+        "licence plate recognition",
+        "license plate recognition",
+        "automated gate"
+      ],
+      "why": "unmanned weighing and ticketing at sites"
+    },
+    {
+      "term": "digital waste tracking",
+      "tier": "context",
+      "variants": [
+        "electronic waste tracking",
+        "e-manifest",
+        "waste data platform",
+        "waste flow tracking",
+        "traceability platform",
+        "digital product passport"
+      ],
+      "why": "electronic waste movement records enabling analytics"
+    },
+    {
+      "term": "digital watermark",
+      "tier": "context",
+      "variants": [
+        "digital watermarking",
+        "HolyGrail",
+        "object-level sorting",
+        "marker-based sorting",
+        "tracer-based sorting"
+      ],
+      "why": "codes on packaging enabling camera-based sorting"
+    },
+    {
+      "term": "smart waste management",
+      "tier": "context",
+      "variants": [
+        "intelligent waste management",
+        "smart waste",
+        "digital waste management",
+        "smart recycling",
+        "intelligent recycling",
+        "smart city waste"
+      ],
+      "why": "umbrella for sensor- and AI-enabled waste services"
+    }
+  ],
+  "class_terms": {
+    "3821": [
+      {
+        "term": "combustion control optimisation",
+        "tier": "context",
+        "variants": [
+          "combustion control optimization",
+          "AI combustion control",
+          "automatic combustion control",
+          "combustion optimisation",
+          "combustion optimization",
+          "intelligent incineration",
+          "furnace control model"
+        ],
+        "why": "AI-assisted incineration control in energy-from-waste"
+      },
+      {
+        "term": "automated crane",
+        "tier": "context",
+        "variants": [
+          "autonomous crane",
+          "AI crane",
+          "waste bunker crane automation",
+          "crane automation",
+          "automatic waste crane"
+        ],
+        "why": "AI-guided waste bunker cranes"
+      }
+    ],
+    "3822": [
+      {
+        "term": "robotic waste handling",
+        "tier": "context",
+        "variants": [
+          "remote handling",
+          "robotic handling",
+          "remotely operated handling",
+          "robotic drum handling",
+          "automated waste packaging"
+        ],
+        "why": "remote handling of hazardous and radioactive waste"
+      },
+      {
+        "term": "waste profiling automation",
+        "tier": "context",
+        "variants": [
+          "automated waste classification",
+          "waste profile approval automation",
+          "AI waste classification",
+          "waste acceptance automation"
+        ],
+        "why": "automated classification of hazardous waste streams"
+      }
+    ],
+    "3830": [
+      {
+        "term": "scrap identification",
+        "tier": "ai",
+        "variants": [
+          "AI scrap identification",
+          "scrap grading",
+          "automated scrap classification",
+          "scrap recognition",
+          "AI scrap inspection",
+          "scrap sorting technology"
+        ],
+        "why": "sensor and AI recognition of scrap grades"
+      },
+      {
+        "term": "LIBS sorting",
+        "tier": "context",
+        "variants": [
+          "laser-induced breakdown spectroscopy",
+          "XRF sorting",
+          "X-ray sorting",
+          "XRT sorting",
+          "eddy current separation",
+          "alloy sorting"
+        ],
+        "why": "laser and X-ray sorting of metals"
+      },
+      {
+        "term": "data center decommissioning",
+        "tier": "context",
+        "variants": [
+          "data centre decommissioning",
+          "data center asset recovery",
+          "data centre asset recovery",
+          "IT asset disposition",
+          "ITAD",
+          "server recycling",
+          "cloud recycling",
+          "repurposed data center equipment"
+        ],
+        "case_sensitive_variants": [
+          "ITAD"
+        ],
+        "why": "recycling and reuse of retired servers and AI hardware"
+      },
+      {
+        "term": "hyperscaler",
+        "tier": "context",
+        "variants": [
+          "hyperscale"
+        ],
+        "why": "cloud operators as source of retired hardware"
+      },
+      {
+        "term": "electronics recycling",
+        "tier": "context",
+        "variants": [
+          "e-waste recycling",
+          "electronic waste",
+          "e-scrap",
+          "circuit board recycling",
+          "hardware refresh cycle",
+          "GPU recycling"
+        ],
+        "why": "e-waste volumes rising with AI hardware refresh"
+      },
+      {
+        "term": "automated dismantling",
+        "tier": "context",
+        "variants": [
+          "robotic disassembly",
+          "robotic dismantling",
+          "automated disassembly",
+          "battery pack disassembly robot",
+          "automated depackaging"
+        ],
+        "why": "robotic disassembly of electronics and batteries"
+      },
+      {
+        "term": "textile sorting",
+        "tier": "context",
+        "variants": [
+          "fibre sorting",
+          "fiber sorting",
+          "textile recognition"
+        ],
+        "why": "sensor recognition of fibres for recycling"
+      }
+    ]
+  }
+}

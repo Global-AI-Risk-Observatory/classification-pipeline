@@ -1,0 +1,599 @@
+{
+  "id": "11",
+  "name": "Manufacture of beverages",
+  "section": "C",
+  "summary": "Beverage companies write about AI mainly on the commercial side: B2B ordering platforms with ML order suggestions, revenue growth management, image recognition of coolers and shelves, and generative AI in advertising and flavour creation. In production it appears as connected breweries and bottling lines with vision inspection, predictive maintenance and fermentation control. Alcohol producers add AI age estimation, counterfeit detection and precision viticulture or barley sourcing.",
+  "terms": [
+    {
+      "term": "connected brewery",
+      "tier": "context",
+      "variants": [
+        "smart brewery",
+        "brewery of the future",
+        "digital brewery",
+        "connected bottling plant",
+        "connected distillery",
+        "smart distillery",
+        "smart winery"
+      ],
+      "case_sensitive_variants": [],
+      "why": "sensor-rich plants for data-driven production"
+    },
+    {
+      "term": "smart factory",
+      "tier": "context",
+      "variants": [
+        "smart manufacturing",
+        "factory of the future",
+        "connected factory",
+        "digital factory",
+        "intelligent manufacturing",
+        "intelligent factory",
+        "Industry 4.0",
+        "Industrie 4.0",
+        "fourth industrial revolution"
+      ],
+      "case_sensitive_variants": [],
+      "why": "connected-plant programmes framing AI use"
+    },
+    {
+      "term": "predictive maintenance",
+      "tier": "ai",
+      "variants": [
+        "prescriptive maintenance",
+        "predictive asset maintenance"
+      ],
+      "case_sensitive_variants": [],
+      "why": "ML-based prediction of equipment failure"
+    },
+    {
+      "term": "machine vision",
+      "tier": "ai",
+      "variants": [
+        "vision inspection",
+        "automated visual inspection",
+        "empty bottle inspection",
+        "fill level inspection",
+        "label inspection",
+        "AI visual inspection"
+      ],
+      "case_sensitive_variants": [],
+      "why": "camera inspection on filling lines"
+    },
+    {
+      "term": "bottling line automation",
+      "tier": "context",
+      "variants": [
+        "packaging line automation",
+        "filling line automation",
+        "line efficiency",
+        "overall equipment effectiveness",
+        "OEE"
+      ],
+      "case_sensitive_variants": [
+        "OEE"
+      ],
+      "why": "high-speed lines with robotics and model-based control"
+    },
+    {
+      "term": "digital twin",
+      "tier": "context",
+      "variants": [
+        "virtual twin"
+      ],
+      "case_sensitive_variants": [],
+      "why": "virtual plant, process or product model"
+    },
+    {
+      "term": "process optimisation",
+      "tier": "context",
+      "variants": [
+        "process optimization",
+        "advanced process control",
+        "model predictive control",
+        "yield optimisation",
+        "yield optimization"
+      ],
+      "case_sensitive_variants": [],
+      "why": "generic phrase around AI in production"
+    },
+    {
+      "term": "fermentation monitoring",
+      "tier": "context",
+      "variants": [
+        "fermentation control",
+        "fermentation optimisation",
+        "fermentation optimization",
+        "predictive fermentation",
+        "brewing process control"
+      ],
+      "case_sensitive_variants": [],
+      "why": "sensor and model control of fermentation"
+    },
+    {
+      "term": "energy optimisation",
+      "tier": "context",
+      "variants": [
+        "energy optimization",
+        "energy management system",
+        "water optimisation",
+        "water optimization",
+        "water efficiency monitoring"
+      ],
+      "case_sensitive_variants": [],
+      "why": "AI used to cut energy and water use"
+    },
+    {
+      "term": "automated warehouse",
+      "tier": "context",
+      "variants": [
+        "warehouse automation",
+        "automated storage and retrieval",
+        "automated distribution centre",
+        "automated distribution center",
+        "automated guided vehicle",
+        "AGV",
+        "autonomous forklift",
+        "autonomous mobile robot",
+        "intelligent warehousing"
+      ],
+      "case_sensitive_variants": [
+        "AGV"
+      ],
+      "why": "robotic storage and logistics"
+    },
+    {
+      "term": "operational technology",
+      "tier": "context",
+      "variants": [
+        "OT security",
+        "OT cybersecurity",
+        "industrial control system",
+        "SCADA"
+      ],
+      "case_sensitive_variants": [],
+      "why": "plant control systems exposed to cyber risk"
+    },
+    {
+      "term": "B2B ordering platform",
+      "tier": "context",
+      "variants": [
+        "B2B e-commerce platform",
+        "B2B digital platform",
+        "digital ordering platform",
+        "eB2B",
+        "BEES",
+        "customer ordering app"
+      ],
+      "case_sensitive_variants": [
+        "BEES"
+      ],
+      "why": "digital ordering with ML recommendations"
+    },
+    {
+      "term": "AI-suggested order",
+      "tier": "ai",
+      "variants": [
+        "suggested order algorithm",
+        "order recommendation engine",
+        "predictive ordering",
+        "product recommendation engine",
+        "recommendation algorithm",
+        "AI-powered recommendation"
+      ],
+      "case_sensitive_variants": [],
+      "why": "ML order recommendations for outlets"
+    },
+    {
+      "term": "revenue growth management",
+      "tier": "context",
+      "variants": [
+        "RGM",
+        "net revenue management",
+        "strategic revenue management"
+      ],
+      "case_sensitive_variants": [
+        "RGM"
+      ],
+      "why": "pricing, mix and promo discipline using ML"
+    },
+    {
+      "term": "promotion optimisation",
+      "tier": "context",
+      "variants": [
+        "promotion optimization",
+        "trade promotion management",
+        "promotional effectiveness",
+        "promotional spend efficiency"
+      ],
+      "case_sensitive_variants": [],
+      "why": "promo planning where AI is applied"
+    },
+    {
+      "term": "dynamic pricing",
+      "tier": "context",
+      "variants": [
+        "price optimisation",
+        "price optimization",
+        "pricing analytics",
+        "price elasticity model"
+      ],
+      "case_sensitive_variants": [],
+      "why": "price setting where learning systems are used"
+    },
+    {
+      "term": "AI-powered pricing",
+      "tier": "ai",
+      "variants": [
+        "AI-driven pricing",
+        "algorithmic pricing",
+        "AI pricing tool",
+        "machine learning pricing"
+      ],
+      "case_sensitive_variants": [],
+      "why": "explicit AI pricing tools"
+    },
+    {
+      "term": "marketing mix modelling",
+      "tier": "context",
+      "variants": [
+        "marketing mix modeling",
+        "media mix modelling",
+        "media mix modeling",
+        "media optimisation",
+        "media optimization",
+        "marketing spend optimisation",
+        "marketing spend optimization"
+      ],
+      "case_sensitive_variants": [],
+      "why": "marketing spend models, increasingly ML-based"
+    },
+    {
+      "term": "AI-generated advertising",
+      "tier": "ai",
+      "variants": [
+        "AI-generated creative",
+        "AI-generated campaign",
+        "AI-generated ad",
+        "AI-created content",
+        "AI-generated marketing content",
+        "AI content creation"
+      ],
+      "case_sensitive_variants": [],
+      "why": "generative AI in campaign production"
+    },
+    {
+      "term": "AI-created flavour",
+      "tier": "ai",
+      "variants": [
+        "AI-created flavor",
+        "AI-designed flavour",
+        "AI-designed flavor",
+        "co-created with AI",
+        "AI flavour development",
+        "AI flavor development",
+        "AI-generated recipe"
+      ],
+      "case_sensitive_variants": [],
+      "why": "flavours or recipes designed with AI"
+    },
+    {
+      "term": "flavour profiling",
+      "tier": "context",
+      "variants": [
+        "flavor profiling",
+        "flavour fingerprint",
+        "flavor fingerprint",
+        "beer fingerprinting",
+        "digital sensory",
+        "electronic nose"
+      ],
+      "case_sensitive_variants": [],
+      "why": "sensory data analysed with pattern recognition"
+    },
+    {
+      "term": "connected cooler",
+      "tier": "context",
+      "variants": [
+        "smart cooler",
+        "intelligent cooler",
+        "smart vending",
+        "connected vending",
+        "intelligent vending",
+        "smart dispenser",
+        "connected dispenser"
+      ],
+      "case_sensitive_variants": [],
+      "why": "outlet equipment generating sales and stock data"
+    },
+    {
+      "term": "shelf image recognition",
+      "tier": "ai",
+      "variants": [
+        "cooler image recognition",
+        "in-outlet image recognition",
+        "planogram compliance",
+        "in-store execution analytics",
+        "image-based shelf audit"
+      ],
+      "case_sensitive_variants": [],
+      "why": "vision AI auditing coolers and shelves"
+    },
+    {
+      "term": "outlet segmentation",
+      "tier": "context",
+      "variants": [
+        "segmented execution",
+        "outlet-level data",
+        "customer segmentation model",
+        "outlet potential model"
+      ],
+      "case_sensitive_variants": [],
+      "why": "outlet-level data used in predictive sales models"
+    },
+    {
+      "term": "demand sensing",
+      "tier": "ai",
+      "variants": [],
+      "case_sensitive_variants": [],
+      "why": "ML short-term demand signal modelling"
+    },
+    {
+      "term": "demand forecasting",
+      "tier": "context",
+      "variants": [
+        "demand planning",
+        "forecast accuracy",
+        "sales forecasting",
+        "integrated business planning"
+      ],
+      "case_sensitive_variants": [],
+      "why": "planning process where AI is commonly applied"
+    },
+    {
+      "term": "AI-driven demand forecasting",
+      "tier": "ai",
+      "variants": [
+        "AI-powered demand forecasting",
+        "AI-based demand forecasting",
+        "AI demand planning",
+        "machine learning demand forecasting",
+        "predictive demand planning",
+        "AI-powered forecasting"
+      ],
+      "case_sensitive_variants": [],
+      "why": "explicit AI forecasting claim"
+    },
+    {
+      "term": "route optimisation",
+      "tier": "context",
+      "variants": [
+        "route optimization",
+        "dynamic routing",
+        "route-to-market optimisation",
+        "route-to-market optimization",
+        "delivery optimisation",
+        "delivery optimization"
+      ],
+      "case_sensitive_variants": [],
+      "why": "distribution optimisation, often AI-based"
+    },
+    {
+      "term": "supply chain control tower",
+      "tier": "context",
+      "variants": [
+        "control tower",
+        "supply chain visibility",
+        "supply chain digital twin",
+        "autonomous planning",
+        "touchless planning"
+      ],
+      "case_sensitive_variants": [],
+      "why": "visibility layer where predictive tools sit"
+    },
+    {
+      "term": "precision marketing",
+      "tier": "context",
+      "variants": [
+        "personalised marketing",
+        "personalized marketing",
+        "personalisation at scale",
+        "personalization at scale",
+        "hyper-personalisation",
+        "hyper-personalization"
+      ],
+      "case_sensitive_variants": [],
+      "why": "data-driven targeting and personalisation"
+    },
+    {
+      "term": "first-party data",
+      "tier": "context",
+      "variants": [
+        "consumer data platform",
+        "customer data platform",
+        "zero-party data",
+        "consumer data ecosystem"
+      ],
+      "case_sensitive_variants": [],
+      "why": "consumer data assets feeding AI marketing"
+    },
+    {
+      "term": "social listening",
+      "tier": "context",
+      "variants": [
+        "trend prediction",
+        "trend forecasting",
+        "consumer trend detection",
+        "trend spotting"
+      ],
+      "case_sensitive_variants": [],
+      "why": "consumer trend mining, often AI-based"
+    },
+    {
+      "term": "agentic commerce",
+      "tier": "ai",
+      "variants": [
+        "AI shopping agent",
+        "AI-mediated shopping",
+        "agentic shopping",
+        "generative engine optimisation",
+        "generative engine optimization",
+        "answer engine optimisation",
+        "answer engine optimization"
+      ],
+      "case_sensitive_variants": [],
+      "why": "AI agents shopping on consumers' behalf"
+    },
+    {
+      "term": "virtual bartender",
+      "tier": "ai",
+      "variants": [
+        "AI bartender",
+        "AI sommelier",
+        "virtual sommelier",
+        "AI cocktail",
+        "AI-powered drink recommendation",
+        "flavour matching",
+        "flavor matching"
+      ],
+      "case_sensitive_variants": [],
+      "why": "AI drink recommendation tools"
+    },
+    {
+      "term": "facial age estimation",
+      "tier": "ai",
+      "variants": [
+        "AI age estimation",
+        "AI age verification",
+        "age estimation technology",
+        "biometric age verification"
+      ],
+      "case_sensitive_variants": [],
+      "why": "AI age checks for alcohol sales"
+    },
+    {
+      "term": "age verification",
+      "tier": "context",
+      "variants": [
+        "age assurance",
+        "age-gating",
+        "age-gated"
+      ],
+      "case_sensitive_variants": [],
+      "why": "youth-access control where AI is applied"
+    },
+    {
+      "term": "counterfeit detection",
+      "tier": "context",
+      "variants": [
+        "anti-counterfeiting",
+        "product authentication",
+        "brand protection technology",
+        "illicit alcohol detection"
+      ],
+      "case_sensitive_variants": [],
+      "why": "brand protection using data and AI"
+    },
+    {
+      "term": "precision agriculture",
+      "tier": "context",
+      "variants": [
+        "precision farming",
+        "smart agriculture",
+        "digital agriculture",
+        "digital farming",
+        "crop yield prediction",
+        "satellite imagery"
+      ],
+      "case_sensitive_variants": [],
+      "why": "data-driven growing of barley, hops, agave"
+    }
+  ],
+  "class_terms": {
+    "1101": [
+      {
+        "term": "cask monitoring",
+        "tier": "context",
+        "variants": [
+          "smart cask",
+          "cask management system",
+          "warehouse sensor monitoring",
+          "maturation monitoring"
+        ],
+        "why": "sensor data on maturing spirits"
+      },
+      {
+        "term": "maturation prediction",
+        "tier": "ai",
+        "variants": [
+          "predictive maturation",
+          "maturation model",
+          "flavour outcome prediction",
+          "flavor outcome prediction"
+        ],
+        "why": "models predicting spirit maturation and flavour"
+      }
+    ],
+    "1102": [
+      {
+        "term": "precision viticulture",
+        "tier": "context",
+        "variants": [
+          "smart vineyard",
+          "vineyard monitoring",
+          "vineyard mapping",
+          "vineyard yield estimation",
+          "vine health monitoring"
+        ],
+        "why": "data-driven vineyard management"
+      },
+      {
+        "term": "optical grape sorting",
+        "tier": "context",
+        "variants": [
+          "grape sorting",
+          "optical berry sorting"
+        ],
+        "why": "vision-based sorting at the winery"
+      },
+      {
+        "term": "vintage forecasting",
+        "tier": "context",
+        "variants": [
+          "harvest forecasting",
+          "crop estimation",
+          "harvest timing prediction"
+        ],
+        "why": "models predicting harvest volume and timing"
+      }
+    ],
+    "1103": [
+      {
+        "term": "draught monitoring",
+        "tier": "context",
+        "variants": [
+          "draft monitoring",
+          "connected draught",
+          "connected draft",
+          "smart tap",
+          "keg tracking",
+          "smart keg"
+        ],
+        "why": "connected dispense systems generating outlet data"
+      }
+    ],
+    "1104": [
+      {
+        "term": "malting process optimisation",
+        "tier": "context",
+        "variants": [
+          "malting process optimization",
+          "malt quality prediction",
+          "barley quality prediction",
+          "grain quality analysis"
+        ],
+        "why": "model-based control of malting"
+      }
+    ]
+  }
+}

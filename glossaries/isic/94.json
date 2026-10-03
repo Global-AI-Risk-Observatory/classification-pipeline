@@ -1,0 +1,515 @@
+{
+  "id": "94",
+  "name": "Activities of membership organizations",
+  "section": "T",
+  "summary": "Membership organisations rarely sell AI; they write about it on behalf of members. Business and professional bodies issue AI guidance, training and standards and lobby on AI regulation; professional bodies add exam integrity, ethics and competence rules; unions bargain over algorithmic management, surveillance and job loss; religious and political organisations address AI ethics, synthetic campaign content and voter targeting. Own use is modest: member service, communications and fundraising.",
+  "terms": [
+    {
+      "term": "AI working group",
+      "tier": "ai",
+      "variants": [
+        "AI task force",
+        "AI taskforce",
+        "AI committee",
+        "AI advisory group",
+        "AI steering group",
+        "AI special interest group",
+        "AI forum"
+      ],
+      "why": "member committees set up to address AI"
+    },
+    {
+      "term": "AI guidance",
+      "tier": "ai",
+      "variants": [
+        "AI toolkit",
+        "AI code of practice",
+        "AI position paper",
+        "AI policy statement",
+        "AI resource hub",
+        "AI guidelines for members",
+        "AI ethics guidance",
+        "AI principles for members"
+      ],
+      "why": "guidance documents issued to members on AI"
+    },
+    {
+      "term": "policy advocacy",
+      "tier": "context",
+      "variants": [
+        "lobbying",
+        "public affairs",
+        "policy engagement",
+        "regulatory consultation",
+        "consultation response",
+        "government relations",
+        "advocacy priority"
+      ],
+      "why": "lobbying activity that now covers AI regulation"
+    },
+    {
+      "term": "standards development",
+      "tier": "context",
+      "variants": [
+        "standard setting",
+        "industry standard",
+        "code of conduct",
+        "best practice guidance",
+        "industry code",
+        "certification scheme",
+        "accreditation scheme"
+      ],
+      "why": "codes and standards work extended to AI"
+    },
+    {
+      "term": "member services",
+      "tier": "context",
+      "variants": [
+        "member engagement",
+        "member experience",
+        "membership renewal",
+        "member retention",
+        "member portal",
+        "member communication",
+        "member helpline",
+        "member enquiry"
+      ],
+      "why": "service and enquiry handling being automated"
+    },
+    {
+      "term": "association management system",
+      "tier": "context",
+      "variants": [
+        "membership database",
+        "member CRM",
+        "membership management software",
+        "member data",
+        "membership system"
+      ],
+      "why": "member databases underpinning personalisation"
+    },
+    {
+      "term": "AI member assistant",
+      "tier": "ai",
+      "variants": [
+        "AI-powered member service",
+        "member chatbot",
+        "AI knowledge assistant",
+        "AI search of guidance",
+        "AI helpdesk"
+      ],
+      "why": "AI answering member queries and searching guidance"
+    },
+    {
+      "term": "donor management",
+      "tier": "context",
+      "variants": [
+        "donor engagement",
+        "online giving",
+        "membership dues",
+        "subscription income",
+        "donor data"
+      ],
+      "why": "income and donor work adopting AI tools"
+    },
+    {
+      "term": "volunteer management",
+      "tier": "context",
+      "variants": [
+        "volunteer coordination",
+        "volunteer engagement",
+        "supporter engagement",
+        "campaign supporter"
+      ],
+      "why": "supporter coordination using data tools"
+    }
+  ],
+  "class_terms": {
+    "9411": [
+      {
+        "term": "AI adoption by members",
+        "tier": "ai",
+        "variants": [
+          "AI adoption among SMEs",
+          "AI adoption survey",
+          "AI readiness survey",
+          "AI adoption support",
+          "AI adoption programme",
+          "AI adoption program",
+          "SME AI adoption",
+          "AI readiness of members"
+        ],
+        "why": "surveys and programmes on business AI uptake"
+      },
+      {
+        "term": "industry benchmarking",
+        "tier": "context",
+        "variants": [
+          "member survey",
+          "benchmarking report",
+          "industry statistics",
+          "market intelligence",
+          "industry data collection",
+          "data pooling",
+          "information exchange"
+        ],
+        "why": "data pooling that raises AI and antitrust issues"
+      },
+      {
+        "term": "algorithmic collusion",
+        "tier": "ai",
+        "variants": [
+          "algorithmic pricing coordination",
+          "shared pricing algorithm",
+          "pricing software collusion",
+          "pricing algorithm"
+        ],
+        "why": "antitrust risk from shared pricing tools"
+      },
+      {
+        "term": "competition law compliance",
+        "tier": "context",
+        "variants": [
+          "antitrust compliance",
+          "antitrust policy",
+          "competition compliance"
+        ],
+        "why": "antitrust rules governing association data sharing"
+      }
+    ],
+    "9412": [
+      {
+        "term": "continuing professional development",
+        "tier": "context",
+        "variants": [
+          "CPD",
+          "continuing education",
+          "continuing legal education",
+          "continuing medical education",
+          "competency framework",
+          "professional qualification",
+          "syllabus"
+        ],
+        "case_sensitive_variants": [
+          "CPD"
+        ],
+        "why": "member training now including AI content"
+      },
+      {
+        "term": "AI competency",
+        "tier": "ai",
+        "variants": [
+          "AI skills for members",
+          "AI training for members",
+          "AI certificate",
+          "AI CPD",
+          "AI credential",
+          "AI upskilling of members",
+          "AI literacy for professionals",
+          "AI competence"
+        ],
+        "why": "AI skills and credentials offered to professionals"
+      },
+      {
+        "term": "professional standards",
+        "tier": "context",
+        "variants": [
+          "code of ethics",
+          "professional conduct",
+          "ethical standards",
+          "professional judgement",
+          "professional judgment",
+          "professional scepticism",
+          "professional skepticism",
+          "disciplinary proceeding"
+        ],
+        "why": "ethics and conduct rules applied to AI use"
+      },
+      {
+        "term": "professional examination",
+        "tier": "context",
+        "variants": [
+          "qualification examination",
+          "exam integrity",
+          "remote invigilation",
+          "online proctoring",
+          "exam malpractice",
+          "computer-based assessment"
+        ],
+        "why": "qualification exams exposed to AI cheating"
+      },
+      {
+        "term": "future of the profession",
+        "tier": "context",
+        "variants": [
+          "impact on the profession",
+          "future-ready professional",
+          "entry-level roles",
+          "trainee pipeline",
+          "changing role of the profession"
+        ],
+        "why": "debate on AI changing professional roles"
+      },
+      {
+        "term": "unauthorised practice",
+        "tier": "context",
+        "variants": [
+          "unauthorized practice of law",
+          "unauthorized practice",
+          "reserved activity",
+          "scope of practice",
+          "practising certificate"
+        ],
+        "why": "regulated-activity rules tested by AI services"
+      },
+      {
+        "term": "duty of competence",
+        "tier": "context",
+        "variants": [
+          "professional indemnity",
+          "professional liability",
+          "client confidentiality",
+          "legal professional privilege",
+          "duty of supervision"
+        ],
+        "why": "member duties when relying on AI output"
+      },
+      {
+        "term": "fabricated case citation",
+        "tier": "ai",
+        "variants": [
+          "fake case citation",
+          "hallucinated case",
+          "AI-generated legal citation",
+          "fictitious citation",
+          "non-existent case"
+        ],
+        "why": "AI-invented authorities filed by professionals"
+      }
+    ],
+    "9420": [
+      {
+        "term": "algorithmic management",
+        "tier": "ai",
+        "variants": [
+          "management by algorithm",
+          "automated management",
+          "algorithmic scheduling",
+          "AI at work",
+          "AI in the workplace",
+          "workplace AI"
+        ],
+        "why": "software directing, monitoring and rating workers"
+      },
+      {
+        "term": "worker surveillance",
+        "tier": "context",
+        "variants": [
+          "workplace surveillance",
+          "employee monitoring",
+          "workplace monitoring",
+          "productivity monitoring",
+          "worker data rights",
+          "digital monitoring"
+        ],
+        "why": "monitoring practices unions contest"
+      },
+      {
+        "term": "automated dismissal",
+        "tier": "ai",
+        "variants": [
+          "robo-firing",
+          "automated termination",
+          "dismissal by algorithm",
+          "algorithmic hiring",
+          "automated hiring decision",
+          "automated deactivation"
+        ],
+        "why": "hiring and firing decisions made by systems"
+      },
+      {
+        "term": "AI clause",
+        "tier": "ai",
+        "variants": [
+          "AI provision in collective agreement",
+          "AI protections for workers",
+          "collective agreement on AI",
+          "AI agreement",
+          "negotiating AI",
+          "AI bargaining"
+        ],
+        "why": "collective agreement terms on AI"
+      },
+      {
+        "term": "technology agreement",
+        "tier": "context",
+        "variants": [
+          "new technology agreement",
+          "technological change clause",
+          "technological change",
+          "consultation on new technology",
+          "right to consultation",
+          "technology bargaining"
+        ],
+        "why": "bargaining over introduction of new technology"
+      },
+      {
+        "term": "collective bargaining",
+        "tier": "context",
+        "variants": [
+          "collective agreement",
+          "bargaining agenda",
+          "industrial action",
+          "works council",
+          "co-determination",
+          "social dialogue",
+          "just transition"
+        ],
+        "why": "main channel for worker demands on AI"
+      },
+      {
+        "term": "job displacement",
+        "tier": "context",
+        "variants": [
+          "job losses",
+          "technological unemployment",
+          "job security",
+          "deskilling",
+          "work intensification",
+          "redundancies"
+        ],
+        "why": "employment effects unions attribute to automation"
+      },
+      {
+        "term": "platform work",
+        "tier": "context",
+        "variants": [
+          "gig worker",
+          "platform worker",
+          "Platform Work Directive",
+          "gig economy",
+          "bogus self-employment"
+        ],
+        "why": "gig work governed by algorithms"
+      }
+    ],
+    "9491": [
+      {
+        "term": "Rome Call for AI Ethics",
+        "tier": "ai",
+        "variants": [
+          "Antiqua et Nova",
+          "algorethics",
+          "algor-ethics"
+        ],
+        "why": "religious statements on the ethics of AI"
+      },
+      {
+        "term": "AI-generated sermon",
+        "tier": "ai",
+        "variants": [
+          "AI sermon",
+          "AI chaplain",
+          "AI spiritual guidance",
+          "AI in ministry",
+          "AI priest",
+          "AI pastor",
+          "AI-generated prayer"
+        ],
+        "why": "AI use in worship and pastoral work"
+      },
+      {
+        "term": "human dignity",
+        "tier": "context",
+        "variants": [
+          "dignity of work",
+          "dignity of the human person",
+          "ethical teaching",
+          "moral theology",
+          "pastoral care"
+        ],
+        "why": "ethical frame for religious teaching on AI"
+      }
+    ],
+    "9492": [
+      {
+        "term": "AI-generated political content",
+        "tier": "ai",
+        "variants": [
+          "AI-generated campaign ad",
+          "synthetic political media",
+          "AI in political advertising",
+          "AI robocall",
+          "political deepfake",
+          "AI-generated election content",
+          "AI disclosure in political ads"
+        ],
+        "why": "synthetic media in campaigns"
+      },
+      {
+        "term": "political advertising",
+        "tier": "context",
+        "variants": [
+          "campaign advertising",
+          "political campaign",
+          "election communication",
+          "Transparency and Targeting of Political Advertising"
+        ],
+        "why": "campaign communication subject to AI disclosure rules"
+      },
+      {
+        "term": "voter targeting",
+        "tier": "context",
+        "variants": [
+          "microtargeting",
+          "micro-targeting",
+          "voter data",
+          "voter file",
+          "voter profiling",
+          "voter outreach",
+          "voter contact"
+        ],
+        "why": "profiling of voters with data models"
+      },
+      {
+        "term": "election integrity",
+        "tier": "context",
+        "variants": [
+          "election misinformation",
+          "election disinformation",
+          "electoral integrity",
+          "foreign interference",
+          "election security"
+        ],
+        "why": "risk area for AI-enabled manipulation"
+      }
+    ],
+    "9499": [
+      {
+        "term": "digital rights",
+        "tier": "context",
+        "variants": [
+          "civil liberties",
+          "data rights",
+          "privacy advocacy",
+          "algorithmic accountability",
+          "public interest technology",
+          "consumer advocacy"
+        ],
+        "why": "advocacy field concerned with algorithmic accountability"
+      },
+      {
+        "term": "roadside assistance",
+        "tier": "context",
+        "variants": [
+          "breakdown service",
+          "breakdown dispatch",
+          "connected car data",
+          "patrol dispatch",
+          "member assistance"
+        ],
+        "why": "motoring clubs using telematics and dispatch optimisation"
+      }
+    ]
+  }
+}

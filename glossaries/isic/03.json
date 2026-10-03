@@ -1,0 +1,435 @@
+{
+  "id": "03",
+  "name": "Fishing and aquaculture",
+  "section": "A",
+  "summary": "Aquaculture groups, especially salmon and shrimp farmers, write about camera- and sensor-based precision farming: AI feeding control, biomass estimation, sea-lice counting, welfare monitoring and remote operations centres. Fishing companies mention electronic monitoring with automated catch recognition, sonar analytics and vessel optimisation, while processing arms describe vision-guided grading and filleting. AI is an operations and biological-risk topic here, not a demand driver.",
+  "terms": [
+    {
+      "term": "precision aquaculture",
+      "tier": "context",
+      "variants": [
+        "precision fish farming",
+        "smart aquaculture",
+        "digital aquaculture",
+        "intelligent aquaculture",
+        "smart fish farm",
+        "precision farming"
+      ],
+      "why": "umbrella for data-driven fish farming"
+    },
+    {
+      "term": "smart farming",
+      "tier": "context",
+      "variants": [
+        "digital farming",
+        "smart farm",
+        "intelligent farming",
+        "farm of the future"
+      ],
+      "why": "producer programmes for digital fish farms"
+    },
+    {
+      "term": "AI-based feeding",
+      "tier": "ai",
+      "variants": [
+        "autonomous feeding",
+        "AI feeding",
+        "intelligent feeding",
+        "appetite detection",
+        "pellet detection",
+        "camera-based feeding",
+        "feeding algorithm"
+      ],
+      "why": "camera and ML control of feed delivery"
+    },
+    {
+      "term": "feeding optimisation",
+      "tier": "context",
+      "variants": [
+        "feeding optimization",
+        "automated feeding",
+        "automatic feeder",
+        "smart feeder",
+        "feed barge automation"
+      ],
+      "why": "feed conversion gains from sensor-driven feeding"
+    },
+    {
+      "term": "remote feeding centre",
+      "tier": "context",
+      "variants": [
+        "remote feeding center",
+        "remote operations centre",
+        "remote operations center",
+        "operations control centre",
+        "operations control center"
+      ],
+      "why": "centralised shore-based feeding operations"
+    },
+    {
+      "term": "acoustic feeding",
+      "tier": "ai",
+      "variants": [
+        "hydrophone feeding",
+        "sound-based feeding",
+        "passive acoustic feeding"
+      ],
+      "why": "sound-based appetite detection in shrimp ponds"
+    },
+    {
+      "term": "biomass estimation",
+      "tier": "context",
+      "variants": [
+        "biomass measurement",
+        "biomass control",
+        "fish weight estimation",
+        "biomass camera",
+        "stereo camera",
+        "biomass frame"
+      ],
+      "why": "fish size and stock measurement, increasingly camera-based"
+    },
+    {
+      "term": "camera-based biomass estimation",
+      "tier": "ai",
+      "variants": [
+        "AI biomass",
+        "automated weight estimation",
+        "machine vision biomass",
+        "biomass estimation algorithm"
+      ],
+      "why": "computer vision weight and growth estimation"
+    },
+    {
+      "term": "automated lice counting",
+      "tier": "ai",
+      "variants": [
+        "automatic lice counting",
+        "lice detection",
+        "lice counting camera",
+        "AI lice counting"
+      ],
+      "why": "computer vision detection of sea lice"
+    },
+    {
+      "term": "laser delousing",
+      "tier": "ai",
+      "variants": [
+        "optical delousing",
+        "lice laser",
+        "Stingray laser"
+      ],
+      "why": "vision-guided laser removal of sea lice"
+    },
+    {
+      "term": "fish welfare monitoring",
+      "tier": "context",
+      "variants": [
+        "fish health monitoring",
+        "fish behaviour monitoring",
+        "fish behavior monitoring",
+        "behavioural analysis",
+        "behavioral analysis",
+        "welfare scoring"
+      ],
+      "why": "camera and sensor tracking of behaviour and health"
+    },
+    {
+      "term": "individual fish recognition",
+      "tier": "ai",
+      "variants": [
+        "fish facial recognition",
+        "individual fish identification",
+        "fish biometrics",
+        "individual-level monitoring"
+      ],
+      "why": "identifying and tracking single fish by image"
+    },
+    {
+      "term": "early disease detection",
+      "tier": "ai",
+      "variants": [
+        "disease prediction",
+        "predictive fish health",
+        "mortality prediction",
+        "disease early warning",
+        "wound detection",
+        "automated welfare scoring"
+      ],
+      "why": "ML warning of disease or mortality events"
+    },
+    {
+      "term": "underwater camera",
+      "tier": "context",
+      "variants": [
+        "subsea camera",
+        "underwater sensor",
+        "pen camera",
+        "cage camera",
+        "in-pen sensor",
+        "underwater imaging"
+      ],
+      "why": "image source for feeding, biomass and welfare models"
+    },
+    {
+      "term": "underwater drone",
+      "tier": "context",
+      "variants": [
+        "remotely operated vehicle",
+        "ROV",
+        "net cleaning robot",
+        "autonomous net cleaner",
+        "net cleaning drone",
+        "subsea robot"
+      ],
+      "case_sensitive_variants": [
+        "ROV"
+      ],
+      "why": "ROVs for net inspection and cleaning"
+    },
+    {
+      "term": "automated net inspection",
+      "tier": "ai",
+      "variants": [
+        "net hole detection",
+        "automated net monitoring",
+        "net integrity monitoring",
+        "escape prevention camera"
+      ],
+      "why": "vision-based detection of net holes and fouling"
+    },
+    {
+      "term": "water quality monitoring",
+      "tier": "context",
+      "variants": [
+        "oxygen monitoring",
+        "environmental sensor",
+        "real-time water quality",
+        "water quality prediction"
+      ],
+      "why": "sensor data on oxygen, temperature and algae"
+    },
+    {
+      "term": "harmful algal bloom forecasting",
+      "tier": "ai",
+      "variants": [
+        "algal bloom prediction",
+        "algae early warning",
+        "plankton detection",
+        "algal bloom monitoring",
+        "jellyfish detection"
+      ],
+      "why": "predictive early warning of algae and jellyfish events"
+    },
+    {
+      "term": "growth model",
+      "tier": "context",
+      "variants": [
+        "growth forecasting",
+        "harvest forecasting",
+        "production planning model",
+        "growth prediction",
+        "harvest planning optimisation",
+        "harvest planning optimization"
+      ],
+      "why": "biological production and harvest planning models"
+    },
+    {
+      "term": "fish counting",
+      "tier": "ai",
+      "variants": [
+        "automated fish counter",
+        "smolt counting",
+        "fry counting",
+        "larvae counting",
+        "shrimp counting",
+        "automated counting"
+      ],
+      "why": "image-based counting of smolt, fry and larvae"
+    },
+    {
+      "term": "offshore fish farming",
+      "tier": "context",
+      "variants": [
+        "offshore aquaculture",
+        "ocean farm",
+        "unmanned feed barge",
+        "autonomous feed barge",
+        "remote-controlled barge",
+        "exposed aquaculture"
+      ],
+      "why": "exposed sites requiring remote, autonomous operation"
+    },
+    {
+      "term": "recirculating aquaculture system",
+      "tier": "context",
+      "variants": [
+        "land-based aquaculture",
+        "RAS control system",
+        "water treatment automation",
+        "land-based farming"
+      ],
+      "why": "land-based farms run by process control and sensors"
+    },
+    {
+      "term": "digital twin",
+      "tier": "context",
+      "why": "virtual model of pens, fish or facilities"
+    },
+    {
+      "term": "genomic selection",
+      "tier": "context",
+      "variants": [
+        "genomic breeding",
+        "selective breeding programme",
+        "selective breeding program",
+        "marker-assisted selection"
+      ],
+      "why": "data-driven broodstock breeding"
+    },
+    {
+      "term": "automated filleting",
+      "tier": "context",
+      "variants": [
+        "robotic filleting",
+        "filleting robot",
+        "water-jet cutting",
+        "automated trimming",
+        "robotic portioning",
+        "automated processing line"
+      ],
+      "why": "vision-guided cutting and trimming in processing"
+    },
+    {
+      "term": "pin bone detection",
+      "tier": "ai",
+      "variants": [
+        "pinbone detection",
+        "X-ray bone detection",
+        "automated defect detection",
+        "bone detection system"
+      ],
+      "why": "X-ray and vision detection of bones and defects"
+    },
+    {
+      "term": "machine vision grading",
+      "tier": "ai",
+      "variants": [
+        "vision-based grading",
+        "automated fish grading",
+        "quality grading camera",
+        "automated quality inspection",
+        "optical grading",
+        "AI grading"
+      ],
+      "why": "automated quality and size grading of fish"
+    },
+    {
+      "term": "electronic monitoring",
+      "tier": "context",
+      "variants": [
+        "onboard camera",
+        "e-monitoring",
+        "electronic catch reporting",
+        "electronic logbook",
+        "CCTV on vessels"
+      ],
+      "why": "onboard cameras recording catch for compliance"
+    },
+    {
+      "term": "automated catch recognition",
+      "tier": "ai",
+      "variants": [
+        "automated species identification",
+        "catch identification",
+        "AI catch analysis",
+        "species recognition",
+        "automated catch documentation",
+        "catch composition analysis"
+      ],
+      "why": "ML species and size identification of catch"
+    },
+    {
+      "term": "precision fishing",
+      "tier": "context",
+      "variants": [
+        "smart trawl",
+        "selective fishing technology",
+        "bycatch reduction technology",
+        "intelligent trawl",
+        "real-time catch monitoring"
+      ],
+      "why": "selective, sensor-guided harvesting to cut bycatch"
+    },
+    {
+      "term": "fish finding sonar",
+      "tier": "context",
+      "variants": [
+        "echosounder",
+        "echo sounder",
+        "sonar data",
+        "acoustic survey",
+        "fish finder",
+        "broadband acoustics"
+      ],
+      "why": "acoustic detection where ML classifies species and schools"
+    },
+    {
+      "term": "catch forecasting",
+      "tier": "context",
+      "variants": [
+        "stock assessment model",
+        "catch prediction",
+        "fishing ground prediction",
+        "fish distribution forecast"
+      ],
+      "why": "predictive models of stock location and quotas"
+    },
+    {
+      "term": "vessel route optimisation",
+      "tier": "context",
+      "variants": [
+        "vessel route optimization",
+        "fuel optimisation",
+        "fuel optimization",
+        "voyage optimisation",
+        "voyage optimization",
+        "fleet optimisation",
+        "fleet optimization"
+      ],
+      "why": "algorithmic fuel and voyage planning for fleets"
+    },
+    {
+      "term": "autonomous vessel",
+      "tier": "ai",
+      "variants": [
+        "unmanned surface vessel",
+        "autonomous workboat",
+        "autonomous service vessel",
+        "uncrewed surface vessel",
+        "remote-controlled vessel"
+      ],
+      "why": "unmanned boats for service and surveillance"
+    },
+    {
+      "term": "illegal fishing detection",
+      "tier": "ai",
+      "variants": [
+        "IUU fishing detection",
+        "vessel tracking analytics",
+        "dark vessel detection",
+        "satellite vessel monitoring"
+      ],
+      "why": "satellite and AIS analytics against IUU fishing"
+    },
+    {
+      "term": "predictive maintenance",
+      "tier": "ai",
+      "variants": [
+        "predictive vessel maintenance"
+      ],
+      "why": "ML failure prediction on vessels and farm equipment"
+    }
+  ],
+  "class_terms": {}
+}

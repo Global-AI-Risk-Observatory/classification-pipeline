@@ -1,0 +1,475 @@
+{
+  "id": "41",
+  "name": "Construction of residential and non-residential buildings",
+  "section": "F",
+  "summary": "Building contractors and homebuilders describe AI first as demand: data-centre, semiconductor and other mission-critical projects fill order books, with power availability, equipment lead times and skilled labour as constraints. Own use centres on BIM-based design automation, generative scheduling and estimating, reality capture with computer-vision progress or safety monitoring, construction robotics and offsite manufacturing. Homebuilders add dynamic pricing, digital sales tools and smart-home features.",
+  "terms": [
+    {
+      "term": "data center",
+      "tier": "context",
+      "variants": [
+        "data centre"
+      ],
+      "why": "major non-residential project category driven by AI"
+    },
+    {
+      "term": "hyperscaler",
+      "tier": "context",
+      "variants": [
+        "hyperscale"
+      ],
+      "why": "tech clients commissioning large campuses"
+    },
+    {
+      "term": "mission critical",
+      "tier": "context",
+      "variants": [
+        "critical facilities",
+        "critical environments",
+        "technology facilities",
+        "advanced-tech",
+        "digital infrastructure project"
+      ],
+      "why": "contractor label for data-centre and similar facilities"
+    },
+    {
+      "term": "semiconductor fab",
+      "tier": "context",
+      "variants": [
+        "semiconductor fabrication plant",
+        "semiconductor facility",
+        "chip plant",
+        "chip factory",
+        "microelectronics facility",
+        "wafer fab",
+        "semiconductor plant",
+        "cleanroom construction"
+      ],
+      "why": "chip plant construction linked to AI chip demand"
+    },
+    {
+      "term": "AI infrastructure",
+      "tier": "ai",
+      "variants": [
+        "AI-related construction",
+        "AI-driven demand",
+        "AI factory",
+        "AI investment boom",
+        "AI build-out",
+        "AI campus"
+      ],
+      "why": "AI investment named as project pipeline driver"
+    },
+    {
+      "term": "intelligent computing center",
+      "tier": "ai",
+      "variants": [
+        "intelligent computing centre",
+        "computing power center",
+        "computing power centre",
+        "computing power infrastructure",
+        "East Data West Computing"
+      ],
+      "why": "Chinese term for AI compute facilities"
+    },
+    {
+      "term": "liquid cooling",
+      "tier": "context",
+      "variants": [
+        "high-density cooling",
+        "direct-to-chip cooling",
+        "immersion cooling",
+        "rack density",
+        "power density"
+      ],
+      "why": "specialist cooling raising data-centre project complexity"
+    },
+    {
+      "term": "power availability",
+      "tier": "context",
+      "variants": [
+        "grid connection delay",
+        "power constraint",
+        "grid capacity constraint",
+        "utility power availability",
+        "energization delay",
+        "power supply constraint"
+      ],
+      "why": "grid capacity limiting data-centre project starts"
+    },
+    {
+      "term": "long-lead electrical equipment",
+      "tier": "context",
+      "variants": [
+        "switchgear lead time",
+        "transformer lead time",
+        "generator lead time",
+        "long-lead equipment",
+        "equipment lead time"
+      ],
+      "why": "equipment shortages from data-centre boom"
+    },
+    {
+      "term": "skilled labour shortage",
+      "tier": "context",
+      "variants": [
+        "skilled labor shortage",
+        "craft labor",
+        "craft labour",
+        "labor availability",
+        "labour availability",
+        "shortage of skilled workers",
+        "workforce shortage",
+        "ageing workforce",
+        "aging workforce"
+      ],
+      "why": "workforce constraint motivating automation and robotics"
+    },
+    {
+      "term": "building information modelling",
+      "tier": "context",
+      "variants": [
+        "building information modeling",
+        "BIM",
+        "virtual design and construction",
+        "common data environment"
+      ],
+      "case_sensitive_variants": [
+        "BIM"
+      ],
+      "why": "3D model data underpinning design automation and AI"
+    },
+    {
+      "term": "digital twin",
+      "tier": "context",
+      "variants": [
+        "virtual twin",
+        "digital replica",
+        "building twin"
+      ],
+      "why": "virtual building model for delivery and operation"
+    },
+    {
+      "term": "generative design",
+      "tier": "ai",
+      "variants": [
+        "parametric design",
+        "design automation",
+        "automated design",
+        "computational design",
+        "AI-assisted design",
+        "automated floor plan",
+        "design optimisation algorithm"
+      ],
+      "why": "algorithmic generation of layouts and structures"
+    },
+    {
+      "term": "clash detection",
+      "tier": "context",
+      "variants": [
+        "model checking",
+        "automated code compliance",
+        "automated compliance checking",
+        "rule-based checking",
+        "design validation"
+      ],
+      "why": "automated checking of model conflicts and code compliance"
+    },
+    {
+      "term": "generative scheduling",
+      "tier": "ai",
+      "variants": [
+        "AI scheduling",
+        "schedule optimisation",
+        "schedule optimization",
+        "construction optioneering",
+        "automated scheduling",
+        "AI-based planning",
+        "schedule risk prediction"
+      ],
+      "why": "AI-optimised construction sequencing"
+    },
+    {
+      "term": "automated quantity take-off",
+      "tier": "ai",
+      "variants": [
+        "automated takeoff",
+        "AI estimating",
+        "automated estimating",
+        "AI-assisted estimating",
+        "quantity takeoff automation",
+        "predictive cost estimating",
+        "cost prediction model"
+      ],
+      "why": "automated estimating from drawings and models"
+    },
+    {
+      "term": "bid analytics",
+      "tier": "context",
+      "variants": [
+        "tender analytics",
+        "bid/no-bid model",
+        "tender risk assessment",
+        "project risk prediction",
+        "risk analytics",
+        "project selection model"
+      ],
+      "why": "data-driven tender selection and risk pricing"
+    },
+    {
+      "term": "submittal review",
+      "tier": "context",
+      "variants": [
+        "RFI automation",
+        "contract review automation",
+        "specification review",
+        "document control automation",
+        "automated document review"
+      ],
+      "why": "document workflows targeted by AI assistants"
+    },
+    {
+      "term": "reality capture",
+      "tier": "context",
+      "variants": [
+        "360-degree capture",
+        "laser scanning",
+        "site scanning",
+        "photogrammetry",
+        "drone survey",
+        "point cloud"
+      ],
+      "why": "scans and photos digitising site progress"
+    },
+    {
+      "term": "automated progress monitoring",
+      "tier": "ai",
+      "variants": [
+        "automated progress tracking",
+        "AI progress tracking",
+        "progress monitoring camera",
+        "construction progress analytics",
+        "AI site monitoring",
+        "image-based progress"
+      ],
+      "why": "computer vision comparing site to model"
+    },
+    {
+      "term": "defect detection",
+      "tier": "ai",
+      "variants": [
+        "AI quality inspection",
+        "automated snagging",
+        "crack detection",
+        "image-based inspection",
+        "quality inspection camera"
+      ],
+      "why": "image-based quality inspection and snagging"
+    },
+    {
+      "term": "computer vision safety monitoring",
+      "tier": "ai",
+      "variants": [
+        "PPE detection",
+        "AI safety monitoring",
+        "hazard detection camera",
+        "AI camera",
+        "safety video analytics",
+        "intelligent site surveillance"
+      ],
+      "why": "cameras detecting hazards and missing PPE"
+    },
+    {
+      "term": "predictive safety",
+      "tier": "ai",
+      "variants": [
+        "safety prediction model",
+        "incident prediction",
+        "leading indicator analytics",
+        "safety risk prediction"
+      ],
+      "why": "ML prediction of incident risk"
+    },
+    {
+      "term": "connected worker",
+      "tier": "context",
+      "variants": [
+        "wearable technology",
+        "smart helmet",
+        "wearable sensor",
+        "site wearables",
+        "worker location tracking",
+        "exoskeleton"
+      ],
+      "why": "wearables and sensors on site personnel"
+    },
+    {
+      "term": "construction robotics",
+      "tier": "ai",
+      "variants": [
+        "construction robot",
+        "bricklaying robot",
+        "drywall robot",
+        "rebar-tying robot",
+        "layout robot",
+        "welding robot",
+        "drilling robot",
+        "robotic construction",
+        "site robot"
+      ],
+      "why": "robots performing site tasks"
+    },
+    {
+      "term": "autonomous construction equipment",
+      "tier": "ai",
+      "variants": [
+        "autonomous construction machinery",
+        "autonomous equipment",
+        "unmanned construction",
+        "automated construction machinery",
+        "robotic equipment",
+        "autonomous crane",
+        "remote-operated crane"
+      ],
+      "why": "self-operating machinery on building sites"
+    },
+    {
+      "term": "3D printing",
+      "tier": "context",
+      "variants": [
+        "3D-printed home",
+        "additive construction",
+        "3D concrete printing",
+        "printed house",
+        "construction 3D printer"
+      ],
+      "why": "additive construction of homes and components"
+    },
+    {
+      "term": "modular construction",
+      "tier": "context",
+      "variants": [
+        "offsite manufacturing",
+        "off-site construction",
+        "industrialised construction",
+        "industrialized construction",
+        "prefabrication",
+        "modern methods of construction",
+        "factory-built housing",
+        "panelised construction",
+        "panelized construction"
+      ],
+      "why": "factory-built components using automated lines"
+    },
+    {
+      "term": "robotic production line",
+      "tier": "context",
+      "variants": [
+        "automated production line",
+        "robotic panel line",
+        "automated precast plant",
+        "robotic welding line",
+        "smart factory"
+      ],
+      "why": "automated lines in housing and component factories"
+    },
+    {
+      "term": "smart construction",
+      "tier": "context",
+      "variants": [
+        "smart site",
+        "intelligent construction",
+        "digital construction",
+        "construction technology",
+        "contech",
+        "connected site",
+        "i-Construction"
+      ],
+      "why": "sensor- and AI-enabled site management programmes"
+    },
+    {
+      "term": "equipment telematics",
+      "tier": "context",
+      "variants": [
+        "plant telematics",
+        "fleet telematics",
+        "telematics data",
+        "equipment utilisation analytics"
+      ],
+      "why": "machine data for utilisation analytics"
+    },
+    {
+      "term": "predictive maintenance",
+      "tier": "ai",
+      "variants": [
+        "predictive asset maintenance",
+        "predictive facility maintenance"
+      ],
+      "why": "ML maintenance for plant, cranes and facilities"
+    },
+    {
+      "term": "smart building",
+      "tier": "context",
+      "variants": [
+        "intelligent building",
+        "building management system",
+        "building automation system",
+        "building operating system",
+        "energy management optimisation"
+      ],
+      "why": "AI-enabled building controls as product feature"
+    },
+    {
+      "term": "smart home",
+      "tier": "context",
+      "variants": [
+        "home automation",
+        "connected home",
+        "home energy management system",
+        "AI-enabled home"
+      ],
+      "why": "connected-home features in new houses"
+    },
+    {
+      "term": "dynamic pricing",
+      "tier": "context",
+      "variants": [
+        "pricing algorithm",
+        "price optimisation",
+        "price optimization",
+        "automated pricing",
+        "digital marketing platform",
+        "lead scoring",
+        "Lennar Machine"
+      ],
+      "why": "algorithmic home pricing and sales incentives"
+    },
+    {
+      "term": "virtual home tour",
+      "tier": "context",
+      "variants": [
+        "virtual tour",
+        "online home buying",
+        "digital sales platform",
+        "virtual design studio",
+        "online configurator",
+        "AI sales assistant"
+      ],
+      "why": "digital sales tools including AI assistants"
+    },
+    {
+      "term": "land acquisition analytics",
+      "tier": "context",
+      "variants": [
+        "land underwriting model",
+        "site selection analytics",
+        "land sourcing tool",
+        "AI land screening",
+        "land identification tool",
+        "automated site appraisal"
+      ],
+      "why": "data-driven land sourcing and underwriting"
+    }
+  ],
+  "class_terms": {}
+}

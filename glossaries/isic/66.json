@@ -1,0 +1,1261 @@
+{
+  "id": "66",
+  "name": "Activities auxiliary to financial service and insurance activities",
+  "section": "L",
+  "summary": "Exchanges, brokers, payment processors, insurance intermediaries and asset managers use AI in trading and execution, market and communications surveillance, payment fraud scoring, advice and research, and increasingly sell AI-enabled data and tools to clients. Filings cite SEC and FINRA positions on predictive data analytics and AI washing, MiFID algorithmic-trading controls and DORA, and flag deepfake and account-takeover fraud, agentic commerce bypassing intermediaries, and fee pressure from AI-native entrants. For asset managers AI is also an investment theme and a concentration risk: AI-themed funds, data-centre and digital-infrastructure strategies, and mega-cap AI valuation exposure.",
+  "terms": [
+    {
+      "term": "algorithmic trading",
+      "tier": "context",
+      "variants": [
+        "algo trading",
+        "algorithmic execution",
+        "execution algorithm",
+        "algorithmic trading strategy"
+      ],
+      "why": "automated order execution, may use ML"
+    },
+    {
+      "term": "AI-driven trading",
+      "tier": "ai",
+      "variants": [
+        "AI-powered trading",
+        "machine learning trading strategy",
+        "AI trading model",
+        "AI-based trading",
+        "machine learning execution"
+      ],
+      "why": "ML models generating trading decisions"
+    },
+    {
+      "term": "high-frequency trading",
+      "tier": "context",
+      "variants": [
+        "high frequency trader",
+        "low-latency trading"
+      ],
+      "why": "automated trading competing with and using ML"
+    },
+    {
+      "term": "smart order routing",
+      "tier": "context",
+      "variants": [
+        "smart order router",
+        "intelligent order routing"
+      ],
+      "why": "model-driven venue selection"
+    },
+    {
+      "term": "trade surveillance",
+      "tier": "context",
+      "variants": [
+        "market surveillance",
+        "market abuse surveillance",
+        "surveillance technology",
+        "trade monitoring"
+      ],
+      "why": "market-abuse detection using ML"
+    },
+    {
+      "term": "communications surveillance",
+      "tier": "context",
+      "variants": [
+        "e-comms surveillance",
+        "voice surveillance",
+        "electronic communications monitoring"
+      ],
+      "why": "NLP monitoring of staff communications"
+    },
+    {
+      "term": "market manipulation detection",
+      "tier": "context",
+      "variants": [
+        "spoofing detection",
+        "layering detection",
+        "insider trading detection"
+      ],
+      "why": "pattern-recognition models for abuse"
+    },
+    {
+      "term": "alternative data",
+      "tier": "context",
+      "variants": [
+        "alt data",
+        "alternative dataset"
+      ],
+      "why": "non-traditional datasets feeding ML signals"
+    },
+    {
+      "term": "sentiment analysis",
+      "tier": "ai",
+      "variants": [
+        "news sentiment",
+        "sentiment signal",
+        "natural language signal",
+        "text-based signal"
+      ],
+      "why": "NLP-derived trading and research signals"
+    },
+    {
+      "term": "RTS 6",
+      "tier": "context",
+      "variants": [
+        "algorithmic trading controls",
+        "kill switch functionality",
+        "annual algorithmic trading self-assessment"
+      ],
+      "why": "MiFID II algorithmic trading control rules"
+    },
+    {
+      "term": "herding risk",
+      "tier": "context",
+      "variants": [
+        "model herding",
+        "model monoculture",
+        "correlated trading strategies"
+      ],
+      "why": "correlated behaviour from shared AI models"
+    },
+    {
+      "term": "flash crash",
+      "tier": "context",
+      "variants": [
+        "algorithmic amplification",
+        "AI-driven market volatility"
+      ],
+      "why": "market event linked to automated trading"
+    },
+    {
+      "term": "robo-advisor",
+      "tier": "ai",
+      "variants": [
+        "robo-adviser",
+        "robo-advisory",
+        "robo-advice",
+        "automated investment advice",
+        "digital investment advice"
+      ],
+      "why": "automated model-driven investment advice"
+    },
+    {
+      "term": "advisor copilot",
+      "tier": "ai",
+      "variants": [
+        "adviser copilot",
+        "advisor assistant",
+        "adviser assistant",
+        "AI assistant for advisors",
+        "AI assistant for advisers"
+      ],
+      "why": "AI assistant for financial advisers"
+    },
+    {
+      "term": "AI meeting notes",
+      "tier": "ai",
+      "variants": [
+        "AI notetaker",
+        "meeting summarisation",
+        "meeting summarization",
+        "client meeting assistant",
+        "AI-generated meeting notes"
+      ],
+      "why": "AI summaries of client meetings"
+    },
+    {
+      "term": "AI-generated investment research",
+      "tier": "ai",
+      "variants": [
+        "AI research summary",
+        "AI-powered research assistant",
+        "research copilot",
+        "AI research assistant"
+      ],
+      "why": "generative summaries of filings and research"
+    },
+    {
+      "term": "next best action",
+      "tier": "context",
+      "variants": [
+        "next best offer",
+        "hyper-personalisation",
+        "hyper-personalization",
+        "personalised advice at scale",
+        "personalized advice at scale"
+      ],
+      "why": "model-driven client prompts"
+    },
+    {
+      "term": "intelligent document processing",
+      "tier": "ai",
+      "variants": [
+        "automated document processing",
+        "document intelligence",
+        "automated data extraction"
+      ],
+      "why": "ML extraction from account and fund documents"
+    },
+    {
+      "term": "robotic process automation",
+      "tier": "context",
+      "variants": [
+        "RPA",
+        "intelligent automation",
+        "hyperautomation"
+      ],
+      "case_sensitive_variants": [
+        "RPA"
+      ],
+      "why": "back-office bots, often paired with AI"
+    },
+    {
+      "term": "straight-through processing",
+      "tier": "context",
+      "variants": [
+        "straight through processing rate"
+      ],
+      "why": "no-touch processing enabled by models"
+    },
+    {
+      "term": "developer productivity",
+      "tier": "context",
+      "variants": [
+        "engineering productivity",
+        "software development productivity"
+      ],
+      "why": "AI coding tools for engineering teams"
+    },
+    {
+      "term": "AI-driven efficiency",
+      "tier": "ai",
+      "variants": [
+        "AI productivity gain",
+        "AI-enabled productivity",
+        "AI-driven cost savings",
+        "AI-enabled operating leverage"
+      ],
+      "why": "cost savings attributed to AI"
+    },
+    {
+      "term": "AI-driven job reduction",
+      "tier": "ai",
+      "variants": [
+        "AI-related job cuts",
+        "roles displaced by AI",
+        "AI-driven headcount reduction"
+      ],
+      "why": "headcount cuts attributed to AI"
+    },
+    {
+      "term": "workforce reskilling",
+      "tier": "context",
+      "variants": [
+        "reskilling",
+        "upskilling programme",
+        "upskilling program",
+        "AI upskilling"
+      ],
+      "why": "staff retraining for AI adoption"
+    },
+    {
+      "term": "predictive data analytics",
+      "tier": "context",
+      "variants": [
+        "predictive data analytics rule",
+        "PDA rule",
+        "conflicts of interest associated with the use of predictive data analytics"
+      ],
+      "why": "SEC term for AI in adviser/broker interactions"
+    },
+    {
+      "term": "digital engagement practices",
+      "tier": "context",
+      "variants": [
+        "gamification",
+        "behavioural prompts",
+        "behavioral prompts"
+      ],
+      "why": "SEC/FINRA focus on model-driven nudging"
+    },
+    {
+      "term": "AI washing enforcement",
+      "tier": "ai",
+      "variants": [
+        "AI washing",
+        "misleading AI claims",
+        "false claims about AI capabilities"
+      ],
+      "why": "SEC actions over overstated AI claims"
+    },
+    {
+      "term": "Marketing Rule",
+      "tier": "context",
+      "variants": [
+        "SEC Marketing Rule",
+        "Rule 206(4)-1"
+      ],
+      "why": "adviser rule applied to AI claims"
+    },
+    {
+      "term": "Regulation Best Interest",
+      "tier": "context",
+      "variants": [
+        "Reg BI",
+        "fiduciary duty in the use of AI"
+      ],
+      "why": "conduct standard applied to AI-driven recommendations"
+    },
+    {
+      "term": "FINRA Regulatory Notice 24-09",
+      "tier": "context",
+      "variants": [
+        "Regulatory Notice 24-09",
+        "FINRA Notice 24-09"
+      ],
+      "why": "FINRA reminder that rules cover AI tools"
+    },
+    {
+      "term": "model risk management",
+      "tier": "context",
+      "variants": [
+        "model risk",
+        "model governance",
+        "model validation",
+        "model inventory"
+      ],
+      "why": "governance covering AI/ML models"
+    },
+    {
+      "term": "Digital Operational Resilience Act",
+      "tier": "context",
+      "variants": [
+        "DORA",
+        "ICT third-party risk",
+        "critical third-party provider"
+      ],
+      "case_sensitive_variants": [
+        "DORA"
+      ],
+      "why": "EU ICT third-party rules covering AI vendors"
+    },
+    {
+      "term": "cloud concentration risk",
+      "tier": "context",
+      "variants": [
+        "third-party concentration risk",
+        "hyperscaler dependency",
+        "concentration risk in technology providers"
+      ],
+      "why": "reliance on few cloud/AI providers"
+    },
+    {
+      "term": "Consumer Duty",
+      "tier": "context",
+      "variants": [
+        "FCA Consumer Duty"
+      ],
+      "why": "UK outcomes rule applied to AI advice"
+    },
+    {
+      "term": "automated decision-making",
+      "tier": "context",
+      "variants": [
+        "solely automated decision",
+        "automated individual decision-making"
+      ],
+      "why": "GDPR limits on solely automated decisions"
+    },
+    {
+      "term": "ESMA statement on AI",
+      "tier": "context",
+      "variants": [
+        "ESMA public statement on artificial intelligence",
+        "MiFID II requirements when using AI"
+      ],
+      "why": "EU guidance on AI in investment services"
+    },
+    {
+      "term": "regtech",
+      "tier": "context",
+      "variants": [
+        "regulatory technology",
+        "suptech",
+        "supervisory technology"
+      ],
+      "why": "compliance tooling, often ML-based"
+    },
+    {
+      "term": "deepfake fraud",
+      "tier": "ai",
+      "variants": [
+        "deepfake",
+        "deepfake scam",
+        "deepfake impersonation",
+        "deepfake video"
+      ],
+      "why": "AI-generated impersonation of clients or executives"
+    },
+    {
+      "term": "voice cloning",
+      "tier": "ai",
+      "variants": [
+        "voice clone",
+        "cloned voice",
+        "audio deepfake",
+        "AI voice scam"
+      ],
+      "why": "AI-cloned voices used to authorise transfers"
+    },
+    {
+      "term": "AI-enabled fraud",
+      "tier": "ai",
+      "variants": [
+        "AI-enabled scam",
+        "AI-generated phishing",
+        "AI-powered scam",
+        "AI-driven fraud",
+        "AI-assisted fraud"
+      ],
+      "why": "fraud scaled by generative tools"
+    },
+    {
+      "term": "synthetic identity fraud",
+      "tier": "context",
+      "variants": [
+        "synthetic identity",
+        "synthetic ID"
+      ],
+      "why": "fabricated identities, increasingly AI-generated"
+    },
+    {
+      "term": "account takeover",
+      "tier": "context",
+      "variants": [
+        "account takeover fraud",
+        "credential stuffing"
+      ],
+      "why": "fraud type countered by ML detection"
+    },
+    {
+      "term": "investment scam",
+      "tier": "context",
+      "variants": [
+        "impersonation scam",
+        "pig butchering",
+        "romance scam",
+        "fake investment platform",
+        "impersonation of our brand"
+      ],
+      "why": "scams using AI-generated endorsements"
+    },
+    {
+      "term": "eKYC",
+      "tier": "context",
+      "variants": [
+        "electronic KYC",
+        "digital identity verification",
+        "digital onboarding",
+        "perpetual KYC"
+      ],
+      "why": "automated identity verification at onboarding"
+    },
+    {
+      "term": "liveness detection",
+      "tier": "ai",
+      "variants": [
+        "liveness check",
+        "presentation attack detection"
+      ],
+      "why": "ML check against spoofed faces"
+    },
+    {
+      "term": "behavioural biometrics",
+      "tier": "ai",
+      "variants": [
+        "behavioral biometrics",
+        "voice biometrics"
+      ],
+      "why": "ML profiling of user behaviour for fraud"
+    },
+    {
+      "term": "transaction monitoring",
+      "tier": "context",
+      "variants": [
+        "transaction monitoring system",
+        "sanctions screening",
+        "financial crime detection"
+      ],
+      "why": "AML surveillance increasingly ML-driven"
+    },
+    {
+      "term": "AI bubble",
+      "tier": "ai",
+      "variants": [
+        "AI-driven valuations",
+        "AI-related valuations",
+        "AI valuation risk",
+        "AI exuberance",
+        "AI-related equity valuations"
+      ],
+      "why": "valuation risk from AI enthusiasm"
+    },
+    {
+      "term": "Magnificent Seven",
+      "tier": "context",
+      "variants": [
+        "Magnificent 7",
+        "mega-cap technology stocks",
+        "megacap technology"
+      ],
+      "why": "AI-linked mega-cap concentration"
+    },
+    {
+      "term": "market concentration risk",
+      "tier": "context",
+      "variants": [
+        "concentration in technology stocks",
+        "equity market concentration",
+        "narrow market leadership",
+        "index concentration"
+      ],
+      "why": "index weight concentrated in AI stocks"
+    },
+    {
+      "term": "AI capital expenditure",
+      "tier": "ai",
+      "variants": [
+        "AI capex",
+        "AI investment boom",
+        "AI spending boom",
+        "hyperscaler capex"
+      ],
+      "why": "AI investment cycle driving markets"
+    },
+    {
+      "term": "AI disruption",
+      "tier": "ai",
+      "variants": [
+        "disruption from AI",
+        "AI-related disruption",
+        "disrupted by AI",
+        "AI-native competitors"
+      ],
+      "why": "AI undermining issuers' or the firm's business model"
+    },
+    {
+      "term": "data center financing",
+      "tier": "context",
+      "variants": [
+        "data centre financing",
+        "data center debt issuance",
+        "data centre debt issuance",
+        "digital infrastructure financing"
+      ],
+      "why": "capital raised for AI infrastructure"
+    }
+  ],
+  "class_terms": {
+    "6611": [
+      {
+        "term": "AI-powered order type",
+        "tier": "ai",
+        "variants": [
+          "Dynamic M-ELO",
+          "Dynamic Midpoint Extended Life Order",
+          "AI-driven order type",
+          "reinforcement learning order type"
+        ],
+        "why": "exchange order types using ML"
+      },
+      {
+        "term": "market surveillance technology",
+        "tier": "context",
+        "variants": [
+          "Nasdaq Market Surveillance",
+          "SMARTS",
+          "surveillance-as-a-service"
+        ],
+        "case_sensitive_variants": [
+          "SMARTS"
+        ],
+        "why": "surveillance products sold to venues and regulators"
+      },
+      {
+        "term": "Verafin",
+        "tier": "ai",
+        "variants": [
+          "Nasdaq Verafin",
+          "Entity Research Copilot",
+          "agentic AI workforce"
+        ],
+        "why": "Nasdaq AI financial-crime product"
+      },
+      {
+        "term": "AI-ready data",
+        "tier": "ai",
+        "variants": [
+          "AI-ready content",
+          "AI-ready dataset",
+          "data licensing for AI",
+          "licensing data to AI providers",
+          "LLM-ready data"
+        ],
+        "why": "exchange data packaged for AI consumption"
+      },
+      {
+        "term": "data and analytics segment",
+        "tier": "context",
+        "variants": [
+          "market data revenue",
+          "data and index business",
+          "information services segment"
+        ],
+        "why": "exchange business line where AI is sold"
+      },
+      {
+        "term": "AI-related listing",
+        "tier": "ai",
+        "variants": [
+          "AI-related IPO",
+          "AI listing",
+          "AI company listings"
+        ],
+        "why": "IPOs and listings of AI companies"
+      },
+      {
+        "term": "trading volume in AI-related stocks",
+        "tier": "ai",
+        "variants": [
+          "AI-driven trading volume",
+          "AI-related trading activity"
+        ],
+        "why": "AI theme driving exchange volumes"
+      },
+      {
+        "term": "margin model",
+        "tier": "context",
+        "variants": [
+          "clearing risk model",
+          "initial margin model",
+          "anti-procyclicality"
+        ],
+        "why": "clearing-house risk models"
+      },
+      {
+        "term": "index licensing",
+        "tier": "context",
+        "variants": [
+          "AI-themed index",
+          "artificial intelligence index",
+          "thematic index"
+        ],
+        "why": "AI-themed indices licensed to funds"
+      }
+    ],
+    "6612": [
+      {
+        "term": "AI trading assistant",
+        "tier": "ai",
+        "variants": [
+          "AI-powered trading assistant",
+          "AI investing assistant",
+          "Robinhood Cortex",
+          "AI stock screener",
+          "AI-powered insights"
+        ],
+        "why": "AI helper for retail and professional traders"
+      },
+      {
+        "term": "copy trading",
+        "tier": "context",
+        "variants": [
+          "social trading",
+          "automated trading bot",
+          "trading bot"
+        ],
+        "why": "automated replication, often with model signals"
+      },
+      {
+        "term": "retail trading activity",
+        "tier": "context",
+        "variants": [
+          "retail investor participation",
+          "single-stock concentration",
+          "options activity in technology stocks"
+        ],
+        "why": "volumes concentrated in AI-linked stocks"
+      },
+      {
+        "term": "order routing model",
+        "tier": "context",
+        "variants": [
+          "execution quality model"
+        ],
+        "why": "models choosing execution venues"
+      },
+      {
+        "term": "margin risk model",
+        "tier": "context",
+        "variants": [
+          "automated liquidation",
+          "real-time risk engine"
+        ],
+        "why": "models setting client margin and liquidation"
+      },
+      {
+        "term": "voice trading automation",
+        "tier": "context",
+        "variants": [
+          "voice-to-text trade capture"
+        ],
+        "why": "speech-to-text capture of broker calls"
+      },
+      {
+        "term": "commodity trading algorithm",
+        "tier": "context",
+        "variants": [
+          "automated hedging",
+          "auto-hedging"
+        ],
+        "why": "automated execution in commodity contracts"
+      }
+    ],
+    "6619": [
+      {
+        "term": "agentic commerce",
+        "tier": "ai",
+        "variants": [
+          "agentic payment",
+          "agentic checkout",
+          "AI shopping agent",
+          "agent-initiated transaction",
+          "Agentic Commerce Protocol",
+          "agentic token"
+        ],
+        "why": "AI agents initiating purchases and payments"
+      },
+      {
+        "term": "Visa Intelligent Commerce",
+        "tier": "ai",
+        "variants": [
+          "Mastercard Agent Pay",
+          "Agent Pay",
+          "Trusted Agent Protocol"
+        ],
+        "why": "card-network agentic payment programmes"
+      },
+      {
+        "term": "payment fraud",
+        "tier": "context",
+        "variants": [
+          "card fraud",
+          "card-not-present fraud",
+          "payments fraud",
+          "fraud loss rate"
+        ],
+        "why": "fraud type screened by real-time ML"
+      },
+      {
+        "term": "transaction risk scoring",
+        "tier": "context",
+        "variants": [
+          "real-time fraud scoring",
+          "fraud scoring",
+          "Visa Advanced Authorization"
+        ],
+        "why": "per-transaction ML fraud scores"
+      },
+      {
+        "term": "Decision Intelligence",
+        "tier": "ai",
+        "variants": [
+          "Decision Intelligence Pro",
+          "Visa Protect",
+          "Visa Account Attack Intelligence"
+        ],
+        "case_sensitive_variants": [
+          "Decision Intelligence"
+        ],
+        "why": "Mastercard AI fraud-scoring product"
+      },
+      {
+        "term": "authorisation rate optimisation",
+        "tier": "context",
+        "variants": [
+          "authorization rate optimization",
+          "authorization optimization",
+          "authorisation optimisation",
+          "false decline"
+        ],
+        "why": "ML raising payment approval rates"
+      },
+      {
+        "term": "intelligent payment routing",
+        "tier": "ai",
+        "variants": [
+          "payment routing optimisation",
+          "payment routing optimization"
+        ],
+        "why": "ML choosing acquirer or rail per payment"
+      },
+      {
+        "term": "chargeback",
+        "tier": "context",
+        "variants": [
+          "chargeback fraud",
+          "friendly fraud",
+          "first-party fraud",
+          "dispute automation"
+        ],
+        "why": "dispute costs predicted and fought by models"
+      },
+      {
+        "term": "authorised push payment fraud",
+        "tier": "context",
+        "variants": [
+          "authorized push payment fraud",
+          "APP fraud",
+          "APP scam",
+          "scam detection"
+        ],
+        "why": "scam type amplified by AI impersonation"
+      },
+      {
+        "term": "merchant risk monitoring",
+        "tier": "context",
+        "variants": [
+          "merchant underwriting",
+          "merchant onboarding automation",
+          "merchant fraud"
+        ],
+        "why": "models underwriting and monitoring merchants"
+      },
+      {
+        "term": "Strong Customer Authentication",
+        "tier": "context",
+        "variants": [
+          "transaction risk analysis exemption",
+          "risk-based authentication"
+        ],
+        "why": "EU rule with risk-model exemption"
+      },
+      {
+        "term": "Payment Services Regulation",
+        "tier": "context",
+        "variants": [
+          "PSD3",
+          "PSR impersonation fraud liability"
+        ],
+        "why": "EU fraud-liability rules touching AI scams"
+      },
+      {
+        "term": "settlement fail prediction",
+        "tier": "ai",
+        "variants": [
+          "predictive settlement"
+        ],
+        "why": "ML forecasting failed trades in custody"
+      },
+      {
+        "term": "post-trade automation",
+        "tier": "context",
+        "variants": [
+          "reconciliation automation",
+          "corporate actions automation",
+          "automated reconciliation"
+        ],
+        "why": "reconciliation and corporate-actions automation"
+      },
+      {
+        "term": "mortgage broker automation",
+        "tier": "context",
+        "variants": [
+          "automated mortgage advice",
+          "automated affordability assessment"
+        ],
+        "why": "automated sourcing and document checks"
+      }
+    ],
+    "6621": [
+      {
+        "term": "image-based damage assessment",
+        "tier": "ai",
+        "variants": [
+          "photo-based estimating",
+          "AI damage assessment",
+          "automated damage appraisal",
+          "photo estimating"
+        ],
+        "why": "computer vision estimates repair cost"
+      },
+      {
+        "term": "virtual inspection",
+        "tier": "context",
+        "variants": [
+          "remote loss adjusting",
+          "desk adjusting",
+          "virtual claims inspection",
+          "video inspection"
+        ],
+        "why": "remote loss adjusting with AI support"
+      },
+      {
+        "term": "drone inspection",
+        "tier": "context",
+        "variants": [
+          "aerial imagery",
+          "roof inspection imagery",
+          "drone survey"
+        ],
+        "why": "aerial imagery analysed by models"
+      },
+      {
+        "term": "claims triage",
+        "tier": "context",
+        "variants": [
+          "automated claims triage",
+          "claims segmentation"
+        ],
+        "why": "models routing claims to adjusters"
+      },
+      {
+        "term": "automated claims estimating",
+        "tier": "context",
+        "variants": [
+          "estimating software",
+          "automated estimate",
+          "repair cost prediction"
+        ],
+        "why": "software-generated repair estimates"
+      }
+    ],
+    "6622": [
+      {
+        "term": "digital placement",
+        "tier": "context",
+        "variants": [
+          "placement platform",
+          "algorithmic placement",
+          "e-placement",
+          "digital trading platform"
+        ],
+        "why": "algorithmic placement of risks with carriers"
+      },
+      {
+        "term": "carrier appetite matching",
+        "tier": "ai",
+        "variants": [
+          "appetite matching",
+          "AI-powered placement"
+        ],
+        "why": "models matching risks to insurer appetite"
+      },
+      {
+        "term": "AI risk advisory",
+        "tier": "ai",
+        "variants": [
+          "AI risk consulting",
+          "AI risk assessment service",
+          "AI governance advisory"
+        ],
+        "why": "brokers advising clients on AI exposures"
+      },
+      {
+        "term": "AI insurance placement",
+        "tier": "ai",
+        "variants": [
+          "AI liability cover",
+          "AI coverage solution",
+          "affirmative AI coverage",
+          "silent AI"
+        ],
+        "why": "brokers placing cover for AI risks"
+      },
+      {
+        "term": "broking analytics",
+        "tier": "context",
+        "variants": [
+          "risk analytics for clients",
+          "client insights platform",
+          "benchmarking analytics"
+        ],
+        "why": "data products sold alongside placement"
+      },
+      {
+        "term": "submission automation",
+        "tier": "context",
+        "variants": [
+          "automated submission",
+          "submission ingestion",
+          "proposal generation"
+        ],
+        "why": "AI preparing and sending market submissions"
+      },
+      {
+        "term": "data center placement",
+        "tier": "context",
+        "variants": [
+          "data centre placement",
+          "data center construction programme",
+          "data centre construction programme",
+          "data center practice"
+        ],
+        "why": "broking AI infrastructure construction risks"
+      },
+      {
+        "term": "price comparison website",
+        "tier": "context",
+        "variants": [
+          "quote comparison engine",
+          "insurance aggregator",
+          "comparison platform"
+        ],
+        "why": "aggregators exposed to AI search and agents"
+      },
+      {
+        "term": "disintermediation by AI agents",
+        "tier": "ai",
+        "variants": [
+          "AI-driven disintermediation",
+          "AI search disintermediation",
+          "AI agents purchasing insurance"
+        ],
+        "why": "AI agents bypassing brokers and aggregators"
+      },
+      {
+        "term": "producer productivity",
+        "tier": "context",
+        "variants": [
+          "broker productivity",
+          "colleague productivity",
+          "agent productivity tool"
+        ],
+        "why": "AI benefit measured per broker"
+      },
+      {
+        "term": "agency management system",
+        "tier": "context",
+        "variants": [
+          "broker management system"
+        ],
+        "why": "broker workflow software adding AI"
+      }
+    ],
+    "6629": [
+      {
+        "term": "claims administration automation",
+        "tier": "context",
+        "variants": [
+          "automated claims administration",
+          "third-party administrator automation",
+          "claims processing automation"
+        ],
+        "why": "TPAs automating claims handling"
+      },
+      {
+        "term": "AI-driven bill review",
+        "tier": "ai",
+        "variants": [
+          "automated bill review",
+          "bill review automation"
+        ],
+        "why": "models auditing medical and repair bills"
+      },
+      {
+        "term": "actuarial modelling platform",
+        "tier": "context",
+        "variants": [
+          "actuarial modeling platform",
+          "actuarial model automation",
+          "machine learning in actuarial work"
+        ],
+        "why": "actuarial models migrating to ML tooling"
+      },
+      {
+        "term": "pension administration automation",
+        "tier": "context",
+        "variants": [
+          "automated benefit calculation",
+          "benefits administration automation",
+          "member self-service"
+        ],
+        "why": "automated scheme and benefit administration"
+      }
+    ],
+    "6630": [
+      {
+        "term": "AI-driven investment process",
+        "tier": "ai",
+        "variants": [
+          "machine learning in portfolio construction",
+          "AI-driven stock selection",
+          "AI-powered investment process",
+          "AI-based portfolio construction",
+          "machine learning alpha"
+        ],
+        "why": "ML used in security selection"
+      },
+      {
+        "term": "systematic investment strategy",
+        "tier": "context",
+        "variants": [
+          "systematic strategy",
+          "quantitative investment strategy",
+          "quantitative strategy",
+          "quant fund",
+          "systematic equity"
+        ],
+        "why": "model-driven portfolio management"
+      },
+      {
+        "term": "Aladdin Copilot",
+        "tier": "ai",
+        "variants": [
+          "Asimov",
+          "Aladdin AI",
+          "portfolio manager copilot",
+          "investment copilot"
+        ],
+        "case_sensitive_variants": [
+          "Asimov"
+        ],
+        "why": "asset-manager AI assistants named in filings"
+      },
+      {
+        "term": "alpha generation",
+        "tier": "context",
+        "variants": [
+          "alpha signal",
+          "signal research",
+          "idea generation"
+        ],
+        "why": "stated goal of AI research tools"
+      },
+      {
+        "term": "AI-themed fund",
+        "tier": "ai",
+        "variants": [
+          "AI thematic fund",
+          "AI ETF",
+          "artificial intelligence ETF",
+          "thematic AI strategy",
+          "AI-focused fund"
+        ],
+        "why": "funds investing in the AI theme"
+      },
+      {
+        "term": "AI beneficiaries",
+        "tier": "ai",
+        "variants": [
+          "AI winners",
+          "AI enablers",
+          "AI adopters",
+          "AI-exposed companies",
+          "AI-related stocks"
+        ],
+        "why": "holdings positioned to gain from AI"
+      },
+      {
+        "term": "semiconductor exposure",
+        "tier": "context",
+        "variants": [
+          "semiconductor holdings",
+          "exposure to chipmakers",
+          "chip stocks"
+        ],
+        "why": "portfolio weight in AI chipmakers"
+      },
+      {
+        "term": "data center investment",
+        "tier": "context",
+        "variants": [
+          "data centre investment",
+          "digital infrastructure fund",
+          "data center platform",
+          "data centre platform",
+          "digital infrastructure strategy"
+        ],
+        "why": "funds acquiring AI infrastructure assets"
+      },
+      {
+        "term": "AI infrastructure partnership",
+        "tier": "ai",
+        "variants": [
+          "Global AI Infrastructure Investment Partnership",
+          "AI infrastructure fund"
+        ],
+        "why": "manager-led AI infrastructure vehicles"
+      },
+      {
+        "term": "GPU-backed financing",
+        "tier": "ai",
+        "variants": [
+          "GPU-backed loan",
+          "GPU-backed debt",
+          "compute-backed lending"
+        ],
+        "why": "private credit secured on AI chips"
+      },
+      {
+        "term": "AI power demand",
+        "tier": "ai",
+        "variants": [
+          "AI-driven electricity demand",
+          "power demand from data centers",
+          "power demand from data centres",
+          "AI-driven power demand"
+        ],
+        "why": "AI electricity demand as infrastructure thesis"
+      },
+      {
+        "term": "stewardship on AI",
+        "tier": "ai",
+        "variants": [
+          "engagement on responsible AI",
+          "investor expectations on AI",
+          "responsible AI engagement",
+          "AI-related shareholder proposal"
+        ],
+        "why": "engagement with investees on AI risks"
+      },
+      {
+        "term": "AI-assisted due diligence",
+        "tier": "ai",
+        "variants": [
+          "due diligence automation",
+          "AI-driven deal sourcing",
+          "AI deal sourcing",
+          "investment memo generation"
+        ],
+        "why": "AI review of deals and data rooms"
+      },
+      {
+        "term": "AI value creation",
+        "tier": "ai",
+        "variants": [
+          "AI value creation plan",
+          "portfolio company AI adoption",
+          "AI transformation of portfolio companies"
+        ],
+        "why": "private-equity AI programmes at portfolio companies"
+      },
+      {
+        "term": "AI disruption of software",
+        "tier": "ai",
+        "variants": [
+          "software sector AI risk",
+          "AI risk to software portfolio",
+          "software valuations and AI"
+        ],
+        "why": "software holdings and loans threatened by AI"
+      },
+      {
+        "term": "fee compression",
+        "tier": "context",
+        "variants": [
+          "fee pressure"
+        ],
+        "why": "margin pressure where AI lowers costs"
+      }
+    ]
+  }
+}

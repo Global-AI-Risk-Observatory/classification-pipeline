@@ -1,0 +1,826 @@
+{
+  "id": "93",
+  "name": "Sports activities and amusement and recreation activities",
+  "section": "S",
+  "summary": "Sports clubs, leagues, venue and fitness operators and theme parks write about AI in performance and recruitment (tracking data, injury prediction, scouting), officiating, automated content and highlights, fan data and ticket pricing, venue security and guest flow, and AI coaching products in fitness. Risk passages concern athlete biometric data and likeness, facial recognition at venues, betting integrity, piracy, character and brand IP, and labour.",
+  "terms": [
+    {
+      "term": "fan engagement",
+      "tier": "context",
+      "variants": [
+        "fan experience",
+        "digital fan engagement",
+        "fan app",
+        "matchday experience",
+        "guest experience",
+        "member experience"
+      ],
+      "why": "area where personalisation and AI assistants are deployed"
+    },
+    {
+      "term": "fan data platform",
+      "tier": "context",
+      "variants": [
+        "fan database",
+        "fan identity",
+        "single fan view",
+        "fan CRM",
+        "fan insight",
+        "first-party fan data",
+        "fan data"
+      ],
+      "why": "first-party data underpinning AI marketing"
+    },
+    {
+      "term": "AI fan assistant",
+      "tier": "ai",
+      "variants": [
+        "fan chatbot",
+        "virtual fan assistant",
+        "matchday assistant",
+        "AI-powered fan assistant",
+        "AI guest assistant",
+        "virtual guest assistant",
+        "AI concierge",
+        "My Epic Assistant"
+      ],
+      "why": "conversational AI serving fans and guests"
+    },
+    {
+      "term": "dynamic pricing",
+      "tier": "context",
+      "variants": [
+        "dynamic ticket pricing",
+        "variable pricing",
+        "demand-based pricing",
+        "surge pricing",
+        "yield management",
+        "price optimisation",
+        "price optimization"
+      ],
+      "why": "demand-based ticket and pass pricing by algorithm"
+    },
+    {
+      "term": "ticket resale",
+      "tier": "context",
+      "variants": [
+        "secondary ticketing",
+        "ticket bot",
+        "ticket scalping",
+        "ticket touting",
+        "ticket fraud"
+      ],
+      "why": "secondary market abuses involving bots"
+    },
+    {
+      "term": "facial recognition entry",
+      "tier": "ai",
+      "variants": [
+        "facial recognition ticketing",
+        "biometric entry",
+        "facial authentication",
+        "face entry",
+        "biometric ticketing",
+        "facial recognition at stadiums",
+        "facial recognition at venues"
+      ],
+      "why": "biometric admission and watchlists at venues"
+    },
+    {
+      "term": "crowd management",
+      "tier": "context",
+      "variants": [
+        "crowd safety",
+        "crowd monitoring",
+        "crowd flow",
+        "queue management",
+        "stadium security",
+        "venue security",
+        "crowd analytics"
+      ],
+      "why": "safety and flow monitoring with video analytics"
+    },
+    {
+      "term": "AI weapons detection",
+      "tier": "ai",
+      "variants": [
+        "AI security screening",
+        "Evolv Technologies",
+        "Evolv Express",
+        "touchless security screening",
+        "AI-based threat detection"
+      ],
+      "why": "AI screening at stadium and park entrances"
+    },
+    {
+      "term": "smart stadium",
+      "tier": "context",
+      "variants": [
+        "smart venue",
+        "connected stadium",
+        "venue operations technology",
+        "stadium technology",
+        "connected venue"
+      ],
+      "why": "connected venues running AI operations"
+    },
+    {
+      "term": "checkout-free concession",
+      "tier": "ai",
+      "variants": [
+        "frictionless checkout",
+        "cashierless store",
+        "Just Walk Out",
+        "autonomous checkout",
+        "checkout-free store"
+      ],
+      "case_sensitive_variants": [
+        "Just Walk Out"
+      ],
+      "why": "computer-vision stores in venues"
+    },
+    {
+      "term": "workforce scheduling",
+      "tier": "context",
+      "variants": [
+        "labour scheduling",
+        "labor scheduling",
+        "seasonal workforce",
+        "staffing optimisation",
+        "staffing optimization",
+        "labor management system",
+        "labour management system"
+      ],
+      "why": "seasonal labour planning using demand forecasts"
+    },
+    {
+      "term": "player tracking",
+      "tier": "context",
+      "variants": [
+        "athlete tracking",
+        "optical tracking",
+        "tracking data",
+        "GPS tracking",
+        "wearable tracking",
+        "positional data",
+        "skeletal tracking",
+        "limb tracking",
+        "Second Spectrum"
+      ],
+      "why": "positional data that performance models use"
+    },
+    {
+      "term": "performance analysis",
+      "tier": "context",
+      "variants": [
+        "performance analytics",
+        "sports analytics",
+        "match analysis",
+        "video analysis",
+        "sports science",
+        "performance data",
+        "tactical analysis",
+        "opposition analysis"
+      ],
+      "why": "analysis departments adopting ML"
+    },
+    {
+      "term": "player recruitment",
+      "tier": "context",
+      "variants": [
+        "scouting",
+        "talent identification",
+        "data-driven recruitment",
+        "player valuation",
+        "talent scouting",
+        "draft analytics",
+        "transfer strategy"
+      ],
+      "why": "scouting decisions increasingly model-driven"
+    },
+    {
+      "term": "AI scouting",
+      "tier": "ai",
+      "variants": [
+        "AI-powered scouting",
+        "AI talent identification",
+        "AI player recruitment",
+        "data-driven scouting model",
+        "aiScout",
+        "AI-driven recruitment"
+      ],
+      "why": "AI identifying and valuing players"
+    },
+    {
+      "term": "injury prevention",
+      "tier": "context",
+      "variants": [
+        "injury risk",
+        "load management",
+        "workload monitoring",
+        "athlete monitoring",
+        "concussion detection",
+        "return to play"
+      ],
+      "why": "medical area where predictive models are used"
+    },
+    {
+      "term": "injury prediction",
+      "tier": "ai",
+      "variants": [
+        "injury risk model",
+        "predictive injury analytics",
+        "AI injury prevention",
+        "AI biomechanical analysis",
+        "markerless motion capture"
+      ],
+      "why": "models forecasting athlete injury risk"
+    },
+    {
+      "term": "athlete biometric data",
+      "tier": "context",
+      "variants": [
+        "biometric data of athletes",
+        "player biometric data",
+        "athlete data rights",
+        "player data rights",
+        "wearable data",
+        "athlete health data"
+      ],
+      "why": "sensitive player data contested in bargaining"
+    },
+    {
+      "term": "players' association",
+      "tier": "context",
+      "variants": [
+        "players' union",
+        "collective bargaining agreement",
+        "player consent",
+        "FIFPRO",
+        "group licensing"
+      ],
+      "why": "unions negotiating data and likeness terms"
+    },
+    {
+      "term": "video assistant referee",
+      "tier": "context",
+      "variants": [
+        "VAR",
+        "goal-line technology",
+        "electronic line calling",
+        "replay review",
+        "Hawk-Eye"
+      ],
+      "case_sensitive_variants": [
+        "VAR"
+      ],
+      "why": "officiating technology with growing automation"
+    },
+    {
+      "term": "semi-automated offside",
+      "tier": "ai",
+      "variants": [
+        "automated officiating",
+        "automated ball-strike system",
+        "AI officiating",
+        "AI judging",
+        "AI-assisted officiating",
+        "automated line calling",
+        "robot umpire"
+      ],
+      "why": "AI-assisted or automated officiating decisions"
+    },
+    {
+      "term": "sports integrity",
+      "tier": "context",
+      "variants": [
+        "match-fixing",
+        "betting integrity",
+        "integrity monitoring",
+        "competition manipulation",
+        "suspicious betting"
+      ],
+      "why": "manipulation monitored by betting-pattern models"
+    },
+    {
+      "term": "official data",
+      "tier": "context",
+      "variants": [
+        "official betting data",
+        "live data rights",
+        "league data",
+        "sports data licensing",
+        "data rights"
+      ],
+      "why": "league data licensed to betting and media AI"
+    },
+    {
+      "term": "online abuse",
+      "tier": "context",
+      "variants": [
+        "social media abuse",
+        "online abuse of players",
+        "abuse monitoring",
+        "Threat Matrix",
+        "social media protection service"
+      ],
+      "case_sensitive_variants": [
+        "Threat Matrix"
+      ],
+      "why": "abuse of players filtered with AI moderation"
+    },
+    {
+      "term": "automated highlights",
+      "tier": "ai",
+      "variants": [
+        "AI-generated highlights",
+        "automated clipping",
+        "AI highlights",
+        "auto-generated highlights",
+        "AI-powered highlights",
+        "automated content creation",
+        "automated metadata tagging"
+      ],
+      "why": "AI clipping and packaging of match footage"
+    },
+    {
+      "term": "AI commentary",
+      "tier": "ai",
+      "variants": [
+        "AI-generated commentary",
+        "automated commentary",
+        "AI voice commentary",
+        "synthetic commentary",
+        "AI translation of commentary",
+        "AI dubbing"
+      ],
+      "why": "synthetic or translated commentary"
+    },
+    {
+      "term": "automated camera",
+      "tier": "ai",
+      "variants": [
+        "AI camera",
+        "automated production",
+        "AI-powered camera",
+        "automated broadcast production",
+        "Pixellot"
+      ],
+      "why": "AI cameras producing broadcasts without crew"
+    },
+    {
+      "term": "AI-powered match insights",
+      "tier": "ai",
+      "variants": [
+        "AI-powered statistics",
+        "AI match insights",
+        "AI-driven stats",
+        "Next Gen Stats",
+        "win probability",
+        "Bundesliga Match Facts",
+        "AI-powered insights"
+      ],
+      "why": "ML statistics shown to fans and broadcasters"
+    },
+    {
+      "term": "personalised broadcast",
+      "tier": "context",
+      "variants": [
+        "personalized broadcast",
+        "personalised highlights",
+        "personalized highlights",
+        "alternate broadcast",
+        "altcast",
+        "multi-language commentary"
+      ],
+      "why": "tailored feeds and highlights enabled by AI"
+    },
+    {
+      "term": "footage archive",
+      "tier": "context",
+      "variants": [
+        "archive footage",
+        "media asset management",
+        "content library",
+        "archive monetisation",
+        "archive monetization"
+      ],
+      "why": "content libraries opened by automated tagging"
+    },
+    {
+      "term": "anti-piracy",
+      "tier": "context",
+      "variants": [
+        "illegal streaming",
+        "piracy",
+        "pirated stream",
+        "live stream piracy"
+      ],
+      "why": "illegal streams detected with automated tools"
+    },
+    {
+      "term": "virtual advertising",
+      "tier": "context",
+      "variants": [
+        "virtual perimeter advertising",
+        "digital board replacement",
+        "virtual signage",
+        "dynamic ad insertion",
+        "regionalised advertising"
+      ],
+      "why": "computer-vision replacement of pitch-side ads"
+    },
+    {
+      "term": "sponsorship valuation",
+      "tier": "context",
+      "variants": [
+        "sponsorship analytics",
+        "brand exposure measurement",
+        "logo detection",
+        "sponsor exposure",
+        "media value measurement"
+      ],
+      "why": "exposure measurement using logo detection"
+    },
+    {
+      "term": "official AI partner",
+      "tier": "ai",
+      "variants": [
+        "official AI sponsor",
+        "official cloud and AI partner",
+        "AI sponsorship",
+        "official artificial intelligence partner",
+        "AI partnership with the league"
+      ],
+      "why": "AI companies as sponsors and suppliers"
+    },
+    {
+      "term": "name, image and likeness",
+      "tier": "context",
+      "variants": [
+        "image rights",
+        "likeness rights",
+        "right of publicity",
+        "player likeness",
+        "athlete likeness",
+        "personality rights"
+      ],
+      "why": "rights invoked against AI use of athletes"
+    },
+    {
+      "term": "digital replica",
+      "tier": "ai",
+      "variants": [
+        "AI-generated likeness",
+        "digital avatar of athletes",
+        "athlete avatar",
+        "synthetic likeness",
+        "AI avatar"
+      ],
+      "why": "AI-generated avatars or likenesses of athletes"
+    },
+    {
+      "term": "fantasy sports",
+      "tier": "context",
+      "variants": [
+        "fantasy game",
+        "prediction game",
+        "free-to-play game",
+        "fan token",
+        "digital collectible"
+      ],
+      "why": "data-driven fan games adjacent to betting"
+    }
+  ],
+  "class_terms": {
+    "9311": [
+      {
+        "term": "connected fitness",
+        "tier": "context",
+        "variants": [
+          "digital fitness",
+          "fitness app",
+          "at-home fitness",
+          "on-demand workout",
+          "virtual class",
+          "fitness tracker",
+          "connected equipment"
+        ],
+        "why": "digital fitness products carrying AI coaching"
+      },
+      {
+        "term": "AI personal trainer",
+        "tier": "ai",
+        "variants": [
+          "AI coach",
+          "AI coaching",
+          "AI fitness coach",
+          "AI-powered personal training",
+          "AI workout",
+          "virtual personal trainer",
+          "AI-generated workout plan",
+          "AI trainer"
+        ],
+        "why": "AI generating and coaching workouts"
+      },
+      {
+        "term": "personal training",
+        "tier": "context",
+        "variants": [
+          "personal trainer",
+          "fitness instructor",
+          "group exercise instructor",
+          "personalised workout plan",
+          "personalized workout plan"
+        ],
+        "why": "human coaching revenue exposed to AI substitutes"
+      },
+      {
+        "term": "pose estimation",
+        "tier": "ai",
+        "variants": [
+          "AI form correction",
+          "computer vision form feedback",
+          "AI movement analysis",
+          "AI rep counting",
+          "motion-tracking coaching",
+          "AI swing analysis"
+        ],
+        "why": "computer vision judging exercise form"
+      },
+      {
+        "term": "body scanning",
+        "tier": "context",
+        "variants": [
+          "3D body scan",
+          "body composition scan",
+          "movement screening",
+          "motion tracking",
+          "form feedback"
+        ],
+        "why": "member assessment devices using vision models"
+      },
+      {
+        "term": "member retention",
+        "tier": "context",
+        "variants": [
+          "member churn",
+          "member attrition",
+          "membership churn",
+          "member engagement",
+          "member app",
+          "join flow"
+        ],
+        "why": "churn outcomes predicted from visit data"
+      },
+      {
+        "term": "unstaffed club",
+        "tier": "context",
+        "variants": [
+          "unstaffed gym",
+          "24/7 unstaffed access",
+          "remote club monitoring",
+          "staffless",
+          "access control system"
+        ],
+        "why": "remote-monitored gyms relying on camera analytics"
+      },
+      {
+        "term": "AI CCTV",
+        "tier": "ai",
+        "variants": [
+          "tailgating detection",
+          "AI video monitoring",
+          "AI drowning detection",
+          "drowning detection system",
+          "AI lifeguard",
+          "pool safety camera"
+        ],
+        "why": "video AI for safety and access in facilities"
+      },
+      {
+        "term": "golf simulator",
+        "tier": "context",
+        "variants": [
+          "ball tracking",
+          "Toptracer",
+          "launch monitor",
+          "shot tracing",
+          "swing analysis"
+        ],
+        "why": "ball-tracking venues adding AI analysis"
+      }
+    ],
+    "9312": [
+      {
+        "term": "player trading",
+        "tier": "context",
+        "variants": [
+          "transfer market",
+          "player registration",
+          "squad valuation",
+          "player transfer",
+          "squad planning"
+        ],
+        "why": "transfer decisions supported by valuation models"
+      },
+      {
+        "term": "youth academy",
+        "tier": "context",
+        "variants": [
+          "academy player",
+          "player development",
+          "talent pathway",
+          "academy recruitment"
+        ],
+        "why": "talent pathways using data-led identification"
+      },
+      {
+        "term": "training simulation",
+        "tier": "context",
+        "variants": [
+          "virtual reality training",
+          "VR training",
+          "simulator training",
+          "cognitive training"
+        ],
+        "why": "VR and cognitive training tools for players"
+      }
+    ],
+    "9319": [
+      {
+        "term": "esports",
+        "tier": "context",
+        "variants": [
+          "e-sports",
+          "competitive gaming",
+          "sim racing",
+          "esports team",
+          "gaming content"
+        ],
+        "why": "competitive gaming with AI coaching and anti-cheat"
+      },
+      {
+        "term": "anti-cheat",
+        "tier": "context",
+        "variants": [
+          "cheat detection",
+          "aimbot",
+          "cheating software",
+          "AI-assisted cheating"
+        ],
+        "why": "cheat detection against AI-assisted play"
+      },
+      {
+        "term": "race strategy",
+        "tier": "context",
+        "variants": [
+          "race simulation",
+          "telemetry data",
+          "driver-in-the-loop simulator",
+          "computational fluid dynamics",
+          "aerodynamic testing restriction",
+          "strategy simulation"
+        ],
+        "why": "motorsport simulation and telemetry modelling"
+      },
+      {
+        "term": "event operations",
+        "tier": "context",
+        "variants": [
+          "event management",
+          "race operations",
+          "accreditation system",
+          "event demand forecasting"
+        ],
+        "why": "event organisers' logistics using forecasting"
+      }
+    ],
+    "9321": [
+      {
+        "term": "virtual queue",
+        "tier": "context",
+        "variants": [
+          "virtual queuing",
+          "ride wait time",
+          "skip-the-line",
+          "Lightning Lane",
+          "express pass",
+          "ride reservation"
+        ],
+        "why": "ride reservation systems driven by wait forecasts"
+      },
+      {
+        "term": "wait time prediction",
+        "tier": "ai",
+        "variants": [
+          "attendance forecasting",
+          "predictive attendance model",
+          "crowd forecasting",
+          "AI crowd prediction",
+          "demand forecasting for parks"
+        ],
+        "why": "forecasting attendance and queues"
+      },
+      {
+        "term": "animatronic",
+        "tier": "context",
+        "variants": [
+          "audio-animatronic",
+          "show control system",
+          "animated figure"
+        ],
+        "why": "show figures evolving into AI-driven characters"
+      },
+      {
+        "term": "AI-powered character",
+        "tier": "ai",
+        "variants": [
+          "robotic character",
+          "autonomous character",
+          "AI character",
+          "conversational character",
+          "interactive AI character",
+          "free-roaming robotic character"
+        ],
+        "why": "robotic or conversational characters in parks"
+      },
+      {
+        "term": "ride safety",
+        "tier": "context",
+        "variants": [
+          "ride inspection",
+          "ride maintenance",
+          "ride downtime",
+          "ride availability",
+          "attraction uptime",
+          "predictive maintenance of rides"
+        ],
+        "why": "inspection and maintenance using predictive tools"
+      },
+      {
+        "term": "immersive attraction",
+        "tier": "context",
+        "variants": [
+          "immersive experience",
+          "virtual reality attraction",
+          "augmented reality experience",
+          "mixed reality attraction",
+          "interactive attraction",
+          "projection mapping"
+        ],
+        "why": "attractions built on real-time and generative media"
+      },
+      {
+        "term": "character IP",
+        "tier": "context",
+        "variants": [
+          "franchise IP",
+          "licensed IP",
+          "character likeness",
+          "branded attraction",
+          "IP licensing"
+        ],
+        "why": "franchise rights threatened by generative imitation"
+      },
+      {
+        "term": "guest flow",
+        "tier": "context",
+        "variants": [
+          "guest app",
+          "park app",
+          "in-park experience",
+          "in-park spending",
+          "per capita spending",
+          "guest satisfaction"
+        ],
+        "why": "in-park movement and spending steered by data"
+      }
+    ],
+    "9329": [
+      {
+        "term": "location-based entertainment",
+        "tier": "context",
+        "variants": [
+          "family entertainment centre",
+          "family entertainment center",
+          "VR arcade",
+          "immersive gaming venue",
+          "interactive gaming"
+        ],
+        "why": "venues adding AI-driven interactive experiences"
+      },
+      {
+        "term": "lift ticket pricing",
+        "tier": "context",
+        "variants": [
+          "season pass pricing",
+          "advance purchase pricing",
+          "lift line wait time",
+          "automated snowmaking"
+        ],
+        "why": "ski and leisure pricing set by demand models"
+      }
+    ]
+  }
+}

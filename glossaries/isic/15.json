@@ -1,0 +1,563 @@
+{
+  "id": "15",
+  "name": "Manufacture of leather and related products",
+  "section": "C",
+  "summary": "Footwear, leather goods and luggage companies discuss AI in demand sensing, inventory allocation, personalised member experiences, fit technology (foot scanning, size recommendation, virtual try-on) and computational or AI-generated product design. Production-side terms cover automated footwear assembly, hide defect detection, automated leather cutting and vision inspection. Brand protection is prominent: AI authentication, counterfeit monitoring and bot mitigation for product launches, plus traceability and digital product passports.",
+  "terms": [
+    {
+      "term": "foot scanning",
+      "tier": "context",
+      "variants": [
+        "foot scan",
+        "foot measurement technology",
+        "digital foot measurement",
+        "gait analysis"
+      ],
+      "case_sensitive_variants": [],
+      "why": "fit data capture feeding sizing models"
+    },
+    {
+      "term": "size recommendation",
+      "tier": "ai",
+      "variants": [
+        "fit recommendation",
+        "fit prediction",
+        "AI sizing",
+        "fit finder"
+      ],
+      "case_sensitive_variants": [],
+      "why": "ML prediction of size and fit"
+    },
+    {
+      "term": "virtual try-on",
+      "tier": "ai",
+      "variants": [
+        "AR try-on",
+        "augmented reality try-on",
+        "virtual fitting"
+      ],
+      "case_sensitive_variants": [],
+      "why": "vision AI showing products on the shopper"
+    },
+    {
+      "term": "AI shopping assistant",
+      "tier": "ai",
+      "variants": [
+        "AI stylist",
+        "virtual stylist",
+        "conversational shopping assistant",
+        "AI-powered search",
+        "AI personal shopper"
+      ],
+      "case_sensitive_variants": [],
+      "why": "conversational or generative shopping help"
+    },
+    {
+      "term": "personalised recommendation",
+      "tier": "ai",
+      "variants": [
+        "personalized recommendation",
+        "recommendation engine",
+        "recommendation algorithm"
+      ],
+      "case_sensitive_variants": [],
+      "why": "ML product recommendations"
+    },
+    {
+      "term": "visual search",
+      "tier": "ai",
+      "variants": [
+        "image search",
+        "search by image"
+      ],
+      "case_sensitive_variants": [],
+      "why": "image-based product search"
+    },
+    {
+      "term": "agentic commerce",
+      "tier": "ai",
+      "variants": [
+        "AI shopping agent",
+        "AI-mediated shopping",
+        "agentic shopping",
+        "generative engine optimisation",
+        "generative engine optimization",
+        "answer engine optimisation",
+        "answer engine optimization"
+      ],
+      "case_sensitive_variants": [],
+      "why": "AI agents shopping on consumers' behalf"
+    },
+    {
+      "term": "hyper-personalisation",
+      "tier": "context",
+      "variants": [
+        "hyper-personalization",
+        "personalisation at scale",
+        "personalization at scale",
+        "personalised marketing",
+        "personalized marketing",
+        "one-to-one personalisation",
+        "one-to-one personalization"
+      ],
+      "case_sensitive_variants": [],
+      "why": "individualised marketing driven by member data"
+    },
+    {
+      "term": "customer data platform",
+      "tier": "context",
+      "variants": [
+        "first-party data",
+        "membership data",
+        "consumer data platform",
+        "single customer view",
+        "loyalty data"
+      ],
+      "case_sensitive_variants": [],
+      "why": "member data assets feeding AI"
+    },
+    {
+      "term": "clienteling",
+      "tier": "context",
+      "variants": [
+        "client advisor tool",
+        "client relationship tool"
+      ],
+      "case_sensitive_variants": [],
+      "why": "store-associate tools using client data and AI"
+    },
+    {
+      "term": "AI coach",
+      "tier": "ai",
+      "variants": [
+        "AI running coach",
+        "AI-powered coaching",
+        "adaptive training plan",
+        "personalised training plan",
+        "personalized training plan"
+      ],
+      "case_sensitive_variants": [],
+      "why": "adaptive training guidance in brand apps"
+    },
+    {
+      "term": "connected footwear",
+      "tier": "context",
+      "variants": [
+        "smart shoe",
+        "smart footwear",
+        "sensor-embedded footwear",
+        "smart insole",
+        "adaptive footwear",
+        "self-lacing"
+      ],
+      "case_sensitive_variants": [],
+      "why": "sensor-equipped products generating data"
+    },
+    {
+      "term": "computational design",
+      "tier": "context",
+      "variants": [
+        "generative design",
+        "algorithmic design",
+        "data-driven design",
+        "parametric design"
+      ],
+      "case_sensitive_variants": [],
+      "why": "optimisation-driven product geometry"
+    },
+    {
+      "term": "AI-generated design",
+      "tier": "ai",
+      "variants": [
+        "AI-assisted design",
+        "AI-designed",
+        "AI design tool",
+        "AI-driven design",
+        "AI-generated concept"
+      ],
+      "case_sensitive_variants": [],
+      "why": "generative tools in product design"
+    },
+    {
+      "term": "3D-printed midsole",
+      "tier": "context",
+      "variants": [
+        "additive manufacturing",
+        "3D-printed footwear",
+        "lattice midsole",
+        "3D printing"
+      ],
+      "case_sensitive_variants": [],
+      "why": "computationally designed printed components"
+    },
+    {
+      "term": "digital product creation",
+      "tier": "context",
+      "variants": [
+        "3D design",
+        "3D sampling",
+        "virtual sampling",
+        "digital sampling",
+        "virtual prototyping",
+        "digital last",
+        "3D last"
+      ],
+      "case_sensitive_variants": [],
+      "why": "virtual development replacing physical samples"
+    },
+    {
+      "term": "trend forecasting",
+      "tier": "context",
+      "variants": [
+        "trend prediction",
+        "trend analytics",
+        "trend detection",
+        "social listening"
+      ],
+      "case_sensitive_variants": [],
+      "why": "design input increasingly produced by AI"
+    },
+    {
+      "term": "AI-generated campaign",
+      "tier": "ai",
+      "variants": [
+        "AI-generated imagery",
+        "AI-generated product imagery",
+        "virtual model",
+        "AI-generated model",
+        "AI-generated creative"
+      ],
+      "case_sensitive_variants": [],
+      "why": "generative AI in marketing imagery"
+    },
+    {
+      "term": "demand sensing",
+      "tier": "ai",
+      "variants": [],
+      "case_sensitive_variants": [],
+      "why": "ML short-term demand signal modelling"
+    },
+    {
+      "term": "demand forecasting",
+      "tier": "context",
+      "variants": [
+        "demand planning",
+        "demand prediction"
+      ],
+      "case_sensitive_variants": [],
+      "why": "planning process where AI is commonly applied"
+    },
+    {
+      "term": "AI-driven demand forecasting",
+      "tier": "ai",
+      "variants": [
+        "AI-powered demand forecasting",
+        "AI-based demand forecasting",
+        "AI demand planning",
+        "machine learning demand forecasting",
+        "predictive demand planning",
+        "AI-powered forecasting"
+      ],
+      "case_sensitive_variants": [],
+      "why": "explicit AI forecasting claim"
+    },
+    {
+      "term": "assortment planning",
+      "tier": "context",
+      "variants": [
+        "assortment optimisation",
+        "assortment optimization",
+        "merchandise planning",
+        "range planning"
+      ],
+      "case_sensitive_variants": [],
+      "why": "range decisions increasingly ML-supported"
+    },
+    {
+      "term": "inventory optimisation",
+      "tier": "context",
+      "variants": [
+        "inventory optimization",
+        "allocation and replenishment",
+        "inventory allocation",
+        "automated replenishment",
+        "markdown optimisation",
+        "markdown optimization",
+        "price optimisation",
+        "price optimization"
+      ],
+      "case_sensitive_variants": [],
+      "why": "stock placement and pricing, often algorithmic"
+    },
+    {
+      "term": "returns prediction",
+      "tier": "ai",
+      "variants": [
+        "return rate prediction",
+        "predictive returns",
+        "return fraud detection"
+      ],
+      "case_sensitive_variants": [],
+      "why": "models predicting and reducing returns"
+    },
+    {
+      "term": "mass customisation",
+      "tier": "context",
+      "variants": [
+        "mass customization",
+        "made-to-order",
+        "product customisation",
+        "product customization",
+        "on-demand manufacturing",
+        "made-to-measure",
+        "product configurator"
+      ],
+      "case_sensitive_variants": [],
+      "why": "made-to-order products driven by configurators"
+    },
+    {
+      "term": "product authentication",
+      "tier": "context",
+      "variants": [
+        "counterfeit detection",
+        "anti-counterfeiting technology",
+        "online brand protection",
+        "NFC chip",
+        "digital certificate",
+        "blockchain authentication"
+      ],
+      "case_sensitive_variants": [],
+      "why": "anti-counterfeit tools, often AI-supported"
+    },
+    {
+      "term": "AI-powered authentication",
+      "tier": "ai",
+      "variants": [
+        "AI authentication",
+        "AI-based counterfeit detection",
+        "AI counterfeit monitoring",
+        "image-based authentication",
+        "automated counterfeit detection"
+      ],
+      "case_sensitive_variants": [],
+      "why": "AI spotting fakes and infringing listings"
+    },
+    {
+      "term": "bot protection",
+      "tier": "context",
+      "variants": [
+        "bot mitigation",
+        "anti-bot",
+        "bot attack",
+        "sneaker bot",
+        "bot traffic",
+        "launch fairness",
+        "automated purchasing software"
+      ],
+      "case_sensitive_variants": [],
+      "why": "automated buyers attacking product launches"
+    },
+    {
+      "term": "digital product passport",
+      "tier": "context",
+      "variants": [
+        "product passport",
+        "digital ID"
+      ],
+      "case_sensitive_variants": [],
+      "why": "EU rule driving product-level data"
+    },
+    {
+      "term": "hide traceability",
+      "tier": "context",
+      "variants": [
+        "leather traceability",
+        "raw material traceability",
+        "animal traceability",
+        "supply chain traceability",
+        "blockchain traceability",
+        "deforestation-free leather"
+      ],
+      "case_sensitive_variants": [],
+      "why": "raw material data backbone"
+    },
+    {
+      "term": "automated footwear manufacturing",
+      "tier": "context",
+      "variants": [
+        "robotic shoe assembly",
+        "automated stitching",
+        "automated cementing",
+        "robotic gluing",
+        "robotic buffing",
+        "automated upper production",
+        "shoe-making automation",
+        "automated assembly line",
+        "automated sole bonding"
+      ],
+      "case_sensitive_variants": [],
+      "why": "robots replacing manual shoe assembly"
+    },
+    {
+      "term": "automated leather cutting",
+      "tier": "context",
+      "variants": [
+        "automated nesting",
+        "automatic nesting",
+        "digital cutting",
+        "hide nesting",
+        "computerised cutting",
+        "computerized cutting"
+      ],
+      "case_sensitive_variants": [],
+      "why": "computer-controlled nesting and cutting of hides"
+    },
+    {
+      "term": "hide defect detection",
+      "tier": "ai",
+      "variants": [
+        "automated hide inspection",
+        "leather defect detection",
+        "automated leather grading",
+        "leather grading system",
+        "AI leather inspection"
+      ],
+      "case_sensitive_variants": [],
+      "why": "vision AI grading leather"
+    },
+    {
+      "term": "machine vision",
+      "tier": "ai",
+      "variants": [
+        "vision inspection",
+        "automated visual inspection",
+        "AI quality inspection",
+        "automated quality inspection",
+        "vision-guided robot"
+      ],
+      "case_sensitive_variants": [],
+      "why": "camera-based inspection of components and finished goods"
+    },
+    {
+      "term": "predictive maintenance",
+      "tier": "ai",
+      "variants": [
+        "prescriptive maintenance",
+        "predictive asset maintenance"
+      ],
+      "case_sensitive_variants": [],
+      "why": "ML-based prediction of equipment failure"
+    },
+    {
+      "term": "smart factory",
+      "tier": "context",
+      "variants": [
+        "smart manufacturing",
+        "factory of the future",
+        "connected factory",
+        "digital factory",
+        "intelligent manufacturing",
+        "intelligent factory",
+        "Industry 4.0",
+        "Industrie 4.0",
+        "fourth industrial revolution"
+      ],
+      "case_sensitive_variants": [],
+      "why": "connected-plant programmes framing AI use"
+    },
+    {
+      "term": "digital twin",
+      "tier": "context",
+      "variants": [
+        "virtual twin"
+      ],
+      "case_sensitive_variants": [],
+      "why": "virtual plant, process or product model"
+    },
+    {
+      "term": "collaborative robot",
+      "tier": "context",
+      "variants": [
+        "cobot",
+        "industrial robot",
+        "robotic cell",
+        "robotic palletising",
+        "robotic palletizing",
+        "robotic arm"
+      ],
+      "case_sensitive_variants": [],
+      "why": "robots on production and packing lines"
+    },
+    {
+      "term": "labour-saving automation",
+      "tier": "context",
+      "variants": [
+        "labor-saving automation",
+        "automation of manual tasks",
+        "automation of repetitive tasks",
+        "machine substitution",
+        "reduce reliance on manual labour",
+        "reduce reliance on manual labor"
+      ],
+      "case_sensitive_variants": [],
+      "why": "automation motivated by labour cost and shortages"
+    },
+    {
+      "term": "automated warehouse",
+      "tier": "context",
+      "variants": [
+        "warehouse automation",
+        "automated storage and retrieval",
+        "automated distribution centre",
+        "automated distribution center",
+        "automated guided vehicle",
+        "AGV",
+        "autonomous forklift",
+        "autonomous mobile robot",
+        "intelligent warehousing"
+      ],
+      "case_sensitive_variants": [
+        "AGV"
+      ],
+      "why": "robotic storage and logistics"
+    }
+  ],
+  "class_terms": {
+    "1511": [
+      {
+        "term": "tannery automation",
+        "tier": "context",
+        "variants": [
+          "automated tanning",
+          "automated drum control",
+          "process control system",
+          "smart tannery"
+        ],
+        "why": "automated tanning with data-driven control"
+      },
+      {
+        "term": "chemical dosing optimisation",
+        "tier": "context",
+        "variants": [
+          "chemical dosing optimization",
+          "automated dosing",
+          "automated chemical dosing"
+        ],
+        "why": "model-based dosing in tanning"
+      }
+    ],
+    "1512": [
+      {
+        "term": "smart luggage",
+        "tier": "context",
+        "variants": [
+          "connected luggage",
+          "luggage tracking",
+          "integrated tracker",
+          "smart tag"
+        ],
+        "why": "connected bags generating location data"
+      }
+    ]
+  }
+}

@@ -1,0 +1,679 @@
+{
+  "id": "68",
+  "name": "Real estate activities",
+  "section": "M",
+  "summary": "In real estate filings AI is first a demand driver: data-centre landlords and developers report hyperscale leasing, power-constrained markets and AI workloads, while office and industrial owners cite leasing by AI companies. Own use centres on automated valuation, algorithmic rent pricing (with antitrust and fair-housing exposure), AI leasing assistants, tenant screening and smart-building energy optimisation; brokers and portals face AI search disintermediation. Risks named include tenant concentration in hyperscalers, AI overbuild, grid constraints, and deepfake or impersonation fraud in property transactions.",
+  "terms": [
+    {
+      "term": "data center",
+      "tier": "context",
+      "variants": [
+        "data centre",
+        "datacenter",
+        "datacentre",
+        "data center campus",
+        "data centre campus"
+      ],
+      "why": "property type driven by AI compute demand"
+    },
+    {
+      "term": "hyperscale leasing",
+      "tier": "context",
+      "variants": [
+        "hyperscale lease",
+        "hyperscale demand",
+        "hyperscale customer",
+        "hyperscale tenant",
+        "hyperscaler"
+      ],
+      "why": "large cloud tenants leasing capacity for AI"
+    },
+    {
+      "term": "colocation",
+      "tier": "context",
+      "variants": [
+        "co-location",
+        "colo facility",
+        "wholesale colocation",
+        "retail colocation"
+      ],
+      "why": "multi-tenant data-centre product"
+    },
+    {
+      "term": "AI workload",
+      "tier": "ai",
+      "variants": [
+        "AI inference",
+        "AI training workload",
+        "AI deployment",
+        "AI-related demand",
+        "AI-driven demand",
+        "AI compute"
+      ],
+      "why": "compute demand cited as leasing driver"
+    },
+    {
+      "term": "power-constrained market",
+      "tier": "context",
+      "variants": [
+        "power constrained",
+        "power availability",
+        "power scarcity",
+        "access to power",
+        "time to power"
+      ],
+      "why": "grid limits shaping data-centre supply"
+    },
+    {
+      "term": "AI infrastructure",
+      "tier": "ai",
+      "variants": [
+        "AI infrastructure build-out",
+        "AI data center",
+        "AI data centre",
+        "AI factory",
+        "AI campus"
+      ],
+      "why": "property and power built for AI compute"
+    },
+    {
+      "term": "digital infrastructure",
+      "tier": "context",
+      "variants": [
+        "digital real estate",
+        "digital infrastructure platform"
+      ],
+      "why": "asset class label for data-centre real estate"
+    },
+    {
+      "term": "neocloud",
+      "tier": "ai",
+      "variants": [
+        "GPU cloud provider",
+        "AI cloud provider",
+        "AI-native tenant"
+      ],
+      "why": "specialised AI cloud tenants"
+    },
+    {
+      "term": "AI overbuild",
+      "tier": "ai",
+      "variants": [
+        "AI demand slowdown",
+        "AI bubble",
+        "slowdown in AI investment"
+      ],
+      "why": "risk that AI capacity outruns demand"
+    },
+    {
+      "term": "AI tenant demand",
+      "tier": "ai",
+      "variants": [
+        "AI company leasing",
+        "AI-related office demand",
+        "AI-driven leasing",
+        "leasing by AI companies",
+        "AI tenants"
+      ],
+      "why": "AI companies leasing office and lab space"
+    },
+    {
+      "term": "automated valuation model",
+      "tier": "context",
+      "variants": [
+        "AVM",
+        "automated valuation",
+        "automated appraisal"
+      ],
+      "case_sensitive_variants": [
+        "AVM"
+      ],
+      "why": "model-based property valuation"
+    },
+    {
+      "term": "algorithmic rent pricing",
+      "tier": "ai",
+      "variants": [
+        "rent-setting algorithm",
+        "algorithmic pricing",
+        "pricing algorithm",
+        "rent pricing algorithm"
+      ],
+      "why": "pricing software under antitrust scrutiny"
+    },
+    {
+      "term": "revenue management software",
+      "tier": "context",
+      "variants": [
+        "revenue management system",
+        "rent-setting software",
+        "RealPage",
+        "YieldStar",
+        "AI Revenue Management",
+        "LRO"
+      ],
+      "case_sensitive_variants": [
+        "LRO"
+      ],
+      "why": "rent-optimisation tools cited in litigation"
+    },
+    {
+      "term": "AI leasing assistant",
+      "tier": "ai",
+      "variants": [
+        "virtual leasing agent",
+        "AI leasing agent",
+        "virtual leasing assistant",
+        "AI-powered leasing"
+      ],
+      "why": "virtual agents handling prospect enquiries"
+    },
+    {
+      "term": "tenant screening",
+      "tier": "context",
+      "variants": [
+        "resident screening",
+        "AI tenant screening",
+        "applicant screening",
+        "tenant scoring"
+      ],
+      "why": "scoring of applicants, fair-housing exposure"
+    },
+    {
+      "term": "Fair Housing Act",
+      "tier": "context",
+      "variants": [
+        "fair housing",
+        "disparate impact",
+        "fair housing compliance"
+      ],
+      "why": "discrimination law applied to screening and pricing models"
+    },
+    {
+      "term": "lease abstraction",
+      "tier": "ai",
+      "variants": [
+        "automated lease abstraction",
+        "AI lease abstraction",
+        "lease data extraction"
+      ],
+      "why": "AI extraction of lease terms"
+    },
+    {
+      "term": "proptech",
+      "tier": "context",
+      "variants": [
+        "property technology",
+        "real estate technology"
+      ],
+      "why": "property technology, often AI-based"
+    },
+    {
+      "term": "smart building",
+      "tier": "context",
+      "variants": [
+        "intelligent building",
+        "building management system",
+        "building automation system",
+        "connected building"
+      ],
+      "why": "sensor and model-driven building operations"
+    },
+    {
+      "term": "AI-driven energy management",
+      "tier": "ai",
+      "variants": [
+        "AI-powered energy optimisation",
+        "AI-powered energy optimization",
+        "AI-based HVAC optimisation",
+        "AI-based HVAC optimization",
+        "autonomous building controls"
+      ],
+      "why": "ML optimisation of HVAC and energy use"
+    },
+    {
+      "term": "predictive maintenance",
+      "tier": "context",
+      "variants": [
+        "condition-based maintenance",
+        "fault detection and diagnostics"
+      ],
+      "why": "failure prediction for building systems"
+    },
+    {
+      "term": "digital twin",
+      "tier": "context",
+      "variants": [
+        "building digital twin",
+        "digital twin of the portfolio"
+      ],
+      "why": "virtual building model for simulation"
+    },
+    {
+      "term": "occupancy analytics",
+      "tier": "context",
+      "variants": [
+        "space utilisation analytics",
+        "space utilization analytics",
+        "occupancy sensor",
+        "footfall analytics"
+      ],
+      "why": "utilisation data guiding space decisions"
+    },
+    {
+      "term": "portfolio analytics",
+      "tier": "context",
+      "variants": [
+        "predictive market analytics",
+        "AI-driven site selection",
+        "investment underwriting model"
+      ],
+      "why": "model-driven acquisition and asset decisions"
+    },
+    {
+      "term": "seller impersonation fraud",
+      "tier": "context",
+      "variants": [
+        "title fraud",
+        "deed fraud",
+        "wire fraud",
+        "business email compromise",
+        "deepfake impersonation"
+      ],
+      "why": "transaction fraud amplified by deepfakes"
+    },
+    {
+      "term": "rental application fraud",
+      "tier": "context",
+      "variants": [
+        "application fraud",
+        "fake pay stub",
+        "document fraud detection",
+        "income verification fraud"
+      ],
+      "why": "forged documents, increasingly AI-generated"
+    }
+  ],
+  "class_terms": {
+    "6810": [
+      {
+        "term": "data center REIT",
+        "tier": "context",
+        "variants": [
+          "data centre REIT",
+          "data center landlord",
+          "data centre landlord",
+          "data center operator",
+          "data centre operator"
+        ],
+        "why": "listed landlords of AI infrastructure"
+      },
+      {
+        "term": "megawatts leased",
+        "tier": "context",
+        "variants": [
+          "MW leased",
+          "leased megawatts",
+          "megawatts signed",
+          "MW signed",
+          "critical IT load",
+          "IT load"
+        ],
+        "why": "leasing KPI for AI capacity"
+      },
+      {
+        "term": "record leasing",
+        "tier": "context",
+        "variants": [
+          "record bookings",
+          "leasing backlog",
+          "signed-but-not-commenced",
+          "pre-leasing",
+          "pre-leased"
+        ],
+        "why": "bookings language tied to AI demand"
+      },
+      {
+        "term": "high-density deployment",
+        "tier": "context",
+        "variants": [
+          "high-density rack",
+          "high power density",
+          "rack density",
+          "kW per rack",
+          "high-performance computing"
+        ],
+        "why": "rack power levels required by AI chips"
+      },
+      {
+        "term": "liquid cooling",
+        "tier": "context",
+        "variants": [
+          "direct-to-chip cooling",
+          "immersion cooling",
+          "rear-door heat exchanger"
+        ],
+        "why": "cooling retrofit required by AI hardware"
+      },
+      {
+        "term": "GPU deployment",
+        "tier": "ai",
+        "variants": [
+          "GPU cluster",
+          "GPU capacity",
+          "accelerated computing"
+        ],
+        "why": "AI accelerator installs by tenants"
+      },
+      {
+        "term": "powered shell",
+        "tier": "context",
+        "variants": [
+          "powered land",
+          "build-to-suit data center",
+          "build-to-suit data centre",
+          "turnkey data center"
+        ],
+        "why": "development product for hyperscale AI tenants"
+      },
+      {
+        "term": "interconnection queue",
+        "tier": "context",
+        "variants": [
+          "grid connection",
+          "grid constraint",
+          "utility interconnection",
+          "transmission capacity",
+          "substation capacity"
+        ],
+        "why": "grid-connection delay limiting AI capacity"
+      },
+      {
+        "term": "behind-the-meter power",
+        "tier": "context",
+        "variants": [
+          "on-site power generation",
+          "behind-the-meter generation",
+          "bridging power",
+          "natural gas turbine"
+        ],
+        "why": "on-site generation for AI campuses"
+      },
+      {
+        "term": "gigawatt campus",
+        "tier": "context",
+        "variants": [
+          "gigawatt-scale",
+          "multi-gigawatt",
+          "GW of capacity"
+        ],
+        "why": "scale of AI-driven developments"
+      },
+      {
+        "term": "tenant concentration",
+        "tier": "context",
+        "variants": [
+          "customer concentration",
+          "concentration in hyperscale customers"
+        ],
+        "why": "revenue reliance on few hyperscalers"
+      },
+      {
+        "term": "data center moratorium",
+        "tier": "context",
+        "variants": [
+          "data centre moratorium",
+          "community opposition",
+          "zoning restriction",
+          "local opposition to data centers"
+        ],
+        "why": "local opposition and permitting limits"
+      },
+      {
+        "term": "power usage effectiveness",
+        "tier": "context",
+        "variants": [
+          "PUE",
+          "water usage effectiveness",
+          "WUE"
+        ],
+        "case_sensitive_variants": [
+          "PUE",
+          "WUE"
+        ],
+        "why": "efficiency metric under AI load growth"
+      },
+      {
+        "term": "data center development pipeline",
+        "tier": "context",
+        "variants": [
+          "data centre development pipeline",
+          "data center conversion",
+          "data centre conversion",
+          "land bank for data centers"
+        ],
+        "why": "capacity under construction for AI demand"
+      },
+      {
+        "term": "data center land sale",
+        "tier": "context",
+        "variants": [
+          "data centre land sale",
+          "land for data center development",
+          "land sale to data center developer"
+        ],
+        "why": "land monetised for AI build-out"
+      },
+      {
+        "term": "AI-driven electricity demand",
+        "tier": "ai",
+        "variants": [
+          "AI power demand"
+        ],
+        "why": "load growth affecting property power costs"
+      },
+      {
+        "term": "chip export restrictions",
+        "tier": "context",
+        "variants": [
+          "GPU supply constraint",
+          "AI chip export controls"
+        ],
+        "why": "affects tenants' AI deployments"
+      }
+    ],
+    "6821": [
+      {
+        "term": "AI-powered property search",
+        "tier": "ai",
+        "variants": [
+          "natural language search",
+          "conversational search",
+          "AI home search",
+          "AI-powered search"
+        ],
+        "why": "natural-language home and listing search"
+      },
+      {
+        "term": "AI-generated listing description",
+        "tier": "ai",
+        "variants": [
+          "listing description generator",
+          "AI listing",
+          "AI-written listing"
+        ],
+        "why": "generative text for property listings"
+      },
+      {
+        "term": "virtual staging",
+        "tier": "ai",
+        "variants": [
+          "AI virtual staging",
+          "AI-generated property image",
+          "AI-enhanced listing photo"
+        ],
+        "why": "AI-rendered furnished interiors"
+      },
+      {
+        "term": "Zestimate",
+        "tier": "ai",
+        "variants": [
+          "Redfin Estimate"
+        ],
+        "why": "ML home-value estimates on portals"
+      },
+      {
+        "term": "AI search disintermediation",
+        "tier": "ai",
+        "variants": [
+          "zero-click search",
+          "AI Overviews",
+          "traffic from AI assistants",
+          "AI-driven search traffic",
+          "generative engine optimisation"
+        ],
+        "why": "AI assistants diverting portal traffic"
+      },
+      {
+        "term": "listing portal",
+        "tier": "context",
+        "variants": [
+          "property portal",
+          "real estate marketplace",
+          "listings marketplace"
+        ],
+        "why": "marketplace business exposed to AI search"
+      },
+      {
+        "term": "lead scoring",
+        "tier": "context",
+        "variants": [
+          "lead routing",
+          "lead qualification",
+          "seller propensity model"
+        ],
+        "why": "models ranking buyer and seller leads"
+      },
+      {
+        "term": "agent productivity",
+        "tier": "context",
+        "variants": [
+          "agent assistant",
+          "agent copilot",
+          "broker productivity",
+          "AI assistant for agents"
+        ],
+        "why": "AI tools sold to or used by agents"
+      },
+      {
+        "term": "instant offer",
+        "tier": "context",
+        "variants": [
+          "iBuying",
+          "iBuyer",
+          "home price forecasting model",
+          "pricing model for home purchases"
+        ],
+        "why": "algorithm-priced home purchases"
+      },
+      {
+        "term": "data center brokerage",
+        "tier": "context",
+        "variants": [
+          "data centre brokerage",
+          "data center solutions",
+          "data centre solutions",
+          "data center capital markets",
+          "data center advisory"
+        ],
+        "why": "brokers advising on AI infrastructure deals"
+      },
+      {
+        "term": "virtual tour",
+        "tier": "context",
+        "variants": [
+          "3D tour",
+          "digital twin tour"
+        ],
+        "why": "3D capture with AI processing"
+      },
+      {
+        "term": "transaction management automation",
+        "tier": "context",
+        "variants": [
+          "automated transaction coordination",
+          "AI contract review for leases"
+        ],
+        "why": "AI in closing and document workflow"
+      }
+    ],
+    "6829": [
+      {
+        "term": "AVM quality control rule",
+        "tier": "context",
+        "variants": [
+          "quality control standards for automated valuation models",
+          "AVM rule"
+        ],
+        "why": "US rule on valuation model standards"
+      },
+      {
+        "term": "appraisal bias",
+        "tier": "context",
+        "variants": [
+          "valuation bias",
+          "appraisal discrimination"
+        ],
+        "why": "discrimination concern in valuation models"
+      },
+      {
+        "term": "AI-powered property management",
+        "tier": "ai",
+        "variants": [
+          "AI property management",
+          "AI maintenance triage",
+          "resident virtual assistant"
+        ],
+        "why": "AI in resident service and operations"
+      },
+      {
+        "term": "work order automation",
+        "tier": "context",
+        "variants": [
+          "automated work order",
+          "maintenance triage",
+          "maintenance request automation"
+        ],
+        "why": "automated maintenance dispatch"
+      },
+      {
+        "term": "data center facilities management",
+        "tier": "context",
+        "variants": [
+          "data centre facilities management",
+          "critical environment management",
+          "mission-critical facilities"
+        ],
+        "why": "managing AI infrastructure for owners"
+      },
+      {
+        "term": "automated rent collection",
+        "tier": "context",
+        "variants": [
+          "arrears prediction",
+          "delinquency prediction"
+        ],
+        "why": "model-driven arrears and collections"
+      },
+      {
+        "term": "desktop valuation",
+        "tier": "context",
+        "variants": [
+          "hybrid appraisal",
+          "desktop appraisal"
+        ],
+        "why": "remote model-assisted appraisal"
+      }
+    ]
+  }
+}

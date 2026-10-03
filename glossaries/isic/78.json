@@ -1,0 +1,621 @@
+{
+  "id": "78",
+  "name": "Employment activities",
+  "section": "O",
+  "summary": "Staffing, recruitment and HR-outsourcing firms use AI for candidate matching, screening, sourcing and recruiter productivity, and sell AI-skilled talent, reskilling and data-annotation workforces. They flag AI as a structural threat: lower demand for white-collar, entry-level and technology hiring, clients recruiting in-house with AI tools, and AI-native platforms disintermediating agencies. Legal exposure is specific: automated employment decision tool laws, bias audits, EEOC and Title VII liability, the EU AI Act high-risk employment category, algorithmic management rules, plus deepfake and AI-generated candidate fraud.",
+  "terms": [
+    {
+      "term": "AI-powered candidate matching",
+      "tier": "ai",
+      "variants": [
+        "AI matching",
+        "candidate matching algorithm",
+        "talent matching engine",
+        "AI-driven matching",
+        "job matching algorithm",
+        "AI talent matching"
+      ],
+      "why": "models pairing candidates with vacancies"
+    },
+    {
+      "term": "automated candidate screening",
+      "tier": "ai",
+      "variants": [
+        "AI screening",
+        "automated shortlisting",
+        "AI resume screening",
+        "AI CV screening",
+        "automated resume screening",
+        "candidate ranking algorithm"
+      ],
+      "why": "model-based shortlisting of applicants"
+    },
+    {
+      "term": "resume parsing",
+      "tier": "context",
+      "variants": [
+        "CV parsing",
+        "résumé parsing",
+        "CV screening",
+        "resume screening"
+      ],
+      "why": "machine extraction of CV data"
+    },
+    {
+      "term": "AI recruiter",
+      "tier": "ai",
+      "variants": [
+        "AI recruiting agent",
+        "recruiter copilot",
+        "agentic recruiting",
+        "digital recruiter",
+        "AI recruiting assistant",
+        "AI recruitment agent"
+      ],
+      "why": "AI agents performing recruiter tasks"
+    },
+    {
+      "term": "AI sourcing",
+      "tier": "ai",
+      "variants": [
+        "automated sourcing",
+        "AI candidate sourcing",
+        "AI-powered sourcing"
+      ],
+      "why": "automated search for passive candidates"
+    },
+    {
+      "term": "AI interviewer",
+      "tier": "ai",
+      "variants": [
+        "AI video interview",
+        "automated interview",
+        "video interview analysis",
+        "AI-led interview"
+      ],
+      "why": "automated or AI-scored interviews"
+    },
+    {
+      "term": "conversational recruiting",
+      "tier": "ai",
+      "variants": [
+        "candidate virtual assistant",
+        "conversational AI for candidates",
+        "automated candidate engagement"
+      ],
+      "why": "AI assistants engaging candidates"
+    },
+    {
+      "term": "AI-based assessment",
+      "tier": "ai",
+      "variants": [
+        "AI assessment",
+        "talent assessment algorithm",
+        "automated skills assessment"
+      ],
+      "why": "ML scoring of skills and personality tests"
+    },
+    {
+      "term": "applicant tracking system",
+      "tier": "context",
+      "variants": [
+        "ATS",
+        "candidate relationship management system"
+      ],
+      "case_sensitive_variants": [
+        "ATS"
+      ],
+      "why": "recruiting software embedding AI ranking"
+    },
+    {
+      "term": "recruiter productivity",
+      "tier": "context",
+      "variants": [
+        "consultant productivity",
+        "fills per recruiter",
+        "time to fill",
+        "time-to-hire",
+        "fee earner productivity"
+      ],
+      "why": "AI benefit measured per recruiter"
+    },
+    {
+      "term": "talent platform",
+      "tier": "context",
+      "variants": [
+        "talent marketplace",
+        "online staffing platform",
+        "digital staffing platform",
+        "digital talent marketplace"
+      ],
+      "why": "digital marketplace delivering AI matching"
+    },
+    {
+      "term": "talent intelligence",
+      "tier": "context",
+      "variants": [
+        "workforce analytics",
+        "labour market analytics",
+        "labor market analytics",
+        "labour market data",
+        "labor market data"
+      ],
+      "why": "labour-market data products built on ML"
+    },
+    {
+      "term": "skills taxonomy",
+      "tier": "context",
+      "variants": [
+        "skills ontology",
+        "skills-based hiring",
+        "skills matching",
+        "skills graph"
+      ],
+      "why": "skills data used for matching models"
+    },
+    {
+      "term": "candidate database",
+      "tier": "context",
+      "variants": [
+        "proprietary candidate data",
+        "talent pool",
+        "candidate data asset"
+      ],
+      "why": "proprietary data used to train matching"
+    },
+    {
+      "term": "onboarding automation",
+      "tier": "context",
+      "variants": [
+        "automated onboarding",
+        "automated credentialing",
+        "automated background check",
+        "automated right-to-work check"
+      ],
+      "why": "automated vetting and compliance checks"
+    },
+    {
+      "term": "automated employment decision tool",
+      "tier": "ai",
+      "variants": [
+        "AEDT",
+        "NYC Local Law 144",
+        "Local Law 144",
+        "automated employment decision"
+      ],
+      "case_sensitive_variants": [
+        "AEDT"
+      ],
+      "why": "legal term for AI hiring tools"
+    },
+    {
+      "term": "algorithmic hiring discrimination",
+      "tier": "ai",
+      "variants": [
+        "algorithmic bias in hiring",
+        "AI hiring bias",
+        "discriminatory hiring algorithm",
+        "Mobley v. Workday",
+        "biased screening tool"
+      ],
+      "why": "bias claims against AI screening"
+    },
+    {
+      "term": "bias audit",
+      "tier": "context",
+      "variants": [
+        "adverse impact analysis",
+        "adverse impact testing",
+        "disparate impact",
+        "four-fifths rule"
+      ],
+      "why": "required testing of hiring tools"
+    },
+    {
+      "term": "EEOC guidance on AI",
+      "tier": "ai",
+      "variants": [
+        "EEOC technical assistance on AI",
+        "EEOC AI guidance",
+        "EEOC artificial intelligence initiative"
+      ],
+      "why": "US employment regulator stance on hiring AI"
+    },
+    {
+      "term": "Title VII",
+      "tier": "context",
+      "variants": [
+        "EEOC",
+        "Equal Employment Opportunity Commission",
+        "Americans with Disabilities Act"
+      ],
+      "case_sensitive_variants": [
+        "EEOC"
+      ],
+      "why": "US discrimination law applied to hiring tools"
+    },
+    {
+      "term": "recruitment and selection of natural persons",
+      "tier": "context",
+      "variants": [
+        "employment, workers management and access to self-employment",
+        "high-risk employment AI",
+        "AI in recruitment and selection"
+      ],
+      "why": "EU AI Act high-risk employment wording"
+    },
+    {
+      "term": "AI Video Interview Act",
+      "tier": "ai",
+      "variants": [
+        "Illinois Artificial Intelligence Video Interview Act",
+        "Illinois HB 3773"
+      ],
+      "why": "Illinois law on AI interview analysis"
+    },
+    {
+      "term": "algorithmic management",
+      "tier": "ai",
+      "variants": [
+        "Platform Work Directive",
+        "automated monitoring of workers",
+        "automated worker management",
+        "algorithmic scheduling"
+      ],
+      "why": "automated direction and evaluation of workers"
+    },
+    {
+      "term": "automated decision-making",
+      "tier": "context",
+      "variants": [
+        "solely automated decision",
+        "automated individual decision-making",
+        "ADMT regulations"
+      ],
+      "why": "GDPR and state limits on automated hiring decisions"
+    },
+    {
+      "term": "candidate data privacy",
+      "tier": "context",
+      "variants": [
+        "applicant data",
+        "candidate consent",
+        "biometric data of candidates"
+      ],
+      "why": "consent and retention limits on applicant data"
+    },
+    {
+      "term": "candidate fraud",
+      "tier": "context",
+      "variants": [
+        "fake applicant",
+        "fake candidate",
+        "interview fraud",
+        "proxy interview",
+        "identity fraud in hiring",
+        "North Korean IT worker"
+      ],
+      "why": "fake or impersonated applicants, AI-assisted"
+    },
+    {
+      "term": "deepfake candidate",
+      "tier": "ai",
+      "variants": [
+        "deepfake interview",
+        "deepfake applicant",
+        "AI-generated identity",
+        "voice cloning"
+      ],
+      "why": "synthetic video or voice in interviews"
+    },
+    {
+      "term": "AI-generated application",
+      "tier": "ai",
+      "variants": [
+        "AI-generated resume",
+        "AI-generated CV",
+        "AI-written application",
+        "auto-apply bot",
+        "AI-assisted job application"
+      ],
+      "why": "mass AI-written CVs flooding recruiters"
+    },
+    {
+      "term": "AI impact on hiring demand",
+      "tier": "ai",
+      "variants": [
+        "AI-driven reduction in hiring",
+        "AI displacement of roles",
+        "AI substitution of labour",
+        "AI substitution of labor",
+        "AI-related hiring slowdown",
+        "AI-driven job losses"
+      ],
+      "why": "AI reducing client need for staff"
+    },
+    {
+      "term": "white-collar hiring",
+      "tier": "context",
+      "variants": [
+        "white-collar",
+        "knowledge worker",
+        "professional staffing",
+        "office and clerical staffing"
+      ],
+      "why": "segment most exposed to AI substitution"
+    },
+    {
+      "term": "entry-level hiring",
+      "tier": "context",
+      "variants": [
+        "graduate hiring",
+        "entry-level roles",
+        "junior positions",
+        "graduate recruitment"
+      ],
+      "why": "junior roles reduced as AI takes tasks"
+    },
+    {
+      "term": "technology staffing",
+      "tier": "context",
+      "variants": [
+        "IT staffing",
+        "tech staffing",
+        "technology hiring",
+        "software developer demand"
+      ],
+      "why": "IT hiring demand reshaped by AI coding tools"
+    },
+    {
+      "term": "AI skills demand",
+      "tier": "ai",
+      "variants": [
+        "demand for AI talent",
+        "AI talent shortage",
+        "AI skills gap",
+        "AI-skilled workers",
+        "AI job postings",
+        "AI-related roles"
+      ],
+      "why": "client demand for AI-skilled workers"
+    },
+    {
+      "term": "reskilling",
+      "tier": "context",
+      "variants": [
+        "upskilling",
+        "skilling academy",
+        "training academy",
+        "career transition services",
+        "outplacement"
+      ],
+      "why": "training products for workers displaced by AI"
+    },
+    {
+      "term": "client in-house recruitment",
+      "tier": "context",
+      "variants": [
+        "in-house talent acquisition",
+        "insourcing of recruitment",
+        "direct sourcing",
+        "in-house recruiting with AI"
+      ],
+      "why": "clients hiring directly with AI tools"
+    },
+    {
+      "term": "AI-native recruiting platform",
+      "tier": "ai",
+      "variants": [
+        "AI-native competitor",
+        "AI recruiting startup",
+        "AI-first staffing platform",
+        "AI hiring platform"
+      ],
+      "why": "new entrants automating agency work"
+    },
+    {
+      "term": "disintermediation",
+      "tier": "context",
+      "variants": [
+        "disintermediation risk",
+        "technology-driven disintermediation"
+      ],
+      "why": "platforms and AI bypassing the agency"
+    },
+    {
+      "term": "job board",
+      "tier": "context",
+      "variants": [
+        "job aggregator",
+        "online job advertising",
+        "programmatic job advertising",
+        "job search engine"
+      ],
+      "why": "online job advertising reshaped by AI search and matching"
+    },
+    {
+      "term": "AI-driven efficiency",
+      "tier": "ai",
+      "variants": [
+        "AI productivity gain",
+        "AI-enabled productivity",
+        "AI-driven cost savings",
+        "AI-enabled operating leverage"
+      ],
+      "why": "cost savings from AI in delivery and back office"
+    }
+  ],
+  "class_terms": {
+    "7810": [
+      {
+        "term": "executive search",
+        "tier": "context",
+        "variants": [
+          "AI-assisted executive search",
+          "search research automation",
+          "leadership assessment"
+        ],
+        "why": "high-touch segment adopting AI research tools"
+      },
+      {
+        "term": "permanent placement fee",
+        "tier": "context",
+        "variants": [
+          "perm fee",
+          "permanent recruitment fee",
+          "contingent fee",
+          "placement fee"
+        ],
+        "why": "fee model exposed to AI-enabled direct hiring"
+      },
+      {
+        "term": "recruitment process outsourcing",
+        "tier": "context",
+        "variants": [
+          "RPO",
+          "talent acquisition outsourcing",
+          "managed recruitment"
+        ],
+        "case_sensitive_variants": [
+          "RPO"
+        ],
+        "why": "outsourced hiring where AI is embedded"
+      },
+      {
+        "term": "AI-generated job description",
+        "tier": "ai",
+        "variants": [
+          "AI-written job advert",
+          "AI-generated job ad",
+          "automated candidate outreach",
+          "AI-drafted outreach"
+        ],
+        "why": "generative drafting of adverts and outreach"
+      },
+      {
+        "term": "candidate experience",
+        "tier": "context",
+        "variants": [
+          "candidate journey",
+          "candidate engagement"
+        ],
+        "why": "stated benefit or risk of automated hiring"
+      }
+    ],
+    "7820": [
+      {
+        "term": "temporary staffing",
+        "tier": "context",
+        "variants": [
+          "contingent workforce",
+          "temp staffing",
+          "contract staffing",
+          "temporary placement",
+          "flexible staffing"
+        ],
+        "why": "contingent labour exposed to automation of tasks"
+      },
+      {
+        "term": "AI shift matching",
+        "tier": "ai",
+        "variants": [
+          "automated shift matching",
+          "shift scheduling algorithm",
+          "workforce scheduling algorithm"
+        ],
+        "why": "automated assignment of workers to shifts"
+      },
+      {
+        "term": "AI trainer workforce",
+        "tier": "ai",
+        "variants": [
+          "AI trainers",
+          "AI training talent",
+          "data annotation workforce",
+          "data labelling staff",
+          "data labeling staff",
+          "AI data services talent"
+        ],
+        "why": "staffing firms supplying data annotators"
+      },
+      {
+        "term": "light industrial staffing",
+        "tier": "context",
+        "variants": [
+          "industrial staffing",
+          "warehouse automation",
+          "logistics staffing",
+          "robotics displacing temporary labour"
+        ],
+        "why": "warehouse temp demand reduced by automation"
+      },
+      {
+        "term": "contact centre staffing",
+        "tier": "context",
+        "variants": [
+          "contact center staffing",
+          "call centre staffing",
+          "call center staffing",
+          "customer service staffing"
+        ],
+        "why": "agent temp demand reduced by AI"
+      },
+      {
+        "term": "professional employer organization",
+        "tier": "context",
+        "variants": [
+          "PEO",
+          "HR outsourcing",
+          "HCM platform",
+          "professional employer organisation"
+        ],
+        "case_sensitive_variants": [
+          "PEO"
+        ],
+        "why": "HR outsourcers embedding AI in HR services"
+      },
+      {
+        "term": "AI HR assistant",
+        "tier": "ai",
+        "variants": [
+          "HR virtual assistant",
+          "AI-powered HR support",
+          "HR copilot"
+        ],
+        "why": "AI answering employee and client HR queries"
+      },
+      {
+        "term": "timesheet automation",
+        "tier": "context",
+        "variants": [
+          "automated timesheet",
+          "automated payroll processing",
+          "pay and bill automation"
+        ],
+        "why": "automated time capture and payroll"
+      },
+      {
+        "term": "managed service provider programme",
+        "tier": "context",
+        "variants": [
+          "managed service provider program",
+          "vendor management system",
+          "contingent workforce programme",
+          "contingent workforce program"
+        ],
+        "why": "outsourced contingent workforce management with AI tools"
+      },
+      {
+        "term": "healthcare staffing",
+        "tier": "context",
+        "variants": [
+          "nurse staffing",
+          "locum staffing",
+          "travel nurse",
+          "AI credentialing"
+        ],
+        "why": "clinical staffing with AI scheduling and credentialing"
+      }
+    ]
+  }
+}

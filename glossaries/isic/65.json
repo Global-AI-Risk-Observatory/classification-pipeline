@@ -1,0 +1,1162 @@
+{
+  "id": "65",
+  "name": "Insurance, reinsurance and pension funding, except compulsory social security",
+  "section": "L",
+  "summary": "Insurers, reinsurers and pension funds write about AI in underwriting, pricing, claims handling and fraud detection, constrained by unfair-discrimination rules, the NAIC model bulletin, EIOPA guidance and the EU AI Act high-risk category for life and health pricing. AI is also an insured peril and an investment exposure: silent AI in liability and cyber books, deepfake-enabled claims fraud, autonomous vehicles eroding motor premium, and portfolio concentration in AI-linked equities and data-centre assets.",
+  "terms": [
+    {
+      "term": "algorithmic underwriting",
+      "tier": "ai",
+      "variants": [
+        "automated underwriting",
+        "AI underwriting",
+        "AI-driven underwriting",
+        "AI-powered underwriting",
+        "augmented underwriting"
+      ],
+      "why": "model-based risk selection and pricing"
+    },
+    {
+      "term": "underwriter copilot",
+      "tier": "ai",
+      "variants": [
+        "underwriting copilot",
+        "underwriting co-pilot",
+        "underwriting assistant",
+        "AI underwriting assistant"
+      ],
+      "why": "AI assistant for underwriters"
+    },
+    {
+      "term": "underwriting model",
+      "tier": "context",
+      "variants": [
+        "underwriting rules engine",
+        "risk selection model",
+        "underwriting algorithm"
+      ],
+      "why": "models scoring and selecting risks"
+    },
+    {
+      "term": "risk selection",
+      "tier": "context",
+      "variants": [
+        "risk segmentation",
+        "risk classification"
+      ],
+      "why": "core underwriting task now model-driven"
+    },
+    {
+      "term": "submission triage",
+      "tier": "context",
+      "variants": [
+        "submission ingestion",
+        "submission intake",
+        "submission prioritisation",
+        "submission prioritization",
+        "submission clearance"
+      ],
+      "why": "AI sorting of broker submissions"
+    },
+    {
+      "term": "telematics pricing",
+      "tier": "context",
+      "variants": [
+        "telematics-based pricing",
+        "usage-based insurance",
+        "pay-how-you-drive",
+        "pay-as-you-drive",
+        "behaviour-based insurance",
+        "behavior-based insurance"
+      ],
+      "why": "driving-data models set motor premiums"
+    },
+    {
+      "term": "telematics",
+      "tier": "context",
+      "variants": [
+        "telematics data",
+        "telematics programme",
+        "telematics program",
+        "driving behaviour data",
+        "driving behavior data",
+        "driving score"
+      ],
+      "why": "connected-vehicle data feeding pricing models"
+    },
+    {
+      "term": "pricing sophistication",
+      "tier": "context",
+      "variants": [
+        "pricing sophistication programme",
+        "technical pricing model",
+        "rating sophistication",
+        "pricing engine"
+      ],
+      "why": "insurer term for ML rating upgrades"
+    },
+    {
+      "term": "price optimisation",
+      "tier": "context",
+      "variants": [
+        "price optimization",
+        "pricing optimisation",
+        "pricing optimization",
+        "dynamic pricing"
+      ],
+      "why": "demand models in premiums; regulatory scrutiny"
+    },
+    {
+      "term": "predictive modelling",
+      "tier": "context",
+      "variants": [
+        "predictive modeling",
+        "predictive model",
+        "predictive analytics"
+      ],
+      "why": "insurer umbrella term for GLM/ML rating"
+    },
+    {
+      "term": "generalised linear model",
+      "tier": "context",
+      "variants": [
+        "generalized linear model",
+        "GLM",
+        "gradient boosting machine"
+      ],
+      "case_sensitive_variants": [
+        "GLM"
+      ],
+      "why": "traditional rating model being replaced by ML"
+    },
+    {
+      "term": "credit-based insurance score",
+      "tier": "context",
+      "variants": [
+        "insurance score",
+        "credit-based insurance scoring"
+      ],
+      "why": "scored rating factor under bias scrutiny"
+    },
+    {
+      "term": "external data source",
+      "tier": "context",
+      "variants": [
+        "external consumer data",
+        "third-party data and models",
+        "non-traditional data",
+        "data enrichment"
+      ],
+      "why": "third-party data feeding rating models"
+    },
+    {
+      "term": "quote-and-bind",
+      "tier": "context",
+      "variants": [
+        "instant quote",
+        "automated quoting",
+        "straight-through quote"
+      ],
+      "why": "automated quoting without underwriter touch"
+    },
+    {
+      "term": "straight-through processing",
+      "tier": "context",
+      "variants": [
+        "straight through processing rate",
+        "touchless processing",
+        "no-touch processing"
+      ],
+      "why": "no-touch policy and claims handling"
+    },
+    {
+      "term": "geospatial analytics",
+      "tier": "context",
+      "variants": [
+        "property intelligence",
+        "geospatial imagery",
+        "aerial imagery",
+        "satellite imagery"
+      ],
+      "why": "imagery-derived property risk attributes"
+    },
+    {
+      "term": "lead scoring",
+      "tier": "context",
+      "variants": [
+        "propensity model",
+        "propensity to buy",
+        "lapse prediction",
+        "retention model"
+      ],
+      "why": "models ranking prospects for agents"
+    },
+    {
+      "term": "next best action",
+      "tier": "context",
+      "variants": [
+        "next best offer",
+        "hyper-personalisation",
+        "hyper-personalization"
+      ],
+      "why": "model-driven customer and agent prompts"
+    },
+    {
+      "term": "claims automation",
+      "tier": "context",
+      "variants": [
+        "automated claims handling",
+        "automated claims processing",
+        "claims automation rate",
+        "automated claims settlement",
+        "automated claims adjudication"
+      ],
+      "why": "model-driven claims handling"
+    },
+    {
+      "term": "touchless claim",
+      "tier": "ai",
+      "variants": [
+        "zero-touch claim",
+        "no-touch claim"
+      ],
+      "why": "claims settled end to end by models"
+    },
+    {
+      "term": "AI claims triage",
+      "tier": "ai",
+      "variants": [
+        "claims triage model",
+        "automated claims triage",
+        "intelligent claims routing",
+        "claims segmentation model"
+      ],
+      "why": "models routing and prioritising claims"
+    },
+    {
+      "term": "image-based damage assessment",
+      "tier": "ai",
+      "variants": [
+        "photo-based estimating",
+        "AI damage assessment",
+        "photo estimating",
+        "virtual claims inspection",
+        "automated damage appraisal",
+        "image recognition for claims"
+      ],
+      "why": "computer vision estimates repair cost"
+    },
+    {
+      "term": "total loss prediction",
+      "tier": "ai",
+      "variants": [
+        "total loss model"
+      ],
+      "why": "model decides repair versus write-off"
+    },
+    {
+      "term": "first notice of loss",
+      "tier": "context",
+      "variants": [
+        "FNOL",
+        "first notification of loss",
+        "digital FNOL"
+      ],
+      "case_sensitive_variants": [
+        "FNOL"
+      ],
+      "why": "claims intake step automated by AI"
+    },
+    {
+      "term": "claims fraud detection",
+      "tier": "context",
+      "variants": [
+        "fraud detection in claims",
+        "AI-powered claims fraud detection",
+        "claims fraud model",
+        "fraud scoring",
+        "special investigation unit"
+      ],
+      "why": "models flagging suspicious claims"
+    },
+    {
+      "term": "claims leakage",
+      "tier": "context",
+      "variants": [
+        "leakage reduction",
+        "claims indemnity leakage"
+      ],
+      "why": "overpayment that AI review targets"
+    },
+    {
+      "term": "subrogation identification",
+      "tier": "context",
+      "variants": [
+        "subrogation model",
+        "recovery identification"
+      ],
+      "why": "models spotting recovery opportunities"
+    },
+    {
+      "term": "claims severity model",
+      "tier": "context",
+      "variants": [
+        "severity prediction",
+        "claims frequency model",
+        "claims reserving model",
+        "machine learning reserving"
+      ],
+      "why": "predicts claim cost and reserves"
+    },
+    {
+      "term": "litigation propensity model",
+      "tier": "ai",
+      "variants": [
+        "litigation prediction",
+        "attorney representation model"
+      ],
+      "why": "predicts attorney involvement in claims"
+    },
+    {
+      "term": "agentic claims",
+      "tier": "ai",
+      "variants": [
+        "AI claims agent",
+        "agentic underwriting",
+        "AI claims assistant"
+      ],
+      "why": "AI agents executing claims steps"
+    },
+    {
+      "term": "claims adjuster productivity",
+      "tier": "context",
+      "variants": [
+        "adjuster productivity",
+        "claims handler productivity",
+        "claims handler capacity"
+      ],
+      "why": "AI benefit measured per adjuster"
+    },
+    {
+      "term": "medical record summarisation",
+      "tier": "ai",
+      "variants": [
+        "medical record summarization",
+        "medical records summarisation",
+        "summarisation of claims files",
+        "summarization of claim files"
+      ],
+      "why": "generative summaries of medical evidence"
+    },
+    {
+      "term": "policy wording analysis",
+      "tier": "ai",
+      "variants": [
+        "policy document comparison",
+        "contract wording review"
+      ],
+      "why": "AI comparison of contract wordings"
+    },
+    {
+      "term": "intelligent document processing",
+      "tier": "ai",
+      "variants": [
+        "automated document processing",
+        "document intelligence"
+      ],
+      "why": "ML extraction from submissions and claims documents"
+    },
+    {
+      "term": "speech analytics",
+      "tier": "ai",
+      "variants": [
+        "voice analytics",
+        "call summarisation",
+        "call summarization"
+      ],
+      "why": "AI analysis of policyholder calls"
+    },
+    {
+      "term": "robotic process automation",
+      "tier": "context",
+      "variants": [
+        "RPA",
+        "intelligent automation",
+        "hyperautomation"
+      ],
+      "case_sensitive_variants": [
+        "RPA"
+      ],
+      "why": "back-office bots, often paired with AI"
+    },
+    {
+      "term": "Tractable",
+      "tier": "ai",
+      "variants": [
+        "Shift Technology",
+        "Cape Analytics",
+        "Akur8",
+        "ZestyAI",
+        "CCC Intelligent Solutions"
+      ],
+      "case_sensitive_variants": [
+        "Tractable"
+      ],
+      "why": "insurance AI vendors named in filings"
+    },
+    {
+      "term": "AI Jim",
+      "tier": "ai",
+      "variants": [
+        "AI Maya"
+      ],
+      "why": "Lemonade claims and sales bots"
+    },
+    {
+      "term": "NAIC model bulletin",
+      "tier": "context",
+      "variants": [
+        "Use of Artificial Intelligence Systems by Insurers",
+        "NAIC AI model bulletin",
+        "AIS Program",
+        "NAIC Model Bulletin on AI"
+      ],
+      "why": "US state guidance on insurer AI use"
+    },
+    {
+      "term": "unfair discrimination",
+      "tier": "context",
+      "variants": [
+        "unfairly discriminatory",
+        "unfair discrimination laws"
+      ],
+      "why": "legal test applied to rating models"
+    },
+    {
+      "term": "proxy discrimination",
+      "tier": "context",
+      "variants": [
+        "proxy variable",
+        "proxy for protected characteristics",
+        "proxy for race"
+      ],
+      "why": "models using proxies for protected traits"
+    },
+    {
+      "term": "Colorado SB21-169",
+      "tier": "context",
+      "variants": [
+        "SB 21-169",
+        "Colorado Regulation 10-1-1",
+        "external consumer data and information sources",
+        "ECDIS"
+      ],
+      "case_sensitive_variants": [
+        "ECDIS"
+      ],
+      "why": "Colorado law on algorithmic insurance discrimination"
+    },
+    {
+      "term": "Insurance Circular Letter No. 7",
+      "tier": "context",
+      "variants": [
+        "Circular Letter No. 7",
+        "NYDFS circular letter on artificial intelligence"
+      ],
+      "why": "New York DFS guidance on underwriting AI"
+    },
+    {
+      "term": "EIOPA opinion on AI governance",
+      "tier": "context",
+      "variants": [
+        "EIOPA AI governance principles",
+        "EIOPA opinion on artificial intelligence",
+        "EIOPA AI opinion"
+      ],
+      "why": "EU supervisor's AI expectations for insurers"
+    },
+    {
+      "term": "life and health insurance pricing",
+      "tier": "context",
+      "variants": [
+        "risk assessment and pricing in life and health insurance",
+        "risk assessment and pricing in relation to natural persons"
+      ],
+      "why": "EU AI Act high-risk insurance use case"
+    },
+    {
+      "term": "bias testing",
+      "tier": "context",
+      "variants": [
+        "fairness testing",
+        "disparate impact testing",
+        "disparate impact",
+        "bias audit"
+      ],
+      "why": "required testing of rating and claims models"
+    },
+    {
+      "term": "model risk management",
+      "tier": "context",
+      "variants": [
+        "model risk",
+        "model governance",
+        "model validation",
+        "model inventory"
+      ],
+      "why": "governance covering actuarial and AI models"
+    },
+    {
+      "term": "ASOP No. 56",
+      "tier": "context",
+      "variants": [
+        "Actuarial Standard of Practice No. 56",
+        "ASOP 56"
+      ],
+      "why": "actuarial modelling standard applied to ML"
+    },
+    {
+      "term": "Digital Operational Resilience Act",
+      "tier": "context",
+      "variants": [
+        "DORA",
+        "ICT third-party risk",
+        "critical third-party provider"
+      ],
+      "case_sensitive_variants": [
+        "DORA"
+      ],
+      "why": "EU ICT third-party rules covering AI vendors"
+    },
+    {
+      "term": "Consumer Duty",
+      "tier": "context",
+      "variants": [
+        "FCA Consumer Duty",
+        "fair value assessment"
+      ],
+      "why": "UK outcomes rule applied to AI decisions"
+    },
+    {
+      "term": "automated decision-making",
+      "tier": "context",
+      "variants": [
+        "solely automated decision",
+        "automated individual decision-making"
+      ],
+      "why": "GDPR limits on solely automated decisions"
+    },
+    {
+      "term": "big data analytics",
+      "tier": "context",
+      "variants": [
+        "BDA review",
+        "data ethics framework",
+        "digital ethics"
+      ],
+      "why": "supervisors' term for ML use in insurance"
+    },
+    {
+      "term": "explainability of pricing",
+      "tier": "context",
+      "variants": [
+        "model explainability",
+        "explainable pricing",
+        "black-box pricing model"
+      ],
+      "why": "supervisors expect explainable rating models"
+    },
+    {
+      "term": "silent AI",
+      "tier": "ai",
+      "variants": [
+        "silent AI exposure",
+        "non-affirmative AI",
+        "unintended AI coverage"
+      ],
+      "why": "unpriced AI exposure in existing policies"
+    },
+    {
+      "term": "affirmative AI coverage",
+      "tier": "ai",
+      "variants": [
+        "AI liability insurance",
+        "AI insurance",
+        "AI coverage",
+        "insuring AI risks",
+        "AI risk transfer"
+      ],
+      "why": "policies explicitly covering AI failures"
+    },
+    {
+      "term": "AI exclusion",
+      "tier": "ai",
+      "variants": [
+        "generative AI exclusion",
+        "absolute AI exclusion",
+        "AI exclusion clause"
+      ],
+      "why": "policy exclusions for AI-related losses"
+    },
+    {
+      "term": "AI-related claims",
+      "tier": "ai",
+      "variants": [
+        "AI liability claim",
+        "claims arising from AI",
+        "AI-related litigation",
+        "AI-related loss"
+      ],
+      "why": "losses arising from insureds' AI use"
+    },
+    {
+      "term": "AI accumulation risk",
+      "tier": "ai",
+      "variants": [
+        "AI aggregation risk",
+        "systemic AI risk",
+        "AI systemic exposure"
+      ],
+      "why": "correlated losses from shared AI models"
+    },
+    {
+      "term": "AI washing claims",
+      "tier": "ai",
+      "variants": [
+        "AI-related securities class action",
+        "AI washing litigation",
+        "AI disclosure litigation"
+      ],
+      "why": "D&O exposure from overstated AI"
+    },
+    {
+      "term": "cyber insurance",
+      "tier": "context",
+      "variants": [
+        "cyber underwriting",
+        "cyber accumulation",
+        "systemic cyber risk",
+        "cyber line"
+      ],
+      "why": "line most exposed to AI-enabled attacks"
+    },
+    {
+      "term": "technology errors and omissions",
+      "tier": "context",
+      "variants": [
+        "tech E&O",
+        "technology E&O",
+        "technology professional liability"
+      ],
+      "why": "liability line covering AI product failures"
+    },
+    {
+      "term": "deepfake fraud",
+      "tier": "ai",
+      "variants": [
+        "deepfake",
+        "deepfake claim",
+        "deepfake impersonation",
+        "synthetic media"
+      ],
+      "why": "AI-generated impersonation in claims and payments"
+    },
+    {
+      "term": "voice cloning",
+      "tier": "ai",
+      "variants": [
+        "voice clone",
+        "cloned voice",
+        "audio deepfake"
+      ],
+      "why": "AI-cloned voices in policyholder scams"
+    },
+    {
+      "term": "manipulated image",
+      "tier": "context",
+      "variants": [
+        "doctored photo",
+        "fabricated evidence",
+        "shallowfake",
+        "AI-generated claim evidence",
+        "image manipulation detection"
+      ],
+      "why": "AI-altered claim evidence"
+    },
+    {
+      "term": "AI-enabled fraud",
+      "tier": "ai",
+      "variants": [
+        "AI-generated fraud",
+        "AI-assisted fraud",
+        "AI-enabled scam",
+        "AI-generated documents"
+      ],
+      "why": "fraud scaled by generative tools"
+    },
+    {
+      "term": "social engineering fraud",
+      "tier": "context",
+      "variants": [
+        "social engineering coverage",
+        "ghost broking",
+        "impersonation fraud"
+      ],
+      "why": "crime cover hit by AI impersonation"
+    },
+    {
+      "term": "emerging risk",
+      "tier": "context",
+      "variants": [
+        "emerging risk radar",
+        "emerging risk report",
+        "emerging technology risk"
+      ],
+      "why": "insurer risk category where AI is listed"
+    },
+    {
+      "term": "insurtech",
+      "tier": "context",
+      "variants": [
+        "insurtech competition",
+        "digital-native insurer",
+        "digital attacker"
+      ],
+      "why": "AI-native competitors and partners"
+    },
+    {
+      "term": "data center insurance",
+      "tier": "context",
+      "variants": [
+        "data centre insurance",
+        "data center construction risk",
+        "data centre construction risk",
+        "insuring data centers",
+        "data center property programme"
+      ],
+      "why": "cover for AI infrastructure build-out"
+    },
+    {
+      "term": "AI-related equity exposure",
+      "tier": "ai",
+      "variants": [
+        "AI-related valuations",
+        "AI bubble",
+        "AI-driven valuations",
+        "AI valuation risk",
+        "exposure to AI-related stocks"
+      ],
+      "why": "investment portfolio concentration in AI stocks"
+    },
+    {
+      "term": "data center investment",
+      "tier": "context",
+      "variants": [
+        "data centre investment",
+        "digital infrastructure investment",
+        "data center debt",
+        "data centre debt"
+      ],
+      "why": "portfolio allocations to AI infrastructure"
+    },
+    {
+      "term": "AI capital expenditure",
+      "tier": "ai",
+      "variants": [
+        "AI capex",
+        "AI investment boom",
+        "hyperscaler capex"
+      ],
+      "why": "AI investment cycle affecting markets"
+    },
+    {
+      "term": "Magnificent Seven",
+      "tier": "context",
+      "variants": [
+        "Magnificent 7",
+        "mega-cap technology stocks",
+        "technology sector concentration"
+      ],
+      "why": "AI-linked mega-cap concentration"
+    },
+    {
+      "term": "AI-driven job reduction",
+      "tier": "ai",
+      "variants": [
+        "AI-related job cuts",
+        "roles displaced by AI",
+        "AI-driven headcount reduction",
+        "AI-related redundancies"
+      ],
+      "why": "headcount cuts attributed to AI"
+    },
+    {
+      "term": "workforce reskilling",
+      "tier": "context",
+      "variants": [
+        "reskilling",
+        "upskilling programme",
+        "upskilling program",
+        "AI upskilling"
+      ],
+      "why": "retraining claims and underwriting staff"
+    },
+    {
+      "term": "AI-driven efficiency",
+      "tier": "ai",
+      "variants": [
+        "AI productivity gain",
+        "AI-enabled productivity",
+        "AI-driven cost savings",
+        "AI-enabled expense savings"
+      ],
+      "why": "expense-ratio gains attributed to AI"
+    }
+  ],
+  "class_terms": {
+    "6511": [
+      {
+        "term": "accelerated underwriting",
+        "tier": "context",
+        "variants": [
+          "fluidless underwriting",
+          "instant-issue",
+          "simplified issue",
+          "automated life underwriting"
+        ],
+        "why": "life cover issued by models without exams"
+      },
+      {
+        "term": "mortality model",
+        "tier": "context",
+        "variants": [
+          "mortality prediction",
+          "mortality risk score",
+          "predictive mortality model"
+        ],
+        "why": "models predicting death rates for pricing"
+      },
+      {
+        "term": "electronic health record underwriting",
+        "tier": "context",
+        "variants": [
+          "electronic health record data",
+          "prescription history data",
+          "digital health data"
+        ],
+        "why": "EHR data fed to underwriting models"
+      },
+      {
+        "term": "wearable data",
+        "tier": "context",
+        "variants": [
+          "wearable device",
+          "wellness programme data",
+          "wellness program data",
+          "biometric data from wearables"
+        ],
+        "why": "activity data feeding life and health pricing"
+      },
+      {
+        "term": "lapse model",
+        "tier": "context",
+        "variants": [
+          "persistency model",
+          "policyholder behaviour model",
+          "policyholder behavior model"
+        ],
+        "why": "policyholder behaviour models"
+      },
+      {
+        "term": "medical underwriting automation",
+        "tier": "ai",
+        "variants": [
+          "automated medical underwriting",
+          "AI-assisted medical underwriting",
+          "medical evidence summarisation"
+        ],
+        "why": "AI review of medical evidence"
+      },
+      {
+        "term": "in-force management",
+        "tier": "context",
+        "variants": [
+          "in-force optimisation",
+          "in-force optimization"
+        ],
+        "why": "model-driven retention and cross-sell"
+      },
+      {
+        "term": "suitability model",
+        "tier": "context",
+        "variants": [
+          "annuity suitability review",
+          "automated suitability check"
+        ],
+        "why": "models matching products to customers"
+      }
+    ],
+    "6512": [
+      {
+        "term": "autonomous vehicle",
+        "tier": "context",
+        "variants": [
+          "self-driving vehicle",
+          "automated driving",
+          "driverless car",
+          "robotaxi",
+          "automated vehicle"
+        ],
+        "why": "shifts motor liability and premium pool"
+      },
+      {
+        "term": "advanced driver assistance systems",
+        "tier": "context",
+        "variants": [
+          "ADAS",
+          "driver assistance system"
+        ],
+        "case_sensitive_variants": [
+          "ADAS"
+        ],
+        "why": "change claim frequency and repair cost"
+      },
+      {
+        "term": "AI-driven claim denial",
+        "tier": "ai",
+        "variants": [
+          "algorithmic claim denial",
+          "automated claim denial",
+          "AI-based denial",
+          "nH Predict",
+          "PxDx"
+        ],
+        "why": "litigation over model-based health claim denials"
+      },
+      {
+        "term": "prior authorization",
+        "tier": "context",
+        "variants": [
+          "prior authorisation",
+          "pre-authorisation",
+          "preauthorization",
+          "utilization management",
+          "utilisation management"
+        ],
+        "why": "health-plan decision automated by models"
+      },
+      {
+        "term": "payment integrity",
+        "tier": "context",
+        "variants": [
+          "fraud, waste and abuse",
+          "claims editing",
+          "clinical coding review"
+        ],
+        "why": "health-claims overpayment models"
+      },
+      {
+        "term": "risk adjustment",
+        "tier": "context",
+        "variants": [
+          "risk adjustment coding",
+          "HCC coding"
+        ],
+        "why": "health-plan coding supported by AI"
+      },
+      {
+        "term": "Physicians Make Decisions Act",
+        "tier": "context",
+        "variants": [
+          "SB 1120",
+          "CMS rule on algorithms in coverage determinations"
+        ],
+        "why": "California limit on AI in coverage decisions"
+      },
+      {
+        "term": "connected home",
+        "tier": "context",
+        "variants": [
+          "smart home device",
+          "leak detection device",
+          "water leak sensor"
+        ],
+        "why": "home sensor data in property pricing"
+      },
+      {
+        "term": "wildfire risk score",
+        "tier": "context",
+        "variants": [
+          "property risk score",
+          "roof condition score",
+          "hail risk score"
+        ],
+        "why": "model-based property catastrophe scores"
+      },
+      {
+        "term": "video telematics",
+        "tier": "context",
+        "variants": [
+          "dashcam",
+          "in-cab camera",
+          "driver monitoring"
+        ],
+        "why": "dashcam AI in commercial motor"
+      },
+      {
+        "term": "catastrophe modelling with machine learning",
+        "tier": "ai",
+        "variants": [
+          "AI-enhanced catastrophe model",
+          "machine learning catastrophe model",
+          "AI weather model"
+        ],
+        "why": "ML-enhanced natural catastrophe models"
+      },
+      {
+        "term": "parametric trigger",
+        "tier": "context",
+        "variants": [
+          "parametric insurance",
+          "parametric cover"
+        ],
+        "why": "data-driven payout automation"
+      }
+    ],
+    "6520": [
+      {
+        "term": "AI performance guarantee",
+        "tier": "ai",
+        "variants": [
+          "aiSure",
+          "AI performance cover",
+          "AI warranty",
+          "AI model performance insurance"
+        ],
+        "case_sensitive_variants": [
+          "aiSure"
+        ],
+        "why": "reinsurer cover for AI model failure"
+      },
+      {
+        "term": "cyber accumulation model",
+        "tier": "context",
+        "variants": [
+          "cyber catastrophe model",
+          "cyber cat model",
+          "cyber scenario"
+        ],
+        "why": "modelling systemic cyber and AI events"
+      },
+      {
+        "term": "casualty accumulation",
+        "tier": "context",
+        "variants": [
+          "casualty clash",
+          "liability accumulation"
+        ],
+        "why": "liability clash from AI-related claims"
+      },
+      {
+        "term": "automated treaty analysis",
+        "tier": "ai",
+        "variants": [
+          "treaty wording analysis",
+          "automated bordereaux ingestion"
+        ],
+        "why": "AI reading reinsurance contracts and bordereaux"
+      },
+      {
+        "term": "exposure management",
+        "tier": "context",
+        "variants": [
+          "exposure data enrichment",
+          "portfolio steering model"
+        ],
+        "why": "portfolio risk aggregation using models"
+      },
+      {
+        "term": "automated facultative placement",
+        "tier": "context",
+        "variants": [
+          "algorithmic facility",
+          "digital follow facility",
+          "smart follow"
+        ],
+        "why": "algorithmic reinsurance quoting"
+      }
+    ],
+    "6530": [
+      {
+        "term": "longevity model",
+        "tier": "context",
+        "variants": [
+          "longevity prediction",
+          "longevity risk model"
+        ],
+        "why": "models projecting member lifespans"
+      },
+      {
+        "term": "member engagement tool",
+        "tier": "context",
+        "variants": [
+          "retirement planning tool",
+          "personalised retirement guidance",
+          "personalized retirement guidance",
+          "digital retirement adviser"
+        ],
+        "why": "AI-driven pension member guidance"
+      },
+      {
+        "term": "pension scam",
+        "tier": "context",
+        "variants": [
+          "pension fraud",
+          "pension transfer scam"
+        ],
+        "why": "fraud type amplified by AI impersonation"
+      },
+      {
+        "term": "pension administration automation",
+        "tier": "context",
+        "variants": [
+          "automated benefit calculation",
+          "member data cleansing",
+          "pensions dashboard"
+        ],
+        "why": "automated scheme administration"
+      },
+      {
+        "term": "stewardship on AI",
+        "tier": "ai",
+        "variants": [
+          "engagement on responsible AI",
+          "investor expectations on AI",
+          "AI stewardship",
+          "responsible AI engagement"
+        ],
+        "why": "engagement with investees on AI risks"
+      },
+      {
+        "term": "AI in the investment process",
+        "tier": "ai",
+        "variants": [
+          "AI-driven asset allocation",
+          "machine learning in asset allocation",
+          "AI use by external managers"
+        ],
+        "why": "AI use by the fund's managers"
+      },
+      {
+        "term": "AI-themed investment",
+        "tier": "ai",
+        "variants": [
+          "AI thematic exposure",
+          "AI-related holdings",
+          "exposure to AI companies"
+        ],
+        "why": "allocations to the AI theme"
+      }
+    ]
+  }
+}

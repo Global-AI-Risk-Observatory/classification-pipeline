@@ -1,0 +1,1245 @@
+{
+ "id": "63",
+ "name": "Computing infrastructure, data processing, hosting, and other information service activities",
+ "section": "K",
+ "summary": "Data centre operators, hosting and cloud providers describe AI as the dominant driver of demand and capital expenditure: hyperscale and GPU capacity, power procurement, liquid cooling, pre-leasing and take-or-pay contracts, with risks around grid access, chip supply, customer concentration and overbuilding. Web search portals and information services write about AI answers and assistants replacing classic search and referral traffic, AI features in their own products, licensing and scraping of their data for model training, and platform regulation.",
+ "terms": [
+  {
+   "term": "AI workload",
+   "tier": "ai",
+   "variants": [
+    "AI and HPC workloads",
+    "AI/ML workload",
+    "AI compute workload",
+    "generative AI workload"
+   ],
+   "why": "compute jobs for training and inference"
+  },
+  {
+   "term": "AI infrastructure",
+   "tier": "ai",
+   "variants": [
+    "AI compute infrastructure",
+    "AI infrastructure build-out",
+    "AI infrastructure buildout",
+    "AI infrastructure demand",
+    "AI infrastructure investment"
+   ],
+   "why": "compute, power and network for AI"
+  },
+  {
+   "term": "AI compute",
+   "tier": "ai",
+   "variants": [
+    "AI compute capacity",
+    "AI computing power",
+    "AI computing capacity",
+    "compute for AI",
+    "AI compute demand"
+   ],
+   "why": "processing capacity sold for AI"
+  },
+  {
+   "term": "AI-driven demand",
+   "tier": "ai",
+   "variants": [
+    "AI-related demand",
+    "demand from AI",
+    "AI demand",
+    "AI-led demand",
+    "AI tailwind",
+    "AI boom"
+   ],
+   "why": "demand growth attributed to AI"
+  },
+  {
+   "term": "AI inference",
+   "tier": "ai",
+   "variants": [
+    "inference workload",
+    "inference capacity",
+    "inference at scale",
+    "inferencing",
+    "inference demand",
+    "inference revenue"
+   ],
+   "why": "serving models in production"
+  },
+  {
+   "term": "AI training",
+   "tier": "ai",
+   "variants": [
+    "training workload",
+    "training cluster",
+    "model training capacity",
+    "large-scale training"
+   ],
+   "why": "model training workloads"
+  },
+  {
+   "term": "hyperscaler",
+   "tier": "context",
+   "variants": [
+    "hyperscale customer",
+    "hyperscale cloud provider",
+    "hyperscale tenant",
+    "hyperscale demand",
+    "cloud service provider"
+   ],
+   "why": "largest cloud customers driving AI demand"
+  },
+  {
+   "term": "data centre capacity",
+   "tier": "context",
+   "variants": [
+    "data center capacity",
+    "IT load",
+    "IT capacity",
+    "critical IT load",
+    "contracted capacity",
+    "installed capacity"
+   ],
+   "why": "supply of space and power"
+  },
+  {
+   "term": "capital intensity",
+   "tier": "context",
+   "variants": [
+    "growth capex",
+    "expansion capex",
+    "capital commitments",
+    "data centre investment",
+    "data center investment"
+   ],
+   "why": "AI build-out spending burden"
+  },
+  {
+   "term": "AI capex",
+   "tier": "ai",
+   "variants": [
+    "AI capital expenditure",
+    "AI-related capex",
+    "AI spending",
+    "AI investment cycle",
+    "AI infrastructure spending"
+   ],
+   "why": "capital spending on AI infrastructure"
+  },
+  {
+   "term": "customer concentration",
+   "tier": "context",
+   "variants": [
+    "significant customer",
+    "anchor tenant",
+    "anchor customer",
+    "top customers",
+    "single customer"
+   ],
+   "why": "dependence on few AI customers"
+  },
+  {
+   "term": "data sovereignty",
+   "tier": "context",
+   "variants": [
+    "data residency",
+    "data localisation",
+    "data localization",
+    "digital sovereignty"
+   ],
+   "why": "location rules shaping AI hosting"
+  },
+  {
+   "term": "sovereign AI",
+   "tier": "ai",
+   "variants": [
+    "sovereign AI cloud",
+    "sovereign AI infrastructure",
+    "sovereign compute",
+    "national AI compute",
+    "AI sovereignty"
+   ],
+   "why": "nationally controlled AI compute"
+  },
+  {
+   "term": "AI bubble",
+   "tier": "ai",
+   "variants": [
+    "AI overbuild",
+    "overcapacity in AI",
+    "AI demand slowdown",
+    "AI overinvestment",
+    "sustainability of AI demand",
+    "AI spending slowdown"
+   ],
+   "why": "risk of AI overinvestment"
+  },
+  {
+   "term": "AI-related revenue",
+   "tier": "ai",
+   "variants": [
+    "AI revenue",
+    "revenue from AI",
+    "AI revenue run rate",
+    "AI-driven revenue",
+    "AI annual recurring revenue"
+   ],
+   "why": "revenue attributed to AI services"
+  },
+  {
+   "term": "AI-powered operations",
+   "tier": "ai",
+   "variants": [
+    "AI-driven operations",
+    "AI-optimised operations",
+    "AI-optimized operations",
+    "AIOps",
+    "predictive maintenance"
+   ],
+   "why": "AI used to run own facilities or services"
+  },
+  {
+   "term": "data centre energy consumption",
+   "tier": "context",
+   "variants": [
+    "data center energy consumption",
+    "electricity consumption of data centres",
+    "electricity consumption of data centers",
+    "carbon footprint of AI",
+    "energy use of AI",
+    "energy-intensive computing"
+   ],
+   "why": "power use scrutiny of AI computing"
+  },
+  {
+   "term": "AI energy demand",
+   "tier": "ai",
+   "variants": [
+    "AI power demand",
+    "AI electricity demand",
+    "power demand from AI",
+    "AI-driven power demand",
+    "AI energy consumption"
+   ],
+   "why": "electricity needs of AI computing"
+  },
+  {
+   "term": "Energy Efficiency Directive",
+   "tier": "context",
+   "variants": [
+    "EU Code of Conduct for Data Centres",
+    "Climate Neutral Data Centre Pact",
+    "data centre energy reporting",
+    "data center energy reporting"
+   ],
+   "why": "EU reporting duties for data centres"
+  },
+  {
+   "term": "Digital Services Act",
+   "tier": "context",
+   "variants": [
+    "DSA",
+    "Digital Markets Act",
+    "DMA",
+    "Online Safety Act",
+    "gatekeeper",
+    "very large online platform"
+   ],
+   "case_sensitive_variants": [
+    "DSA",
+    "DMA"
+   ],
+   "why": "EU platform regulation of information services"
+  },
+  {
+   "term": "export controls",
+   "tier": "context",
+   "variants": [
+    "export restrictions",
+    "AI diffusion rule",
+    "chip export restrictions",
+    "export control regulations"
+   ],
+   "why": "chip export rules affecting AI capacity"
+  }
+ ],
+ "class_terms": {
+  "6310": [
+   {
+    "term": "AI data centre",
+    "tier": "ai",
+    "variants": [
+     "AI data center",
+     "AI-ready data centre",
+     "AI-ready data center",
+     "AI datacenter",
+     "AI-optimised data centre",
+     "AI-optimized data center",
+     "AIDC"
+    ],
+    "why": "facilities designed for AI workloads"
+   },
+   {
+    "term": "AI factory",
+    "tier": "ai",
+    "variants": [
+     "AI gigafactory",
+     "AI campus",
+     "AI supercluster",
+     "AI superfactory",
+     "gigawatt-scale AI"
+    ],
+    "why": "large purpose-built AI compute site"
+   },
+   {
+    "term": "GPU-as-a-service",
+    "tier": "ai",
+    "variants": [
+     "GPUaaS",
+     "GPU cloud",
+     "GPU rental",
+     "GPU compute",
+     "GPU hosting",
+     "GPU leasing",
+     "bare metal GPU"
+    ],
+    "why": "renting GPU compute"
+   },
+   {
+    "term": "GPU cluster",
+    "tier": "ai",
+    "variants": [
+     "GPU capacity",
+     "GPU fleet",
+     "GPU deployment",
+     "GPU server",
+     "GPU infrastructure",
+     "GPUs deployed",
+     "GPU supercomputer"
+    ],
+    "why": "grouped accelerators for AI"
+   },
+   {
+    "term": "neocloud",
+    "tier": "ai",
+    "variants": [
+     "AI cloud",
+     "AI-native cloud",
+     "AI hyperscaler",
+     "specialised AI cloud",
+     "specialized AI cloud",
+     "AI cloud provider"
+    ],
+    "why": "specialised AI cloud providers"
+   },
+   {
+    "term": "AI accelerator",
+    "tier": "ai",
+    "variants": [
+     "GPU",
+     "graphics processing unit",
+     "AI chip",
+     "TPU",
+     "custom silicon",
+     "AI server"
+    ],
+    "case_sensitive_variants": [
+     "GPU",
+     "TPU"
+    ],
+    "why": "chips powering AI servers"
+   },
+   {
+    "term": "NVIDIA",
+    "tier": "context",
+    "variants": [
+     "H100",
+     "H200",
+     "Blackwell",
+     "GB200",
+     "GB300",
+     "Vera Rubin",
+     "DGX",
+     "NVIDIA Cloud Partner",
+     "AMD Instinct"
+    ],
+    "why": "dominant AI chip supplier and partner"
+   },
+   {
+    "term": "GPU supply",
+    "tier": "ai",
+    "variants": [
+     "GPU shortage",
+     "GPU availability",
+     "GPU procurement",
+     "chip supply constraints",
+     "GPU allocation",
+     "GPU depreciation",
+     "useful life of GPUs"
+    ],
+    "why": "chip availability constraining AI capacity"
+   },
+   {
+    "term": "GPU-backed financing",
+    "tier": "ai",
+    "variants": [
+     "GPU-backed debt",
+     "GPU financing",
+     "delayed draw term loan",
+     "DDTL",
+     "equipment financing for GPUs"
+    ],
+    "why": "debt secured on AI hardware"
+   },
+   {
+    "term": "high-performance computing",
+    "tier": "context",
+    "variants": [
+     "HPC",
+     "supercomputing",
+     "supercomputer",
+     "accelerated computing",
+     "HPC hosting",
+     "HPC colocation"
+    ],
+    "case_sensitive_variants": [
+     "HPC"
+    ],
+    "why": "HPC capacity now sold for AI"
+   },
+   {
+    "term": "HPC pivot",
+    "tier": "ai",
+    "variants": [
+     "AI/HPC hosting",
+     "pivot to AI",
+     "bitcoin mining to AI",
+     "AI hosting",
+     "HPC transition",
+     "AI and HPC hosting"
+    ],
+    "why": "bitcoin miners converting sites to AI"
+   },
+   {
+    "term": "bitcoin mining",
+    "tier": "context",
+    "variants": [
+     "crypto mining",
+     "hash rate",
+     "self-mining",
+     "mining fleet"
+    ],
+    "why": "crypto sites repurposed for AI hosting"
+   },
+   {
+    "term": "colocation",
+    "tier": "context",
+    "variants": [
+     "co-location",
+     "wholesale colocation",
+     "retail colocation",
+     "powered shell",
+     "build-to-suit",
+     "turnkey data centre",
+     "turnkey data center"
+    ],
+    "why": "leased data centre space and power"
+   },
+   {
+    "term": "hyperscale data centre",
+    "tier": "context",
+    "variants": [
+     "hyperscale data center",
+     "hyperscale campus",
+     "hyperscale facility",
+     "data centre campus",
+     "data center campus"
+    ],
+    "why": "very large facilities for cloud and AI"
+   },
+   {
+    "term": "megawatt",
+    "tier": "context",
+    "variants": [
+     "MW of capacity",
+     "gigawatt",
+     "GW of capacity",
+     "megawatts leased",
+     "megawatts under construction",
+     "critical megawatts",
+     "contracted megawatts"
+    ],
+    "why": "capacity unit in AI leases"
+   },
+   {
+    "term": "power capacity",
+    "tier": "context",
+    "variants": [
+     "contracted power",
+     "secured power",
+     "power pipeline",
+     "energised capacity",
+     "energized capacity",
+     "available power",
+     "powered land",
+     "power bank"
+    ],
+    "why": "electricity secured for data centres"
+   },
+   {
+    "term": "power availability",
+    "tier": "context",
+    "variants": [
+     "power constraints",
+     "grid constraints",
+     "grid connection",
+     "grid interconnection",
+     "interconnection queue",
+     "time to power",
+     "access to power",
+     "power shortage"
+    ],
+    "why": "grid constraints limiting AI build-out"
+   },
+   {
+    "term": "power purchase agreement",
+    "tier": "context",
+    "variants": [
+     "behind-the-meter",
+     "on-site generation",
+     "onsite power",
+     "small modular reactor",
+     "nuclear power agreement",
+     "gas turbines",
+     "fuel cells"
+    ],
+    "why": "energy procurement for AI data centres"
+   },
+   {
+    "term": "rack density",
+    "tier": "context",
+    "variants": [
+     "power density",
+     "high-density rack",
+     "kW per rack",
+     "high-density deployment",
+     "high-density computing",
+     "high-density colocation"
+    ],
+    "why": "AI racks need far more power"
+   },
+   {
+    "term": "liquid cooling",
+    "tier": "context",
+    "variants": [
+     "direct-to-chip cooling",
+     "direct liquid cooling",
+     "immersion cooling",
+     "rear-door heat exchanger",
+     "liquid-cooled",
+     "coolant distribution unit"
+    ],
+    "why": "cooling needed by AI hardware"
+   },
+   {
+    "term": "power usage effectiveness",
+    "tier": "context",
+    "variants": [
+     "PUE",
+     "water usage effectiveness",
+     "WUE",
+     "cooling efficiency"
+    ],
+    "case_sensitive_variants": [
+     "PUE",
+     "WUE"
+    ],
+    "why": "efficiency metric under AI load"
+   },
+   {
+    "term": "pre-leasing",
+    "tier": "context",
+    "variants": [
+     "pre-leased",
+     "pre-let",
+     "leasing activity",
+     "record leasing",
+     "lease backlog",
+     "signed-but-not-commenced",
+     "booked-not-billed"
+    ],
+    "why": "capacity contracted before completion"
+   },
+   {
+    "term": "take-or-pay",
+    "tier": "context",
+    "variants": [
+     "committed contract",
+     "remaining performance obligations",
+     "contracted backlog",
+     "revenue backlog",
+     "minimum commitment",
+     "reserved capacity"
+    ],
+    "why": "committed AI compute contracts"
+   },
+   {
+    "term": "development pipeline",
+    "tier": "context",
+    "variants": [
+     "construction pipeline",
+     "capacity under construction",
+     "build-out",
+     "land bank",
+     "expansion pipeline",
+     "shovel-ready"
+    ],
+    "why": "data centre projects under way"
+   },
+   {
+    "term": "development yield",
+    "tier": "context",
+    "variants": [
+     "yield on cost",
+     "cost per megawatt",
+     "cost per MW",
+     "return on invested capital",
+     "stabilised yield",
+     "stabilized yield"
+    ],
+    "why": "returns on data centre builds"
+   },
+   {
+    "term": "vacancy rate",
+    "tier": "context",
+    "variants": [
+     "record low vacancy",
+     "absorption",
+     "rental rates",
+     "renewal spreads",
+     "pricing power"
+    ],
+    "why": "market tightness driven by AI"
+   },
+   {
+    "term": "supply chain constraints",
+    "tier": "context",
+    "variants": [
+     "long-lead equipment",
+     "transformer lead times",
+     "generator lead times",
+     "switchgear",
+     "electrical equipment shortage"
+    ],
+    "why": "equipment lead times in build-out"
+   },
+   {
+    "term": "infrastructure-as-a-service",
+    "tier": "context",
+    "variants": [
+     "IaaS",
+     "platform-as-a-service",
+     "PaaS",
+     "public cloud",
+     "private cloud",
+     "hybrid cloud",
+     "bare metal cloud"
+    ],
+    "case_sensitive_variants": [
+     "IaaS",
+     "PaaS"
+    ],
+    "why": "cloud compute sold to AI builders"
+   },
+   {
+    "term": "model-as-a-service",
+    "tier": "ai",
+    "variants": [
+     "MaaS",
+     "inference-as-a-service",
+     "AI-as-a-service",
+     "AIaaS",
+     "model hosting",
+     "inference API",
+     "serverless inference",
+     "managed inference",
+     "token-based pricing"
+    ],
+    "case_sensitive_variants": [
+     "MaaS"
+    ],
+    "why": "hosted model access sold by clouds"
+   },
+   {
+    "term": "managed AI services",
+    "tier": "ai",
+    "variants": [
+     "private AI",
+     "AI platform services",
+     "managed GPU",
+     "AI private cloud",
+     "dedicated AI cloud",
+     "AI PaaS"
+    ],
+    "why": "operating AI stacks for customers"
+   },
+   {
+    "term": "interconnection",
+    "tier": "context",
+    "variants": [
+     "cross-connect",
+     "cloud on-ramp",
+     "carrier-neutral",
+     "data centre interconnect",
+     "data center interconnect",
+     "network density"
+    ],
+    "why": "network links between AI clusters and clouds"
+   },
+   {
+    "term": "edge data centre",
+    "tier": "context",
+    "variants": [
+     "edge data center",
+     "edge computing",
+     "edge inference",
+     "edge cloud",
+     "distributed cloud"
+    ],
+    "why": "small sites for low-latency inference"
+   },
+   {
+    "term": "latency",
+    "tier": "context",
+    "variants": [
+     "low latency",
+     "latency-sensitive",
+     "proximity to users",
+     "availability zone"
+    ],
+    "why": "inference placement near users"
+   },
+   {
+    "term": "web hosting",
+    "tier": "context",
+    "variants": [
+     "shared hosting",
+     "managed hosting",
+     "dedicated server",
+     "virtual private server",
+     "domain registration"
+    ],
+    "why": "legacy hosting business adding AI tools"
+   },
+   {
+    "term": "AI website builder",
+    "tier": "ai",
+    "variants": [
+     "AI site builder",
+     "AI-powered website builder",
+     "AI domain search",
+     "AI-generated website",
+     "AI onboarding"
+    ],
+    "why": "AI tools sold to hosting customers"
+   },
+   {
+    "term": "AI-driven data centre management",
+    "tier": "ai",
+    "variants": [
+     "AI-driven data center management",
+     "AI-based cooling optimisation",
+     "AI-based cooling optimization",
+     "AI-optimised cooling",
+     "AI-optimized cooling",
+     "predictive capacity management",
+     "DCIM"
+    ],
+    "why": "ML optimising cooling and power"
+   },
+   {
+    "term": "uptime",
+    "tier": "context",
+    "variants": [
+     "service level agreement",
+     "availability SLA",
+     "outage",
+     "downtime",
+     "service credits"
+    ],
+    "why": "reliability commitments for AI clusters"
+   },
+   {
+    "term": "data processing services",
+    "tier": "context",
+    "variants": [
+     "data processing outsourcing",
+     "data entry services",
+     "batch processing",
+     "transaction processing",
+     "streaming infrastructure"
+    ],
+    "why": "outsourced processing adopting AI"
+   },
+   {
+    "term": "AI-powered data processing",
+    "tier": "ai",
+    "variants": [
+     "automated data extraction",
+     "AI document processing",
+     "intelligent data capture",
+     "AI data pipeline"
+    ],
+    "why": "ML document and data handling services"
+   },
+   {
+    "term": "data annotation",
+    "tier": "ai",
+    "variants": [
+     "data labelling",
+     "data labeling",
+     "AI training data",
+     "training data services",
+     "human-in-the-loop",
+     "data enrichment for AI"
+    ],
+    "why": "labelling data for AI training"
+   },
+   {
+    "term": "community opposition",
+    "tier": "context",
+    "variants": [
+     "moratorium on data centres",
+     "moratorium on data centers",
+     "planning permission",
+     "zoning approval",
+     "local opposition",
+     "noise complaints"
+    ],
+    "why": "local resistance to AI data centres"
+   },
+   {
+    "term": "water usage",
+    "tier": "context",
+    "variants": [
+     "water withdrawal",
+     "water stress",
+     "water-free cooling",
+     "closed-loop cooling",
+     "water positive"
+    ],
+    "why": "cooling water scrutiny for AI sites"
+   },
+   {
+    "term": "renewable energy",
+    "tier": "context",
+    "variants": [
+     "carbon-free energy",
+     "24/7 carbon-free",
+     "renewable power",
+     "energy attribute certificates",
+     "diesel generators",
+     "backup generation"
+    ],
+    "why": "clean power commitments under AI growth"
+   },
+   {
+    "term": "waste heat",
+    "tier": "context",
+    "variants": [
+     "heat reuse",
+     "heat recovery",
+     "district heating"
+    ],
+    "why": "heat reuse obligations for data centres"
+   },
+   {
+    "term": "tenant credit risk",
+    "tier": "context",
+    "variants": [
+     "counterparty risk",
+     "customer credit quality",
+     "lease guarantee",
+     "parent guarantee",
+     "customer prepayment"
+    ],
+    "why": "AI start-up customers' ability to pay"
+   },
+   {
+    "term": "sale-leaseback",
+    "tier": "context",
+    "variants": [
+     "asset-backed securities",
+     "ABS financing",
+     "project financing",
+     "joint venture financing",
+     "construction loan",
+     "off-balance-sheet"
+    ],
+    "why": "financing structures for AI build-out"
+   },
+   {
+    "term": "server lifecycle",
+    "tier": "context",
+    "variants": [
+     "useful life of servers",
+     "hardware obsolescence",
+     "technological obsolescence",
+     "server depreciation",
+     "refresh cycle"
+    ],
+    "why": "hardware obsolescence under fast chip cycles"
+   },
+   {
+    "term": "confidential computing",
+    "tier": "context",
+    "variants": [
+     "multi-tenant isolation",
+     "tenant isolation",
+     "data security in the cloud",
+     "shared responsibility model"
+    ],
+    "why": "security of hosted AI data"
+   },
+   {
+    "term": "EU Data Act",
+    "tier": "context",
+    "variants": [
+     "cloud switching",
+     "egress fees",
+     "vendor lock-in",
+     "EUCS",
+     "cloud certification scheme"
+    ],
+    "why": "cloud switching rules"
+   }
+  ],
+  "6390": [
+   {
+    "term": "AI search",
+    "tier": "ai",
+    "variants": [
+     "AI-powered search",
+     "generative search",
+     "conversational search",
+     "AI search engine",
+     "answer engine",
+     "AI Mode",
+     "search generative experience"
+    ],
+    "why": "search products built on generative models"
+   },
+   {
+    "term": "AI Overviews",
+    "tier": "ai",
+    "variants": [
+     "AI summaries",
+     "AI-generated answers",
+     "AI answers",
+     "AI snapshot",
+     "generative answers"
+    ],
+    "why": "AI answers above search results"
+   },
+   {
+    "term": "zero-click search",
+    "tier": "ai",
+    "variants": [
+     "zero-click",
+     "zero click searches",
+     "clickless search"
+    ],
+    "why": "answers given without site visits"
+   },
+   {
+    "term": "referral traffic",
+    "tier": "context",
+    "variants": [
+     "search traffic",
+     "organic traffic",
+     "search referrals",
+     "organic search",
+     "traffic acquisition",
+     "click-through rate",
+     "traffic from search engines"
+    ],
+    "why": "visits from search that AI reduces"
+   },
+   {
+    "term": "search engine",
+    "tier": "context",
+    "variants": [
+     "web search",
+     "search portal",
+     "search queries",
+     "search volume",
+     "query volume",
+     "search market share",
+     "search advertising",
+     "paid search"
+    ],
+    "why": "core product disrupted by AI assistants"
+   },
+   {
+    "term": "generative engine optimisation",
+    "tier": "ai",
+    "variants": [
+     "generative engine optimization",
+     "answer engine optimisation",
+     "answer engine optimization",
+     "AI visibility",
+     "LLM optimisation",
+     "LLM optimization"
+    ],
+    "why": "optimising visibility in AI answers"
+   },
+   {
+    "term": "search engine optimisation",
+    "tier": "context",
+    "variants": [
+     "search engine optimization",
+     "SEO",
+     "search ranking",
+     "search algorithm update",
+     "core update"
+    ],
+    "case_sensitive_variants": [
+     "SEO"
+    ],
+    "why": "traffic channel being reshaped by AI"
+   },
+   {
+    "term": "AI assistant",
+    "tier": "ai",
+    "variants": [
+     "AI agents as intermediaries",
+     "AI browser",
+     "agentic browser",
+     "AI-powered assistant",
+     "AI answer engine"
+    ],
+    "why": "assistants competing with search and portals"
+   },
+   {
+    "term": "AI crawler",
+    "tier": "ai",
+    "variants": [
+     "AI bot",
+     "AI scraper",
+     "GPTBot",
+     "AI web crawler",
+     "bot traffic",
+     "AI crawling",
+     "crawler traffic"
+    ],
+    "why": "bots collecting content for models"
+   },
+   {
+    "term": "web scraping",
+    "tier": "context",
+    "variants": [
+     "data scraping",
+     "content scraping",
+     "scraped data",
+     "robots.txt",
+     "crawler",
+     "unauthorised scraping",
+     "unauthorized scraping"
+    ],
+    "why": "unauthorised collection of site data"
+   },
+   {
+    "term": "AI data licensing",
+    "tier": "ai",
+    "variants": [
+     "data licensing agreement",
+     "AI licensing deal",
+     "training data licence",
+     "training data license",
+     "licensing of data for AI training",
+     "AI content licensing"
+    ],
+    "why": "selling data to model developers"
+   },
+   {
+    "term": "AI disintermediation",
+    "tier": "ai",
+    "variants": [
+     "disintermediation by AI",
+     "AI substitution",
+     "AI-driven disruption",
+     "displacement by AI",
+     "AI competition"
+    ],
+    "why": "AI standing between portal and user"
+   },
+   {
+    "term": "AI-generated content",
+    "tier": "ai",
+    "variants": [
+     "AI slop",
+     "synthetic content",
+     "machine-generated content",
+     "AI-generated spam",
+     "low-quality AI content"
+    ],
+    "why": "synthetic content polluting search and portals"
+   },
+   {
+    "term": "recommendation algorithm",
+    "tier": "ai",
+    "variants": [
+     "ranking algorithm",
+     "recommender system",
+     "personalised recommendations",
+     "personalized recommendations",
+     "relevance ranking",
+     "search ranking model"
+    ],
+    "why": "ML ranking of listings and content"
+   },
+   {
+    "term": "AI-powered listings",
+    "tier": "ai",
+    "variants": [
+     "AI-generated listings",
+     "AI listing descriptions",
+     "AI valuation",
+     "automated valuation model",
+     "AI-powered matching",
+     "AI job matching",
+     "AI-powered recommendations"
+    ],
+    "why": "ML features in classifieds and portals"
+   },
+   {
+    "term": "online classifieds",
+    "tier": "context",
+    "variants": [
+     "classifieds",
+     "online marketplace",
+     "listing portal",
+     "property portal",
+     "job board",
+     "price comparison",
+     "comparison website",
+     "vertical search"
+    ],
+    "why": "portal businesses adding AI and facing AI entrants"
+   },
+   {
+    "term": "lead generation",
+    "tier": "context",
+    "variants": [
+     "cost per lead",
+     "cost per click",
+     "pay-per-click",
+     "lead quality",
+     "traffic monetisation",
+     "traffic monetization"
+    ],
+    "why": "portal revenue model reshaped by AI"
+   },
+   {
+    "term": "AI-powered advertising",
+    "tier": "ai",
+    "variants": [
+     "AI ad targeting",
+     "AI-driven ad optimisation",
+     "AI-driven ad optimization",
+     "automated bidding",
+     "AI-generated ad creative",
+     "AI campaign tools"
+    ],
+    "why": "ML ad targeting and creative"
+   },
+   {
+    "term": "proprietary data moat",
+    "tier": "ai",
+    "variants": [
+     "proprietary data",
+     "proprietary dataset",
+     "first-party data",
+     "data moat",
+     "unique data assets",
+     "data advantage"
+    ],
+    "why": "unique data as defence against AI"
+   },
+   {
+    "term": "AI-powered information services",
+    "tier": "ai",
+    "variants": [
+     "AI-powered insights",
+     "AI research assistant",
+     "AI-powered analytics",
+     "AI-enabled data products",
+     "AI summarisation",
+     "AI summarization"
+    ],
+    "why": "AI features in data and research products"
+   },
+   {
+    "term": "data feed",
+    "tier": "context",
+    "variants": [
+     "data API",
+     "data subscription",
+     "data products",
+     "API access",
+     "data licensing"
+    ],
+    "why": "information products consumed by AI systems"
+   },
+   {
+    "term": "database right",
+    "tier": "context",
+    "variants": [
+     "sui generis database right",
+     "text and data mining",
+     "TDM exception",
+     "copyright exception",
+     "fair use"
+    ],
+    "why": "legal protection of compiled data"
+   },
+   {
+    "term": "user-generated content",
+    "tier": "context",
+    "variants": [
+     "user reviews",
+     "community content",
+     "content moderation",
+     "fake reviews"
+    ],
+    "why": "content and reviews used for AI training"
+   },
+   {
+    "term": "AI content moderation",
+    "tier": "ai",
+    "variants": [
+     "automated moderation",
+     "AI fraud detection",
+     "fake listing detection",
+     "AI-based trust and safety",
+     "automated content review"
+    ],
+    "why": "ML screening of listings and posts"
+   },
+   {
+    "term": "default search agreement",
+    "tier": "context",
+    "variants": [
+     "traffic acquisition costs",
+     "TAC",
+     "search distribution",
+     "search syndication",
+     "search partner"
+    ],
+    "case_sensitive_variants": [
+     "TAC"
+    ],
+    "why": "distribution deals under antitrust and AI pressure"
+   }
+  ]
+ }
+}

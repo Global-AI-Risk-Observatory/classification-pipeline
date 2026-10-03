@@ -1,0 +1,483 @@
+{
+ "id": "55",
+ "name": "Accommodation",
+ "section": "I",
+ "summary": "Hotel groups and other accommodation providers write about AI in revenue management and dynamic room pricing, personalisation and loyalty marketing, guest messaging and virtual concierges, and back-of-house efficiency (housekeeping scheduling, energy management). Booking and short-term-rental intermediaries add search ranking, AI trip planning, review and fraud screening, and the strategic risk that AI assistants and agentic booking shift distribution away from their sites. Algorithmic pricing has also drawn antitrust and consumer-protection scrutiny.",
+ "terms": [
+  {
+   "term": "revenue management system",
+   "tier": "ai",
+   "variants": [
+    "AI-powered revenue management",
+    "AI-driven revenue management",
+    "automated revenue management",
+    "revenue management software",
+    "RMS",
+    "yield management system",
+    "AI revenue optimisation",
+    "AI revenue optimization"
+   ],
+   "case_sensitive_variants": [
+    "RMS"
+   ],
+   "why": "ML forecasting and pricing of rooms"
+  },
+  {
+   "term": "dynamic pricing",
+   "tier": "ai",
+   "variants": [
+    "dynamic room pricing",
+    "AI-driven pricing",
+    "algorithmic pricing",
+    "AI pricing",
+    "smart pricing",
+    "rate optimisation",
+    "rate optimization",
+    "pricing algorithm",
+    "price recommendation tool"
+   ],
+   "why": "room rates adjusted by algorithm"
+  },
+  {
+   "term": "algorithmic price coordination",
+   "tier": "context",
+   "variants": [
+    "price-fixing algorithm",
+    "algorithmic collusion",
+    "shared pricing software",
+    "competitor rate data",
+    "rate parity",
+    "revenue management software litigation"
+   ],
+   "why": "antitrust scrutiny of shared pricing software"
+  },
+  {
+   "term": "demand forecasting",
+   "tier": "ai",
+   "variants": [
+    "occupancy forecasting",
+    "AI-based demand forecasting",
+    "booking forecast",
+    "AI forecasting",
+    "predictive occupancy"
+   ],
+   "why": "ML prediction of occupancy and bookings"
+  },
+  {
+   "term": "AI-powered personalisation",
+   "tier": "ai",
+   "variants": [
+    "AI-powered personalization",
+    "personalised guest experience",
+    "personalized guest experience",
+    "hyper-personalisation",
+    "hyper-personalization",
+    "personalised offers",
+    "personalized offers",
+    "AI-driven recommendations",
+    "next best offer"
+   ],
+   "why": "ML tailoring offers and stays"
+  },
+  {
+   "term": "virtual concierge",
+   "tier": "ai",
+   "variants": [
+    "AI concierge",
+    "digital concierge",
+    "AI guest messaging",
+    "AI-powered guest service",
+    "AI virtual agent",
+    "AI guest assistant",
+    "in-room voice assistant",
+    "AI-powered chat"
+   ],
+   "why": "automated guest messaging and requests"
+  },
+  {
+   "term": "AI trip planner",
+   "tier": "ai",
+   "variants": [
+    "AI trip planning",
+    "AI travel assistant",
+    "AI-powered trip planning",
+    "AI travel planning",
+    "AI itinerary",
+    "conversational booking",
+    "AI-powered search",
+    "natural language search"
+   ],
+   "why": "conversational planning and booking of stays"
+  },
+  {
+   "term": "agentic booking",
+   "tier": "ai",
+   "variants": [
+    "agentic travel",
+    "AI agents booking",
+    "AI booking agent",
+    "agentic commerce",
+    "bookable through AI assistants",
+    "AI travel agent",
+    "agentic AI in travel"
+   ],
+   "why": "AI agents booking stays for travellers"
+  },
+  {
+   "term": "AI disintermediation",
+   "tier": "ai",
+   "variants": [
+    "disintermediation by AI",
+    "traffic from AI",
+    "AI referrals",
+    "AI answer engine",
+    "AI search",
+    "generative search",
+    "generative engine optimisation",
+    "generative engine optimization",
+    "AI-driven discovery"
+   ],
+   "why": "AI assistants as new gatekeepers to bookings"
+  },
+  {
+   "term": "direct booking",
+   "tier": "context",
+   "variants": [
+    "direct channels",
+    "online travel agency",
+    "OTA",
+    "metasearch",
+    "distribution costs",
+    "performance marketing",
+    "search engine marketing",
+    "customer acquisition cost"
+   ],
+   "case_sensitive_variants": [
+    "OTA"
+   ],
+   "why": "distribution mix affected by AI channels"
+  },
+  {
+   "term": "loyalty programme",
+   "tier": "context",
+   "variants": [
+    "loyalty program",
+    "loyalty members",
+    "member data",
+    "first-party data",
+    "customer data platform",
+    "loyalty app"
+   ],
+   "why": "member data used for ML personalisation"
+  },
+  {
+   "term": "keyless entry",
+   "tier": "context",
+   "variants": [
+    "digital key",
+    "mobile check-in",
+    "contactless check-in",
+    "self-check-in kiosk",
+    "facial recognition check-in",
+    "automated check-in"
+   ],
+   "why": "mobile and biometric access with automated check-in"
+  },
+  {
+   "term": "AI housekeeping optimisation",
+   "tier": "ai",
+   "variants": [
+    "AI housekeeping optimization",
+    "AI-based labour scheduling",
+    "AI-based labor scheduling",
+    "AI workforce scheduling",
+    "housekeeping robot",
+    "service robot",
+    "robot butler",
+    "delivery robot"
+   ],
+   "why": "ML scheduling of rooms and staff"
+  },
+  {
+   "term": "AI energy management",
+   "tier": "ai",
+   "variants": [
+    "smart energy management",
+    "AI-based energy optimisation",
+    "AI-based energy optimization",
+    "occupancy-based HVAC",
+    "smart room",
+    "intelligent building management"
+   ],
+   "why": "ML control of HVAC and occupancy sensing"
+  },
+  {
+   "term": "AI-driven efficiency",
+   "tier": "ai",
+   "variants": [
+    "AI-driven productivity",
+    "AI-enabled efficiency",
+    "AI use cases",
+    "AI-driven cost savings",
+    "AI initiatives",
+    "AI-enabled productivity",
+    "AI tools for hotel teams"
+   ],
+   "why": "cost savings attributed to AI"
+  },
+  {
+   "term": "AI marketing",
+   "tier": "ai",
+   "variants": [
+    "AI-generated marketing",
+    "AI-powered marketing",
+    "AI-generated content",
+    "AI-generated property descriptions",
+    "AI campaign optimisation",
+    "AI campaign optimization",
+    "marketing automation with AI"
+   ],
+   "why": "ML and GenAI in campaigns and content"
+  },
+  {
+   "term": "AI call centre",
+   "tier": "ai",
+   "variants": [
+    "AI call center",
+    "AI voice agent",
+    "AI reservations agent",
+    "voice AI for reservations",
+    "AI-powered contact centre",
+    "AI-powered contact center",
+    "automated reservations"
+   ],
+   "why": "voice AI handling reservations"
+  },
+  {
+   "term": "guest data",
+   "tier": "context",
+   "variants": [
+    "guest privacy",
+    "guest profiles",
+    "biometric data",
+    "guest profiling",
+    "reservation data"
+   ],
+   "why": "privacy exposure of profiling and biometrics"
+  },
+  {
+   "term": "hotel labour",
+   "tier": "context",
+   "variants": [
+    "hotel labor",
+    "housekeeping staff",
+    "front desk",
+    "labour shortage",
+    "labor shortage",
+    "hospitality workers union",
+    "UNITE HERE"
+   ],
+   "why": "workforce affected by automation"
+  },
+  {
+   "term": "property management system",
+   "tier": "context",
+   "variants": [
+    "PMS",
+    "central reservation system",
+    "hotel technology stack",
+    "cloud-based platform migration",
+    "commerce platform"
+   ],
+   "case_sensitive_variants": [
+    "PMS"
+   ],
+   "why": "core hotel tech where AI features land"
+  },
+  {
+   "term": "franchise owners",
+   "tier": "context",
+   "variants": [
+    "hotel owners",
+    "owner returns",
+    "system fees",
+    "technology fees"
+   ],
+   "why": "owners who adopt and pay for brand AI tools"
+  },
+  {
+   "term": "RevPAR",
+   "tier": "context",
+   "variants": [
+    "revenue per available room",
+    "average daily rate",
+    "occupancy rate"
+   ],
+   "case_sensitive_variants": [
+    "RevPAR"
+   ],
+   "why": "performance metric revenue AI targets"
+  }
+ ],
+ "class_terms": {
+  "5510": [
+   {
+    "term": "AI-enabled hotel operations",
+    "tier": "ai",
+    "variants": [
+     "AI in hotel operations",
+     "AI-powered hotel",
+     "smart hotel",
+     "AI upselling",
+     "AI upsell",
+     "automated upselling",
+     "AI guest feedback analysis",
+     "AI review analysis"
+    ],
+    "why": "AI across hotel front and back of house"
+   },
+   {
+    "term": "AI sales tools for group bookings",
+    "tier": "ai",
+    "variants": [
+     "AI group sales",
+     "AI RFP response",
+     "automated RFP",
+     "AI meeting planner",
+     "AI-powered event planning"
+    ],
+    "why": "ML lead scoring for meetings and events"
+   }
+  ],
+  "5520": [
+   {
+    "term": "AI-powered pricing for hosts",
+    "tier": "ai",
+    "variants": [
+     "host pricing tool",
+     "pricing tips",
+     "AI pricing for hosts",
+     "rental pricing algorithm",
+     "dynamic nightly rate"
+    ],
+    "why": "pricing tools for short-term rental hosts"
+   },
+   {
+    "term": "short-term rental",
+    "tier": "context",
+    "variants": [
+     "vacation rental",
+     "holiday rental",
+     "home sharing",
+     "hosts and guests",
+     "nights booked",
+     "short-term let"
+    ],
+    "why": "listings businesses relying on ranking and screening"
+   }
+  ],
+  "5540": [
+   {
+    "term": "search ranking algorithm",
+    "tier": "ai",
+    "variants": [
+     "ranking algorithm",
+     "listing ranking",
+     "search ranking",
+     "AI-powered ranking",
+     "recommendation algorithm",
+     "personalised search results",
+     "personalized search results"
+    ],
+    "why": "ML ordering of listings shown to travellers"
+   },
+   {
+    "term": "AI review moderation",
+    "tier": "ai",
+    "variants": [
+     "fake review detection",
+     "fake reviews",
+     "AI-generated reviews",
+     "review fraud",
+     "fake listing detection",
+     "AI-based content moderation",
+     "AI review summaries"
+    ],
+    "why": "ML screening of reviews and listings"
+   },
+   {
+    "term": "AI fraud and party-risk screening",
+    "tier": "ai",
+    "variants": [
+     "reservation screening",
+     "party detection",
+     "risk scoring model",
+     "booking fraud detection",
+     "AI trust and safety",
+     "account takeover detection",
+     "AI identity verification"
+    ],
+    "why": "ML risk scoring of bookings and users"
+   },
+   {
+    "term": "AI customer support agent",
+    "tier": "ai",
+    "variants": [
+     "AI customer service agent",
+     "AI-powered customer service",
+     "AI support bot",
+     "AI customer support",
+     "AI resolution rate",
+     "AI-handled contacts"
+    ],
+    "why": "GenAI handling traveller and host enquiries"
+   },
+   {
+    "term": "AI host tools",
+    "tier": "ai",
+    "variants": [
+     "AI listing creation",
+     "AI-generated listing",
+     "AI-suggested replies",
+     "AI photo tour",
+     "AI tools for partners",
+     "AI property descriptions",
+     "smart reply"
+    ],
+    "why": "GenAI listing creation and messaging for partners"
+   },
+   {
+    "term": "booking platform",
+    "tier": "context",
+    "variants": [
+     "online travel platform",
+     "travel marketplace",
+     "room nights",
+     "gross bookings",
+     "take rate",
+     "paid marketing channels",
+     "connected trip"
+    ],
+    "why": "intermediaries dependent on search traffic"
+   },
+   {
+    "term": "Digital Markets Act",
+    "tier": "context",
+    "variants": [
+     "DMA",
+     "gatekeeper",
+     "Digital Services Act",
+     "DSA",
+     "parity clauses",
+     "platform-to-business regulation",
+     "ranking transparency"
+    ],
+    "case_sensitive_variants": [
+     "DMA",
+     "DSA"
+    ],
+    "why": "gatekeeper rules on ranking and parity"
+   }
+  ]
+ }
+}

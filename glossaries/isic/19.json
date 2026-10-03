@@ -1,0 +1,833 @@
+{
+  "id": "19",
+  "name": "Manufacture of coke and refined petroleum products",
+  "section": "C",
+  "summary": "Refiners and coke producers describe AI in process control and optimisation (advanced process control, real-time optimisation, closed-loop AI, crude and blend optimisation), reliability (predictive maintenance, corrosion prediction, robotic inspection), safety and emissions monitoring, and trading and retail pricing. AI also appears as a market force: data-centre power demand, backup-generator fuel, immersion cooling fluids from lubricant businesses, and autonomous vehicles as a long-term fuel-demand risk. Cyber risk to operational technology and workforce knowledge capture are recurring themes; coke makers report intelligent coal blending and unmanned oven machinery.",
+  "terms": [
+    {
+      "term": "advanced process control",
+      "tier": "context",
+      "variants": [
+        "APC",
+        "model predictive control",
+        "multivariable predictive control"
+      ],
+      "case_sensitive_variants": [
+        "APC"
+      ],
+      "why": "model-based control of refinery units"
+    },
+    {
+      "term": "real-time optimisation",
+      "tier": "context",
+      "variants": [
+        "real-time optimization",
+        "closed-loop optimisation",
+        "closed-loop optimization",
+        "online optimisation",
+        "online optimization",
+        "dynamic optimisation",
+        "dynamic optimization"
+      ],
+      "case_sensitive_variants": [],
+      "why": "online optimisation layer above process control"
+    },
+    {
+      "term": "closed-loop AI",
+      "tier": "ai",
+      "variants": [
+        "AI process optimisation",
+        "AI process optimization",
+        "AI-driven process control",
+        "deep learning process control",
+        "AI optimiser",
+        "AI optimizer",
+        "reinforcement learning controller",
+        "AI-based process optimisation",
+        "AI-based process optimization",
+        "self-optimising plant",
+        "self-optimizing plant"
+      ],
+      "case_sensitive_variants": [],
+      "why": "learning systems directly steering process units"
+    },
+    {
+      "term": "digital refinery",
+      "tier": "context",
+      "variants": [
+        "smart refinery",
+        "refinery of the future",
+        "connected refinery",
+        "intelligent refinery",
+        "refinery digitalisation",
+        "refinery digitalization",
+        "smart plant",
+        "intelligent plant",
+        "Industry 4.0"
+      ],
+      "case_sensitive_variants": [],
+      "why": "connected-refinery programmes framing AI use"
+    },
+    {
+      "term": "digital twin",
+      "tier": "context",
+      "variants": [
+        "virtual twin"
+      ],
+      "case_sensitive_variants": [],
+      "why": "virtual plant, process or product model"
+    },
+    {
+      "term": "soft sensor",
+      "tier": "ai",
+      "variants": [
+        "inferential model",
+        "inferential property estimator",
+        "virtual analyser",
+        "virtual analyzer",
+        "virtual sensor"
+      ],
+      "case_sensitive_variants": [],
+      "why": "ML estimate of unmeasured stream properties"
+    },
+    {
+      "term": "product quality prediction",
+      "tier": "ai",
+      "variants": [
+        "quality prediction",
+        "predictive quality",
+        "octane prediction",
+        "product property prediction"
+      ],
+      "case_sensitive_variants": [],
+      "why": "models predicting product properties online"
+    },
+    {
+      "term": "crude assay prediction",
+      "tier": "ai",
+      "variants": [
+        "crude property prediction",
+        "feed property prediction",
+        "crude fingerprinting"
+      ],
+      "case_sensitive_variants": [],
+      "why": "models predicting feed properties"
+    },
+    {
+      "term": "molecular management",
+      "tier": "context",
+      "variants": [
+        "molecule management",
+        "molecular-level modelling",
+        "molecular-level modeling"
+      ],
+      "case_sensitive_variants": [],
+      "why": "molecule-level planning using detailed models"
+    },
+    {
+      "term": "crude selection optimisation",
+      "tier": "context",
+      "variants": [
+        "crude selection optimization",
+        "crude slate optimisation",
+        "crude slate optimization",
+        "crude basket optimisation",
+        "feedstock optimisation",
+        "feedstock optimization",
+        "crude scheduling",
+        "linear programming model",
+        "refinery planning model"
+      ],
+      "case_sensitive_variants": [],
+      "why": "feedstock planning with optimisation models"
+    },
+    {
+      "term": "blend optimisation",
+      "tier": "context",
+      "variants": [
+        "blend optimization",
+        "blending optimisation",
+        "blending optimization",
+        "inline blending",
+        "octane giveaway",
+        "quality giveaway"
+      ],
+      "case_sensitive_variants": [],
+      "why": "product blending with optimisation models"
+    },
+    {
+      "term": "yield optimisation",
+      "tier": "context",
+      "variants": [
+        "yield optimization",
+        "margin optimisation",
+        "margin optimization",
+        "throughput optimisation",
+        "throughput optimization",
+        "production optimisation",
+        "production optimization",
+        "process optimisation",
+        "process optimization"
+      ],
+      "case_sensitive_variants": [],
+      "why": "margin and yield targets that AI projects address"
+    },
+    {
+      "term": "energy optimisation",
+      "tier": "context",
+      "variants": [
+        "energy optimization",
+        "furnace optimisation",
+        "furnace optimization",
+        "fired heater optimisation",
+        "steam system optimisation",
+        "hydrogen network optimisation",
+        "utilities optimisation"
+      ],
+      "case_sensitive_variants": [],
+      "why": "AI used to cut fuel, steam and hydrogen use"
+    },
+    {
+      "term": "predictive maintenance",
+      "tier": "ai",
+      "variants": [
+        "prescriptive maintenance",
+        "predictive asset maintenance"
+      ],
+      "case_sensitive_variants": [],
+      "why": "ML-based prediction of equipment failure"
+    },
+    {
+      "term": "asset performance management",
+      "tier": "context",
+      "variants": [
+        "asset integrity management",
+        "reliability-centred maintenance",
+        "reliability-centered maintenance",
+        "equipment health monitoring",
+        "condition monitoring",
+        "condition-based maintenance"
+      ],
+      "case_sensitive_variants": [],
+      "why": "reliability programmes using predictive models"
+    },
+    {
+      "term": "equipment anomaly detection",
+      "tier": "ai",
+      "variants": [
+        "early event detection",
+        "early fault detection",
+        "process anomaly detection",
+        "predictive failure detection",
+        "failure prediction"
+      ],
+      "case_sensitive_variants": [],
+      "why": "ML detection of abnormal equipment behaviour"
+    },
+    {
+      "term": "corrosion prediction",
+      "tier": "ai",
+      "variants": [
+        "predictive corrosion",
+        "AI corrosion detection",
+        "corrosion modelling",
+        "corrosion modeling"
+      ],
+      "case_sensitive_variants": [],
+      "why": "models predicting corrosion and integrity loss"
+    },
+    {
+      "term": "risk-based inspection",
+      "tier": "context",
+      "variants": [
+        "corrosion monitoring",
+        "inspection data analytics",
+        "non-intrusive inspection",
+        "inspection planning optimisation"
+      ],
+      "case_sensitive_variants": [],
+      "why": "inspection planning using data models"
+    },
+    {
+      "term": "drone inspection",
+      "tier": "context",
+      "variants": [
+        "robotic inspection",
+        "inspection robot",
+        "crawler robot",
+        "unmanned aerial vehicle",
+        "UAV",
+        "autonomous inspection",
+        "quadruped robot"
+      ],
+      "case_sensitive_variants": [
+        "UAV"
+      ],
+      "why": "robotic inspection producing data for AI analysis"
+    },
+    {
+      "term": "turnaround planning",
+      "tier": "context",
+      "variants": [
+        "turnaround optimisation",
+        "turnaround optimization",
+        "shutdown planning",
+        "maintenance planning optimisation",
+        "turnaround scheduling"
+      ],
+      "case_sensitive_variants": [],
+      "why": "shutdown scheduling where AI is applied"
+    },
+    {
+      "term": "AI safety camera",
+      "tier": "ai",
+      "variants": [
+        "AI video analytics",
+        "AI-enabled camera",
+        "AI-based safety monitoring",
+        "computer vision safety",
+        "PPE detection",
+        "intelligent video surveillance",
+        "AI-powered pedestrian detection"
+      ],
+      "case_sensitive_variants": [],
+      "why": "vision AI monitoring worker safety"
+    },
+    {
+      "term": "alarm management",
+      "tier": "context",
+      "variants": [
+        "alarm rationalisation",
+        "alarm rationalization",
+        "abnormal situation management",
+        "operator decision support",
+        "operator advisory"
+      ],
+      "case_sensitive_variants": [],
+      "why": "operator decision support in abnormal situations"
+    },
+    {
+      "term": "leak detection",
+      "tier": "context",
+      "variants": [
+        "LDAR",
+        "optical gas imaging",
+        "fugitive emissions monitoring",
+        "methane detection",
+        "continuous emissions monitoring",
+        "satellite methane monitoring",
+        "flare monitoring"
+      ],
+      "case_sensitive_variants": [
+        "LDAR"
+      ],
+      "why": "emissions and leak monitoring using sensors and imaging"
+    },
+    {
+      "term": "predictive emissions monitoring",
+      "tier": "ai",
+      "variants": [
+        "PEMS",
+        "emissions prediction model",
+        "AI-based emissions monitoring"
+      ],
+      "case_sensitive_variants": [
+        "PEMS"
+      ],
+      "why": "model-based emissions estimation"
+    },
+    {
+      "term": "satellite imagery",
+      "tier": "context",
+      "variants": [
+        "remote sensing",
+        "satellite-based monitoring"
+      ],
+      "case_sensitive_variants": [],
+      "why": "remote sensing of sites, pipelines and emissions"
+    },
+    {
+      "term": "remote operations centre",
+      "tier": "context",
+      "variants": [
+        "remote operations center",
+        "integrated operations centre",
+        "integrated operations center",
+        "centralised control room",
+        "centralized control room",
+        "remote monitoring centre",
+        "remote monitoring center",
+        "remote control centre",
+        "remote control center"
+      ],
+      "case_sensitive_variants": [],
+      "why": "centralised, data-driven plant operation"
+    },
+    {
+      "term": "autonomous operations",
+      "tier": "ai",
+      "variants": [
+        "unmanned operations",
+        "autonomous plant",
+        "autonomous refinery"
+      ],
+      "case_sensitive_variants": [],
+      "why": "plant operation with minimal human intervention"
+    },
+    {
+      "term": "operator training simulator",
+      "tier": "context",
+      "variants": [
+        "immersive training",
+        "virtual reality training",
+        "VR training",
+        "simulation-based training",
+        "dynamic simulator"
+      ],
+      "case_sensitive_variants": [],
+      "why": "simulation-based training alongside AI tools"
+    },
+    {
+      "term": "connected worker",
+      "tier": "context",
+      "variants": [
+        "digital worker",
+        "smart glasses",
+        "augmented reality",
+        "wearable gas detector",
+        "digital permit to work",
+        "electronic permit to work",
+        "digital shift handover"
+      ],
+      "case_sensitive_variants": [],
+      "why": "digital field tools incl. AI assistance"
+    },
+    {
+      "term": "AI operator assistant",
+      "tier": "ai",
+      "variants": [
+        "AI copilot for operators",
+        "AI maintenance assistant",
+        "AI-powered operator advisor",
+        "AI assistant for engineers",
+        "virtual operator assistant",
+        "AI knowledge assistant",
+        "AI-assisted troubleshooting"
+      ],
+      "case_sensitive_variants": [],
+      "why": "generative AI support for operators and engineers"
+    },
+    {
+      "term": "ageing workforce",
+      "tier": "context",
+      "variants": [
+        "aging workforce",
+        "knowledge capture",
+        "knowledge retention",
+        "knowledge transfer",
+        "skills gap",
+        "experienced operator retirement"
+      ],
+      "case_sensitive_variants": [],
+      "why": "knowledge loss that AI tools are meant to offset"
+    },
+    {
+      "term": "industrial internet of things",
+      "tier": "context",
+      "variants": [
+        "IIoT",
+        "industrial IoT",
+        "industrial internet",
+        "connected sensors",
+        "smart sensors"
+      ],
+      "case_sensitive_variants": [],
+      "why": "plant sensor networks feeding models"
+    },
+    {
+      "term": "data historian",
+      "tier": "context",
+      "variants": [
+        "process historian",
+        "plant data platform",
+        "industrial data platform",
+        "manufacturing data lake",
+        "unified data platform"
+      ],
+      "case_sensitive_variants": [],
+      "why": "plant data foundation for AI models"
+    },
+    {
+      "term": "operational technology",
+      "tier": "context",
+      "variants": [
+        "OT security",
+        "OT cybersecurity",
+        "industrial control system",
+        "SCADA"
+      ],
+      "case_sensitive_variants": [],
+      "why": "plant control systems exposed to cyber risk"
+    },
+    {
+      "term": "distributed control system",
+      "tier": "context",
+      "variants": [
+        "DCS",
+        "safety instrumented system",
+        "critical infrastructure cybersecurity",
+        "TSA security directive"
+      ],
+      "case_sensitive_variants": [
+        "DCS"
+      ],
+      "why": "core control layer; cyber and AI integration point"
+    },
+    {
+      "term": "high-performance computing",
+      "tier": "context",
+      "variants": [
+        "supercomputer",
+        "supercomputing",
+        "HPC",
+        "molecular modelling",
+        "molecular modeling",
+        "computational chemistry",
+        "process simulation"
+      ],
+      "case_sensitive_variants": [
+        "HPC"
+      ],
+      "why": "compute for simulation and modelling"
+    },
+    {
+      "term": "AI catalyst design",
+      "tier": "ai",
+      "variants": [
+        "AI-accelerated catalyst design",
+        "computational catalyst design",
+        "AI-driven catalyst development",
+        "catalyst informatics",
+        "machine learning catalyst",
+        "high-throughput catalyst screening",
+        "AI-guided catalyst discovery"
+      ],
+      "case_sensitive_variants": [],
+      "why": "AI in catalyst discovery"
+    },
+    {
+      "term": "AI-assisted formulation",
+      "tier": "ai",
+      "variants": [
+        "AI-driven formulation",
+        "AI lubricant formulation",
+        "formulation prediction",
+        "predictive formulation",
+        "AI-assisted product development",
+        "materials informatics"
+      ],
+      "case_sensitive_variants": [],
+      "why": "AI in lubricant and fuel formulation"
+    },
+    {
+      "term": "demand forecasting",
+      "tier": "context",
+      "variants": [
+        "demand planning",
+        "price forecasting",
+        "margin forecasting",
+        "crack spread forecasting"
+      ],
+      "case_sensitive_variants": [],
+      "why": "planning process where AI is applied"
+    },
+    {
+      "term": "algorithmic trading",
+      "tier": "context",
+      "variants": [
+        "trading analytics",
+        "quantitative trading",
+        "automated trading",
+        "trading optimisation",
+        "trading optimization"
+      ],
+      "case_sensitive_variants": [],
+      "why": "data-driven supply and trading decisions"
+    },
+    {
+      "term": "supply chain optimisation",
+      "tier": "context",
+      "variants": [
+        "supply chain optimization",
+        "logistics optimisation",
+        "logistics optimization",
+        "distribution optimisation",
+        "scheduling optimisation",
+        "scheduling optimization",
+        "pipeline scheduling",
+        "vessel scheduling",
+        "integrated supply chain planning"
+      ],
+      "case_sensitive_variants": [],
+      "why": "scheduling and logistics using optimisation models"
+    },
+    {
+      "term": "terminal automation",
+      "tier": "context",
+      "variants": [
+        "automated truck loading",
+        "unmanned terminal",
+        "smart terminal",
+        "tank farm automation",
+        "automated tank gauging"
+      ],
+      "case_sensitive_variants": [],
+      "why": "automated loading and tank farm systems"
+    },
+    {
+      "term": "dynamic fuel pricing",
+      "tier": "context",
+      "variants": [
+        "dynamic pricing",
+        "fuel price optimisation",
+        "fuel price optimization",
+        "retail fuel pricing"
+      ],
+      "case_sensitive_variants": [],
+      "why": "retail fuel price setting by learning systems"
+    },
+    {
+      "term": "AI-powered fuel pricing",
+      "tier": "ai",
+      "variants": [
+        "AI-driven pricing",
+        "AI pricing engine",
+        "machine learning pricing",
+        "algorithmic fuel pricing"
+      ],
+      "case_sensitive_variants": [],
+      "why": "explicit AI pricing tools at fuel retail"
+    },
+    {
+      "term": "licence plate recognition",
+      "tier": "ai",
+      "variants": [
+        "license plate recognition",
+        "number plate recognition",
+        "ANPR",
+        "vehicle recognition"
+      ],
+      "case_sensitive_variants": [
+        "ANPR"
+      ],
+      "why": "vision AI at forecourts and terminals"
+    },
+    {
+      "term": "personalised offers",
+      "tier": "context",
+      "variants": [
+        "personalized offers",
+        "loyalty app personalisation",
+        "loyalty app personalization",
+        "customer data platform",
+        "forecourt analytics"
+      ],
+      "case_sensitive_variants": [],
+      "why": "loyalty data used for targeted retail offers"
+    },
+    {
+      "term": "fleet telematics",
+      "tier": "context",
+      "variants": [
+        "telematics",
+        "driver monitoring",
+        "in-cab camera",
+        "driver fatigue detection",
+        "driver behaviour monitoring",
+        "driver behavior monitoring"
+      ],
+      "case_sensitive_variants": [],
+      "why": "vehicle data used for driver and route models"
+    },
+    {
+      "term": "smart charging",
+      "tier": "context",
+      "variants": [
+        "EV charging optimisation",
+        "EV charging optimization",
+        "charging network analytics",
+        "energy management platform",
+        "virtual power plant"
+      ],
+      "case_sensitive_variants": [],
+      "why": "EV charging and energy management by learning systems"
+    },
+    {
+      "term": "data center",
+      "tier": "context",
+      "variants": [
+        "data centre",
+        "hyperscaler"
+      ],
+      "case_sensitive_variants": [],
+      "why": "AI-related power and fuel demand"
+    },
+    {
+      "term": "AI data center",
+      "tier": "ai",
+      "variants": [
+        "AI data centre",
+        "AI-driven power demand",
+        "AI-related electricity demand",
+        "AI infrastructure demand",
+        "AI-driven energy demand",
+        "AI power demand",
+        "AI compute demand"
+      ],
+      "case_sensitive_variants": [],
+      "why": "explicit AI-driven energy demand"
+    },
+    {
+      "term": "power demand growth",
+      "tier": "context",
+      "variants": [
+        "electricity demand growth",
+        "load growth",
+        "rising electricity demand",
+        "surging power demand",
+        "behind-the-meter power",
+        "grid constraints",
+        "gas-fired power demand"
+      ],
+      "case_sensitive_variants": [],
+      "why": "AI-related load affecting power and gas markets"
+    },
+    {
+      "term": "backup generator",
+      "tier": "context",
+      "variants": [
+        "standby generator",
+        "backup power",
+        "emergency power generation"
+      ],
+      "case_sensitive_variants": [],
+      "why": "diesel and renewable diesel for data centre backup"
+    },
+    {
+      "term": "immersion cooling",
+      "tier": "context",
+      "variants": [
+        "immersion coolant",
+        "dielectric fluid",
+        "dielectric coolant",
+        "liquid cooling fluid",
+        "data center cooling fluid",
+        "data centre cooling fluid",
+        "thermal management fluid",
+        "direct-to-chip cooling",
+        "server cooling fluid"
+      ],
+      "case_sensitive_variants": [],
+      "why": "lubricant-based fluids for server cooling"
+    },
+    {
+      "term": "autonomous vehicle",
+      "tier": "context",
+      "variants": [
+        "self-driving vehicle",
+        "autonomous driving",
+        "robotaxi",
+        "driverless vehicle",
+        "autonomous truck"
+      ],
+      "case_sensitive_variants": [],
+      "why": "long-term fuel demand risk factor"
+    }
+  ],
+  "class_terms": {
+    "1910": [
+      {
+        "term": "coal blending optimisation",
+        "tier": "context",
+        "variants": [
+          "coal blending optimization",
+          "coal blend model",
+          "coal blending system"
+        ],
+        "why": "optimisation of coking coal blends"
+      },
+      {
+        "term": "intelligent coal blending",
+        "tier": "ai",
+        "variants": [
+          "AI coal blending",
+          "smart coal blending",
+          "coal blending expert system"
+        ],
+        "why": "AI-based coal blend design"
+      },
+      {
+        "term": "coke quality prediction",
+        "tier": "ai",
+        "variants": [
+          "CSR prediction",
+          "coke strength prediction",
+          "coke quality model"
+        ],
+        "why": "models predicting coke strength"
+      },
+      {
+        "term": "coke oven automation",
+        "tier": "context",
+        "variants": [
+          "automated coke oven machine",
+          "unmanned coke oven machinery",
+          "unmanned coke pushing",
+          "automatic oven heating control",
+          "coke oven battery monitoring",
+          "four-car interlocking",
+          "unmanned coke oven locomotive"
+        ],
+        "why": "unmanned oven machinery and heating control"
+      },
+      {
+        "term": "intelligent coking",
+        "tier": "context",
+        "variants": [
+          "smart coking plant",
+          "digital coking",
+          "smart coke plant",
+          "intelligent factory"
+        ],
+        "why": "smart-plant programmes in coking"
+      },
+      {
+        "term": "oven wall inspection",
+        "tier": "context",
+        "variants": [
+          "infrared oven monitoring",
+          "oven temperature monitoring",
+          "thermal imaging inspection",
+          "battery heating optimisation",
+          "battery heating optimization"
+        ],
+        "why": "thermal imaging data for oven condition"
+      }
+    ],
+    "1920": [
+      {
+        "term": "oil condition monitoring",
+        "tier": "context",
+        "variants": [
+          "lubricant condition monitoring",
+          "used oil analysis",
+          "oil analysis service",
+          "smart lubrication",
+          "predictive lubrication",
+          "fluid monitoring"
+        ],
+        "why": "lubricant sensor data sold as predictive service"
+      }
+    ]
+  }
+}

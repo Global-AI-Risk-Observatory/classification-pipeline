@@ -1,0 +1,908 @@
+{
+  "id": "17",
+  "name": "Manufacture of paper and paper products",
+  "section": "C",
+  "summary": "Pulp, paper and packaging companies describe AI in mill operations (advanced process control, soft sensors, web-break prediction, predictive maintenance, autonomous mills), in forestry (remote sensing, harvest planning, wildfire detection) and in packaging design, corrugator optimisation and recovered-paper sorting. Tissue and hygiene producers add consumer analytics and connected dispensers. AI also appears as a demand and cost factor: data centres on former mill sites, rising electricity demand, and electrotechnical or carrier-tape papers for grid and electronics supply chains.",
+  "terms": [
+    {
+      "term": "advanced process control",
+      "tier": "context",
+      "variants": [
+        "APC",
+        "model predictive control",
+        "multivariable control"
+      ],
+      "case_sensitive_variants": [
+        "APC"
+      ],
+      "why": "model-based control of pulp and paper lines"
+    },
+    {
+      "term": "soft sensor",
+      "tier": "ai",
+      "variants": [
+        "virtual sensor",
+        "inferential sensor",
+        "virtual measurement"
+      ],
+      "case_sensitive_variants": [],
+      "why": "ML estimate of unmeasured process values"
+    },
+    {
+      "term": "web break prediction",
+      "tier": "ai",
+      "variants": [
+        "break prediction",
+        "web break analysis",
+        "runnability prediction"
+      ],
+      "case_sensitive_variants": [],
+      "why": "models predicting paper machine breaks"
+    },
+    {
+      "term": "quality prediction",
+      "tier": "ai",
+      "variants": [
+        "predictive quality",
+        "strength prediction",
+        "kappa prediction"
+      ],
+      "case_sensitive_variants": [],
+      "why": "models predicting pulp and paper properties"
+    },
+    {
+      "term": "web inspection system",
+      "tier": "context",
+      "variants": [
+        "web inspection",
+        "web monitoring system",
+        "surface inspection system",
+        "sheet defect detection",
+        "defect detection camera",
+        "hole detection"
+      ],
+      "case_sensitive_variants": [],
+      "why": "camera systems detecting sheet defects"
+    },
+    {
+      "term": "quality control system",
+      "tier": "context",
+      "variants": [
+        "QCS",
+        "online quality measurement",
+        "on-line quality measurement"
+      ],
+      "case_sensitive_variants": [
+        "QCS"
+      ],
+      "why": "online measurement feeding control and models"
+    },
+    {
+      "term": "paper machine optimisation",
+      "tier": "context",
+      "variants": [
+        "paper machine optimization",
+        "machine speed optimisation",
+        "machine speed optimization",
+        "wet-end optimisation",
+        "wet-end optimization",
+        "dryer section optimisation",
+        "runnability optimisation"
+      ],
+      "case_sensitive_variants": [],
+      "why": "optimisation target for AI projects"
+    },
+    {
+      "term": "fibre line optimisation",
+      "tier": "context",
+      "variants": [
+        "fiber line optimization",
+        "fibreline optimisation",
+        "digester control",
+        "cooking optimisation",
+        "bleaching optimisation",
+        "bleaching optimization",
+        "kappa control"
+      ],
+      "case_sensitive_variants": [],
+      "why": "cooking and bleaching control using models"
+    },
+    {
+      "term": "recovery boiler optimisation",
+      "tier": "context",
+      "variants": [
+        "boiler optimisation",
+        "boiler optimization",
+        "lime kiln optimisation",
+        "lime kiln optimization",
+        "combustion optimisation",
+        "combustion optimization"
+      ],
+      "case_sensitive_variants": [],
+      "why": "combustion and recovery control using models"
+    },
+    {
+      "term": "chemical dosing optimisation",
+      "tier": "context",
+      "variants": [
+        "chemical dosing optimization",
+        "chemical consumption optimisation",
+        "dosage control",
+        "smart dosing",
+        "retention control"
+      ],
+      "case_sensitive_variants": [],
+      "why": "model-based chemical addition"
+    },
+    {
+      "term": "energy optimisation",
+      "tier": "context",
+      "variants": [
+        "energy optimization",
+        "steam optimisation",
+        "steam optimization",
+        "energy management system"
+      ],
+      "case_sensitive_variants": [],
+      "why": "AI used to cut steam and power use"
+    },
+    {
+      "term": "process optimisation",
+      "tier": "context",
+      "variants": [
+        "process optimization",
+        "mill-wide optimisation",
+        "mill-wide optimization",
+        "production optimisation",
+        "production optimization"
+      ],
+      "case_sensitive_variants": [],
+      "why": "generic phrase around AI in production"
+    },
+    {
+      "term": "trim optimisation",
+      "tier": "context",
+      "variants": [
+        "trim optimization",
+        "trim loss",
+        "deckle optimisation",
+        "production scheduling optimisation",
+        "production planning optimisation",
+        "production planning optimization"
+      ],
+      "case_sensitive_variants": [],
+      "why": "cutting and scheduling optimisation"
+    },
+    {
+      "term": "yield optimisation",
+      "tier": "context",
+      "variants": [
+        "yield optimization",
+        "fibre yield",
+        "fiber yield",
+        "raw material efficiency"
+      ],
+      "case_sensitive_variants": [],
+      "why": "fibre efficiency targets that AI projects address"
+    },
+    {
+      "term": "predictive maintenance",
+      "tier": "ai",
+      "variants": [
+        "prescriptive maintenance",
+        "predictive asset maintenance"
+      ],
+      "case_sensitive_variants": [],
+      "why": "ML-based prediction of equipment failure"
+    },
+    {
+      "term": "condition monitoring",
+      "tier": "context",
+      "variants": [
+        "vibration monitoring",
+        "asset health monitoring",
+        "equipment health monitoring",
+        "asset performance management"
+      ],
+      "case_sensitive_variants": [],
+      "why": "sensor data feeding maintenance models"
+    },
+    {
+      "term": "digital twin",
+      "tier": "context",
+      "variants": [
+        "virtual twin"
+      ],
+      "case_sensitive_variants": [],
+      "why": "virtual plant, process or product model"
+    },
+    {
+      "term": "autonomous mill",
+      "tier": "ai",
+      "variants": [
+        "autonomous operations",
+        "autonomous plant",
+        "self-optimising",
+        "self-optimizing",
+        "autonomous paper machine"
+      ],
+      "case_sensitive_variants": [],
+      "why": "self-optimising operation by learning systems"
+    },
+    {
+      "term": "smart mill",
+      "tier": "context",
+      "variants": [
+        "mill of the future",
+        "smart manufacturing",
+        "smart factory",
+        "Industry 4.0",
+        "Industrie 4.0",
+        "intelligent manufacturing",
+        "digital mill",
+        "connected mill"
+      ],
+      "case_sensitive_variants": [],
+      "why": "connected-mill programmes framing AI use"
+    },
+    {
+      "term": "operator advisory system",
+      "tier": "context",
+      "variants": [
+        "operator assistance system",
+        "operator advisor",
+        "operator guidance",
+        "decision support system"
+      ],
+      "case_sensitive_variants": [],
+      "why": "decision support, increasingly AI-based"
+    },
+    {
+      "term": "remote operations centre",
+      "tier": "context",
+      "variants": [
+        "remote operations center",
+        "integrated operations centre",
+        "integrated operations center",
+        "centralised control room",
+        "centralized control room",
+        "remote monitoring centre",
+        "remote monitoring center",
+        "remote control centre",
+        "remote control center"
+      ],
+      "case_sensitive_variants": [],
+      "why": "centralised, data-driven plant operation"
+    },
+    {
+      "term": "machine vision",
+      "tier": "ai",
+      "variants": [
+        "vision inspection",
+        "automated visual inspection",
+        "camera-based inspection",
+        "AI visual inspection"
+      ],
+      "case_sensitive_variants": [],
+      "why": "camera-based inspection in mills and converting"
+    },
+    {
+      "term": "industrial internet of things",
+      "tier": "context",
+      "variants": [
+        "IIoT",
+        "industrial IoT",
+        "industrial internet",
+        "connected sensors",
+        "smart sensors"
+      ],
+      "case_sensitive_variants": [],
+      "why": "plant sensor networks feeding models"
+    },
+    {
+      "term": "data historian",
+      "tier": "context",
+      "variants": [
+        "process historian",
+        "plant data platform",
+        "industrial data platform",
+        "manufacturing data lake",
+        "unified data platform"
+      ],
+      "case_sensitive_variants": [],
+      "why": "plant data foundation for AI models"
+    },
+    {
+      "term": "manufacturing execution system",
+      "tier": "context",
+      "variants": [
+        "MES"
+      ],
+      "case_sensitive_variants": [
+        "MES"
+      ],
+      "why": "production data layer for optimisation"
+    },
+    {
+      "term": "predictive emissions monitoring",
+      "tier": "ai",
+      "variants": [
+        "PEMS",
+        "emissions prediction model"
+      ],
+      "case_sensitive_variants": [
+        "PEMS"
+      ],
+      "why": "model-based emissions estimation"
+    },
+    {
+      "term": "effluent treatment optimisation",
+      "tier": "context",
+      "variants": [
+        "wastewater treatment optimisation",
+        "wastewater treatment optimization",
+        "effluent monitoring"
+      ],
+      "case_sensitive_variants": [],
+      "why": "model-based wastewater control"
+    },
+    {
+      "term": "drone inspection",
+      "tier": "context",
+      "variants": [
+        "robotic inspection",
+        "inspection robot",
+        "crawler robot",
+        "unmanned aerial vehicle",
+        "UAV",
+        "autonomous inspection",
+        "quadruped robot"
+      ],
+      "case_sensitive_variants": [
+        "UAV"
+      ],
+      "why": "robotic inspection producing data for AI analysis"
+    },
+    {
+      "term": "AI safety camera",
+      "tier": "ai",
+      "variants": [
+        "AI video analytics",
+        "AI-enabled camera",
+        "AI-based safety monitoring",
+        "computer vision safety",
+        "PPE detection",
+        "intelligent video surveillance",
+        "AI-powered pedestrian detection"
+      ],
+      "case_sensitive_variants": [],
+      "why": "vision AI monitoring worker safety"
+    },
+    {
+      "term": "connected worker",
+      "tier": "context",
+      "variants": [
+        "digital worker",
+        "smart glasses",
+        "augmented reality",
+        "wearable gas detector",
+        "digital permit to work",
+        "electronic permit to work",
+        "digital shift handover"
+      ],
+      "case_sensitive_variants": [],
+      "why": "digital field tools incl. AI assistance"
+    },
+    {
+      "term": "ageing workforce",
+      "tier": "context",
+      "variants": [
+        "aging workforce",
+        "knowledge capture",
+        "knowledge retention",
+        "knowledge transfer",
+        "skills gap",
+        "experienced operator retirement"
+      ],
+      "case_sensitive_variants": [],
+      "why": "knowledge loss that AI tools are meant to offset"
+    },
+    {
+      "term": "operational technology",
+      "tier": "context",
+      "variants": [
+        "OT security",
+        "OT cybersecurity",
+        "industrial control system",
+        "SCADA"
+      ],
+      "case_sensitive_variants": [],
+      "why": "plant control systems exposed to cyber risk"
+    },
+    {
+      "term": "distributed control system",
+      "tier": "context",
+      "variants": [
+        "DCS",
+        "process control system"
+      ],
+      "case_sensitive_variants": [
+        "DCS"
+      ],
+      "why": "core control layer; cyber and AI integration point"
+    },
+    {
+      "term": "automated roll handling",
+      "tier": "context",
+      "variants": [
+        "automated reel handling",
+        "automated guided vehicle",
+        "AGV",
+        "automated storage and retrieval",
+        "automated roll storage",
+        "warehouse automation",
+        "autonomous forklift",
+        "driverless forklift"
+      ],
+      "case_sensitive_variants": [
+        "AGV"
+      ],
+      "why": "robotic handling and storage of reels"
+    },
+    {
+      "term": "collaborative robot",
+      "tier": "context",
+      "variants": [
+        "cobot",
+        "industrial robot",
+        "robotic cell",
+        "robotic palletising",
+        "robotic palletizing",
+        "robotic arm"
+      ],
+      "case_sensitive_variants": [],
+      "why": "robots on production and packing lines"
+    },
+    {
+      "term": "demand sensing",
+      "tier": "ai",
+      "variants": [],
+      "case_sensitive_variants": [],
+      "why": "ML short-term demand signal modelling"
+    },
+    {
+      "term": "demand forecasting",
+      "tier": "context",
+      "variants": [
+        "demand planning",
+        "sales and operations planning",
+        "integrated business planning"
+      ],
+      "case_sensitive_variants": [],
+      "why": "planning process where AI is commonly applied"
+    },
+    {
+      "term": "dynamic pricing",
+      "tier": "context",
+      "variants": [
+        "price optimisation",
+        "price optimization",
+        "pricing analytics",
+        "price elasticity model"
+      ],
+      "case_sensitive_variants": [],
+      "why": "price setting where learning systems are used"
+    },
+    {
+      "term": "supply chain control tower",
+      "tier": "context",
+      "variants": [
+        "control tower",
+        "supply chain visibility",
+        "autonomous planning",
+        "logistics optimisation",
+        "logistics optimization"
+      ],
+      "case_sensitive_variants": [],
+      "why": "visibility layer where predictive tools sit"
+    },
+    {
+      "term": "LiDAR",
+      "tier": "context",
+      "variants": [
+        "airborne laser scanning",
+        "laser scanning inventory",
+        "remote sensing",
+        "satellite imagery",
+        "drone imagery"
+      ],
+      "case_sensitive_variants": [],
+      "why": "remote sensing input for forest models"
+    },
+    {
+      "term": "precision forestry",
+      "tier": "context",
+      "variants": [
+        "precision silviculture",
+        "digital forestry",
+        "smart forestry",
+        "forest digitalisation",
+        "forest digitalization",
+        "digital forest inventory",
+        "tree-level data"
+      ],
+      "case_sensitive_variants": [],
+      "why": "data-driven forest management"
+    },
+    {
+      "term": "harvest planning",
+      "tier": "context",
+      "variants": [
+        "harvest optimisation",
+        "harvest optimization",
+        "wood supply optimisation",
+        "wood supply optimization",
+        "wood flow optimisation",
+        "fibre supply optimisation",
+        "fiber supply optimization"
+      ],
+      "case_sensitive_variants": [],
+      "why": "optimisation of wood flows"
+    },
+    {
+      "term": "autonomous forestry machine",
+      "tier": "context",
+      "variants": [
+        "autonomous harvester",
+        "autonomous forwarder",
+        "teleoperated harvester",
+        "remote-controlled harvester",
+        "automated planting",
+        "planting robot",
+        "autonomous log truck"
+      ],
+      "case_sensitive_variants": [],
+      "why": "automated and teleoperated forest operations"
+    },
+    {
+      "term": "wildfire detection",
+      "tier": "context",
+      "variants": [
+        "wildfire monitoring",
+        "fire detection tower",
+        "fire detection camera",
+        "fire risk prediction",
+        "wildfire risk modelling",
+        "wildfire risk modeling"
+      ],
+      "case_sensitive_variants": [],
+      "why": "camera and satellite fire monitoring"
+    },
+    {
+      "term": "AI wildfire detection",
+      "tier": "ai",
+      "variants": [
+        "AI-enabled fire detection",
+        "AI-powered wildfire camera",
+        "AI smoke detection"
+      ],
+      "case_sensitive_variants": [],
+      "why": "explicit AI fire detection claim"
+    },
+    {
+      "term": "forest health monitoring",
+      "tier": "context",
+      "variants": [
+        "pest detection",
+        "pest monitoring",
+        "bark beetle detection",
+        "disease detection",
+        "forest damage detection"
+      ],
+      "case_sensitive_variants": [],
+      "why": "remote-sensing monitoring of pests and damage"
+    },
+    {
+      "term": "genomic selection",
+      "tier": "context",
+      "variants": [
+        "clonal selection",
+        "tree breeding programme",
+        "tree breeding program",
+        "genetic improvement programme",
+        "predictive breeding"
+      ],
+      "case_sensitive_variants": [],
+      "why": "data-driven tree breeding"
+    },
+    {
+      "term": "wood traceability",
+      "tier": "context",
+      "variants": [
+        "fibre traceability",
+        "fiber traceability",
+        "geolocation data",
+        "digital traceability",
+        "deforestation monitoring"
+      ],
+      "case_sensitive_variants": [],
+      "why": "origin data required by deforestation rules"
+    },
+    {
+      "term": "recovered paper sorting",
+      "tier": "context",
+      "variants": [
+        "automated paper sorting",
+        "optical sorting",
+        "robotic sorting",
+        "bale inspection",
+        "recovered fibre quality",
+        "recovered fiber quality"
+      ],
+      "case_sensitive_variants": [],
+      "why": "automated sorting of paper for recycling"
+    },
+    {
+      "term": "AI-powered sorting",
+      "tier": "ai",
+      "variants": [
+        "AI sorting robot",
+        "AI-based waste sorting",
+        "robotic waste sorting",
+        "AI waste recognition"
+      ],
+      "case_sensitive_variants": [],
+      "why": "learning-based waste recognition and sorting"
+    },
+    {
+      "term": "AI-assisted material development",
+      "tier": "ai",
+      "variants": [
+        "AI-driven materials research",
+        "materials informatics",
+        "AI-accelerated R&D",
+        "computational material design"
+      ],
+      "case_sensitive_variants": [],
+      "why": "AI in fibre-based materials R&D"
+    },
+    {
+      "term": "data center",
+      "tier": "context",
+      "variants": [
+        "data centre"
+      ],
+      "case_sensitive_variants": [],
+      "why": "mill sites and land repurposed; power demand"
+    },
+    {
+      "term": "electricity demand growth",
+      "tier": "context",
+      "variants": [
+        "power demand growth",
+        "load growth",
+        "grid connection capacity",
+        "rising electricity demand"
+      ],
+      "case_sensitive_variants": [],
+      "why": "AI-related load raising power prices and site value"
+    },
+    {
+      "term": "electrotechnical paper",
+      "tier": "context",
+      "variants": [
+        "electrical insulation paper",
+        "transformer insulation paper",
+        "transformerboard",
+        "insulating kraft paper",
+        "cable insulation paper",
+        "electrical grade paper",
+        "pressboard"
+      ],
+      "case_sensitive_variants": [],
+      "why": "insulation papers for transformers; grid build-out"
+    },
+    {
+      "term": "carrier tape",
+      "tier": "context",
+      "variants": [
+        "cover tape",
+        "chip component packaging"
+      ],
+      "case_sensitive_variants": [],
+      "why": "paper tape for chip components; electronics demand"
+    }
+  ],
+  "class_terms": {
+    "1702": [
+      {
+        "term": "corrugator optimisation",
+        "tier": "context",
+        "variants": [
+          "corrugator optimization",
+          "corrugator control",
+          "corrugator scheduling",
+          "corrugator automation",
+          "box plant automation",
+          "converting line automation"
+        ],
+        "why": "scheduling and control of corrugators"
+      },
+      {
+        "term": "AI-powered packaging design",
+        "tier": "ai",
+        "variants": [
+          "AI packaging design",
+          "AI-driven box design",
+          "AI-generated packaging design",
+          "automated structural design",
+          "packaging design automation"
+        ],
+        "why": "AI generating or optimising pack structures"
+      },
+      {
+        "term": "packaging performance prediction",
+        "tier": "ai",
+        "variants": [
+          "box strength prediction",
+          "box compression prediction",
+          "predictive packaging performance"
+        ],
+        "why": "models predicting box strength"
+      },
+      {
+        "term": "right-size packaging",
+        "tier": "context",
+        "variants": [
+          "right-sized packaging",
+          "fit-to-product",
+          "on-demand packaging",
+          "box-on-demand",
+          "automated box making"
+        ],
+        "why": "fit-to-product boxes made by automated systems"
+      },
+      {
+        "term": "smart packaging",
+        "tier": "context",
+        "variants": [
+          "connected packaging",
+          "intelligent packaging",
+          "digital watermark",
+          "QR code packaging",
+          "NFC packaging",
+          "RFID packaging"
+        ],
+        "why": "connected packs generating data"
+      },
+      {
+        "term": "digital printing",
+        "tier": "context",
+        "variants": [
+          "digital print",
+          "inkjet printing",
+          "variable data printing",
+          "personalised packaging",
+          "personalized packaging"
+        ],
+        "why": "variable print enabling personalised packaging"
+      },
+      {
+        "term": "packaging automation",
+        "tier": "context",
+        "variants": [
+          "automated packaging line",
+          "end-of-line automation",
+          "automated packing system",
+          "packaging machinery"
+        ],
+        "why": "automated packing lines sold or supplied"
+      },
+      {
+        "term": "print defect detection",
+        "tier": "context",
+        "variants": [
+          "print inspection",
+          "box defect detection",
+          "glue detection"
+        ],
+        "why": "inline inspection of printed boxes"
+      },
+      {
+        "term": "e-commerce packaging",
+        "tier": "context",
+        "variants": [
+          "omnichannel packaging",
+          "fulfilment packaging",
+          "fulfillment packaging",
+          "automation-ready packaging"
+        ],
+        "why": "demand from automated fulfilment"
+      }
+    ],
+    "1709": [
+      {
+        "term": "revenue growth management",
+        "tier": "context",
+        "variants": [
+          "RGM",
+          "net revenue management",
+          "strategic revenue management"
+        ],
+        "case_sensitive_variants": [
+          "RGM"
+        ],
+        "why": "pricing, mix and promo discipline using ML"
+      },
+      {
+        "term": "precision marketing",
+        "tier": "context",
+        "variants": [
+          "personalised marketing",
+          "personalized marketing",
+          "personalisation at scale",
+          "personalization at scale",
+          "hyper-personalisation",
+          "hyper-personalization"
+        ],
+        "why": "data-driven targeting and personalisation"
+      },
+      {
+        "term": "AI-powered consumer insights",
+        "tier": "ai",
+        "variants": [
+          "AI-driven consumer insights",
+          "predictive consumer insights",
+          "AI-enabled insights"
+        ],
+        "why": "AI analysis of consumer behaviour"
+      },
+      {
+        "term": "connected dispenser",
+        "tier": "context",
+        "variants": [
+          "smart dispenser",
+          "sensor-enabled dispenser",
+          "data-driven cleaning",
+          "smart washroom",
+          "connected washroom",
+          "people counter"
+        ],
+        "why": "sensor-equipped washroom systems generating data"
+      },
+      {
+        "term": "smart diaper",
+        "tier": "context",
+        "variants": [
+          "connected incontinence product",
+          "incontinence sensor",
+          "digital continence care",
+          "smart incontinence"
+        ],
+        "why": "sensor-based continence care products"
+      },
+      {
+        "term": "digital shelf",
+        "tier": "context",
+        "variants": [
+          "retail media",
+          "e-commerce content optimisation",
+          "e-commerce content optimization"
+        ],
+        "why": "e-commerce content where AI optimises listings"
+      },
+      {
+        "term": "smart label",
+        "tier": "context",
+        "variants": [
+          "RFID label",
+          "intelligent label",
+          "NFC label",
+          "RFID inlay",
+          "connected label"
+        ],
+        "why": "RFID and NFC labels generating item data"
+      }
+    ]
+  }
+}

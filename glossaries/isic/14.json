@@ -1,0 +1,598 @@
+{
+  "id": "14",
+  "name": "Manufacture of wearing apparel",
+  "section": "C",
+  "summary": "Apparel companies report AI across the merchandise cycle: trend and demand forecasting, assortment, allocation and markdown optimisation, AI-generated designs, imagery and product copy, and consumer tools such as virtual try-on, size recommendation and AI stylists. Manufacturers describe automated cutting, sewing automation, fabric inspection and smart factories as answers to labour cost. Risks and context include counterfeit detection, digital product passports, supply-chain traceability and AI shopping agents changing how brands are discovered.",
+  "terms": [
+    {
+      "term": "virtual try-on",
+      "tier": "ai",
+      "variants": [
+        "virtual fitting",
+        "digital fitting room",
+        "AR try-on",
+        "virtual dressing room"
+      ],
+      "case_sensitive_variants": [],
+      "why": "vision AI showing garments on the shopper"
+    },
+    {
+      "term": "size recommendation",
+      "tier": "ai",
+      "variants": [
+        "fit recommendation",
+        "fit prediction",
+        "size prediction",
+        "AI sizing",
+        "fit technology"
+      ],
+      "case_sensitive_variants": [],
+      "why": "ML prediction of size and fit"
+    },
+    {
+      "term": "body scanning",
+      "tier": "context",
+      "variants": [
+        "body scan",
+        "body measurement technology"
+      ],
+      "case_sensitive_variants": [],
+      "why": "measurement data feeding fit models"
+    },
+    {
+      "term": "AI stylist",
+      "tier": "ai",
+      "variants": [
+        "virtual stylist",
+        "AI styling assistant",
+        "AI shopping assistant",
+        "AI-powered styling",
+        "conversational shopping assistant",
+        "AI personal shopper",
+        "digital stylist"
+      ],
+      "case_sensitive_variants": [],
+      "why": "conversational or generative styling assistants"
+    },
+    {
+      "term": "personalised recommendation",
+      "tier": "ai",
+      "variants": [
+        "personalized recommendation",
+        "recommendation engine",
+        "recommendation algorithm",
+        "personalised product recommendation",
+        "personalized product recommendation"
+      ],
+      "case_sensitive_variants": [],
+      "why": "ML product recommendations"
+    },
+    {
+      "term": "visual search",
+      "tier": "ai",
+      "variants": [
+        "image search",
+        "search by image",
+        "AI-powered search",
+        "semantic search"
+      ],
+      "case_sensitive_variants": [],
+      "why": "image-based product search"
+    },
+    {
+      "term": "agentic commerce",
+      "tier": "ai",
+      "variants": [
+        "AI shopping agent",
+        "AI-mediated shopping",
+        "agentic shopping",
+        "generative engine optimisation",
+        "generative engine optimization",
+        "answer engine optimisation",
+        "answer engine optimization"
+      ],
+      "case_sensitive_variants": [],
+      "why": "AI agents shopping on consumers' behalf"
+    },
+    {
+      "term": "hyper-personalisation",
+      "tier": "context",
+      "variants": [
+        "hyper-personalization",
+        "personalisation at scale",
+        "personalization at scale",
+        "one-to-one personalisation",
+        "one-to-one personalization",
+        "personalised marketing",
+        "personalized marketing"
+      ],
+      "case_sensitive_variants": [],
+      "why": "individualised marketing driven by customer data"
+    },
+    {
+      "term": "clienteling",
+      "tier": "context",
+      "variants": [
+        "client advisor tool"
+      ],
+      "case_sensitive_variants": [],
+      "why": "store-associate tools using customer data and AI"
+    },
+    {
+      "term": "customer data platform",
+      "tier": "context",
+      "variants": [
+        "first-party data",
+        "single customer view",
+        "customer 360",
+        "loyalty data"
+      ],
+      "case_sensitive_variants": [],
+      "why": "customer data assets feeding AI"
+    },
+    {
+      "term": "smart mirror",
+      "tier": "context",
+      "variants": [
+        "smart fitting room",
+        "interactive mirror",
+        "magic mirror",
+        "footfall analytics",
+        "in-store analytics"
+      ],
+      "case_sensitive_variants": [],
+      "why": "in-store sensing and interactive fitting"
+    },
+    {
+      "term": "virtual influencer",
+      "tier": "ai",
+      "variants": [
+        "digital human",
+        "virtual anchor",
+        "AI live-streaming host",
+        "virtual brand ambassador",
+        "AI influencer",
+        "virtual idol"
+      ],
+      "case_sensitive_variants": [],
+      "why": "synthetic presenters in marketing and live commerce"
+    },
+    {
+      "term": "AI-generated design",
+      "tier": "ai",
+      "variants": [
+        "AI-assisted design",
+        "AI-designed collection",
+        "generative design",
+        "AI design tool",
+        "AI-driven design",
+        "AI-generated pattern"
+      ],
+      "case_sensitive_variants": [],
+      "why": "generative tools in garment design"
+    },
+    {
+      "term": "AI-generated model",
+      "tier": "ai",
+      "variants": [
+        "AI-generated imagery",
+        "AI-generated fashion model",
+        "digital model twin",
+        "virtual model",
+        "AI-generated campaign",
+        "AI-generated product imagery",
+        "synthetic model"
+      ],
+      "case_sensitive_variants": [],
+      "why": "synthetic models and imagery in e-commerce"
+    },
+    {
+      "term": "AI-generated product description",
+      "tier": "ai",
+      "variants": [
+        "AI-generated product copy",
+        "automated product description",
+        "automated product tagging",
+        "AI product tagging",
+        "automated attribute tagging"
+      ],
+      "case_sensitive_variants": [],
+      "why": "generative AI writing product copy"
+    },
+    {
+      "term": "3D design",
+      "tier": "context",
+      "variants": [
+        "3D product creation",
+        "digital product creation",
+        "3D sampling",
+        "virtual sampling",
+        "3D prototyping",
+        "digital sampling",
+        "3D garment simulation",
+        "virtual prototyping"
+      ],
+      "case_sensitive_variants": [],
+      "why": "digital product creation replacing samples"
+    },
+    {
+      "term": "trend forecasting",
+      "tier": "context",
+      "variants": [
+        "trend prediction",
+        "trend analytics",
+        "fashion trend analysis",
+        "trend detection",
+        "social listening"
+      ],
+      "case_sensitive_variants": [],
+      "why": "design input increasingly produced by AI"
+    },
+    {
+      "term": "AI-powered trend forecasting",
+      "tier": "ai",
+      "variants": [
+        "AI trend forecasting",
+        "AI-driven trend prediction",
+        "predictive trend analytics",
+        "AI-driven trend analysis"
+      ],
+      "case_sensitive_variants": [],
+      "why": "explicit AI trend prediction claim"
+    },
+    {
+      "term": "digital showroom",
+      "tier": "context",
+      "variants": [
+        "virtual showroom",
+        "digital wholesale",
+        "3D showroom",
+        "digital sell-in"
+      ],
+      "case_sensitive_variants": [],
+      "why": "virtual wholesale selling using 3D and AI content"
+    },
+    {
+      "term": "demand sensing",
+      "tier": "ai",
+      "variants": [],
+      "case_sensitive_variants": [],
+      "why": "ML short-term demand signal modelling"
+    },
+    {
+      "term": "demand forecasting",
+      "tier": "context",
+      "variants": [
+        "demand planning",
+        "demand prediction"
+      ],
+      "case_sensitive_variants": [],
+      "why": "planning process where AI is commonly applied"
+    },
+    {
+      "term": "AI-driven demand forecasting",
+      "tier": "ai",
+      "variants": [
+        "AI-powered demand forecasting",
+        "AI-based demand forecasting",
+        "AI demand planning",
+        "machine learning demand forecasting",
+        "predictive demand planning",
+        "AI-powered forecasting"
+      ],
+      "case_sensitive_variants": [],
+      "why": "explicit AI forecasting claim"
+    },
+    {
+      "term": "assortment planning",
+      "tier": "context",
+      "variants": [
+        "assortment optimisation",
+        "assortment optimization",
+        "merchandise planning",
+        "range planning",
+        "merchandise financial planning"
+      ],
+      "case_sensitive_variants": [],
+      "why": "range decisions increasingly ML-supported"
+    },
+    {
+      "term": "allocation and replenishment",
+      "tier": "context",
+      "variants": [
+        "inventory allocation",
+        "automated replenishment",
+        "store allocation",
+        "allocation optimisation",
+        "allocation optimization",
+        "inventory optimisation",
+        "inventory optimization"
+      ],
+      "case_sensitive_variants": [],
+      "why": "inventory placement, often algorithmic"
+    },
+    {
+      "term": "markdown optimisation",
+      "tier": "context",
+      "variants": [
+        "markdown optimization",
+        "price optimisation",
+        "price optimization",
+        "dynamic pricing",
+        "promotion optimisation",
+        "promotion optimization",
+        "pricing analytics"
+      ],
+      "case_sensitive_variants": [],
+      "why": "price and promotion decisions using ML"
+    },
+    {
+      "term": "returns prediction",
+      "tier": "ai",
+      "variants": [
+        "return rate prediction",
+        "predictive returns",
+        "return fraud detection",
+        "returns fraud detection"
+      ],
+      "case_sensitive_variants": [],
+      "why": "models predicting and reducing returns"
+    },
+    {
+      "term": "RFID",
+      "tier": "context",
+      "variants": [
+        "radio frequency identification"
+      ],
+      "case_sensitive_variants": [],
+      "why": "item-level data feeding inventory models"
+    },
+    {
+      "term": "supply chain traceability",
+      "tier": "context",
+      "variants": [
+        "digital traceability",
+        "blockchain traceability",
+        "fibre traceability",
+        "fiber traceability",
+        "supplier mapping",
+        "supply chain mapping"
+      ],
+      "case_sensitive_variants": [],
+      "why": "supply chain data backbone"
+    },
+    {
+      "term": "supplier risk monitoring",
+      "tier": "context",
+      "variants": [
+        "supply chain risk monitoring",
+        "supplier risk analytics",
+        "worker voice technology",
+        "forced labour screening",
+        "forced labor screening"
+      ],
+      "case_sensitive_variants": [],
+      "why": "screening of supplier and labour risks with data tools"
+    },
+    {
+      "term": "product authentication",
+      "tier": "context",
+      "variants": [
+        "counterfeit detection",
+        "anti-counterfeiting technology",
+        "online brand protection",
+        "NFC tag",
+        "digital identity for products"
+      ],
+      "case_sensitive_variants": [],
+      "why": "anti-counterfeit tools, often AI-supported"
+    },
+    {
+      "term": "AI-powered counterfeit detection",
+      "tier": "ai",
+      "variants": [
+        "AI-based authentication",
+        "AI counterfeit monitoring",
+        "AI authentication",
+        "automated counterfeit detection"
+      ],
+      "case_sensitive_variants": [],
+      "why": "AI spotting fakes and infringing listings"
+    },
+    {
+      "term": "digital product passport",
+      "tier": "context",
+      "variants": [
+        "product passport",
+        "digital ID"
+      ],
+      "case_sensitive_variants": [],
+      "why": "EU rule driving product-level data"
+    },
+    {
+      "term": "automated cutting",
+      "tier": "context",
+      "variants": [
+        "automatic cutting",
+        "computerised cutting",
+        "computerized cutting",
+        "laser cutting",
+        "automated spreading",
+        "marker making",
+        "automated nesting",
+        "automated pattern making"
+      ],
+      "case_sensitive_variants": [],
+      "why": "computer-controlled cutting and marker making"
+    },
+    {
+      "term": "robotic sewing",
+      "tier": "context",
+      "variants": [
+        "automated sewing",
+        "sewbot",
+        "sewing robot",
+        "sewing automation",
+        "automatic sewing unit"
+      ],
+      "case_sensitive_variants": [],
+      "why": "automation of labour-intensive sewing"
+    },
+    {
+      "term": "automated fabric inspection",
+      "tier": "ai",
+      "variants": [
+        "fabric defect detection",
+        "AI fabric inspection",
+        "garment defect detection",
+        "AI quality inspection",
+        "automated quality inspection"
+      ],
+      "case_sensitive_variants": [],
+      "why": "vision AI detecting fabric and garment defects"
+    },
+    {
+      "term": "real-time production monitoring",
+      "tier": "context",
+      "variants": [
+        "sewing line monitoring",
+        "line balancing",
+        "real-time line data",
+        "digital shop floor",
+        "automated hanger system",
+        "production tracking system"
+      ],
+      "case_sensitive_variants": [],
+      "why": "sewing-line data used for optimisation"
+    },
+    {
+      "term": "smart factory",
+      "tier": "context",
+      "variants": [
+        "smart manufacturing",
+        "factory of the future",
+        "connected factory",
+        "digital factory",
+        "intelligent manufacturing",
+        "intelligent factory",
+        "Industry 4.0",
+        "Industrie 4.0",
+        "fourth industrial revolution"
+      ],
+      "case_sensitive_variants": [],
+      "why": "connected-plant programmes framing AI use"
+    },
+    {
+      "term": "on-demand manufacturing",
+      "tier": "context",
+      "variants": [
+        "made-to-order",
+        "micro-factory",
+        "microfactory",
+        "mass customisation",
+        "mass customization",
+        "made-to-measure",
+        "quick-response manufacturing",
+        "agile manufacturing"
+      ],
+      "case_sensitive_variants": [],
+      "why": "small-batch production driven by demand data"
+    },
+    {
+      "term": "predictive maintenance",
+      "tier": "ai",
+      "variants": [
+        "prescriptive maintenance",
+        "predictive asset maintenance"
+      ],
+      "case_sensitive_variants": [],
+      "why": "ML-based prediction of equipment failure"
+    },
+    {
+      "term": "digital twin",
+      "tier": "context",
+      "variants": [
+        "virtual twin"
+      ],
+      "case_sensitive_variants": [],
+      "why": "virtual plant, process or product model"
+    },
+    {
+      "term": "automated warehouse",
+      "tier": "context",
+      "variants": [
+        "warehouse automation",
+        "automated storage and retrieval",
+        "automated distribution centre",
+        "automated distribution center",
+        "automated guided vehicle",
+        "AGV",
+        "autonomous forklift",
+        "autonomous mobile robot",
+        "intelligent warehousing"
+      ],
+      "case_sensitive_variants": [
+        "AGV"
+      ],
+      "why": "robotic storage and logistics"
+    },
+    {
+      "term": "labour-saving automation",
+      "tier": "context",
+      "variants": [
+        "labor-saving automation",
+        "automation of manual tasks",
+        "automation of repetitive tasks",
+        "machine substitution",
+        "reduce reliance on manual labour",
+        "reduce reliance on manual labor"
+      ],
+      "case_sensitive_variants": [],
+      "why": "automation motivated by labour cost and shortages"
+    },
+    {
+      "term": "smart garment",
+      "tier": "context",
+      "variants": [
+        "smart clothing",
+        "wearable technology",
+        "connected apparel",
+        "smart apparel",
+        "e-textile",
+        "smart textile"
+      ],
+      "case_sensitive_variants": [],
+      "why": "sensor-embedded clothing generating data"
+    }
+  ],
+  "class_terms": {
+    "1410": [
+      {
+        "term": "smart workwear",
+        "tier": "context",
+        "variants": [
+          "connected workwear",
+          "smart PPE",
+          "sensor-enabled protective clothing",
+          "connected safety wear"
+        ],
+        "why": "sensor-enabled protective clothing"
+      }
+    ],
+    "1430": [
+      {
+        "term": "3D knitting",
+        "tier": "context",
+        "variants": [
+          "whole garment knitting",
+          "seamless knitting",
+          "computerised knitting",
+          "computerized knitting",
+          "digital knitting",
+          "knit-to-shape"
+        ],
+        "why": "computerised knitting enabling automated production"
+      }
+    ]
+  }
+}

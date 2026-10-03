@@ -1,0 +1,1100 @@
+{
+  "id": "35",
+  "name": "Electricity, gas, steam and air conditioning supply",
+  "section": "D",
+  "summary": "Electric and gas utilities are the sector where AI appears most as a demand shock: data-centre and hyperscaler load growth, large-load tariffs, interconnection queues, co-location and new firm generation dominate recent filings, with cost allocation and stranded-asset risk as the counterpart. Own use covers load and renewable forecasting, outage and wildfire prediction, drone and image-based asset inspection, predictive maintenance, smart-meter analytics, orchestration of distributed resources and automated trading. Cyber security of operational technology, equipment lead times and reliability rules frame the risk discussion.",
+  "terms": [
+    {
+      "term": "data center",
+      "tier": "context",
+      "variants": [
+        "data centre"
+      ],
+      "why": "principal source of AI-driven load growth"
+    },
+    {
+      "term": "hyperscaler",
+      "tier": "context",
+      "variants": [
+        "hyperscale",
+        "technology customers",
+        "large technology companies",
+        "tech customer"
+      ],
+      "why": "large technology customers contracting capacity"
+    },
+    {
+      "term": "large load",
+      "tier": "context",
+      "variants": [
+        "large customer load",
+        "high-load-factor customer",
+        "extra-large customer",
+        "large power user"
+      ],
+      "why": "planning and tariff category for data-centre customers"
+    },
+    {
+      "term": "load growth",
+      "tier": "context",
+      "variants": [
+        "demand growth",
+        "load forecast",
+        "growth in electricity demand",
+        "rising electricity demand",
+        "electricity consumption growth"
+      ],
+      "why": "demand outlook reset by data centres and electrification"
+    },
+    {
+      "term": "AI-driven load growth",
+      "tier": "ai",
+      "variants": [
+        "AI-driven electricity demand",
+        "AI power demand",
+        "AI-driven demand",
+        "AI-related load",
+        "power demand from artificial intelligence",
+        "AI energy demand",
+        "AI workloads"
+      ],
+      "why": "explicit AI attribution of electricity demand"
+    },
+    {
+      "term": "interconnection queue",
+      "tier": "context",
+      "variants": [
+        "interconnection request",
+        "load interconnection",
+        "connection queue",
+        "grid connection request",
+        "connection pipeline",
+        "load pipeline"
+      ],
+      "why": "backlog of load and generation connection requests"
+    },
+    {
+      "term": "contracted load",
+      "tier": "context",
+      "variants": [
+        "contracted capacity",
+        "signed load",
+        "committed load",
+        "letter of agreement",
+        "late-stage pipeline",
+        "gigawatts of demand"
+      ],
+      "why": "signed data-centre capacity reported by utilities"
+    },
+    {
+      "term": "speculative load",
+      "tier": "context",
+      "variants": [
+        "speculative request",
+        "duplicate request",
+        "phantom load",
+        "load forecast uncertainty"
+      ],
+      "why": "uncertainty over duplicate or unrealised data-centre requests"
+    },
+    {
+      "term": "load oscillation",
+      "tier": "context",
+      "variants": [
+        "voltage ride-through",
+        "large load tripping",
+        "load loss event",
+        "power quality",
+        "ramp rate"
+      ],
+      "why": "fast-ramping AI loads stressing grid stability"
+    },
+    {
+      "term": "speed to power",
+      "tier": "context",
+      "variants": [
+        "time to power",
+        "speed to market",
+        "time-to-energization",
+        "energization date",
+        "ramp schedule",
+        "load ramp"
+      ],
+      "why": "time-to-energise as data-centre siting constraint"
+    },
+    {
+      "term": "powered land",
+      "tier": "context",
+      "variants": [
+        "powered shell",
+        "shovel-ready site",
+        "site readiness",
+        "AI campus",
+        "technology campus",
+        "digital infrastructure campus"
+      ],
+      "why": "sites with secured grid capacity sold to developers"
+    },
+    {
+      "term": "co-location",
+      "tier": "context",
+      "variants": [
+        "colocation",
+        "co-located load",
+        "front-of-the-meter",
+        "behind-the-meter",
+        "on-site generation",
+        "bring your own generation",
+        "bring-your-own-power"
+      ],
+      "why": "data centres sited at power plants"
+    },
+    {
+      "term": "energy services agreement",
+      "tier": "context",
+      "variants": [
+        "electric service agreement",
+        "long-term supply agreement",
+        "hyperscaler PPA",
+        "corporate PPA",
+        "corporate power purchase agreement"
+      ],
+      "why": "bespoke supply contracts with data-centre customers"
+    },
+    {
+      "term": "minimum demand charge",
+      "tier": "context",
+      "variants": [
+        "minimum take",
+        "take-or-pay",
+        "minimum contract term",
+        "minimum billing demand",
+        "contract demand",
+        "exit fee",
+        "collateral requirement",
+        "credit support"
+      ],
+      "why": "contract terms protecting ratepayers from data-centre risk"
+    },
+    {
+      "term": "ratepayer protection",
+      "tier": "context",
+      "variants": [
+        "cost shifting",
+        "cost allocation",
+        "stranded cost",
+        "stranded asset risk",
+        "cross-subsidisation",
+        "cross-subsidization",
+        "customer bill impact"
+      ],
+      "why": "cost-allocation debate over serving data centres"
+    },
+    {
+      "term": "clean transition tariff",
+      "tier": "context",
+      "variants": [
+        "24/7 carbon-free energy",
+        "24/7 CFE",
+        "hourly matching",
+        "clean firm power",
+        "carbon-free energy",
+        "green tariff",
+        "clean energy tariff"
+      ],
+      "why": "tariffs letting tech buyers fund clean firm power"
+    },
+    {
+      "term": "capacity market",
+      "tier": "context",
+      "variants": [
+        "capacity auction",
+        "capacity price",
+        "base residual auction",
+        "resource adequacy",
+        "reserve margin",
+        "capacity shortfall"
+      ],
+      "why": "capacity prices rising on data-centre demand"
+    },
+    {
+      "term": "dispatchable generation",
+      "tier": "context",
+      "variants": [
+        "new gas generation",
+        "gas-fired generation",
+        "combined cycle",
+        "gas turbine",
+        "peaking capacity",
+        "firm capacity",
+        "baseload generation"
+      ],
+      "why": "firm capacity additions justified by AI load"
+    },
+    {
+      "term": "plant retirement deferral",
+      "tier": "context",
+      "variants": [
+        "delayed retirement",
+        "deferred retirement",
+        "retirement delay",
+        "coal plant life extension",
+        "postponed retirement",
+        "extended operation"
+      ],
+      "why": "fossil retirements delayed to serve new load"
+    },
+    {
+      "term": "nuclear uprate",
+      "tier": "context",
+      "variants": [
+        "reactor restart",
+        "nuclear restart",
+        "power uprate",
+        "small modular reactor",
+        "advanced nuclear",
+        "Crane Clean Energy Center"
+      ],
+      "why": "nuclear output and restarts contracted by tech firms"
+    },
+    {
+      "term": "equipment lead time",
+      "tier": "context",
+      "variants": [
+        "transformer lead time",
+        "turbine backlog",
+        "turbine slot reservation",
+        "transformer shortage",
+        "long-lead equipment",
+        "gas turbine availability"
+      ],
+      "why": "turbine and transformer shortages from AI build-out"
+    },
+    {
+      "term": "transmission expansion",
+      "tier": "context",
+      "variants": [
+        "transmission investment",
+        "grid expansion",
+        "grid build-out",
+        "transmission capital plan",
+        "rate base growth",
+        "grid investment"
+      ],
+      "why": "grid investment plans scaled for data-centre load"
+    },
+    {
+      "term": "cryptocurrency mining",
+      "tier": "context",
+      "variants": [
+        "crypto mining",
+        "bitcoin mining",
+        "digital asset mining",
+        "high-performance computing load"
+      ],
+      "why": "other large flexible computing load"
+    },
+    {
+      "term": "flexible load",
+      "tier": "context",
+      "variants": [
+        "demand flexibility",
+        "curtailable load",
+        "interruptible load",
+        "load flexibility",
+        "flexible interconnection",
+        "controllable load"
+      ],
+      "why": "curtailable data-centre demand as grid resource"
+    },
+    {
+      "term": "grid-enhancing technologies",
+      "tier": "context",
+      "variants": [
+        "dynamic line rating",
+        "DLR",
+        "advanced power flow control",
+        "advanced conductor",
+        "reconductoring",
+        "topology optimisation",
+        "topology optimization"
+      ],
+      "case_sensitive_variants": [
+        "DLR"
+      ],
+      "why": "software and sensors raising line capacity"
+    },
+    {
+      "term": "smart grid",
+      "tier": "context",
+      "variants": [
+        "intelligent grid",
+        "grid modernisation",
+        "grid modernization",
+        "self-healing grid",
+        "digital grid",
+        "grid of the future",
+        "smart network",
+        "intelligent network"
+      ],
+      "why": "umbrella for sensing and automated networks"
+    },
+    {
+      "term": "grid edge",
+      "tier": "context",
+      "variants": [
+        "distributed intelligence",
+        "edge computing",
+        "edge intelligence"
+      ],
+      "why": "intelligence at meters and customer devices"
+    },
+    {
+      "term": "advanced metering infrastructure",
+      "tier": "context",
+      "variants": [
+        "AMI",
+        "smart meter",
+        "smart metering",
+        "interval data",
+        "meter data analytics"
+      ],
+      "case_sensitive_variants": [
+        "AMI"
+      ],
+      "why": "smart-meter data feeding analytics and forecasting"
+    },
+    {
+      "term": "load disaggregation",
+      "tier": "ai",
+      "variants": [
+        "non-intrusive load monitoring",
+        "appliance-level insights",
+        "energy disaggregation",
+        "meter data science"
+      ],
+      "why": "ML inference of appliance use from meter data"
+    },
+    {
+      "term": "energy theft detection",
+      "tier": "ai",
+      "variants": [
+        "non-technical loss detection",
+        "theft analytics",
+        "revenue protection analytics",
+        "meter tampering detection",
+        "loss detection algorithm"
+      ],
+      "why": "ML detection of non-technical losses"
+    },
+    {
+      "term": "transformer load management",
+      "tier": "context",
+      "variants": [
+        "transformer loading analytics",
+        "EV detection",
+        "EV charging detection",
+        "distribution transformer monitoring"
+      ],
+      "why": "meter analytics detecting overloads and EV charging"
+    },
+    {
+      "term": "load forecasting",
+      "tier": "context",
+      "variants": [
+        "demand forecasting",
+        "price forecasting",
+        "machine learning forecast",
+        "forecasting model",
+        "probabilistic forecasting",
+        "EV adoption forecast",
+        "DER adoption forecast"
+      ],
+      "why": "demand prediction, now commonly ML-based"
+    },
+    {
+      "term": "renewable generation forecasting",
+      "tier": "context",
+      "variants": [
+        "wind power forecasting",
+        "solar forecasting",
+        "wind forecasting",
+        "solar generation forecast",
+        "renewable forecasting",
+        "weather-based forecasting",
+        "hydro inflow forecasting",
+        "inflow forecast"
+      ],
+      "why": "wind, solar and hydro output prediction"
+    },
+    {
+      "term": "outage prediction",
+      "tier": "ai",
+      "variants": [
+        "predictive outage",
+        "outage forecasting",
+        "storm damage prediction",
+        "storm impact model",
+        "fault prediction",
+        "equipment failure prediction"
+      ],
+      "why": "ML prediction of storm damage and faults"
+    },
+    {
+      "term": "automated damage assessment",
+      "tier": "ai",
+      "variants": [
+        "AI damage assessment",
+        "drone damage assessment",
+        "damage prediction model"
+      ],
+      "why": "image-based assessment after storms"
+    },
+    {
+      "term": "fault location, isolation and service restoration",
+      "tier": "context",
+      "variants": [
+        "FLISR",
+        "distribution automation",
+        "automated switching",
+        "automatic restoration",
+        "fault detection",
+        "feeder automation",
+        "automated recloser"
+      ],
+      "why": "automated switching restoring supply"
+    },
+    {
+      "term": "advanced distribution management system",
+      "tier": "context",
+      "variants": [
+        "ADMS",
+        "outage management system",
+        "volt/VAR optimisation",
+        "volt/VAR optimization",
+        "network management system"
+      ],
+      "why": "control-room platform hosting grid optimisation"
+    },
+    {
+      "term": "distributed energy resource management system",
+      "tier": "context",
+      "variants": [
+        "DERMS",
+        "DER orchestration",
+        "DER management",
+        "distributed energy resources",
+        "flexibility platform",
+        "flexibility market",
+        "grid orchestration"
+      ],
+      "why": "orchestration of rooftop solar, batteries and EVs"
+    },
+    {
+      "term": "virtual power plant",
+      "tier": "context",
+      "variants": [
+        "VPP",
+        "aggregated flexibility",
+        "DER aggregation",
+        "residential battery aggregation"
+      ],
+      "case_sensitive_variants": [
+        "VPP"
+      ],
+      "why": "aggregated DERs dispatched by algorithms"
+    },
+    {
+      "term": "demand response",
+      "tier": "context",
+      "variants": [
+        "demand-side management",
+        "load control",
+        "demand side response",
+        "smart thermostat",
+        "managed charging",
+        "smart charging",
+        "vehicle-to-grid"
+      ],
+      "why": "automated load control programmes"
+    },
+    {
+      "term": "home energy management",
+      "tier": "context",
+      "variants": [
+        "personalised energy insights",
+        "personalized energy insights",
+        "high bill alert",
+        "bill forecasting",
+        "smart home energy",
+        "energy insights"
+      ],
+      "why": "customer-facing optimisation of devices and bills"
+    },
+    {
+      "term": "dynamic tariff",
+      "tier": "context",
+      "variants": [
+        "time-of-use tariff",
+        "dynamic pricing",
+        "real-time pricing",
+        "smart tariff",
+        "agile tariff"
+      ],
+      "why": "time-varying pricing enabled by meter data and algorithms"
+    },
+    {
+      "term": "Kraken",
+      "tier": "context",
+      "variants": [
+        "Kraken Technologies"
+      ],
+      "case_sensitive_variants": [
+        "Kraken"
+      ],
+      "why": "AI-enabled utility customer and flexibility platform"
+    },
+    {
+      "term": "propensity to pay model",
+      "tier": "ai",
+      "variants": [
+        "arrears prediction",
+        "bad debt prediction",
+        "credit and collections analytics",
+        "vulnerability identification"
+      ],
+      "why": "ML targeting of collections and vulnerable customers"
+    },
+    {
+      "term": "weather modelling",
+      "tier": "context",
+      "variants": [
+        "weather modeling",
+        "weather forecasting model",
+        "numerical weather prediction",
+        "high-resolution weather",
+        "weather station network"
+      ],
+      "why": "high-resolution weather forecasting for grid operations"
+    },
+    {
+      "term": "wildfire risk modelling",
+      "tier": "context",
+      "variants": [
+        "wildfire risk modeling",
+        "wildfire risk model",
+        "fire risk model",
+        "fire spread modelling",
+        "fire spread modeling",
+        "public safety power shutoff",
+        "PSPS",
+        "fire potential index",
+        "ignition risk"
+      ],
+      "case_sensitive_variants": [
+        "PSPS"
+      ],
+      "why": "predictive ignition and spread models driving shutoffs"
+    },
+    {
+      "term": "wildfire detection camera",
+      "tier": "ai",
+      "variants": [
+        "AI-enabled camera",
+        "AI camera",
+        "smoke detection camera",
+        "high-definition camera network",
+        "fire detection camera",
+        "AI fire detection",
+        "early fault detection"
+      ],
+      "why": "AI smoke detection cameras on networks"
+    },
+    {
+      "term": "vegetation management",
+      "tier": "context",
+      "variants": [
+        "vegetation risk",
+        "tree trimming",
+        "hazard tree",
+        "LiDAR vegetation",
+        "remote sensing vegetation"
+      ],
+      "why": "tree trimming programmes now targeted by imagery and ML"
+    },
+    {
+      "term": "vegetation management analytics",
+      "tier": "ai",
+      "variants": [
+        "satellite vegetation management",
+        "predictive vegetation management",
+        "intelligent vegetation management",
+        "vegetation risk model",
+        "tree risk model",
+        "AI-based vegetation management"
+      ],
+      "why": "satellite, LiDAR and ML tree-risk assessment"
+    },
+    {
+      "term": "drone inspection",
+      "tier": "context",
+      "variants": [
+        "drone line inspection",
+        "UAV inspection",
+        "aerial inspection",
+        "helicopter LiDAR",
+        "unmanned aerial system",
+        "drone patrol",
+        "beyond visual line of sight"
+      ],
+      "why": "UAV imagery of lines, towers and plants"
+    },
+    {
+      "term": "automated image analysis",
+      "tier": "ai",
+      "variants": [
+        "AI-based inspection",
+        "automated defect detection",
+        "computer vision inspection",
+        "AI image analysis",
+        "image analytics",
+        "inspection analytics"
+      ],
+      "why": "computer vision defect detection on inspection imagery"
+    },
+    {
+      "term": "inspection robot",
+      "tier": "ai",
+      "variants": [
+        "robotic inspection",
+        "substation robot",
+        "robot dog",
+        "robotic crawler",
+        "live-line robot",
+        "line robot"
+      ],
+      "why": "robots on lines, in substations and plants"
+    },
+    {
+      "term": "predictive maintenance",
+      "tier": "ai",
+      "variants": [
+        "predictive asset maintenance",
+        "failure prediction",
+        "prognostics",
+        "predictive asset management",
+        "predictive failure"
+      ],
+      "why": "ML failure prediction for grid and plant assets"
+    },
+    {
+      "term": "asset health",
+      "tier": "context",
+      "variants": [
+        "condition-based maintenance",
+        "condition monitoring",
+        "asset performance management",
+        "transformer monitoring",
+        "online monitoring",
+        "risk-based asset management",
+        "asset analytics"
+      ],
+      "why": "condition indices prioritising replacement and maintenance"
+    },
+    {
+      "term": "digital twin",
+      "tier": "context",
+      "variants": [
+        "virtual twin",
+        "network model",
+        "digital replica",
+        "grid model"
+      ],
+      "why": "virtual model of network, plant or wind farm"
+    },
+    {
+      "term": "digital substation",
+      "tier": "context",
+      "variants": [
+        "intelligent substation",
+        "smart substation",
+        "substation automation",
+        "virtual protection",
+        "intelligent electronic device"
+      ],
+      "why": "sensorised, software-defined substations"
+    },
+    {
+      "term": "monitoring and diagnostics centre",
+      "tier": "context",
+      "variants": [
+        "monitoring and diagnostics center",
+        "remote monitoring centre",
+        "remote monitoring center",
+        "remote operations centre",
+        "remote operations center",
+        "fleet monitoring center",
+        "performance monitoring centre"
+      ],
+      "why": "fleet-wide remote monitoring of generating units"
+    },
+    {
+      "term": "plant performance optimisation",
+      "tier": "context",
+      "variants": [
+        "plant performance optimization",
+        "combustion optimisation",
+        "combustion optimization",
+        "heat rate optimisation",
+        "heat rate optimization",
+        "advanced process control",
+        "autonomous plant operation",
+        "boiler optimisation"
+      ],
+      "why": "algorithmic tuning of thermal and nuclear units"
+    },
+    {
+      "term": "wind farm optimisation",
+      "tier": "context",
+      "variants": [
+        "wind farm optimization",
+        "wake steering",
+        "yaw optimisation",
+        "yaw optimization",
+        "turbine performance analytics",
+        "blade inspection drone",
+        "automated blade inspection",
+        "solar panel inspection"
+      ],
+      "why": "turbine-level control and inspection analytics"
+    },
+    {
+      "term": "battery dispatch optimisation",
+      "tier": "ai",
+      "variants": [
+        "battery dispatch optimization",
+        "storage optimisation",
+        "storage optimization",
+        "automated bidding",
+        "Autobidder",
+        "battery optimisation",
+        "battery optimization",
+        "AI-driven dispatch"
+      ],
+      "why": "algorithmic bidding and dispatch of storage"
+    },
+    {
+      "term": "algorithmic trading",
+      "tier": "context",
+      "variants": [
+        "trading algorithm",
+        "AI-driven trading",
+        "automated trading",
+        "algo trading",
+        "quantitative trading",
+        "trading optimisation",
+        "trading optimization"
+      ],
+      "why": "automated power and gas trading"
+    },
+    {
+      "term": "portfolio optimisation",
+      "tier": "context",
+      "variants": [
+        "portfolio optimization",
+        "dispatch optimisation",
+        "dispatch optimization",
+        "unit commitment optimisation",
+        "market bidding optimisation"
+      ],
+      "why": "optimisation of generation dispatch and market bids"
+    },
+    {
+      "term": "hosting capacity analysis",
+      "tier": "context",
+      "variants": [
+        "hosting capacity map",
+        "automated interconnection study",
+        "connection study automation",
+        "power flow analysis",
+        "grid planning model",
+        "network planning tool"
+      ],
+      "why": "automated studies of connection headroom"
+    },
+    {
+      "term": "crew dispatch optimisation",
+      "tier": "context",
+      "variants": [
+        "crew dispatch optimization",
+        "work management optimisation",
+        "field workforce management",
+        "workforce scheduling",
+        "AI-assisted dispatch",
+        "work order prioritisation",
+        "work order prioritization"
+      ],
+      "why": "algorithmic scheduling of field crews and work"
+    },
+    {
+      "term": "Pano AI",
+      "tier": "ai",
+      "variants": [
+        "AiDash",
+        "Overstory",
+        "Technosylva",
+        "Neara",
+        "Bidgely",
+        "Utilidata",
+        "Buzz Solutions",
+        "Urbint",
+        "ALERTCalifornia"
+      ],
+      "why": "AI vendors for wildfire, vegetation, inspection, customer analytics"
+    },
+    {
+      "term": "operational technology",
+      "tier": "context",
+      "variants": [
+        "OT security",
+        "OT cybersecurity",
+        "industrial control system",
+        "SCADA",
+        "NERC CIP",
+        "critical infrastructure protection",
+        "control system security"
+      ],
+      "why": "grid control systems as AI-era cyber target"
+    }
+  ],
+  "class_terms": {
+    "3511": [
+      {
+        "term": "nuclear power purchase agreement",
+        "tier": "context",
+        "variants": [
+          "nuclear PPA",
+          "nuclear offtake",
+          "nuclear energy agreement",
+          "nuclear co-location",
+          "behind-the-fence nuclear"
+        ],
+        "why": "tech-company offtake from nuclear plants"
+      },
+      {
+        "term": "plant site repurposing",
+        "tier": "context",
+        "variants": [
+          "brownfield plant site",
+          "retired plant site",
+          "coal plant site redevelopment",
+          "repowering",
+          "site repurposing"
+        ],
+        "why": "retired or existing plant sites offered to data centres"
+      },
+      {
+        "term": "advanced pattern recognition",
+        "tier": "ai",
+        "variants": [
+          "boiler tube leak detection",
+          "tube leak prediction",
+          "turbine anomaly detection",
+          "equipment early warning system"
+        ],
+        "why": "ML early warning on turbines, boilers and generators"
+      }
+    ],
+    "3512": [
+      {
+        "term": "tech company offtake",
+        "tier": "context",
+        "variants": [
+          "technology company offtake",
+          "tech offtaker",
+          "data center offtake",
+          "data centre offtake",
+          "hyperscaler offtake",
+          "corporate offtake"
+        ],
+        "why": "renewables contracted by data-centre operators"
+      },
+      {
+        "term": "robotic solar installation",
+        "tier": "context",
+        "variants": [
+          "solar installation robot",
+          "automated module installation",
+          "robotic panel cleaning",
+          "panel cleaning robot"
+        ],
+        "why": "robots installing and cleaning solar modules"
+      },
+      {
+        "term": "site selection algorithm",
+        "tier": "context",
+        "variants": [
+          "automated site screening",
+          "resource assessment model",
+          "wind resource modelling",
+          "wind resource modeling"
+        ],
+        "why": "automated screening of sites and resources"
+      }
+    ],
+    "3513": [
+      {
+        "term": "connection reform",
+        "tier": "context",
+        "variants": [
+          "AI growth zone",
+          "grid connection reform",
+          "demand connection queue",
+          "first ready first connected"
+        ],
+        "why": "queue reforms prioritising data-centre and AI zones"
+      },
+      {
+        "term": "low-voltage monitoring",
+        "tier": "context",
+        "variants": [
+          "LV monitoring",
+          "low voltage visibility",
+          "LV network visibility",
+          "secondary substation monitoring"
+        ],
+        "why": "sensors giving visibility of local networks"
+      }
+    ],
+    "3520": [
+      {
+        "term": "advanced leak detection",
+        "tier": "context",
+        "variants": [
+          "mobile leak detection",
+          "mobile methane detection",
+          "Picarro",
+          "leak survey analytics",
+          "methane emissions detection"
+        ],
+        "why": "vehicle and sensor methane surveys with analytics"
+      },
+      {
+        "term": "leak prediction model",
+        "tier": "ai",
+        "variants": [
+          "predictive leak modelling",
+          "predictive leak modeling",
+          "pipe risk model",
+          "main replacement prioritisation",
+          "main replacement prioritization",
+          "distribution integrity analytics"
+        ],
+        "why": "ML ranking of mains by leak and failure risk"
+      },
+      {
+        "term": "damage prevention analytics",
+        "tier": "ai",
+        "variants": [
+          "excavation damage prediction",
+          "locate ticket risk scoring",
+          "third-party damage prevention",
+          "dig-in risk model",
+          "811 ticket analytics"
+        ],
+        "why": "risk scoring of excavation tickets"
+      },
+      {
+        "term": "smart gas meter",
+        "tier": "context",
+        "variants": [
+          "ultrasonic gas meter",
+          "gas AMI",
+          "intelligent gas meter",
+          "remote shutoff meter"
+        ],
+        "why": "connected gas metering and remote shutoff data"
+      },
+      {
+        "term": "gas demand from power generation",
+        "tier": "context",
+        "variants": [
+          "gas-fired data center",
+          "gas supply for data centers",
+          "gas supply for data centres",
+          "power generation gas demand",
+          "lateral pipeline",
+          "gas transmission expansion"
+        ],
+        "why": "pipeline and distributor demand from data-centre gas plants"
+      },
+      {
+        "term": "in-pipe robot",
+        "tier": "ai",
+        "variants": [
+          "robotic pipe inspection",
+          "live gas main robot",
+          "CISBOT",
+          "robotic joint sealing"
+        ],
+        "why": "robots inspecting and sealing live gas mains"
+      }
+    ],
+    "3530": [
+      {
+        "term": "data center waste heat",
+        "tier": "context",
+        "variants": [
+          "data centre waste heat",
+          "waste heat recovery",
+          "excess heat from data centers",
+          "excess heat from data centres",
+          "heat reuse",
+          "surplus heat"
+        ],
+        "why": "server heat reused in district heating"
+      },
+      {
+        "term": "district heating optimisation",
+        "tier": "context",
+        "variants": [
+          "district heating optimization",
+          "heat demand forecasting",
+          "heat network optimisation",
+          "heat network optimization",
+          "supply temperature optimisation",
+          "smart heat network",
+          "intelligent heat network"
+        ],
+        "why": "algorithmic control of heat networks"
+      },
+      {
+        "term": "district cooling",
+        "tier": "context",
+        "variants": [
+          "cooling as a service",
+          "chilled water supply",
+          "data center cooling",
+          "data centre cooling",
+          "cooling demand"
+        ],
+        "why": "chilled water supply including to data centres"
+      }
+    ],
+    "3540": [
+      {
+        "term": "energy trading platform",
+        "tier": "context",
+        "variants": [
+          "trading platform",
+          "automated matching",
+          "algorithmic execution",
+          "price comparison algorithm",
+          "energy procurement platform",
+          "digital broker"
+        ],
+        "why": "digital broking and automated contract matching"
+      }
+    ]
+  }
+}

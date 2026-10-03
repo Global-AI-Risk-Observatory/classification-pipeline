@@ -1,0 +1,484 @@
+{
+  "id": "96",
+  "name": "Personal service activities",
+  "section": "T",
+  "summary": "Personal service companies (laundries, salons, beauty and wellness chains, funeral operators, dating and other consumer service brands) use AI for booking and reception, scheduling, personalised recommendations, plant automation and sales leads. Distinct stories sit in a few classes: robotic sorting and RFID in industrial laundry, virtual try-on and skin analysis in beauty, AI obituaries and grief technology in funerals, and AI matchmaking, fake profiles and romance scams in dating services.",
+  "terms": [
+    {
+      "term": "online booking",
+      "tier": "context",
+      "variants": [
+        "appointment booking",
+        "booking platform",
+        "appointment scheduling",
+        "booking app",
+        "no-show",
+        "appointment reminder"
+      ],
+      "why": "appointment channel where AI assistants are added"
+    },
+    {
+      "term": "AI receptionist",
+      "tier": "ai",
+      "variants": [
+        "AI booking assistant",
+        "AI phone answering",
+        "virtual receptionist",
+        "AI appointment scheduling",
+        "AI concierge",
+        "AI front desk"
+      ],
+      "why": "AI answering calls and booking appointments"
+    },
+    {
+      "term": "personalised recommendation",
+      "tier": "context",
+      "variants": [
+        "personalized recommendation",
+        "personalised treatment plan",
+        "personalized treatment plan",
+        "product recommendation",
+        "customised regimen",
+        "customized regimen"
+      ],
+      "why": "tailored product and treatment suggestions"
+    },
+    {
+      "term": "workforce scheduling",
+      "tier": "context",
+      "variants": [
+        "labour scheduling",
+        "labor scheduling",
+        "staff rostering",
+        "stylist scheduling",
+        "labour productivity",
+        "labor productivity"
+      ],
+      "why": "labour planning optimised by demand forecasts"
+    },
+    {
+      "term": "client retention",
+      "tier": "context",
+      "variants": [
+        "guest retention",
+        "loyalty programme data",
+        "loyalty program data",
+        "membership churn",
+        "client relationship management",
+        "rebooking rate"
+      ],
+      "why": "loyalty outcomes targeted with predictive marketing"
+    }
+  ],
+  "class_terms": {
+    "9610": [
+      {
+        "term": "RFID tracking",
+        "tier": "context",
+        "variants": [
+          "RFID-tagged linen",
+          "RFID chip",
+          "garment tracking",
+          "linen tracking",
+          "textile tracking",
+          "UHF RFID"
+        ],
+        "why": "tagged textiles generating data for automation"
+      },
+      {
+        "term": "automated sorting",
+        "tier": "context",
+        "variants": [
+          "robotic sorting",
+          "automated garment sorting",
+          "soiled linen sorting",
+          "automated folding",
+          "robotic folding",
+          "plant automation",
+          "laundry automation"
+        ],
+        "why": "plant automation for soiled and clean textiles"
+      },
+      {
+        "term": "AI sorting",
+        "tier": "ai",
+        "variants": [
+          "AI-based textile sorting",
+          "vision-based sorting",
+          "AI stain detection",
+          "automated quality inspection of linen",
+          "robotic garment handling"
+        ],
+        "why": "vision systems sorting and inspecting textiles"
+      },
+      {
+        "term": "route optimisation",
+        "tier": "context",
+        "variants": [
+          "route optimization",
+          "route accounting",
+          "delivery route planning",
+          "route density",
+          "logistics optimisation",
+          "logistics optimization"
+        ],
+        "why": "delivery routing and logistics planning by algorithm"
+      },
+      {
+        "term": "plant productivity",
+        "tier": "context",
+        "variants": [
+          "plant efficiency",
+          "pieces per operator hour",
+          "energy optimisation",
+          "energy optimization",
+          "water and energy consumption",
+          "linen loss"
+        ],
+        "why": "efficiency metrics targeted by automation"
+      }
+    ],
+    "9621": [
+      {
+        "term": "virtual try-on",
+        "tier": "ai",
+        "variants": [
+          "AR try-on",
+          "virtual hair colour try-on",
+          "virtual hair color try-on",
+          "virtual makeover",
+          "AI hairstyle preview",
+          "hair colour simulation",
+          "hair color simulation"
+        ],
+        "why": "AI preview of hair colour and styles"
+      },
+      {
+        "term": "salon software",
+        "tier": "context",
+        "variants": [
+          "salon management software",
+          "salon booking system",
+          "stylist productivity",
+          "chair utilisation",
+          "chair utilization"
+        ],
+        "why": "salon systems where vendors embed AI"
+      }
+    ],
+    "9622": [
+      {
+        "term": "AI skin analysis",
+        "tier": "ai",
+        "variants": [
+          "AI skin diagnostic",
+          "AI-powered skin assessment",
+          "AI beauty advisor",
+          "AI skincare consultation",
+          "AI hair diagnostic"
+        ],
+        "why": "image AI assessing skin and recommending treatment"
+      },
+      {
+        "term": "skin analysis",
+        "tier": "context",
+        "variants": [
+          "skin diagnostic",
+          "skin scan",
+          "scalp analysis",
+          "skin imaging",
+          "complexion analysis"
+        ],
+        "why": "diagnostic step increasingly done by imaging devices"
+      },
+      {
+        "term": "aesthetic treatment",
+        "tier": "context",
+        "variants": [
+          "medical aesthetics",
+          "laser hair removal",
+          "injectable treatment",
+          "medspa",
+          "med spa",
+          "treatment outcome simulation",
+          "before-and-after simulation"
+        ],
+        "why": "medical-aesthetic services using outcome simulation"
+      },
+      {
+        "term": "robotic manicure",
+        "tier": "ai",
+        "variants": [
+          "automated manicure",
+          "nail-painting robot",
+          "robotic lash extension",
+          "beauty robot"
+        ],
+        "why": "robots performing beauty treatments"
+      }
+    ],
+    "9623": [
+      {
+        "term": "robotic massage",
+        "tier": "ai",
+        "variants": [
+          "AI massage robot",
+          "automated massage",
+          "Aescape",
+          "robot masseur"
+        ],
+        "why": "AI-guided massage robots in spas"
+      },
+      {
+        "term": "AI health coach",
+        "tier": "ai",
+        "variants": [
+          "AI coach",
+          "AI nutrition coach",
+          "AI body scanner",
+          "AI food scanner",
+          "AI meal planner",
+          "AI wellness coach"
+        ],
+        "why": "AI coaching in wellness and weight programmes"
+      },
+      {
+        "term": "wellness technology",
+        "tier": "context",
+        "variants": [
+          "biometric wellness assessment",
+          "personalised wellness programme",
+          "personalized wellness program",
+          "wearable wellness data",
+          "food logging",
+          "meal tracking",
+          "weight management programme",
+          "weight management program"
+        ],
+        "why": "wellness services built on biometric and tracking data"
+      }
+    ],
+    "9630": [
+      {
+        "term": "AI-generated obituary",
+        "tier": "ai",
+        "variants": [
+          "AI obituary writer",
+          "AI-written obituary",
+          "AI eulogy",
+          "AI-generated tribute",
+          "AI obituary"
+        ],
+        "why": "generative AI writing obituaries and tributes"
+      },
+      {
+        "term": "grief tech",
+        "tier": "ai",
+        "variants": [
+          "griefbot",
+          "digital afterlife",
+          "AI avatar of the deceased",
+          "deadbot",
+          "digital resurrection",
+          "posthumous avatar",
+          "grief technology"
+        ],
+        "why": "AI recreations of the deceased"
+      },
+      {
+        "term": "obituary",
+        "tier": "context",
+        "variants": [
+          "online obituary",
+          "memorial page",
+          "online memorial",
+          "tribute video",
+          "digital memorial",
+          "livestreamed funeral",
+          "obituary scraping",
+          "fake obituary"
+        ],
+        "why": "memorial content now drafted or scraped by AI"
+      },
+      {
+        "term": "preneed",
+        "tier": "context",
+        "variants": [
+          "pre-need",
+          "preneed sales",
+          "pre-arranged funeral",
+          "prepaid funeral plan",
+          "pre-planning",
+          "preneed lead"
+        ],
+        "why": "pre-arranged sales using lead scoring and automation"
+      },
+      {
+        "term": "funeral arrangement",
+        "tier": "context",
+        "variants": [
+          "arrangement conference",
+          "online arrangement",
+          "virtual arrangement",
+          "digital arrangement platform",
+          "family advisor"
+        ],
+        "why": "arrangement process moving online"
+      }
+    ],
+    "9640": [
+      {
+        "term": "provider matching",
+        "tier": "context",
+        "variants": [
+          "stylist matching",
+          "professional matching",
+          "marketplace ranking",
+          "search ranking",
+          "booking marketplace",
+          "service marketplace",
+          "sitter matching"
+        ],
+        "why": "marketplaces ranking and matching service professionals"
+      },
+      {
+        "term": "fake review",
+        "tier": "context",
+        "variants": [
+          "review fraud",
+          "review authenticity",
+          "review moderation"
+        ],
+        "why": "review integrity threatened by generated text"
+      },
+      {
+        "term": "AI-generated review",
+        "tier": "ai",
+        "variants": [
+          "AI-written review",
+          "synthetic review",
+          "AI review summary"
+        ],
+        "why": "machine-written reviews on service marketplaces"
+      }
+    ],
+    "9690": [
+      {
+        "term": "AI matchmaking",
+        "tier": "ai",
+        "variants": [
+          "AI-powered matching",
+          "AI wingman",
+          "AI dating assistant",
+          "AI dating coach",
+          "AI-curated match",
+          "AI matchmaker"
+        ],
+        "why": "AI selecting and coaching dating matches"
+      },
+      {
+        "term": "matching algorithm",
+        "tier": "context",
+        "variants": [
+          "recommendation algorithm",
+          "match recommendation",
+          "compatibility score",
+          "compatibility matching",
+          "user matching"
+        ],
+        "why": "recommendation logic at the core of dating services"
+      },
+      {
+        "term": "AI-generated profile",
+        "tier": "ai",
+        "variants": [
+          "AI-generated photo",
+          "AI-enhanced photo",
+          "synthetic profile",
+          "AI-written bio",
+          "AI-generated message",
+          "chatfishing",
+          "AI photo selection"
+        ],
+        "why": "synthetic or AI-enhanced dating profiles and messages"
+      },
+      {
+        "term": "romance scam",
+        "tier": "context",
+        "variants": [
+          "romance fraud",
+          "catfishing",
+          "fake profile",
+          "bot account",
+          "scam profile",
+          "pig butchering",
+          "sextortion"
+        ],
+        "why": "fraud scaled by generative AI"
+      },
+      {
+        "term": "photo verification",
+        "tier": "context",
+        "variants": [
+          "selfie verification",
+          "ID verification",
+          "liveness check",
+          "identity verification",
+          "age verification",
+          "age assurance",
+          "face check"
+        ],
+        "why": "identity and liveness checks against fake accounts"
+      },
+      {
+        "term": "trust and safety",
+        "tier": "context",
+        "variants": [
+          "content moderation",
+          "harassment detection",
+          "user safety",
+          "member safety",
+          "moderation team",
+          "nudity detection"
+        ],
+        "why": "moderation work run with classifiers"
+      },
+      {
+        "term": "AI companion",
+        "tier": "ai",
+        "variants": [
+          "AI girlfriend",
+          "AI boyfriend",
+          "companion chatbot",
+          "virtual companion",
+          "AI relationship",
+          "companion app"
+        ],
+        "why": "AI partners competing with human dating"
+      },
+      {
+        "term": "dating app fatigue",
+        "tier": "context",
+        "variants": [
+          "swipe fatigue",
+          "user burnout",
+          "declining payers",
+          "paying user decline"
+        ],
+        "why": "engagement decline that AI features aim to reverse"
+      },
+      {
+        "term": "pet care marketplace",
+        "tier": "context",
+        "variants": [
+          "pet sitter matching",
+          "pet boarding",
+          "pet camera",
+          "pet monitoring",
+          "dog walking app"
+        ],
+        "why": "pet services using matching and monitoring tools"
+      }
+    ]
+  }
+}

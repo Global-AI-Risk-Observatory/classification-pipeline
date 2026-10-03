@@ -1,0 +1,305 @@
+{
+  "id": "81",
+  "name": "Services to buildings and landscape activities",
+  "section": "O",
+  "summary": "Facility services, cleaning, pest control and landscaping companies mention AI in autonomous cleaning and mowing machines, sensor-driven service scheduling, predictive building maintenance, energy optimisation and workforce planning, usually against labour shortage and wage inflation. AI also shows up as demand: facilities management and technical services for data centres and semiconductor cleanrooms.",
+  "terms": [
+    {
+      "term": "autonomous cleaning robot",
+      "tier": "context",
+      "variants": [
+        "robotic cleaning",
+        "cleaning cobot",
+        "autonomous floor scrubber",
+        "robotic vacuum",
+        "cleaning robot",
+        "autonomous scrubber"
+      ],
+      "why": "self-navigating floor-care machines"
+    },
+    {
+      "term": "demand-based cleaning",
+      "tier": "context",
+      "variants": [
+        "sensor-based cleaning",
+        "data-driven cleaning",
+        "occupancy-based cleaning",
+        "smart washroom",
+        "dynamic cleaning schedule"
+      ],
+      "why": "occupancy data and models set cleaning schedules"
+    },
+    {
+      "term": "predictive maintenance",
+      "tier": "context",
+      "variants": [
+        "condition-based maintenance",
+        "fault detection and diagnostics",
+        "remote monitoring of building systems",
+        "predictive asset management"
+      ],
+      "why": "failure prediction for building systems"
+    },
+    {
+      "term": "AI-driven energy management",
+      "tier": "ai",
+      "variants": [
+        "AI-powered energy optimisation",
+        "AI-powered energy optimization",
+        "AI-based HVAC optimisation",
+        "AI-based HVAC optimization",
+        "autonomous building controls"
+      ],
+      "why": "ML optimisation of HVAC and energy use"
+    },
+    {
+      "term": "smart building",
+      "tier": "context",
+      "variants": [
+        "building management system",
+        "connected workplace",
+        "workplace analytics",
+        "intelligent building",
+        "occupancy sensor"
+      ],
+      "why": "connected building systems managed by providers"
+    },
+    {
+      "term": "workforce scheduling optimisation",
+      "tier": "context",
+      "variants": [
+        "workforce scheduling optimization",
+        "AI scheduling",
+        "labour planning",
+        "labor planning",
+        "rostering optimisation",
+        "rostering optimization",
+        "route optimisation",
+        "route optimization"
+      ],
+      "why": "model-driven rostering of frontline staff"
+    },
+    {
+      "term": "AI-assisted hiring",
+      "tier": "ai",
+      "variants": [
+        "AI recruitment",
+        "AI-powered recruiting",
+        "automated candidate screening"
+      ],
+      "why": "AI in high-volume frontline recruitment"
+    },
+    {
+      "term": "labour shortage",
+      "tier": "context",
+      "variants": [
+        "labor shortage",
+        "wage inflation",
+        "staff turnover",
+        "frontline workforce",
+        "labour-intensive",
+        "labor-intensive"
+      ],
+      "why": "staffing pressure cited as reason for automation"
+    },
+    {
+      "term": "AI quality audit",
+      "tier": "ai",
+      "variants": [
+        "AI cleaning audit",
+        "automated quality audit",
+        "computer vision quality inspection",
+        "image-based quality control"
+      ],
+      "why": "computer-vision checks of service quality"
+    },
+    {
+      "term": "AI-powered service desk",
+      "tier": "ai",
+      "variants": [
+        "virtual assistant for service requests",
+        "AI-powered customer service",
+        "AI help desk"
+      ],
+      "why": "automated handling of service requests"
+    },
+    {
+      "term": "AI-assisted tendering",
+      "tier": "ai",
+      "variants": [
+        "AI-assisted bid writing",
+        "bid automation",
+        "automated proposal generation"
+      ],
+      "why": "generative drafting of bids and proposals"
+    },
+    {
+      "term": "technology-enabled facility services",
+      "tier": "context",
+      "variants": [
+        "tech-enabled facilities services",
+        "data-driven facility management",
+        "digital facility management",
+        "workplace experience app"
+      ],
+      "why": "positioning of data-driven service offers"
+    },
+    {
+      "term": "data center facilities management",
+      "tier": "context",
+      "variants": [
+        "data centre facilities management",
+        "mission-critical facilities",
+        "critical environment",
+        "technical services for data centers",
+        "data center client",
+        "data centre client"
+      ],
+      "why": "AI infrastructure as growing client segment"
+    },
+    {
+      "term": "AI-driven demand",
+      "tier": "ai",
+      "variants": [
+        "AI infrastructure client",
+        "AI-related construction",
+        "AI data center",
+        "AI data centre"
+      ],
+      "why": "AI build-out lifting service volumes"
+    },
+    {
+      "term": "frontline worker app",
+      "tier": "context",
+      "variants": [
+        "frontline employee app",
+        "connected frontline",
+        "digital workplace for frontline staff"
+      ],
+      "why": "digital tools for dispersed workforce"
+    }
+  ],
+  "class_terms": {
+    "8110": [
+      {
+        "term": "integrated facilities management",
+        "tier": "context",
+        "variants": [
+          "integrated facility management",
+          "facilities management",
+          "facility services",
+          "total facilities management"
+        ],
+        "why": "bundled contracts where AI savings are promised"
+      },
+      {
+        "term": "cleanroom services",
+        "tier": "context",
+        "variants": [
+          "semiconductor cleanroom",
+          "fab facility services",
+          "high-tech manufacturing client"
+        ],
+        "why": "semiconductor fab services linked to AI chips"
+      },
+      {
+        "term": "remote operations centre",
+        "tier": "context",
+        "variants": [
+          "remote operations center",
+          "remote building monitoring",
+          "command centre for facilities"
+        ],
+        "why": "central monitoring of client buildings"
+      }
+    ],
+    "8121": [
+      {
+        "term": "cobotics",
+        "tier": "context",
+        "variants": [
+          "collaborative robot",
+          "cobot fleet",
+          "robot-as-a-service"
+        ],
+        "why": "collaborative machines working with cleaners"
+      },
+      {
+        "term": "cleaning productivity",
+        "tier": "context",
+        "variants": [
+          "productivity per cleaner",
+          "cleaning hours",
+          "labour hours saved"
+        ],
+        "why": "square metres per hour raised by machines"
+      }
+    ],
+    "8129": [
+      {
+        "term": "connected pest control",
+        "tier": "context",
+        "variants": [
+          "PestConnect",
+          "digital pest monitoring",
+          "smart trap",
+          "remote rodent monitoring",
+          "connected trap"
+        ],
+        "why": "sensor traps with remote ML monitoring"
+      },
+      {
+        "term": "AI-powered pest detection",
+        "tier": "ai",
+        "variants": [
+          "AI pest identification",
+          "computer vision pest detection",
+          "AI-enabled rodent detection"
+        ],
+        "why": "image and sensor recognition of pests"
+      },
+      {
+        "term": "drone cleaning",
+        "tier": "context",
+        "variants": [
+          "façade inspection drone",
+          "drone-based window cleaning",
+          "drone inspection"
+        ],
+        "why": "aerial cleaning and inspection of façades"
+      },
+      {
+        "term": "route density",
+        "tier": "context",
+        "variants": [
+          "route planning",
+          "dynamic routing",
+          "technician scheduling"
+        ],
+        "why": "technician routing optimised by models"
+      }
+    ],
+    "8130": [
+      {
+        "term": "robotic mower",
+        "tier": "context",
+        "variants": [
+          "autonomous mower",
+          "robotic mowing",
+          "autonomous mowing"
+        ],
+        "why": "autonomous mowing replacing crews"
+      },
+      {
+        "term": "smart irrigation",
+        "tier": "context",
+        "variants": [
+          "AI-driven irrigation",
+          "precision landscaping",
+          "irrigation controller"
+        ],
+        "why": "weather and model-driven watering"
+      }
+    ]
+  }
+}

@@ -1,0 +1,1423 @@
+{
+  "id": "85",
+  "name": "Education",
+  "section": "Q",
+  "summary": "Education companies write about AI in three ways: as product (AI tutors, adaptive courseware, automated marking, AI-translated courses, AI skills curricula), as cost lever (content creation, student support, enrolment marketing), and as threat (free AI tools substituting homework help, tutoring, language learning and test prep; AI-enabled cheating undermining assessment and credentials). Risk passages add student data privacy, children's safety, content scraping and licensing, and demand shifts as employers seek AI skills and question entry-level hiring.",
+  "terms": [
+    {
+      "term": "AI tutor",
+      "tier": "ai",
+      "variants": [
+        "AI tutoring",
+        "AI-powered tutoring",
+        "AI-driven tutoring",
+        "AI teaching assistant",
+        "AI teacher",
+        "virtual teaching assistant",
+        "AI-powered tutor",
+        "generative AI tutor"
+      ],
+      "why": "conversational AI that teaches or coaches learners"
+    },
+    {
+      "term": "intelligent tutoring system",
+      "tier": "ai",
+      "variants": [
+        "intelligent tutoring",
+        "intelligent tutor",
+        "cognitive tutor"
+      ],
+      "why": "established term for adaptive teaching software"
+    },
+    {
+      "term": "AI study assistant",
+      "tier": "ai",
+      "variants": [
+        "AI study companion",
+        "AI learning assistant",
+        "AI learning companion",
+        "AI study buddy",
+        "AI homework helper",
+        "AI study tool",
+        "AI study guide",
+        "AI learning coach"
+      ],
+      "why": "AI helper for homework and revision"
+    },
+    {
+      "term": "AI in education",
+      "tier": "ai",
+      "variants": [
+        "AI + education",
+        "AI+education",
+        "AIEd",
+        "AI-powered education",
+        "AI-driven education",
+        "AI-powered learning",
+        "AI-enabled learning",
+        "AI-native learning",
+        "AI education product"
+      ],
+      "case_sensitive_variants": [
+        "AIEd"
+      ],
+      "why": "umbrella phrases for AI-led teaching"
+    },
+    {
+      "term": "adaptive learning",
+      "tier": "context",
+      "variants": [
+        "adaptive courseware",
+        "adaptive assessment",
+        "adaptive practice",
+        "adaptive testing",
+        "computer-adaptive testing",
+        "adaptive learning engine",
+        "adaptive learning path"
+      ],
+      "why": "courseware adjusting to learner performance"
+    },
+    {
+      "term": "personalized learning",
+      "tier": "context",
+      "variants": [
+        "personalised learning",
+        "personalized learning pathway",
+        "personalised learning pathway",
+        "individualized instruction",
+        "individualised instruction",
+        "personalized instruction",
+        "personalised instruction",
+        "learning at their own pace"
+      ],
+      "why": "tailored instruction, the main AI selling point"
+    },
+    {
+      "term": "knowledge tracing",
+      "tier": "ai",
+      "variants": [
+        "learner model",
+        "learner modelling",
+        "learner modeling",
+        "knowledge state estimation",
+        "learning path recommendation"
+      ],
+      "why": "ML model of what each learner knows"
+    },
+    {
+      "term": "mastery learning",
+      "tier": "context",
+      "variants": [
+        "mastery-based learning",
+        "competency-based education",
+        "competency-based learning",
+        "spaced repetition"
+      ],
+      "why": "progression model that adaptive engines implement"
+    },
+    {
+      "term": "learning analytics",
+      "tier": "context",
+      "variants": [
+        "learner analytics",
+        "student analytics",
+        "learning data",
+        "learner data",
+        "learning insight"
+      ],
+      "why": "learner data analysis underlying AI features"
+    },
+    {
+      "term": "dropout prediction",
+      "tier": "ai",
+      "variants": [
+        "predictive student analytics",
+        "student risk model",
+        "retention prediction",
+        "predictive retention model",
+        "predictive early alert"
+      ],
+      "why": "predictive models flagging at-risk students"
+    },
+    {
+      "term": "student retention",
+      "tier": "context",
+      "variants": [
+        "student persistence",
+        "student success",
+        "student attrition",
+        "learner retention",
+        "completion rate",
+        "early alert system",
+        "at-risk student identification"
+      ],
+      "why": "persistence outcome AI nudges aim to improve"
+    },
+    {
+      "term": "AI-generated feedback",
+      "tier": "ai",
+      "variants": [
+        "AI feedback",
+        "automated feedback",
+        "automated writing feedback",
+        "AI writing assistant",
+        "AI writing tutor"
+      ],
+      "why": "automated comments on student work"
+    },
+    {
+      "term": "automated essay scoring",
+      "tier": "ai",
+      "variants": [
+        "automated scoring",
+        "automated grading",
+        "AI grading",
+        "AI marking",
+        "auto-grading",
+        "automated marking",
+        "automated essay evaluation",
+        "AI-assisted grading",
+        "AI-assisted marking",
+        "autograder"
+      ],
+      "why": "machine marking of written work"
+    },
+    {
+      "term": "AI-scored test",
+      "tier": "ai",
+      "variants": [
+        "automated speaking assessment",
+        "AI scoring",
+        "machine-scored",
+        "computer-scored test",
+        "automated language assessment",
+        "AI-scored speaking"
+      ],
+      "why": "tests marked by speech and language models"
+    },
+    {
+      "term": "pronunciation assessment",
+      "tier": "context",
+      "variants": [
+        "pronunciation feedback",
+        "speaking assessment",
+        "speaking practice",
+        "oral proficiency assessment"
+      ],
+      "why": "speech tasks scored by speech recognition"
+    },
+    {
+      "term": "AI role play",
+      "tier": "ai",
+      "variants": [
+        "AI roleplay",
+        "AI conversation practice",
+        "AI conversation partner",
+        "AI speaking practice",
+        "AI speaking partner",
+        "AI video call",
+        "AI simulation"
+      ],
+      "why": "simulated conversation practice with AI"
+    },
+    {
+      "term": "automated item generation",
+      "tier": "ai",
+      "variants": [
+        "AI-generated question",
+        "AI question generation",
+        "automatic question generation",
+        "AI-generated quiz",
+        "AI-generated practice question",
+        "AI-generated practice test",
+        "AI-generated flashcard"
+      ],
+      "why": "AI writing test and practice questions"
+    },
+    {
+      "term": "item bank",
+      "tier": "context",
+      "variants": [
+        "question bank",
+        "test item",
+        "psychometrics",
+        "item development",
+        "practice question"
+      ],
+      "why": "question stock AI can generate or leak"
+    },
+    {
+      "term": "photo search",
+      "tier": "context",
+      "variants": [
+        "snap and solve",
+        "photo-based problem solving",
+        "scan and solve",
+        "math solver",
+        "problem solver app",
+        "question search"
+      ],
+      "why": "snap-a-problem solvers built on vision models"
+    },
+    {
+      "term": "AI-interactive class",
+      "tier": "ai",
+      "variants": [
+        "AI interactive course",
+        "AI classroom",
+        "AI-based class",
+        "dual-teacher classroom",
+        "AI avatar instructor",
+        "AI-generated instructor",
+        "AI lecturer"
+      ],
+      "why": "recorded or avatar-led classes run by AI"
+    },
+    {
+      "term": "AI learning device",
+      "tier": "ai",
+      "variants": [
+        "AI learning tablet",
+        "AI learning machine",
+        "AI learning hardware",
+        "AI-powered learning device",
+        "AI dictionary pen"
+      ],
+      "why": "learning hardware with embedded AI tutors"
+    },
+    {
+      "term": "smart learning device",
+      "tier": "context",
+      "variants": [
+        "intelligent learning device",
+        "learning tablet",
+        "dictionary pen",
+        "smart hardware",
+        "learning hardware"
+      ],
+      "why": "learning tablets and pens sold by edtech firms"
+    },
+    {
+      "term": "smart classroom",
+      "tier": "context",
+      "variants": [
+        "smart campus",
+        "intelligent classroom",
+        "connected classroom",
+        "digital classroom",
+        "smart education",
+        "smart school"
+      ],
+      "why": "instrumented classrooms where AI tools deploy"
+    },
+    {
+      "term": "AI lesson planning",
+      "tier": "ai",
+      "variants": [
+        "AI lesson plan",
+        "AI teacher assistant",
+        "AI teaching tool",
+        "AI for teachers",
+        "teacher copilot",
+        "AI-generated lesson",
+        "AI classroom assistant"
+      ],
+      "why": "generative tools preparing lessons for teachers"
+    },
+    {
+      "term": "teacher workload",
+      "tier": "context",
+      "variants": [
+        "teacher shortage",
+        "teacher burnout",
+        "educator workload",
+        "faculty workload",
+        "marking workload",
+        "teacher retention"
+      ],
+      "why": "admin burden AI tools promise to reduce"
+    },
+    {
+      "term": "AI course creation",
+      "tier": "ai",
+      "variants": [
+        "AI course builder",
+        "AI-generated course",
+        "AI-assisted course authoring",
+        "AI authoring",
+        "AI-assisted content creation",
+        "AI content authoring",
+        "AI-generated learning content",
+        "AI-generated courseware"
+      ],
+      "why": "generative authoring of courses and materials"
+    },
+    {
+      "term": "instructional design",
+      "tier": "context",
+      "variants": [
+        "instructional designer",
+        "curriculum design",
+        "curriculum development",
+        "course development",
+        "content development cost",
+        "course production"
+      ],
+      "why": "content development work AI compresses"
+    },
+    {
+      "term": "courseware",
+      "tier": "context",
+      "variants": [
+        "digital courseware",
+        "interactive courseware",
+        "digital textbook",
+        "e-textbook",
+        "digital curriculum",
+        "instructional content",
+        "instructional materials"
+      ],
+      "why": "digital teaching content AI generates or replaces"
+    },
+    {
+      "term": "AI-translated course",
+      "tier": "ai",
+      "variants": [
+        "AI dubbing",
+        "machine-translated course",
+        "AI translation of courses",
+        "AI-powered translation",
+        "AI-dubbed",
+        "AI subtitles",
+        "AI-generated captions"
+      ],
+      "why": "machine translation and dubbing of course content"
+    },
+    {
+      "term": "course localization",
+      "tier": "context",
+      "variants": [
+        "course localisation",
+        "content localization",
+        "content localisation",
+        "subtitling",
+        "translated course"
+      ],
+      "why": "language expansion now done by AI"
+    },
+    {
+      "term": "academic integrity",
+      "tier": "context",
+      "variants": [
+        "academic misconduct",
+        "academic dishonesty",
+        "plagiarism",
+        "contract cheating",
+        "essay mill",
+        "cheating"
+      ],
+      "why": "honesty standards strained by generative AI"
+    },
+    {
+      "term": "AI-assisted cheating",
+      "tier": "ai",
+      "variants": [
+        "AI cheating",
+        "AI-enabled cheating",
+        "AI-generated essay",
+        "AI-written assignment",
+        "AI-generated assignment",
+        "AI-generated coursework",
+        "AI-generated submission",
+        "misuse of AI by students",
+        "unauthorised use of AI",
+        "unauthorized use of AI",
+        "AI plagiarism"
+      ],
+      "why": "students submitting AI-produced work"
+    },
+    {
+      "term": "AI detection",
+      "tier": "ai",
+      "variants": [
+        "AI writing detection",
+        "AI detector",
+        "AI-generated text detection",
+        "AI content detection",
+        "AI writing indicator",
+        "AI detection tool"
+      ],
+      "why": "tools flagging machine-written student work"
+    },
+    {
+      "term": "plagiarism detection",
+      "tier": "context",
+      "variants": [
+        "similarity checking",
+        "similarity report",
+        "originality checking",
+        "Turnitin",
+        "originality report"
+      ],
+      "why": "similarity checking now extended to AI text"
+    },
+    {
+      "term": "remote proctoring",
+      "tier": "context",
+      "variants": [
+        "online proctoring",
+        "proctored exam",
+        "live proctoring",
+        "remote invigilation",
+        "online invigilation",
+        "e-proctoring",
+        "lockdown browser"
+      ],
+      "why": "online exam invigilation, often automated"
+    },
+    {
+      "term": "AI proctoring",
+      "tier": "ai",
+      "variants": [
+        "automated proctoring",
+        "AI-based proctoring",
+        "AI invigilation",
+        "AI-powered proctoring",
+        "automated invigilation"
+      ],
+      "why": "automated monitoring of test-takers by webcam"
+    },
+    {
+      "term": "assessment integrity",
+      "tier": "context",
+      "variants": [
+        "exam integrity",
+        "test security",
+        "assessment security",
+        "exam security",
+        "test integrity",
+        "exam malpractice",
+        "test fraud"
+      ],
+      "why": "exam security against AI-enabled fraud"
+    },
+    {
+      "term": "authentic assessment",
+      "tier": "context",
+      "variants": [
+        "assessment redesign",
+        "assessment reform",
+        "oral examination",
+        "in-person examination",
+        "AI-resilient assessment",
+        "secure assessment"
+      ],
+      "why": "redesigning assessment to be AI-resilient"
+    },
+    {
+      "term": "generative AI policy",
+      "tier": "ai",
+      "variants": [
+        "AI use policy",
+        "acceptable use of AI",
+        "AI guidelines for students",
+        "AI policy for students",
+        "AI in assessment policy",
+        "responsible use of AI by students",
+        "AI usage guidelines"
+      ],
+      "why": "institutional rules on student and staff AI use"
+    },
+    {
+      "term": "AI literacy",
+      "tier": "ai",
+      "variants": [
+        "AI fluency",
+        "AI competency",
+        "AI literacy curriculum",
+        "AI readiness",
+        "AI competence"
+      ],
+      "why": "teaching learners to understand and use AI"
+    },
+    {
+      "term": "AI skills",
+      "tier": "ai",
+      "variants": [
+        "AI upskilling",
+        "AI reskilling",
+        "AI training course",
+        "AI certification",
+        "AI course",
+        "AI bootcamp",
+        "prompt engineering course",
+        "generative AI course",
+        "AI certificate",
+        "AI training programme",
+        "AI training program"
+      ],
+      "why": "demand driver for courses and credentials"
+    },
+    {
+      "term": "AI curriculum",
+      "tier": "ai",
+      "variants": [
+        "AI degree",
+        "AI major",
+        "AI programme",
+        "AI program",
+        "master's in artificial intelligence",
+        "degree in artificial intelligence",
+        "AI specialization",
+        "AI specialisation"
+      ],
+      "why": "AI taught as a subject or degree"
+    },
+    {
+      "term": "reskilling",
+      "tier": "context",
+      "variants": [
+        "upskilling",
+        "re-skilling",
+        "up-skilling",
+        "workforce reskilling",
+        "workforce development",
+        "lifelong learning"
+      ],
+      "why": "retraining demand created by automation"
+    },
+    {
+      "term": "skills gap",
+      "tier": "context",
+      "variants": [
+        "skills shortage",
+        "digital skills",
+        "future of work",
+        "skills-based hiring",
+        "in-demand skills",
+        "job-ready skills"
+      ],
+      "why": "employer shortage narrative driving enrolments"
+    },
+    {
+      "term": "employability",
+      "tier": "context",
+      "variants": [
+        "graduate employment",
+        "graduate outcome",
+        "career readiness",
+        "entry-level job",
+        "career outcome",
+        "value of a degree"
+      ],
+      "why": "graduate job outcomes exposed to AI displacement"
+    },
+    {
+      "term": "micro-credential",
+      "tier": "context",
+      "variants": [
+        "microcredential",
+        "professional certificate",
+        "digital badge",
+        "stackable credential",
+        "industry certification"
+      ],
+      "why": "short credentials sold for AI and tech skills"
+    },
+    {
+      "term": "free AI tool",
+      "tier": "ai",
+      "variants": [
+        "freely available AI tool",
+        "free AI chatbot",
+        "free AI alternative",
+        "free generative AI",
+        "general-purpose AI assistant",
+        "AI-powered alternative",
+        "AI substitute"
+      ],
+      "why": "free chatbots substituting paid study services"
+    },
+    {
+      "term": "homework help",
+      "tier": "context",
+      "variants": [
+        "homework helper",
+        "study help",
+        "step-by-step solution",
+        "textbook solution",
+        "expert Q&A",
+        "study aid",
+        "writing help"
+      ],
+      "why": "paid study help most exposed to chatbots"
+    },
+    {
+      "term": "search traffic",
+      "tier": "context",
+      "variants": [
+        "organic traffic",
+        "traffic decline",
+        "decline in traffic",
+        "non-subscriber traffic",
+        "search engine referral",
+        "zero-click search"
+      ],
+      "why": "student visits lost to AI search answers"
+    },
+    {
+      "term": "AI Overviews",
+      "tier": "ai",
+      "variants": [
+        "AI-generated search answer",
+        "AI search summary",
+        "AI Mode"
+      ],
+      "case_sensitive_variants": [
+        "AI Mode"
+      ],
+      "why": "Google AI answers diverting education site traffic"
+    },
+    {
+      "term": "LearnLM",
+      "tier": "ai",
+      "variants": [
+        "NotebookLM",
+        "ChatGPT Edu",
+        "ChatGPT study mode",
+        "Gemini for Education",
+        "Claude for Education",
+        "Copilot for Education"
+      ],
+      "why": "big-tech AI products aimed at learners"
+    },
+    {
+      "term": "human instructor",
+      "tier": "context",
+      "variants": [
+        "human teacher",
+        "human tutor",
+        "human-led instruction",
+        "instructor-led training",
+        "human expert",
+        "human-in-the-loop tutoring"
+      ],
+      "why": "human teaching positioned against AI substitutes"
+    },
+    {
+      "term": "online tutoring",
+      "tier": "context",
+      "variants": [
+        "live tutoring",
+        "on-demand tutoring",
+        "tutoring service",
+        "after-school tutoring",
+        "private tutoring",
+        "high-dosage tutoring",
+        "small-group tutoring"
+      ],
+      "why": "tutoring services AI tutors compete with"
+    },
+    {
+      "term": "content scraping",
+      "tier": "context",
+      "variants": [
+        "web scraping",
+        "data scraping",
+        "scraping of our content",
+        "unauthorized scraping",
+        "unauthorised scraping",
+        "crawling of our content"
+      ],
+      "why": "education content taken to train models"
+    },
+    {
+      "term": "AI licensing",
+      "tier": "ai",
+      "variants": [
+        "AI content licensing",
+        "AI training licence",
+        "AI training license",
+        "licensing content for AI training",
+        "AI licensing deal",
+        "AI licensing revenue"
+      ],
+      "why": "licensing educational content for model training"
+    },
+    {
+      "term": "content licensing",
+      "tier": "context",
+      "variants": [
+        "licensing of content",
+        "data licensing agreement",
+        "proprietary content",
+        "proprietary learning content",
+        "content library"
+      ],
+      "why": "rights deals covering proprietary learning content"
+    },
+    {
+      "term": "learning management system",
+      "tier": "context",
+      "variants": [
+        "LMS",
+        "virtual learning environment",
+        "VLE",
+        "student information system",
+        "learning platform"
+      ],
+      "case_sensitive_variants": [
+        "LMS",
+        "VLE"
+      ],
+      "why": "core delivery system where AI features surface"
+    },
+    {
+      "term": "edtech",
+      "tier": "context",
+      "variants": [
+        "ed-tech",
+        "education technology",
+        "educational technology",
+        "learning technology"
+      ],
+      "why": "sector label under which AI products are described"
+    },
+    {
+      "term": "online learning",
+      "tier": "context",
+      "variants": [
+        "e-learning",
+        "elearning",
+        "digital learning",
+        "online course",
+        "online education",
+        "distance learning",
+        "MOOC",
+        "massive open online course",
+        "online degree"
+      ],
+      "case_sensitive_variants": [
+        "MOOC"
+      ],
+      "why": "delivery mode most exposed to AI products"
+    },
+    {
+      "term": "virtual student assistant",
+      "tier": "ai",
+      "variants": [
+        "AI student assistant",
+        "student support chatbot",
+        "AI enrollment assistant",
+        "AI enrolment assistant",
+        "AI advisor",
+        "AI academic advisor",
+        "AI admissions assistant",
+        "AI teaching and support agent"
+      ],
+      "why": "AI answering student service and admissions queries"
+    },
+    {
+      "term": "student recruitment",
+      "tier": "context",
+      "variants": [
+        "enrollment management",
+        "enrolment management",
+        "enrollment marketing",
+        "enrolment marketing",
+        "enrollment funnel",
+        "enrolment funnel",
+        "lead scoring",
+        "enrollment advisor",
+        "admissions counselling",
+        "admissions counseling"
+      ],
+      "why": "enrolment marketing optimised with AI"
+    },
+    {
+      "term": "student support services",
+      "tier": "context",
+      "variants": [
+        "student services",
+        "academic advising",
+        "student advisor",
+        "student success coach",
+        "career services",
+        "student helpdesk"
+      ],
+      "why": "advising and service work being automated"
+    },
+    {
+      "term": "learner engagement",
+      "tier": "context",
+      "variants": [
+        "student engagement",
+        "gamification",
+        "gamified learning",
+        "learner motivation",
+        "engagement nudge"
+      ],
+      "why": "engagement metrics AI personalisation targets"
+    },
+    {
+      "term": "learning efficacy",
+      "tier": "context",
+      "variants": [
+        "efficacy study",
+        "learning science",
+        "learning gain",
+        "efficacy research"
+      ],
+      "why": "evidence that AI tools improve outcomes"
+    },
+    {
+      "term": "immersive learning",
+      "tier": "context",
+      "variants": [
+        "virtual simulation",
+        "simulation-based training",
+        "virtual lab",
+        "VR training",
+        "virtual patient",
+        "clinical simulation"
+      ],
+      "why": "simulation training with AI-driven scenarios"
+    },
+    {
+      "term": "assistive technology",
+      "tier": "context",
+      "variants": [
+        "automatic captioning",
+        "live captioning",
+        "text-to-speech reader",
+        "accessibility tool",
+        "special educational needs",
+        "learning differences"
+      ],
+      "why": "accessibility tools built on speech and language AI"
+    },
+    {
+      "term": "student data privacy",
+      "tier": "context",
+      "variants": [
+        "student privacy",
+        "FERPA",
+        "COPPA",
+        "student personal information",
+        "pupil data",
+        "children's data",
+        "children's privacy",
+        "student records"
+      ],
+      "case_sensitive_variants": [
+        "FERPA",
+        "COPPA"
+      ],
+      "why": "legal limits on learner data used by AI"
+    },
+    {
+      "term": "online safeguarding",
+      "tier": "context",
+      "variants": [
+        "child online safety",
+        "age-appropriate design code",
+        "Children's Code",
+        "safeguarding policy",
+        "minors protection",
+        "protection of minors"
+      ],
+      "why": "child-safety duties covering AI tools in schools"
+    },
+    {
+      "term": "student safety monitoring",
+      "tier": "context",
+      "variants": [
+        "student monitoring software",
+        "content filtering",
+        "web filtering",
+        "safeguarding software",
+        "student device monitoring"
+      ],
+      "why": "filtering and monitoring software using classifiers"
+    },
+    {
+      "term": "AI in education guidance",
+      "tier": "ai",
+      "variants": [
+        "guidance on AI in education",
+        "AI guidance for schools",
+        "AI framework for schools",
+        "generative AI in education",
+        "Framework for Generative AI in Schools"
+      ],
+      "why": "government guidance on AI use in schools"
+    },
+    {
+      "term": "Khanmigo",
+      "tier": "ai",
+      "variants": [
+        "Khan Academy AI"
+      ],
+      "why": "Khan Academy's AI tutor"
+    },
+    {
+      "term": "Duolingo Max",
+      "tier": "ai",
+      "variants": [
+        "Birdbrain"
+      ],
+      "why": "Duolingo's generative AI features"
+    },
+    {
+      "term": "CheggMate",
+      "tier": "ai",
+      "variants": [
+        "Chegg AI",
+        "Busuu AI"
+      ],
+      "why": "Chegg's AI study products"
+    },
+    {
+      "term": "Coursera Coach",
+      "tier": "ai",
+      "variants": [
+        "Udemy AI Assistant",
+        "Udemy AI"
+      ],
+      "why": "AI assistants inside course marketplaces"
+    },
+    {
+      "term": "Squirrel AI",
+      "tier": "ai",
+      "variants": [
+        "MagicSchool",
+        "MagicSchool AI",
+        "Photomath",
+        "Quizlet Q-Chat"
+      ],
+      "why": "Chinese adaptive tutoring vendor"
+    }
+  ],
+  "class_terms": {
+    "8520": [
+      {
+        "term": "K-12",
+        "tier": "context",
+        "variants": [
+          "K12",
+          "school district",
+          "district procurement"
+        ],
+        "why": "school segment with its own AI procurement rules"
+      },
+      {
+        "term": "reading assessment",
+        "tier": "context",
+        "variants": [
+          "early literacy screening",
+          "reading fluency assessment",
+          "AI reading tutor",
+          "reading coach",
+          "dyslexia screening"
+        ],
+        "why": "early literacy screening scored by speech AI"
+      }
+    ],
+    "8531": [
+      {
+        "term": "virtual school",
+        "tier": "context",
+        "variants": [
+          "online school",
+          "virtual academy",
+          "cyber school",
+          "virtual charter school",
+          "online high school"
+        ],
+        "why": "online schools using AI tutors at scale"
+      },
+      {
+        "term": "AI in the classroom",
+        "tier": "ai",
+        "variants": [
+          "AI in schools",
+          "classroom AI",
+          "AI use in schools",
+          "AI tools in schools",
+          "school AI policy"
+        ],
+        "why": "school-level adoption of generative tools"
+      },
+      {
+        "term": "non-exam assessment",
+        "tier": "context",
+        "variants": [
+          "coursework assessment",
+          "admissions essay",
+          "personal statement",
+          "college essay"
+        ],
+        "why": "coursework and essays most exposed to generative AI"
+      }
+    ],
+    "8532": [
+      {
+        "term": "skilled trade",
+        "tier": "context",
+        "variants": [
+          "trade school",
+          "vocational training",
+          "technical education",
+          "hands-on training",
+          "blue-collar career"
+        ],
+        "why": "hands-on careers marketed as AI-resistant"
+      },
+      {
+        "term": "data center technician",
+        "tier": "context",
+        "variants": [
+          "data centre technician",
+          "data center construction",
+          "data centre construction",
+          "HVAC technician",
+          "electrician shortage",
+          "electrical technician"
+        ],
+        "why": "trade demand created by AI infrastructure build-out"
+      },
+      {
+        "term": "training simulator",
+        "tier": "context",
+        "variants": [
+          "welding simulator",
+          "virtual welding",
+          "simulation lab",
+          "augmented reality training"
+        ],
+        "why": "simulation equipment with AI-driven scenarios"
+      }
+    ],
+    "8540": [
+      {
+        "term": "research integrity",
+        "tier": "context",
+        "variants": [
+          "research misconduct",
+          "scholarly integrity",
+          "paper mill",
+          "fabricated research",
+          "research ethics"
+        ],
+        "why": "scholarly standards challenged by generative AI"
+      },
+      {
+        "term": "AI research institute",
+        "tier": "ai",
+        "variants": [
+          "AI research centre",
+          "AI research center",
+          "AI institute",
+          "AI faculty",
+          "AI research funding",
+          "AI research cluster"
+        ],
+        "why": "university AI research capacity and funding"
+      },
+      {
+        "term": "computer science enrollment",
+        "tier": "context",
+        "variants": [
+          "computer science enrolment",
+          "data science programme",
+          "data science program",
+          "STEM enrollment",
+          "STEM enrolment",
+          "technology programs"
+        ],
+        "why": "programme demand shifting with AI job market"
+      },
+      {
+        "term": "research computing",
+        "tier": "context",
+        "variants": [
+          "research compute",
+          "GPU cluster",
+          "high-performance computing",
+          "campus supercomputer"
+        ],
+        "why": "campus compute needs for AI research"
+      },
+      {
+        "term": "online program management",
+        "tier": "context",
+        "variants": [
+          "online programme management",
+          "OPM provider",
+          "degree partner",
+          "university partner"
+        ],
+        "why": "outsourced online degrees facing AI disruption"
+      },
+      {
+        "term": "TEQSA",
+        "tier": "context",
+        "variants": [
+          "Tertiary Education Quality and Standards Agency",
+          "Office for Students",
+          "higher education regulator"
+        ],
+        "case_sensitive_variants": [
+          "TEQSA"
+        ],
+        "why": "Australian regulator pressing AI-era assessment reform"
+      },
+      {
+        "term": "AI-assisted admissions",
+        "tier": "ai",
+        "variants": [
+          "AI in admissions",
+          "automated application screening",
+          "AI application review",
+          "algorithmic admissions"
+        ],
+        "why": "AI screening applications or essays"
+      }
+    ],
+    "8553": [
+      {
+        "term": "driving simulator",
+        "tier": "context",
+        "variants": [
+          "simulator-based training",
+          "virtual driving lesson",
+          "driver training simulator",
+          "AI driving instructor",
+          "telematics-based coaching"
+        ],
+        "why": "simulator training with AI-scored driving"
+      },
+      {
+        "term": "advanced driver assistance systems",
+        "tier": "context",
+        "variants": [
+          "ADAS",
+          "driver assistance",
+          "autonomous vehicle",
+          "self-driving car",
+          "automated driving"
+        ],
+        "case_sensitive_variants": [
+          "ADAS"
+        ],
+        "why": "vehicle automation changing what learners are taught"
+      }
+    ],
+    "8559": [
+      {
+        "term": "language learning",
+        "tier": "context",
+        "variants": [
+          "language training",
+          "English language training",
+          "language tutoring",
+          "language app",
+          "language course",
+          "language school"
+        ],
+        "why": "segment most exposed to AI tutors and translation"
+      },
+      {
+        "term": "AI translation",
+        "tier": "ai",
+        "variants": [
+          "real-time AI translation",
+          "machine translation",
+          "AI interpreter",
+          "real-time translation",
+          "translation earbuds"
+        ],
+        "why": "translation tools reducing need to learn languages"
+      },
+      {
+        "term": "test preparation",
+        "tier": "context",
+        "variants": [
+          "test prep",
+          "exam preparation",
+          "standardized test",
+          "standardised test",
+          "exam prep course",
+          "bar exam prep"
+        ],
+        "why": "exam prep being rebuilt around AI practice"
+      },
+      {
+        "term": "coding bootcamp",
+        "tier": "context",
+        "variants": [
+          "bootcamp",
+          "coding school",
+          "software engineering course",
+          "technology bootcamp",
+          "tech bootcamp"
+        ],
+        "why": "tech training hit by AI coding tools"
+      },
+      {
+        "term": "corporate learning",
+        "tier": "context",
+        "variants": [
+          "corporate training",
+          "enterprise learning",
+          "learning and development",
+          "workforce training"
+        ],
+        "why": "enterprise training buyers demanding AI content"
+      },
+      {
+        "term": "learning experience platform",
+        "tier": "context",
+        "variants": [
+          "LXP",
+          "corporate learning platform",
+          "microlearning",
+          "learning in the flow of work",
+          "learning content library"
+        ],
+        "case_sensitive_variants": [
+          "LXP"
+        ],
+        "why": "enterprise learning software with AI recommendations"
+      },
+      {
+        "term": "skills taxonomy",
+        "tier": "context",
+        "variants": [
+          "skills graph",
+          "skills ontology",
+          "skills intelligence",
+          "skills mapping",
+          "skill assessment",
+          "skills data"
+        ],
+        "why": "skills data layer feeding AI recommendations"
+      },
+      {
+        "term": "AI coach",
+        "tier": "ai",
+        "variants": [
+          "AI coaching",
+          "AI career coach",
+          "AI-powered coaching",
+          "AI leadership coach",
+          "AI skills coach",
+          "conversational AI simulator"
+        ],
+        "why": "AI coaching for workplace and soft skills"
+      }
+    ],
+    "8561": [
+      {
+        "term": "tutor matching",
+        "tier": "context",
+        "variants": [
+          "tutor-student matching",
+          "tutor marketplace",
+          "online tutoring marketplace",
+          "tutor recommendation",
+          "expert matching"
+        ],
+        "why": "algorithmic pairing of learners and tutors"
+      },
+      {
+        "term": "course recommendation",
+        "tier": "context",
+        "variants": [
+          "course discovery",
+          "personalized course recommendation",
+          "personalised course recommendation",
+          "skills recommendation",
+          "course marketplace",
+          "course search"
+        ],
+        "why": "recommender systems in course marketplaces"
+      },
+      {
+        "term": "tutor copilot",
+        "tier": "ai",
+        "variants": [
+          "AI session insights",
+          "AI session summary",
+          "AI-generated session notes",
+          "AI tutor assistant",
+          "AI-assisted tutoring"
+        ],
+        "why": "AI assisting human tutors and summarising sessions"
+      },
+      {
+        "term": "AI-powered matching",
+        "tier": "ai",
+        "variants": [
+          "AI tutor matching",
+          "AI course recommendation",
+          "AI-driven matching",
+          "AI-powered recommendation"
+        ],
+        "why": "AI pairing learners with tutors or courses"
+      }
+    ],
+    "8569": [
+      {
+        "term": "English proficiency test",
+        "tier": "context",
+        "variants": [
+          "English language test",
+          "IELTS",
+          "TOEFL",
+          "Duolingo English Test",
+          "PTE Academic",
+          "computer-delivered test",
+          "high-stakes test"
+        ],
+        "why": "high-stakes tests using AI scoring and security"
+      },
+      {
+        "term": "test-taker identity verification",
+        "tier": "context",
+        "variants": [
+          "candidate identity verification",
+          "proxy test taker",
+          "test-taker impersonation",
+          "biometric verification of candidates"
+        ],
+        "why": "anti-impersonation checks against AI-enabled fraud"
+      },
+      {
+        "term": "student placement",
+        "tier": "context",
+        "variants": [
+          "course matching",
+          "university matching",
+          "student counselling",
+          "student counseling",
+          "education agent",
+          "offer prediction"
+        ],
+        "why": "study-abroad counselling being automated"
+      },
+      {
+        "term": "credential verification",
+        "tier": "context",
+        "variants": [
+          "credential evaluation",
+          "qualification verification",
+          "diploma fraud",
+          "fake credential",
+          "digital credentialing"
+        ],
+        "why": "checking qualifications against fabricated documents"
+      }
+    ]
+  }
+}

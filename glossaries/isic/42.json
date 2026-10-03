@@ -1,0 +1,862 @@
+{
+  "id": "42",
+  "name": "Civil engineering",
+  "section": "F",
+  "summary": "Civil engineering groups link AI to demand through data-centre campuses, power generation, transmission, substations and fibre built for hyperscalers and for utilities facing load growth. Own use covers BIM and digital twins, machine control and autonomous earthmoving, drone surveys, AI-based scheduling and bid-risk tools, tunnelling automation and computer-vision safety. Concession and road operators add AI inspection of pavements and structures, traffic prediction, camera-based tolling and dynamic pricing; labour shortages and power availability are the constraint themes.",
+  "terms": [
+    {
+      "term": "data center",
+      "tier": "context",
+      "variants": [
+        "data centre"
+      ],
+      "why": "campus, power and fibre works driven by AI"
+    },
+    {
+      "term": "hyperscaler",
+      "tier": "context",
+      "variants": [
+        "hyperscale"
+      ],
+      "why": "tech clients behind large infrastructure programmes"
+    },
+    {
+      "term": "AI infrastructure",
+      "tier": "ai",
+      "variants": [
+        "AI-driven demand",
+        "AI build-out",
+        "AI factory",
+        "AI campus",
+        "AI-related infrastructure",
+        "AI investment boom"
+      ],
+      "why": "AI named as driver of infrastructure pipeline"
+    },
+    {
+      "term": "intelligent computing center",
+      "tier": "ai",
+      "variants": [
+        "intelligent computing centre",
+        "computing power center",
+        "computing power centre",
+        "computing power infrastructure",
+        "computing power network",
+        "East Data West Computing"
+      ],
+      "why": "Chinese term for AI compute facilities built by contractors"
+    },
+    {
+      "term": "new infrastructure",
+      "tier": "context",
+      "variants": [
+        "new-type infrastructure",
+        "digital infrastructure",
+        "information infrastructure"
+      ],
+      "why": "Chinese policy category including data centres, 5G, AI"
+    },
+    {
+      "term": "mission critical",
+      "tier": "context",
+      "variants": [
+        "critical facilities",
+        "e-infrastructure",
+        "technology facilities",
+        "high-tech facilities"
+      ],
+      "why": "contractor label for data-centre and similar facilities"
+    },
+    {
+      "term": "site development",
+      "tier": "context",
+      "variants": [
+        "site preparation",
+        "campus site work",
+        "pad-ready site",
+        "mass grading",
+        "earthworks package"
+      ],
+      "why": "large-scale earthworks for data-centre campuses"
+    },
+    {
+      "term": "load growth",
+      "tier": "context",
+      "variants": [
+        "electricity demand growth",
+        "power demand growth",
+        "rising power demand",
+        "load forecast",
+        "growing power demand"
+      ],
+      "why": "utility demand outlook driving grid and generation contracts"
+    },
+    {
+      "term": "AI-driven power demand",
+      "tier": "ai",
+      "variants": [
+        "AI power demand",
+        "AI-driven electricity demand",
+        "AI-related power demand",
+        "power for AI",
+        "AI energy demand",
+        "AI-driven load growth"
+      ],
+      "why": "AI named as cause of utility capital spending"
+    },
+    {
+      "term": "transmission build-out",
+      "tier": "context",
+      "variants": [
+        "transmission expansion",
+        "high-voltage transmission",
+        "grid expansion",
+        "grid modernisation",
+        "grid modernization",
+        "grid hardening",
+        "transmission and substation",
+        "substation construction",
+        "grid investment"
+      ],
+      "why": "grid expansion contracts tied to load growth"
+    },
+    {
+      "term": "power generation construction",
+      "tier": "context",
+      "variants": [
+        "gas-fired generation",
+        "combined cycle",
+        "gas turbine installation",
+        "behind-the-meter",
+        "on-site power generation",
+        "small modular reactor",
+        "simple cycle",
+        "power island"
+      ],
+      "why": "gas, nuclear and storage plants built for data-centre load"
+    },
+    {
+      "term": "fiber network build",
+      "tier": "context",
+      "variants": [
+        "fibre network build",
+        "long-haul fiber",
+        "long-haul fibre",
+        "middle-mile fiber",
+        "middle-mile fibre",
+        "data center connectivity",
+        "data centre connectivity",
+        "fiber densification",
+        "fibre densification",
+        "inside the fence"
+      ],
+      "why": "fibre routes connecting data centres"
+    },
+    {
+      "term": "semiconductor fab",
+      "tier": "context",
+      "variants": [
+        "semiconductor fabrication plant",
+        "semiconductor facility",
+        "chip plant",
+        "chip factory",
+        "wafer fab",
+        "semiconductor plant"
+      ],
+      "why": "chip plant infrastructure contracts"
+    },
+    {
+      "term": "power availability",
+      "tier": "context",
+      "variants": [
+        "grid connection delay",
+        "interconnection queue",
+        "power constraint",
+        "grid capacity constraint",
+        "speed to power",
+        "time to power"
+      ],
+      "why": "grid capacity as bottleneck for clients' projects"
+    },
+    {
+      "term": "long-lead electrical equipment",
+      "tier": "context",
+      "variants": [
+        "switchgear lead time",
+        "transformer lead time",
+        "long-lead equipment",
+        "equipment lead time"
+      ],
+      "why": "equipment shortages from data-centre and grid boom"
+    },
+    {
+      "term": "skilled labour shortage",
+      "tier": "context",
+      "variants": [
+        "skilled labor shortage",
+        "craft labor",
+        "craft labour",
+        "labor availability",
+        "labour availability",
+        "shortage of skilled workers",
+        "lineman shortage",
+        "workforce shortage"
+      ],
+      "why": "workforce constraint motivating automation"
+    },
+    {
+      "term": "building information modelling",
+      "tier": "context",
+      "variants": [
+        "building information modeling",
+        "BIM",
+        "virtual design and construction",
+        "common data environment",
+        "digital engineering",
+        "digital delivery",
+        "digital project delivery"
+      ],
+      "case_sensitive_variants": [
+        "BIM"
+      ],
+      "why": "model data underpinning design automation and AI"
+    },
+    {
+      "term": "digital twin",
+      "tier": "context",
+      "variants": [
+        "infrastructure twin",
+        "virtual twin",
+        "digital replica",
+        "asset twin"
+      ],
+      "why": "virtual model of infrastructure assets"
+    },
+    {
+      "term": "4D simulation",
+      "tier": "context",
+      "variants": [
+        "4D modelling",
+        "4D modeling",
+        "construction simulation",
+        "virtual rehearsal",
+        "digital rehearsal"
+      ],
+      "why": "model-based rehearsal of construction sequences"
+    },
+    {
+      "term": "generative design",
+      "tier": "ai",
+      "variants": [
+        "parametric design",
+        "design automation",
+        "automated design",
+        "computational design",
+        "AI-assisted design",
+        "alignment optimisation",
+        "alignment optimization",
+        "corridor optimisation"
+      ],
+      "why": "algorithmic generation of alignments and structures"
+    },
+    {
+      "term": "automated design review",
+      "tier": "context",
+      "variants": [
+        "clash detection",
+        "model checking",
+        "automated compliance checking",
+        "design validation",
+        "automated code checking"
+      ],
+      "why": "automated checking of models against rules"
+    },
+    {
+      "term": "machine control",
+      "tier": "context",
+      "variants": [
+        "machine guidance",
+        "automated grade control",
+        "GPS grading",
+        "semi-autonomous machine",
+        "ICT construction",
+        "intelligent compaction"
+      ],
+      "why": "GPS-guided earthmoving, step towards autonomy"
+    },
+    {
+      "term": "autonomous construction equipment",
+      "tier": "ai",
+      "variants": [
+        "autonomous construction machinery",
+        "autonomous dozer",
+        "autonomous excavator",
+        "autonomous compactor",
+        "autonomous roller",
+        "autonomous haul truck",
+        "unmanned construction",
+        "A4CSEL",
+        "automated construction system",
+        "robotic equipment"
+      ],
+      "why": "self-operating earthmoving and compaction machinery"
+    },
+    {
+      "term": "tele-operated machinery",
+      "tier": "context",
+      "variants": [
+        "remote-controlled machinery",
+        "teleoperation",
+        "remote-operated excavator",
+        "remote control construction",
+        "teleoperated",
+        "remote operation of construction machinery"
+      ],
+      "why": "remote operation of plant in hazardous works"
+    },
+    {
+      "term": "haul optimisation",
+      "tier": "context",
+      "variants": [
+        "haul optimization",
+        "mass haul optimisation",
+        "earthworks optimisation",
+        "earthworks optimization",
+        "fleet optimisation",
+        "fleet optimization",
+        "logistics optimisation",
+        "logistics optimization"
+      ],
+      "why": "algorithmic earthworks, fleet and logistics planning"
+    },
+    {
+      "term": "drone survey",
+      "tier": "context",
+      "variants": [
+        "UAV survey",
+        "drone mapping",
+        "photogrammetry",
+        "LiDAR survey",
+        "mobile mapping",
+        "reality capture",
+        "laser scanning",
+        "aerial survey",
+        "point cloud"
+      ],
+      "why": "UAV and scan data digitising sites and assets"
+    },
+    {
+      "term": "beyond visual line of sight",
+      "tier": "context",
+      "variants": [
+        "BVLOS"
+      ],
+      "case_sensitive_variants": [
+        "BVLOS"
+      ],
+      "why": "drone rule constraining corridor surveys"
+    },
+    {
+      "term": "automated progress monitoring",
+      "tier": "ai",
+      "variants": [
+        "automated progress tracking",
+        "AI progress tracking",
+        "construction progress analytics",
+        "AI site monitoring",
+        "image-based progress",
+        "earthworks progress analytics"
+      ],
+      "why": "computer vision comparing works to plan"
+    },
+    {
+      "term": "generative scheduling",
+      "tier": "ai",
+      "variants": [
+        "AI scheduling",
+        "schedule optimisation",
+        "schedule optimization",
+        "construction optioneering",
+        "automated scheduling",
+        "schedule risk prediction",
+        "AI-based planning"
+      ],
+      "why": "AI-optimised construction sequencing"
+    },
+    {
+      "term": "bid analytics",
+      "tier": "context",
+      "variants": [
+        "tender analytics",
+        "bid risk model",
+        "tender risk assessment",
+        "project risk prediction",
+        "AI-assisted estimating",
+        "automated estimating",
+        "cost prediction model",
+        "claims prediction"
+      ],
+      "why": "data-driven tender selection and risk pricing"
+    },
+    {
+      "term": "project controls analytics",
+      "tier": "context",
+      "variants": [
+        "predictive project analytics",
+        "project performance prediction",
+        "cost overrun prediction",
+        "delay prediction",
+        "project data platform",
+        "earned value analytics"
+      ],
+      "why": "data-driven cost, schedule and risk control"
+    },
+    {
+      "term": "contract analytics",
+      "tier": "context",
+      "variants": [
+        "contract review automation",
+        "automated document review",
+        "claims analytics",
+        "document control automation",
+        "submittal review",
+        "RFI automation"
+      ],
+      "why": "document workflows targeted by AI assistants"
+    },
+    {
+      "term": "geotechnical prediction",
+      "tier": "ai",
+      "variants": [
+        "ground condition prediction",
+        "settlement prediction",
+        "machine learning geotechnics",
+        "geological risk prediction"
+      ],
+      "why": "ML models of ground conditions and settlement"
+    },
+    {
+      "term": "concrete strength prediction",
+      "tier": "ai",
+      "variants": [
+        "concrete maturity sensor",
+        "maturity monitoring",
+        "mix design optimisation",
+        "mix design optimization",
+        "AI concrete mix"
+      ],
+      "why": "sensor and ML models of curing and mix design"
+    },
+    {
+      "term": "TBM automation",
+      "tier": "context",
+      "variants": [
+        "autonomous TBM",
+        "AI-assisted TBM",
+        "TBM guidance",
+        "TBM data analytics",
+        "automated segment erection",
+        "tunnel boring machine automation",
+        "robotic shotcrete",
+        "automated tunnelling"
+      ],
+      "why": "automated guidance and steering of tunnelling machines"
+    },
+    {
+      "term": "computer vision safety monitoring",
+      "tier": "ai",
+      "variants": [
+        "PPE detection",
+        "AI safety monitoring",
+        "hazard detection camera",
+        "AI camera",
+        "safety video analytics",
+        "people-plant interface detection",
+        "exclusion zone monitoring"
+      ],
+      "why": "cameras detecting hazards and missing PPE"
+    },
+    {
+      "term": "predictive safety",
+      "tier": "ai",
+      "variants": [
+        "safety prediction model",
+        "incident prediction",
+        "safety risk prediction",
+        "leading indicator analytics"
+      ],
+      "why": "ML prediction of incident risk"
+    },
+    {
+      "term": "collision avoidance system",
+      "tier": "context",
+      "variants": [
+        "proximity warning",
+        "proximity detection",
+        "people-plant separation",
+        "pedestrian detection",
+        "fatigue monitoring",
+        "in-cab camera"
+      ],
+      "why": "proximity and fatigue systems on plant and vehicles"
+    },
+    {
+      "term": "connected worker",
+      "tier": "context",
+      "variants": [
+        "wearable technology",
+        "smart helmet",
+        "wearable sensor",
+        "worker location tracking",
+        "exoskeleton"
+      ],
+      "why": "wearables and sensors on site personnel"
+    },
+    {
+      "term": "construction robotics",
+      "tier": "ai",
+      "variants": [
+        "construction robot",
+        "rebar-tying robot",
+        "welding robot",
+        "layout robot",
+        "drilling robot",
+        "robotic construction",
+        "TyBot",
+        "site robot"
+      ],
+      "why": "robots performing site tasks"
+    },
+    {
+      "term": "modular construction",
+      "tier": "context",
+      "variants": [
+        "prefabrication",
+        "offsite manufacturing",
+        "off-site construction",
+        "precast automation",
+        "industrialised construction",
+        "industrialized construction",
+        "modular substation"
+      ],
+      "why": "prefabricated components from automated plants"
+    },
+    {
+      "term": "3D printing",
+      "tier": "context",
+      "variants": [
+        "3D concrete printing",
+        "additive construction",
+        "printed bridge"
+      ],
+      "why": "additive construction of structures"
+    },
+    {
+      "term": "smart construction",
+      "tier": "context",
+      "variants": [
+        "intelligent construction",
+        "smart site",
+        "digital construction",
+        "construction technology",
+        "i-Construction",
+        "connected site"
+      ],
+      "why": "sensor- and AI-enabled site management programmes"
+    },
+    {
+      "term": "structural health monitoring",
+      "tier": "context",
+      "variants": [
+        "bridge monitoring",
+        "structural monitoring",
+        "dam monitoring",
+        "fibre-optic monitoring",
+        "fiber-optic monitoring",
+        "settlement monitoring",
+        "geotechnical monitoring",
+        "InSAR"
+      ],
+      "why": "sensors on bridges, dams and tunnels feeding models"
+    },
+    {
+      "term": "AI-based inspection",
+      "tier": "ai",
+      "variants": [
+        "automated defect detection",
+        "crack detection",
+        "AI inspection",
+        "drone inspection analytics",
+        "image-based inspection",
+        "automated condition assessment",
+        "defect recognition"
+      ],
+      "why": "image recognition of defects in infrastructure"
+    },
+    {
+      "term": "predictive maintenance",
+      "tier": "ai",
+      "variants": [
+        "predictive asset maintenance",
+        "predictive asset management",
+        "failure prediction",
+        "deterioration model",
+        "prognostics"
+      ],
+      "why": "ML maintenance planning for infrastructure and plant"
+    },
+    {
+      "term": "maintenance optimisation",
+      "tier": "context",
+      "variants": [
+        "maintenance optimization",
+        "whole-life asset management",
+        "asset information model",
+        "lifecycle optimisation",
+        "lifecycle optimization"
+      ],
+      "why": "whole-life asset management of concessions"
+    },
+    {
+      "term": "intelligent operation and maintenance",
+      "tier": "context",
+      "variants": [
+        "intelligent O&M",
+        "smart operation and maintenance",
+        "intelligent maintenance",
+        "unmanned inspection"
+      ],
+      "why": "Chinese wording for AI-assisted asset operation"
+    },
+    {
+      "term": "equipment telematics",
+      "tier": "context",
+      "variants": [
+        "plant telematics",
+        "fleet telematics",
+        "telematics data",
+        "equipment utilisation analytics",
+        "fuel analytics"
+      ],
+      "why": "machine data for utilisation and fuel analytics"
+    },
+    {
+      "term": "smart city",
+      "tier": "context",
+      "variants": [
+        "smart infrastructure",
+        "intelligent infrastructure",
+        "smart mobility",
+        "connected infrastructure"
+      ],
+      "why": "urban infrastructure with embedded sensing and AI"
+    }
+  ],
+  "class_terms": {
+    "4210": [
+      {
+        "term": "pavement condition assessment",
+        "tier": "context",
+        "variants": [
+          "pavement condition survey",
+          "road condition survey",
+          "pavement management system",
+          "road asset management",
+          "pavement condition index"
+        ],
+        "why": "road surveys increasingly automated by image recognition"
+      },
+      {
+        "term": "automated pavement distress detection",
+        "tier": "ai",
+        "variants": [
+          "AI road inspection",
+          "pothole detection",
+          "automated road survey",
+          "road defect detection",
+          "AI pavement analysis"
+        ],
+        "why": "AI detection of cracks and potholes"
+      },
+      {
+        "term": "intelligent transport systems",
+        "tier": "context",
+        "variants": [
+          "intelligent transportation system",
+          "traffic management system",
+          "smart motorway",
+          "smart highway",
+          "smart road",
+          "smart expressway",
+          "traffic control centre",
+          "traffic control center",
+          "variable speed limit"
+        ],
+        "why": "traffic management and control technology"
+      },
+      {
+        "term": "traffic prediction",
+        "tier": "ai",
+        "variants": [
+          "traffic forecasting model",
+          "automatic incident detection",
+          "incident detection",
+          "traffic flow prediction",
+          "congestion prediction",
+          "AI traffic management"
+        ],
+        "why": "ML forecasting of flows and incidents"
+      },
+      {
+        "term": "free-flow tolling",
+        "tier": "context",
+        "variants": [
+          "automatic number plate recognition",
+          "ANPR",
+          "licence plate recognition",
+          "license plate recognition",
+          "electronic toll collection",
+          "barrier-free tolling",
+          "multi-lane free flow",
+          "toll enforcement"
+        ],
+        "case_sensitive_variants": [
+          "ANPR"
+        ],
+        "why": "camera-based tolling and enforcement"
+      },
+      {
+        "term": "dynamic tolling",
+        "tier": "context",
+        "variants": [
+          "dynamic toll pricing",
+          "dynamic pricing",
+          "managed lanes",
+          "express lanes",
+          "congestion pricing",
+          "pricing algorithm"
+        ],
+        "why": "algorithmic pricing of managed lanes"
+      },
+      {
+        "term": "connected and autonomous vehicles",
+        "tier": "context",
+        "variants": [
+          "autonomous vehicle",
+          "vehicle-to-infrastructure",
+          "V2X",
+          "self-driving vehicle",
+          "automated driving",
+          "connected vehicle corridor"
+        ],
+        "case_sensitive_variants": [
+          "V2X"
+        ],
+        "why": "road readiness for automated driving"
+      },
+      {
+        "term": "rail defect detection",
+        "tier": "ai",
+        "variants": [
+          "track inspection automation",
+          "automated track inspection",
+          "track geometry analytics",
+          "rail flaw detection",
+          "catenary inspection",
+          "predictive track maintenance"
+        ],
+        "why": "automated inspection of track and catenary"
+      },
+      {
+        "term": "intelligent paving",
+        "tier": "context",
+        "variants": [
+          "automated paving",
+          "paver automation",
+          "thermal mapping",
+          "autonomous road marking",
+          "road marking robot"
+        ],
+        "why": "automated paving, compaction and road marking"
+      }
+    ],
+    "4220": [
+      {
+        "term": "utility line inspection",
+        "tier": "context",
+        "variants": [
+          "power line inspection",
+          "drone line stringing",
+          "aerial line inspection",
+          "LiDAR line survey",
+          "pole inspection",
+          "vegetation management"
+        ],
+        "why": "drone and AI inspection of power lines for utilities"
+      },
+      {
+        "term": "large load interconnection",
+        "tier": "context",
+        "variants": [
+          "large load",
+          "data center interconnection",
+          "data centre interconnection",
+          "substation backlog",
+          "high-voltage interconnection"
+        ],
+        "why": "utility connections for data centres driving substation work"
+      },
+      {
+        "term": "robotic solar installation",
+        "tier": "ai",
+        "variants": [
+          "solar installation robot",
+          "automated module installation",
+          "autonomous pile driving",
+          "autonomous pile driver",
+          "robotic piling",
+          "automated solar construction"
+        ],
+        "why": "robots installing modules and piles on utility-scale sites"
+      },
+      {
+        "term": "pipeline integrity analytics",
+        "tier": "context",
+        "variants": [
+          "in-line inspection",
+          "pipeline inspection robot",
+          "leak detection",
+          "pipeline monitoring",
+          "smart pigging"
+        ],
+        "why": "inspection data analysis for pipelines"
+      },
+      {
+        "term": "smart metering rollout",
+        "tier": "context",
+        "variants": [
+          "smart meter installation",
+          "advanced metering infrastructure",
+          "smart grid installation",
+          "smart water network"
+        ],
+        "why": "smart-meter and smart-network installation contracts"
+      }
+    ],
+    "4290": [
+      {
+        "term": "port automation",
+        "tier": "context",
+        "variants": [
+          "automated terminal",
+          "automated container terminal",
+          "smart port",
+          "autonomous dredging",
+          "dredging automation",
+          "automated crane"
+        ],
+        "why": "automated terminals and marine works"
+      }
+    ]
+  }
+}

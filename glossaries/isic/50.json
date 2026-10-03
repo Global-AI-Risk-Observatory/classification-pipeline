@@ -1,0 +1,339 @@
+{
+ "id": "50",
+ "name": "Water transport",
+ "section": "H",
+ "summary": "Shipping companies write about AI in voyage and weather routing, fuel and emissions optimisation, predictive maintenance of engines and hulls, and autonomous or remotely operated vessels with their regulatory (IMO MASS Code) and crewing implications. Container lines add predictive ETAs, AI-based booking, pricing and customer service and detection of misdeclared cargo; cruise and ferry operators add revenue management, personalisation and wearables. Cyber risk to increasingly connected ships is the recurring risk theme.",
+ "terms": [
+  {
+   "term": "voyage optimisation",
+   "tier": "context",
+   "variants": [
+    "voyage optimization",
+    "AI-based voyage planning",
+    "AI routing",
+    "weather routing",
+    "route optimisation",
+    "route optimization",
+    "speed optimisation",
+    "speed optimization",
+    "just-in-time arrival"
+   ],
+   "why": "ML planning of speed and route"
+  },
+  {
+   "term": "fuel optimisation",
+   "tier": "context",
+   "variants": [
+    "fuel optimization",
+    "AI-based fuel efficiency",
+    "AI-driven fuel savings",
+    "trim optimisation",
+    "trim optimization",
+    "performance optimisation system",
+    "performance optimization system",
+    "bunker optimisation"
+   ],
+   "why": "ML reducing bunker consumption"
+  },
+  {
+   "term": "predictive maintenance",
+   "tier": "ai",
+   "variants": [
+    "condition-based maintenance",
+    "engine health monitoring",
+    "AI-based maintenance",
+    "machinery health monitoring",
+    "hull performance monitoring",
+    "predictive hull cleaning"
+   ],
+   "why": "ML forecasting of machinery failure"
+  },
+  {
+   "term": "autonomous vessel",
+   "tier": "ai",
+   "variants": [
+    "autonomous ship",
+    "autonomous shipping",
+    "maritime autonomous surface ship",
+    "MASS Code",
+    "unmanned vessel",
+    "uncrewed vessel",
+    "remotely operated vessel",
+    "autonomous navigation"
+   ],
+   "why": "ships navigating with little or no crew"
+  },
+  {
+   "term": "collision avoidance system",
+   "tier": "ai",
+   "variants": [
+    "AI-based collision avoidance",
+    "situational awareness system",
+    "AI lookout",
+    "computer vision navigation",
+    "object detection at sea",
+    "smart bridge",
+    "decision support for navigation"
+   ],
+   "why": "vision and ML aids on the bridge"
+  },
+  {
+   "term": "remote operations centre",
+   "tier": "context",
+   "variants": [
+    "remote operations center",
+    "shore control centre",
+    "shore control center",
+    "fleet operations centre",
+    "fleet operations center",
+    "remote monitoring"
+   ],
+   "why": "shore control of vessels"
+  },
+  {
+   "term": "fleet performance analytics",
+   "tier": "ai",
+   "variants": [
+    "vessel performance model",
+    "AI vessel performance",
+    "digital twin of the vessel",
+    "vessel digital twin",
+    "AI-based performance monitoring",
+    "smart ship"
+   ],
+   "why": "ML benchmarking of vessel efficiency"
+  },
+  {
+   "term": "predictive ETA",
+   "tier": "ai",
+   "variants": [
+    "predicted time of arrival",
+    "AI-based ETA",
+    "schedule reliability prediction",
+    "port congestion prediction",
+    "arrival time prediction"
+   ],
+   "why": "ML arrival predictions for cargo and ports"
+  },
+  {
+   "term": "AI emissions optimisation",
+   "tier": "ai",
+   "variants": [
+    "AI emissions optimization",
+    "AI-based emissions monitoring",
+    "carbon intensity optimisation",
+    "carbon intensity optimization",
+    "AI decarbonisation tools",
+    "AI decarbonization tools"
+   ],
+   "why": "ML supporting CII and EU ETS compliance"
+  },
+  {
+   "term": "AI-driven efficiency",
+   "tier": "ai",
+   "variants": [
+    "AI-driven productivity",
+    "AI-enabled efficiency",
+    "AI use cases",
+    "AI-driven cost savings",
+    "AI initiatives",
+    "AI-enabled productivity"
+   ],
+   "why": "cost savings attributed to AI"
+  },
+  {
+   "term": "maritime cyber risk",
+   "tier": "context",
+   "variants": [
+    "maritime cybersecurity",
+    "GPS spoofing",
+    "GNSS jamming",
+    "AIS spoofing",
+    "cyber resilience of vessels",
+    "operational technology security"
+   ],
+   "why": "connected ships as attack surface"
+  },
+  {
+   "term": "seafarer",
+   "tier": "context",
+   "variants": [
+    "crew reduction",
+    "manning levels",
+    "minimum safe manning",
+    "crew shortage",
+    "seafarer shortage",
+    "crew welfare"
+   ],
+   "why": "crew affected by automation and remote operation"
+  },
+  {
+   "term": "AI crew fatigue monitoring",
+   "tier": "ai",
+   "variants": [
+    "AI safety monitoring",
+    "AI-based fatigue detection",
+    "AI video analytics on board",
+    "AI-based safety analytics",
+    "AI fire detection"
+   ],
+   "why": "ML and vision for crew safety"
+  },
+  {
+   "term": "AI chartering analytics",
+   "tier": "ai",
+   "variants": [
+    "freight rate prediction",
+    "AI market intelligence",
+    "AI-based chartering",
+    "predictive freight analytics",
+    "algorithmic freight trading",
+    "AI vessel valuation"
+   ],
+   "why": "ML freight-rate and market forecasting"
+  },
+  {
+   "term": "classification society",
+   "tier": "context",
+   "variants": [
+    "class notation",
+    "autonomous notation",
+    "cyber notation",
+    "type approval",
+    "flag state approval"
+   ],
+   "why": "bodies certifying autonomous and digital systems"
+  }
+ ],
+ "class_terms": {
+  "5011": [
+   {
+    "term": "cruise revenue management",
+    "tier": "ai",
+    "variants": [
+     "AI-driven pricing",
+     "dynamic pricing",
+     "yield management system",
+     "AI-powered personalisation",
+     "AI-powered personalization",
+     "onboard revenue optimisation",
+     "onboard revenue optimization"
+    ],
+    "why": "ML pricing of cabins and onboard spend"
+   },
+   {
+    "term": "AI guest experience",
+    "tier": "ai",
+    "variants": [
+     "AI guest assistant",
+     "OceanMedallion",
+     "facial recognition boarding",
+     "AI itinerary recommendations",
+     "AI-powered guest app",
+     "AI concierge",
+     "smart wearable"
+    ],
+    "why": "assistants and wearables for cruise passengers"
+   },
+   {
+    "term": "AI food waste reduction",
+    "tier": "ai",
+    "variants": [
+     "AI-based food waste monitoring",
+     "AI galley",
+     "food waste tracking AI"
+    ],
+    "why": "vision AI in ship galleys"
+   }
+  ],
+  "5012": [
+   {
+    "term": "AI-based booking",
+    "tier": "ai",
+    "variants": [
+     "AI-powered quoting",
+     "instant quote",
+     "dynamic freight pricing",
+     "AI spot pricing",
+     "AI-based pricing",
+     "digital booking platform with AI"
+    ],
+    "why": "digital container booking with ML pricing"
+   },
+   {
+    "term": "AI cargo screening",
+    "tier": "ai",
+    "variants": [
+     "misdeclared cargo detection",
+     "cargo screening algorithm",
+     "AI-based dangerous goods detection",
+     "undeclared cargo detection",
+     "container fire prevention AI"
+    ],
+    "why": "ML detection of misdeclared dangerous goods"
+   },
+   {
+    "term": "AI stowage planning",
+    "tier": "ai",
+    "variants": [
+     "stowage optimisation",
+     "stowage optimization",
+     "AI network planning",
+     "empty container repositioning",
+     "AI equipment forecasting",
+     "container demand forecasting"
+    ],
+    "why": "ML container stowage and network planning"
+   },
+   {
+    "term": "smart container",
+    "tier": "ai",
+    "variants": [
+     "reefer monitoring",
+     "remote container management",
+     "AI-based reefer monitoring",
+     "container tracking device",
+     "connected container"
+    ],
+    "why": "connected containers feeding predictive models"
+   },
+   {
+    "term": "AI customer service",
+    "tier": "ai",
+    "variants": [
+     "AI-powered customer service",
+     "AI virtual agent",
+     "AI email automation",
+     "AI documentation",
+     "automated bill of lading",
+     "AI-powered documentation"
+    ],
+    "why": "automated shipper support"
+   },
+   {
+    "term": "schedule reliability",
+    "tier": "context",
+    "variants": [
+     "vessel delays",
+     "port congestion",
+     "blank sailings"
+    ],
+    "why": "liner metric that predictive tools target"
+   }
+  ],
+  "5022": [
+   {
+    "term": "autonomous barge",
+    "tier": "ai",
+    "variants": [
+     "remote-controlled barge",
+     "autonomous inland vessel",
+     "remotely operated inland vessel",
+     "automated inland navigation",
+     "smart inland shipping"
+    ],
+    "why": "inland vessels with remote or automated navigation"
+   }
+  ]
+ }
+}

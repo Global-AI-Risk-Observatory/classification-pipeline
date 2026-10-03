@@ -1,0 +1,798 @@
+{
+  "id": "90",
+  "name": "Arts creation and performing arts activities",
+  "section": "S",
+  "summary": "Creators, performers, producers, venues and rights holders write about AI first as a threat: generative models trained on their works without licence, AI-generated music, text, images and voices competing with human output, and digital replicas of performers' likeness and voice. The same filings describe AI licensing deals, detection and attribution tools, union agreements on consent and compensation, and own use in production, dubbing, ticket pricing, venue security and audience marketing.",
+  "terms": [
+    {
+      "term": "AI-generated music",
+      "tier": "ai",
+      "variants": [
+        "AI music",
+        "AI-generated song",
+        "AI music generation",
+        "generative music",
+        "AI-generated track",
+        "AI-composed",
+        "AI composition",
+        "text-to-music",
+        "AI music generator"
+      ],
+      "why": "machine-made songs competing for streams and sync"
+    },
+    {
+      "term": "AI-generated art",
+      "tier": "ai",
+      "variants": [
+        "AI art",
+        "AI-generated artwork",
+        "AI image generator",
+        "generative art",
+        "AI-generated illustration",
+        "AI-generated visual"
+      ],
+      "why": "machine-made images competing with visual artists"
+    },
+    {
+      "term": "AI-assisted creation",
+      "tier": "ai",
+      "variants": [
+        "AI co-creation",
+        "AI-assisted composition",
+        "AI creative tool",
+        "AI as a creative tool",
+        "AI-assisted songwriting",
+        "AI-assisted production",
+        "AI-assisted writing"
+      ],
+      "why": "artists using generative tools in their own work"
+    },
+    {
+      "term": "synthetic performer",
+      "tier": "ai",
+      "variants": [
+        "AI actor",
+        "AI-generated performer",
+        "AI performer",
+        "synthetic actor",
+        "AI actress",
+        "AI-generated character",
+        "AI singer"
+      ],
+      "why": "wholly AI-generated actors or singers"
+    },
+    {
+      "term": "digital replica",
+      "tier": "ai",
+      "variants": [
+        "digital double",
+        "digital likeness",
+        "AI replica",
+        "AI-generated replica",
+        "digital replication",
+        "AI likeness",
+        "AI-generated likeness"
+      ],
+      "why": "AI copy of a real performer's face or voice"
+    },
+    {
+      "term": "voice cloning",
+      "tier": "ai",
+      "variants": [
+        "voice clone",
+        "AI voice",
+        "synthetic voice",
+        "voice synthesis",
+        "AI-generated voice",
+        "voice model",
+        "AI vocal",
+        "soundalike",
+        "voice conversion",
+        "singing voice synthesis"
+      ],
+      "why": "synthetic copy of a singer's or actor's voice"
+    },
+    {
+      "term": "virtual artist",
+      "tier": "ai",
+      "variants": [
+        "virtual idol",
+        "virtual influencer",
+        "AI idol",
+        "AI artist",
+        "virtual human",
+        "virtual band",
+        "AI band"
+      ],
+      "why": "avatar or AI acts managed like human talent"
+    },
+    {
+      "term": "hologram performance",
+      "tier": "context",
+      "variants": [
+        "hologram concert",
+        "avatar show",
+        "virtual concert",
+        "posthumous performance",
+        "digital resurrection",
+        "ABBA Voyage"
+      ],
+      "why": "avatar shows recreating living or dead artists"
+    },
+    {
+      "term": "AI dubbing",
+      "tier": "ai",
+      "variants": [
+        "automated dubbing",
+        "AI lip-sync",
+        "AI localisation",
+        "AI localization",
+        "visual dubbing",
+        "AI-translated performance"
+      ],
+      "why": "synthetic voice translation of performances"
+    },
+    {
+      "term": "name, image and likeness",
+      "tier": "context",
+      "variants": [
+        "likeness rights",
+        "right of publicity",
+        "publicity rights",
+        "personality rights",
+        "image rights",
+        "voice and likeness",
+        "name and likeness"
+      ],
+      "why": "personality rights invoked against AI replicas"
+    },
+    {
+      "term": "NO FAKES Act",
+      "tier": "ai",
+      "variants": [
+        "ELVIS Act",
+        "No AI FRAUD Act",
+        "digital replica law",
+        "AI likeness law"
+      ],
+      "why": "laws protecting voice and likeness from AI copies"
+    },
+    {
+      "term": "copyright infringement",
+      "tier": "context",
+      "variants": [
+        "copyright litigation",
+        "copyright claim",
+        "infringement claim",
+        "copyright lawsuit",
+        "infringing output"
+      ],
+      "why": "main legal claim against AI developers"
+    },
+    {
+      "term": "unlicensed training",
+      "tier": "ai",
+      "variants": [
+        "training on copyrighted works",
+        "trained on copyrighted",
+        "unauthorised use of creative works",
+        "unauthorized use of copyrighted works",
+        "scraping of creative works",
+        "ingestion of copyrighted works",
+        "AI training without permission",
+        "use of works for AI training"
+      ],
+      "why": "use of creative works to train models without consent"
+    },
+    {
+      "term": "text and data mining",
+      "tier": "ai",
+      "variants": [
+        "TDM exception",
+        "text and data mining exception",
+        "TDM opt-out",
+        "rights reservation",
+        "opt-out mechanism",
+        "machine-readable opt-out"
+      ],
+      "why": "copyright exception relied on for AI training"
+    },
+    {
+      "term": "fair use",
+      "tier": "context",
+      "variants": [
+        "fair dealing",
+        "transformative use"
+      ],
+      "why": "US defence AI developers rely on"
+    },
+    {
+      "term": "AI licensing",
+      "tier": "ai",
+      "variants": [
+        "AI licence",
+        "AI license",
+        "AI licensing agreement",
+        "licensing for AI training",
+        "AI training licence",
+        "AI training license",
+        "collective licensing for AI",
+        "AI licensing deal",
+        "AI licensing framework"
+      ],
+      "why": "licensing catalogues to AI developers"
+    },
+    {
+      "term": "human authorship",
+      "tier": "context",
+      "variants": [
+        "copyrightability",
+        "human-authored",
+        "human-created",
+        "human creativity",
+        "human artistry",
+        "Human Artistry Campaign",
+        "protection of AI-generated works"
+      ],
+      "why": "copyright condition AI output may fail"
+    },
+    {
+      "term": "fair remuneration",
+      "tier": "context",
+      "variants": [
+        "equitable remuneration",
+        "artist remuneration",
+        "creator compensation",
+        "creator remuneration",
+        "appropriate remuneration"
+      ],
+      "why": "creator pay demands tied to AI use of works"
+    },
+    {
+      "term": "consent and compensation",
+      "tier": "context",
+      "variants": [
+        "consent, credit and compensation",
+        "performer consent",
+        "informed consent of performers",
+        "consent and control"
+      ],
+      "why": "union formula for AI use of performances"
+    },
+    {
+      "term": "moral rights",
+      "tier": "context",
+      "variants": [
+        "right of integrity",
+        "attribution right",
+        "neighbouring rights",
+        "neighboring rights",
+        "performers' rights",
+        "related rights"
+      ],
+      "why": "integrity and attribution rights against AI manipulation"
+    },
+    {
+      "term": "AI labelling",
+      "tier": "ai",
+      "variants": [
+        "AI labeling",
+        "labelling of AI-generated content",
+        "labeling of AI-generated content",
+        "training data transparency",
+        "transparency of training data",
+        "disclosure of training data",
+        "AI content disclosure",
+        "AI tagging"
+      ],
+      "why": "disclosure and transparency duties for AI content"
+    },
+    {
+      "term": "EU Copyright Directive",
+      "tier": "context",
+      "variants": [
+        "DSM Directive",
+        "Copyright in the Digital Single Market",
+        "Article 4 opt-out",
+        "Data (Use and Access) Act",
+        "copyright and AI consultation",
+        "Copyright Office report"
+      ],
+      "why": "legal instruments shaping AI training rights"
+    },
+    {
+      "term": "collective management organisation",
+      "tier": "context",
+      "variants": [
+        "collective management organization",
+        "collecting society",
+        "performing rights organisation",
+        "performing rights organization",
+        "GEMA",
+        "ASCAP",
+        "PRS for Music",
+        "SACEM",
+        "SoundExchange"
+      ],
+      "why": "societies negotiating and litigating AI use"
+    },
+    {
+      "term": "SAG-AFTRA",
+      "tier": "context",
+      "variants": [
+        "Writers Guild of America",
+        "WGA",
+        "Actors' Equity",
+        "American Federation of Musicians",
+        "IATSE",
+        "Authors Guild",
+        "Society of Authors",
+        "Musicians' Union"
+      ],
+      "case_sensitive_variants": [
+        "WGA",
+        "IATSE"
+      ],
+      "why": "unions bargaining AI protections for creatives"
+    },
+    {
+      "term": "AI provisions",
+      "tier": "ai",
+      "variants": [
+        "AI protections",
+        "AI guardrails",
+        "AI clause",
+        "AI rider",
+        "AI terms in contracts",
+        "generative AI provisions"
+      ],
+      "why": "AI clauses in talent and union agreements"
+    },
+    {
+      "term": "AI music detection",
+      "tier": "ai",
+      "variants": [
+        "AI content detection",
+        "AI-generated music detection",
+        "synthetic content detection",
+        "AI detection tool",
+        "AI attribution technology",
+        "deepfake detection"
+      ],
+      "why": "tools identifying machine-made content"
+    },
+    {
+      "term": "audio fingerprinting",
+      "tier": "context",
+      "variants": [
+        "Content ID",
+        "music recognition",
+        "content identification",
+        "content provenance",
+        "content credentials",
+        "C2PA"
+      ],
+      "case_sensitive_variants": [
+        "Content ID"
+      ],
+      "why": "content recognition used to trace AI use"
+    },
+    {
+      "term": "streaming fraud",
+      "tier": "context",
+      "variants": [
+        "artificial streaming",
+        "stream manipulation",
+        "fake streams",
+        "bot streams",
+        "royalty dilution",
+        "royalty pool",
+        "streaming manipulation"
+      ],
+      "why": "AI tracks and bots diluting royalty pools"
+    },
+    {
+      "term": "style mimicry",
+      "tier": "ai",
+      "variants": [
+        "style imitation",
+        "style replication",
+        "style cloning",
+        "in the style of living artists",
+        "artist imitation"
+      ],
+      "why": "models imitating a named artist's style"
+    },
+    {
+      "term": "creative workforce",
+      "tier": "context",
+      "variants": [
+        "creative professional",
+        "creative industries",
+        "creative sector",
+        "creative economy",
+        "freelance creative",
+        "creators' livelihoods",
+        "creative jobs"
+      ],
+      "why": "livelihoods at stake from generative AI"
+    },
+    {
+      "term": "voice actor",
+      "tier": "context",
+      "variants": [
+        "voice artist",
+        "voiceover",
+        "voice-over artist",
+        "narrator",
+        "dubbing artist",
+        "session musician",
+        "background actor",
+        "background performer"
+      ],
+      "why": "performers most exposed to synthetic voices"
+    },
+    {
+      "term": "Suno",
+      "tier": "ai",
+      "variants": [
+        "Udio",
+        "Stable Audio",
+        "Suno AI"
+      ],
+      "case_sensitive_variants": [
+        "Suno",
+        "Udio"
+      ],
+      "why": "music generation services sued by rights holders"
+    },
+    {
+      "term": "ElevenLabs",
+      "tier": "ai",
+      "variants": [
+        "Supertone",
+        "Respeecher",
+        "Synthesia"
+      ],
+      "why": "voice synthesis vendors licensing or cloning voices"
+    },
+    {
+      "term": "audience data",
+      "tier": "context",
+      "variants": [
+        "audience analytics",
+        "audience segmentation",
+        "audience insight",
+        "ticket buyer data",
+        "fan data",
+        "audience development"
+      ],
+      "why": "ticket-buyer data used for AI marketing"
+    },
+    {
+      "term": "dynamic pricing",
+      "tier": "context",
+      "variants": [
+        "variable pricing",
+        "demand-based pricing",
+        "yield management",
+        "ticket pricing optimisation",
+        "ticket pricing optimization",
+        "platinum pricing"
+      ],
+      "why": "demand-based ticket pricing run by algorithms"
+    }
+  ],
+  "class_terms": {
+    "9011": [
+      {
+        "term": "AI-generated book",
+        "tier": "ai",
+        "variants": [
+          "AI-written book",
+          "AI-generated text",
+          "AI-authored",
+          "AI-generated novel",
+          "AI-generated lyrics",
+          "AI songwriting",
+          "AI-written content"
+        ],
+        "why": "machine-written texts flooding book and lyric markets"
+      },
+      {
+        "term": "AI narration",
+        "tier": "ai",
+        "variants": [
+          "AI-narrated audiobook",
+          "synthetic narration",
+          "digital narration",
+          "auto-narrated",
+          "AI narrator",
+          "virtual voice narration"
+        ],
+        "why": "synthetic voices narrating audiobooks"
+      },
+      {
+        "term": "literary translation",
+        "tier": "context",
+        "variants": [
+          "machine translation of books",
+          "AI-translated book",
+          "translator fee",
+          "AI translation of literature"
+        ],
+        "why": "translation work displaced by machine translation"
+      },
+      {
+        "term": "songwriter",
+        "tier": "context",
+        "variants": [
+          "composer",
+          "lyricist",
+          "songwriting",
+          "music publishing",
+          "author royalties",
+          "songwriter royalties"
+        ],
+        "why": "composers whose royalties AI output dilutes"
+      },
+      {
+        "term": "production music",
+        "tier": "context",
+        "variants": [
+          "library music",
+          "stock music",
+          "royalty-free music",
+          "background music",
+          "functional music",
+          "sync licensing"
+        ],
+        "why": "library and background music most exposed to AI"
+      },
+      {
+        "term": "music catalogue",
+        "tier": "context",
+        "variants": [
+          "music catalog",
+          "song catalogue",
+          "song catalog",
+          "master recording",
+          "publishing rights",
+          "catalogue valuation",
+          "catalog valuation"
+        ],
+        "why": "rights assets whose value AI may affect"
+      },
+      {
+        "term": "stem separation",
+        "tier": "ai",
+        "variants": [
+          "source separation",
+          "AI stem separation",
+          "demixing",
+          "AI mastering",
+          "AI-assisted mixing",
+          "AI audio restoration"
+        ],
+        "why": "AI audio tools used in production and remastering"
+      }
+    ],
+    "9012": [
+      {
+        "term": "illustrator",
+        "tier": "context",
+        "variants": [
+          "commercial illustration",
+          "concept art",
+          "graphic artist",
+          "commissioned artwork",
+          "stock imagery",
+          "stock photography"
+        ],
+        "why": "visual artists competing with image generators"
+      },
+      {
+        "term": "AI art authentication",
+        "tier": "ai",
+        "variants": [
+          "AI attribution of artworks",
+          "AI forgery detection",
+          "AI-based authentication"
+        ],
+        "why": "AI attributing or authenticating artworks"
+      },
+      {
+        "term": "digital art",
+        "tier": "context",
+        "variants": [
+          "digital artwork",
+          "generative art NFT",
+          "digital collectible",
+          "art marketplace"
+        ],
+        "why": "medium where generative tools are contested"
+      }
+    ],
+    "9020": [
+      {
+        "term": "AI-written script",
+        "tier": "ai",
+        "variants": [
+          "AI-generated script",
+          "AI-generated screenplay",
+          "AI scriptwriting",
+          "AI playwriting",
+          "AI choreography",
+          "AI-generated score"
+        ],
+        "why": "generative AI used in writing for stage and screen"
+      },
+      {
+        "term": "performance capture",
+        "tier": "context",
+        "variants": [
+          "motion capture",
+          "volumetric capture",
+          "body scan",
+          "3D scan of performers",
+          "virtual production",
+          "LED volume"
+        ],
+        "why": "body and face scanning that enables digital replicas"
+      },
+      {
+        "term": "live experience",
+        "tier": "context",
+        "variants": [
+          "live entertainment",
+          "live performance",
+          "in-person experience",
+          "human performance",
+          "live music"
+        ],
+        "why": "live performance positioned as AI-resistant demand"
+      },
+      {
+        "term": "immersive show",
+        "tier": "context",
+        "variants": [
+          "immersive experience",
+          "immersive venue",
+          "projection mapping",
+          "interactive installation",
+          "generative visuals"
+        ],
+        "why": "technology-led productions using generative visuals"
+      },
+      {
+        "term": "live captioning",
+        "tier": "context",
+        "variants": [
+          "automatic captioning",
+          "surtitle",
+          "audio description",
+          "accessible performance"
+        ],
+        "why": "access services automated by speech AI"
+      }
+    ],
+    "9031": [
+      {
+        "term": "ticketing bot",
+        "tier": "context",
+        "variants": [
+          "ticket bot",
+          "scalper bot",
+          "automated ticket purchasing",
+          "BOTS Act",
+          "ticket scalping",
+          "secondary ticketing",
+          "ticket touting"
+        ],
+        "why": "automated purchasing that venues must detect"
+      },
+      {
+        "term": "facial recognition entry",
+        "tier": "ai",
+        "variants": [
+          "facial recognition ticketing",
+          "biometric entry",
+          "face entry",
+          "biometric ticketing",
+          "facial recognition at venues"
+        ],
+        "why": "biometric admission and watchlist screening at venues"
+      },
+      {
+        "term": "AI weapons detection",
+        "tier": "ai",
+        "variants": [
+          "AI security screening",
+          "Evolv Technologies",
+          "Evolv Express",
+          "touchless security screening",
+          "AI-based threat detection"
+        ],
+        "why": "AI screening of patrons at venue entrances"
+      },
+      {
+        "term": "crowd management",
+        "tier": "context",
+        "variants": [
+          "crowd analytics",
+          "crowd monitoring",
+          "crowd density",
+          "venue security",
+          "queue management"
+        ],
+        "why": "venue safety monitoring using video analytics"
+      }
+    ],
+    "9039": [
+      {
+        "term": "talent agency",
+        "tier": "context",
+        "variants": [
+          "talent management",
+          "artist management",
+          "talent representation",
+          "booking agency",
+          "casting director"
+        ],
+        "why": "representation business negotiating AI likeness terms"
+      },
+      {
+        "term": "A&R",
+        "tier": "context",
+        "variants": [
+          "artists and repertoire",
+          "talent scouting",
+          "talent discovery",
+          "hit prediction"
+        ],
+        "case_sensitive_variants": [
+          "A&R"
+        ],
+        "why": "talent discovery increasingly data- and AI-driven"
+      },
+      {
+        "term": "rights management",
+        "tier": "context",
+        "variants": [
+          "rights administration",
+          "royalty accounting",
+          "royalty processing",
+          "metadata matching",
+          "royalty distribution",
+          "works registration"
+        ],
+        "why": "royalty and metadata processing being automated"
+      },
+      {
+        "term": "fan platform",
+        "tier": "context",
+        "variants": [
+          "fan community platform",
+          "fandom platform",
+          "Weverse",
+          "fan engagement",
+          "superfan",
+          "artist-fan messaging"
+        ],
+        "why": "artist-fan services adding AI voice and chat"
+      },
+      {
+        "term": "tour routing",
+        "tier": "context",
+        "variants": [
+          "tour planning",
+          "concert promotion",
+          "event promotion",
+          "event demand forecasting",
+          "ticket demand forecasting"
+        ],
+        "why": "event planning supported by demand forecasting"
+      }
+    ]
+  }
+}

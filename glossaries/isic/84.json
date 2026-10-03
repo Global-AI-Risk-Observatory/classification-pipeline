@@ -1,0 +1,944 @@
+{
+  "id": "84",
+  "name": "Public administration and defence; compulsory social security",
+  "section": "P",
+  "summary": "Public bodies, defence and security organisations and the contractors classified with them write about AI as a tool for case processing, fraud and error detection, citizen contact, policing and military decision support, and as an object of policy: national AI strategies, sovereign compute, procurement rules and transparency duties for automated decisions. Risk passages centre on due process and bias in automated benefit, tax, border and justice decisions, surveillance and civil liberties, autonomy in weapons, legacy IT, and budget and workforce effects.",
+  "terms": [
+    {
+      "term": "public sector AI",
+      "tier": "ai",
+      "variants": [
+        "AI in government",
+        "government AI",
+        "AI in the public sector",
+        "government use of AI",
+        "AI for government",
+        "federal AI",
+        "AI in public services",
+        "AI-enabled public services"
+      ],
+      "why": "AI adoption by government bodies"
+    },
+    {
+      "term": "national AI strategy",
+      "tier": "ai",
+      "variants": [
+        "AI Action Plan",
+        "AI Opportunities Action Plan",
+        "national AI plan",
+        "national AI programme",
+        "national AI program",
+        "AI strategy for government"
+      ],
+      "why": "government plans steering AI spend and adoption"
+    },
+    {
+      "term": "sovereign AI",
+      "tier": "ai",
+      "variants": [
+        "AI sovereignty",
+        "sovereign compute",
+        "national AI infrastructure",
+        "sovereign AI capability",
+        "AI Growth Zone",
+        "AI gigafactory",
+        "EuroHPC",
+        "public compute capacity",
+        "national supercomputer"
+      ],
+      "why": "state-controlled AI capability and compute"
+    },
+    {
+      "term": "sovereign cloud",
+      "tier": "context",
+      "variants": [
+        "data sovereignty",
+        "digital sovereignty",
+        "technological sovereignty",
+        "data residency",
+        "government cloud"
+      ],
+      "why": "locally controlled hosting required for government AI"
+    },
+    {
+      "term": "AI procurement",
+      "tier": "ai",
+      "variants": [
+        "procurement of AI",
+        "AI acquisition",
+        "public procurement of AI",
+        "government procurement of AI",
+        "AI contract award",
+        "AI framework agreement"
+      ],
+      "why": "rules and contracts for buying AI in government"
+    },
+    {
+      "term": "chief AI officer",
+      "tier": "ai",
+      "variants": [
+        "chief artificial intelligence officer",
+        "CAIO",
+        "AI governance board",
+        "agency AI strategy"
+      ],
+      "case_sensitive_variants": [
+        "CAIO"
+      ],
+      "why": "mandated AI leadership role in agencies"
+    },
+    {
+      "term": "AI use case inventory",
+      "tier": "ai",
+      "variants": [
+        "AI inventory",
+        "inventory of AI use cases",
+        "AI register",
+        "algorithm register",
+        "public register of algorithms"
+      ],
+      "why": "mandatory public register of agency AI uses"
+    },
+    {
+      "term": "M-24-10",
+      "tier": "ai",
+      "variants": [
+        "M-25-21",
+        "M-25-22",
+        "OMB AI memorandum",
+        "rights-impacting AI",
+        "safety-impacting AI",
+        "high-impact AI"
+      ],
+      "case_sensitive_variants": [
+        "M-24-10",
+        "M-25-21",
+        "M-25-22"
+      ],
+      "why": "US federal memoranda governing agency AI use"
+    },
+    {
+      "term": "algorithmic impact assessment",
+      "tier": "ai",
+      "variants": [
+        "Directive on Automated Decision-Making",
+        "Algorithmic Transparency Recording Standard",
+        "ATRS",
+        "algorithmic transparency standard"
+      ],
+      "case_sensitive_variants": [
+        "ATRS"
+      ],
+      "why": "required assessment before automated public decisions"
+    },
+    {
+      "term": "automated administrative decision",
+      "tier": "ai",
+      "variants": [
+        "automated decision-making in government",
+        "automated public decision",
+        "algorithmic decision-making in public administration",
+        "automated decision system",
+        "fully automated decision"
+      ],
+      "why": "decisions on citizens taken by automated systems"
+    },
+    {
+      "term": "due process",
+      "tier": "context",
+      "variants": [
+        "procedural fairness",
+        "right to explanation",
+        "judicial review",
+        "administrative review",
+        "right of appeal",
+        "administrative law"
+      ],
+      "why": "legal safeguards challenged by automated decisions"
+    },
+    {
+      "term": "civil liberties",
+      "tier": "context",
+      "variants": [
+        "civil rights",
+        "mass surveillance",
+        "privacy impact assessment",
+        "data protection impact assessment",
+        "fundamental rights impact assessment"
+      ],
+      "why": "rights concerns raised by state AI use"
+    },
+    {
+      "term": "govtech",
+      "tier": "context",
+      "variants": [
+        "government technology",
+        "digital government",
+        "e-government",
+        "digital public service",
+        "public sector digital transformation",
+        "digital transformation of government"
+      ],
+      "why": "label for technology sold to government"
+    },
+    {
+      "term": "citizen services",
+      "tier": "context",
+      "variants": [
+        "citizen-facing service",
+        "citizen engagement",
+        "constituent service",
+        "citizen portal",
+        "citizen experience",
+        "one-stop government service"
+      ],
+      "why": "front-line contact being automated"
+    },
+    {
+      "term": "government chatbot",
+      "tier": "ai",
+      "variants": [
+        "citizen chatbot",
+        "citizen virtual assistant",
+        "AI assistant for civil servants",
+        "GOV.UK Chat",
+        "AI civil servant",
+        "government AI assistant"
+      ],
+      "why": "conversational AI answering citizens or civil servants"
+    },
+    {
+      "term": "public sector productivity",
+      "tier": "context",
+      "variants": [
+        "civil service productivity",
+        "government efficiency",
+        "administrative efficiency",
+        "back-office efficiency",
+        "Department of Government Efficiency",
+        "efficiency savings"
+      ],
+      "why": "efficiency case made for AI in government"
+    },
+    {
+      "term": "public sector workforce",
+      "tier": "context",
+      "variants": [
+        "civil servant",
+        "civil service headcount",
+        "federal workforce",
+        "government workforce",
+        "civil service reform"
+      ],
+      "why": "headcount effects of AI in administration"
+    },
+    {
+      "term": "legacy system",
+      "tier": "context",
+      "variants": [
+        "legacy IT",
+        "legacy modernisation",
+        "legacy modernization",
+        "IT modernization",
+        "IT modernisation",
+        "mainframe modernization",
+        "technical debt"
+      ],
+      "why": "old government IT limiting AI deployment"
+    },
+    {
+      "term": "FedRAMP",
+      "tier": "context",
+      "variants": [
+        "FedRAMP authorization",
+        "FedRAMP High",
+        "Impact Level 5",
+        "authority to operate",
+        "StateRAMP"
+      ],
+      "why": "security authorisation gate for AI cloud services"
+    },
+    {
+      "term": "digital identity",
+      "tier": "context",
+      "variants": [
+        "identity proofing",
+        "eID",
+        "digital ID",
+        "identity verification",
+        "Login.gov",
+        "national identity system"
+      ],
+      "why": "identity proofing increasingly using biometrics"
+    },
+    {
+      "term": "biometric identification",
+      "tier": "context",
+      "variants": [
+        "remote biometric identification",
+        "biometric matching",
+        "biometric database",
+        "fingerprint identification",
+        "iris recognition",
+        "biometric enrolment",
+        "biometric enrollment"
+      ],
+      "why": "matching people from face, fingerprint or iris"
+    },
+    {
+      "term": "border control",
+      "tier": "context",
+      "variants": [
+        "border security",
+        "automated border control",
+        "e-gate",
+        "biometric border",
+        "customs risk targeting",
+        "immigration processing",
+        "visa processing",
+        "traveller risk assessment"
+      ],
+      "why": "screening and visa processing using automated risk scoring"
+    },
+    {
+      "term": "improper payment",
+      "tier": "context",
+      "variants": [
+        "payment integrity",
+        "fraud, waste and abuse",
+        "program integrity",
+        "programme integrity",
+        "fraud and error"
+      ],
+      "why": "fraud and error that agencies target with analytics"
+    },
+    {
+      "term": "benefit fraud detection",
+      "tier": "context",
+      "variants": [
+        "welfare fraud detection",
+        "benefits fraud analytics",
+        "fraud risk scoring",
+        "fraud risk model",
+        "risk-based verification"
+      ],
+      "why": "risk scoring of claims, often ML-based"
+    },
+    {
+      "term": "smart city",
+      "tier": "context",
+      "variants": [
+        "city brain",
+        "urban operations centre",
+        "urban operations center",
+        "intelligent traffic management",
+        "traffic signal optimisation",
+        "traffic signal optimization",
+        "smart city platform"
+      ],
+      "why": "urban systems using AI for traffic and services"
+    },
+    {
+      "term": "disinformation",
+      "tier": "context",
+      "variants": [
+        "foreign information manipulation",
+        "influence operation",
+        "election interference",
+        "information warfare",
+        "information manipulation"
+      ],
+      "why": "AI-enabled information threats to public institutions"
+    },
+    {
+      "term": "Palantir",
+      "tier": "ai",
+      "variants": [
+        "Palantir Foundry",
+        "Palantir Gotham",
+        "Maven Smart System"
+      ],
+      "why": "data and AI vendor to government and defence"
+    }
+  ],
+  "class_terms": {
+    "8411": [
+      {
+        "term": "tax administration",
+        "tier": "context",
+        "variants": [
+          "tax compliance risk",
+          "tax audit selection",
+          "audit selection",
+          "tax fraud detection",
+          "revenue administration",
+          "e-invoicing",
+          "tax gap"
+        ],
+        "why": "revenue bodies using risk models and assistants"
+      },
+      {
+        "term": "permit processing",
+        "tier": "context",
+        "variants": [
+          "permit application",
+          "licence application processing",
+          "license application processing",
+          "planning application",
+          "casework automation"
+        ],
+        "why": "licensing and planning casework being automated"
+      }
+    ],
+    "8414": [
+      {
+        "term": "AI regulatory sandbox",
+        "tier": "ai",
+        "variants": [
+          "AI sandbox",
+          "AI Office",
+          "market surveillance authority",
+          "national competent authority",
+          "AI supervisory authority",
+          "AI regulator"
+        ],
+        "why": "supervised testing schemes run by regulators"
+      },
+      {
+        "term": "suptech",
+        "tier": "context",
+        "variants": [
+          "supervisory technology",
+          "regtech",
+          "regulatory technology",
+          "data-driven supervision"
+        ],
+        "why": "regulators' own analytic and AI tooling"
+      },
+      {
+        "term": "AI Safety Institute",
+        "tier": "ai",
+        "variants": [
+          "AI Security Institute",
+          "Center for AI Standards and Innovation",
+          "frontier AI evaluation",
+          "pre-deployment testing"
+        ],
+        "why": "state bodies testing frontier models"
+      }
+    ],
+    "8421": [
+      {
+        "term": "AI Safety Summit",
+        "tier": "ai",
+        "variants": [
+          "AI Action Summit",
+          "Bletchley Declaration",
+          "AI Impact Summit",
+          "international AI cooperation",
+          "AI diplomacy"
+        ],
+        "why": "intergovernmental AI diplomacy events and texts"
+      }
+    ],
+    "8422": [
+      {
+        "term": "military AI",
+        "tier": "ai",
+        "variants": [
+          "defence AI",
+          "defense AI",
+          "AI-enabled warfare",
+          "AI for defence",
+          "AI for defense",
+          "algorithmic warfare",
+          "battlefield AI",
+          "AI-enabled capability",
+          "AI in the military"
+        ],
+        "why": "AI applied to defence capability"
+      },
+      {
+        "term": "autonomous weapon",
+        "tier": "ai",
+        "variants": [
+          "autonomous weapon system",
+          "lethal autonomous weapon system",
+          "AI-enabled weapon",
+          "killer robot"
+        ],
+        "why": "weapons selecting targets without human action"
+      },
+      {
+        "term": "meaningful human control",
+        "tier": "ai",
+        "variants": [
+          "human-on-the-loop",
+          "DoD Directive 3000.09",
+          "responsible military AI",
+          "REAIM",
+          "appropriate human judgment",
+          "appropriate human judgement"
+        ],
+        "case_sensitive_variants": [
+          "REAIM"
+        ],
+        "why": "human-oversight norm for military autonomy"
+      },
+      {
+        "term": "mission autonomy",
+        "tier": "ai",
+        "variants": [
+          "autonomy software",
+          "human-machine teaming",
+          "autonomous platform",
+          "collaborative autonomy",
+          "autonomous mission system"
+        ],
+        "why": "software letting platforms act without operators"
+      },
+      {
+        "term": "drone swarm",
+        "tier": "ai",
+        "variants": [
+          "drone swarming",
+          "autonomous swarm",
+          "collaborative combat aircraft",
+          "loyal wingman",
+          "manned-unmanned teaming",
+          "crewed-uncrewed teaming"
+        ],
+        "why": "coordinated autonomous uncrewed vehicles"
+      },
+      {
+        "term": "uncrewed system",
+        "tier": "context",
+        "variants": [
+          "unmanned system",
+          "unmanned aerial vehicle",
+          "uncrewed aerial system",
+          "unmanned aircraft system",
+          "UAV",
+          "UAS",
+          "drone",
+          "loitering munition",
+          "uncrewed surface vessel"
+        ],
+        "case_sensitive_variants": [
+          "UAV",
+          "UAS"
+        ],
+        "why": "drones and vehicles carrying autonomy software"
+      },
+      {
+        "term": "counter-UAS",
+        "tier": "context",
+        "variants": [
+          "counter-drone",
+          "C-UAS",
+          "counter-unmanned aircraft",
+          "drone detection"
+        ],
+        "case_sensitive_variants": [
+          "C-UAS"
+        ],
+        "why": "drone defence relying on automated detection"
+      },
+      {
+        "term": "AI-enabled targeting",
+        "tier": "ai",
+        "variants": [
+          "AI targeting",
+          "automated target recognition",
+          "aided target recognition",
+          "automatic target recognition",
+          "Project Maven",
+          "target recognition"
+        ],
+        "why": "AI finding and prioritising military targets"
+      },
+      {
+        "term": "command and control",
+        "tier": "context",
+        "variants": [
+          "C4ISR",
+          "C5ISR",
+          "battle management system",
+          "battlefield management",
+          "JADC2",
+          "CJADC2",
+          "Joint All-Domain Command and Control",
+          "multi-domain operations"
+        ],
+        "case_sensitive_variants": [
+          "C4ISR",
+          "C5ISR",
+          "JADC2",
+          "CJADC2"
+        ],
+        "why": "decision systems AI is being built into"
+      },
+      {
+        "term": "decision advantage",
+        "tier": "context",
+        "variants": [
+          "decision superiority",
+          "decision dominance",
+          "information advantage",
+          "kill chain",
+          "sensor-to-shooter"
+        ],
+        "why": "doctrine phrase for AI-accelerated decisions"
+      },
+      {
+        "term": "intelligence, surveillance and reconnaissance",
+        "tier": "context",
+        "variants": [
+          "geospatial intelligence",
+          "GEOINT",
+          "satellite imagery analysis",
+          "imagery intelligence",
+          "open-source intelligence",
+          "OSINT",
+          "signals intelligence",
+          "SIGINT"
+        ],
+        "case_sensitive_variants": [
+          "GEOINT",
+          "OSINT",
+          "SIGINT"
+        ],
+        "why": "sensor data volumes processed by ML"
+      },
+      {
+        "term": "electronic warfare",
+        "tier": "context",
+        "variants": [
+          "cognitive electronic warfare",
+          "spectrum dominance",
+          "cyber and electromagnetic",
+          "cyber defence",
+          "cyber defense",
+          "offensive cyber"
+        ],
+        "why": "spectrum operations adopting cognitive techniques"
+      },
+      {
+        "term": "defence technology",
+        "tier": "context",
+        "variants": [
+          "defense technology",
+          "defence tech",
+          "defense tech",
+          "dual-use technology",
+          "defence innovation",
+          "defense innovation",
+          "Defense Innovation Unit",
+          "Replicator initiative"
+        ],
+        "why": "label for the new AI-centric defence sector"
+      },
+      {
+        "term": "defence spending",
+        "tier": "context",
+        "variants": [
+          "defense spending",
+          "defence budget",
+          "defense budget",
+          "defence procurement",
+          "defense procurement",
+          "rearmament"
+        ],
+        "why": "budget growth funding AI and autonomy programmes"
+      },
+      {
+        "term": "classified network",
+        "tier": "context",
+        "variants": [
+          "air-gapped",
+          "classified cloud",
+          "secret cloud",
+          "secure enclave",
+          "top secret cloud"
+        ],
+        "why": "secure environments needed to run AI on secrets"
+      },
+      {
+        "term": "AI for national security",
+        "tier": "ai",
+        "variants": [
+          "national security AI",
+          "National Security Memorandum on AI",
+          "CDAO",
+          "Chief Digital and Artificial Intelligence Office",
+          "Defence AI Centre",
+          "intelligence community AI"
+        ],
+        "case_sensitive_variants": [
+          "CDAO"
+        ],
+        "why": "AI programmes of defence and intelligence agencies"
+      },
+      {
+        "term": "Anduril",
+        "tier": "ai",
+        "variants": [
+          "Lattice OS",
+          "Helsing",
+          "Shield AI",
+          "Hivemind"
+        ],
+        "why": "AI-first defence contractors"
+      }
+    ],
+    "8423": [
+      {
+        "term": "law enforcement AI",
+        "tier": "ai",
+        "variants": [
+          "AI in policing",
+          "police use of AI",
+          "AI in law enforcement",
+          "AI in criminal justice",
+          "AI in courts",
+          "AI in justice",
+          "police AI"
+        ],
+        "why": "AI use by police, courts and prisons"
+      },
+      {
+        "term": "predictive policing",
+        "tier": "ai",
+        "variants": [
+          "crime prediction",
+          "crime forecasting",
+          "hot spot policing",
+          "person-based predictive policing",
+          "predictive crime mapping"
+        ],
+        "why": "forecasting crime locations or offenders"
+      },
+      {
+        "term": "live facial recognition",
+        "tier": "ai",
+        "variants": [
+          "police facial recognition",
+          "retrospective facial recognition",
+          "facial recognition surveillance",
+          "real-time remote biometric identification",
+          "facial recognition watchlist"
+        ],
+        "why": "real-time face matching in public spaces"
+      },
+      {
+        "term": "automatic number plate recognition",
+        "tier": "ai",
+        "variants": [
+          "ANPR",
+          "automated license plate reader",
+          "license plate recognition",
+          "licence plate recognition",
+          "ALPR",
+          "license plate reader"
+        ],
+        "case_sensitive_variants": [
+          "ANPR",
+          "ALPR"
+        ],
+        "why": "camera reading of vehicle plates"
+      },
+      {
+        "term": "video surveillance",
+        "tier": "context",
+        "variants": [
+          "CCTV",
+          "video analytics",
+          "surveillance camera",
+          "public space surveillance",
+          "intelligent video analytics",
+          "real-time crime center",
+          "real-time crime centre"
+        ],
+        "case_sensitive_variants": [
+          "CCTV"
+        ],
+        "why": "camera networks analysed by computer vision"
+      },
+      {
+        "term": "gunshot detection",
+        "tier": "ai",
+        "variants": [
+          "acoustic gunshot detection",
+          "ShotSpotter",
+          "SoundThinking"
+        ],
+        "why": "acoustic AI locating gunfire"
+      },
+      {
+        "term": "body-worn camera",
+        "tier": "context",
+        "variants": [
+          "body camera",
+          "bodycam",
+          "body-worn video",
+          "in-car video"
+        ],
+        "why": "police video feeding AI transcription and review"
+      },
+      {
+        "term": "AI-generated police report",
+        "tier": "ai",
+        "variants": [
+          "AI report writing",
+          "automated report writing",
+          "Draft One",
+          "automated redaction",
+          "AI redaction",
+          "AI transcription of evidence"
+        ],
+        "case_sensitive_variants": [
+          "Draft One"
+        ],
+        "why": "generative drafting of reports from recordings"
+      },
+      {
+        "term": "digital evidence",
+        "tier": "context",
+        "variants": [
+          "digital forensics",
+          "evidence management",
+          "forensic analysis",
+          "digital evidence management",
+          "disclosure review"
+        ],
+        "why": "evidence volumes requiring automated analysis"
+      },
+      {
+        "term": "risk assessment instrument",
+        "tier": "context",
+        "variants": [
+          "recidivism risk",
+          "pretrial risk assessment",
+          "risk assessment tool",
+          "offender risk assessment",
+          "reoffending risk"
+        ],
+        "why": "scoring tools used in bail, sentencing and parole"
+      },
+      {
+        "term": "electronic monitoring",
+        "tier": "context",
+        "variants": [
+          "offender monitoring",
+          "GPS monitoring",
+          "ankle monitor",
+          "electronic tagging",
+          "alternatives to detention",
+          "SmartLINK"
+        ],
+        "why": "offender tracking using biometric check-ins"
+      },
+      {
+        "term": "inmate communications",
+        "tier": "context",
+        "variants": [
+          "inmate telephone",
+          "prison phone monitoring",
+          "inmate call monitoring",
+          "incarcerated individual communications",
+          "voice biometrics"
+        ],
+        "why": "prison call monitoring using speech analysis"
+      },
+      {
+        "term": "emergency call handling",
+        "tier": "context",
+        "variants": [
+          "computer-aided dispatch",
+          "emergency dispatch",
+          "911 call",
+          "999 call",
+          "next generation 911",
+          "non-emergency call"
+        ],
+        "why": "dispatch centres adopting AI triage and transcription"
+      },
+      {
+        "term": "AI wildfire detection",
+        "tier": "ai",
+        "variants": [
+          "wildfire detection camera",
+          "smoke detection camera",
+          "AI fire detection",
+          "automated wildfire detection"
+        ],
+        "why": "camera and satellite AI spotting fires"
+      },
+      {
+        "term": "court transcription",
+        "tier": "context",
+        "variants": [
+          "court reporting",
+          "e-filing",
+          "online dispute resolution",
+          "digital court",
+          "court interpreting",
+          "court backlog"
+        ],
+        "why": "court processes automated by speech and language AI"
+      }
+    ],
+    "8430": [
+      {
+        "term": "automated benefit decision",
+        "tier": "ai",
+        "variants": [
+          "automated eligibility decision",
+          "algorithmic benefit decision",
+          "automated claims decision",
+          "automated entitlement decision",
+          "automated debt recovery",
+          "robodebt"
+        ],
+        "why": "entitlement decisions taken by automated systems"
+      },
+      {
+        "term": "eligibility determination",
+        "tier": "context",
+        "variants": [
+          "benefits eligibility",
+          "eligibility assessment",
+          "claims processing",
+          "benefit claims processing",
+          "case management system",
+          "benefit administration"
+        ],
+        "why": "claims casework targeted for automation"
+      },
+      {
+        "term": "disability assessment",
+        "tier": "context",
+        "variants": [
+          "work capability assessment",
+          "disability claims adjudication",
+          "medical assessment",
+          "functional assessment"
+        ],
+        "why": "medical entitlement assessments supported by decision tools"
+      },
+      {
+        "term": "pension administration",
+        "tier": "context",
+        "variants": [
+          "pension processing",
+          "contribution collection",
+          "social insurance administration",
+          "social security administration",
+          "member contact centre",
+          "member contact center"
+        ],
+        "why": "contribution and payment processing being automated"
+      }
+    ]
+  }
+}

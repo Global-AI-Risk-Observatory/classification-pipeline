@@ -1,0 +1,8 @@
+# Filings and everything derived from them stay out of git.
+data/
+__pycache__/
+*.egg-info/
+.pytest_cache/
+.venv/
+.env*
+.DS_Store

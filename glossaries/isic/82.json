@@ -1,0 +1,760 @@
+{
+  "id": "82",
+  "name": "Office administrative, office support and other business support activities",
+  "section": "O",
+  "summary": "Business-support companies split three ways: outsourcers and call-centre operators, for whom AI is both delivery tooling (agent assist, voice bots, speech analytics) and the main threat to volumes, headcount and per-FTE pricing; credit bureaus and collectors, who build scoring, decisioning and identity products under FCRA and fair-lending rules; and event organisers riding AI-themed demand. Outsourcers also sell into AI through data annotation, model evaluation and content moderation; fraud themes are voice cloning, deepfakes and synthetic identities.",
+  "terms": [
+    {
+      "term": "business process outsourcing",
+      "tier": "context",
+      "variants": [
+        "BPO",
+        "business process services",
+        "business process management"
+      ],
+      "case_sensitive_variants": [
+        "BPO"
+      ],
+      "why": "outsourced processes exposed to AI automation"
+    },
+    {
+      "term": "AI disruption of outsourcing",
+      "tier": "ai",
+      "variants": [
+        "AI substitution of outsourced services",
+        "AI displacement of BPO",
+        "cannibalisation by AI",
+        "cannibalization by AI",
+        "AI-driven volume reduction",
+        "AI disruption"
+      ],
+      "why": "AI replacing outsourced labour"
+    },
+    {
+      "term": "robotic process automation",
+      "tier": "context",
+      "variants": [
+        "RPA",
+        "intelligent automation",
+        "hyperautomation",
+        "process automation"
+      ],
+      "case_sensitive_variants": [
+        "RPA"
+      ],
+      "why": "back-office bots, often paired with AI"
+    },
+    {
+      "term": "intelligent document processing",
+      "tier": "ai",
+      "variants": [
+        "automated document processing",
+        "document intelligence",
+        "automated data capture"
+      ],
+      "why": "ML extraction from forms and correspondence"
+    },
+    {
+      "term": "AI data services",
+      "tier": "ai",
+      "variants": [
+        "data annotation",
+        "data labelling",
+        "data labeling",
+        "AI training data services",
+        "model evaluation services",
+        "red teaming services",
+        "LLM training services"
+      ],
+      "why": "outsourcers selling data work to AI developers"
+    },
+    {
+      "term": "content moderation",
+      "tier": "context",
+      "variants": [
+        "trust and safety services",
+        "trust and safety",
+        "content review",
+        "moderation services"
+      ],
+      "why": "trust-and-safety work partly automated, partly AI-driven demand"
+    },
+    {
+      "term": "human-in-the-loop",
+      "tier": "context",
+      "variants": [
+        "human in the loop services",
+        "human oversight of AI output"
+      ],
+      "why": "human review layer sold alongside AI"
+    },
+    {
+      "term": "per-FTE pricing",
+      "tier": "context",
+      "variants": [
+        "FTE-based pricing",
+        "per-seat pricing",
+        "headcount-based pricing",
+        "per-minute pricing",
+        "per-hour billing"
+      ],
+      "why": "headcount-based billing threatened by AI"
+    },
+    {
+      "term": "outcome-based pricing",
+      "tier": "context",
+      "variants": [
+        "per-resolution pricing",
+        "transaction-based pricing",
+        "gain-share",
+        "outcome-based contract"
+      ],
+      "why": "pricing shift as AI cuts labour input"
+    },
+    {
+      "term": "offshore delivery",
+      "tier": "context",
+      "variants": [
+        "offshoring",
+        "nearshore",
+        "offshore delivery centre",
+        "offshore delivery center",
+        "labour arbitrage",
+        "labor arbitrage"
+      ],
+      "why": "labour arbitrage model alongside AI"
+    },
+    {
+      "term": "AI-driven efficiency",
+      "tier": "ai",
+      "variants": [
+        "AI productivity gain",
+        "AI-enabled productivity",
+        "AI-driven cost savings",
+        "AI-enabled margin expansion"
+      ],
+      "why": "cost and productivity gains from AI"
+    },
+    {
+      "term": "AI-driven job reduction",
+      "tier": "ai",
+      "variants": [
+        "AI-related job cuts",
+        "roles displaced by AI",
+        "AI-driven headcount reduction",
+        "AI-related redundancies"
+      ],
+      "why": "headcount cuts attributed to AI"
+    },
+    {
+      "term": "reskilling",
+      "tier": "context",
+      "variants": [
+        "upskilling",
+        "AI upskilling",
+        "AI training programme",
+        "AI training program"
+      ],
+      "why": "retraining staff for AI-augmented roles"
+    },
+    {
+      "term": "voice cloning",
+      "tier": "ai",
+      "variants": [
+        "voice clone",
+        "cloned voice",
+        "audio deepfake",
+        "deepfake voice",
+        "deepfake fraud",
+        "deepfake"
+      ],
+      "why": "AI-cloned voices defeating phone verification"
+    }
+  ],
+  "class_terms": {
+    "8210": [
+      {
+        "term": "document management outsourcing",
+        "tier": "context",
+        "variants": [
+          "mailroom automation",
+          "document scanning",
+          "data capture services",
+          "document processing services"
+        ],
+        "why": "scanning and capture work being automated"
+      },
+      {
+        "term": "AI transcription",
+        "tier": "ai",
+        "variants": [
+          "automated transcription",
+          "speech-to-text",
+          "AI note-taking"
+        ],
+        "why": "speech recognition replacing typists"
+      },
+      {
+        "term": "virtual office assistant",
+        "tier": "context",
+        "variants": [
+          "virtual assistant services",
+          "remote administrative support",
+          "AI executive assistant"
+        ],
+        "why": "outsourced admin tasks substituted by AI assistants"
+      }
+    ],
+    "8220": [
+      {
+        "term": "AI-powered customer service",
+        "tier": "ai",
+        "variants": [
+          "AI customer service agent",
+          "AI voice agent",
+          "voice bot",
+          "voicebot",
+          "virtual agent",
+          "intelligent virtual agent",
+          "autonomous customer service",
+          "AI agents handling customer interactions"
+        ],
+        "why": "AI agents handling customer interactions"
+      },
+      {
+        "term": "agent assist",
+        "tier": "ai",
+        "variants": [
+          "real-time agent assist",
+          "agent copilot",
+          "AI copilot for agents",
+          "agent augmentation",
+          "next best response",
+          "augmented agent"
+        ],
+        "why": "real-time AI guidance for human agents"
+      },
+      {
+        "term": "accent neutralisation",
+        "tier": "ai",
+        "variants": [
+          "accent neutralization",
+          "accent translation",
+          "accent conversion",
+          "Sanas",
+          "real-time voice translation"
+        ],
+        "why": "real-time voice conversion of offshore agents"
+      },
+      {
+        "term": "speech analytics",
+        "tier": "ai",
+        "variants": [
+          "voice analytics",
+          "conversation analytics",
+          "interaction analytics",
+          "sentiment analysis",
+          "automated quality assurance",
+          "AI quality monitoring",
+          "auto-QA"
+        ],
+        "why": "AI analysis of recorded interactions"
+      },
+      {
+        "term": "iX Hello",
+        "tier": "ai",
+        "variants": [
+          "iX Suite",
+          "TP.ai",
+          "TaskGPT",
+          "TP GenAI"
+        ],
+        "why": "outsourcer-branded AI products"
+      },
+      {
+        "term": "call deflection",
+        "tier": "context",
+        "variants": [
+          "contact deflection",
+          "containment rate",
+          "deflection rate",
+          "automation rate",
+          "self-service resolution"
+        ],
+        "why": "contacts diverted to automated channels"
+      },
+      {
+        "term": "call volume",
+        "tier": "context",
+        "variants": [
+          "contact volume",
+          "interaction volume",
+          "voice volume",
+          "volume decline",
+          "tier-1 support",
+          "simple interactions"
+        ],
+        "why": "interaction volumes reduced by AI self-service"
+      },
+      {
+        "term": "complex interactions",
+        "tier": "context",
+        "variants": [
+          "higher-complexity interactions",
+          "high-touch interactions",
+          "human empathy",
+          "complex customer issues"
+        ],
+        "why": "human work said to remain after AI"
+      },
+      {
+        "term": "average handle time",
+        "tier": "context",
+        "variants": [
+          "AHT",
+          "first contact resolution",
+          "first call resolution",
+          "customer satisfaction score"
+        ],
+        "case_sensitive_variants": [
+          "AHT"
+        ],
+        "why": "agent KPI improved by AI assist"
+      },
+      {
+        "term": "interactive voice response",
+        "tier": "context",
+        "variants": [
+          "IVR",
+          "conversational IVR"
+        ],
+        "case_sensitive_variants": [
+          "IVR"
+        ],
+        "why": "legacy automation upgraded to conversational AI"
+      },
+      {
+        "term": "contact centre as a service",
+        "tier": "context",
+        "variants": [
+          "contact center as a service",
+          "CCaaS",
+          "cloud contact centre",
+          "cloud contact center"
+        ],
+        "case_sensitive_variants": [
+          "CCaaS"
+        ],
+        "why": "cloud contact software embedding AI"
+      },
+      {
+        "term": "customer experience management",
+        "tier": "context",
+        "variants": [
+          "CX management",
+          "customer experience outsourcing",
+          "CX services",
+          "customer care outsourcing"
+        ],
+        "why": "outsourced CX business line"
+      },
+      {
+        "term": "agent headcount",
+        "tier": "context",
+        "variants": [
+          "billable agent",
+          "agent attrition",
+          "seat utilisation",
+          "seat utilization",
+          "number of agents"
+        ],
+        "why": "workforce measure exposed to AI"
+      },
+      {
+        "term": "clients replacing agents with AI",
+        "tier": "ai",
+        "variants": [
+          "client adoption of AI self-service",
+          "client insourcing with AI",
+          "clients deploying AI agents",
+          "clients' own AI solutions"
+        ],
+        "why": "client-side AI adoption cutting outsourced volume"
+      },
+      {
+        "term": "caller authentication",
+        "tier": "context",
+        "variants": [
+          "caller verification",
+          "voice biometrics",
+          "social engineering of agents",
+          "knowledge-based authentication"
+        ],
+        "why": "verification step attacked by cloned voices"
+      },
+      {
+        "term": "artificial or prerecorded voice",
+        "tier": "context",
+        "variants": [
+          "Telephone Consumer Protection Act",
+          "TCPA",
+          "AI-generated voice calls",
+          "robocall"
+        ],
+        "case_sensitive_variants": [
+          "TCPA"
+        ],
+        "why": "TCPA wording now covering AI voices"
+      },
+      {
+        "term": "AI disclosure to callers",
+        "tier": "ai",
+        "variants": [
+          "bot disclosure",
+          "disclosure that a caller is AI",
+          "Keep Call Centers in America Act"
+        ],
+        "why": "rules requiring bots to identify themselves"
+      },
+      {
+        "term": "work-from-home agent",
+        "tier": "context",
+        "variants": [
+          "remote agent",
+          "AI-based agent monitoring",
+          "workforce management software"
+        ],
+        "why": "delivery model with AI monitoring"
+      }
+    ],
+    "8230": [
+      {
+        "term": "AI-themed event",
+        "tier": "ai",
+        "variants": [
+          "AI conference",
+          "AI summit",
+          "AI trade show",
+          "AI exhibitor",
+          "AI-focused event"
+        ],
+        "why": "conferences and shows on AI"
+      },
+      {
+        "term": "AI matchmaking",
+        "tier": "ai",
+        "variants": [
+          "AI-powered matchmaking",
+          "AI lead retrieval"
+        ],
+        "why": "ML pairing of attendees and exhibitors"
+      },
+      {
+        "term": "event technology",
+        "tier": "context",
+        "variants": [
+          "event app",
+          "digital event platform",
+          "attendee analytics",
+          "first-party audience data"
+        ],
+        "why": "digital event tools embedding AI"
+      },
+      {
+        "term": "technology sector exhibitors",
+        "tier": "context",
+        "variants": [
+          "technology exhibitor demand",
+          "technology events portfolio"
+        ],
+        "why": "AI-driven spending by tech exhibitors"
+      }
+    ],
+    "8240": [
+      {
+        "term": "AI-powered matching",
+        "tier": "ai",
+        "variants": [
+          "supplier matching algorithm",
+          "marketplace matching algorithm",
+          "AI-driven lead matching"
+        ],
+        "why": "ML matching of buyers and service providers"
+      }
+    ],
+    "8291": [
+      {
+        "term": "credit score",
+        "tier": "context",
+        "variants": [
+          "credit scoring model",
+          "FICO Score",
+          "VantageScore",
+          "credit scoring",
+          "scorecard"
+        ],
+        "why": "bureau product, EU AI Act high-risk when applied to persons"
+      },
+      {
+        "term": "AI-powered credit scoring",
+        "tier": "ai",
+        "variants": [
+          "machine learning credit score",
+          "explainable machine learning score",
+          "NeuroDecision",
+          "AI-driven score",
+          "AI credit model"
+        ],
+        "why": "ML-built scores sold to lenders"
+      },
+      {
+        "term": "alternative data",
+        "tier": "context",
+        "variants": [
+          "trended data",
+          "cash flow data",
+          "open banking data",
+          "consumer-permissioned data",
+          "rental payment data"
+        ],
+        "why": "non-traditional data feeding scoring models"
+      },
+      {
+        "term": "decisioning platform",
+        "tier": "context",
+        "variants": [
+          "decisioning software",
+          "decision engine",
+          "credit decisioning",
+          "analytics sandbox",
+          "analytical sandbox",
+          "model development environment"
+        ],
+        "why": "software where lenders run models"
+      },
+      {
+        "term": "identity verification",
+        "tier": "context",
+        "variants": [
+          "identity resolution",
+          "identity proofing",
+          "device intelligence",
+          "fraud prevention solutions",
+          "digital identity"
+        ],
+        "why": "identity products countering AI-enabled fraud"
+      },
+      {
+        "term": "synthetic identity fraud",
+        "tier": "context",
+        "variants": [
+          "synthetic identity",
+          "synthetic ID",
+          "AI-enabled fraud",
+          "AI-generated identity document"
+        ],
+        "why": "fabricated identities, increasingly AI-generated"
+      },
+      {
+        "term": "Fair Credit Reporting Act",
+        "tier": "context",
+        "variants": [
+          "FCRA",
+          "consumer reporting agency",
+          "credit reporting accuracy",
+          "maximum possible accuracy"
+        ],
+        "case_sensitive_variants": [
+          "FCRA"
+        ],
+        "why": "US accuracy and permissible-purpose law for bureau data"
+      },
+      {
+        "term": "adverse action",
+        "tier": "context",
+        "variants": [
+          "adverse action notice",
+          "reason code",
+          "adverse action reason"
+        ],
+        "why": "reasons required for model-based denials"
+      },
+      {
+        "term": "fair lending",
+        "tier": "context",
+        "variants": [
+          "disparate impact",
+          "Equal Credit Opportunity Act",
+          "ECOA",
+          "model explainability",
+          "explainable score"
+        ],
+        "case_sensitive_variants": [
+          "ECOA"
+        ],
+        "why": "discrimination exposure of scoring models"
+      },
+      {
+        "term": "creditworthiness assessment",
+        "tier": "context",
+        "variants": [
+          "assessment of creditworthiness",
+          "evaluate the creditworthiness",
+          "SCHUFA judgment",
+          "automated individual decision-making"
+        ],
+        "why": "EU AI Act Annex III wording for scoring AI"
+      },
+      {
+        "term": "automated dispute handling",
+        "tier": "context",
+        "variants": [
+          "dispute resolution automation",
+          "automated reinvestigation",
+          "e-OSCAR"
+        ],
+        "why": "consumer disputes processed by automated systems"
+      },
+      {
+        "term": "employment and income verification",
+        "tier": "context",
+        "variants": [
+          "income verification",
+          "The Work Number",
+          "automated verification"
+        ],
+        "why": "automated verification data sold to lenders"
+      },
+      {
+        "term": "data licensing for AI",
+        "tier": "ai",
+        "variants": [
+          "AI-ready data",
+          "data for model training",
+          "licensing data to AI developers"
+        ],
+        "why": "bureau data supplied to AI model builders"
+      },
+      {
+        "term": "propensity-to-pay model",
+        "tier": "context",
+        "variants": [
+          "collections scoring",
+          "collection model",
+          "liquidation model",
+          "recovery model",
+          "propensity to pay"
+        ],
+        "why": "models predicting debtor repayment"
+      },
+      {
+        "term": "portfolio valuation model",
+        "tier": "context",
+        "variants": [
+          "portfolio pricing model",
+          "collection forecast model",
+          "estimated remaining collections model"
+        ],
+        "why": "ML pricing of purchased debt portfolios"
+      },
+      {
+        "term": "AI collections agent",
+        "tier": "ai",
+        "variants": [
+          "AI voice agent for collections",
+          "conversational collections",
+          "virtual collector",
+          "AI-driven collections"
+        ],
+        "why": "AI voice and chat agents contacting debtors"
+      },
+      {
+        "term": "digital collections",
+        "tier": "context",
+        "variants": [
+          "omnichannel collections",
+          "self-service payment portal",
+          "digital-first collections"
+        ],
+        "why": "self-service and omnichannel debt collection"
+      },
+      {
+        "term": "Regulation F",
+        "tier": "context",
+        "variants": [
+          "Fair Debt Collection Practices Act",
+          "FDCPA",
+          "call frequency limit"
+        ],
+        "case_sensitive_variants": [
+          "FDCPA"
+        ],
+        "why": "US debt-collection contact rules covering automated outreach"
+      },
+      {
+        "term": "vulnerable customer identification",
+        "tier": "context",
+        "variants": [
+          "vulnerability detection",
+          "affordability assessment",
+          "vulnerable customer"
+        ],
+        "why": "models flagging vulnerability and affordability"
+      }
+    ],
+    "8292": [
+      {
+        "term": "machine vision inspection",
+        "tier": "ai",
+        "variants": [
+          "automated visual inspection",
+          "vision inspection system",
+          "AI-based quality inspection"
+        ],
+        "why": "camera-based quality checks on packing lines"
+      },
+      {
+        "term": "robotic packing",
+        "tier": "context",
+        "variants": [
+          "automated packaging line",
+          "robotic palletising",
+          "robotic palletizing",
+          "pick-and-place robot"
+        ],
+        "why": "automated contract packing lines"
+      }
+    ],
+    "8299": [
+      {
+        "term": "AI answering service",
+        "tier": "ai",
+        "variants": [
+          "virtual receptionist",
+          "AI receptionist"
+        ],
+        "why": "AI receptionists replacing live answering"
+      },
+      {
+        "term": "court reporting",
+        "tier": "context",
+        "variants": [
+          "digital court reporting",
+          "stenographer",
+          "deposition transcript"
+        ],
+        "why": "stenography displaced by speech recognition"
+      },
+      {
+        "term": "loyalty programme analytics",
+        "tier": "context",
+        "variants": [
+          "loyalty program analytics",
+          "personalised rewards",
+          "personalized rewards"
+        ],
+        "why": "ML personalisation in outsourced loyalty schemes"
+      }
+    ]
+  }
+}

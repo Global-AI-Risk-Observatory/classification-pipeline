@@ -1,0 +1,978 @@
+{
+  "id": "09",
+  "name": "Mining support service activities",
+  "section": "B",
+  "summary": "Oilfield and mining service companies sell AI as a product: autonomous drilling and fracturing, digital subsurface platforms, AI seismic imaging, remote operations and predictive equipment monitoring, with digital revenue reported as a growth line. Several have opened business lines serving AI data centres with distributed gas power, cooling and modular infrastructure. Mining contractors and drilling service firms describe autonomous and tele-remote fleets, hands-free rod handling and sensor-based orebody data, with fewer people on location as the workforce angle.",
+  "terms": [
+    {
+      "term": "drilling automation",
+      "tier": "ai",
+      "variants": [
+        "automated drilling",
+        "autonomous drilling",
+        "rig automation",
+        "closed-loop drilling",
+        "autonomous well construction",
+        "automated well construction",
+        "drilling process automation"
+      ],
+      "why": "algorithmic control of rig and downhole systems"
+    },
+    {
+      "term": "autonomous directional drilling",
+      "tier": "ai",
+      "variants": [
+        "automated directional drilling",
+        "automated sliding",
+        "autonomous steering",
+        "rotary steerable automation",
+        "auto-steering",
+        "automated slide drilling"
+      ],
+      "why": "automated steering of the bit"
+    },
+    {
+      "term": "drilling advisory system",
+      "tier": "ai",
+      "variants": [
+        "drilling advisor",
+        "driller advisory",
+        "AI drilling advisor",
+        "real-time drilling recommendation"
+      ],
+      "why": "real-time parameter recommendations to drillers"
+    },
+    {
+      "term": "drilling optimisation",
+      "tier": "context",
+      "variants": [
+        "drilling optimization",
+        "ROP optimisation",
+        "ROP optimization",
+        "rate of penetration optimisation",
+        "rate of penetration optimization",
+        "drilling performance analytics",
+        "real-time drilling analytics"
+      ],
+      "why": "analytics on penetration rate and drilling performance"
+    },
+    {
+      "term": "geosteering",
+      "tier": "context",
+      "variants": [
+        "well placement optimisation",
+        "well placement optimization",
+        "autonomous well placement"
+      ],
+      "why": "real-time well placement services, increasingly automated"
+    },
+    {
+      "term": "drilling hazard prediction",
+      "tier": "ai",
+      "variants": [
+        "stuck pipe prediction",
+        "kick detection",
+        "drilling dysfunction detection",
+        "lost circulation prediction",
+        "drilling anomaly detection",
+        "washout detection"
+      ],
+      "why": "ML early warning of stuck pipe and kicks"
+    },
+    {
+      "term": "well planning automation",
+      "tier": "ai",
+      "variants": [
+        "automated well planning",
+        "autonomous well design",
+        "AI well planning",
+        "digital well planning",
+        "automated trajectory design",
+        "well design optimisation",
+        "well design optimization"
+      ],
+      "why": "automated well design and engineering workflows"
+    },
+    {
+      "term": "rig floor robotics",
+      "tier": "context",
+      "variants": [
+        "robotic drilling",
+        "drill floor robot",
+        "pipe-handling robot",
+        "robotic pipe handling",
+        "automated pipe handling",
+        "robotic drill floor",
+        "automated tripping",
+        "automated drill floor"
+      ],
+      "why": "robots replacing manual pipe handling"
+    },
+    {
+      "term": "intelligent rig",
+      "tier": "context",
+      "variants": [
+        "smart drilling rig",
+        "rig of the future",
+        "automated rig",
+        "smart rig"
+      ],
+      "why": "contractor label for automated, data-rich rigs"
+    },
+    {
+      "term": "rig performance analytics",
+      "tier": "context",
+      "variants": [
+        "rig data analytics",
+        "rig performance data",
+        "drilling data platform",
+        "rig telemetry",
+        "drilling data aggregation"
+      ],
+      "why": "rig data aggregation used to benchmark and optimise"
+    },
+    {
+      "term": "red zone management",
+      "tier": "context",
+      "variants": [
+        "red zone monitoring",
+        "personnel tracking",
+        "HaloGuard",
+        "machine vision safety",
+        "zone management system",
+        "hands-free operation"
+      ],
+      "why": "keeping crew out of hazardous rig areas via sensing"
+    },
+    {
+      "term": "automated fracturing",
+      "tier": "ai",
+      "variants": [
+        "autonomous frac",
+        "intelligent fracturing",
+        "frac automation",
+        "automated frac",
+        "autonomous fracturing",
+        "closed-loop fracturing",
+        "automated stage delivery",
+        "pump automation"
+      ],
+      "why": "algorithmic control of frac pumps and stages"
+    },
+    {
+      "term": "real-time fracture monitoring",
+      "tier": "context",
+      "variants": [
+        "fracture diagnostics",
+        "microseismic monitoring",
+        "fibre-optic fracture monitoring",
+        "fiber-optic fracture monitoring",
+        "subsurface fracture measurement",
+        "frac monitoring"
+      ],
+      "why": "subsurface feedback for automated completions"
+    },
+    {
+      "term": "completion optimisation",
+      "tier": "context",
+      "variants": [
+        "completion optimization",
+        "frac design optimisation",
+        "frac design optimization",
+        "completion design software",
+        "fracture modelling",
+        "fracture modeling",
+        "stage optimisation"
+      ],
+      "why": "data-driven frac design services"
+    },
+    {
+      "term": "automated cementing",
+      "tier": "context",
+      "variants": [
+        "cementing automation",
+        "autonomous cementing",
+        "automated mixing",
+        "automated blending"
+      ],
+      "why": "automated mixing and pumping units"
+    },
+    {
+      "term": "automated pressure control",
+      "tier": "context",
+      "variants": [
+        "automated wellhead",
+        "automated valve",
+        "smart manifold",
+        "automated flowback",
+        "automated well testing"
+      ],
+      "why": "automated surface equipment and well testing"
+    },
+    {
+      "term": "intelligent coiled tubing",
+      "tier": "context",
+      "variants": [
+        "autonomous coiled tubing",
+        "automated intervention",
+        "real-time downhole measurement",
+        "wireline automation"
+      ],
+      "why": "real-time downhole data in intervention services"
+    },
+    {
+      "term": "remote operations",
+      "tier": "context",
+      "variants": [
+        "remote operating centre",
+        "remote operating center",
+        "real-time operations center",
+        "real-time operations centre",
+        "RTOC",
+        "remote drilling",
+        "remote directional drilling",
+        "remote frac",
+        "remote monitoring centre",
+        "remote monitoring center"
+      ],
+      "case_sensitive_variants": [
+        "RTOC"
+      ],
+      "why": "running rigs, frac fleets and tools from centres"
+    },
+    {
+      "term": "crew reduction",
+      "tier": "context",
+      "variants": [
+        "reduced personnel on board",
+        "personnel on board reduction",
+        "de-manning",
+        "fewer personnel on location",
+        "reduced crew size",
+        "reduced headcount on rig"
+      ],
+      "why": "fewer people on location through remote, automated work"
+    },
+    {
+      "term": "autonomous operations",
+      "tier": "ai",
+      "variants": [
+        "autonomous solution",
+        "autonomous well",
+        "autonomous control",
+        "autonomous production",
+        "self-optimising",
+        "self-optimizing"
+      ],
+      "why": "vendor wording for self-running wells and facilities"
+    },
+    {
+      "term": "closed-loop automation",
+      "tier": "context",
+      "variants": [
+        "closed-loop control",
+        "closed-loop optimisation",
+        "closed-loop optimization",
+        "automated workflow",
+        "workflow automation"
+      ],
+      "why": "automated workflows linking measurement to control"
+    },
+    {
+      "term": "digital and integration",
+      "tier": "context",
+      "variants": [
+        "digital & integration",
+        "digital revenue",
+        "digital sales",
+        "digital solutions revenue",
+        "digital adoption",
+        "software and digital",
+        "digital offerings"
+      ],
+      "why": "SLB reporting line for digital and AI products"
+    },
+    {
+      "term": "Delfi",
+      "tier": "context",
+      "variants": [
+        "DrillOps",
+        "Petrel",
+        "DrillPlan",
+        "Techlog",
+        "Agora edge"
+      ],
+      "why": "SLB cloud subsurface and drilling software"
+    },
+    {
+      "term": "Lumi",
+      "tier": "ai",
+      "variants": [
+        "Neuro autonomous",
+        "Tela"
+      ],
+      "case_sensitive_variants": [
+        "Lumi",
+        "Tela"
+      ],
+      "why": "SLB data, AI and autonomy products"
+    },
+    {
+      "term": "Octiv",
+      "tier": "ai",
+      "variants": [
+        "ZEUS IQ",
+        "LOGIX",
+        "iCruise"
+      ],
+      "case_sensitive_variants": [
+        "LOGIX"
+      ],
+      "why": "Halliburton automated fracturing and drilling products"
+    },
+    {
+      "term": "DecisionSpace",
+      "tier": "context",
+      "variants": [
+        "iEnergy",
+        "Landmark software",
+        "DS365"
+      ],
+      "why": "Halliburton Landmark software and cloud"
+    },
+    {
+      "term": "Leucipa",
+      "tier": "ai",
+      "variants": [
+        "Cordant",
+        "BHC3",
+        "BakerHughesC3.ai",
+        "Baker Hughes C3 AI",
+        "iCenter",
+        "flare.IQ"
+      ],
+      "case_sensitive_variants": [
+        "BHC3"
+      ],
+      "why": "Baker Hughes AI and asset-performance software"
+    },
+    {
+      "term": "NOVOS",
+      "tier": "context",
+      "why": "NOV rig process automation platform"
+    },
+    {
+      "term": "SmartROS",
+      "tier": "ai",
+      "variants": [
+        "SmartDRILL",
+        "SmartSLIDE",
+        "SmartNAV",
+        "SmartPLAN",
+        "RigCLOUD",
+        "Canrig robotics",
+        "PACE-R801"
+      ],
+      "why": "Nabors rig operating system and automation apps"
+    },
+    {
+      "term": "AutoSlide",
+      "tier": "ai",
+      "variants": [
+        "Cerebro",
+        "FlexApp",
+        "Bit Guidance System",
+        "PTEN Digital",
+        "Corva"
+      ],
+      "case_sensitive_variants": [
+        "Cerebro"
+      ],
+      "why": "land-driller automation and analytics products"
+    },
+    {
+      "term": "ForeSite",
+      "tier": "context",
+      "variants": [
+        "CENTRO",
+        "Vero"
+      ],
+      "case_sensitive_variants": [
+        "CENTRO",
+        "Vero"
+      ],
+      "why": "Weatherford production and well-construction platforms"
+    },
+    {
+      "term": "seismic imaging",
+      "tier": "context",
+      "variants": [
+        "seismic processing",
+        "subsurface imaging",
+        "seismic data processing",
+        "seismic interpretation",
+        "full waveform inversion",
+        "FWI",
+        "multi-client data library"
+      ],
+      "case_sensitive_variants": [
+        "FWI"
+      ],
+      "why": "compute-heavy processing where AI is applied"
+    },
+    {
+      "term": "AI-assisted interpretation",
+      "tier": "ai",
+      "variants": [
+        "automated seismic interpretation",
+        "machine learning seismic",
+        "automated fault interpretation",
+        "seismic foundation model",
+        "geoscience foundation model",
+        "AI seismic",
+        "machine learning denoising"
+      ],
+      "why": "ML fault, horizon and salt picking sold as service"
+    },
+    {
+      "term": "autonomous node",
+      "tier": "context",
+      "variants": [
+        "ocean bottom node",
+        "robotic node deployment",
+        "uncrewed acquisition",
+        "drone-deployed node"
+      ],
+      "why": "robotic and uncrewed seismic acquisition"
+    },
+    {
+      "term": "high-performance computing",
+      "tier": "context",
+      "variants": [
+        "HPC",
+        "supercomputer",
+        "supercomputing",
+        "GPU cluster",
+        "compute capacity"
+      ],
+      "case_sensitive_variants": [
+        "HPC"
+      ],
+      "why": "supercomputing sold or used for imaging and AI"
+    },
+    {
+      "term": "subsurface data platform",
+      "tier": "context",
+      "variants": [
+        "OSDU",
+        "subsurface data management",
+        "petrotechnical software",
+        "data foundation",
+        "digital subsurface"
+      ],
+      "case_sensitive_variants": [
+        "OSDU"
+      ],
+      "why": "data foundations for customers' AI workflows"
+    },
+    {
+      "term": "reservoir modelling",
+      "tier": "context",
+      "variants": [
+        "reservoir modeling",
+        "reservoir simulation",
+        "reservoir characterisation",
+        "reservoir characterization",
+        "surrogate model",
+        "proxy model",
+        "physics-informed machine learning"
+      ],
+      "why": "simulation software increasingly ML-accelerated"
+    },
+    {
+      "term": "automated log interpretation",
+      "tier": "ai",
+      "variants": [
+        "automated petrophysics",
+        "machine learning log analysis",
+        "well log interpretation",
+        "autonomous logging",
+        "automated formation evaluation"
+      ],
+      "why": "ML petrophysics and formation evaluation"
+    },
+    {
+      "term": "digital rock",
+      "tier": "context",
+      "variants": [
+        "digital core analysis",
+        "digital rock analysis",
+        "core image analysis",
+        "automated core description"
+      ],
+      "why": "image-based core and rock analysis"
+    },
+    {
+      "term": "automated cuttings analysis",
+      "tier": "ai",
+      "variants": [
+        "cuttings analysis automation",
+        "automated mud logging",
+        "drilling fluid automation",
+        "automated mud monitoring",
+        "real-time fluid analysis"
+      ],
+      "why": "vision and sensor analysis of cuttings and fluids"
+    },
+    {
+      "term": "production automation",
+      "tier": "context",
+      "variants": [
+        "artificial lift optimisation",
+        "artificial lift optimization",
+        "ESP monitoring",
+        "well surveillance service",
+        "production optimisation",
+        "production optimization",
+        "automated chemical injection",
+        "gas lift optimisation",
+        "gas lift optimization"
+      ],
+      "why": "automated lift, chemical and well-control services"
+    },
+    {
+      "term": "pump failure prediction",
+      "tier": "ai",
+      "variants": [
+        "ESP failure prediction",
+        "predictive pump maintenance",
+        "pump health monitoring",
+        "frac pump health",
+        "fluid end failure prediction",
+        "predictive pump analytics"
+      ],
+      "why": "predictive analytics on lift and frac pumps"
+    },
+    {
+      "term": "predictive maintenance",
+      "tier": "ai",
+      "variants": [
+        "predictive asset maintenance",
+        "failure prediction",
+        "prognostics",
+        "predictive equipment health"
+      ],
+      "why": "ML failure prediction on rigs, fleets and subsea kit"
+    },
+    {
+      "term": "condition-based maintenance",
+      "tier": "context",
+      "variants": [
+        "condition monitoring",
+        "equipment health monitoring",
+        "condition-based monitoring",
+        "asset health",
+        "remote equipment monitoring",
+        "BOP monitoring"
+      ],
+      "why": "sensor-driven maintenance of drilling and pressure equipment"
+    },
+    {
+      "term": "digital twin",
+      "tier": "context",
+      "variants": [
+        "virtual twin",
+        "digital replica"
+      ],
+      "why": "virtual models of rigs, wells and equipment"
+    },
+    {
+      "term": "edge computing",
+      "tier": "context",
+      "variants": [
+        "edge analytics",
+        "edge device",
+        "wellsite edge",
+        "rig-site edge",
+        "edge intelligence"
+      ],
+      "why": "rig-site and wellsite compute for real-time models"
+    },
+    {
+      "term": "subsea robotics",
+      "tier": "context",
+      "variants": [
+        "remotely operated vehicle",
+        "ROV",
+        "subsea drone",
+        "remote piloting",
+        "onshore ROV control",
+        "subsea inspection robot"
+      ],
+      "case_sensitive_variants": [
+        "ROV"
+      ],
+      "why": "ROVs and drones for inspection and intervention"
+    },
+    {
+      "term": "autonomous underwater vehicle",
+      "tier": "ai",
+      "variants": [
+        "AUV",
+        "uncrewed surface vessel",
+        "unmanned surface vessel",
+        "USV",
+        "autonomous subsea vehicle",
+        "autonomous survey vessel"
+      ],
+      "case_sensitive_variants": [
+        "AUV",
+        "USV"
+      ],
+      "why": "untethered subsea survey and inspection"
+    },
+    {
+      "term": "robotic inspection",
+      "tier": "ai",
+      "variants": [
+        "inspection robot",
+        "drone inspection",
+        "robotic crawler",
+        "automated inspection",
+        "robotic tank cleaning",
+        "unmanned aerial vehicle"
+      ],
+      "why": "crawlers and drones inspecting tanks, pipes and rigs"
+    },
+    {
+      "term": "automated defect recognition",
+      "tier": "ai",
+      "variants": [
+        "automated corrosion detection",
+        "corrosion prediction",
+        "pipeline integrity analytics",
+        "in-line inspection analytics",
+        "tubular inspection analytics"
+      ],
+      "why": "ML integrity analysis of inspection data"
+    },
+    {
+      "term": "emissions monitoring",
+      "tier": "context",
+      "variants": [
+        "methane detection",
+        "methane monitoring",
+        "leak detection and repair",
+        "LDAR",
+        "continuous emissions monitoring",
+        "flare monitoring",
+        "emissions management software"
+      ],
+      "case_sensitive_variants": [
+        "LDAR"
+      ],
+      "why": "methane sensing and analytics services"
+    },
+    {
+      "term": "digital oilfield",
+      "tier": "context",
+      "variants": [
+        "intelligent oilfield",
+        "smart field",
+        "digital field",
+        "connected wellsite",
+        "intelligent wellsite",
+        "digital well construction"
+      ],
+      "why": "umbrella for instrumented, analytics-driven fields"
+    },
+    {
+      "term": "intelligent completion",
+      "tier": "context",
+      "variants": [
+        "smart completion",
+        "intelligent well",
+        "downhole monitoring",
+        "distributed acoustic sensing",
+        "fibre-optic sensing",
+        "fiber-optic sensing",
+        "downhole sensor"
+      ],
+      "why": "downhole sensing and control enabling automation"
+    },
+    {
+      "term": "performance-based contract",
+      "tier": "context",
+      "variants": [
+        "performance contract",
+        "outcome-based pricing",
+        "performance incentive",
+        "technology-driven pricing"
+      ],
+      "why": "automation-linked commercial models for rigs and services"
+    },
+    {
+      "term": "logistics optimisation",
+      "tier": "context",
+      "variants": [
+        "logistics optimization",
+        "last-mile logistics software",
+        "dispatch optimisation",
+        "dispatch optimization",
+        "automated sand delivery",
+        "supply chain optimisation",
+        "supply chain optimization"
+      ],
+      "why": "algorithmic sand, water and equipment logistics"
+    },
+    {
+      "term": "automated water management",
+      "tier": "context",
+      "variants": [
+        "automated water transfer",
+        "water logistics automation",
+        "produced water analytics"
+      ],
+      "why": "automated transfer and monitoring of produced water"
+    },
+    {
+      "term": "connected worker",
+      "tier": "context",
+      "variants": [
+        "remote expert assistance",
+        "smart glasses",
+        "wearable technology",
+        "digital worker"
+      ],
+      "why": "wearables and remote expert support in the field"
+    },
+    {
+      "term": "operational technology",
+      "tier": "context",
+      "variants": [
+        "OT security",
+        "OT cybersecurity",
+        "industrial control system",
+        "rig control system security"
+      ],
+      "why": "rig and field control systems as cyber exposure"
+    },
+    {
+      "term": "data center",
+      "tier": "context",
+      "variants": [
+        "data centre"
+      ],
+      "why": "AI data centres as new power and cooling market"
+    },
+    {
+      "term": "hyperscaler",
+      "tier": "context",
+      "variants": [
+        "hyperscale"
+      ],
+      "why": "tech customers for power and infrastructure services"
+    },
+    {
+      "term": "distributed power",
+      "tier": "context",
+      "variants": [
+        "mobile power generation",
+        "power-as-a-service",
+        "behind-the-meter",
+        "microgrid",
+        "on-site power generation",
+        "off-grid power",
+        "power infrastructure",
+        "PROPWR",
+        "Liberty Power Innovations",
+        "VoltaGrid",
+        "Solaris Power Solutions"
+      ],
+      "why": "mobile gas generation redeployed to data centres"
+    },
+    {
+      "term": "AI-driven power demand",
+      "tier": "ai",
+      "variants": [
+        "AI power demand",
+        "AI-driven electricity demand",
+        "power for AI",
+        "powering AI",
+        "AI-related power demand",
+        "AI energy demand"
+      ],
+      "why": "AI named as driver of power and gas demand"
+    },
+    {
+      "term": "power demand growth",
+      "tier": "context",
+      "variants": [
+        "electricity demand growth",
+        "load growth",
+        "gas-fired power demand",
+        "power generation demand",
+        "gas for power"
+      ],
+      "why": "load-growth outlook supporting gas activity"
+    },
+    {
+      "term": "gas turbine",
+      "tier": "context",
+      "variants": [
+        "reciprocating engine",
+        "natural gas generator",
+        "turbine generation",
+        "aeroderivative",
+        "NovaLT",
+        "gas generator set",
+        "turbine packaging"
+      ],
+      "why": "turbine and engine fleets supplying data-centre power"
+    },
+    {
+      "term": "liquid cooling",
+      "tier": "context",
+      "variants": [
+        "immersion cooling",
+        "direct-to-chip cooling",
+        "cooling infrastructure",
+        "thermal management",
+        "modular cooling"
+      ],
+      "why": "cooling and thermal products for AI data centres"
+    },
+    {
+      "term": "enhanced geothermal",
+      "tier": "context",
+      "variants": [
+        "next-generation geothermal",
+        "geothermal power for data centers",
+        "geothermal for data centres",
+        "advanced geothermal",
+        "closed-loop geothermal"
+      ],
+      "why": "drilling know-how applied to geothermal power for AI"
+    }
+  ],
+  "class_terms": {
+    "0990": [
+      {
+        "term": "autonomous haulage",
+        "tier": "ai",
+        "variants": [
+          "autonomous haul truck",
+          "autonomous truck",
+          "AHS",
+          "driverless truck",
+          "autonomous fleet"
+        ],
+        "case_sensitive_variants": [
+          "AHS"
+        ],
+        "why": "driverless trucks operated by mining contractors"
+      },
+      {
+        "term": "tele-remote",
+        "tier": "context",
+        "variants": [
+          "teleremote",
+          "teleoperation",
+          "tele-operated",
+          "remote bogging",
+          "remote-controlled loader",
+          "autonomous loader",
+          "autonomous LHD"
+        ],
+        "why": "remote operation of loaders and drills underground"
+      },
+      {
+        "term": "autonomous drill",
+        "tier": "ai",
+        "variants": [
+          "automated drill rig",
+          "drill rig automation",
+          "autonomous blasthole drill",
+          "automated exploration drilling"
+        ],
+        "why": "automated surface and underground drilling for miners"
+      },
+      {
+        "term": "automated rod handling",
+        "tier": "context",
+        "variants": [
+          "hands-free rod handling",
+          "rod handling automation",
+          "robotic rod handling",
+          "automated rod loader",
+          "hands-free drilling"
+        ],
+        "why": "hands-free rod handling removing drillers from danger"
+      },
+      {
+        "term": "core scanning",
+        "tier": "context",
+        "variants": [
+          "automated core logging",
+          "hyperspectral scanning",
+          "core imaging",
+          "downhole sensing",
+          "real-time orebody knowledge",
+          "rock knowledge",
+          "in-field geoanalysis",
+          "TruScan"
+        ],
+        "why": "sensor logging of drill core and chips"
+      },
+      {
+        "term": "AI-driven exploration targeting",
+        "tier": "ai",
+        "variants": [
+          "AI-assisted targeting",
+          "machine learning targeting",
+          "prospectivity mapping",
+          "AI-driven exploration",
+          "predictive targeting"
+        ],
+        "why": "ML drill-target ranking sold or used by service firms"
+      },
+      {
+        "term": "mine digital services",
+        "tier": "context",
+        "variants": [
+          "mining technology services",
+          "mining software",
+          "idoba",
+          "drill data analytics",
+          "blast analytics",
+          "fragmentation analysis",
+          "mine optimisation services"
+        ],
+        "why": "contractor technology arms selling mining data products"
+      },
+      {
+        "term": "collision avoidance system",
+        "tier": "context",
+        "variants": [
+          "proximity detection",
+          "fatigue monitoring",
+          "in-cab camera",
+          "driver safety system",
+          "operator fatigue detection"
+        ],
+        "why": "proximity and fatigue systems on contractor fleets"
+      },
+      {
+        "term": "fleet management system",
+        "tier": "context",
+        "variants": [
+          "dispatch system",
+          "fleet telematics",
+          "payload monitoring",
+          "equipment utilisation analytics"
+        ],
+        "why": "dispatch and telemetry for contractor equipment"
+      }
+    ]
+  }
+}

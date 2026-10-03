@@ -1,0 +1,439 @@
+{
+  "id": "74",
+  "name": "Other professional, scientific and technical activities",
+  "section": "N",
+  "summary": "Design studios, photo and stock-image businesses, translation and localisation providers and patent intermediaries face generative AI mainly as substitution: text-to-image tools, machine translation and AI dubbing lower prices and volumes for human work. The same firms sell into AI: licensing image and language archives as training data, offering data annotation and post-editing services, and brokering AI-related patents; copyright in training data and AI outputs is the central legal theme.",
+  "terms": [
+    {
+      "term": "AI substitution",
+      "tier": "ai",
+      "variants": [
+        "substitution by generative AI",
+        "replaced by generative tools",
+        "AI-driven substitution",
+        "AI displacement of creative work"
+      ],
+      "why": "generative tools replacing paid creative work"
+    },
+    {
+      "term": "AI-driven price pressure",
+      "tier": "ai",
+      "variants": [
+        "AI-related pricing pressure",
+        "AI deflation",
+        "AI-driven margin pressure"
+      ],
+      "why": "falling rates as clients use AI"
+    },
+    {
+      "term": "text-to-image",
+      "tier": "ai",
+      "variants": [
+        "image generation tool",
+        "AI image generator",
+        "text-to-video",
+        "AI-generated imagery",
+        "AI-generated image",
+        "synthetic image"
+      ],
+      "why": "generative image tools used or competed with"
+    },
+    {
+      "term": "training data licensing",
+      "tier": "ai",
+      "variants": [
+        "data licensing for AI training",
+        "licensing content to AI developers",
+        "AI data licensing",
+        "AI training dataset licensing"
+      ],
+      "why": "selling archives for model training"
+    },
+    {
+      "term": "copyright in AI-generated work",
+      "tier": "ai",
+      "variants": [
+        "copyrightability of AI outputs",
+        "AI copyright infringement",
+        "scraping of copyrighted content",
+        "unlicensed AI training",
+        "training data copyright"
+      ],
+      "why": "ownership and infringement uncertainty"
+    },
+    {
+      "term": "content authenticity",
+      "tier": "context",
+      "variants": [
+        "content credentials",
+        "C2PA",
+        "content provenance",
+        "image authenticity"
+      ],
+      "why": "provenance standards against synthetic media"
+    },
+    {
+      "term": "human-in-the-loop",
+      "tier": "context",
+      "variants": [
+        "expert-in-the-loop",
+        "human review of AI output"
+      ],
+      "why": "human review layer sold on top of AI output"
+    },
+    {
+      "term": "freelance contributor",
+      "tier": "context",
+      "variants": [
+        "freelancer network",
+        "contributor community",
+        "contributor compensation",
+        "contributor fund"
+      ],
+      "why": "external creators displaced or retrained by AI"
+    }
+  ],
+  "class_terms": {
+    "7410": [
+      {
+        "term": "AI-assisted design",
+        "tier": "ai",
+        "variants": [
+          "generative design",
+          "AI-generated design",
+          "AI design tool",
+          "AI-generated concept"
+        ],
+        "why": "generative tools in graphic, product and fashion design"
+      },
+      {
+        "term": "design automation",
+        "tier": "context",
+        "variants": [
+          "template-based design",
+          "automated layout",
+          "automated design production"
+        ],
+        "why": "template and model-driven design output"
+      },
+      {
+        "term": "AI rendering",
+        "tier": "ai",
+        "variants": [
+          "AI visualisation",
+          "AI visualization",
+          "AI-generated rendering"
+        ],
+        "why": "generative visualisation of interiors and products"
+      },
+      {
+        "term": "virtual prototyping",
+        "tier": "context",
+        "variants": [
+          "digital sampling",
+          "3D sampling",
+          "digital product creation"
+        ],
+        "why": "digital samples replacing physical ones"
+      },
+      {
+        "term": "AI trend forecasting",
+        "tier": "ai",
+        "variants": [
+          "trend prediction model"
+        ],
+        "why": "ML prediction of design and fashion trends"
+      },
+      {
+        "term": "design right infringement",
+        "tier": "context",
+        "variants": [
+          "design copyright",
+          "AI-generated copies",
+          "design piracy"
+        ],
+        "why": "AI copying of protected designs"
+      }
+    ],
+    "7420": [
+      {
+        "term": "stock photography",
+        "tier": "context",
+        "variants": [
+          "stock imagery",
+          "stock content",
+          "pre-shot content",
+          "stock footage",
+          "creative stock"
+        ],
+        "why": "licensed imagery competing with generated images"
+      },
+      {
+        "term": "commercially safe generative AI",
+        "tier": "ai",
+        "variants": [
+          "commercially safe AI",
+          "indemnified AI generation",
+          "generative AI by Getty Images",
+          "Shutterstock AI"
+        ],
+        "why": "licensed-data image generators sold by archives"
+      },
+      {
+        "term": "Getty Images v. Stability AI",
+        "tier": "ai",
+        "variants": [
+          "scraping of images",
+          "Stability AI litigation"
+        ],
+        "why": "litigation over image scraping for training"
+      },
+      {
+        "term": "AI photo editing",
+        "tier": "ai",
+        "variants": [
+          "AI retouching",
+          "automated retouching",
+          "AI image enhancement",
+          "AI background removal",
+          "AI headshot"
+        ],
+        "why": "automated retouching and enhancement"
+      },
+      {
+        "term": "editorial integrity",
+        "tier": "context",
+        "variants": [
+          "manipulated image",
+          "AI-manipulated photo",
+          "deepfake image"
+        ],
+        "why": "authenticity of news and archive imagery"
+      },
+      {
+        "term": "automated image tagging",
+        "tier": "ai",
+        "variants": [
+          "AI keywording",
+          "AI-powered image search",
+          "image recognition tagging"
+        ],
+        "why": "ML keywording and search of archives"
+      }
+    ],
+    "7430": [
+      {
+        "term": "machine translation",
+        "tier": "ai",
+        "variants": [
+          "neural machine translation",
+          "NMT",
+          "AI translation",
+          "automatic translation",
+          "AI-powered translation"
+        ],
+        "case_sensitive_variants": [
+          "NMT"
+        ],
+        "why": "automated translation competing with human work"
+      },
+      {
+        "term": "machine translation post-editing",
+        "tier": "ai",
+        "variants": [
+          "MTPE",
+          "post-editing",
+          "post-edited machine translation"
+        ],
+        "case_sensitive_variants": [
+          "MTPE"
+        ],
+        "why": "human correction of machine output"
+      },
+      {
+        "term": "language AI",
+        "tier": "ai",
+        "variants": [
+          "Language Weaver",
+          "DeepL",
+          "linguistic AI"
+        ],
+        "why": "translation vendors' AI product lines"
+      },
+      {
+        "term": "AI dubbing",
+        "tier": "ai",
+        "variants": [
+          "AI voice-over",
+          "synthetic dubbing",
+          "automated subtitling",
+          "AI captioning",
+          "AI voice localisation",
+          "AI voice localization"
+        ],
+        "why": "synthetic voice localisation of media"
+      },
+      {
+        "term": "AI interpreting",
+        "tier": "ai",
+        "variants": [
+          "machine interpreting",
+          "real-time translation",
+          "automatic speech recognition",
+          "speech translation",
+          "AI interpreter"
+        ],
+        "why": "real-time speech translation replacing interpreters"
+      },
+      {
+        "term": "translation quality estimation",
+        "tier": "ai",
+        "variants": [
+          "quality estimation model",
+          "MT quality estimation"
+        ],
+        "why": "models scoring machine output"
+      },
+      {
+        "term": "AI training data services",
+        "tier": "ai",
+        "variants": [
+          "data annotation",
+          "data labelling",
+          "data labeling",
+          "TrainAI",
+          "linguistic data for AI",
+          "AI data services"
+        ],
+        "why": "language firms selling data work to AI developers"
+      },
+      {
+        "term": "localisation",
+        "tier": "context",
+        "variants": [
+          "localization",
+          "language services",
+          "language service provider",
+          "content localisation",
+          "content localization"
+        ],
+        "why": "service line being automated"
+      },
+      {
+        "term": "per-word pricing",
+        "tier": "context",
+        "variants": [
+          "per-word rate",
+          "word rate",
+          "translation volume",
+          "price per word"
+        ],
+        "why": "rate model eroded by machine translation"
+      },
+      {
+        "term": "linguist",
+        "tier": "context",
+        "variants": [
+          "freelance translator",
+          "human translator",
+          "professional translator",
+          "interpreter"
+        ],
+        "why": "human translator workforce affected by AI"
+      },
+      {
+        "term": "translation memory",
+        "tier": "context",
+        "variants": [
+          "terminology management",
+          "translation management system"
+        ],
+        "why": "legacy language assets feeding AI"
+      },
+      {
+        "term": "regulated content translation",
+        "tier": "context",
+        "variants": [
+          "life sciences translation",
+          "patent translation",
+          "legal translation",
+          "certified translation"
+        ],
+        "why": "segments needing human-certified translation"
+      }
+    ],
+    "7491": [
+      {
+        "term": "AI patent portfolio",
+        "tier": "ai",
+        "variants": [
+          "AI-related patents",
+          "AI patents",
+          "machine learning patents"
+        ],
+        "why": "AI-related patents brokered or licensed"
+      },
+      {
+        "term": "AI-powered patent search",
+        "tier": "ai",
+        "variants": [
+          "AI patent analytics"
+        ],
+        "why": "AI tools for prior art and valuation"
+      },
+      {
+        "term": "AI inventorship",
+        "tier": "ai",
+        "variants": [
+          "inventorship of AI-generated inventions",
+          "AI-generated invention",
+          "DABUS"
+        ],
+        "why": "patentability of AI-generated inventions"
+      },
+      {
+        "term": "patent monetisation",
+        "tier": "context",
+        "variants": [
+          "patent monetization",
+          "patent licensing programme",
+          "patent licensing program",
+          "patent assertion"
+        ],
+        "why": "licensing programmes targeting AI hardware and services"
+      }
+    ],
+    "7499": [
+      {
+        "term": "AI weather model",
+        "tier": "ai",
+        "variants": [
+          "AI-based weather forecasting",
+          "machine learning weather prediction",
+          "AI weather forecasting"
+        ],
+        "why": "ML forecasting sold by weather services"
+      },
+      {
+        "term": "expert network",
+        "tier": "context",
+        "variants": [
+          "expert call transcripts",
+          "expert insights library"
+        ],
+        "why": "advisory calls substituted or mined by AI"
+      },
+      {
+        "term": "talent likeness",
+        "tier": "context",
+        "variants": [
+          "digital replica",
+          "AI likeness",
+          "name, image and likeness",
+          "voice likeness"
+        ],
+        "why": "agents managing clients' digital replicas"
+      }
+    ]
+  }
+}

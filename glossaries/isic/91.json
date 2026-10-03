@@ -1,0 +1,465 @@
+{
+  "id": "91",
+  "name": "Library, archives, museum and other cultural activities",
+  "section": "S",
+  "summary": "Libraries, archives, museums, heritage sites, zoos and reserves write about AI as a way to open up collections (transcription, cataloguing, search, translation, visitor guides) and to monitor visitors, buildings, animals and habitats. They also describe pressures from AI: crawlers scraping digitised collections, use of holdings as training data, fabricated references reaching reference desks, and questions of authenticity, bias and cultural sensitivity.",
+  "terms": [
+    {
+      "term": "digitisation",
+      "tier": "context",
+      "variants": [
+        "digitization",
+        "mass digitisation",
+        "mass digitization",
+        "digitised collection",
+        "digitized collection",
+        "digital collection"
+      ],
+      "why": "making collections machine-readable, precondition for AI"
+    },
+    {
+      "term": "optical character recognition",
+      "tier": "context",
+      "variants": [
+        "OCR",
+        "text extraction",
+        "full-text search",
+        "layout recognition"
+      ],
+      "case_sensitive_variants": [
+        "OCR"
+      ],
+      "why": "text extraction from scanned holdings"
+    },
+    {
+      "term": "handwritten text recognition",
+      "tier": "ai",
+      "variants": [
+        "handwriting recognition",
+        "Transkribus",
+        "automated transcription",
+        "AI transcription of manuscripts",
+        "HTR model"
+      ],
+      "case_sensitive_variants": [
+        "HTR model"
+      ],
+      "why": "ML transcription of manuscripts and records"
+    },
+    {
+      "term": "automated cataloguing",
+      "tier": "ai",
+      "variants": [
+        "automated cataloging",
+        "AI cataloguing",
+        "AI cataloging",
+        "automated metadata generation",
+        "machine-generated metadata",
+        "automated subject indexing",
+        "auto-tagging of collections",
+        "AI-generated description"
+      ],
+      "why": "AI generating descriptions and subject terms"
+    },
+    {
+      "term": "metadata enrichment",
+      "tier": "context",
+      "variants": [
+        "catalogue record",
+        "catalog record",
+        "collection metadata",
+        "linked open data",
+        "finding aid",
+        "subject indexing"
+      ],
+      "why": "catalogue data work that AI accelerates"
+    },
+    {
+      "term": "collections as data",
+      "tier": "context",
+      "variants": [
+        "collection data",
+        "open access collection",
+        "open collections",
+        "computational access",
+        "open GLAM"
+      ],
+      "why": "offering holdings for computational use"
+    },
+    {
+      "term": "AI research assistant",
+      "tier": "ai",
+      "variants": [
+        "AI-powered discovery",
+        "AI search of collections",
+        "conversational search of collections",
+        "AI reference service",
+        "AI librarian",
+        "AI-powered search"
+      ],
+      "why": "conversational search over collections"
+    },
+    {
+      "term": "discovery system",
+      "tier": "context",
+      "variants": [
+        "library discovery",
+        "discovery layer",
+        "semantic search of collections",
+        "collection search",
+        "online catalogue",
+        "online catalog"
+      ],
+      "why": "search layer where AI features are added"
+    },
+    {
+      "term": "text and data mining",
+      "tier": "ai",
+      "variants": [
+        "TDM exception",
+        "text and data mining exception",
+        "content mining",
+        "TDM rights"
+      ],
+      "why": "copyright exception enabling AI use of holdings"
+    },
+    {
+      "term": "AI crawler",
+      "tier": "ai",
+      "variants": [
+        "AI bot traffic",
+        "AI scraper",
+        "scraper bot",
+        "scraping of digital collections"
+      ],
+      "why": "bots scraping digitised collections for training data"
+    },
+    {
+      "term": "AI training data",
+      "tier": "ai",
+      "variants": [
+        "AI licensing",
+        "licensing collections for AI training",
+        "use of collections for AI training",
+        "AI training licence",
+        "AI training license",
+        "training corpus"
+      ],
+      "why": "collections sought or used to train models"
+    },
+    {
+      "term": "digital preservation",
+      "tier": "context",
+      "variants": [
+        "web archiving",
+        "born-digital",
+        "digital archive",
+        "digital repository",
+        "long-term preservation"
+      ],
+      "why": "long-term stewardship now including AI-generated records"
+    },
+    {
+      "term": "copyright exception",
+      "tier": "context",
+      "variants": [
+        "library exception",
+        "orphan work",
+        "out-of-copyright",
+        "public domain work",
+        "controlled digital lending"
+      ],
+      "why": "legal basis for library reuse and AI access"
+    },
+    {
+      "term": "information literacy",
+      "tier": "context",
+      "variants": [
+        "media literacy",
+        "digital literacy",
+        "AI literacy",
+        "algorithmic literacy",
+        "digital inclusion"
+      ],
+      "why": "public education role extended to AI"
+    },
+    {
+      "term": "fabricated citation",
+      "tier": "ai",
+      "variants": [
+        "hallucinated citation",
+        "hallucinated reference",
+        "fake citation",
+        "AI-generated reference",
+        "non-existent source"
+      ],
+      "why": "chatbot-invented references sent to librarians"
+    },
+    {
+      "term": "information integrity",
+      "tier": "context",
+      "variants": [
+        "misinformation",
+        "trusted information source",
+        "authenticity of records",
+        "archival authenticity",
+        "provenance of records"
+      ],
+      "why": "trust and authenticity role under AI-made content"
+    },
+    {
+      "term": "collection management system",
+      "tier": "context",
+      "variants": [
+        "collections database",
+        "collections management",
+        "object record",
+        "provenance research",
+        "collections information"
+      ],
+      "why": "object databases gaining image and text AI"
+    },
+    {
+      "term": "artwork image recognition",
+      "tier": "ai",
+      "variants": [
+        "image recognition of collections",
+        "visual search of collections",
+        "computer vision for collections",
+        "image similarity search",
+        "AI art authentication",
+        "AI attribution"
+      ],
+      "why": "computer vision over collection images"
+    },
+    {
+      "term": "audio guide",
+      "tier": "context",
+      "variants": [
+        "multimedia guide",
+        "museum app",
+        "visitor guide",
+        "interpretation app"
+      ],
+      "why": "visitor interpretation being rebuilt with AI"
+    },
+    {
+      "term": "AI museum guide",
+      "tier": "ai",
+      "variants": [
+        "AI audio guide",
+        "AI tour guide",
+        "AI docent",
+        "conversational guide",
+        "virtual docent",
+        "AI-generated interpretation",
+        "AI translation of exhibits"
+      ],
+      "why": "conversational or generative visitor guides"
+    },
+    {
+      "term": "immersive exhibition",
+      "tier": "context",
+      "variants": [
+        "immersive experience",
+        "interactive exhibit",
+        "virtual tour",
+        "augmented reality exhibit",
+        "virtual museum",
+        "digital twin of heritage site"
+      ],
+      "why": "digital exhibits using generative or reactive media"
+    },
+    {
+      "term": "visitor flow",
+      "tier": "context",
+      "variants": [
+        "visitor counting",
+        "footfall counting",
+        "crowd management",
+        "timed ticketing",
+        "dynamic pricing",
+        "visitor data",
+        "visitor forecasting"
+      ],
+      "why": "attendance and movement tracked with sensors and video"
+    },
+    {
+      "term": "cultural heritage data space",
+      "tier": "context",
+      "variants": [
+        "common European data space for cultural heritage",
+        "Europeana",
+        "heritage data",
+        "cultural data"
+      ],
+      "why": "shared European infrastructure for heritage data"
+    },
+    {
+      "term": "culturally sensitive material",
+      "tier": "context",
+      "variants": [
+        "Indigenous data sovereignty",
+        "Indigenous cultural and intellectual property",
+        "CARE principles",
+        "traditional knowledge",
+        "reparative description",
+        "historical bias"
+      ],
+      "why": "limits on AI processing of community-held heritage"
+    }
+  ],
+  "class_terms": {
+    "9111": [
+      {
+        "term": "library management system",
+        "tier": "context",
+        "variants": [
+          "integrated library system",
+          "library services platform",
+          "e-lending",
+          "ebook lending",
+          "digital lending",
+          "self-checkout"
+        ],
+        "why": "library systems where vendors embed AI"
+      },
+      {
+        "term": "reference service",
+        "tier": "context",
+        "variants": [
+          "reference enquiry",
+          "reference desk",
+          "research support",
+          "reader service",
+          "research data management",
+          "institutional repository"
+        ],
+        "why": "enquiry work changed by chatbots"
+      }
+    ],
+    "9112": [
+      {
+        "term": "records management",
+        "tier": "context",
+        "variants": [
+          "archival appraisal",
+          "archival description",
+          "records appraisal",
+          "sensitivity review",
+          "declassification",
+          "e-discovery"
+        ],
+        "why": "appraisal and review tasks being automated"
+      },
+      {
+        "term": "AI sensitivity review",
+        "tier": "ai",
+        "variants": [
+          "automated sensitivity review",
+          "automated redaction",
+          "AI-assisted appraisal",
+          "automated archival description",
+          "technology-assisted review"
+        ],
+        "why": "AI screening records for release or redaction"
+      },
+      {
+        "term": "audiovisual archive",
+        "tier": "context",
+        "variants": [
+          "oral history collection",
+          "broadcast archive",
+          "film archive",
+          "sound archive",
+          "speech-to-text transcription"
+        ],
+        "why": "audio and film holdings opened by speech AI"
+      }
+    ],
+    "9130": [
+      {
+        "term": "3D scanning",
+        "tier": "context",
+        "variants": [
+          "photogrammetry",
+          "3D digitisation",
+          "3D digitization",
+          "laser scanning",
+          "LiDAR survey",
+          "digital reconstruction",
+          "virtual reconstruction",
+          "condition monitoring"
+        ],
+        "why": "capture methods feeding AI reconstruction"
+      },
+      {
+        "term": "AI-assisted restoration",
+        "tier": "ai",
+        "variants": [
+          "AI restoration",
+          "AI reconstruction",
+          "AI-assisted conservation",
+          "AI-based damage detection",
+          "predictive conservation",
+          "virtual unwrapping"
+        ],
+        "why": "AI reconstructing or diagnosing damaged heritage"
+      }
+    ],
+    "9141": [
+      {
+        "term": "animal monitoring",
+        "tier": "context",
+        "variants": [
+          "animal behaviour monitoring",
+          "animal behavior monitoring",
+          "animal welfare monitoring",
+          "animal health monitoring",
+          "enclosure camera"
+        ],
+        "why": "welfare and behaviour observation using cameras"
+      },
+      {
+        "term": "AI species identification",
+        "tier": "ai",
+        "variants": [
+          "automated species identification",
+          "AI wildlife monitoring",
+          "AI camera trap",
+          "acoustic species recognition",
+          "individual animal recognition"
+        ],
+        "why": "ML recognising animals from images or sound"
+      }
+    ],
+    "9142": [
+      {
+        "term": "biodiversity monitoring",
+        "tier": "context",
+        "variants": [
+          "wildlife monitoring",
+          "camera trap",
+          "bioacoustic monitoring",
+          "remote sensing",
+          "drone survey",
+          "habitat mapping",
+          "eDNA"
+        ],
+        "why": "survey data increasingly analysed by ML"
+      },
+      {
+        "term": "poaching detection",
+        "tier": "ai",
+        "variants": [
+          "AI anti-poaching",
+          "predictive patrol",
+          "AI wildfire detection",
+          "wildfire detection camera",
+          "automated threat detection"
+        ],
+        "why": "AI alerts on poachers and wildfires"
+      }
+    ]
+  }
+}

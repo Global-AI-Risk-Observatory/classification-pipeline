@@ -1,0 +1,579 @@
+{
+ "id": "53",
+ "name": "Postal and courier activities",
+ "section": "H",
+ "summary": "Postal and courier companies write about AI in sortation and hub automation (address recognition, robotic sorting), last-mile route optimisation and delivery-time prediction, parcel-volume forecasting, dynamic pricing and surcharges, and customer-service chatbots. They also report on autonomous delivery (drones, sidewalk robots, self-driving vans), driver monitoring and algorithmic management of couriers, parcel fraud and smishing, and network restructuring where automation replaces labour. Delivery platforms add dispatch and matching algorithms and platform-work regulation.",
+ "terms": [
+  {
+   "term": "robotic sortation",
+   "tier": "ai",
+   "variants": [
+    "sortation robot",
+    "AI-based sorting",
+    "robotic induction",
+    "AI-powered sorting",
+    "robotic sorting"
+   ],
+   "why": "ML and vision in parcel sorting"
+  },
+  {
+   "term": "automated sortation",
+   "tier": "context",
+   "variants": [
+    "automated sorting",
+    "automated sorting centre",
+    "automated sorting center",
+    "automated parcel hub",
+    "hub automation"
+   ],
+   "why": "sorting equipment context for AI vision"
+  },
+  {
+   "term": "address recognition",
+   "tier": "ai",
+   "variants": [
+    "optical character recognition",
+    "handwriting recognition",
+    "AI address reading",
+    "address intelligence",
+    "address correction using AI",
+    "automated address resolution"
+   ],
+   "why": "OCR and ML reading of addresses"
+  },
+  {
+   "term": "route optimisation",
+   "tier": "ai",
+   "variants": [
+    "route optimization",
+    "AI-based routing",
+    "dynamic routing",
+    "delivery route planning",
+    "ORION",
+    "dynamic route planning",
+    "AI route planning",
+    "last-mile optimisation",
+    "last-mile optimization"
+   ],
+   "case_sensitive_variants": [
+    "ORION"
+   ],
+   "why": "ML sequencing of delivery stops"
+  },
+  {
+   "term": "delivery time prediction",
+   "tier": "ai",
+   "variants": [
+    "predictive ETA",
+    "estimated delivery window",
+    "predictive delivery",
+    "delivery date prediction",
+    "AI-based delivery estimate",
+    "time-window prediction",
+    "delivery promise accuracy"
+   ],
+   "why": "ML delivery windows and ETAs"
+  },
+  {
+   "term": "parcel volume forecasting",
+   "tier": "ai",
+   "variants": [
+    "volume forecasting",
+    "AI-based volume prediction",
+    "demand forecasting",
+    "peak season forecasting",
+    "AI capacity planning",
+    "predictive capacity planning"
+   ],
+   "why": "ML prediction of shipment volumes"
+  },
+  {
+   "term": "autonomous delivery",
+   "tier": "ai",
+   "variants": [
+    "delivery robot",
+    "sidewalk robot",
+    "autonomous delivery vehicle",
+    "self-driving delivery van",
+    "autonomous van",
+    "robot delivery",
+    "autonomous last mile"
+   ],
+   "why": "driverless delivery vehicles and robots"
+  },
+  {
+   "term": "drone delivery",
+   "tier": "ai",
+   "variants": [
+    "delivery drone",
+    "unmanned aerial delivery",
+    "BVLOS",
+    "beyond visual line of sight",
+    "drone parcel",
+    "drone logistics"
+   ],
+   "case_sensitive_variants": [
+    "BVLOS"
+   ],
+   "why": "unmanned aircraft delivering parcels"
+  },
+  {
+   "term": "robotic parcel handling",
+   "tier": "ai",
+   "variants": [
+    "robotic unloading",
+    "trailer unloading robot",
+    "parcel picking robot",
+    "robotic arm",
+    "robotic singulation",
+    "autonomous mobile robot",
+    "humanoid robot",
+    "Stretch robot"
+   ],
+   "why": "robot arms loading and unloading parcels"
+  },
+  {
+   "term": "AI dimensioning",
+   "tier": "ai",
+   "variants": [
+    "automated dimensioning",
+    "AI damage detection",
+    "parcel scanning AI",
+    "computer vision in hubs",
+    "AI-powered scanning",
+    "smart package"
+   ],
+   "why": "vision measurement and damage detection of parcels"
+  },
+  {
+   "term": "dynamic pricing",
+   "tier": "ai",
+   "variants": [
+    "AI-driven pricing",
+    "dynamic surcharge",
+    "AI pricing",
+    "AI-based revenue management",
+    "demand-based surcharge",
+    "algorithmic pricing"
+   ],
+   "why": "ML-based rates and surcharges"
+  },
+  {
+   "term": "AI-powered customer service",
+   "tier": "ai",
+   "variants": [
+    "AI customer service",
+    "AI virtual assistant for customers",
+    "AI-powered tracking assistant",
+    "automated claims handling",
+    "AI email automation",
+    "AI contact centre",
+    "AI contact center"
+   ],
+   "why": "automated tracking and claims enquiries"
+  },
+  {
+   "term": "AI customs clearance",
+   "tier": "ai",
+   "variants": [
+    "AI customs classification",
+    "automated customs clearance",
+    "HS code classification",
+    "AI tariff classification",
+    "automated duty calculation",
+    "AI-powered brokerage"
+   ],
+   "why": "automated classification of cross-border parcels"
+  },
+  {
+   "term": "driver monitoring",
+   "tier": "ai",
+   "variants": [
+    "AI dash cam",
+    "AI dashcam",
+    "in-vehicle camera",
+    "driver-facing camera",
+    "driver behaviour scoring",
+    "driver behavior scoring",
+    "telematics scoring",
+    "AI safety camera"
+   ],
+   "why": "in-vehicle cameras and telematics scoring couriers"
+  },
+  {
+   "term": "algorithmic management",
+   "tier": "context",
+   "variants": [
+    "productivity targets",
+    "delivery quotas",
+    "worker surveillance",
+    "automated performance management",
+    "scan rate",
+    "stops per hour"
+   ],
+   "why": "automated control of courier work"
+  },
+  {
+   "term": "predictive maintenance",
+   "tier": "ai",
+   "variants": [
+    "predictive fleet maintenance",
+    "condition monitoring",
+    "AI-based maintenance",
+    "predictive vehicle maintenance"
+   ],
+   "why": "ML on vehicles, aircraft and sorters"
+  },
+  {
+   "term": "AI fraud detection",
+   "tier": "ai",
+   "variants": [
+    "parcel fraud detection",
+    "delivery scam detection",
+    "AI-based fraud prevention",
+    "AI scam detection",
+    "counterfeit postage detection"
+   ],
+   "why": "ML against parcel and payment fraud"
+  },
+  {
+   "term": "delivery scam",
+   "tier": "context",
+   "variants": [
+    "smishing",
+    "fake delivery text",
+    "parcel scam",
+    "impersonation scam",
+    "phishing messages"
+   ],
+   "why": "phishing impersonating couriers"
+  },
+  {
+   "term": "AI-driven efficiency",
+   "tier": "ai",
+   "variants": [
+    "AI-driven productivity",
+    "AI-enabled efficiency",
+    "AI productivity gains",
+    "AI-driven cost savings",
+    "AI use cases",
+    "AI-enabled productivity",
+    "AI initiatives"
+   ],
+   "why": "cost savings attributed to AI"
+  },
+  {
+   "term": "network transformation",
+   "tier": "context",
+   "variants": [
+    "network redesign",
+    "facility consolidation",
+    "Network 2.0",
+    "network of the future",
+    "Efficiency Reimagined",
+    "building closures",
+    "sort consolidation"
+   ],
+   "why": "restructuring where automation replaces labour"
+  },
+  {
+   "term": "workforce reduction",
+   "tier": "context",
+   "variants": [
+    "headcount reduction",
+    "job cuts",
+    "voluntary redundancy",
+    "Teamsters",
+    "Communication Workers Union",
+    "postal union",
+    "labour agreement",
+    "labor agreement"
+   ],
+   "why": "job effects of automation"
+  },
+  {
+   "term": "last-mile delivery",
+   "tier": "context",
+   "variants": [
+    "last mile",
+    "cost per piece",
+    "stops per route",
+    "delivery density",
+    "parcel locker",
+    "out-of-home delivery",
+    "pickup points"
+   ],
+   "why": "cost-heavy leg optimised with ML"
+  },
+  {
+   "term": "e-commerce volume",
+   "tier": "context",
+   "variants": [
+    "B2C parcels",
+    "parcel volume",
+    "cross-border e-commerce",
+    "average daily volume",
+    "revenue per piece"
+   ],
+   "why": "demand driver for automated parcel networks"
+  },
+  {
+   "term": "digital twin",
+   "tier": "context",
+   "variants": [
+    "network digital twin",
+    "hub digital twin",
+    "simulation of the network",
+    "facility digital twin"
+   ],
+   "why": "virtual model of hubs and network"
+  },
+  {
+   "term": "smart locker",
+   "tier": "context",
+   "variants": [
+    "smart parcel locker",
+    "AI-based locker allocation",
+    "locker network optimisation",
+    "locker network optimization",
+    "automated parcel machine"
+   ],
+   "why": "automated lockers with ML placement and capacity"
+  },
+  {
+   "term": "AI energy management",
+   "tier": "ai",
+   "variants": [
+    "EV charging optimisation",
+    "EV charging optimization",
+    "smart charging",
+    "AI-based fleet electrification",
+    "charging optimisation",
+    "charging optimization"
+   ],
+   "why": "ML charging and fleet electrification planning"
+  },
+  {
+   "term": "AI load planning",
+   "tier": "ai",
+   "variants": [
+    "load optimisation",
+    "load optimization",
+    "trailer fill optimisation",
+    "trailer fill optimization",
+    "AI-based linehaul planning",
+    "linehaul optimisation",
+    "linehaul optimization",
+    "cube utilisation"
+   ],
+   "why": "ML trailer and container fill"
+  },
+  {
+   "term": "AI workforce planning",
+   "tier": "ai",
+   "variants": [
+    "AI-based shift planning",
+    "AI staffing",
+    "labour planning using AI",
+    "labor planning using AI",
+    "predictive staffing",
+    "AI-based resource planning"
+   ],
+   "why": "ML staffing of hubs and delivery rounds"
+  },
+  {
+   "term": "agentic AI in logistics operations",
+   "tier": "ai",
+   "variants": [
+    "AI agents in operations",
+    "agentic logistics",
+    "AI voice agent",
+    "AI agent for appointment scheduling",
+    "AI agents for customs",
+    "AI-powered voicebot"
+   ],
+   "why": "AI agents handling operational tasks"
+  },
+  {
+   "term": "vision picking",
+   "tier": "context",
+   "variants": [
+    "smart glasses",
+    "pick-by-vision",
+    "wearable scanner",
+    "augmented reality picking"
+   ],
+   "why": "smart glasses and wearables guiding workers"
+  },
+  {
+   "term": "proof of delivery",
+   "tier": "context",
+   "variants": [
+    "photo on delivery",
+    "delivery photo",
+    "delivery verification",
+    "geofencing",
+    "failed delivery",
+    "first-time delivery rate"
+   ],
+   "why": "delivery photos and geodata analysed by ML"
+  },
+  {
+   "term": "sorting centre",
+   "tier": "context",
+   "variants": [
+    "sorting center",
+    "parcel hub",
+    "sorting capacity",
+    "parcels per hour",
+    "automation rate",
+    "degree of automation"
+   ],
+   "why": "sites where automation is installed"
+  }
+ ],
+ "class_terms": {
+  "5310": [
+   {
+    "term": "letter sorting automation",
+    "tier": "context",
+    "variants": [
+     "automated mail sorting",
+     "mail sequencing",
+     "delivery point sequencing",
+     "AI mail recognition",
+     "hybrid mail",
+     "digital mailbox",
+     "informed delivery"
+    ],
+    "why": "ML reading and sequencing of mail"
+   },
+   {
+    "term": "universal service obligation",
+    "tier": "context",
+    "variants": [
+     "USO",
+     "letter volume decline",
+     "mail volumes",
+     "addressed letters",
+     "postal regulation",
+     "delivery frequency"
+    ],
+    "case_sensitive_variants": [
+     "USO"
+    ],
+    "why": "regulated letter service under automation and cost pressure"
+   },
+   {
+    "term": "postal workers",
+    "tier": "context",
+    "variants": [
+     "letter carriers",
+     "postmen",
+     "delivery offices",
+     "mail centres",
+     "mail centers",
+     "mail processing plants"
+    ],
+    "why": "delivery staff affected by automated sorting"
+   }
+  ],
+  "5320": [
+   {
+    "term": "AI shipping tools",
+    "tier": "ai",
+    "variants": [
+     "AI-powered shipping",
+     "AI shipping assistant",
+     "predictive shipping insights",
+     "AI returns management",
+     "AI-powered returns",
+     "shipping intelligence platform"
+    ],
+    "why": "AI features for shipping customers"
+   },
+   {
+    "term": "express delivery",
+    "tier": "context",
+    "variants": [
+     "courier, express and parcel",
+     "CEP",
+     "express network",
+     "time-definite",
+     "air hub",
+     "ground network"
+    ],
+    "case_sensitive_variants": [
+     "CEP"
+    ],
+    "why": "time-definite networks with automated hubs"
+   },
+   {
+    "term": "data platform monetisation",
+    "tier": "ai",
+    "variants": [
+     "data platform monetization",
+     "shipment data insights",
+     "logistics data platform",
+     "predictive supply chain insights",
+     "data-driven commerce platform"
+    ],
+    "why": "selling ML insights from shipment data"
+   }
+  ],
+  "5330": [
+   {
+    "term": "dispatch algorithm",
+    "tier": "ai",
+    "variants": [
+     "matching algorithm",
+     "batching algorithm",
+     "AI dispatch",
+     "courier assignment algorithm",
+     "order batching",
+     "dynamic delivery fees",
+     "surge pricing"
+    ],
+    "why": "ML matching of orders and couriers"
+   },
+   {
+    "term": "platform work",
+    "tier": "context",
+    "variants": [
+     "Platform Work Directive",
+     "gig workers",
+     "independent contractor",
+     "courier classification",
+     "rider status",
+     "account deactivation"
+    ],
+    "why": "regulation of algorithmically managed couriers"
+   },
+   {
+    "term": "delivery platform",
+    "tier": "context",
+    "variants": [
+     "delivery marketplace",
+     "crowdsourced delivery",
+     "shipping aggregator",
+     "multi-carrier platform",
+     "parcel comparison"
+    ],
+    "why": "intermediaries pairing senders with couriers"
+   },
+   {
+    "term": "AI carrier selection",
+    "tier": "ai",
+    "variants": [
+     "carrier selection algorithm",
+     "rate shopping algorithm",
+     "AI-based carrier allocation",
+     "smart carrier routing",
+     "AI shipping optimisation",
+     "AI shipping optimization"
+    ],
+    "why": "ML choosing carrier and service per parcel"
+   }
+  ]
+ }
+}

@@ -1,0 +1,1162 @@
+{
+ "id": "61",
+ "name": "Telecommunications",
+ "section": "K",
+ "summary": "Telecom operators write about AI in three ways: running the network (self-organizing and autonomous networks, AI-RAN, predictive maintenance, energy saving), serving and retaining customers (churn models, virtual agents, next best offer), and fighting fraud and scam traffic. They also present AI as a demand and revenue driver: sovereign AI cloud, GPU-as-a-service, edge inference, data centre and fibre capacity for hyperscalers, alongside the capex, energy cost and workforce reduction that come with it.",
+ "terms": [
+  {
+   "term": "self-organizing network",
+   "tier": "ai",
+   "variants": [
+    "self-organising network",
+    "self-optimizing network",
+    "self-optimising network",
+    "SON"
+   ],
+   "case_sensitive_variants": [
+    "SON"
+   ],
+   "why": "automated radio network tuning"
+  },
+  {
+   "term": "AI-RAN",
+   "tier": "ai",
+   "variants": [
+    "AI RAN Alliance",
+    "AI-native RAN",
+    "AI for RAN",
+    "AI on RAN",
+    "AI and RAN"
+   ],
+   "why": "AI embedded in radio access network"
+  },
+  {
+   "term": "autonomous network",
+   "tier": "ai",
+   "variants": [
+    "autonomous networks level",
+    "self-driving network",
+    "network autonomy",
+    "Level 4 autonomy"
+   ],
+   "why": "TM Forum self-driving network concept"
+  },
+  {
+   "term": "AI-native network",
+   "tier": "ai",
+   "variants": [
+    "AI-native 6G",
+    "AI-native telco",
+    "AI-native architecture"
+   ],
+   "why": "networks designed around AI"
+  },
+  {
+   "term": "zero-touch network",
+   "tier": "ai",
+   "variants": [
+    "zero-touch automation",
+    "zero-touch operations",
+    "zero touch provisioning",
+    "ZSM"
+   ],
+   "why": "closed-loop operation without human intervention"
+  },
+  {
+   "term": "intent-based networking",
+   "tier": "ai",
+   "variants": [
+    "intent-based network",
+    "intent-driven network",
+    "intent-based automation"
+   ],
+   "why": "network configured from declared intent by AI"
+  },
+  {
+   "term": "closed-loop automation",
+   "tier": "ai",
+   "variants": [
+    "closed-loop assurance",
+    "closed loop optimisation",
+    "closed-loop optimization"
+   ],
+   "why": "ML-driven assurance and remediation loop"
+  },
+  {
+   "term": "self-healing network",
+   "tier": "ai",
+   "variants": [
+    "self-healing capabilities",
+    "network self-healing"
+   ],
+   "why": "automatic fault detection and repair"
+  },
+  {
+   "term": "network automation",
+   "tier": "context",
+   "variants": [
+    "automated network operations",
+    "network operations automation"
+   ],
+   "why": "context for AI-driven network operations"
+  },
+  {
+   "term": "AIOps",
+   "tier": "ai",
+   "variants": [
+    "AI for network operations",
+    "AI-driven operations",
+    "AI-powered operations"
+   ],
+   "why": "AI for IT and network operations"
+  },
+  {
+   "term": "RAN intelligent controller",
+   "tier": "ai",
+   "variants": [
+    "RIC",
+    "xApp",
+    "rApp",
+    "near-real-time RIC"
+   ],
+   "case_sensitive_variants": [
+    "RIC"
+   ],
+   "why": "Open RAN control point hosting ML apps"
+  },
+  {
+   "term": "Open RAN",
+   "tier": "context",
+   "variants": [
+    "O-RAN",
+    "OpenRAN",
+    "vRAN",
+    "Cloud RAN",
+    "virtualised RAN",
+    "virtualized RAN"
+   ],
+   "why": "open architecture enabling AI apps in RAN"
+  },
+  {
+   "term": "AI-driven network optimisation",
+   "tier": "ai",
+   "variants": [
+    "AI-driven network optimization",
+    "AI-based network optimisation",
+    "AI-based network optimization",
+    "AI-powered network optimisation",
+    "AI-powered network optimization",
+    "network optimisation using AI"
+   ],
+   "why": "ML tuning of coverage and capacity"
+  },
+  {
+   "term": "predictive network maintenance",
+   "tier": "ai",
+   "variants": [
+    "predictive maintenance of the network",
+    "predictive fault detection",
+    "proactive fault detection",
+    "fault prediction",
+    "predictive maintenance"
+   ],
+   "why": "ML predicting network faults"
+  },
+  {
+   "term": "network anomaly detection",
+   "tier": "ai",
+   "variants": [
+    "anomaly detection in the network",
+    "traffic anomaly detection"
+   ],
+   "why": "ML detection of network faults or attacks"
+  },
+  {
+   "term": "AI-based energy saving",
+   "tier": "ai",
+   "variants": [
+    "AI-driven energy saving",
+    "AI energy management",
+    "intelligent cell sleep",
+    "cell sleep mode",
+    "AI-powered energy saving",
+    "RAN energy saving"
+   ],
+   "why": "ML switches off cells to save power"
+  },
+  {
+   "term": "network digital twin",
+   "tier": "ai",
+   "variants": [
+    "digital twin of the network",
+    "digital twin network"
+   ],
+   "why": "simulated network used for AI planning"
+  },
+  {
+   "term": "AI-based network planning",
+   "tier": "ai",
+   "variants": [
+    "AI-driven network planning",
+    "smart capex",
+    "AI-assisted rollout planning",
+    "predictive capacity planning"
+   ],
+   "why": "ML for rollout and capacity planning"
+  },
+  {
+   "term": "traffic prediction",
+   "tier": "ai",
+   "variants": [
+    "traffic forecasting",
+    "network traffic forecasting",
+    "predictive traffic steering"
+   ],
+   "why": "ML forecasting of network load"
+  },
+  {
+   "term": "AI-based beamforming",
+   "tier": "ai",
+   "variants": [
+    "AI beam management",
+    "AI-enabled massive MIMO",
+    "AI-based channel estimation",
+    "AI air interface"
+   ],
+   "why": "ML beam management in massive MIMO"
+  },
+  {
+   "term": "network data analytics function",
+   "tier": "ai",
+   "variants": [
+    "NWDAF"
+   ],
+   "why": "5G core function supplying ML insights"
+  },
+  {
+   "term": "telco LLM",
+   "tier": "ai",
+   "variants": [
+    "telco-specific LLM",
+    "telco large language model",
+    "telecom LLM",
+    "telco GPT",
+    "Global Telco AI Alliance",
+    "telco language model"
+   ],
+   "why": "language model trained for telecom tasks"
+  },
+  {
+   "term": "telco AI",
+   "tier": "ai",
+   "variants": [
+    "AI telco",
+    "AI-first telco",
+    "AI-powered telco",
+    "telecom AI",
+    "AI-driven telco"
+   ],
+   "why": "industry label for operator AI programmes"
+  },
+  {
+   "term": "techco",
+   "tier": "context",
+   "variants": [
+    "telco to techco",
+    "tech-co"
+   ],
+   "why": "telco-to-tech transformation narrative incl. AI"
+  },
+  {
+   "term": "network copilot",
+   "tier": "ai",
+   "variants": [
+    "network operations copilot",
+    "field technician copilot",
+    "engineer copilot",
+    "NOC copilot"
+   ],
+   "why": "GenAI assistant for network engineers"
+  },
+  {
+   "term": "agentic network operations",
+   "tier": "ai",
+   "variants": [
+    "network AI agent",
+    "agentic NOC",
+    "agentic AI for networks",
+    "autonomous agent in network operations"
+   ],
+   "why": "AI agents operating network functions"
+  },
+  {
+   "term": "dark NOC",
+   "tier": "ai",
+   "variants": [
+    "lights-out NOC",
+    "zero-touch NOC",
+    "autonomous NOC"
+   ],
+   "why": "fully automated network operations centre"
+  },
+  {
+   "term": "network operations centre",
+   "tier": "context",
+   "variants": [
+    "network operations center",
+    "service operations centre",
+    "service operations center"
+   ],
+   "why": "where AI assurance tooling is deployed"
+  },
+  {
+   "term": "service assurance",
+   "tier": "context",
+   "variants": [
+    "automated assurance",
+    "network assurance"
+   ],
+   "why": "domain of AI fault and quality management"
+  },
+  {
+   "term": "root cause analysis using AI",
+   "tier": "ai",
+   "variants": [
+    "automated root cause analysis",
+    "AI-based root cause analysis",
+    "alarm correlation"
+   ],
+   "why": "ML fault localisation"
+  },
+  {
+   "term": "OSS/BSS",
+   "tier": "context",
+   "variants": [
+    "operations support system",
+    "business support system",
+    "BSS/OSS"
+   ],
+   "why": "operations and billing stacks being AI-enabled"
+  },
+  {
+   "term": "churn prediction",
+   "tier": "ai",
+   "variants": [
+    "churn model",
+    "churn propensity",
+    "predictive churn",
+    "churn prevention model"
+   ],
+   "why": "ML model of subscribers likely to leave"
+  },
+  {
+   "term": "next best action",
+   "tier": "ai",
+   "variants": [
+    "next best offer",
+    "real-time decisioning"
+   ],
+   "why": "ML-driven personalised offer selection"
+  },
+  {
+   "term": "AI-powered customer care",
+   "tier": "ai",
+   "variants": [
+    "AI-powered customer service",
+    "AI customer care",
+    "AI-driven customer care",
+    "AI in customer care",
+    "AI care agent"
+   ],
+   "why": "virtual agents in telecom customer service"
+  },
+  {
+   "term": "virtual agent",
+   "tier": "ai",
+   "variants": [
+    "digital assistant",
+    "virtual assistant",
+    "voicebot",
+    "voice bot",
+    "conversational IVR",
+    "intelligent IVR"
+   ],
+   "why": "automated care assistant for subscribers"
+  },
+  {
+   "term": "agent assist",
+   "tier": "ai",
+   "variants": [
+    "agent copilot",
+    "call summarisation",
+    "call summarization",
+    "AI call summary",
+    "real-time agent guidance"
+   ],
+   "why": "GenAI support for call-centre staff"
+  },
+  {
+   "term": "speech analytics",
+   "tier": "ai",
+   "variants": [
+    "voice analytics",
+    "call transcription",
+    "sentiment analysis of calls"
+   ],
+   "why": "ML analysis of care calls"
+  },
+  {
+   "term": "call centre",
+   "tier": "context",
+   "variants": [
+    "call center",
+    "contact centre",
+    "contact center",
+    "customer care headcount"
+   ],
+   "why": "function most exposed to AI automation"
+  },
+  {
+   "term": "digital care",
+   "tier": "context",
+   "variants": [
+    "digital-first care",
+    "self-service channels",
+    "call deflection",
+    "contact deflection"
+   ],
+   "why": "shift of care to automated channels"
+  },
+  {
+   "term": "hyper-personalisation",
+   "tier": "ai",
+   "variants": [
+    "hyper-personalization",
+    "AI-driven personalisation",
+    "AI-driven personalization",
+    "personalised offers using AI"
+   ],
+   "why": "ML-tailored offers and tariffs"
+  },
+  {
+   "term": "AI-driven customer value management",
+   "tier": "ai",
+   "variants": [
+    "AI-based customer value management",
+    "AI-driven CVM",
+    "propensity model",
+    "AI-driven upsell"
+   ],
+   "why": "ML base management and upsell"
+  },
+  {
+   "term": "AI call screening",
+   "tier": "ai",
+   "variants": [
+    "AI scam detection",
+    "scam call detection",
+    "AI spam filter",
+    "spam call blocking",
+    "AI-powered scam protection",
+    "scam shield"
+   ],
+   "why": "AI filters spam and scam calls"
+  },
+  {
+   "term": "voice cloning",
+   "tier": "ai",
+   "variants": [
+    "cloned voice",
+    "AI voice fraud",
+    "deepfake voice",
+    "voice deepfake",
+    "synthetic voice"
+   ],
+   "why": "deepfake audio used in telecom fraud"
+  },
+  {
+   "term": "AI-based fraud detection",
+   "tier": "ai",
+   "variants": [
+    "AI fraud detection",
+    "fraud detection using machine learning",
+    "AI-powered fraud prevention",
+    "AI fraud management"
+   ],
+   "why": "ML against subscription and traffic fraud"
+  },
+  {
+   "term": "SIM swap fraud",
+   "tier": "context",
+   "variants": [
+    "SIM-swap",
+    "smishing",
+    "vishing",
+    "robocall",
+    "caller ID spoofing",
+    "number spoofing",
+    "SMS fraud",
+    "artificial inflation of traffic"
+   ],
+   "why": "telecom fraud type addressed with ML"
+  },
+  {
+   "term": "scam traffic",
+   "tier": "context",
+   "variants": [
+    "scam calls",
+    "scam SMS",
+    "spam calls",
+    "fraudulent calls",
+    "nuisance calls"
+   ],
+   "why": "regulatory pressure to block fraud messages"
+  },
+  {
+   "term": "AI-powered network security",
+   "tier": "ai",
+   "variants": [
+    "AI-driven threat detection",
+    "AI-based DDoS mitigation",
+    "AI-enabled cyber defence",
+    "AI-enabled cyber defense",
+    "AI-powered security operations"
+   ],
+   "why": "ML threat detection for networks"
+  },
+  {
+   "term": "AI-enabled cyberattack",
+   "tier": "ai",
+   "variants": [
+    "AI-powered attack",
+    "AI-driven cyber threat",
+    "AI-generated phishing",
+    "AI-enabled attack"
+   ],
+   "why": "AI used by attackers against networks"
+  },
+  {
+   "term": "sovereign AI",
+   "tier": "ai",
+   "variants": [
+    "sovereign AI cloud",
+    "sovereign AI factory",
+    "sovereign AI infrastructure",
+    "national AI infrastructure",
+    "sovereign AI platform"
+   ],
+   "why": "national AI compute sold by operators"
+  },
+  {
+   "term": "sovereign cloud",
+   "tier": "context",
+   "variants": [
+    "data sovereignty",
+    "digital sovereignty",
+    "trusted cloud"
+   ],
+   "why": "data-residency cloud, often paired with AI"
+  },
+  {
+   "term": "GPU-as-a-service",
+   "tier": "ai",
+   "variants": [
+    "GPUaaS",
+    "GPU cloud",
+    "GPU cluster",
+    "GPU capacity",
+    "GPU farm"
+   ],
+   "why": "operators renting GPU compute"
+  },
+  {
+   "term": "AI factory",
+   "tier": "ai",
+   "variants": [
+    "AI gigafactory",
+    "industrial AI cloud",
+    "AI compute centre",
+    "AI compute center"
+   ],
+   "why": "large AI compute facility built by operators"
+  },
+  {
+   "term": "AI data centre",
+   "tier": "ai",
+   "variants": [
+    "AI data center",
+    "AI-ready data centre",
+    "AI-ready data center",
+    "AIDC",
+    "AI datacenter"
+   ],
+   "why": "data centres built or powered for AI"
+  },
+  {
+   "term": "edge AI",
+   "tier": "ai",
+   "variants": [
+    "AI at the edge",
+    "edge inference",
+    "AI edge",
+    "distributed inference",
+    "inference at the edge",
+    "AI grid"
+   ],
+   "why": "inference at telecom edge sites"
+  },
+  {
+   "term": "multi-access edge computing",
+   "tier": "context",
+   "variants": [
+    "mobile edge computing",
+    "edge computing",
+    "edge cloud",
+    "telco edge"
+   ],
+   "why": "edge compute base for low-latency AI"
+  },
+  {
+   "term": "AI inference",
+   "tier": "ai",
+   "variants": [
+    "inference workload",
+    "AI inferencing",
+    "AI workload",
+    "AI traffic",
+    "AI compute"
+   ],
+   "why": "running models on telecom infrastructure"
+  },
+  {
+   "term": "AI-as-a-service",
+   "tier": "ai",
+   "variants": [
+    "AIaaS",
+    "AI solutions for enterprises",
+    "enterprise AI services",
+    "B2B AI"
+   ],
+   "why": "AI capabilities sold to enterprise customers"
+  },
+  {
+   "term": "AI connectivity",
+   "tier": "ai",
+   "variants": [
+    "AI-driven connectivity demand",
+    "AI-driven traffic growth",
+    "AI-driven data traffic",
+    "connectivity for AI",
+    "AI-ready network",
+    "AI-ready connectivity",
+    "network for AI"
+   ],
+   "why": "connectivity demand created by AI workloads"
+  },
+  {
+   "term": "hyperscaler",
+   "tier": "context",
+   "variants": [
+    "hyperscale customer",
+    "hyperscale demand",
+    "hyperscale cloud provider"
+   ],
+   "why": "cloud giants as partners, customers, competitors"
+  },
+  {
+   "term": "data centre interconnect",
+   "tier": "context",
+   "variants": [
+    "data center interconnect",
+    "data centre connectivity",
+    "data center connectivity",
+    "DCI",
+    "inter-data-centre"
+   ],
+   "case_sensitive_variants": [
+    "DCI"
+   ],
+   "why": "fibre demand between AI data centres"
+  },
+  {
+   "term": "dark fibre",
+   "tier": "context",
+   "variants": [
+    "dark fiber",
+    "long-haul fibre",
+    "long-haul fiber",
+    "fibre backbone",
+    "fiber backbone",
+    "wavelength services",
+    "private wave",
+    "optical backbone"
+   ],
+   "why": "leased fibre for hyperscaler AI routes"
+  },
+  {
+   "term": "subsea cable",
+   "tier": "context",
+   "variants": [
+    "submarine cable",
+    "undersea cable"
+   ],
+   "why": "capacity build-out driven by AI traffic"
+  },
+  {
+   "term": "data centre capacity",
+   "tier": "context",
+   "variants": [
+    "data center capacity",
+    "colocation",
+    "megawatts of capacity",
+    "data centre portfolio",
+    "data center portfolio"
+   ],
+   "why": "operator-owned compute and colocation assets"
+  },
+  {
+   "term": "network slicing",
+   "tier": "context",
+   "variants": [
+    "network slice",
+    "slice orchestration",
+    "dynamic slicing"
+   ],
+   "why": "5G feature orchestrated by AI"
+  },
+  {
+   "term": "network API",
+   "tier": "context",
+   "variants": [
+    "GSMA Open Gateway",
+    "CAMARA",
+    "network as a service",
+    "network exposure"
+   ],
+   "why": "programmable network exposure for AI apps"
+  },
+  {
+   "term": "5G standalone",
+   "tier": "context",
+   "variants": [
+    "5G SA",
+    "5G core",
+    "cloud-native core",
+    "5G-Advanced",
+    "5.5G"
+   ],
+   "why": "architecture enabling automated, sliced networks"
+  },
+  {
+   "term": "6G",
+   "tier": "context",
+   "variants": [
+    "sixth generation",
+    "IMT-2030"
+   ],
+   "why": "next generation designed as AI-native"
+  },
+  {
+   "term": "uplink traffic",
+   "tier": "context",
+   "variants": [
+    "uplink capacity",
+    "uplink demand",
+    "low latency",
+    "latency-sensitive"
+   ],
+   "why": "AI apps shift traffic towards uplink"
+  },
+  {
+   "term": "network virtualisation",
+   "tier": "context",
+   "variants": [
+    "network virtualization",
+    "software-defined network",
+    "SDN",
+    "NFV",
+    "network function virtualisation",
+    "network function virtualization",
+    "cloud-native network"
+   ],
+   "case_sensitive_variants": [
+    "SDN",
+    "NFV"
+   ],
+   "why": "software-defined base for AI automation"
+  },
+  {
+   "term": "network energy consumption",
+   "tier": "context",
+   "variants": [
+    "network energy efficiency",
+    "energy consumption of the network",
+    "RAN energy"
+   ],
+   "why": "major cost AI aims to reduce"
+  },
+  {
+   "term": "spectrum management",
+   "tier": "context",
+   "variants": [
+    "dynamic spectrum sharing",
+    "AI-based spectrum management",
+    "cognitive radio"
+   ],
+   "why": "AI-assisted dynamic spectrum use"
+  },
+  {
+   "term": "truck roll",
+   "tier": "context",
+   "variants": [
+    "field service optimisation",
+    "field service optimization",
+    "field force optimisation",
+    "field force optimization",
+    "remote diagnostics"
+   ],
+   "why": "field visits reduced by AI diagnostics"
+  },
+  {
+   "term": "AI-assisted field operations",
+   "tier": "ai",
+   "variants": [
+    "AI-powered field service",
+    "AI site inspection",
+    "drone tower inspection",
+    "AI-based tower inspection"
+   ],
+   "why": "computer vision and AI for technicians"
+  },
+  {
+   "term": "network traffic management",
+   "tier": "context",
+   "variants": [
+    "traffic steering",
+    "congestion management",
+    "quality of experience",
+    "QoE"
+   ],
+   "case_sensitive_variants": [
+    "QoE"
+   ],
+   "why": "AI shaping and congestion control"
+  },
+  {
+   "term": "AI-powered smartphone",
+   "tier": "ai",
+   "variants": [
+    "AI smartphone",
+    "AI phone",
+    "on-device AI",
+    "AI-enabled device",
+    "AI PC",
+    "AI handset"
+   ],
+   "why": "devices driving upgrades and data usage"
+  },
+  {
+   "term": "AI assistant bundle",
+   "tier": "ai",
+   "variants": [
+    "bundled AI subscription",
+    "Perplexity Pro",
+    "AI add-on",
+    "AI tariff",
+    "AI-powered plan"
+   ],
+   "why": "AI subscriptions bundled into tariffs"
+  },
+  {
+   "term": "AI concierge",
+   "tier": "ai",
+   "variants": [
+    "personal AI agent",
+    "AI personal assistant",
+    "network-based AI assistant",
+    "AI call assistant",
+    "live call translation",
+    "AI translation in calls"
+   ],
+   "why": "operator-branded consumer AI assistant"
+  },
+  {
+   "term": "first call resolution",
+   "tier": "context",
+   "variants": [
+    "net promoter score",
+    "average handling time",
+    "average handle time"
+   ],
+   "why": "care metrics AI is meant to improve"
+  },
+  {
+   "term": "AI-driven efficiency",
+   "tier": "ai",
+   "variants": [
+    "AI-driven cost savings",
+    "AI-enabled efficiency",
+    "AI-enabled cost reduction",
+    "AI-driven productivity",
+    "AI-enabled productivity",
+    "AI-related efficiencies"
+   ],
+   "why": "cost savings attributed to AI"
+  },
+  {
+   "term": "workforce reduction",
+   "tier": "context",
+   "variants": [
+    "headcount reduction",
+    "job cuts",
+    "reskilling",
+    "upskilling",
+    "workforce transformation",
+    "voluntary redundancy"
+   ],
+   "why": "headcount cuts linked to AI and automation"
+  },
+  {
+   "term": "AI upskilling",
+   "tier": "ai",
+   "variants": [
+    "AI academy",
+    "AI literacy",
+    "AI training for employees",
+    "AI skills"
+   ],
+   "why": "staff training programmes for AI"
+  },
+  {
+   "term": "responsible AI in networks",
+   "tier": "ai",
+   "variants": [
+    "AI in critical infrastructure",
+    "trustworthy network AI",
+    "explainable network AI"
+   ],
+   "why": "governance of AI in critical infrastructure"
+  },
+  {
+   "term": "critical infrastructure",
+   "tier": "context",
+   "variants": [
+    "critical national infrastructure",
+    "network resilience",
+    "NIS2",
+    "Telecommunications Security Act"
+   ],
+   "why": "regulatory status raising AI assurance duties"
+  },
+  {
+   "term": "lawful interception",
+   "tier": "context",
+   "variants": [
+    "traffic data",
+    "location data",
+    "ePrivacy",
+    "customer proprietary network information",
+    "CPNI",
+    "subscriber data"
+   ],
+   "why": "privacy constraints on using network data"
+  },
+  {
+   "term": "data monetisation with AI",
+   "tier": "ai",
+   "variants": [
+    "AI-driven insights from network data",
+    "mobility insights",
+    "network data monetisation",
+    "network data monetization",
+    "data monetization with AI"
+   ],
+   "why": "selling AI insights from network data"
+  },
+  {
+   "term": "IoT connectivity",
+   "tier": "context",
+   "variants": [
+    "massive IoT",
+    "connected devices",
+    "AIoT",
+    "private 5G",
+    "private network",
+    "campus network"
+   ],
+   "why": "connected devices feeding AI applications"
+  },
+  {
+   "term": "fixed wireless access",
+   "tier": "context",
+   "variants": [
+    "FWA"
+   ],
+   "case_sensitive_variants": [
+    "FWA"
+   ],
+   "why": "capacity product managed by AI"
+  },
+  {
+   "term": "network capex",
+   "tier": "context",
+   "variants": [
+    "capital intensity",
+    "capex intensity",
+    "network investment"
+   ],
+   "why": "investment burden including AI infrastructure"
+  }
+ ],
+ "class_terms": {
+  "6110": [
+   {
+    "term": "non-terrestrial network optimisation with AI",
+    "tier": "ai",
+    "variants": [
+     "AI-based satellite operations",
+     "autonomous satellite operations",
+     "AI-driven constellation management",
+     "AI beam hopping"
+    ],
+    "why": "AI for satellite constellations"
+   },
+   {
+    "term": "satellite connectivity",
+    "tier": "context",
+    "variants": [
+     "direct-to-device",
+     "direct-to-cell",
+     "LEO constellation",
+     "non-terrestrial network",
+     "NTN",
+     "low earth orbit"
+    ],
+    "case_sensitive_variants": [
+     "NTN"
+    ],
+    "why": "satellite links incl. direct-to-device"
+   },
+   {
+    "term": "fibre rollout",
+    "tier": "context",
+    "variants": [
+     "fiber rollout",
+     "FTTH",
+     "fibre to the home",
+     "fiber to the home",
+     "fibre deployment",
+     "fiber deployment"
+    ],
+    "why": "fixed build-out planned with AI tools"
+   },
+   {
+    "term": "tower infrastructure",
+    "tier": "context",
+    "variants": [
+     "tower company",
+     "towerco",
+     "edge data centre",
+     "edge data center",
+     "cell site"
+    ],
+    "why": "passive sites hosting edge compute"
+   },
+   {
+    "term": "optical network",
+    "tier": "context",
+    "variants": [
+     "optical transport",
+     "400G",
+     "800G",
+     "coherent optics",
+     "wavelength capacity"
+    ],
+    "why": "high-capacity transport for AI traffic"
+   }
+  ],
+  "6120": [
+   {
+    "term": "MVNO",
+    "tier": "context",
+    "variants": [
+     "mobile virtual network operator",
+     "wholesale access"
+    ],
+    "why": "resellers using AI for acquisition and care"
+   },
+   {
+    "term": "AI-driven customer acquisition",
+    "tier": "ai",
+    "variants": [
+     "AI-driven lead scoring",
+     "AI-powered marketing",
+     "AI-based credit scoring"
+    ],
+    "why": "ML targeting for subscriber growth"
+   }
+  ],
+  "6190": [
+   {
+    "term": "conversational AI platform",
+    "tier": "ai",
+    "variants": [
+     "AI-powered messaging",
+     "AI voice agent",
+     "conversational commerce",
+     "AI-powered communications",
+     "voice AI"
+    ],
+    "why": "CPaaS players sell AI messaging"
+   },
+   {
+    "term": "CPaaS",
+    "tier": "context",
+    "variants": [
+     "communications platform as a service",
+     "CCaaS",
+     "UCaaS",
+     "contact centre as a service",
+     "contact center as a service",
+     "A2P messaging",
+     "RCS business messaging"
+    ],
+    "why": "communications platforms embedding AI"
+   },
+   {
+    "term": "AI-powered contact centre",
+    "tier": "ai",
+    "variants": [
+     "AI-powered contact center",
+     "AI contact centre",
+     "AI contact center",
+     "virtual contact centre agent",
+     "virtual contact center agent"
+    ],
+    "why": "AI contact-centre products sold"
+   },
+   {
+    "term": "real-time transcription",
+    "tier": "ai",
+    "variants": [
+     "live transcription",
+     "AI meeting summary",
+     "AI noise cancellation",
+     "real-time translation",
+     "speech-to-text"
+    ],
+    "why": "speech AI in communications products"
+   },
+   {
+    "term": "managed network services",
+    "tier": "context",
+    "variants": [
+     "SD-WAN",
+     "SASE",
+     "managed security services"
+    ],
+    "why": "outsourced networks using AI operations"
+   }
+  ]
+ }
+}

@@ -1,0 +1,876 @@
+{
+ "id": "47",
+ "name": "Retail trade",
+ "section": "G",
+ "summary": "Retailers write about AI in pricing and promotions, demand forecasting and replenishment, personalisation and recommendation, retail media, store operations (self-checkout, computer vision, shrink) and customer service. Online retailers and marketplaces add search, conversational shopping assistants and agentic commerce, where third-party AI agents may come between the retailer and its customer, plus fraud, fake reviews and counterfeit detection. Cost savings, workforce effects and consumer-protection and pricing-transparency rules round out the picture.",
+ "terms": [
+  {
+   "term": "dynamic pricing",
+   "tier": "ai",
+   "variants": [
+    "AI-driven pricing",
+    "algorithmic pricing",
+    "AI pricing",
+    "price optimisation",
+    "price optimization",
+    "AI-powered pricing",
+    "real-time pricing"
+   ],
+   "why": "algorithmic price changes by demand"
+  },
+  {
+   "term": "personalised pricing",
+   "tier": "ai",
+   "variants": [
+    "personalized pricing",
+    "surveillance pricing",
+    "individualised pricing",
+    "individualized pricing",
+    "personalised offers",
+    "personalized offers",
+    "personalised promotions",
+    "personalized promotions"
+   ],
+   "why": "individual prices set by ML"
+  },
+  {
+   "term": "markdown optimisation",
+   "tier": "ai",
+   "variants": [
+    "markdown optimization",
+    "AI-driven markdown",
+    "promotion optimisation",
+    "promotion optimization",
+    "AI-driven promotions",
+    "clearance optimisation"
+   ],
+   "why": "ML timing of clearance discounts"
+  },
+  {
+   "term": "electronic shelf label",
+   "tier": "context",
+   "variants": [
+    "digital shelf label",
+    "ESL",
+    "digital price tag"
+   ],
+   "case_sensitive_variants": [
+    "ESL"
+   ],
+   "why": "digital price tags enabling dynamic pricing"
+  },
+  {
+   "term": "recommendation engine",
+   "tier": "ai",
+   "variants": [
+    "product recommendations",
+    "recommendation algorithm",
+    "recommender system",
+    "personalised recommendations",
+    "personalized recommendations",
+    "AI-powered recommendations"
+   ],
+   "why": "ML product suggestions"
+  },
+  {
+   "term": "AI-driven personalisation",
+   "tier": "ai",
+   "variants": [
+    "AI-driven personalization",
+    "AI-powered personalisation",
+    "AI-powered personalization",
+    "hyper-personalisation",
+    "hyper-personalization",
+    "personalisation at scale",
+    "personalization at scale",
+    "personalisation engine",
+    "personalization engine"
+   ],
+   "why": "ML tailoring of offers and content"
+  },
+  {
+   "term": "demand forecasting",
+   "tier": "ai",
+   "variants": [
+    "AI-driven forecasting",
+    "AI-based demand forecasting",
+    "demand sensing",
+    "predictive demand",
+    "AI forecasting",
+    "machine learning forecast"
+   ],
+   "why": "ML prediction of sales by item and store"
+  },
+  {
+   "term": "automated replenishment",
+   "tier": "ai",
+   "variants": [
+    "AI-driven replenishment",
+    "automated ordering",
+    "AI-based ordering",
+    "predictive replenishment",
+    "computer-assisted ordering",
+    "auto-replenishment",
+    "intelligent replenishment"
+   ],
+   "why": "ML ordering of stock"
+  },
+  {
+   "term": "inventory optimisation",
+   "tier": "ai",
+   "variants": [
+    "inventory optimization",
+    "AI-driven inventory management",
+    "AI-powered inventory",
+    "AI allocation",
+    "assortment optimisation",
+    "assortment optimization",
+    "AI-driven assortment",
+    "localised assortment"
+   ],
+   "why": "ML allocation of stock"
+  },
+  {
+   "term": "on-shelf availability",
+   "tier": "context",
+   "variants": [
+    "out-of-stock",
+    "in-stock rate",
+    "stock availability",
+    "inventory accuracy",
+    "overstock"
+   ],
+   "why": "stock metric improved by AI forecasting"
+  },
+  {
+   "term": "AI shopping assistant",
+   "tier": "ai",
+   "variants": [
+    "AI-powered shopping assistant",
+    "shopping assistant",
+    "virtual shopping assistant",
+    "AI stylist",
+    "AI shopping companion",
+    "Rufus",
+    "conversational shopping"
+   ],
+   "case_sensitive_variants": [
+    "Rufus"
+   ],
+   "why": "conversational assistant for shoppers"
+  },
+  {
+   "term": "agentic commerce",
+   "tier": "ai",
+   "variants": [
+    "agentic shopping",
+    "AI shopping agent",
+    "agent-led commerce",
+    "AI agents shopping",
+    "agentic checkout",
+    "Agentic Commerce Protocol",
+    "instant checkout",
+    "buy for me"
+   ],
+   "why": "AI agents shopping on behalf of customers"
+  },
+  {
+   "term": "conversational commerce",
+   "tier": "ai",
+   "variants": [
+    "chat commerce",
+    "shopping via chat",
+    "voice commerce",
+    "voice shopping",
+    "AI-powered chat shopping"
+   ],
+   "why": "purchases via chat interfaces"
+  },
+  {
+   "term": "AI-powered search",
+   "tier": "ai",
+   "variants": [
+    "AI search",
+    "semantic search",
+    "visual search",
+    "image search",
+    "natural language search",
+    "search relevance model",
+    "generative search"
+   ],
+   "why": "semantic and generative product search"
+  },
+  {
+   "term": "AI disintermediation",
+   "tier": "ai",
+   "variants": [
+    "disintermediation by AI",
+    "AI-driven discovery",
+    "AI referrals",
+    "traffic from AI",
+    "AI answer engine",
+    "generative engine optimisation",
+    "generative engine optimization"
+   ],
+   "why": "AI assistants capturing the customer relationship"
+  },
+  {
+   "term": "virtual try-on",
+   "tier": "ai",
+   "variants": [
+    "virtual fitting",
+    "AI try-on",
+    "augmented reality try-on",
+    "AI size recommendation",
+    "fit prediction",
+    "size and fit tool"
+   ],
+   "why": "computer vision fitting of products"
+  },
+  {
+   "term": "AI-generated product content",
+   "tier": "ai",
+   "variants": [
+    "AI-generated product descriptions",
+    "AI product listings",
+    "AI-generated imagery",
+    "AI-generated models",
+    "AI-generated listings",
+    "AI copywriting",
+    "AI-generated review summaries"
+   ],
+   "why": "GenAI product descriptions and imagery"
+  },
+  {
+   "term": "retail media",
+   "tier": "context",
+   "variants": [
+    "retail media network",
+    "AI-powered advertising",
+    "sponsored products",
+    "AI ad targeting",
+    "commerce media",
+    "closed-loop measurement"
+   ],
+   "why": "ad business driven by shopper data and ML"
+  },
+  {
+   "term": "first-party data",
+   "tier": "context",
+   "variants": [
+    "customer data platform",
+    "shopper data",
+    "customer insights",
+    "single customer view",
+    "purchase history",
+    "transaction data"
+   ],
+   "why": "shopper data feeding ML personalisation"
+  },
+  {
+   "term": "loyalty programme",
+   "tier": "context",
+   "variants": [
+    "loyalty program",
+    "loyalty scheme",
+    "loyalty app",
+    "loyalty data",
+    "member data",
+    "clubcard"
+   ],
+   "why": "data source for personalisation models"
+  },
+  {
+   "term": "self-checkout",
+   "tier": "context",
+   "variants": [
+    "self-service checkout",
+    "AI-powered checkout",
+    "smart cart",
+    "scan and go",
+    "self-scan"
+   ],
+   "why": "automated tills, often with vision AI"
+  },
+  {
+   "term": "cashierless store",
+   "tier": "ai",
+   "variants": [
+    "checkout-free",
+    "just walk out",
+    "autonomous store",
+    "frictionless checkout",
+    "cashier-less",
+    "unmanned store",
+    "grab and go technology"
+   ],
+   "why": "computer-vision stores without checkout"
+  },
+  {
+   "term": "computer vision in stores",
+   "tier": "ai",
+   "variants": [
+    "shelf-scanning",
+    "shelf monitoring",
+    "AI cameras",
+    "AI-powered cameras",
+    "video analytics",
+    "shelf intelligence",
+    "store digital twin",
+    "shelf-scanning robot"
+   ],
+   "why": "cameras analysing shelves and shoppers"
+  },
+  {
+   "term": "facial recognition",
+   "tier": "ai",
+   "variants": [
+    "facial recognition technology",
+    "live facial recognition",
+    "face matching",
+    "biometric surveillance",
+    "Facewatch"
+   ],
+   "why": "biometric identification of shoppers and offenders"
+  },
+  {
+   "term": "AI loss prevention",
+   "tier": "ai",
+   "variants": [
+    "AI-based loss prevention",
+    "AI shrink detection",
+    "missed scan detection",
+    "AI theft detection",
+    "AI-enabled security",
+    "item recognition at checkout"
+   ],
+   "why": "ML detection of theft and scan fraud"
+  },
+  {
+   "term": "retail shrink",
+   "tier": "context",
+   "variants": [
+    "shrinkage",
+    "inventory shrink",
+    "retail crime",
+    "shoplifting",
+    "organised retail crime",
+    "organized retail crime",
+    "stock loss",
+    "loss prevention"
+   ],
+   "why": "theft and loss, target of AI surveillance"
+  },
+  {
+   "term": "AI fraud detection",
+   "tier": "ai",
+   "variants": [
+    "AI-based fraud detection",
+    "fraud detection model",
+    "returns fraud detection",
+    "AI-powered fraud prevention",
+    "payment fraud model",
+    "account takeover detection"
+   ],
+   "why": "ML screening of payments and returns"
+  },
+  {
+   "term": "product returns",
+   "tier": "context",
+   "variants": [
+    "return rate",
+    "returns fraud",
+    "returns abuse",
+    "return policy abuse",
+    "reverse logistics"
+   ],
+   "why": "cost area addressed with ML prediction"
+  },
+  {
+   "term": "AI customer service",
+   "tier": "ai",
+   "variants": [
+    "AI-powered customer service",
+    "AI customer support",
+    "virtual assistant for customers",
+    "AI service agent",
+    "automated customer service",
+    "AI contact centre",
+    "AI contact center"
+   ],
+   "why": "automated shopper support"
+  },
+  {
+   "term": "workforce scheduling using AI",
+   "tier": "ai",
+   "variants": [
+    "AI-driven labour scheduling",
+    "AI-driven labor scheduling",
+    "AI scheduling",
+    "labour optimisation",
+    "labor optimization",
+    "AI workforce management",
+    "AI task management"
+   ],
+   "why": "ML labour planning for stores"
+  },
+  {
+   "term": "store labour",
+   "tier": "context",
+   "variants": [
+    "store labor",
+    "store colleagues",
+    "store associates",
+    "cashier",
+    "labour productivity",
+    "labor productivity",
+    "store hours",
+    "labour costs",
+    "labor costs"
+   ],
+   "why": "cost and jobs affected by automation"
+  },
+  {
+   "term": "AI tools for colleagues",
+   "tier": "ai",
+   "variants": [
+    "AI assistant for associates",
+    "AI assistant for colleagues",
+    "associate-facing AI",
+    "AI-powered app for associates",
+    "colleague AI tools",
+    "AI coding tools"
+   ],
+   "why": "GenAI assistants for store and office staff"
+  },
+  {
+   "term": "AI-driven efficiency",
+   "tier": "ai",
+   "variants": [
+    "AI-driven productivity",
+    "AI-enabled efficiency",
+    "AI productivity gains",
+    "AI-driven cost savings",
+    "AI-enabled productivity",
+    "AI-related efficiencies"
+   ],
+   "why": "cost savings attributed to AI"
+  },
+  {
+   "term": "omnichannel",
+   "tier": "context",
+   "variants": [
+    "omni-channel",
+    "click and collect",
+    "online penetration",
+    "digital sales",
+    "unified commerce"
+   ],
+   "why": "integrated channels where AI is deployed"
+  },
+  {
+   "term": "micro-fulfilment",
+   "tier": "context",
+   "variants": [
+    "micro-fulfillment",
+    "automated fulfilment centre",
+    "automated fulfillment center",
+    "customer fulfilment centre",
+    "robotic fulfilment",
+    "robotic fulfillment",
+    "automated picking",
+    "robotic picking"
+   ],
+   "why": "automated small fulfilment sites"
+  },
+  {
+   "term": "last-mile delivery",
+   "tier": "context",
+   "variants": [
+    "last mile",
+    "route optimisation",
+    "route optimization",
+    "delivery slots",
+    "rapid delivery",
+    "quick commerce",
+    "drone delivery",
+    "autonomous delivery"
+   ],
+   "why": "delivery cost optimised with ML"
+  },
+  {
+   "term": "supply chain AI",
+   "tier": "ai",
+   "variants": [
+    "AI-powered supply chain",
+    "AI-driven supply chain",
+    "supply chain automation",
+    "AI in the supply chain",
+    "predictive supply chain",
+    "supply chain control tower"
+   ],
+   "why": "ML across retail supply chain"
+  },
+  {
+   "term": "fresh food waste prediction",
+   "tier": "ai",
+   "variants": [
+    "AI food waste reduction",
+    "AI-based waste reduction",
+    "AI fresh ordering",
+    "AI-driven waste reduction",
+    "dynamic markdown",
+    "AI freshness"
+   ],
+   "why": "ML reducing spoilage and markdowns"
+  },
+  {
+   "term": "customer segmentation model",
+   "tier": "ai",
+   "variants": [
+    "predictive customer analytics",
+    "propensity model",
+    "customer lifetime value model",
+    "churn prediction",
+    "next best offer",
+    "AI-driven CRM"
+   ],
+   "why": "ML clustering of shoppers"
+  },
+  {
+   "term": "AI in merchandising",
+   "tier": "ai",
+   "variants": [
+    "AI-assisted design",
+    "AI trend forecasting",
+    "AI-driven buying",
+    "AI range planning",
+    "AI-assisted merchandising",
+    "trend prediction"
+   ],
+   "why": "AI in buying, design and range decisions"
+  },
+  {
+   "term": "AI marketing",
+   "tier": "ai",
+   "variants": [
+    "AI-generated marketing",
+    "AI-powered marketing",
+    "AI-driven marketing",
+    "AI-generated creative",
+    "marketing mix model",
+    "AI campaign optimisation",
+    "AI campaign optimization"
+   ],
+   "why": "ML and GenAI in campaigns"
+  },
+  {
+   "term": "price transparency",
+   "tier": "context",
+   "variants": [
+    "Omnibus Directive",
+    "unfair commercial practices",
+    "price discrimination",
+    "consumer protection law",
+    "price gouging",
+    "Digital Fairness Act"
+   ],
+   "why": "consumer rules on algorithmic and personalised prices"
+  },
+  {
+   "term": "shopper profiling",
+   "tier": "context",
+   "variants": [
+    "customer profiling",
+    "consumer privacy",
+    "biometric data",
+    "CCPA",
+    "customer consent",
+    "automated decision-making"
+   ],
+   "why": "privacy limits on personalisation and biometrics"
+  },
+  {
+   "term": "smart store",
+   "tier": "ai",
+   "variants": [
+    "intelligent store",
+    "store of the future",
+    "connected store",
+    "AI-powered store"
+   ],
+   "why": "stores equipped with AI and sensing"
+  },
+  {
+   "term": "RFID",
+   "tier": "context",
+   "variants": [
+    "radio frequency identification",
+    "item-level tagging"
+   ],
+   "case_sensitive_variants": [
+    "RFID"
+   ],
+   "why": "item-level tracking feeding AI inventory"
+  },
+  {
+   "term": "AI energy management",
+   "tier": "ai",
+   "variants": [
+    "AI-controlled refrigeration",
+    "AI-based energy optimisation",
+    "AI-based energy optimization",
+    "smart energy management",
+    "predictive maintenance of refrigeration"
+   ],
+   "why": "ML control of store refrigeration and HVAC"
+  }
+ ],
+ "class_terms": {
+  "4711": [
+   {
+    "term": "AI-powered grocery",
+    "tier": "ai",
+    "variants": [
+     "AI substitutions",
+     "AI-based substitution",
+     "AI meal planning",
+     "AI recipe assistant",
+     "AI basket building",
+     "smart substitutions"
+    ],
+    "why": "AI across grocery ordering and substitution"
+   },
+   {
+    "term": "online grocery",
+    "tier": "context",
+    "variants": [
+     "grocery delivery",
+     "grocery e-commerce",
+     "online grocery fulfilment",
+     "online grocery fulfillment",
+     "grocery pickup"
+    ],
+    "why": "channel run on automated fulfilment"
+   }
+  ],
+  "4730": [
+   {
+    "term": "AI fuel pricing",
+    "tier": "ai",
+    "variants": [
+     "fuel price optimisation",
+     "fuel price optimization",
+     "AI-driven fuel pricing",
+     "dynamic fuel pricing"
+    ],
+    "why": "ML setting pump prices"
+   },
+   {
+    "term": "EV charging",
+    "tier": "context",
+    "variants": [
+     "electric vehicle charging",
+     "charging network",
+     "forecourt",
+     "convenience retail"
+    ],
+    "why": "forecourt business using ML load and pricing"
+   }
+  ],
+  "4771": [
+   {
+    "term": "AI fashion design",
+    "tier": "ai",
+    "variants": [
+     "AI-generated fashion models",
+     "AI-designed",
+     "digital twin of models",
+     "AI-generated campaign",
+     "AI trend detection",
+     "AI styling"
+    ],
+    "why": "GenAI in apparel design and imagery"
+   },
+   {
+    "term": "fast fashion",
+    "tier": "context",
+    "variants": [
+     "on-demand production",
+     "test-and-repeat",
+     "small-batch production",
+     "ultra-fast fashion"
+    ],
+    "why": "data-driven on-demand apparel model"
+   }
+  ],
+  "4772": [
+   {
+    "term": "AI skin analysis",
+    "tier": "ai",
+    "variants": [
+     "AI skin diagnostic",
+     "AI beauty advisor",
+     "AI shade matching",
+     "AI-powered beauty",
+     "AI skincare"
+    ],
+    "why": "computer vision for beauty and pharmacy"
+   },
+   {
+    "term": "pharmacy automation",
+    "tier": "ai",
+    "variants": [
+     "automated dispensing",
+     "AI prescription verification",
+     "dispensing robot",
+     "central fill",
+     "AI in pharmacy",
+     "AI-assisted dispensing",
+     "micro-fulfilment pharmacy"
+    ],
+    "why": "robotic dispensing and AI prescription checks"
+   }
+  ],
+  "4781": [
+   {
+    "term": "AI vehicle pricing",
+    "tier": "ai",
+    "variants": [
+     "AI-driven vehicle pricing",
+     "automated vehicle valuation",
+     "AI appraisal",
+     "AI-powered trade-in",
+     "algorithmic vehicle pricing",
+     "vehicle pricing algorithm"
+    ],
+    "why": "ML valuation and pricing of cars"
+   },
+   {
+    "term": "used vehicle",
+    "tier": "context",
+    "variants": [
+     "used car",
+     "vehicle sourcing",
+     "vehicle reconditioning",
+     "online car buying",
+     "digital retailing"
+    ],
+    "why": "inventory priced and sourced with ML"
+   }
+  ],
+  "4790": [
+   {
+    "term": "marketplace search ranking",
+    "tier": "ai",
+    "variants": [
+     "search ranking algorithm",
+     "ranking algorithm",
+     "listing ranking",
+     "buy box algorithm",
+     "sponsored listings",
+     "relevance algorithm"
+    ],
+    "why": "ML ordering of third-party listings"
+   },
+   {
+    "term": "AI seller tools",
+    "tier": "ai",
+    "variants": [
+     "AI listing tool",
+     "seller assistant",
+     "AI tools for sellers",
+     "AI-powered seller",
+     "AI listing creation",
+     "magical listing"
+    ],
+    "why": "GenAI tools for marketplace merchants"
+   },
+   {
+    "term": "counterfeit detection",
+    "tier": "ai",
+    "variants": [
+     "AI counterfeit detection",
+     "automated brand protection",
+     "proactive counterfeit controls",
+     "AI-based product safety screening",
+     "fake listing detection"
+    ],
+    "why": "ML screening of fake goods"
+   },
+   {
+    "term": "fake review detection",
+    "tier": "ai",
+    "variants": [
+     "fake reviews",
+     "AI-generated reviews",
+     "review fraud",
+     "review manipulation",
+     "inauthentic reviews"
+    ],
+    "why": "ML detection of fraudulent reviews"
+   },
+   {
+    "term": "third-party seller",
+    "tier": "context",
+    "variants": [
+     "marketplace sellers",
+     "third-party marketplace",
+     "gross merchandise value",
+     "GMV",
+     "take rate",
+     "seller services"
+    ],
+    "case_sensitive_variants": [
+     "GMV"
+    ],
+    "why": "marketplace participants governed by algorithms"
+   },
+   {
+    "term": "Digital Services Act",
+    "tier": "context",
+    "variants": [
+     "DSA",
+     "Digital Markets Act",
+     "very large online platform",
+     "gatekeeper",
+     "platform-to-business regulation",
+     "INFORM Consumers Act"
+    ],
+    "case_sensitive_variants": [
+     "DSA"
+    ],
+    "why": "platform duties for online marketplaces"
+   },
+   {
+    "term": "AI browsing agents",
+    "tier": "ai",
+    "variants": [
+     "AI agent traffic",
+     "bot traffic",
+     "AI scraping",
+     "agentic browser",
+     "third-party AI agents",
+     "AI shopping bots",
+     "blocking AI agents"
+    ],
+    "why": "third-party agents scraping and buying on site"
+   },
+   {
+    "term": "AI logistics optimisation",
+    "tier": "ai",
+    "variants": [
+     "AI logistics optimization",
+     "AI inventory placement",
+     "AI-powered fulfilment",
+     "AI-powered fulfillment",
+     "delivery route AI",
+     "fulfilment robotics",
+     "fulfillment robotics",
+     "warehouse robotics"
+    ],
+    "why": "ML routing and placement in marketplace fulfilment"
+   }
+  ]
+ }
+}

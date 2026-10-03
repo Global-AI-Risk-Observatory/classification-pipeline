@@ -1,0 +1,712 @@
+{
+  "id": "25",
+  "name": "Manufacture of fabricated metal products, except machinery and equipment",
+  "section": "C",
+  "summary": "Metal fabricators report AI in vision inspection, robotic welding, CNC programming, quoting and predictive maintenance, usually framed as a response to skilled-labour shortages. Many sell into the AI build-out: server racks and enclosures, cooling parts, prefabricated modules, utility structures, boilers and nuclear components for new power generation, precision parts for chip-making tools. Weapons and ammunition makers write about autonomy, AI-assisted targeting, loitering munitions and counter-drone systems, with human-control and regulatory questions attached.",
+  "terms": [
+    {
+      "term": "predictive maintenance",
+      "tier": "ai",
+      "variants": [
+        "prescriptive maintenance"
+      ],
+      "why": "ML on press, laser and machine tool data"
+    },
+    {
+      "term": "machine vision",
+      "tier": "ai",
+      "variants": [
+        "vision inspection system",
+        "3D vision",
+        "vision-guided robot"
+      ],
+      "why": "camera AI guiding robots and checking parts"
+    },
+    {
+      "term": "automated visual inspection",
+      "tier": "ai",
+      "variants": [
+        "automated optical inspection",
+        "automated defect detection",
+        "automated weld inspection",
+        "AI-based quality inspection"
+      ],
+      "why": "AI defect detection on welds and surfaces"
+    },
+    {
+      "term": "predictive quality",
+      "tier": "ai",
+      "variants": [
+        "quality prediction",
+        "scrap prediction"
+      ],
+      "why": "ML prediction of part quality and scrap"
+    },
+    {
+      "term": "robotic welding",
+      "tier": "context",
+      "variants": [
+        "welding robot",
+        "automated welding",
+        "welding automation"
+      ],
+      "why": "welding cells increasingly sensor and AI guided"
+    },
+    {
+      "term": "seam tracking",
+      "tier": "context",
+      "variants": [
+        "adaptive welding",
+        "weld quality monitoring",
+        "weld monitoring"
+      ],
+      "why": "sensor-adaptive welding, often ML based"
+    },
+    {
+      "term": "collaborative robot",
+      "tier": "context",
+      "variants": [
+        "cobot",
+        "robotic bending",
+        "robotic press brake",
+        "machine tending"
+      ],
+      "why": "flexible robots for tending and bending"
+    },
+    {
+      "term": "autonomous mobile robot",
+      "tier": "ai",
+      "variants": [
+        "AMR"
+      ],
+      "case_sensitive_variants": [
+        "AMR"
+      ],
+      "why": "self-navigating material transport in plants"
+    },
+    {
+      "term": "automated guided vehicle",
+      "tier": "context",
+      "variants": [
+        "AGV",
+        "driverless transport system"
+      ],
+      "case_sensitive_variants": [
+        "AGV"
+      ],
+      "why": "driverless material transport in plants"
+    },
+    {
+      "term": "smart factory",
+      "tier": "context",
+      "variants": [
+        "intelligent factory",
+        "digital factory",
+        "factory of the future",
+        "connected factory"
+      ],
+      "why": "plant programmes under which AI use is reported"
+    },
+    {
+      "term": "lights-out manufacturing",
+      "tier": "context",
+      "variants": [
+        "lights-out production",
+        "unmanned shift",
+        "unattended machining",
+        "dark factory"
+      ],
+      "why": "unattended production relying on self-monitoring machines"
+    },
+    {
+      "term": "Industry 4.0",
+      "tier": "context",
+      "variants": [
+        "Industrie 4.0",
+        "industrial internet of things",
+        "IIoT"
+      ],
+      "case_sensitive_variants": [
+        "IIoT"
+      ],
+      "why": "umbrella label for connected, data-driven production"
+    },
+    {
+      "term": "digital twin",
+      "tier": "context",
+      "variants": [
+        "virtual commissioning"
+      ],
+      "why": "virtual line or product model paired with AI"
+    },
+    {
+      "term": "generative design",
+      "tier": "ai",
+      "variants": [
+        "AI-assisted design",
+        "AI-driven design"
+      ],
+      "why": "algorithm-generated part geometries"
+    },
+    {
+      "term": "topology optimisation",
+      "tier": "context",
+      "variants": [
+        "topology optimization",
+        "simulation-driven design"
+      ],
+      "why": "computational design step often ML-assisted"
+    },
+    {
+      "term": "tool wear prediction",
+      "tier": "ai",
+      "variants": [
+        "tool wear monitoring",
+        "tool condition monitoring",
+        "tool life prediction"
+      ],
+      "why": "ML monitoring of cutting tools"
+    },
+    {
+      "term": "adaptive machining",
+      "tier": "context",
+      "variants": [
+        "in-process measurement",
+        "closed-loop machining",
+        "adaptive process control"
+      ],
+      "why": "self-correcting machining from in-process measurement"
+    },
+    {
+      "term": "automated toolpath generation",
+      "tier": "ai",
+      "variants": [
+        "AI-assisted CAM",
+        "automated CNC programming",
+        "automatic NC programming",
+        "CAM automation"
+      ],
+      "why": "AI writing CNC programmes from CAD"
+    },
+    {
+      "term": "instant quoting",
+      "tier": "ai",
+      "variants": [
+        "automated quoting",
+        "quoting engine",
+        "AI-powered quoting",
+        "automated manufacturability analysis"
+      ],
+      "why": "ML pricing and manufacturability engines"
+    },
+    {
+      "term": "digital manufacturing",
+      "tier": "context",
+      "variants": [
+        "manufacturing marketplace",
+        "on-demand manufacturing",
+        "digital thread"
+      ],
+      "why": "online, data-driven custom part production"
+    },
+    {
+      "term": "nesting optimisation",
+      "tier": "context",
+      "variants": [
+        "nesting optimization",
+        "automated nesting",
+        "nesting software",
+        "cutting optimisation",
+        "cutting optimization"
+      ],
+      "why": "algorithmic sheet layout and cutting plans"
+    },
+    {
+      "term": "skilled labour shortage",
+      "tier": "context",
+      "variants": [
+        "skilled labor shortage",
+        "welder shortage",
+        "shortage of skilled welders",
+        "shortage of machinists"
+      ],
+      "why": "stated reason for robotics and AI investment"
+    },
+    {
+      "term": "data center",
+      "tier": "context",
+      "variants": [
+        "data centre",
+        "datacenter",
+        "datacentre"
+      ],
+      "why": "enclosures, structures and cooling parts for AI build-out"
+    },
+    {
+      "term": "hyperscaler",
+      "tier": "context",
+      "variants": [
+        "hyperscale"
+      ],
+      "why": "large cloud and AI customers behind demand"
+    },
+    {
+      "term": "AI server",
+      "tier": "ai",
+      "variants": [
+        "AI data center",
+        "AI data centre",
+        "AI infrastructure",
+        "AI accelerator"
+      ],
+      "why": "end product for chassis, racks and cooling parts"
+    },
+    {
+      "term": "server rack",
+      "tier": "context",
+      "variants": [
+        "rack enclosure",
+        "IT enclosure",
+        "server cabinet",
+        "server chassis",
+        "rack cabinet"
+      ],
+      "why": "metal racks and cabinets for AI hardware"
+    },
+    {
+      "term": "aisle containment",
+      "tier": "context",
+      "variants": [
+        "hot aisle",
+        "cold aisle"
+      ],
+      "why": "sheet-metal airflow systems for data halls"
+    },
+    {
+      "term": "liquid cooling",
+      "tier": "context",
+      "variants": [
+        "cold plate",
+        "immersion cooling",
+        "immersion tank",
+        "coolant distribution unit",
+        "direct-to-chip",
+        "cooling manifold"
+      ],
+      "why": "metal cold plates, tanks and manifolds for AI servers"
+    },
+    {
+      "term": "thermal management",
+      "tier": "context",
+      "variants": [
+        "heat sink",
+        "vapor chamber",
+        "vapour chamber"
+      ],
+      "why": "heat-transfer parts for high-density computing"
+    },
+    {
+      "term": "load growth",
+      "tier": "context",
+      "variants": [
+        "electricity demand growth",
+        "power demand growth"
+      ],
+      "why": "power demand surge driving structures and boiler orders"
+    },
+    {
+      "term": "backup generator",
+      "tier": "context",
+      "variants": [
+        "standby generator",
+        "generator enclosure",
+        "sub-base fuel tank",
+        "backup power"
+      ],
+      "why": "enclosures and tanks for data center standby power"
+    },
+    {
+      "term": "semiconductor capital equipment",
+      "tier": "context",
+      "variants": [
+        "semiconductor equipment",
+        "wafer fab equipment",
+        "vacuum chamber",
+        "semicap"
+      ],
+      "why": "precision parts sold to chip-tool makers"
+    }
+  ],
+  "class_terms": {
+    "2511": [
+      {
+        "term": "prefabricated module",
+        "tier": "context",
+        "variants": [
+          "modular enclosure",
+          "power module enclosure",
+          "e-house",
+          "power skid",
+          "integrated enclosure"
+        ],
+        "why": "factory-built enclosures for data center power and cooling"
+      },
+      {
+        "term": "utility structure",
+        "tier": "context",
+        "variants": [
+          "transmission structure",
+          "transmission tower",
+          "transmission pole",
+          "substation structure",
+          "grid infrastructure",
+          "grid hardening"
+        ],
+        "why": "grid structures needed for data center load"
+      },
+      {
+        "term": "insulated metal panel",
+        "tier": "context",
+        "variants": [
+          "insulated panel",
+          "access floor",
+          "structural ceiling grid"
+        ],
+        "why": "building envelope and floors for data centers"
+      }
+    ],
+    "2512": [
+      {
+        "term": "thermal energy storage tank",
+        "tier": "context",
+        "variants": [
+          "chilled water tank",
+          "fuel storage tank",
+          "diesel storage tank",
+          "cooling water tank"
+        ],
+        "why": "tanks for data center cooling and backup fuel"
+      }
+    ],
+    "2513": [
+      {
+        "term": "heat recovery steam generator",
+        "tier": "context",
+        "variants": [
+          "HRSG",
+          "combined cycle",
+          "once-through steam generator"
+        ],
+        "case_sensitive_variants": [
+          "HRSG"
+        ],
+        "why": "boilers for gas plants built for AI load"
+      },
+      {
+        "term": "small modular reactor",
+        "tier": "context",
+        "variants": [
+          "microreactor",
+          "advanced reactor",
+          "nuclear steam generator",
+          "nuclear components",
+          "reactor pressure vessel"
+        ],
+        "why": "nuclear components demand tied to AI power needs"
+      },
+      {
+        "term": "behind-the-meter",
+        "tier": "context",
+        "variants": [
+          "on-site power",
+          "onsite generation",
+          "gas-fired generation",
+          "bring your own power"
+        ],
+        "why": "on-site generation ordered by data center developers"
+      }
+    ],
+    "2520": [
+      {
+        "term": "autonomous weapon",
+        "tier": "ai",
+        "variants": [
+          "killer robot",
+          "autonomous lethal system",
+          "autonomy in weapon systems",
+          "DoD Directive 3000.09"
+        ],
+        "why": "weapons selecting or engaging targets with AI"
+      },
+      {
+        "term": "human-in-the-loop",
+        "tier": "ai",
+        "variants": [
+          "human-on-the-loop",
+          "meaningful human control"
+        ],
+        "why": "human-control principle for AI-enabled weapons"
+      },
+      {
+        "term": "automatic target recognition",
+        "tier": "ai",
+        "variants": [
+          "aided target recognition",
+          "automated target recognition",
+          "AI-enabled targeting",
+          "AI-assisted targeting",
+          "target recognition algorithm"
+        ],
+        "why": "AI detection and classification of targets"
+      },
+      {
+        "term": "defence AI",
+        "tier": "ai",
+        "variants": [
+          "defense AI",
+          "military AI",
+          "AI-enabled weapon",
+          "battlefield AI",
+          "AI in defence",
+          "AI in defense"
+        ],
+        "why": "sector label for military AI applications"
+      },
+      {
+        "term": "loitering munition",
+        "tier": "context",
+        "variants": [
+          "loitering ammunition",
+          "kamikaze drone",
+          "one-way attack drone",
+          "one-way effector"
+        ],
+        "why": "munitions with increasing onboard autonomy"
+      },
+      {
+        "term": "smart munition",
+        "tier": "context",
+        "variants": [
+          "precision-guided munition",
+          "guided ammunition",
+          "intelligent ammunition",
+          "sensor-fuzed munition",
+          "guided artillery"
+        ],
+        "why": "guided ammunition with onboard sensing and processing"
+      },
+      {
+        "term": "programmable ammunition",
+        "tier": "context",
+        "variants": [
+          "airburst ammunition",
+          "programmable fuze",
+          "air burst munition"
+        ],
+        "why": "airburst rounds used against drones"
+      },
+      {
+        "term": "counter-UAS",
+        "tier": "context",
+        "variants": [
+          "C-UAS",
+          "counter-drone",
+          "counter-unmanned aircraft system",
+          "drone defence",
+          "drone defense",
+          "anti-drone"
+        ],
+        "case_sensitive_variants": [
+          "C-UAS"
+        ],
+        "why": "drone defence relying on automated detection"
+      },
+      {
+        "term": "unmanned system",
+        "tier": "context",
+        "variants": [
+          "uncrewed system",
+          "unmanned aerial system",
+          "unmanned aerial vehicle",
+          "UAV",
+          "UAS",
+          "unmanned ground vehicle",
+          "UGV",
+          "robotic combat vehicle"
+        ],
+        "case_sensitive_variants": [
+          "UAV",
+          "UAS",
+          "UGV"
+        ],
+        "why": "uncrewed platforms carrying weapons and sensors"
+      },
+      {
+        "term": "swarming",
+        "tier": "ai",
+        "variants": [
+          "drone swarm",
+          "swarm technology",
+          "swarm intelligence",
+          "collaborative autonomy"
+        ],
+        "why": "coordinated autonomous drones and munitions"
+      },
+      {
+        "term": "fire control system",
+        "tier": "context",
+        "variants": [
+          "smart fire control",
+          "computerised fire control",
+          "computerized fire control",
+          "smart scope",
+          "smart optic",
+          "fire control computer"
+        ],
+        "why": "computing sights and aiming systems, increasingly AI-assisted"
+      },
+      {
+        "term": "remote weapon station",
+        "tier": "context",
+        "variants": [
+          "remotely operated weapon station",
+          "remote controlled weapon station",
+          "unmanned turret"
+        ],
+        "why": "remotely operated mounts with automated tracking"
+      },
+      {
+        "term": "sensor-to-shooter",
+        "tier": "context",
+        "variants": [
+          "kill chain",
+          "kill web",
+          "digitised battlefield",
+          "digitized battlefield",
+          "battlefield digitalisation",
+          "battlefield digitalization"
+        ],
+        "why": "networked targeting chain where AI is applied"
+      },
+      {
+        "term": "command and control",
+        "tier": "context",
+        "variants": [
+          "battle management system",
+          "C4ISR",
+          "networked warfare",
+          "multi-domain operations"
+        ],
+        "case_sensitive_variants": [
+          "C4ISR"
+        ],
+        "why": "networked systems hosting AI decision support"
+      },
+      {
+        "term": "smart gun",
+        "tier": "context",
+        "variants": [
+          "personalized firearm",
+          "personalised firearm",
+          "user-authenticated firearm",
+          "biometric firearm"
+        ],
+        "why": "user-authenticating firearms; legislative risk for makers"
+      }
+    ],
+    "2591": [
+      {
+        "term": "turbine forging",
+        "tier": "context",
+        "variants": [
+          "forged turbine component",
+          "aerospace forging",
+          "isothermal forging",
+          "turbine disc",
+          "turbine disk"
+        ],
+        "why": "forgings for gas turbines powering data centers"
+      },
+      {
+        "term": "soft magnetic composite",
+        "tier": "context",
+        "variants": [
+          "powder core",
+          "inductor powder",
+          "metal soft magnetic powder"
+        ],
+        "why": "powder cores for AI server power inductors"
+      }
+    ],
+    "2592": [
+      {
+        "term": "precision machining",
+        "tier": "context",
+        "variants": [
+          "CNC machining",
+          "5-axis machining",
+          "high-precision components"
+        ],
+        "why": "machined parts for chip tools and servers"
+      },
+      {
+        "term": "semiconductor-grade coating",
+        "tier": "context",
+        "variants": [
+          "chamber component coating",
+          "plasma-resistant coating",
+          "precision cleaning"
+        ],
+        "why": "coatings for chip-tool chamber parts"
+      }
+    ],
+    "2593": [
+      {
+        "term": "smart lock",
+        "tier": "context",
+        "variants": [
+          "connected lock",
+          "digital lock",
+          "digital access solution",
+          "electronic access control",
+          "mobile access"
+        ],
+        "why": "connected locks feeding access data services"
+      },
+      {
+        "term": "biometric access control",
+        "tier": "ai",
+        "variants": [
+          "biometric lock",
+          "facial recognition access",
+          "face recognition lock",
+          "fingerprint lock"
+        ],
+        "why": "recognition-based locks and access systems"
+      },
+      {
+        "term": "connected tool",
+        "tier": "context",
+        "variants": [
+          "smart tool",
+          "tool tracking",
+          "connected jobsite",
+          "tool telematics"
+        ],
+        "why": "sensor-equipped tools generating jobsite data"
+      }
+    ],
+    "2599": [
+      {
+        "term": "humanoid robot",
+        "tier": "ai",
+        "variants": [
+          "humanoid",
+          "robot joint component",
+          "robot structural part"
+        ],
+        "why": "new demand for precision metal parts"
+      }
+    ]
+  }
+}

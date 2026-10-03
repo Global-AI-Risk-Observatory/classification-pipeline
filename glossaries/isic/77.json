@@ -1,0 +1,390 @@
+{
+  "id": "77",
+  "name": "Rental and leasing activities",
+  "section": "O",
+  "summary": "Vehicle, equipment, aircraft and consumer-goods lessors use AI in fleet planning, dynamic pricing, residual-value forecasting, telematics-based maintenance, automated damage inspection and lease decisioning. AI is also a demand story: equipment rental to data-centre construction projects, temporary power and cooling, and leasing of GPUs and AI servers; IP licensors write about AI patents and licensing content for training.",
+  "terms": [
+    {
+      "term": "fleet optimisation",
+      "tier": "context",
+      "variants": [
+        "fleet optimization",
+        "fleet planning model",
+        "fleet allocation",
+        "fleet utilisation model",
+        "fleet utilization model",
+        "fleet rotation"
+      ],
+      "why": "model-driven fleet size and allocation"
+    },
+    {
+      "term": "dynamic pricing",
+      "tier": "context",
+      "variants": [
+        "revenue management system",
+        "AI-driven pricing",
+        "yield management",
+        "pricing algorithm",
+        "rate optimisation",
+        "rate optimization"
+      ],
+      "why": "model-set rental rates"
+    },
+    {
+      "term": "demand forecasting",
+      "tier": "context",
+      "variants": [
+        "demand prediction",
+        "demand forecast model",
+        "predictive demand"
+      ],
+      "why": "ML prediction of rental demand"
+    },
+    {
+      "term": "telematics",
+      "tier": "context",
+      "variants": [
+        "connected fleet",
+        "connected vehicle data",
+        "connected asset",
+        "equipment telematics",
+        "connected car"
+      ],
+      "why": "connected-asset data feeding models"
+    },
+    {
+      "term": "predictive maintenance",
+      "tier": "context",
+      "variants": [
+        "condition-based maintenance",
+        "predictive servicing",
+        "engine health monitoring"
+      ],
+      "why": "failure prediction for rented assets"
+    },
+    {
+      "term": "residual value forecasting",
+      "tier": "context",
+      "variants": [
+        "residual value model",
+        "residual value prediction",
+        "used vehicle price prediction",
+        "remarketing analytics"
+      ],
+      "why": "models estimating end-of-lease asset values"
+    },
+    {
+      "term": "AI damage detection",
+      "tier": "ai",
+      "variants": [
+        "automated damage inspection",
+        "AI vehicle inspection",
+        "UVeye",
+        "AI-powered inspection"
+      ],
+      "why": "computer-vision inspection at return"
+    },
+    {
+      "term": "automated damage charge",
+      "tier": "context",
+      "variants": [
+        "damage billing dispute",
+        "automated damage billing",
+        "damage claim dispute"
+      ],
+      "why": "customer disputes over AI-assessed damage"
+    },
+    {
+      "term": "rental fraud",
+      "tier": "context",
+      "variants": [
+        "identity fraud",
+        "synthetic identity",
+        "vehicle conversion",
+        "fraudulent rental",
+        "lease-to-own fraud"
+      ],
+      "why": "identity and conversion fraud, AI-assisted"
+    },
+    {
+      "term": "automated lease decisioning",
+      "tier": "context",
+      "variants": [
+        "lease decision engine",
+        "automated approval",
+        "decision engine",
+        "virtual lease-to-own",
+        "instant approval"
+      ],
+      "why": "model-based approval of rental and lease customers"
+    },
+    {
+      "term": "AI underwriting",
+      "tier": "ai",
+      "variants": [
+        "AI-driven underwriting",
+        "machine learning underwriting",
+        "AI credit model"
+      ],
+      "why": "ML scoring of lessee credit risk"
+    },
+    {
+      "term": "contactless rental",
+      "tier": "context",
+      "variants": [
+        "digital check-in",
+        "keyless rental",
+        "self-service rental",
+        "digital counter"
+      ],
+      "why": "app-based rental replacing counter staff"
+    },
+    {
+      "term": "AI-powered customer service",
+      "tier": "ai",
+      "variants": [
+        "virtual rental agent",
+        "AI reservation assistant",
+        "conversational booking"
+      ],
+      "why": "virtual agents handling reservations"
+    }
+  ],
+  "class_terms": {
+    "7710": [
+      {
+        "term": "autonomous vehicle",
+        "tier": "context",
+        "variants": [
+          "robotaxi",
+          "autonomous fleet",
+          "self-driving vehicle",
+          "driverless car",
+          "autonomous ride-hailing"
+        ],
+        "why": "long-term threat and fleet-partnership opportunity"
+      },
+      {
+        "term": "autonomous fleet management",
+        "tier": "ai",
+        "variants": [
+          "robotaxi fleet management",
+          "autonomous vehicle fleet partnership",
+          "fleet services for autonomous vehicles"
+        ],
+        "why": "rental firms servicing robotaxi fleets"
+      },
+      {
+        "term": "usage-based leasing",
+        "tier": "context",
+        "variants": [
+          "pay-per-use leasing",
+          "mileage-based leasing",
+          "driver behaviour scoring",
+          "driver behavior scoring"
+        ],
+        "why": "driving data priced into contracts"
+      },
+      {
+        "term": "vehicle remarketing",
+        "tier": "context",
+        "variants": [
+          "used vehicle pricing model",
+          "disposal channel optimisation",
+          "disposal channel optimization"
+        ],
+        "why": "model-priced disposal of ex-fleet cars"
+      }
+    ],
+    "7730": [
+      {
+        "term": "data center construction",
+        "tier": "context",
+        "variants": [
+          "data centre construction",
+          "data center project",
+          "data centre project",
+          "mega project",
+          "hyperscale project"
+        ],
+        "why": "AI build-out driving equipment rental demand"
+      },
+      {
+        "term": "temporary power",
+        "tier": "context",
+        "variants": [
+          "mobile power",
+          "power generation rental",
+          "temporary cooling",
+          "bridging power",
+          "power for data centers"
+        ],
+        "why": "rented generation and cooling for data centres"
+      },
+      {
+        "term": "GPU leasing",
+        "tier": "ai",
+        "variants": [
+          "GPU rental",
+          "AI server leasing",
+          "compute leasing",
+          "GPU-as-a-service",
+          "AI hardware leasing"
+        ],
+        "why": "renting AI accelerators and servers"
+      },
+      {
+        "term": "AI infrastructure demand",
+        "tier": "ai",
+        "variants": [
+          "AI-driven demand",
+          "AI data center",
+          "AI data centre",
+          "AI-related construction"
+        ],
+        "why": "AI capex as end-market driver"
+      },
+      {
+        "term": "GPU depreciation",
+        "tier": "context",
+        "variants": [
+          "useful life of GPUs",
+          "AI hardware obsolescence",
+          "residual value of AI servers"
+        ],
+        "why": "useful-life risk on leased AI hardware"
+      },
+      {
+        "term": "autonomous equipment",
+        "tier": "context",
+        "variants": [
+          "autonomous machinery",
+          "robotic equipment rental",
+          "robots-as-a-service",
+          "drone rental"
+        ],
+        "why": "self-operating machinery entering rental fleets"
+      },
+      {
+        "term": "equipment utilisation model",
+        "tier": "context",
+        "variants": [
+          "equipment utilization model",
+          "time utilisation",
+          "time utilization",
+          "fleet productivity"
+        ],
+        "why": "ML allocation of fleet across branches"
+      },
+      {
+        "term": "engine lease analytics",
+        "tier": "context",
+        "variants": [
+          "aircraft valuation model",
+          "lease rate forecasting",
+          "portfolio risk model"
+        ],
+        "why": "aircraft and engine lessors' predictive tools"
+      }
+    ],
+    "7740": [
+      {
+        "term": "AI patent",
+        "tier": "ai",
+        "variants": [
+          "AI-related patents",
+          "AI patent portfolio",
+          "machine learning patents",
+          "AI-related intellectual property"
+        ],
+        "why": "AI-related patents licensed out"
+      },
+      {
+        "term": "patent licensing",
+        "tier": "context",
+        "variants": [
+          "licensing programme",
+          "licensing program",
+          "standard-essential patent",
+          "patent licence agreement",
+          "patent license agreement"
+        ],
+        "why": "licensing programmes extended to AI products"
+      },
+      {
+        "term": "AI-based video coding",
+        "tier": "ai",
+        "variants": [
+          "AI codec",
+          "neural codec",
+          "neural video compression"
+        ],
+        "why": "AI codecs in licensable standards"
+      },
+      {
+        "term": "licensing content for AI training",
+        "tier": "ai",
+        "variants": [
+          "AI training licence",
+          "AI training license",
+          "training data licensing",
+          "AI licensing deal"
+        ],
+        "why": "brand and content owners licensing to AI developers"
+      },
+      {
+        "term": "unlicensed AI training",
+        "tier": "ai",
+        "variants": [
+          "AI-generated infringing content",
+          "AI-generated counterfeit",
+          "AI copyright infringement"
+        ],
+        "why": "infringement of licensed IP by AI developers"
+      },
+      {
+        "term": "brand licensing",
+        "tier": "context",
+        "variants": [
+          "trademark licensing",
+          "franchise licensing",
+          "character licensing"
+        ],
+        "why": "trademark and franchise licensing exposed to AI imitation"
+      }
+    ],
+    "7751": [
+      {
+        "term": "peer-to-peer car sharing",
+        "tier": "context",
+        "variants": [
+          "car-sharing marketplace",
+          "car sharing platform",
+          "rental marketplace"
+        ],
+        "why": "marketplace model with ML pricing and risk"
+      },
+      {
+        "term": "renter risk scoring",
+        "tier": "context",
+        "variants": [
+          "trip risk score",
+          "AI risk screening",
+          "trust and safety model"
+        ],
+        "why": "models screening guests and trips"
+      }
+    ],
+    "7752": [
+      {
+        "term": "AI-powered matching",
+        "tier": "ai",
+        "variants": [
+          "search ranking algorithm",
+          "recommendation algorithm"
+        ],
+        "why": "ranking and recommendation in rental marketplaces"
+      }
+    ]
+  }
+}

@@ -1,0 +1,604 @@
+{
+  "id": "70",
+  "name": "Activities of head offices; management consultancy activities",
+  "section": "N",
+  "summary": "Head offices report AI at group level: AI strategy and governance bodies, enterprise assistant roll-outs, shared-service and finance-function automation, capital allocated to AI, and AI disruption risk across subsidiaries. Management consultancies sell AI strategy, implementation and governance work and report AI bookings, while flagging AI as a threat to the time-and-materials model, consultant pyramid and pricing, plus client insourcing and AI-native competitors.",
+  "terms": [
+    {
+      "term": "AI transformation",
+      "tier": "ai",
+      "variants": [
+        "AI-led transformation",
+        "AI-driven transformation",
+        "AI transformation programme",
+        "AI transformation program",
+        "AI-enabled transformation"
+      ],
+      "why": "umbrella term for AI-led change programmes"
+    },
+    {
+      "term": "AI centre of excellence",
+      "tier": "ai",
+      "variants": [
+        "AI center of excellence",
+        "AI hub",
+        "AI competence centre",
+        "AI competence center",
+        "AI lab"
+      ],
+      "why": "central AI capability hub"
+    },
+    {
+      "term": "AI use case portfolio",
+      "tier": "ai",
+      "variants": [
+        "AI use cases across business units",
+        "AI use case pipeline",
+        "prioritised AI use cases",
+        "prioritized AI use cases"
+      ],
+      "why": "pipeline of AI applications across the business"
+    },
+    {
+      "term": "scaling AI",
+      "tier": "ai",
+      "variants": [
+        "AI at scale",
+        "AI pilot",
+        "AI proof of concept",
+        "AI deployment at scale"
+      ],
+      "why": "moving from pilots to production"
+    },
+    {
+      "term": "AI productivity gain",
+      "tier": "ai",
+      "variants": [
+        "AI-driven efficiency",
+        "AI-enabled productivity",
+        "AI-driven cost savings",
+        "productivity gains from AI"
+      ],
+      "why": "efficiency attributed to AI tools"
+    },
+    {
+      "term": "workforce transformation",
+      "tier": "context",
+      "variants": [
+        "reskilling",
+        "upskilling programme",
+        "upskilling program",
+        "workforce of the future",
+        "AI upskilling"
+      ],
+      "why": "reskilling and role redesign around AI"
+    },
+    {
+      "term": "AI-driven restructuring",
+      "tier": "ai",
+      "variants": [
+        "AI-related workforce reduction",
+        "AI-driven job reduction",
+        "roles displaced by AI",
+        "AI-related redundancies",
+        "AI-driven headcount reduction"
+      ],
+      "why": "headcount cuts attributed to AI"
+    },
+    {
+      "term": "change management",
+      "tier": "context",
+      "variants": [
+        "adoption and change management",
+        "organisational change management",
+        "organizational change management"
+      ],
+      "why": "adoption work around AI roll-outs"
+    },
+    {
+      "term": "data readiness",
+      "tier": "context",
+      "variants": [
+        "data foundation",
+        "data modernisation",
+        "data modernization",
+        "data governance",
+        "data strategy"
+      ],
+      "why": "data foundations needed before AI"
+    },
+    {
+      "term": "robotic process automation",
+      "tier": "context",
+      "variants": [
+        "RPA",
+        "intelligent automation",
+        "hyperautomation"
+      ],
+      "case_sensitive_variants": [
+        "RPA"
+      ],
+      "why": "back-office bots, often paired with AI"
+    },
+    {
+      "term": "executive impersonation",
+      "tier": "context",
+      "variants": [
+        "CEO fraud",
+        "deepfake impersonation of executives",
+        "deepfake video call",
+        "business email compromise",
+        "voice cloning"
+      ],
+      "why": "deepfake fraud targeting head-office payments"
+    }
+  ],
+  "class_terms": {
+    "7010": [
+      {
+        "term": "group AI strategy",
+        "tier": "ai",
+        "variants": [
+          "group-wide AI strategy",
+          "AI strategy of the group",
+          "group AI roadmap",
+          "AI ambition"
+        ],
+        "why": "holding-level AI direction for subsidiaries"
+      },
+      {
+        "term": "group AI policy",
+        "tier": "ai",
+        "variants": [
+          "group-wide AI governance",
+          "group AI governance framework",
+          "group AI standard",
+          "group AI guideline",
+          "AI code of conduct"
+        ],
+        "why": "holding-level governance of subsidiary AI use"
+      },
+      {
+        "term": "AI steering committee",
+        "tier": "ai",
+        "variants": [
+          "AI council",
+          "AI board",
+          "AI governance committee",
+          "AI ethics committee",
+          "AI oversight committee"
+        ],
+        "why": "governance bodies overseeing group AI"
+      },
+      {
+        "term": "chief AI officer",
+        "tier": "ai",
+        "variants": [
+          "chief data and AI officer",
+          "head of AI",
+          "chief AI and data officer",
+          "group head of AI"
+        ],
+        "why": "executive role for AI"
+      },
+      {
+        "term": "enterprise AI assistant",
+        "tier": "ai",
+        "variants": [
+          "internal AI assistant",
+          "enterprise copilot rollout",
+          "company-wide AI assistant",
+          "in-house GPT",
+          "internal GPT"
+        ],
+        "why": "internal assistant rolled out to employees"
+      },
+      {
+        "term": "AI academy",
+        "tier": "ai",
+        "variants": [
+          "AI training for employees",
+          "AI training programme",
+          "AI training program",
+          "AI learning programme"
+        ],
+        "why": "group-wide AI training programmes"
+      },
+      {
+        "term": "enterprise AI platform",
+        "tier": "ai",
+        "variants": [
+          "group AI platform",
+          "central AI platform",
+          "shared AI platform"
+        ],
+        "why": "shared AI infrastructure for subsidiaries"
+      },
+      {
+        "term": "shared service centre",
+        "tier": "context",
+        "variants": [
+          "shared service center",
+          "global business services",
+          "shared services automation"
+        ],
+        "why": "back-office functions targeted for AI"
+      },
+      {
+        "term": "finance function automation",
+        "tier": "context",
+        "variants": [
+          "finance transformation",
+          "automated consolidation",
+          "treasury automation",
+          "procurement automation",
+          "automated financial close"
+        ],
+        "why": "AI in group finance, treasury and reporting"
+      },
+      {
+        "term": "AI-related capital expenditure",
+        "tier": "ai",
+        "variants": [
+          "AI capex",
+          "AI investment programme",
+          "AI investment program",
+          "capital allocation to AI",
+          "AI-related investments"
+        ],
+        "why": "group capital allocated to AI"
+      },
+      {
+        "term": "AI disruption risk",
+        "tier": "ai",
+        "variants": [
+          "AI disruption",
+          "disruption from AI",
+          "AI-related disruption",
+          "disrupted by AI"
+        ],
+        "why": "AI threat to subsidiaries' business models"
+      },
+      {
+        "term": "portfolio company AI adoption",
+        "tier": "ai",
+        "variants": [
+          "AI adoption across portfolio companies",
+          "AI initiatives at subsidiaries",
+          "AI across the group"
+        ],
+        "why": "AI roll-out at controlled businesses"
+      },
+      {
+        "term": "corporate venture AI investment",
+        "tier": "ai",
+        "variants": [
+          "investment in AI startups",
+          "AI venture investment",
+          "strategic AI investment",
+          "AI partnership"
+        ],
+        "why": "group stakes in AI companies"
+      },
+      {
+        "term": "ERP modernisation",
+        "tier": "context",
+        "variants": [
+          "ERP modernization",
+          "ERP transformation",
+          "S/4HANA migration",
+          "core system modernisation"
+        ],
+        "why": "core systems renewal as AI prerequisite"
+      }
+    ],
+    "7020": [
+      {
+        "term": "AI consulting",
+        "tier": "ai",
+        "variants": [
+          "AI advisory",
+          "AI strategy consulting",
+          "AI transformation services",
+          "AI implementation services",
+          "AI consulting services"
+        ],
+        "why": "advisory services on AI"
+      },
+      {
+        "term": "generative AI bookings",
+        "tier": "ai",
+        "variants": [
+          "GenAI bookings",
+          "AI-related bookings",
+          "advanced AI bookings",
+          "AI bookings",
+          "AI-related revenue"
+        ],
+        "why": "KPI for AI-related consulting sales"
+      },
+      {
+        "term": "AI-enabled delivery",
+        "tier": "ai",
+        "variants": [
+          "AI-augmented delivery",
+          "AI-powered delivery platform",
+          "AI-assisted delivery",
+          "AI-infused services"
+        ],
+        "why": "consultants' own use of AI in engagements"
+      },
+      {
+        "term": "AI Refinery",
+        "tier": "ai",
+        "variants": [
+          "Lilli",
+          "Deckster",
+          "GenAI Studio"
+        ],
+        "case_sensitive_variants": [
+          "Lilli"
+        ],
+        "why": "consultancy AI platforms named in filings"
+      },
+      {
+        "term": "agentic workforce",
+        "tier": "ai",
+        "variants": [
+          "digital worker",
+          "AI agents alongside consultants",
+          "digital colleague",
+          "agentic delivery"
+        ],
+        "why": "AI agents deployed alongside consultants"
+      },
+      {
+        "term": "AI readiness assessment",
+        "tier": "ai",
+        "variants": [
+          "AI maturity assessment",
+          "AI readiness",
+          "AI opportunity assessment"
+        ],
+        "why": "entry-level AI advisory product"
+      },
+      {
+        "term": "AI governance advisory",
+        "tier": "ai",
+        "variants": [
+          "responsible AI advisory",
+          "EU AI Act compliance services",
+          "AI risk advisory",
+          "AI assurance services"
+        ],
+        "why": "responsible AI and compliance services"
+      },
+      {
+        "term": "AI-enabled managed services",
+        "tier": "ai",
+        "variants": [
+          "AI-powered managed services",
+          "AI operations services",
+          "managed AI services"
+        ],
+        "why": "outsourced operations run with AI"
+      },
+      {
+        "term": "AI talent",
+        "tier": "ai",
+        "variants": [
+          "AI skilled practitioners",
+          "data and AI practitioners",
+          "AI-trained workforce",
+          "AI specialists",
+          "data and AI workforce"
+        ],
+        "why": "staff with AI skills as capacity metric"
+      },
+      {
+        "term": "time-and-materials",
+        "tier": "context",
+        "variants": [
+          "time and materials contract",
+          "day rate",
+          "daily rate",
+          "hourly billing"
+        ],
+        "why": "billing model threatened by AI efficiency"
+      },
+      {
+        "term": "outcome-based pricing",
+        "tier": "context",
+        "variants": [
+          "value-based pricing",
+          "fixed-price engagement",
+          "outcome-based contract",
+          "gain-share"
+        ],
+        "why": "pricing shift as AI cuts effort"
+      },
+      {
+        "term": "AI-driven price deflation",
+        "tier": "ai",
+        "variants": [
+          "AI deflation",
+          "pricing pressure from AI",
+          "AI-related pricing pressure",
+          "clients expect AI productivity savings"
+        ],
+        "why": "clients demanding AI savings in fees"
+      },
+      {
+        "term": "AI substitution of consulting services",
+        "tier": "ai",
+        "variants": [
+          "AI replacing consultants",
+          "substitution by AI",
+          "cannibalisation by AI",
+          "cannibalization by AI"
+        ],
+        "why": "clients replacing advisers with AI tools"
+      },
+      {
+        "term": "client insourcing",
+        "tier": "context",
+        "variants": [
+          "insourcing",
+          "in-house capability",
+          "clients building AI capability in-house"
+        ],
+        "why": "clients building capability instead of buying"
+      },
+      {
+        "term": "utilisation rate",
+        "tier": "context",
+        "variants": [
+          "utilization rate",
+          "consultant utilisation",
+          "consultant utilization",
+          "chargeability"
+        ],
+        "why": "consultant capacity KPI affected by AI"
+      },
+      {
+        "term": "pyramid model",
+        "tier": "context",
+        "variants": [
+          "leverage model",
+          "staffing pyramid",
+          "consultant headcount",
+          "billable headcount"
+        ],
+        "why": "junior-heavy staffing exposed to AI"
+      },
+      {
+        "term": "graduate recruitment",
+        "tier": "context",
+        "variants": [
+          "graduate hiring",
+          "campus hiring",
+          "entry-level hiring",
+          "analyst intake"
+        ],
+        "why": "entry-level hiring cut as AI does analyst work"
+      },
+      {
+        "term": "AI-native consultancy",
+        "tier": "ai",
+        "variants": [
+          "AI-first consulting firm",
+          "AI-native competitor",
+          "boutique AI firm",
+          "AI-native services firm"
+        ],
+        "why": "new entrants built around AI delivery"
+      },
+      {
+        "term": "forward deployed engineer",
+        "tier": "context",
+        "variants": [
+          "forward-deployed engineering",
+          "AI vendors' professional services",
+          "software vendors moving into services"
+        ],
+        "why": "AI vendors offering consulting-like services"
+      },
+      {
+        "term": "hyperscaler partnership",
+        "tier": "context",
+        "variants": [
+          "ecosystem partner",
+          "alliance partner",
+          "ecosystem partnership",
+          "hyperscaler alliance"
+        ],
+        "why": "alliances through which AI work is sold"
+      },
+      {
+        "term": "business process outsourcing",
+        "tier": "context",
+        "variants": [
+          "BPO",
+          "business process services",
+          "business process management"
+        ],
+        "case_sensitive_variants": [
+          "BPO"
+        ],
+        "why": "outsourced processes exposed to AI automation"
+      },
+      {
+        "term": "knowledge assets",
+        "tier": "context",
+        "variants": [
+          "proprietary knowledge base",
+          "knowledge management",
+          "intellectual capital"
+        ],
+        "why": "proprietary know-how used to ground AI tools"
+      },
+      {
+        "term": "AI indemnity",
+        "tier": "ai",
+        "variants": [
+          "indemnification for AI outputs",
+          "liability for AI-generated deliverables",
+          "AI-related contractual liability"
+        ],
+        "why": "contractual liability for AI deliverables"
+      },
+      {
+        "term": "client data in AI tools",
+        "tier": "ai",
+        "variants": [
+          "client data used to train models",
+          "confidential client information in AI tools"
+        ],
+        "why": "confidentiality risk in engagements"
+      },
+      {
+        "term": "people analytics",
+        "tier": "context",
+        "variants": [
+          "workforce analytics",
+          "skills taxonomy",
+          "job architecture",
+          "skills-based organisation",
+          "skills-based organization"
+        ],
+        "why": "HR consulting products built on ML"
+      },
+      {
+        "term": "AI workforce strategy",
+        "tier": "ai",
+        "variants": [
+          "workforce planning for AI",
+          "AI job redesign",
+          "human-AI collaboration"
+        ],
+        "why": "advising clients on AI's labour impact"
+      },
+      {
+        "term": "federal AI contract",
+        "tier": "ai",
+        "variants": [
+          "government AI contract",
+          "AI for defense",
+          "AI for defence",
+          "public sector AI services"
+        ],
+        "why": "public-sector AI advisory work"
+      },
+      {
+        "term": "discretionary spending",
+        "tier": "context",
+        "variants": [
+          "discretionary projects",
+          "reprioritisation of client budgets",
+          "reprioritization of client budgets"
+        ],
+        "why": "client budgets diverted to AI programmes"
+      }
+    ]
+  }
+}

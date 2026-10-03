@@ -1,0 +1,652 @@
+{
+  "id": "69",
+  "name": "Legal and accounting activities",
+  "section": "N",
+  "summary": "Law, audit, accounting and tax firms describe AI as both a productivity tool (document review, contract analysis, legal research, journal-entry testing, bookkeeping and tax preparation) and a threat to the billable-hour and staff-pyramid model. Risk language covers hallucinated citations, client confidentiality and privilege, professional liability, audit quality and regulator expectations on technology-assisted work; firms also sell AI advisory and AI assurance services.",
+  "terms": [
+    {
+      "term": "billable hour",
+      "tier": "context",
+      "variants": [
+        "hourly billing",
+        "time-based billing",
+        "hourly rate model",
+        "chargeable hours"
+      ],
+      "why": "time-based pricing threatened by AI efficiency"
+    },
+    {
+      "term": "alternative fee arrangement",
+      "tier": "context",
+      "variants": [
+        "fixed-fee pricing",
+        "value-based pricing",
+        "outcome-based pricing",
+        "subscription pricing"
+      ],
+      "why": "pricing shift as AI cuts hours"
+    },
+    {
+      "term": "leverage model",
+      "tier": "context",
+      "variants": [
+        "pyramid model",
+        "staffing pyramid",
+        "associate leverage",
+        "fee earner leverage"
+      ],
+      "why": "junior-heavy staffing pyramid exposed to AI"
+    },
+    {
+      "term": "graduate hiring",
+      "tier": "context",
+      "variants": [
+        "graduate intake",
+        "entry-level hiring",
+        "trainee intake",
+        "junior roles",
+        "apprenticeship model"
+      ],
+      "why": "entry-level intake reduced as AI does junior work"
+    },
+    {
+      "term": "AI-driven efficiency",
+      "tier": "ai",
+      "variants": [
+        "AI productivity gain",
+        "AI-enabled productivity",
+        "AI-enabled efficiencies",
+        "time saved through AI"
+      ],
+      "why": "hours saved and margin gains from AI"
+    },
+    {
+      "term": "client demand for AI",
+      "tier": "ai",
+      "variants": [
+        "client expectations on AI",
+        "clients insourcing with AI",
+        "AI-driven fee pressure",
+        "in-house AI tools"
+      ],
+      "why": "clients expect AI savings passed on"
+    },
+    {
+      "term": "AI-native competitor",
+      "tier": "ai",
+      "variants": [
+        "AI-native law firm",
+        "AI-first firm",
+        "AI-native accounting firm",
+        "AI-enabled competitor"
+      ],
+      "why": "new entrants built around AI delivery"
+    },
+    {
+      "term": "professional liability",
+      "tier": "context",
+      "variants": [
+        "professional indemnity",
+        "professional negligence",
+        "malpractice claim",
+        "professional indemnity insurance"
+      ],
+      "why": "negligence exposure from AI-assisted work"
+    },
+    {
+      "term": "client confidentiality",
+      "tier": "context",
+      "variants": [
+        "confidential client information",
+        "client data in AI tools",
+        "duty of confidentiality"
+      ],
+      "why": "client data entered into AI tools"
+    },
+    {
+      "term": "offshore delivery centre",
+      "tier": "context",
+      "variants": [
+        "offshore delivery center",
+        "shared service centre",
+        "shared service center",
+        "global delivery centre",
+        "offshoring"
+      ],
+      "why": "labour arbitrage model alongside AI"
+    },
+    {
+      "term": "intelligent document processing",
+      "tier": "ai",
+      "variants": [
+        "automated document processing",
+        "document intelligence",
+        "automated data extraction"
+      ],
+      "why": "ML extraction from contracts and financial documents"
+    },
+    {
+      "term": "robotic process automation",
+      "tier": "context",
+      "variants": [
+        "RPA",
+        "intelligent automation"
+      ],
+      "case_sensitive_variants": [
+        "RPA"
+      ],
+      "why": "back-office bots, often paired with AI"
+    },
+    {
+      "term": "knowledge management",
+      "tier": "context",
+      "variants": [
+        "knowledge management system",
+        "precedent bank",
+        "firm knowledge base"
+      ],
+      "why": "firm know-how made searchable with AI"
+    },
+    {
+      "term": "AI advisory practice",
+      "tier": "ai",
+      "variants": [
+        "AI practice group",
+        "AI regulatory advice",
+        "AI governance advisory",
+        "AI advisory services",
+        "AI consulting practice"
+      ],
+      "why": "advising clients on AI law, risk and adoption"
+    }
+  ],
+  "class_terms": {
+    "6910": [
+      {
+        "term": "AI-assisted document review",
+        "tier": "ai",
+        "variants": [
+          "technology-assisted review",
+          "predictive coding",
+          "AI document review",
+          "continuous active learning"
+        ],
+        "why": "ML ranking of documents in disputes"
+      },
+      {
+        "term": "e-discovery",
+        "tier": "context",
+        "variants": [
+          "eDiscovery",
+          "electronic discovery",
+          "e-disclosure"
+        ],
+        "why": "disclosure work heavily automated by ML"
+      },
+      {
+        "term": "AI contract review",
+        "tier": "ai",
+        "variants": [
+          "automated contract review",
+          "AI contract analysis",
+          "contract intelligence",
+          "clause extraction"
+        ],
+        "why": "automated clause extraction and risk flagging"
+      },
+      {
+        "term": "contract lifecycle management",
+        "tier": "context",
+        "variants": [
+          "CLM platform",
+          "contract management system"
+        ],
+        "why": "contract software embedding AI"
+      },
+      {
+        "term": "AI legal research",
+        "tier": "ai",
+        "variants": [
+          "AI-assisted legal research",
+          "AI legal assistant",
+          "AI research assistant"
+        ],
+        "why": "generative research tools for lawyers"
+      },
+      {
+        "term": "AI-assisted drafting",
+        "tier": "ai",
+        "variants": [
+          "automated drafting",
+          "AI drafting tool",
+          "AI-generated draft",
+          "first-draft generation"
+        ],
+        "why": "generative drafting of legal documents"
+      },
+      {
+        "term": "document automation",
+        "tier": "context",
+        "variants": [
+          "document assembly",
+          "automated document generation"
+        ],
+        "why": "template-driven legal document assembly"
+      },
+      {
+        "term": "legal tech",
+        "tier": "context",
+        "variants": [
+          "legaltech",
+          "legal technology",
+          "lawtech"
+        ],
+        "why": "legal technology, increasingly AI-based"
+      },
+      {
+        "term": "Harvey AI",
+        "tier": "ai",
+        "variants": [
+          "CoCounsel",
+          "Lexis+ AI",
+          "Westlaw Precision",
+          "Legora",
+          "Luminance",
+          "Spellbook",
+          "Kira Systems",
+          "Relativity aiR"
+        ],
+        "case_sensitive_variants": [
+          "Luminance",
+          "Spellbook"
+        ],
+        "why": "legal AI products named in filings"
+      },
+      {
+        "term": "hallucinated citation",
+        "tier": "ai",
+        "variants": [
+          "fabricated citation",
+          "fictitious case",
+          "fake case citation",
+          "non-existent case",
+          "hallucinated case law"
+        ],
+        "why": "fabricated authorities from generative tools"
+      },
+      {
+        "term": "court rules on AI use",
+        "tier": "ai",
+        "variants": [
+          "standing order on artificial intelligence",
+          "certification of AI use",
+          "AI disclosure to the court",
+          "judicial guidance on AI"
+        ],
+        "why": "judicial orders requiring AI disclosure"
+      },
+      {
+        "term": "ABA Formal Opinion 512",
+        "tier": "context",
+        "variants": [
+          "Formal Opinion 512",
+          "duty of technological competence",
+          "SRA guidance on AI",
+          "Law Society guidance on generative AI"
+        ],
+        "why": "US ethics opinion on generative AI"
+      },
+      {
+        "term": "attorney-client privilege",
+        "tier": "context",
+        "variants": [
+          "legal professional privilege",
+          "legal privilege",
+          "privileged information"
+        ],
+        "why": "privilege risk when using AI tools"
+      },
+      {
+        "term": "unauthorized practice of law",
+        "tier": "context",
+        "variants": [
+          "unauthorised practice of law",
+          "reserved legal activities",
+          "non-lawyer ownership"
+        ],
+        "why": "AI legal services by non-lawyers"
+      },
+      {
+        "term": "alternative legal service provider",
+        "tier": "context",
+        "variants": [
+          "ALSP",
+          "law company",
+          "managed legal services",
+          "legal process outsourcing"
+        ],
+        "case_sensitive_variants": [
+          "ALSP"
+        ],
+        "why": "tech-enabled competitors to law firms"
+      },
+      {
+        "term": "AI-assisted due diligence",
+        "tier": "ai",
+        "variants": [
+          "due diligence automation",
+          "automated due diligence"
+        ],
+        "why": "AI review of data rooms in transactions"
+      },
+      {
+        "term": "litigation analytics",
+        "tier": "context",
+        "variants": [
+          "case outcome prediction",
+          "judge analytics",
+          "legal analytics"
+        ],
+        "why": "data-driven case strategy"
+      },
+      {
+        "term": "conveyancing automation",
+        "tier": "context",
+        "variants": [
+          "automated conveyancing",
+          "digital conveyancing",
+          "volume legal services"
+        ],
+        "why": "volume legal work exposed to automation"
+      },
+      {
+        "term": "legal operations",
+        "tier": "context",
+        "variants": [
+          "legal ops",
+          "in-house legal team",
+          "general counsel expectations"
+        ],
+        "why": "client-side function driving AI adoption"
+      },
+      {
+        "term": "paralegal",
+        "tier": "context",
+        "variants": [
+          "legal assistant role",
+          "legal support staff",
+          "document reviewer",
+          "contract attorney"
+        ],
+        "why": "role most exposed to document AI"
+      },
+      {
+        "term": "AI-related disputes",
+        "tier": "ai",
+        "variants": [
+          "AI litigation",
+          "AI copyright litigation",
+          "AI-related mandates",
+          "AI regulatory enforcement work"
+        ],
+        "why": "litigation and advisory work created by AI"
+      },
+      {
+        "term": "matter intake automation",
+        "tier": "context",
+        "variants": [
+          "automated conflict check",
+          "client intake automation",
+          "matter pricing tool"
+        ],
+        "why": "AI in client onboarding and conflict checks"
+      },
+      {
+        "term": "transcription of proceedings",
+        "tier": "context",
+        "variants": [
+          "AI transcription",
+          "automated transcription",
+          "digital court reporting"
+        ],
+        "why": "court reporting replaced by speech recognition"
+      }
+    ],
+    "6920": [
+      {
+        "term": "AI-enabled audit",
+        "tier": "ai",
+        "variants": [
+          "AI in audit",
+          "AI-powered audit",
+          "AI-driven audit",
+          "audit AI",
+          "AI audit tool"
+        ],
+        "why": "AI embedded in audit methodology"
+      },
+      {
+        "term": "audit technology",
+        "tier": "context",
+        "variants": [
+          "audit platform",
+          "smart audit platform",
+          "digital audit",
+          "audit transformation"
+        ],
+        "why": "platforms through which audit AI is deployed"
+      },
+      {
+        "term": "KPMG Clara",
+        "tier": "ai",
+        "variants": [
+          "EY.ai",
+          "ChatPwC",
+          "Zora AI",
+          "PairD",
+          "EYQ",
+          "Deloitte Omnia",
+          "EY Helix"
+        ],
+        "why": "audit-firm AI platforms named in reports"
+      },
+      {
+        "term": "journal entry testing",
+        "tier": "context",
+        "variants": [
+          "journal entry anomaly detection",
+          "journal entry analysis",
+          "unusual journal entries"
+        ],
+        "why": "audit step where anomaly models are used"
+      },
+      {
+        "term": "full population testing",
+        "tier": "context",
+        "variants": [
+          "100% population testing",
+          "full-population analysis",
+          "entire population of transactions",
+          "audit sampling"
+        ],
+        "why": "AI lets auditors test all transactions"
+      },
+      {
+        "term": "audit data analytics",
+        "tier": "context",
+        "variants": [
+          "technology-assisted analysis",
+          "data-driven audit",
+          "audit analytics"
+        ],
+        "why": "data-driven audit procedures"
+      },
+      {
+        "term": "continuous auditing",
+        "tier": "context",
+        "variants": [
+          "continuous assurance",
+          "continuous controls monitoring",
+          "real-time assurance"
+        ],
+        "why": "ongoing automated assurance"
+      },
+      {
+        "term": "audit quality",
+        "tier": "context",
+        "variants": [
+          "audit quality indicators",
+          "audit quality review",
+          "audit quality inspection"
+        ],
+        "why": "regulator lens on AI use in audits"
+      },
+      {
+        "term": "AS 1105",
+        "tier": "context",
+        "variants": [
+          "PCAOB technology-assisted analysis amendments",
+          "ISA 500",
+          "ISQM 1"
+        ],
+        "why": "PCAOB standard amended for technology-assisted analysis"
+      },
+      {
+        "term": "professional scepticism",
+        "tier": "context",
+        "variants": [
+          "professional skepticism",
+          "automation bias",
+          "over-reliance on automated tools"
+        ],
+        "why": "over-reliance on AI outputs in audit"
+      },
+      {
+        "term": "AI assurance",
+        "tier": "ai",
+        "variants": [
+          "assurance over AI",
+          "AI assurance services",
+          "algorithm audit",
+          "AI audit services",
+          "assurance on AI systems"
+        ],
+        "why": "assurance services over clients' AI systems"
+      },
+      {
+        "term": "AI bookkeeping",
+        "tier": "ai",
+        "variants": [
+          "automated bookkeeping",
+          "autonomous accounting",
+          "automated transaction categorisation",
+          "automated transaction categorization",
+          "AI accountant"
+        ],
+        "why": "automated ledger coding and reconciliation"
+      },
+      {
+        "term": "accounts payable automation",
+        "tier": "context",
+        "variants": [
+          "invoice processing automation",
+          "invoice capture",
+          "automated invoice matching",
+          "expense automation"
+        ],
+        "why": "invoice capture and matching by ML"
+      },
+      {
+        "term": "bank reconciliation automation",
+        "tier": "context",
+        "variants": [
+          "automated reconciliation",
+          "automated bank feeds",
+          "auto-matching"
+        ],
+        "why": "machine matching of ledger to bank feeds"
+      },
+      {
+        "term": "financial close automation",
+        "tier": "context",
+        "variants": [
+          "automated close",
+          "close automation",
+          "automated financial reporting"
+        ],
+        "why": "AI in month-end close and reporting"
+      },
+      {
+        "term": "AI Tax Assist",
+        "tier": "ai",
+        "variants": [
+          "AI tax assistant",
+          "AI-powered tax preparation",
+          "AI tax research",
+          "AI tax expert"
+        ],
+        "why": "generative help in tax preparation products"
+      },
+      {
+        "term": "assisted tax preparation",
+        "tier": "context",
+        "variants": [
+          "do-it-yourself tax",
+          "DIY tax software",
+          "tax preparation software",
+          "virtual tax preparation"
+        ],
+        "why": "human tax prep competing with AI-enabled DIY"
+      },
+      {
+        "term": "tax technology",
+        "tier": "context",
+        "variants": [
+          "tax engine",
+          "automated tax compliance",
+          "tax determination engine"
+        ],
+        "why": "tax compliance engines adding AI"
+      },
+      {
+        "term": "payroll automation",
+        "tier": "context",
+        "variants": [
+          "automated payroll processing",
+          "payroll processing automation"
+        ],
+        "why": "outsourced payroll processing automated"
+      },
+      {
+        "term": "forensic data analytics",
+        "tier": "context",
+        "variants": [
+          "forensic analytics",
+          "fraud analytics",
+          "anomaly detection in financial data"
+        ],
+        "why": "fraud detection in client books"
+      },
+      {
+        "term": "accountant shortage",
+        "tier": "context",
+        "variants": [
+          "talent shortage",
+          "CPA pipeline",
+          "shortage of qualified accountants"
+        ],
+        "why": "talent gap cited as reason for AI"
+      },
+      {
+        "term": "client accounting services",
+        "tier": "context",
+        "variants": [
+          "outsourced accounting",
+          "outsourced bookkeeping",
+          "compliance services commoditisation"
+        ],
+        "why": "outsourced finance work being automated"
+      }
+    ]
+  }
+}

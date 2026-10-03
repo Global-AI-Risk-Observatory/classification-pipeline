@@ -1,0 +1,5437 @@
+{
+  "id": "core",
+  "name": "Core AI vocabulary",
+  "summary": "Sector-independent vocabulary for finding AI-related passages in corporate filings: what AI is called, how it is built, run, governed and misused, and what it does to work and markets. Tier 'ai' terms make a passage a candidate on their own; tier 'context' terms only signal that AI is likely discussed nearby. Sector-specific lingo lives in the per-ISIC-division glossaries.",
+  "terms": [
+    {
+      "term": "artificial intelligence",
+      "tier": "ai",
+      "group": "general",
+      "variants": [
+        "AI",
+        "A.I."
+      ],
+      "case_sensitive_variants": [
+        "AI",
+        "A.I."
+      ],
+      "why": "the core term and its abbreviations"
+    },
+    {
+      "term": "AIML",
+      "tier": "ai",
+      "group": "general",
+      "variants": [
+        "AIoT"
+      ],
+      "case_sensitive_variants": [
+        "AIML",
+        "AIoT"
+      ],
+      "why": "joined abbreviations bare AI does not match"
+    },
+    {
+      "term": "machine intelligence",
+      "tier": "ai",
+      "group": "general",
+      "variants": [
+        "computational intelligence",
+        "artificially intelligent"
+      ],
+      "why": "older synonyms for AI"
+    },
+    {
+      "term": "cognitive computing",
+      "tier": "ai",
+      "group": "general",
+      "variants": [
+        "cognitive technologies",
+        "cognitive services",
+        "cognitive solutions",
+        "cognitive capabilities of machines"
+      ],
+      "why": "IBM-era label for AI"
+    },
+    {
+      "term": "augmented intelligence",
+      "tier": "ai",
+      "group": "general",
+      "why": "AI framed as human support"
+    },
+    {
+      "term": "artificial general intelligence",
+      "tier": "ai",
+      "group": "general",
+      "variants": [
+        "AGI",
+        "human-level intelligence"
+      ],
+      "case_sensitive_variants": [
+        "AGI"
+      ],
+      "why": "advanced AI futures named in risk factors"
+    },
+    {
+      "term": "superintelligence",
+      "tier": "ai",
+      "group": "general",
+      "variants": [
+        "superintelligent"
+      ],
+      "why": "AI beyond human ability"
+    },
+    {
+      "term": "intelligent systems",
+      "tier": "context",
+      "group": "general",
+      "variants": [
+        "intelligent technologies"
+      ],
+      "why": "generic label often meaning AI"
+    },
+    {
+      "term": "intelligent machines",
+      "tier": "context",
+      "group": "general",
+      "variants": [
+        "smart machines",
+        "learning machines"
+      ],
+      "why": "machine wording that implies AI"
+    },
+    {
+      "term": "expert system",
+      "tier": "ai",
+      "group": "general",
+      "variants": [
+        "knowledge-based system",
+        "rule-based system",
+        "rules-based system"
+      ],
+      "why": "classic symbolic AI"
+    },
+    {
+      "term": "automated reasoning",
+      "tier": "ai",
+      "group": "general",
+      "variants": [
+        "machine reasoning",
+        "symbolic reasoning"
+      ],
+      "why": "reasoning by machines"
+    },
+    {
+      "term": "embodied intelligence",
+      "tier": "ai",
+      "group": "general",
+      "why": "AI in robots and physical systems"
+    },
+    {
+      "term": "edge intelligence",
+      "tier": "ai",
+      "group": "general",
+      "why": "AI running on local devices"
+    },
+    {
+      "term": "humanoid robot",
+      "tier": "context",
+      "group": "general",
+      "variants": [
+        "humanoid robotics",
+        "humanoids"
+      ],
+      "why": "robots now driven by AI models"
+    },
+    {
+      "term": "data science",
+      "tier": "context",
+      "group": "general",
+      "variants": [
+        "data scientist",
+        "data science team"
+      ],
+      "why": "discipline around ML work"
+    },
+    {
+      "term": "emerging technologies",
+      "tier": "context",
+      "group": "general",
+      "variants": [
+        "frontier technologies",
+        "disruptive technologies"
+      ],
+      "why": "umbrella phrase where AI is usually listed"
+    },
+    {
+      "term": "fourth industrial revolution",
+      "tier": "context",
+      "group": "general",
+      "variants": [
+        "Industry 4.0",
+        "4IR"
+      ],
+      "case_sensitive_variants": [
+        "4IR"
+      ],
+      "why": "macro narrative that includes AI"
+    },
+    {
+      "term": "cognitive engine",
+      "tier": "context",
+      "group": "general",
+      "variants": [
+        "cognitive platform",
+        "cognitive system",
+        "cognitive tools"
+      ],
+      "why": "cognitive wording for AI products"
+    },
+    {
+      "term": "machine-driven",
+      "tier": "context",
+      "group": "general",
+      "variants": [
+        "machine-led",
+        "machine decision-making",
+        "decisions made by machines",
+        "machines that learn"
+      ],
+      "why": "machine wording that implies AI"
+    },
+    {
+      "term": "learning-based",
+      "tier": "context",
+      "group": "general",
+      "variants": [
+        "learning-enabled",
+        "data-driven models",
+        "data-driven algorithms"
+      ],
+      "why": "learned systems without the ML name"
+    },
+    {
+      "term": "general-purpose technology",
+      "tier": "context",
+      "group": "general",
+      "variants": [
+        "transformative technology",
+        "transformational technology"
+      ],
+      "why": "economists' framing of AI"
+    },
+    {
+      "term": "machine learning",
+      "tier": "ai",
+      "group": "techniques",
+      "variants": [
+        "ML",
+        "machine-learned",
+        "machine learnt"
+      ],
+      "case_sensitive_variants": [
+        "ML"
+      ],
+      "why": "core technique family"
+    },
+    {
+      "term": "AutoML",
+      "tier": "ai",
+      "group": "techniques",
+      "why": "automated model building"
+    },
+    {
+      "term": "deep learning",
+      "tier": "ai",
+      "group": "techniques",
+      "variants": [
+        "deep neural network",
+        "DNN"
+      ],
+      "case_sensitive_variants": [
+        "DNN"
+      ],
+      "why": "multi-layer neural methods"
+    },
+    {
+      "term": "neural network",
+      "tier": "ai",
+      "group": "techniques",
+      "variants": [
+        "neural net",
+        "neural architecture"
+      ],
+      "why": "basic model type"
+    },
+    {
+      "term": "convolutional neural network",
+      "tier": "ai",
+      "group": "techniques",
+      "variants": [
+        "convolutional network"
+      ],
+      "why": "vision model type"
+    },
+    {
+      "term": "recurrent neural network",
+      "tier": "ai",
+      "group": "techniques",
+      "variants": [
+        "RNN",
+        "LSTM",
+        "long short-term memory"
+      ],
+      "case_sensitive_variants": [
+        "RNN",
+        "LSTM"
+      ],
+      "why": "sequence model type"
+    },
+    {
+      "term": "transformer model",
+      "tier": "ai",
+      "group": "techniques",
+      "variants": [
+        "transformer architecture",
+        "transformer-based",
+        "attention mechanism",
+        "self-attention"
+      ],
+      "why": "architecture behind modern language models"
+    },
+    {
+      "term": "supervised learning",
+      "tier": "ai",
+      "group": "techniques",
+      "variants": [
+        "semi-supervised learning"
+      ],
+      "why": "learning from labelled examples"
+    },
+    {
+      "term": "unsupervised learning",
+      "tier": "ai",
+      "group": "techniques",
+      "variants": [
+        "self-supervised learning"
+      ],
+      "why": "learning without labels"
+    },
+    {
+      "term": "reinforcement learning",
+      "tier": "ai",
+      "group": "techniques",
+      "variants": [
+        "RLHF"
+      ],
+      "case_sensitive_variants": [
+        "RLHF"
+      ],
+      "why": "learning by reward"
+    },
+    {
+      "term": "transfer learning",
+      "tier": "ai",
+      "group": "techniques",
+      "variants": [
+        "representation learning"
+      ],
+      "why": "reuse of learned knowledge"
+    },
+    {
+      "term": "few-shot learning",
+      "tier": "ai",
+      "group": "techniques",
+      "variants": [
+        "zero-shot",
+        "one-shot learning"
+      ],
+      "why": "learning from very few examples"
+    },
+    {
+      "term": "federated learning",
+      "tier": "ai",
+      "group": "techniques",
+      "why": "privacy-preserving distributed training"
+    },
+    {
+      "term": "statistical learning",
+      "tier": "ai",
+      "group": "techniques",
+      "variants": [
+        "ensemble learning",
+        "ensemble model"
+      ],
+      "why": "ML under a statistics label"
+    },
+    {
+      "term": "gradient boosting",
+      "tier": "ai",
+      "group": "techniques",
+      "variants": [
+        "XGBoost",
+        "LightGBM",
+        "gradient-boosted"
+      ],
+      "why": "common tabular ML method"
+    },
+    {
+      "term": "random forest",
+      "tier": "ai",
+      "group": "techniques",
+      "why": "common tabular ML method"
+    },
+    {
+      "term": "support vector machine",
+      "tier": "ai",
+      "group": "techniques",
+      "variants": [
+        "SVM"
+      ],
+      "case_sensitive_variants": [
+        "SVM"
+      ],
+      "why": "classic ML classifier"
+    },
+    {
+      "term": "decision tree",
+      "tier": "context",
+      "group": "techniques",
+      "why": "tree method, also used in decision analysis"
+    },
+    {
+      "term": "classification model",
+      "tier": "context",
+      "group": "techniques",
+      "variants": [
+        "classification algorithm",
+        "clustering algorithm"
+      ],
+      "why": "methods used inside and outside ML"
+    },
+    {
+      "term": "learning algorithm",
+      "tier": "ai",
+      "group": "techniques",
+      "variants": [
+        "trained algorithm",
+        "algorithm trained",
+        "algorithms that learn"
+      ],
+      "why": "algorithms defined by learning from data"
+    },
+    {
+      "term": "backpropagation",
+      "tier": "ai",
+      "group": "techniques",
+      "variants": [
+        "gradient descent"
+      ],
+      "why": "how neural networks are trained"
+    },
+    {
+      "term": "hyperparameter",
+      "tier": "ai",
+      "group": "techniques",
+      "why": "ML tuning setting"
+    },
+    {
+      "term": "feature engineering",
+      "tier": "ai",
+      "group": "techniques",
+      "variants": [
+        "feature extraction",
+        "feature store"
+      ],
+      "why": "ML data preparation step"
+    },
+    {
+      "term": "predictive model",
+      "tier": "context",
+      "group": "techniques",
+      "variants": [
+        "predictive modelling",
+        "predictive modeling",
+        "prediction model"
+      ],
+      "why": "may be statistical rather than ML"
+    },
+    {
+      "term": "predictive algorithm",
+      "tier": "context",
+      "group": "techniques",
+      "variants": [
+        "prediction algorithm"
+      ],
+      "why": "may be statistical rather than ML"
+    },
+    {
+      "term": "computer vision",
+      "tier": "ai",
+      "group": "techniques",
+      "variants": [
+        "machine vision"
+      ],
+      "why": "machines interpreting images"
+    },
+    {
+      "term": "image recognition",
+      "tier": "ai",
+      "group": "techniques",
+      "variants": [
+        "visual recognition",
+        "image classification",
+        "image segmentation"
+      ],
+      "why": "core vision tasks"
+    },
+    {
+      "term": "object detection",
+      "tier": "context",
+      "group": "techniques",
+      "why": "vision task, sometimes non-ML"
+    },
+    {
+      "term": "video analytics",
+      "tier": "context",
+      "group": "techniques",
+      "variants": [
+        "image analytics",
+        "visual inspection system"
+      ],
+      "why": "automated image and video analysis"
+    },
+    {
+      "term": "facial recognition",
+      "tier": "ai",
+      "group": "techniques",
+      "variants": [
+        "face recognition",
+        "facial analysis"
+      ],
+      "why": "biometric vision application"
+    },
+    {
+      "term": "biometric identification",
+      "tier": "context",
+      "group": "techniques",
+      "variants": [
+        "biometric recognition",
+        "biometric authentication",
+        "biometric verification"
+      ],
+      "why": "often ML-based identity checks"
+    },
+    {
+      "term": "emotion recognition",
+      "tier": "ai",
+      "group": "techniques",
+      "variants": [
+        "emotion detection",
+        "affective computing"
+      ],
+      "why": "inferring emotions by machine"
+    },
+    {
+      "term": "optical character recognition",
+      "tier": "context",
+      "group": "techniques",
+      "variants": [
+        "OCR",
+        "intelligent character recognition"
+      ],
+      "case_sensitive_variants": [
+        "OCR"
+      ],
+      "why": "text extraction, often ML"
+    },
+    {
+      "term": "intelligent document processing",
+      "tier": "ai",
+      "group": "techniques",
+      "variants": [
+        "document understanding",
+        "automated document extraction"
+      ],
+      "why": "ML extraction from documents"
+    },
+    {
+      "term": "natural language processing",
+      "tier": "ai",
+      "group": "techniques",
+      "variants": [
+        "NLP"
+      ],
+      "case_sensitive_variants": [
+        "NLP"
+      ],
+      "why": "language technology family"
+    },
+    {
+      "term": "natural language understanding",
+      "tier": "ai",
+      "group": "techniques",
+      "variants": [
+        "NLU"
+      ],
+      "case_sensitive_variants": [
+        "NLU"
+      ],
+      "why": "machines interpreting language"
+    },
+    {
+      "term": "natural language generation",
+      "tier": "ai",
+      "group": "techniques",
+      "variants": [
+        "NLG"
+      ],
+      "case_sensitive_variants": [
+        "NLG"
+      ],
+      "why": "machines producing language"
+    },
+    {
+      "term": "natural language interface",
+      "tier": "ai",
+      "group": "techniques",
+      "variants": [
+        "natural language query",
+        "natural language search",
+        "natural language interaction"
+      ],
+      "why": "language front-ends built on NLP"
+    },
+    {
+      "term": "text mining",
+      "tier": "context",
+      "group": "techniques",
+      "variants": [
+        "text analytics"
+      ],
+      "why": "older label for language analysis"
+    },
+    {
+      "term": "sentiment analysis",
+      "tier": "context",
+      "group": "techniques",
+      "why": "language analysis, usually ML"
+    },
+    {
+      "term": "data mining",
+      "tier": "context",
+      "group": "techniques",
+      "why": "older label for pattern discovery"
+    },
+    {
+      "term": "machine translation",
+      "tier": "ai",
+      "group": "techniques",
+      "variants": [
+        "automated translation",
+        "automatic translation"
+      ],
+      "why": "translation by models"
+    },
+    {
+      "term": "speech recognition",
+      "tier": "ai",
+      "group": "techniques",
+      "variants": [
+        "voice recognition",
+        "speech-to-text",
+        "automatic speech recognition"
+      ],
+      "why": "spoken language to text"
+    },
+    {
+      "term": "recommendation engine",
+      "tier": "ai",
+      "group": "techniques",
+      "variants": [
+        "recommender system",
+        "recommendation system",
+        "recommendation algorithm",
+        "recommendation model"
+      ],
+      "why": "ML ranking of content or products"
+    },
+    {
+      "term": "personalisation algorithm",
+      "tier": "context",
+      "group": "techniques",
+      "variants": [
+        "personalization algorithm",
+        "personalisation engine",
+        "personalization engine",
+        "ranking algorithm"
+      ],
+      "why": "content tailoring, usually ML"
+    },
+    {
+      "term": "anomaly detection",
+      "tier": "context",
+      "group": "techniques",
+      "variants": [
+        "outlier detection"
+      ],
+      "why": "can be ML or rules"
+    },
+    {
+      "term": "pattern recognition",
+      "tier": "context",
+      "group": "techniques",
+      "why": "older label for ML tasks"
+    },
+    {
+      "term": "predictive maintenance",
+      "tier": "context",
+      "group": "techniques",
+      "variants": [
+        "condition-based monitoring",
+        "prescriptive maintenance"
+      ],
+      "why": "frequent industrial ML use"
+    },
+    {
+      "term": "predictive forecasting",
+      "tier": "context",
+      "group": "techniques",
+      "variants": [
+        "algorithmic forecasting",
+        "demand sensing",
+        "forecasting algorithm",
+        "forecasting model"
+      ],
+      "why": "forecasting that is often ML-based"
+    },
+    {
+      "term": "optimisation algorithm",
+      "tier": "context",
+      "group": "techniques",
+      "variants": [
+        "optimization algorithm",
+        "self-optimising",
+        "self-optimizing",
+        "learning-based optimisation",
+        "learning-based optimization"
+      ],
+      "why": "optimisation that may be learned"
+    },
+    {
+      "term": "knowledge graph",
+      "tier": "context",
+      "group": "techniques",
+      "variants": [
+        "semantic layer",
+        "ontology-based"
+      ],
+      "why": "structured knowledge used with AI"
+    },
+    {
+      "term": "genetic algorithm",
+      "tier": "ai",
+      "group": "techniques",
+      "variants": [
+        "evolutionary algorithm"
+      ],
+      "why": "classic AI search method"
+    },
+    {
+      "term": "fuzzy logic",
+      "tier": "ai",
+      "group": "techniques",
+      "why": "classic AI reasoning method"
+    },
+    {
+      "term": "neuro-symbolic",
+      "tier": "ai",
+      "group": "techniques",
+      "variants": [
+        "neurosymbolic"
+      ],
+      "why": "hybrid of neural and symbolic AI"
+    },
+    {
+      "term": "digital twin",
+      "tier": "context",
+      "group": "techniques",
+      "variants": [
+        "virtual twin"
+      ],
+      "why": "simulation often paired with ML"
+    },
+    {
+      "term": "autonomous system",
+      "tier": "context",
+      "group": "techniques",
+      "variants": [
+        "autonomous technology",
+        "autonomous decision",
+        "autonomous operations",
+        "autonomous capabilities"
+      ],
+      "why": "autonomy phrase, not bare word"
+    },
+    {
+      "term": "autonomous vehicle",
+      "tier": "context",
+      "group": "techniques",
+      "variants": [
+        "self-driving",
+        "driverless",
+        "autonomous driving"
+      ],
+      "why": "AI-driven mobility cited across sectors"
+    },
+    {
+      "term": "intelligent robotics",
+      "tier": "context",
+      "group": "techniques",
+      "variants": [
+        "cognitive robotics",
+        "advanced robotics",
+        "AI robotics",
+        "smart robotics"
+      ],
+      "why": "robotics with learned behaviour"
+    },
+    {
+      "term": "algorithmic trading",
+      "tier": "context",
+      "group": "techniques",
+      "why": "algorithmic decisions, sometimes ML"
+    },
+    {
+      "term": "algorithmic pricing",
+      "tier": "context",
+      "group": "techniques",
+      "variants": [
+        "pricing algorithm",
+        "dynamic pricing algorithm"
+      ],
+      "why": "prices set by algorithm"
+    },
+    {
+      "term": "automated content moderation",
+      "tier": "context",
+      "group": "techniques",
+      "variants": [
+        "content moderation algorithm",
+        "automated moderation"
+      ],
+      "why": "classifier-based moderation"
+    },
+    {
+      "term": "generative AI",
+      "tier": "ai",
+      "group": "generative",
+      "variants": [
+        "GenAI",
+        "Gen AI",
+        "generative artificial intelligence"
+      ],
+      "why": "the headline term since 2023"
+    },
+    {
+      "term": "generative model",
+      "tier": "ai",
+      "group": "generative",
+      "variants": [
+        "generative technology",
+        "generative tools",
+        "generative capabilities",
+        "generative search"
+      ],
+      "why": "generative wording without the word AI"
+    },
+    {
+      "term": "large language model",
+      "tier": "ai",
+      "group": "generative",
+      "variants": [
+        "LLM",
+        "language model"
+      ],
+      "case_sensitive_variants": [
+        "LLM"
+      ],
+      "why": "text-generating foundation models"
+    },
+    {
+      "term": "foundation model",
+      "tier": "ai",
+      "group": "generative",
+      "variants": [
+        "foundational model",
+        "frontier model",
+        "reasoning model"
+      ],
+      "why": "large general models"
+    },
+    {
+      "term": "multimodal model",
+      "tier": "ai",
+      "group": "generative",
+      "variants": [
+        "multi-modal model",
+        "multimodal AI",
+        "multimodal foundation"
+      ],
+      "why": "multimodal as a phrase only"
+    },
+    {
+      "term": "generative pre-trained transformer",
+      "tier": "ai",
+      "group": "generative",
+      "why": "what GPT stands for"
+    },
+    {
+      "term": "pre-trained model",
+      "tier": "ai",
+      "group": "generative",
+      "variants": [
+        "pretrained model",
+        "pre-training",
+        "pretraining"
+      ],
+      "why": "how foundation models are built"
+    },
+    {
+      "term": "open-weight model",
+      "tier": "ai",
+      "group": "generative",
+      "variants": [
+        "open weights"
+      ],
+      "why": "openly released model parameters"
+    },
+    {
+      "term": "open-source model",
+      "tier": "context",
+      "group": "generative",
+      "variants": [
+        "open-source LLM"
+      ],
+      "why": "openly released models"
+    },
+    {
+      "term": "model provider",
+      "tier": "context",
+      "group": "generative",
+      "variants": [
+        "model developer",
+        "model vendor",
+        "third-party model",
+        "model-as-a-service"
+      ],
+      "why": "supplier role in the model market"
+    },
+    {
+      "term": "text-to-image",
+      "tier": "ai",
+      "group": "generative",
+      "variants": [
+        "image generation",
+        "image generator"
+      ],
+      "why": "generated images"
+    },
+    {
+      "term": "text-to-video",
+      "tier": "ai",
+      "group": "generative",
+      "variants": [
+        "video generation"
+      ],
+      "why": "generated video"
+    },
+    {
+      "term": "text-to-speech",
+      "tier": "ai",
+      "group": "generative",
+      "variants": [
+        "text-to-audio"
+      ],
+      "why": "generated audio"
+    },
+    {
+      "term": "speech synthesis",
+      "tier": "ai",
+      "group": "generative",
+      "variants": [
+        "synthetic voice",
+        "voice synthesis",
+        "voice generation"
+      ],
+      "why": "generated speech"
+    },
+    {
+      "term": "text generation",
+      "tier": "ai",
+      "group": "generative",
+      "variants": [
+        "text generator",
+        "language generation",
+        "text-to-code"
+      ],
+      "why": "generated writing"
+    },
+    {
+      "term": "diffusion model",
+      "tier": "ai",
+      "group": "generative",
+      "variants": [
+        "latent diffusion"
+      ],
+      "why": "image generation model family"
+    },
+    {
+      "term": "generative adversarial network",
+      "tier": "ai",
+      "group": "generative",
+      "why": "older generation model family"
+    },
+    {
+      "term": "prompt engineering",
+      "tier": "ai",
+      "group": "generative",
+      "variants": [
+        "prompt engineer",
+        "prompt design",
+        "prompt library",
+        "prompt template",
+        "system prompt",
+        "user prompts"
+      ],
+      "why": "instructing generative models"
+    },
+    {
+      "term": "prompts and outputs",
+      "tier": "ai",
+      "group": "generative",
+      "variants": [
+        "prompts and responses",
+        "prompts or outputs",
+        "inputs and prompts"
+      ],
+      "why": "contract wording for model use"
+    },
+    {
+      "term": "retrieval-augmented generation",
+      "tier": "ai",
+      "group": "generative",
+      "variants": [
+        "RAG",
+        "retrieval augmented"
+      ],
+      "case_sensitive_variants": [
+        "RAG"
+      ],
+      "why": "grounding models in company data"
+    },
+    {
+      "term": "model fine-tuning",
+      "tier": "ai",
+      "group": "generative",
+      "variants": [
+        "fine-tuned model",
+        "fine-tuning of models",
+        "fine-tune models"
+      ],
+      "why": "adapting a base model"
+    },
+    {
+      "term": "model distillation",
+      "tier": "ai",
+      "group": "generative",
+      "variants": [
+        "knowledge distillation",
+        "distilled model"
+      ],
+      "why": "compressing a model"
+    },
+    {
+      "term": "fine-tuning",
+      "tier": "context",
+      "group": "generative",
+      "variants": [
+        "fine-tune",
+        "fine-tuned",
+        "finetuning"
+      ],
+      "why": "also ordinary business wording"
+    },
+    {
+      "term": "vector embedding",
+      "tier": "ai",
+      "group": "generative",
+      "variants": [
+        "text embedding",
+        "embedding model",
+        "word embedding"
+      ],
+      "why": "numeric representations used by models"
+    },
+    {
+      "term": "vector database",
+      "tier": "ai",
+      "group": "generative",
+      "variants": [
+        "vector store",
+        "vector search",
+        "vector index"
+      ],
+      "why": "storage for embeddings"
+    },
+    {
+      "term": "semantic search",
+      "tier": "context",
+      "group": "generative",
+      "why": "meaning-based search, usually embedding-driven"
+    },
+    {
+      "term": "context window",
+      "tier": "ai",
+      "group": "generative",
+      "why": "how much text a model can read"
+    },
+    {
+      "term": "output tokens",
+      "tier": "ai",
+      "group": "generative",
+      "variants": [
+        "input tokens",
+        "token consumption",
+        "tokens per second",
+        "cost per token",
+        "per-token"
+      ],
+      "why": "LLM usage and pricing units"
+    },
+    {
+      "term": "synthetic media",
+      "tier": "ai",
+      "group": "generative",
+      "variants": [
+        "synthetic content",
+        "machine-generated content",
+        "synthetically generated"
+      ],
+      "why": "generated media as a category"
+    },
+    {
+      "term": "machine-generated",
+      "tier": "context",
+      "group": "generative",
+      "variants": [
+        "computer-generated",
+        "algorithmically generated",
+        "auto-generated",
+        "automatically generated"
+      ],
+      "why": "generated content without naming AI"
+    },
+    {
+      "term": "content generation",
+      "tier": "context",
+      "group": "generative",
+      "variants": [
+        "automated content generation",
+        "automated content creation",
+        "content creation tools"
+      ],
+      "why": "frequent generative use case"
+    },
+    {
+      "term": "code generation",
+      "tier": "context",
+      "group": "generative",
+      "variants": [
+        "code completion",
+        "automated coding"
+      ],
+      "why": "generative use in software work"
+    },
+    {
+      "term": "vibe coding",
+      "tier": "ai",
+      "group": "generative",
+      "why": "building software by prompting"
+    },
+    {
+      "term": "document summarisation",
+      "tier": "context",
+      "group": "generative",
+      "variants": [
+        "document summarization",
+        "automated summarisation",
+        "automated summarization",
+        "text summarisation",
+        "text summarization"
+      ],
+      "why": "frequent generative use case"
+    },
+    {
+      "term": "generative design",
+      "tier": "context",
+      "group": "generative",
+      "why": "engineering design by generative methods"
+    },
+    {
+      "term": "generative engine optimization",
+      "tier": "ai",
+      "group": "generative",
+      "variants": [
+        "generative engine optimisation",
+        "answer engine optimization",
+        "answer engine"
+      ],
+      "why": "search shifting to generated answers"
+    },
+    {
+      "term": "digital avatar",
+      "tier": "context",
+      "group": "generative",
+      "variants": [
+        "digital human",
+        "virtual human",
+        "synthetic avatar"
+      ],
+      "why": "generated presenters and personas"
+    },
+    {
+      "term": "large model",
+      "tier": "context",
+      "group": "generative",
+      "variants": [
+        "large-scale model",
+        "big model",
+        "pre-trained large model"
+      ],
+      "why": "wording used in Chinese-issuer filings"
+    },
+    {
+      "term": "AI-generated",
+      "tier": "ai",
+      "group": "generative",
+      "variants": [
+        "AI-generated content",
+        "AI-created",
+        "AI-produced",
+        "AI output"
+      ],
+      "why": "content made by AI"
+    },
+    {
+      "term": "model API",
+      "tier": "context",
+      "group": "generative",
+      "variants": [
+        "API access to models",
+        "model access",
+        "model endpoints"
+      ],
+      "why": "how models are consumed"
+    },
+    {
+      "term": "agentic AI",
+      "tier": "ai",
+      "group": "agents",
+      "variants": [
+        "agentic"
+      ],
+      "why": "AI that acts with autonomy"
+    },
+    {
+      "term": "AI agent",
+      "tier": "ai",
+      "group": "agents",
+      "variants": [
+        "autonomous agent",
+        "intelligent agent"
+      ],
+      "why": "software acting on goals"
+    },
+    {
+      "term": "software agent",
+      "tier": "context",
+      "group": "agents",
+      "variants": [
+        "task agent"
+      ],
+      "why": "agent wording that may be non-AI"
+    },
+    {
+      "term": "AI assistant",
+      "tier": "ai",
+      "group": "agents",
+      "variants": [
+        "intelligent assistant",
+        "intelligent virtual assistant",
+        "AI companion"
+      ],
+      "why": "assistant products"
+    },
+    {
+      "term": "virtual assistant",
+      "tier": "ai",
+      "group": "agents",
+      "why": "conversational assistants"
+    },
+    {
+      "term": "voice assistant",
+      "tier": "ai",
+      "group": "agents",
+      "variants": [
+        "voice bot",
+        "voicebot",
+        "voice agent"
+      ],
+      "why": "spoken conversational systems"
+    },
+    {
+      "term": "chatbot",
+      "tier": "ai",
+      "group": "agents",
+      "variants": [
+        "chat bot",
+        "conversational agent",
+        "conversational assistant",
+        "conversational interface",
+        "conversational bot",
+        "chat assistant"
+      ],
+      "why": "conversational systems"
+    },
+    {
+      "term": "AI copilot",
+      "tier": "ai",
+      "group": "agents",
+      "variants": [
+        "AI co-pilot",
+        "digital copilot",
+        "digital co-pilot"
+      ],
+      "why": "assistant embedded in work tools"
+    },
+    {
+      "term": "coding assistant",
+      "tier": "ai",
+      "group": "agents",
+      "variants": [
+        "coding agent",
+        "code assistant"
+      ],
+      "why": "AI for software development"
+    },
+    {
+      "term": "digital worker",
+      "tier": "context",
+      "group": "agents",
+      "variants": [
+        "digital workforce",
+        "digital employee",
+        "digital colleague",
+        "digital coworker",
+        "digital labor",
+        "digital labour",
+        "virtual worker",
+        "virtual employee"
+      ],
+      "why": "bots framed as staff"
+    },
+    {
+      "term": "agent orchestration",
+      "tier": "ai",
+      "group": "agents",
+      "variants": [
+        "orchestration of agents"
+      ],
+      "why": "coordinating multiple agents"
+    },
+    {
+      "term": "agent builder",
+      "tier": "ai",
+      "group": "agents",
+      "variants": [
+        "agent studio",
+        "agent framework"
+      ],
+      "why": "tools for creating agents"
+    },
+    {
+      "term": "multi-agent system",
+      "tier": "ai",
+      "group": "agents",
+      "variants": [
+        "multi-agent architecture",
+        "multi-agent workflow",
+        "multiagent",
+        "agent swarm"
+      ],
+      "why": "several agents working together"
+    },
+    {
+      "term": "Model Context Protocol",
+      "tier": "ai",
+      "group": "agents",
+      "variants": [
+        "MCP server"
+      ],
+      "case_sensitive_variants": [
+        "MCP server"
+      ],
+      "why": "standard connecting agents to tools"
+    },
+    {
+      "term": "tool calling",
+      "tier": "ai",
+      "group": "agents",
+      "variants": [
+        "function calling"
+      ],
+      "why": "models invoking external tools"
+    },
+    {
+      "term": "reasoning engine",
+      "tier": "ai",
+      "group": "agents",
+      "why": "component that plans agent actions"
+    },
+    {
+      "term": "autonomous decision-making",
+      "tier": "context",
+      "group": "agents",
+      "variants": [
+        "autonomously make decisions",
+        "autonomous actions",
+        "act autonomously"
+      ],
+      "why": "agents acting without approval"
+    },
+    {
+      "term": "robo-advisor",
+      "tier": "context",
+      "group": "agents",
+      "variants": [
+        "robo-adviser",
+        "virtual advisor",
+        "digital advisor",
+        "automated advice"
+      ],
+      "why": "automated advisory services"
+    },
+    {
+      "term": "AI employee",
+      "tier": "ai",
+      "group": "agents",
+      "variants": [
+        "AI teammate",
+        "AI colleague",
+        "AI worker",
+        "AI workforce",
+        "AI coworker"
+      ],
+      "why": "agents framed as staff"
+    },
+    {
+      "term": "customer service bot",
+      "tier": "context",
+      "group": "agents",
+      "variants": [
+        "service bot",
+        "support bot",
+        "sales bot",
+        "messaging bot"
+      ],
+      "why": "bots that may be scripted"
+    },
+    {
+      "term": "agent-to-agent",
+      "tier": "ai",
+      "group": "agents",
+      "variants": [
+        "agent interoperability",
+        "agent protocol",
+        "agent ecosystem",
+        "agent marketplace"
+      ],
+      "why": "agents interacting with agents"
+    },
+    {
+      "term": "browser agent",
+      "tier": "ai",
+      "group": "agents",
+      "variants": [
+        "computer-use agent",
+        "web agent"
+      ],
+      "why": "agents operating software interfaces"
+    },
+    {
+      "term": "autonomous task execution",
+      "tier": "ai",
+      "group": "agents",
+      "variants": [
+        "autonomous task completion",
+        "autonomously complete tasks",
+        "autonomously perform tasks",
+        "long-horizon tasks"
+      ],
+      "why": "what agents are claimed to do"
+    },
+    {
+      "term": "agent identity",
+      "tier": "ai",
+      "group": "agents",
+      "variants": [
+        "agent permissions",
+        "agent governance",
+        "agent oversight",
+        "agent guardrails"
+      ],
+      "why": "controlling what agents may do"
+    },
+    {
+      "term": "non-human identity",
+      "tier": "context",
+      "group": "agents",
+      "variants": [
+        "machine identity"
+      ],
+      "why": "identity management extended to agents"
+    },
+    {
+      "term": "OpenAI",
+      "tier": "ai",
+      "group": "products_vendors",
+      "why": "most-named AI lab"
+    },
+    {
+      "term": "ChatGPT",
+      "tier": "ai",
+      "group": "products_vendors",
+      "variants": [
+        "Chat GPT",
+        "ChatGPT Enterprise"
+      ],
+      "why": "most-named AI product"
+    },
+    {
+      "term": "GPT-4",
+      "tier": "ai",
+      "group": "products_vendors",
+      "variants": [
+        "GPT",
+        "GPT-4o",
+        "GPT-5",
+        "GPT-3.5",
+        "custom GPT"
+      ],
+      "case_sensitive_variants": [
+        "GPT",
+        "GPT-4",
+        "GPT-4o",
+        "GPT-5",
+        "GPT-3.5"
+      ],
+      "why": "OpenAI model names"
+    },
+    {
+      "term": "DALL-E",
+      "tier": "ai",
+      "group": "products_vendors",
+      "variants": [
+        "DALL·E",
+        "Sora"
+      ],
+      "case_sensitive_variants": [
+        "DALL-E",
+        "DALL·E",
+        "Sora"
+      ],
+      "why": "OpenAI image and video models"
+    },
+    {
+      "term": "Microsoft Copilot",
+      "tier": "ai",
+      "group": "products_vendors",
+      "variants": [
+        "Copilot",
+        "Microsoft 365 Copilot",
+        "GitHub Copilot",
+        "Copilot Studio",
+        "Bing Chat"
+      ],
+      "case_sensitive_variants": [
+        "Copilot"
+      ],
+      "why": "Microsoft assistant line"
+    },
+    {
+      "term": "Azure OpenAI",
+      "tier": "ai",
+      "group": "products_vendors",
+      "variants": [
+        "Azure AI",
+        "Azure Machine Learning",
+        "Azure AI Foundry"
+      ],
+      "why": "Microsoft cloud AI services"
+    },
+    {
+      "term": "Anthropic",
+      "tier": "ai",
+      "group": "products_vendors",
+      "variants": [
+        "Anthropic Claude",
+        "Claude by Anthropic",
+        "Claude Code",
+        "Claude Sonnet",
+        "Claude Opus",
+        "Claude Haiku"
+      ],
+      "case_sensitive_variants": [
+        "Anthropic",
+        "Anthropic Claude",
+        "Claude by Anthropic",
+        "Claude Code",
+        "Claude Sonnet",
+        "Claude Opus",
+        "Claude Haiku"
+      ],
+      "why": "AI lab; Claude only in qualified form"
+    },
+    {
+      "term": "Google Gemini",
+      "tier": "ai",
+      "group": "products_vendors",
+      "variants": [
+        "Gemini AI",
+        "Gemini Pro",
+        "Gemini Ultra",
+        "Gemini Flash",
+        "Gemini model",
+        "Gemini for Google Workspace",
+        "Google Bard"
+      ],
+      "case_sensitive_variants": [
+        "Google Gemini",
+        "Gemini AI",
+        "Gemini Pro",
+        "Gemini Ultra",
+        "Gemini Flash",
+        "Gemini model",
+        "Gemini for Google Workspace",
+        "Google Bard"
+      ],
+      "why": "Google models, qualified to avoid other Geminis"
+    },
+    {
+      "term": "DeepMind",
+      "tier": "ai",
+      "group": "products_vendors",
+      "variants": [
+        "Google DeepMind"
+      ],
+      "why": "Google AI lab"
+    },
+    {
+      "term": "AlphaFold",
+      "tier": "ai",
+      "group": "products_vendors",
+      "variants": [
+        "AlphaGo"
+      ],
+      "why": "DeepMind systems"
+    },
+    {
+      "term": "Vertex AI",
+      "tier": "ai",
+      "group": "products_vendors",
+      "variants": [
+        "Google Vertex",
+        "Google Cloud AI",
+        "Duet AI"
+      ],
+      "why": "Google cloud AI services"
+    },
+    {
+      "term": "NotebookLM",
+      "tier": "ai",
+      "group": "products_vendors",
+      "why": "Google research assistant"
+    },
+    {
+      "term": "Amazon Bedrock",
+      "tier": "ai",
+      "group": "products_vendors",
+      "variants": [
+        "AWS Bedrock",
+        "Bedrock AgentCore"
+      ],
+      "why": "AWS model service"
+    },
+    {
+      "term": "Amazon SageMaker",
+      "tier": "ai",
+      "group": "products_vendors",
+      "variants": [
+        "SageMaker"
+      ],
+      "why": "AWS ML platform"
+    },
+    {
+      "term": "Amazon Q",
+      "tier": "ai",
+      "group": "products_vendors",
+      "case_sensitive_variants": [
+        "Amazon Q"
+      ],
+      "why": "Amazon work assistant"
+    },
+    {
+      "term": "Amazon Nova",
+      "tier": "ai",
+      "group": "products_vendors",
+      "variants": [
+        "Amazon Titan"
+      ],
+      "why": "Amazon model families"
+    },
+    {
+      "term": "Amazon Alexa",
+      "tier": "ai",
+      "group": "products_vendors",
+      "variants": [
+        "Alexa+"
+      ],
+      "why": "Amazon voice assistant"
+    },
+    {
+      "term": "Meta AI",
+      "tier": "ai",
+      "group": "products_vendors",
+      "variants": [
+        "Meta Llama",
+        "Llama 2",
+        "Llama 3",
+        "Llama 4",
+        "Llama model"
+      ],
+      "case_sensitive_variants": [
+        "Meta Llama",
+        "Llama 2",
+        "Llama 3",
+        "Llama 4",
+        "Llama model"
+      ],
+      "why": "Meta models, Llama only qualified"
+    },
+    {
+      "term": "Mistral AI",
+      "tier": "ai",
+      "group": "products_vendors",
+      "variants": [
+        "Mistral model",
+        "Mistral Large"
+      ],
+      "case_sensitive_variants": [
+        "Mistral model",
+        "Mistral Large"
+      ],
+      "why": "French model developer"
+    },
+    {
+      "term": "Aleph Alpha",
+      "tier": "ai",
+      "group": "products_vendors",
+      "why": "German model developer"
+    },
+    {
+      "term": "Cohere",
+      "tier": "ai",
+      "group": "products_vendors",
+      "case_sensitive_variants": [
+        "Cohere"
+      ],
+      "why": "enterprise LLM vendor; lower case is a verb"
+    },
+    {
+      "term": "Hugging Face",
+      "tier": "ai",
+      "group": "products_vendors",
+      "variants": [
+        "HuggingFace"
+      ],
+      "why": "model hub"
+    },
+    {
+      "term": "Stable Diffusion",
+      "tier": "ai",
+      "group": "products_vendors",
+      "variants": [
+        "Stability AI"
+      ],
+      "why": "image generation model and maker"
+    },
+    {
+      "term": "Midjourney",
+      "tier": "ai",
+      "group": "products_vendors",
+      "why": "image generation product"
+    },
+    {
+      "term": "Adobe Firefly",
+      "tier": "ai",
+      "group": "products_vendors",
+      "variants": [
+        "Adobe Sensei"
+      ],
+      "why": "Adobe AI features"
+    },
+    {
+      "term": "ElevenLabs",
+      "tier": "ai",
+      "group": "products_vendors",
+      "why": "voice generation vendor"
+    },
+    {
+      "term": "Synthesia",
+      "tier": "ai",
+      "group": "products_vendors",
+      "variants": [
+        "HeyGen"
+      ],
+      "why": "avatar video generation vendors"
+    },
+    {
+      "term": "Perplexity AI",
+      "tier": "ai",
+      "group": "products_vendors",
+      "variants": [
+        "Perplexity.ai"
+      ],
+      "case_sensitive_variants": [
+        "Perplexity AI",
+        "Perplexity.ai"
+      ],
+      "why": "AI search vendor"
+    },
+    {
+      "term": "xAI",
+      "tier": "ai",
+      "group": "products_vendors",
+      "variants": [
+        "Grok"
+      ],
+      "case_sensitive_variants": [
+        "xAI",
+        "Grok"
+      ],
+      "why": "Musk AI lab and model"
+    },
+    {
+      "term": "DeepSeek",
+      "tier": "ai",
+      "group": "products_vendors",
+      "why": "Chinese model developer"
+    },
+    {
+      "term": "Qwen",
+      "tier": "ai",
+      "group": "products_vendors",
+      "variants": [
+        "Tongyi Qianwen"
+      ],
+      "case_sensitive_variants": [
+        "Qwen"
+      ],
+      "why": "Alibaba models"
+    },
+    {
+      "term": "Ernie Bot",
+      "tier": "ai",
+      "group": "products_vendors",
+      "variants": [
+        "Baidu Ernie"
+      ],
+      "why": "Baidu model"
+    },
+    {
+      "term": "Hunyuan",
+      "tier": "ai",
+      "group": "products_vendors",
+      "why": "Tencent model"
+    },
+    {
+      "term": "SenseTime",
+      "tier": "ai",
+      "group": "products_vendors",
+      "variants": [
+        "iFlytek",
+        "Zhipu AI",
+        "Moonshot AI"
+      ],
+      "why": "Chinese AI companies"
+    },
+    {
+      "term": "IBM watsonx",
+      "tier": "ai",
+      "group": "products_vendors",
+      "variants": [
+        "watsonx",
+        "IBM Watson"
+      ],
+      "why": "IBM AI line"
+    },
+    {
+      "term": "Salesforce Einstein",
+      "tier": "ai",
+      "group": "products_vendors",
+      "variants": [
+        "Einstein GPT",
+        "Einstein AI",
+        "Einstein Copilot",
+        "Agentforce"
+      ],
+      "why": "Salesforce AI line"
+    },
+    {
+      "term": "Palantir AIP",
+      "tier": "ai",
+      "group": "products_vendors",
+      "variants": [
+        "Palantir Artificial Intelligence Platform"
+      ],
+      "why": "Palantir AI product"
+    },
+    {
+      "term": "Palantir",
+      "tier": "context",
+      "group": "products_vendors",
+      "variants": [
+        "Palantir Foundry"
+      ],
+      "why": "data vendor often cited with AI"
+    },
+    {
+      "term": "Nvidia",
+      "tier": "context",
+      "group": "products_vendors",
+      "why": "chip maker central to AI spending"
+    },
+    {
+      "term": "Nvidia DGX",
+      "tier": "ai",
+      "group": "products_vendors",
+      "variants": [
+        "DGX Cloud",
+        "Nvidia Blackwell",
+        "Nvidia H100",
+        "H100",
+        "Nvidia Omniverse",
+        "CUDA"
+      ],
+      "case_sensitive_variants": [
+        "H100",
+        "CUDA"
+      ],
+      "why": "Nvidia AI hardware and software"
+    },
+    {
+      "term": "CoreWeave",
+      "tier": "ai",
+      "group": "products_vendors",
+      "variants": [
+        "Nebius",
+        "Lambda Labs",
+        "Nscale"
+      ],
+      "why": "GPU cloud providers"
+    },
+    {
+      "term": "Cerebras",
+      "tier": "ai",
+      "group": "products_vendors",
+      "variants": [
+        "Groq",
+        "SambaNova",
+        "Graphcore"
+      ],
+      "case_sensitive_variants": [
+        "Groq"
+      ],
+      "why": "AI chip start-ups"
+    },
+    {
+      "term": "Databricks",
+      "tier": "context",
+      "group": "products_vendors",
+      "variants": [
+        "Mosaic AI"
+      ],
+      "why": "data platform selling AI features"
+    },
+    {
+      "term": "Snowflake Cortex",
+      "tier": "ai",
+      "group": "products_vendors",
+      "why": "Snowflake AI service"
+    },
+    {
+      "term": "DataRobot",
+      "tier": "ai",
+      "group": "products_vendors",
+      "variants": [
+        "H2O.ai",
+        "C3.ai",
+        "C3 AI",
+        "Scale AI"
+      ],
+      "why": "enterprise AI vendors"
+    },
+    {
+      "term": "TensorFlow",
+      "tier": "ai",
+      "group": "products_vendors",
+      "variants": [
+        "Keras"
+      ],
+      "why": "ML framework"
+    },
+    {
+      "term": "PyTorch",
+      "tier": "ai",
+      "group": "products_vendors",
+      "why": "ML framework"
+    },
+    {
+      "term": "LangChain",
+      "tier": "ai",
+      "group": "products_vendors",
+      "variants": [
+        "LlamaIndex"
+      ],
+      "why": "LLM application frameworks"
+    },
+    {
+      "term": "Now Assist",
+      "tier": "ai",
+      "group": "products_vendors",
+      "why": "ServiceNow assistant"
+    },
+    {
+      "term": "SAP Joule",
+      "tier": "ai",
+      "group": "products_vendors",
+      "variants": [
+        "SAP Business AI"
+      ],
+      "why": "SAP assistant"
+    },
+    {
+      "term": "Apple Intelligence",
+      "tier": "ai",
+      "group": "products_vendors",
+      "why": "Apple AI features"
+    },
+    {
+      "term": "Siri",
+      "tier": "ai",
+      "group": "products_vendors",
+      "case_sensitive_variants": [
+        "Siri"
+      ],
+      "why": "Apple voice assistant"
+    },
+    {
+      "term": "Google Assistant",
+      "tier": "ai",
+      "group": "products_vendors",
+      "why": "Google voice assistant"
+    },
+    {
+      "term": "UiPath",
+      "tier": "context",
+      "group": "products_vendors",
+      "variants": [
+        "Automation Anywhere",
+        "Blue Prism"
+      ],
+      "why": "RPA vendors now selling AI agents"
+    },
+    {
+      "term": "Stargate",
+      "tier": "context",
+      "group": "products_vendors",
+      "variants": [
+        "Stargate project",
+        "Project Stargate"
+      ],
+      "case_sensitive_variants": [
+        "Stargate"
+      ],
+      "why": "large AI infrastructure venture"
+    },
+    {
+      "term": "GPU",
+      "tier": "context",
+      "group": "compute_infrastructure",
+      "variants": [
+        "graphics processing unit"
+      ],
+      "case_sensitive_variants": [
+        "GPU"
+      ],
+      "why": "main AI compute hardware"
+    },
+    {
+      "term": "AI accelerator",
+      "tier": "ai",
+      "group": "compute_infrastructure",
+      "variants": [
+        "AI chip",
+        "AI semiconductor",
+        "AI processor",
+        "inference chip",
+        "training chip"
+      ],
+      "why": "chips built for AI"
+    },
+    {
+      "term": "accelerated computing",
+      "tier": "context",
+      "group": "compute_infrastructure",
+      "variants": [
+        "hardware accelerator"
+      ],
+      "why": "compute wording around AI chips"
+    },
+    {
+      "term": "custom silicon",
+      "tier": "context",
+      "group": "compute_infrastructure",
+      "variants": [
+        "custom ASIC",
+        "application-specific integrated circuit"
+      ],
+      "why": "in-house chips, mostly for AI"
+    },
+    {
+      "term": "tensor processing unit",
+      "tier": "ai",
+      "group": "compute_infrastructure",
+      "variants": [
+        "TPU"
+      ],
+      "case_sensitive_variants": [
+        "TPU"
+      ],
+      "why": "Google AI processor"
+    },
+    {
+      "term": "neural processing unit",
+      "tier": "ai",
+      "group": "compute_infrastructure",
+      "variants": [
+        "NPU"
+      ],
+      "case_sensitive_variants": [
+        "NPU"
+      ],
+      "why": "on-device AI processor"
+    },
+    {
+      "term": "Trainium",
+      "tier": "ai",
+      "group": "compute_infrastructure",
+      "variants": [
+        "Inferentia",
+        "Maia accelerator"
+      ],
+      "why": "cloud providers' own AI chips"
+    },
+    {
+      "term": "neuromorphic",
+      "tier": "ai",
+      "group": "compute_infrastructure",
+      "why": "brain-inspired AI hardware"
+    },
+    {
+      "term": "high-bandwidth memory",
+      "tier": "context",
+      "group": "compute_infrastructure",
+      "variants": [
+        "HBM"
+      ],
+      "case_sensitive_variants": [
+        "HBM"
+      ],
+      "why": "memory driven by AI demand"
+    },
+    {
+      "term": "data center",
+      "tier": "context",
+      "group": "compute_infrastructure",
+      "variants": [
+        "data centre",
+        "datacenter",
+        "datacentre"
+      ],
+      "why": "where AI compute sits"
+    },
+    {
+      "term": "AI data center",
+      "tier": "ai",
+      "group": "compute_infrastructure",
+      "variants": [
+        "AI data centre",
+        "AI datacenter"
+      ],
+      "why": "facilities built for AI"
+    },
+    {
+      "term": "AI factory",
+      "tier": "ai",
+      "group": "compute_infrastructure",
+      "variants": [
+        "AI gigafactory"
+      ],
+      "why": "Nvidia-style term for AI facility"
+    },
+    {
+      "term": "hyperscaler",
+      "tier": "context",
+      "group": "compute_infrastructure",
+      "variants": [
+        "hyperscale"
+      ],
+      "why": "largest buyers of AI compute"
+    },
+    {
+      "term": "compute capacity",
+      "tier": "context",
+      "group": "compute_infrastructure",
+      "variants": [
+        "computing capacity",
+        "compute power",
+        "computing power",
+        "compute resources",
+        "compute infrastructure",
+        "compute demand",
+        "compute costs",
+        "compute-intensive"
+      ],
+      "why": "compute as a scarce input"
+    },
+    {
+      "term": "training cluster",
+      "tier": "ai",
+      "group": "compute_infrastructure",
+      "variants": [
+        "inference cluster",
+        "training compute",
+        "training run",
+        "training infrastructure"
+      ],
+      "why": "hardware for training models"
+    },
+    {
+      "term": "supercomputer",
+      "tier": "context",
+      "group": "compute_infrastructure",
+      "variants": [
+        "supercomputing",
+        "high-performance computing",
+        "HPC",
+        "exascale"
+      ],
+      "case_sensitive_variants": [
+        "HPC"
+      ],
+      "why": "large-scale compute, often AI"
+    },
+    {
+      "term": "inference workload",
+      "tier": "ai",
+      "group": "compute_infrastructure",
+      "variants": [
+        "AI workload",
+        "training workload",
+        "inference capacity",
+        "inference costs",
+        "inference compute",
+        "model inference",
+        "inferencing"
+      ],
+      "why": "running models in production"
+    },
+    {
+      "term": "AI infrastructure",
+      "tier": "ai",
+      "group": "compute_infrastructure",
+      "variants": [
+        "AI compute",
+        "AI computing",
+        "AI hardware",
+        "AI server",
+        "AI networking",
+        "AI PC"
+      ],
+      "why": "hardware layer for AI"
+    },
+    {
+      "term": "AI cloud",
+      "tier": "ai",
+      "group": "compute_infrastructure",
+      "variants": [
+        "neocloud",
+        "GPU cloud",
+        "GPU-as-a-service"
+      ],
+      "why": "rented AI compute"
+    },
+    {
+      "term": "model hosting",
+      "tier": "context",
+      "group": "compute_infrastructure",
+      "variants": [
+        "hosted model",
+        "self-hosted model",
+        "on-premises model"
+      ],
+      "why": "where models run"
+    },
+    {
+      "term": "on-device inference",
+      "tier": "context",
+      "group": "compute_infrastructure",
+      "variants": [
+        "on-device model",
+        "edge inference"
+      ],
+      "why": "models running on local hardware"
+    },
+    {
+      "term": "edge computing",
+      "tier": "context",
+      "group": "compute_infrastructure",
+      "why": "local compute, often for AI"
+    },
+    {
+      "term": "quantum computing",
+      "tier": "context",
+      "group": "compute_infrastructure",
+      "why": "adjacent technology often paired with AI"
+    },
+    {
+      "term": "sovereign AI",
+      "tier": "ai",
+      "group": "compute_infrastructure",
+      "variants": [
+        "AI sovereignty",
+        "sovereign compute"
+      ],
+      "why": "national control over AI capacity"
+    },
+    {
+      "term": "sovereign cloud",
+      "tier": "context",
+      "group": "compute_infrastructure",
+      "variants": [
+        "digital sovereignty",
+        "technological sovereignty"
+      ],
+      "why": "sovereignty wording around AI"
+    },
+    {
+      "term": "AI capex",
+      "tier": "ai",
+      "group": "compute_infrastructure",
+      "variants": [
+        "AI capital expenditure",
+        "AI-related capital expenditure",
+        "AI spending",
+        "AI buildout",
+        "AI build-out",
+        "AI infrastructure spending"
+      ],
+      "why": "investment wave in AI capacity"
+    },
+    {
+      "term": "AI-driven power demand",
+      "tier": "ai",
+      "group": "compute_infrastructure",
+      "variants": [
+        "AI power demand",
+        "AI-related electricity demand",
+        "AI energy demand",
+        "AI-driven electricity demand"
+      ],
+      "why": "electricity needs of AI"
+    },
+    {
+      "term": "liquid cooling",
+      "tier": "context",
+      "group": "compute_infrastructure",
+      "variants": [
+        "direct-to-chip cooling",
+        "immersion cooling"
+      ],
+      "why": "cooling needs of AI hardware"
+    },
+    {
+      "term": "advanced computing chips",
+      "tier": "context",
+      "group": "compute_infrastructure",
+      "variants": [
+        "advanced semiconductors"
+      ],
+      "why": "chips subject to AI export limits"
+    },
+    {
+      "term": "chip export controls",
+      "tier": "context",
+      "group": "compute_infrastructure",
+      "variants": [
+        "export controls on chips",
+        "AI diffusion rule"
+      ],
+      "why": "export limits on AI hardware"
+    },
+    {
+      "term": "compute credits",
+      "tier": "context",
+      "group": "compute_infrastructure",
+      "variants": [
+        "cloud credits"
+      ],
+      "why": "compute supplied as investment"
+    },
+    {
+      "term": "gigawatt-scale",
+      "tier": "context",
+      "group": "compute_infrastructure",
+      "variants": [
+        "gigawatts of compute",
+        "gigawatts of capacity",
+        "megawatts of IT load",
+        "critical IT load"
+      ],
+      "why": "how AI facility size is stated"
+    },
+    {
+      "term": "cloud capacity",
+      "tier": "context",
+      "group": "compute_infrastructure",
+      "variants": [
+        "cloud computing capacity",
+        "cloud infrastructure capacity",
+        "cloud capacity constraints"
+      ],
+      "why": "capacity limits driven by AI"
+    },
+    {
+      "term": "training data",
+      "tier": "ai",
+      "group": "data_training",
+      "variants": [
+        "training dataset",
+        "training set",
+        "training corpus",
+        "data used to train",
+        "training example"
+      ],
+      "why": "data models learn from"
+    },
+    {
+      "term": "model training",
+      "tier": "ai",
+      "group": "data_training",
+      "variants": [
+        "train models",
+        "training of models",
+        "training the model",
+        "trained model",
+        "train our models",
+        "train its models",
+        "train their models"
+      ],
+      "why": "the act of training"
+    },
+    {
+      "term": "model retraining",
+      "tier": "ai",
+      "group": "data_training",
+      "variants": [
+        "retrain models",
+        "retrained model",
+        "continuous retraining"
+      ],
+      "why": "keeping models current"
+    },
+    {
+      "term": "data labelling",
+      "tier": "ai",
+      "group": "data_training",
+      "variants": [
+        "data labeling",
+        "data annotation",
+        "labelled data",
+        "labeled data",
+        "annotated data",
+        "ground truth data"
+      ],
+      "why": "preparing supervised training data"
+    },
+    {
+      "term": "human annotator",
+      "tier": "ai",
+      "group": "data_training",
+      "variants": [
+        "data labeller",
+        "data labeler",
+        "data annotator",
+        "crowdworker"
+      ],
+      "why": "people who label training data"
+    },
+    {
+      "term": "synthetic data",
+      "tier": "ai",
+      "group": "data_training",
+      "variants": [
+        "synthetically generated data",
+        "synthetic dataset"
+      ],
+      "why": "artificial data for training"
+    },
+    {
+      "term": "data augmentation",
+      "tier": "ai",
+      "group": "data_training",
+      "why": "expanding training data artificially"
+    },
+    {
+      "term": "validation dataset",
+      "tier": "ai",
+      "group": "data_training",
+      "variants": [
+        "test dataset",
+        "training and test data",
+        "holdout set",
+        "benchmark dataset",
+        "evaluation dataset"
+      ],
+      "why": "data for checking models"
+    },
+    {
+      "term": "model weights",
+      "tier": "ai",
+      "group": "data_training",
+      "variants": [
+        "trained weights",
+        "billion parameters",
+        "parameter count"
+      ],
+      "why": "what training produces"
+    },
+    {
+      "term": "learns from data",
+      "tier": "ai",
+      "group": "data_training",
+      "variants": [
+        "learning from data",
+        "learn from experience",
+        "improves with data"
+      ],
+      "why": "plain-language description of ML"
+    },
+    {
+      "term": "data scraping",
+      "tier": "context",
+      "group": "data_training",
+      "variants": [
+        "web scraping",
+        "scraped data",
+        "scraping of content",
+        "web crawler",
+        "robots.txt"
+      ],
+      "why": "how training data is often collected"
+    },
+    {
+      "term": "opt-out of training",
+      "tier": "ai",
+      "group": "data_training",
+      "variants": [
+        "use of data for training",
+        "customer data to train",
+        "content to train",
+        "data to train models",
+        "consent for training"
+      ],
+      "why": "control over training use of data"
+    },
+    {
+      "term": "data licensing",
+      "tier": "context",
+      "group": "data_training",
+      "variants": [
+        "data licensing agreement",
+        "content licensing agreement",
+        "license our content",
+        "licensing of content",
+        "data partnerships"
+      ],
+      "why": "deals supplying training content"
+    },
+    {
+      "term": "proprietary data",
+      "tier": "context",
+      "group": "data_training",
+      "variants": [
+        "first-party data",
+        "proprietary dataset"
+      ],
+      "why": "data as an AI advantage"
+    },
+    {
+      "term": "data moat",
+      "tier": "context",
+      "group": "data_training",
+      "variants": [
+        "data advantage",
+        "data flywheel"
+      ],
+      "why": "data as competitive barrier in AI"
+    },
+    {
+      "term": "unstructured data",
+      "tier": "context",
+      "group": "data_training",
+      "why": "raw material for language models"
+    },
+    {
+      "term": "large datasets",
+      "tier": "context",
+      "group": "data_training",
+      "variants": [
+        "massive datasets",
+        "vast amounts of data",
+        "large volumes of data"
+      ],
+      "why": "data scale that implies ML"
+    },
+    {
+      "term": "data provenance",
+      "tier": "context",
+      "group": "data_training",
+      "variants": [
+        "data lineage"
+      ],
+      "why": "origin of data used in models"
+    },
+    {
+      "term": "data curation",
+      "tier": "context",
+      "group": "data_training",
+      "variants": [
+        "curated dataset",
+        "data preparation"
+      ],
+      "why": "data handling before training"
+    },
+    {
+      "term": "data pipeline",
+      "tier": "context",
+      "group": "data_training",
+      "variants": [
+        "data ingestion"
+      ],
+      "why": "data plumbing behind models"
+    },
+    {
+      "term": "data foundation",
+      "tier": "context",
+      "group": "data_training",
+      "variants": [
+        "data estate",
+        "data readiness"
+      ],
+      "why": "data groundwork presented as AI enabler"
+    },
+    {
+      "term": "trained on customer data",
+      "tier": "ai",
+      "group": "data_training",
+      "variants": [
+        "trained on user data",
+        "trained on our data",
+        "trained on public data",
+        "trained on proprietary data",
+        "trained on publicly available"
+      ],
+      "why": "what data a model learned from"
+    },
+    {
+      "term": "personal data to train",
+      "tier": "ai",
+      "group": "data_training",
+      "variants": [
+        "personal information to train",
+        "train on personal data",
+        "training on personal data",
+        "personal data for training"
+      ],
+      "why": "privacy issue in training"
+    },
+    {
+      "term": "zero data retention",
+      "tier": "ai",
+      "group": "data_training",
+      "variants": [
+        "no-training commitment",
+        "not used to train",
+        "will not be used to train",
+        "not be used for training"
+      ],
+      "why": "vendor promises about training use"
+    },
+    {
+      "term": "human feedback",
+      "tier": "context",
+      "group": "data_training",
+      "variants": [
+        "user feedback to improve models",
+        "improve our models",
+        "improve its models",
+        "improve their models"
+      ],
+      "why": "usage data feeding model improvement"
+    },
+    {
+      "term": "web-scale data",
+      "tier": "context",
+      "group": "data_training",
+      "variants": [
+        "internet-scale data",
+        "training corpora",
+        "scraped from the internet"
+      ],
+      "why": "scale of training sources"
+    },
+    {
+      "term": "data representativeness",
+      "tier": "context",
+      "group": "data_training",
+      "variants": [
+        "representative data",
+        "unrepresentative data",
+        "data diversity",
+        "diverse datasets"
+      ],
+      "why": "whether data fits the population"
+    },
+    {
+      "term": "data monetisation",
+      "tier": "context",
+      "group": "data_training",
+      "variants": [
+        "data monetization",
+        "monetise our data",
+        "monetize our data",
+        "data marketplace",
+        "data as an asset"
+      ],
+      "why": "selling data, often for training"
+    },
+    {
+      "term": "enterprise knowledge base",
+      "tier": "context",
+      "group": "data_training",
+      "variants": [
+        "corporate knowledge base",
+        "knowledge repository",
+        "grounding data"
+      ],
+      "why": "company data fed to models"
+    },
+    {
+      "term": "MLOps",
+      "tier": "ai",
+      "group": "deployment_operations",
+      "variants": [
+        "LLMOps",
+        "ModelOps",
+        "AIOps",
+        "machine learning operations"
+      ],
+      "why": "operating ML systems"
+    },
+    {
+      "term": "model deployment",
+      "tier": "ai",
+      "group": "deployment_operations",
+      "variants": [
+        "deploy models",
+        "deployed model",
+        "deploying models",
+        "model serving"
+      ],
+      "why": "putting models into use"
+    },
+    {
+      "term": "model monitoring",
+      "tier": "context",
+      "group": "deployment_operations",
+      "variants": [
+        "model performance monitoring",
+        "monitoring of models",
+        "model observability",
+        "post-deployment monitoring",
+        "post-market monitoring"
+      ],
+      "why": "watching models after release"
+    },
+    {
+      "term": "model drift",
+      "tier": "ai",
+      "group": "deployment_operations",
+      "variants": [
+        "data drift",
+        "concept drift",
+        "model degradation",
+        "model decay",
+        "performance drift"
+      ],
+      "why": "models worsening over time"
+    },
+    {
+      "term": "model validation",
+      "tier": "context",
+      "group": "deployment_operations",
+      "variants": [
+        "model testing",
+        "model evaluation",
+        "model verification",
+        "model benchmark"
+      ],
+      "why": "checking models before use"
+    },
+    {
+      "term": "model lifecycle",
+      "tier": "context",
+      "group": "deployment_operations",
+      "variants": [
+        "model life cycle",
+        "model inventory",
+        "model registry",
+        "model catalogue",
+        "model catalog",
+        "model development lifecycle"
+      ],
+      "why": "managing models over time"
+    },
+    {
+      "term": "model development",
+      "tier": "context",
+      "group": "deployment_operations",
+      "variants": [
+        "develop models",
+        "model building",
+        "model owner"
+      ],
+      "why": "building models, also in finance"
+    },
+    {
+      "term": "challenger model",
+      "tier": "context",
+      "group": "deployment_operations",
+      "variants": [
+        "champion-challenger"
+      ],
+      "why": "testing a new model against current"
+    },
+    {
+      "term": "model release",
+      "tier": "context",
+      "group": "deployment_operations",
+      "variants": [
+        "model version",
+        "model deprecation"
+      ],
+      "why": "changes to models in service"
+    },
+    {
+      "term": "model performance",
+      "tier": "context",
+      "group": "deployment_operations",
+      "variants": [
+        "model accuracy",
+        "model output",
+        "model quality"
+      ],
+      "why": "how well a model works"
+    },
+    {
+      "term": "model card",
+      "tier": "ai",
+      "group": "deployment_operations",
+      "variants": [
+        "system card",
+        "model documentation"
+      ],
+      "why": "documentation of a model"
+    },
+    {
+      "term": "human-in-the-loop",
+      "tier": "ai",
+      "group": "deployment_operations",
+      "variants": [
+        "human-on-the-loop",
+        "human-in-command"
+      ],
+      "why": "human check inside automated flow"
+    },
+    {
+      "term": "human oversight",
+      "tier": "context",
+      "group": "deployment_operations",
+      "variants": [
+        "human review of outputs",
+        "human intervention",
+        "human supervision",
+        "meaningful human control",
+        "human judgment",
+        "human judgement"
+      ],
+      "why": "people supervising automated systems"
+    },
+    {
+      "term": "human handoff",
+      "tier": "context",
+      "group": "deployment_operations",
+      "variants": [
+        "fallback to human",
+        "escalation to a human",
+        "human escalation"
+      ],
+      "why": "routing away from automated system"
+    },
+    {
+      "term": "kill switch",
+      "tier": "context",
+      "group": "deployment_operations",
+      "why": "ability to stop an automated system"
+    },
+    {
+      "term": "guardrails",
+      "tier": "context",
+      "group": "deployment_operations",
+      "variants": [
+        "safety guardrails",
+        "model guardrails",
+        "content filters"
+      ],
+      "why": "limits placed on model behaviour"
+    },
+    {
+      "term": "AI use case",
+      "tier": "ai",
+      "group": "deployment_operations",
+      "variants": [
+        "AI pilot",
+        "AI proof of concept",
+        "AI experiment",
+        "AI sandbox",
+        "AI roadmap",
+        "AI deployment",
+        "AI implementation",
+        "AI integration",
+        "AI rollout"
+      ],
+      "why": "how filings describe adoption steps"
+    },
+    {
+      "term": "AI centre of excellence",
+      "tier": "ai",
+      "group": "deployment_operations",
+      "variants": [
+        "AI center of excellence",
+        "AI CoE",
+        "AI lab",
+        "AI hub"
+      ],
+      "why": "central AI teams"
+    },
+    {
+      "term": "enterprise AI",
+      "tier": "ai",
+      "group": "deployment_operations",
+      "variants": [
+        "AI platform",
+        "AI stack",
+        "AI tooling"
+      ],
+      "why": "organisational AI capability"
+    },
+    {
+      "term": "AI readiness",
+      "tier": "ai",
+      "group": "deployment_operations",
+      "variants": [
+        "AI maturity",
+        "AI enablement"
+      ],
+      "why": "how prepared a company is"
+    },
+    {
+      "term": "AI vendor",
+      "tier": "ai",
+      "group": "deployment_operations",
+      "variants": [
+        "AI supplier",
+        "AI provider",
+        "third-party AI tools",
+        "AI procurement"
+      ],
+      "why": "buying AI from others"
+    },
+    {
+      "term": "decision support system",
+      "tier": "context",
+      "group": "deployment_operations",
+      "variants": [
+        "decision-support tool",
+        "decision support"
+      ],
+      "why": "tools advising human decisions"
+    },
+    {
+      "term": "workflow automation",
+      "tier": "context",
+      "group": "deployment_operations",
+      "variants": [
+        "process automation",
+        "automated workflow",
+        "business process automation"
+      ],
+      "why": "automation that may use AI"
+    },
+    {
+      "term": "customer service automation",
+      "tier": "context",
+      "group": "deployment_operations",
+      "variants": [
+        "automated customer service",
+        "automated customer support",
+        "contact centre automation",
+        "contact center automation"
+      ],
+      "why": "frequent AI deployment area"
+    },
+    {
+      "term": "AI adoption",
+      "tier": "ai",
+      "group": "deployment_operations",
+      "variants": [
+        "adoption of AI",
+        "AI transformation",
+        "AI strategy",
+        "AI initiatives",
+        "AI investments",
+        "AI usage"
+      ],
+      "why": "standard filing phrasing for AI programmes"
+    },
+    {
+      "term": "AI features",
+      "tier": "ai",
+      "group": "deployment_operations",
+      "variants": [
+        "AI-enabled features",
+        "AI functionality",
+        "AI-powered products",
+        "AI capabilities",
+        "AI tools",
+        "AI systems",
+        "AI solutions",
+        "AI technologies",
+        "AI offerings"
+      ],
+      "why": "AI in products and operations"
+    },
+    {
+      "term": "productionise",
+      "tier": "context",
+      "group": "deployment_operations",
+      "variants": [
+        "productionize",
+        "pilot to production",
+        "scale from pilot",
+        "production-ready models"
+      ],
+      "why": "moving pilots into operation"
+    },
+    {
+      "term": "responsible deployment",
+      "tier": "context",
+      "group": "deployment_operations",
+      "variants": [
+        "safe deployment",
+        "staged rollout",
+        "controlled rollout"
+      ],
+      "why": "cautious release wording"
+    },
+    {
+      "term": "automated screening",
+      "tier": "context",
+      "group": "deployment_operations",
+      "variants": [
+        "automated triage",
+        "automated classification",
+        "automated review",
+        "automated inspection"
+      ],
+      "why": "automated judgement tasks, often ML"
+    },
+    {
+      "term": "process mining",
+      "tier": "context",
+      "group": "deployment_operations",
+      "variants": [
+        "task mining",
+        "process intelligence"
+      ],
+      "why": "analysis preceding automation"
+    },
+    {
+      "term": "model incident",
+      "tier": "context",
+      "group": "deployment_operations",
+      "variants": [
+        "model outage",
+        "model rollback",
+        "model fallback"
+      ],
+      "why": "operational failure of a model"
+    },
+    {
+      "term": "hallucination",
+      "tier": "ai",
+      "group": "risks_failures",
+      "variants": [
+        "hallucinate",
+        "hallucinated",
+        "confabulation",
+        "fabricated output",
+        "fabricated information"
+      ],
+      "why": "models inventing content"
+    },
+    {
+      "term": "biased output",
+      "tier": "ai",
+      "group": "risks_failures",
+      "variants": [
+        "biased results",
+        "biased or inaccurate",
+        "inaccurate or biased",
+        "biased outcomes",
+        "biased decisions"
+      ],
+      "why": "bias wording in AI risk factors"
+    },
+    {
+      "term": "inaccurate output",
+      "tier": "context",
+      "group": "risks_failures",
+      "variants": [
+        "incorrect output",
+        "erroneous output",
+        "flawed output",
+        "unreliable output",
+        "harmful output",
+        "misleading output"
+      ],
+      "why": "faulty results from models"
+    },
+    {
+      "term": "reliability of outputs",
+      "tier": "context",
+      "group": "risks_failures",
+      "variants": [
+        "accuracy of outputs",
+        "quality of outputs",
+        "output reliability",
+        "verify outputs",
+        "verification of outputs",
+        "accuracy of responses"
+      ],
+      "why": "trust in what models produce"
+    },
+    {
+      "term": "algorithmic bias",
+      "tier": "ai",
+      "group": "risks_failures",
+      "variants": [
+        "algorithm bias",
+        "biased algorithm",
+        "bias in algorithms",
+        "algorithmic discrimination",
+        "algorithmic fairness",
+        "algorithmic harm",
+        "model bias",
+        "machine bias",
+        "bias in models"
+      ],
+      "why": "unfair treatment by algorithm"
+    },
+    {
+      "term": "unintended bias",
+      "tier": "context",
+      "group": "risks_failures",
+      "variants": [
+        "unfair bias",
+        "discriminatory outcomes",
+        "discriminatory output",
+        "disparate impact",
+        "unfair outcomes"
+      ],
+      "why": "discrimination wording without naming AI"
+    },
+    {
+      "term": "biased data",
+      "tier": "context",
+      "group": "risks_failures",
+      "variants": [
+        "biased dataset",
+        "insufficient or biased",
+        "datasets may be insufficient",
+        "poor data quality"
+      ],
+      "why": "flawed data behind flawed models"
+    },
+    {
+      "term": "bias mitigation",
+      "tier": "context",
+      "group": "risks_failures",
+      "variants": [
+        "bias testing",
+        "bias detection",
+        "fairness testing",
+        "debiasing"
+      ],
+      "why": "controls against bias"
+    },
+    {
+      "term": "explainability",
+      "tier": "ai",
+      "group": "risks_failures",
+      "variants": [
+        "explainable",
+        "interpretability",
+        "interpretable model"
+      ],
+      "why": "ability to explain model decisions"
+    },
+    {
+      "term": "black box",
+      "tier": "context",
+      "group": "risks_failures",
+      "variants": [
+        "opaque model",
+        "opaque algorithms",
+        "model opacity",
+        "opacity of algorithms"
+      ],
+      "why": "models that cannot be explained"
+    },
+    {
+      "term": "model risk",
+      "tier": "context",
+      "group": "risks_failures",
+      "variants": [
+        "model risk management",
+        "MRM",
+        "model error",
+        "model failure",
+        "model misuse",
+        "model uncertainty",
+        "model limitations"
+      ],
+      "case_sensitive_variants": [
+        "MRM"
+      ],
+      "why": "risk of wrong models"
+    },
+    {
+      "term": "errors in algorithms",
+      "tier": "context",
+      "group": "risks_failures",
+      "variants": [
+        "algorithm error",
+        "algorithmic error",
+        "defective algorithm",
+        "flawed algorithm",
+        "errors or bugs in algorithms"
+      ],
+      "why": "faulty algorithm wording in risk factors"
+    },
+    {
+      "term": "automation bias",
+      "tier": "ai",
+      "group": "risks_failures",
+      "variants": [
+        "over-reliance on automated systems",
+        "overreliance on automated systems",
+        "over-reliance on models",
+        "overreliance on models"
+      ],
+      "why": "people trusting machines too much"
+    },
+    {
+      "term": "deskilling",
+      "tier": "context",
+      "group": "risks_failures",
+      "variants": [
+        "skill atrophy",
+        "loss of human expertise",
+        "cognitive offloading"
+      ],
+      "why": "skills eroding through automation"
+    },
+    {
+      "term": "over-reliance on AI",
+      "tier": "ai",
+      "group": "risks_failures",
+      "variants": [
+        "overreliance on AI",
+        "reliance on AI",
+        "dependence on AI",
+        "dependency on AI"
+      ],
+      "why": "dependence risk stated with AI"
+    },
+    {
+      "term": "AI risk",
+      "tier": "ai",
+      "group": "risks_failures",
+      "variants": [
+        "AI-related risk",
+        "AI error",
+        "AI failure",
+        "AI incident",
+        "AI malfunction",
+        "AI harm",
+        "AI safety"
+      ],
+      "why": "generic AI risk wording"
+    },
+    {
+      "term": "unintended outcomes",
+      "tier": "context",
+      "group": "risks_failures",
+      "variants": [
+        "unintended outputs",
+        "unpredictable outputs",
+        "unexpected outputs",
+        "unexpected model behaviour",
+        "unexpected model behavior"
+      ],
+      "why": "models behaving unexpectedly"
+    },
+    {
+      "term": "emergent behaviour",
+      "tier": "context",
+      "group": "risks_failures",
+      "variants": [
+        "emergent behavior",
+        "emergent capabilities"
+      ],
+      "why": "behaviour nobody designed"
+    },
+    {
+      "term": "nondeterministic",
+      "tier": "context",
+      "group": "risks_failures",
+      "variants": [
+        "non-deterministic",
+        "probabilistic outputs",
+        "inconsistent outputs"
+      ],
+      "why": "outputs varying between runs"
+    },
+    {
+      "term": "infringing output",
+      "tier": "ai",
+      "group": "risks_failures",
+      "variants": [
+        "outputs that infringe",
+        "output may infringe",
+        "generated content may infringe",
+        "ownership of outputs",
+        "copyright in outputs",
+        "copyrightability"
+      ],
+      "why": "IP problems with generated content"
+    },
+    {
+      "term": "copyrighted material",
+      "tier": "context",
+      "group": "risks_failures",
+      "variants": [
+        "copyrighted works",
+        "copyrighted content",
+        "copyright-protected content",
+        "fair use",
+        "training on copyrighted",
+        "use of copyrighted"
+      ],
+      "why": "copyright disputes over training"
+    },
+    {
+      "term": "regurgitation",
+      "tier": "context",
+      "group": "risks_failures",
+      "variants": [
+        "memorisation",
+        "memorization",
+        "verbatim reproduction"
+      ],
+      "why": "models reproducing training content"
+    },
+    {
+      "term": "inputting confidential information",
+      "tier": "context",
+      "group": "risks_failures",
+      "variants": [
+        "input confidential information",
+        "entering confidential information",
+        "uploading confidential information",
+        "confidential data into prompts",
+        "sensitive information into prompts"
+      ],
+      "why": "staff leaking data into AI tools"
+    },
+    {
+      "term": "data leakage",
+      "tier": "context",
+      "group": "risks_failures",
+      "variants": [
+        "leakage of confidential information",
+        "leakage of sensitive data",
+        "inadvertent disclosure of confidential"
+      ],
+      "why": "loss of confidential data"
+    },
+    {
+      "term": "shadow AI",
+      "tier": "ai",
+      "group": "risks_failures",
+      "variants": [
+        "unsanctioned AI",
+        "unauthorised AI",
+        "unauthorized AI",
+        "unapproved AI tools",
+        "bring your own AI",
+        "BYOAI"
+      ],
+      "case_sensitive_variants": [
+        "BYOAI"
+      ],
+      "why": "AI used without approval"
+    },
+    {
+      "term": "model collapse",
+      "tier": "ai",
+      "group": "risks_failures",
+      "why": "models degrading on generated data"
+    },
+    {
+      "term": "AI alignment",
+      "tier": "ai",
+      "group": "risks_failures",
+      "variants": [
+        "alignment research",
+        "rogue AI",
+        "misaligned AI"
+      ],
+      "why": "keeping AI goals aligned"
+    },
+    {
+      "term": "existential risk",
+      "tier": "context",
+      "group": "risks_failures",
+      "variants": [
+        "loss of human control"
+      ],
+      "why": "extreme AI safety concern"
+    },
+    {
+      "term": "toxic output",
+      "tier": "context",
+      "group": "risks_failures",
+      "variants": [
+        "toxic content",
+        "offensive output",
+        "inappropriate output",
+        "objectionable output"
+      ],
+      "why": "harmful generated content"
+    },
+    {
+      "term": "error propagation",
+      "tier": "context",
+      "group": "risks_failures",
+      "variants": [
+        "cascading errors",
+        "compounding errors"
+      ],
+      "why": "errors spreading through automated chains"
+    },
+    {
+      "term": "AI disruption",
+      "tier": "ai",
+      "group": "risks_failures",
+      "variants": [
+        "disrupted by AI",
+        "AI-driven disruption",
+        "AI competition",
+        "AI-native competitors"
+      ],
+      "why": "competitive risk from AI"
+    },
+    {
+      "term": "ethical concerns",
+      "tier": "context",
+      "group": "risks_failures",
+      "variants": [
+        "ethical implications",
+        "ethical risks"
+      ],
+      "why": "ethics wording near AI risk"
+    },
+    {
+      "term": "societal harm",
+      "tier": "context",
+      "group": "risks_failures",
+      "variants": [
+        "societal risks"
+      ],
+      "why": "harm wording near AI risk"
+    },
+    {
+      "term": "third-party model risk",
+      "tier": "context",
+      "group": "risks_failures",
+      "variants": [
+        "reliance on third-party models",
+        "dependence on model providers",
+        "model provider dependence"
+      ],
+      "why": "dependence on external models"
+    },
+    {
+      "term": "automation failure",
+      "tier": "context",
+      "group": "risks_failures",
+      "variants": [
+        "automated system failure",
+        "automated decision errors",
+        "erroneous automated decisions"
+      ],
+      "why": "failures of automated systems"
+    },
+    {
+      "term": "defamatory output",
+      "tier": "context",
+      "group": "risks_failures",
+      "variants": [
+        "defamatory content",
+        "defamation by generated content"
+      ],
+      "why": "legal exposure from generated text"
+    },
+    {
+      "term": "deepfake",
+      "tier": "ai",
+      "group": "security_misuse",
+      "variants": [
+        "deep fake",
+        "face swap",
+        "face-swapping",
+        "manipulated media",
+        "manipulated video",
+        "manipulated audio"
+      ],
+      "why": "synthetic impersonation media"
+    },
+    {
+      "term": "voice cloning",
+      "tier": "ai",
+      "group": "security_misuse",
+      "variants": [
+        "voice clone",
+        "cloned voice",
+        "voice spoofing",
+        "voice impersonation"
+      ],
+      "why": "synthetic voice fraud"
+    },
+    {
+      "term": "vishing",
+      "tier": "context",
+      "group": "security_misuse",
+      "variants": [
+        "voice phishing",
+        "smishing"
+      ],
+      "why": "phishing channels boosted by AI"
+    },
+    {
+      "term": "synthetic identity",
+      "tier": "context",
+      "group": "security_misuse",
+      "variants": [
+        "synthetic ID",
+        "fabricated identity",
+        "fake identity"
+      ],
+      "why": "fraud using invented identities"
+    },
+    {
+      "term": "AI-enabled phishing",
+      "tier": "ai",
+      "group": "security_misuse",
+      "variants": [
+        "AI-powered phishing",
+        "AI-generated phishing",
+        "AI-driven social engineering",
+        "AI-enabled social engineering"
+      ],
+      "why": "AI-assisted deception"
+    },
+    {
+      "term": "AI-enabled fraud",
+      "tier": "ai",
+      "group": "security_misuse",
+      "variants": [
+        "AI-driven fraud",
+        "AI-powered fraud",
+        "AI-generated fraud",
+        "AI scams"
+      ],
+      "why": "fraud scaled by AI"
+    },
+    {
+      "term": "AI-enabled cyberattack",
+      "tier": "ai",
+      "group": "security_misuse",
+      "variants": [
+        "AI-powered cyberattack",
+        "AI-enabled attacks",
+        "AI-driven attacks",
+        "AI-assisted attacks",
+        "AI-enhanced attacks",
+        "AI-enabled threats"
+      ],
+      "why": "attacks using AI"
+    },
+    {
+      "term": "executive impersonation",
+      "tier": "context",
+      "group": "security_misuse",
+      "variants": [
+        "impersonation of executives",
+        "impersonation fraud",
+        "impersonation scam",
+        "impersonation attack",
+        "hyper-realistic",
+        "more convincing phishing"
+      ],
+      "why": "impersonation made easier by AI"
+    },
+    {
+      "term": "prompt injection",
+      "tier": "ai",
+      "group": "security_misuse",
+      "variants": [
+        "prompt attack",
+        "prompt leaking",
+        "prompt hijacking",
+        "malicious prompts"
+      ],
+      "why": "attack on LLM applications"
+    },
+    {
+      "term": "data poisoning",
+      "tier": "ai",
+      "group": "security_misuse",
+      "variants": [
+        "model poisoning",
+        "poisoned data",
+        "poisoning attack",
+        "backdoored model"
+      ],
+      "why": "corrupting training data"
+    },
+    {
+      "term": "model theft",
+      "tier": "ai",
+      "group": "security_misuse",
+      "variants": [
+        "model stealing",
+        "theft of model weights",
+        "model exfiltration",
+        "weight exfiltration"
+      ],
+      "why": "stealing trained models"
+    },
+    {
+      "term": "model inversion",
+      "tier": "ai",
+      "group": "security_misuse",
+      "variants": [
+        "membership inference",
+        "inference attack",
+        "model extraction"
+      ],
+      "why": "extracting data or model by querying"
+    },
+    {
+      "term": "model tampering",
+      "tier": "ai",
+      "group": "security_misuse",
+      "variants": [
+        "tampering with models",
+        "model manipulation",
+        "compromised model",
+        "malicious model",
+        "model integrity"
+      ],
+      "why": "attacks on model integrity"
+    },
+    {
+      "term": "adversarial attack",
+      "tier": "ai",
+      "group": "security_misuse",
+      "variants": [
+        "adversarial example",
+        "adversarial input",
+        "adversarial manipulation",
+        "evasion attack",
+        "adversarial prompt",
+        "adversarial robustness"
+      ],
+      "why": "inputs crafted to fool models"
+    },
+    {
+      "term": "jailbreak",
+      "tier": "ai",
+      "group": "security_misuse",
+      "variants": [
+        "jailbreaking",
+        "jailbroken"
+      ],
+      "why": "bypassing model safeguards"
+    },
+    {
+      "term": "agent hijacking",
+      "tier": "ai",
+      "group": "security_misuse",
+      "variants": [
+        "excessive agency",
+        "agent impersonation"
+      ],
+      "why": "attacks on AI agents"
+    },
+    {
+      "term": "malicious use of AI",
+      "tier": "ai",
+      "group": "security_misuse",
+      "variants": [
+        "misuse of AI",
+        "weaponisation of AI",
+        "weaponization of AI",
+        "AI-generated malware",
+        "AI-powered malware",
+        "offensive AI"
+      ],
+      "why": "AI as attacker tool"
+    },
+    {
+      "term": "polymorphic malware",
+      "tier": "context",
+      "group": "security_misuse",
+      "why": "malware type linked to AI generation"
+    },
+    {
+      "term": "automated attacks",
+      "tier": "context",
+      "group": "security_misuse",
+      "variants": [
+        "automated hacking",
+        "machine-speed attacks"
+      ],
+      "why": "attack automation tied to AI"
+    },
+    {
+      "term": "automated vulnerability discovery",
+      "tier": "context",
+      "group": "security_misuse",
+      "variants": [
+        "exploit generation"
+      ],
+      "why": "AI finding and exploiting flaws"
+    },
+    {
+      "term": "AI security",
+      "tier": "ai",
+      "group": "security_misuse",
+      "variants": [
+        "AI red teaming",
+        "securing AI",
+        "security of AI systems",
+        "AI cyber risk"
+      ],
+      "why": "protecting AI systems"
+    },
+    {
+      "term": "MITRE ATLAS",
+      "tier": "ai",
+      "group": "security_misuse",
+      "variants": [
+        "OWASP Top 10 for LLM"
+      ],
+      "why": "AI security threat frameworks"
+    },
+    {
+      "term": "red teaming",
+      "tier": "context",
+      "group": "security_misuse",
+      "variants": [
+        "red team",
+        "adversarial testing"
+      ],
+      "why": "stress-testing systems, now models"
+    },
+    {
+      "term": "disinformation",
+      "tier": "context",
+      "group": "security_misuse",
+      "variants": [
+        "misinformation",
+        "fake news"
+      ],
+      "why": "false content scaled by AI"
+    },
+    {
+      "term": "influence operations",
+      "tier": "context",
+      "group": "security_misuse",
+      "variants": [
+        "information manipulation",
+        "election interference"
+      ],
+      "why": "organised manipulation using generated content"
+    },
+    {
+      "term": "content provenance",
+      "tier": "context",
+      "group": "security_misuse",
+      "variants": [
+        "content credentials",
+        "C2PA",
+        "content authenticity"
+      ],
+      "case_sensitive_variants": [
+        "C2PA"
+      ],
+      "why": "proving where content came from"
+    },
+    {
+      "term": "watermarking",
+      "tier": "context",
+      "group": "security_misuse",
+      "variants": [
+        "digital watermark"
+      ],
+      "why": "marking generated content"
+    },
+    {
+      "term": "liveness detection",
+      "tier": "context",
+      "group": "security_misuse",
+      "variants": [
+        "presentation attack",
+        "biometric spoofing",
+        "identity spoofing",
+        "spoofing attack"
+      ],
+      "why": "defences against synthetic identities"
+    },
+    {
+      "term": "fraudulent documents",
+      "tier": "context",
+      "group": "security_misuse",
+      "variants": [
+        "forged documents",
+        "fake documents",
+        "document forgery",
+        "fabricated documents"
+      ],
+      "why": "forgery made easier by generation"
+    },
+    {
+      "term": "malicious bots",
+      "tier": "context",
+      "group": "security_misuse",
+      "variants": [
+        "automated bots",
+        "scraper bots",
+        "bot traffic"
+      ],
+      "why": "automated abuse, often AI-driven"
+    },
+    {
+      "term": "fake reviews",
+      "tier": "context",
+      "group": "security_misuse",
+      "variants": [
+        "fake accounts",
+        "inauthentic accounts"
+      ],
+      "why": "fabricated activity scaled by generation"
+    },
+    {
+      "term": "non-consensual intimate imagery",
+      "tier": "context",
+      "group": "security_misuse",
+      "variants": [
+        "NCII",
+        "nudify"
+      ],
+      "case_sensitive_variants": [
+        "NCII"
+      ],
+      "why": "abusive generated imagery"
+    },
+    {
+      "term": "child sexual abuse material",
+      "tier": "context",
+      "group": "security_misuse",
+      "variants": [
+        "CSAM"
+      ],
+      "case_sensitive_variants": [
+        "CSAM"
+      ],
+      "why": "abuse imagery, now also generated"
+    },
+    {
+      "term": "fake content",
+      "tier": "context",
+      "group": "security_misuse",
+      "variants": [
+        "fake images",
+        "fake videos",
+        "fake audio",
+        "fabricated content",
+        "counterfeit content"
+      ],
+      "why": "fakes without the word deepfake"
+    },
+    {
+      "term": "voice biometrics",
+      "tier": "context",
+      "group": "security_misuse",
+      "variants": [
+        "voiceprint",
+        "voice authentication bypass"
+      ],
+      "why": "controls weakened by voice cloning"
+    },
+    {
+      "term": "EU AI Act",
+      "tier": "ai",
+      "group": "governance_regulation",
+      "variants": [
+        "Artificial Intelligence Act",
+        "AI Act",
+        "Regulation (EU) 2024/1689",
+        "European AI Act"
+      ],
+      "why": "the main AI statute"
+    },
+    {
+      "term": "high-risk AI system",
+      "tier": "ai",
+      "group": "governance_regulation",
+      "variants": [
+        "high-risk AI",
+        "prohibited AI practices",
+        "prohibited AI",
+        "limited-risk AI"
+      ],
+      "why": "AI Act risk classes"
+    },
+    {
+      "term": "general-purpose AI model",
+      "tier": "ai",
+      "group": "governance_regulation",
+      "variants": [
+        "general-purpose AI",
+        "GPAI",
+        "general-purpose model"
+      ],
+      "case_sensitive_variants": [
+        "GPAI"
+      ],
+      "why": "AI Act category for foundation models"
+    },
+    {
+      "term": "deployer",
+      "tier": "ai",
+      "group": "governance_regulation",
+      "variants": [
+        "providers and deployers",
+        "deployer obligations"
+      ],
+      "why": "AI Act role name"
+    },
+    {
+      "term": "fundamental rights impact assessment",
+      "tier": "ai",
+      "group": "governance_regulation",
+      "variants": [
+        "FRIA"
+      ],
+      "case_sensitive_variants": [
+        "FRIA"
+      ],
+      "why": "AI Act assessment duty"
+    },
+    {
+      "term": "conformity assessment",
+      "tier": "context",
+      "group": "governance_regulation",
+      "why": "compliance step under the AI Act"
+    },
+    {
+      "term": "regulatory sandbox",
+      "tier": "context",
+      "group": "governance_regulation",
+      "why": "supervised testing regime, also for AI"
+    },
+    {
+      "term": "Digital Omnibus",
+      "tier": "context",
+      "group": "governance_regulation",
+      "why": "EU package amending AI Act timing"
+    },
+    {
+      "term": "AI Office",
+      "tier": "ai",
+      "group": "governance_regulation",
+      "variants": [
+        "European AI Office",
+        "AI Board",
+        "AI regulatory sandbox",
+        "AI Pact"
+      ],
+      "why": "AI Act institutions"
+    },
+    {
+      "term": "social scoring",
+      "tier": "ai",
+      "group": "governance_regulation",
+      "why": "practice the AI Act prohibits"
+    },
+    {
+      "term": "predictive policing",
+      "tier": "ai",
+      "group": "governance_regulation",
+      "why": "practice the AI Act restricts"
+    },
+    {
+      "term": "biometric categorisation",
+      "tier": "ai",
+      "group": "governance_regulation",
+      "variants": [
+        "biometric categorization",
+        "remote biometric identification"
+      ],
+      "why": "biometric uses the AI Act restricts"
+    },
+    {
+      "term": "NIST AI Risk Management Framework",
+      "tier": "ai",
+      "group": "governance_regulation",
+      "variants": [
+        "NIST AI RMF",
+        "AI RMF",
+        "AI Risk Management Framework"
+      ],
+      "why": "main US voluntary framework"
+    },
+    {
+      "term": "ISO/IEC 42001",
+      "tier": "ai",
+      "group": "governance_regulation",
+      "variants": [
+        "ISO 42001",
+        "ISO/IEC 23894",
+        "ISO 23894",
+        "ISO/IEC 22989",
+        "AI management system"
+      ],
+      "why": "AI management standards"
+    },
+    {
+      "term": "executive order on AI",
+      "tier": "ai",
+      "group": "governance_regulation",
+      "variants": [
+        "AI executive order",
+        "Executive Order 14110",
+        "Executive Order 14179"
+      ],
+      "why": "US presidential AI orders"
+    },
+    {
+      "term": "AI Action Plan",
+      "tier": "ai",
+      "group": "governance_regulation",
+      "why": "US federal AI plan"
+    },
+    {
+      "term": "AI Bill of Rights",
+      "tier": "ai",
+      "group": "governance_regulation",
+      "why": "US AI rights blueprint"
+    },
+    {
+      "term": "Colorado AI Act",
+      "tier": "ai",
+      "group": "governance_regulation",
+      "variants": [
+        "Colorado Artificial Intelligence Act",
+        "SB 24-205",
+        "Senate Bill 24-205"
+      ],
+      "why": "first broad US state AI law"
+    },
+    {
+      "term": "state AI laws",
+      "tier": "ai",
+      "group": "governance_regulation",
+      "variants": [
+        "state AI legislation",
+        "state AI regulation",
+        "AI moratorium"
+      ],
+      "why": "US state-level AI rules"
+    },
+    {
+      "term": "Texas Responsible AI Governance Act",
+      "tier": "ai",
+      "group": "governance_regulation",
+      "variants": [
+        "TRAIGA"
+      ],
+      "case_sensitive_variants": [
+        "TRAIGA"
+      ],
+      "why": "Texas AI statute"
+    },
+    {
+      "term": "California AI Transparency Act",
+      "tier": "ai",
+      "group": "governance_regulation",
+      "variants": [
+        "California SB 53",
+        "California SB 1047",
+        "Transparency in Frontier Artificial Intelligence Act"
+      ],
+      "why": "California AI statutes"
+    },
+    {
+      "term": "Local Law 144",
+      "tier": "ai",
+      "group": "governance_regulation",
+      "variants": [
+        "automated employment decision tool",
+        "bias audit"
+      ],
+      "why": "New York City hiring algorithm law"
+    },
+    {
+      "term": "digital replica",
+      "tier": "ai",
+      "group": "governance_regulation",
+      "variants": [
+        "likeness rights",
+        "voice and likeness"
+      ],
+      "why": "AI copies of real people"
+    },
+    {
+      "term": "ELVIS Act",
+      "tier": "ai",
+      "group": "governance_regulation",
+      "variants": [
+        "NO FAKES Act",
+        "TAKE IT DOWN Act"
+      ],
+      "why": "US laws on AI likeness and deepfakes"
+    },
+    {
+      "term": "AI Safety Institute",
+      "tier": "ai",
+      "group": "governance_regulation",
+      "variants": [
+        "AI Security Institute",
+        "AISI"
+      ],
+      "case_sensitive_variants": [
+        "AISI"
+      ],
+      "why": "government AI testing bodies"
+    },
+    {
+      "term": "AI White Paper",
+      "tier": "ai",
+      "group": "governance_regulation",
+      "variants": [
+        "pro-innovation approach to AI regulation",
+        "AI Opportunities Action Plan"
+      ],
+      "why": "UK AI policy texts"
+    },
+    {
+      "term": "AI Safety Summit",
+      "tier": "ai",
+      "group": "governance_regulation",
+      "variants": [
+        "Bletchley Declaration",
+        "AI Action Summit"
+      ],
+      "why": "international AI summits"
+    },
+    {
+      "term": "national AI strategy",
+      "tier": "ai",
+      "group": "governance_regulation",
+      "variants": [
+        "national AI framework",
+        "national AI policy"
+      ],
+      "why": "country-level AI policy"
+    },
+    {
+      "term": "AI Basic Act",
+      "tier": "ai",
+      "group": "governance_regulation",
+      "variants": [
+        "AI Framework Act"
+      ],
+      "why": "Korean and Japanese AI laws"
+    },
+    {
+      "term": "Artificial Intelligence and Data Act",
+      "tier": "ai",
+      "group": "governance_regulation",
+      "why": "Canadian AI bill"
+    },
+    {
+      "term": "Model AI Governance Framework",
+      "tier": "ai",
+      "group": "governance_regulation",
+      "why": "Singapore AI framework"
+    },
+    {
+      "term": "Interim Measures for Generative AI",
+      "tier": "ai",
+      "group": "governance_regulation",
+      "variants": [
+        "deep synthesis",
+        "algorithm filing"
+      ],
+      "why": "Chinese AI rules"
+    },
+    {
+      "term": "OECD AI Principles",
+      "tier": "ai",
+      "group": "governance_regulation",
+      "why": "international AI principles"
+    },
+    {
+      "term": "Hiroshima AI Process",
+      "tier": "ai",
+      "group": "governance_regulation",
+      "variants": [
+        "G7 AI code of conduct"
+      ],
+      "why": "G7 AI instruments"
+    },
+    {
+      "term": "Council of Europe Framework Convention",
+      "tier": "ai",
+      "group": "governance_regulation",
+      "variants": [
+        "Framework Convention on Artificial Intelligence"
+      ],
+      "why": "first AI treaty"
+    },
+    {
+      "term": "UNESCO Recommendation on the Ethics of Artificial Intelligence",
+      "tier": "ai",
+      "group": "governance_regulation",
+      "why": "UN AI ethics instrument"
+    },
+    {
+      "term": "responsible AI",
+      "tier": "ai",
+      "group": "governance_regulation",
+      "variants": [
+        "responsible use of AI",
+        "responsible artificial intelligence",
+        "responsible AI principles"
+      ],
+      "why": "main corporate AI governance label"
+    },
+    {
+      "term": "trustworthy AI",
+      "tier": "ai",
+      "group": "governance_regulation",
+      "variants": [
+        "trusted AI",
+        "trustworthy artificial intelligence",
+        "safe and trustworthy",
+        "human-centric AI",
+        "human-centred AI",
+        "human-centered AI"
+      ],
+      "why": "EU-style governance label"
+    },
+    {
+      "term": "ethical AI",
+      "tier": "ai",
+      "group": "governance_regulation",
+      "variants": [
+        "AI ethics",
+        "ethics of AI",
+        "ethical use of AI",
+        "AI principles",
+        "AI ethics principles"
+      ],
+      "why": "ethics framing of AI governance"
+    },
+    {
+      "term": "digital ethics",
+      "tier": "context",
+      "group": "governance_regulation",
+      "variants": [
+        "data ethics",
+        "technology ethics",
+        "ethics by design",
+        "corporate digital responsibility"
+      ],
+      "why": "ethics wording that covers AI"
+    },
+    {
+      "term": "AI governance",
+      "tier": "ai",
+      "group": "governance_regulation",
+      "variants": [
+        "AI governance framework",
+        "governance of AI",
+        "AI oversight",
+        "AI risk management",
+        "AI controls",
+        "AI compliance",
+        "AI assurance",
+        "AI standards"
+      ],
+      "why": "internal AI control structures"
+    },
+    {
+      "term": "model governance",
+      "tier": "context",
+      "group": "governance_regulation",
+      "variants": [
+        "model governance framework",
+        "model risk governance",
+        "model risk policy",
+        "model approval",
+        "model oversight"
+      ],
+      "why": "governance of models generally"
+    },
+    {
+      "term": "AI policy",
+      "tier": "ai",
+      "group": "governance_regulation",
+      "variants": [
+        "AI usage policy",
+        "AI use policy",
+        "AI acceptable use",
+        "generative AI policy",
+        "AI guidelines",
+        "AI code of conduct"
+      ],
+      "why": "internal rules for AI use"
+    },
+    {
+      "term": "acceptable use policy",
+      "tier": "context",
+      "group": "governance_regulation",
+      "variants": [
+        "acceptable use guidelines"
+      ],
+      "why": "policy type now extended to AI"
+    },
+    {
+      "term": "AI committee",
+      "tier": "ai",
+      "group": "governance_regulation",
+      "variants": [
+        "AI council",
+        "AI oversight board",
+        "AI steering committee",
+        "AI governance committee",
+        "AI ethics board",
+        "AI ethics committee",
+        "AI review board",
+        "AI working group",
+        "AI task force"
+      ],
+      "why": "bodies overseeing AI"
+    },
+    {
+      "term": "technology committee",
+      "tier": "context",
+      "group": "governance_regulation",
+      "variants": [
+        "technology and innovation committee",
+        "digital ethics committee",
+        "data ethics board",
+        "data and technology committee"
+      ],
+      "why": "board bodies that often cover AI"
+    },
+    {
+      "term": "Chief AI Officer",
+      "tier": "ai",
+      "group": "governance_regulation",
+      "variants": [
+        "Chief Artificial Intelligence Officer",
+        "Chief Data and AI Officer",
+        "head of AI",
+        "CAIO"
+      ],
+      "case_sensitive_variants": [
+        "CAIO"
+      ],
+      "why": "executive AI roles"
+    },
+    {
+      "term": "board oversight of AI",
+      "tier": "ai",
+      "group": "governance_regulation",
+      "variants": [
+        "AI expertise on the board",
+        "board AI expertise",
+        "directors with AI experience"
+      ],
+      "why": "board-level AI responsibility"
+    },
+    {
+      "term": "AI risk assessment",
+      "tier": "ai",
+      "group": "governance_regulation",
+      "variants": [
+        "AI impact assessment",
+        "algorithmic impact assessment",
+        "AI risk register",
+        "AI risk framework",
+        "AI risk appetite"
+      ],
+      "why": "assessing AI risk"
+    },
+    {
+      "term": "data protection impact assessment",
+      "tier": "context",
+      "group": "governance_regulation",
+      "variants": [
+        "DPIA",
+        "privacy impact assessment"
+      ],
+      "case_sensitive_variants": [
+        "DPIA"
+      ],
+      "why": "privacy assessment often triggered by AI"
+    },
+    {
+      "term": "AI audit",
+      "tier": "ai",
+      "group": "governance_regulation",
+      "variants": [
+        "algorithmic audit",
+        "algorithm audit",
+        "AI certification",
+        "AI inventory",
+        "AI register",
+        "inventory of AI systems"
+      ],
+      "why": "checking and listing AI systems"
+    },
+    {
+      "term": "AI literacy",
+      "tier": "ai",
+      "group": "governance_regulation",
+      "variants": [
+        "AI awareness training",
+        "AI fluency",
+        "AI education"
+      ],
+      "why": "AI Act staff competence duty"
+    },
+    {
+      "term": "automated decision-making",
+      "tier": "ai",
+      "group": "governance_regulation",
+      "variants": [
+        "automated decisioning",
+        "automated decision",
+        "automated individual decision-making",
+        "solely automated",
+        "ADMT"
+      ],
+      "case_sensitive_variants": [
+        "ADMT"
+      ],
+      "why": "decisions made without humans"
+    },
+    {
+      "term": "GDPR Article 22",
+      "tier": "ai",
+      "group": "governance_regulation",
+      "variants": [
+        "Article 22 of the GDPR",
+        "Article 22 GDPR"
+      ],
+      "why": "GDPR rule on automated decisions"
+    },
+    {
+      "term": "automated profiling",
+      "tier": "context",
+      "group": "governance_regulation",
+      "variants": [
+        "profiling of individuals",
+        "profiling and automated"
+      ],
+      "why": "GDPR wording next to automated decisions"
+    },
+    {
+      "term": "right to explanation",
+      "tier": "ai",
+      "group": "governance_regulation",
+      "variants": [
+        "right to an explanation",
+        "right to human review",
+        "right to human intervention",
+        "meaningful information about the logic"
+      ],
+      "why": "individual rights against automated decisions"
+    },
+    {
+      "term": "algorithmic accountability",
+      "tier": "ai",
+      "group": "governance_regulation",
+      "variants": [
+        "algorithmic transparency",
+        "algorithm transparency",
+        "transparency of algorithms",
+        "algorithmic governance",
+        "algorithmic decision-making",
+        "algorithmic decision",
+        "algorithmic system"
+      ],
+      "why": "accountability for algorithmic decisions"
+    },
+    {
+      "term": "AI liability",
+      "tier": "ai",
+      "group": "governance_regulation",
+      "variants": [
+        "AI Liability Directive",
+        "liability for AI"
+      ],
+      "why": "who pays for AI harm"
+    },
+    {
+      "term": "Product Liability Directive",
+      "tier": "context",
+      "group": "governance_regulation",
+      "why": "EU liability law now covering software and AI"
+    },
+    {
+      "term": "AI transparency",
+      "tier": "ai",
+      "group": "governance_regulation",
+      "variants": [
+        "AI disclosure",
+        "AI labelling",
+        "AI labeling",
+        "disclosure of AI use"
+      ],
+      "why": "telling people AI is used"
+    },
+    {
+      "term": "AI washing",
+      "tier": "ai",
+      "group": "governance_regulation",
+      "variants": [
+        "overstating AI capabilities",
+        "misleading AI claims"
+      ],
+      "why": "false AI claims, enforcement target"
+    },
+    {
+      "term": "predictive data analytics",
+      "tier": "context",
+      "group": "governance_regulation",
+      "why": "SEC wording for AI in advice"
+    },
+    {
+      "term": "responsible scaling policy",
+      "tier": "ai",
+      "group": "governance_regulation",
+      "variants": [
+        "frontier safety framework",
+        "preparedness framework",
+        "safety evaluations",
+        "pre-deployment testing"
+      ],
+      "why": "AI developer safety commitments"
+    },
+    {
+      "term": "text and data mining",
+      "tier": "context",
+      "group": "governance_regulation",
+      "variants": [
+        "TDM exception",
+        "rights reservation",
+        "Copyright in the Digital Single Market"
+      ],
+      "why": "copyright rule relevant to training"
+    },
+    {
+      "term": "biometric privacy",
+      "tier": "context",
+      "group": "governance_regulation",
+      "variants": [
+        "Biometric Information Privacy Act",
+        "BIPA"
+      ],
+      "case_sensitive_variants": [
+        "BIPA"
+      ],
+      "why": "law hit by facial recognition use"
+    },
+    {
+      "term": "Digital Services Act",
+      "tier": "context",
+      "group": "governance_regulation",
+      "why": "EU platform law covering recommender algorithms"
+    },
+    {
+      "term": "Online Safety Act",
+      "tier": "context",
+      "group": "governance_regulation",
+      "why": "UK platform law covering generated content"
+    },
+    {
+      "term": "AI-driven job displacement",
+      "tier": "ai",
+      "group": "workforce_society",
+      "variants": [
+        "AI job losses",
+        "AI-related layoffs",
+        "AI-related workforce reduction",
+        "replaced by AI",
+        "displaced by AI",
+        "jobs lost to AI"
+      ],
+      "why": "job loss attributed to AI"
+    },
+    {
+      "term": "job displacement",
+      "tier": "context",
+      "group": "workforce_society",
+      "variants": [
+        "worker displacement",
+        "workforce displacement",
+        "displacement of workers",
+        "displacement of jobs",
+        "technological unemployment",
+        "labour displacement",
+        "labor displacement"
+      ],
+      "why": "job loss from automation generally"
+    },
+    {
+      "term": "replace human workers",
+      "tier": "context",
+      "group": "workforce_society",
+      "variants": [
+        "replaced by machines",
+        "replacing human",
+        "substitute for human labour",
+        "substitute for human labor"
+      ],
+      "why": "substitution wording without naming AI"
+    },
+    {
+      "term": "reskilling",
+      "tier": "context",
+      "group": "workforce_society",
+      "variants": [
+        "re-skilling"
+      ],
+      "why": "workforce response to automation"
+    },
+    {
+      "term": "upskilling",
+      "tier": "context",
+      "group": "workforce_society",
+      "variants": [
+        "up-skilling",
+        "digital upskilling"
+      ],
+      "why": "workforce response to automation"
+    },
+    {
+      "term": "AI upskilling",
+      "tier": "ai",
+      "group": "workforce_society",
+      "variants": [
+        "AI reskilling",
+        "AI training programme",
+        "AI training program",
+        "AI academy",
+        "AI skills",
+        "AI skilling"
+      ],
+      "why": "training staff to use AI"
+    },
+    {
+      "term": "AI talent",
+      "tier": "ai",
+      "group": "workforce_society",
+      "variants": [
+        "competition for AI talent",
+        "AI engineers",
+        "AI researchers",
+        "AI expertise",
+        "AI specialists",
+        "AI skills gap",
+        "AI talent war"
+      ],
+      "why": "scarce AI staff"
+    },
+    {
+      "term": "machine learning engineer",
+      "tier": "ai",
+      "group": "workforce_society",
+      "variants": [
+        "ML engineer",
+        "ML researcher"
+      ],
+      "why": "specialist ML roles"
+    },
+    {
+      "term": "digital talent",
+      "tier": "context",
+      "group": "workforce_society",
+      "variants": [
+        "tech talent",
+        "technology talent",
+        "engineering talent",
+        "data and analytics talent"
+      ],
+      "why": "talent wording that includes AI staff"
+    },
+    {
+      "term": "workforce automation",
+      "tier": "context",
+      "group": "workforce_society",
+      "variants": [
+        "automation of jobs",
+        "automation of tasks",
+        "task automation",
+        "automating tasks",
+        "job automation",
+        "labour automation",
+        "labor automation",
+        "automation of work"
+      ],
+      "why": "automating human work"
+    },
+    {
+      "term": "automate routine tasks",
+      "tier": "context",
+      "group": "workforce_society",
+      "variants": [
+        "automating routine",
+        "automation of routine",
+        "automate knowledge work",
+        "knowledge work automation",
+        "automate repetitive tasks"
+      ],
+      "why": "typical framing of AI at work"
+    },
+    {
+      "term": "productivity gains from AI",
+      "tier": "ai",
+      "group": "workforce_society",
+      "variants": [
+        "AI productivity",
+        "AI-driven productivity",
+        "AI-enabled productivity",
+        "AI efficiency gains",
+        "AI-driven efficiencies",
+        "AI-related cost savings"
+      ],
+      "why": "efficiency attributed to AI"
+    },
+    {
+      "term": "algorithmic management",
+      "tier": "ai",
+      "group": "workforce_society",
+      "variants": [
+        "algorithmic scheduling",
+        "algorithmic hiring",
+        "algorithmic recruitment",
+        "algorithmic wage"
+      ],
+      "why": "algorithms managing workers"
+    },
+    {
+      "term": "automated hiring",
+      "tier": "context",
+      "group": "workforce_society",
+      "variants": [
+        "automated recruitment",
+        "automated candidate screening",
+        "resume screening",
+        "CV screening",
+        "hiring algorithm",
+        "recruitment algorithm"
+      ],
+      "why": "hiring tools, often AI"
+    },
+    {
+      "term": "employee monitoring",
+      "tier": "context",
+      "group": "workforce_society",
+      "variants": [
+        "workplace surveillance",
+        "worker surveillance",
+        "employee surveillance",
+        "productivity monitoring",
+        "workplace monitoring"
+      ],
+      "why": "monitoring tools, often AI-driven"
+    },
+    {
+      "term": "human-machine collaboration",
+      "tier": "context",
+      "group": "workforce_society",
+      "variants": [
+        "human-machine teaming",
+        "human and machine",
+        "augmented workforce",
+        "workforce augmentation",
+        "augmenting human",
+        "human augmentation"
+      ],
+      "why": "people working alongside machines"
+    },
+    {
+      "term": "employee use of AI",
+      "tier": "ai",
+      "group": "workforce_society",
+      "variants": [
+        "employees using AI",
+        "AI-enabled workforce",
+        "AI-augmented workforce",
+        "AI-ready workforce",
+        "workforce AI adoption"
+      ],
+      "why": "staff adoption of AI"
+    },
+    {
+      "term": "future of work",
+      "tier": "context",
+      "group": "workforce_society",
+      "variants": [
+        "workforce transformation",
+        "workforce of the future",
+        "changing nature of work"
+      ],
+      "why": "work narrative shaped by AI"
+    },
+    {
+      "term": "knowledge worker",
+      "tier": "context",
+      "group": "workforce_society",
+      "why": "roles most exposed to generative AI"
+    },
+    {
+      "term": "white-collar jobs",
+      "tier": "context",
+      "group": "workforce_society",
+      "variants": [
+        "white-collar automation",
+        "entry-level jobs",
+        "junior roles"
+      ],
+      "why": "jobs most exposed to generative AI"
+    },
+    {
+      "term": "labour market impact",
+      "tier": "context",
+      "group": "workforce_society",
+      "variants": [
+        "labor market impact",
+        "labour market disruption",
+        "labor market disruption",
+        "impact on employment"
+      ],
+      "why": "economy-wide employment effects"
+    },
+    {
+      "term": "AI energy consumption",
+      "tier": "ai",
+      "group": "workforce_society",
+      "variants": [
+        "AI energy use",
+        "AI electricity consumption",
+        "energy footprint of AI"
+      ],
+      "why": "energy cost of AI"
+    },
+    {
+      "term": "AI carbon footprint",
+      "tier": "ai",
+      "group": "workforce_society",
+      "variants": [
+        "carbon footprint of AI",
+        "AI emissions",
+        "AI water use",
+        "environmental impact of AI"
+      ],
+      "why": "environmental cost of AI"
+    },
+    {
+      "term": "AI bubble",
+      "tier": "ai",
+      "group": "workforce_society",
+      "variants": [
+        "AI hype",
+        "AI winter",
+        "AI valuations"
+      ],
+      "why": "fear of overvaluation"
+    },
+    {
+      "term": "AI investment cycle",
+      "tier": "ai",
+      "group": "workforce_society",
+      "variants": [
+        "AI boom",
+        "AI trade",
+        "AI spending cycle",
+        "AI supercycle",
+        "AI demand"
+      ],
+      "why": "market cycle around AI"
+    },
+    {
+      "term": "Magnificent Seven",
+      "tier": "context",
+      "group": "workforce_society",
+      "variants": [
+        "Mag 7"
+      ],
+      "why": "stocks carrying the AI trade"
+    },
+    {
+      "term": "big tech",
+      "tier": "context",
+      "group": "workforce_society",
+      "variants": [
+        "megacap tech",
+        "mega-cap technology"
+      ],
+      "why": "firms dominating AI spending"
+    },
+    {
+      "term": "AI for good",
+      "tier": "ai",
+      "group": "workforce_society",
+      "variants": [
+        "societal impact of AI",
+        "impact of AI on society",
+        "AI and society",
+        "beneficial AI",
+        "democratising AI",
+        "democratizing AI"
+      ],
+      "why": "social framing of AI"
+    },
+    {
+      "term": "trust in AI",
+      "tier": "ai",
+      "group": "workforce_society",
+      "variants": [
+        "public trust in AI",
+        "consumer trust in AI",
+        "public perception of AI",
+        "customer acceptance of AI"
+      ],
+      "why": "public acceptance of AI"
+    },
+    {
+      "term": "human authorship",
+      "tier": "context",
+      "group": "workforce_society",
+      "variants": [
+        "human creativity",
+        "human-created",
+        "human-made"
+      ],
+      "why": "human work set against generated content"
+    },
+    {
+      "term": "creator compensation",
+      "tier": "context",
+      "group": "workforce_society",
+      "variants": [
+        "artist rights"
+      ],
+      "why": "creators' claims against AI training"
+    },
+    {
+      "term": "advanced analytics",
+      "tier": "context",
+      "group": "euphemisms",
+      "variants": [
+        "advanced data analytics",
+        "sophisticated analytics"
+      ],
+      "why": "most common stand-in for AI"
+    },
+    {
+      "term": "next-generation analytics",
+      "tier": "context",
+      "group": "euphemisms",
+      "variants": [
+        "next-gen analytics"
+      ],
+      "why": "analytics wording that avoids AI"
+    },
+    {
+      "term": "augmented analytics",
+      "tier": "context",
+      "group": "euphemisms",
+      "why": "analytics label implying ML"
+    },
+    {
+      "term": "prescriptive analytics",
+      "tier": "context",
+      "group": "euphemisms",
+      "why": "analytics that recommends actions"
+    },
+    {
+      "term": "cognitive analytics",
+      "tier": "context",
+      "group": "euphemisms",
+      "why": "analytics label implying AI"
+    },
+    {
+      "term": "predictive analytics",
+      "tier": "context",
+      "group": "euphemisms",
+      "variants": [
+        "predictive insights",
+        "predictive capabilities",
+        "predictive tools",
+        "predictive technology",
+        "predictive intelligence",
+        "predictive engine"
+      ],
+      "why": "ML described as prediction"
+    },
+    {
+      "term": "intelligent automation",
+      "tier": "context",
+      "group": "euphemisms",
+      "variants": [
+        "intelligent process automation",
+        "smart automation",
+        "advanced automation"
+      ],
+      "why": "automation with AI unnamed"
+    },
+    {
+      "term": "cognitive automation",
+      "tier": "context",
+      "group": "euphemisms",
+      "variants": [
+        "cognitive process automation"
+      ],
+      "why": "automation with AI unnamed"
+    },
+    {
+      "term": "hyperautomation",
+      "tier": "context",
+      "group": "euphemisms",
+      "variants": [
+        "hyper-automation"
+      ],
+      "why": "analyst term for AI plus RPA"
+    },
+    {
+      "term": "robotic process automation",
+      "tier": "context",
+      "group": "euphemisms",
+      "variants": [
+        "RPA",
+        "software robot",
+        "software robotics",
+        "software bot",
+        "process robotics"
+      ],
+      "case_sensitive_variants": [
+        "RPA"
+      ],
+      "why": "rule-based bots, often merged with AI"
+    },
+    {
+      "term": "smart algorithms",
+      "tier": "context",
+      "group": "euphemisms",
+      "variants": [
+        "intelligent algorithms",
+        "advanced algorithms",
+        "sophisticated algorithms",
+        "proprietary algorithms",
+        "complex algorithms",
+        "powerful algorithms"
+      ],
+      "why": "algorithm wording that avoids AI"
+    },
+    {
+      "term": "algorithmic tools",
+      "tier": "context",
+      "group": "euphemisms",
+      "variants": [
+        "algorithmic models",
+        "algorithmic techniques",
+        "algorithmic solutions",
+        "algorithm-driven",
+        "algorithm-based",
+        "algorithmically driven"
+      ],
+      "why": "algorithm wording that avoids AI"
+    },
+    {
+      "term": "data-driven decisioning",
+      "tier": "context",
+      "group": "euphemisms",
+      "variants": [
+        "data-driven decision-making",
+        "data-driven decisions",
+        "data-driven insights"
+      ],
+      "why": "decisions by data, model unstated"
+    },
+    {
+      "term": "decision automation",
+      "tier": "context",
+      "group": "euphemisms",
+      "variants": [
+        "decision engine",
+        "decisioning engine",
+        "decisioning platform",
+        "decision intelligence",
+        "automated insights"
+      ],
+      "why": "automated decisions, AI unnamed"
+    },
+    {
+      "term": "next best action",
+      "tier": "context",
+      "group": "euphemisms",
+      "variants": [
+        "next best offer"
+      ],
+      "why": "ML-driven marketing under a plain name"
+    },
+    {
+      "term": "propensity model",
+      "tier": "context",
+      "group": "euphemisms",
+      "variants": [
+        "propensity modelling",
+        "propensity modeling",
+        "lead scoring",
+        "customer scoring"
+      ],
+      "why": "scoring models, usually ML"
+    },
+    {
+      "term": "self-learning system",
+      "tier": "context",
+      "group": "euphemisms",
+      "variants": [
+        "self-learning",
+        "self-learning algorithm",
+        "self-improving",
+        "self-adapting",
+        "adaptive algorithm"
+      ],
+      "why": "ML described without the name"
+    },
+    {
+      "term": "digital assistant",
+      "tier": "context",
+      "group": "euphemisms",
+      "variants": [
+        "digital helper",
+        "automated assistant",
+        "virtual concierge"
+      ],
+      "why": "assistant wording without AI"
+    },
+    {
+      "term": "virtual agent",
+      "tier": "context",
+      "group": "euphemisms",
+      "variants": [
+        "digital agent",
+        "automated agent"
+      ],
+      "why": "agent wording without AI"
+    },
+    {
+      "term": "conversational technology",
+      "tier": "context",
+      "group": "euphemisms",
+      "variants": [
+        "conversational platform",
+        "conversational experience",
+        "conversational self-service",
+        "automated chat",
+        "chat automation"
+      ],
+      "why": "chatbot wording without AI"
+    },
+    {
+      "term": "smart technology",
+      "tier": "context",
+      "group": "euphemisms",
+      "variants": [
+        "smart solutions",
+        "smart systems",
+        "smart tools",
+        "smart features"
+      ],
+      "why": "smart as a stand-in for AI"
+    },
+    {
+      "term": "intelligent solutions",
+      "tier": "context",
+      "group": "euphemisms",
+      "variants": [
+        "intelligent tools",
+        "intelligent features",
+        "intelligent platform"
+      ],
+      "why": "intelligent as a stand-in for AI"
+    },
+    {
+      "term": "intelligent workflow",
+      "tier": "context",
+      "group": "euphemisms",
+      "variants": [
+        "smart workflow",
+        "intelligent operations",
+        "intelligent routing",
+        "intelligent orchestration",
+        "intelligent process"
+      ],
+      "why": "intelligent as a stand-in for AI"
+    },
+    {
+      "term": "intelligent search",
+      "tier": "context",
+      "group": "euphemisms",
+      "variants": [
+        "cognitive search",
+        "smart search"
+      ],
+      "why": "ML search under a plain name"
+    },
+    {
+      "term": "intelligent recommendations",
+      "tier": "context",
+      "group": "euphemisms",
+      "variants": [
+        "smart recommendations",
+        "personalised recommendations",
+        "personalized recommendations"
+      ],
+      "why": "ML recommendations under a plain name"
+    },
+    {
+      "term": "hyper-personalisation",
+      "tier": "context",
+      "group": "euphemisms",
+      "variants": [
+        "hyper-personalization",
+        "hyperpersonalisation",
+        "hyperpersonalization",
+        "personalisation at scale",
+        "personalization at scale",
+        "real-time personalisation",
+        "real-time personalization"
+      ],
+      "why": "ML-driven tailoring"
+    },
+    {
+      "term": "embedded intelligence",
+      "tier": "context",
+      "group": "euphemisms",
+      "variants": [
+        "built-in intelligence",
+        "intelligence layer",
+        "intelligent layer",
+        "intelligent edge",
+        "intelligent cloud",
+        "connected intelligence"
+      ],
+      "why": "intelligence wording in product claims"
+    },
+    {
+      "term": "insights engine",
+      "tier": "context",
+      "group": "euphemisms",
+      "variants": [
+        "intelligence engine",
+        "intelligence platform"
+      ],
+      "why": "engine wording for ML products"
+    },
+    {
+      "term": "big data",
+      "tier": "context",
+      "group": "euphemisms",
+      "variants": [
+        "large-scale data analysis",
+        "data and analytics capabilities"
+      ],
+      "why": "pre-2020 wording for ML-scale data"
+    },
+    {
+      "term": "advanced modelling",
+      "tier": "context",
+      "group": "euphemisms",
+      "variants": [
+        "advanced modeling",
+        "advanced statistical techniques",
+        "advanced statistical models",
+        "sophisticated modelling",
+        "sophisticated modeling",
+        "advanced data science"
+      ],
+      "why": "modelling wording that may hide ML"
+    },
+    {
+      "term": "machine-assisted",
+      "tier": "context",
+      "group": "euphemisms",
+      "variants": [
+        "computer-assisted",
+        "computer-aided",
+        "technology-assisted review",
+        "algorithm-assisted"
+      ],
+      "why": "machine help without naming AI"
+    },
+    {
+      "term": "machine-based system",
+      "tier": "context",
+      "group": "euphemisms",
+      "variants": [
+        "computational models",
+        "computational methods",
+        "computational techniques"
+      ],
+      "why": "regulator definition wording for AI"
+    },
+    {
+      "term": "automated systems",
+      "tier": "context",
+      "group": "euphemisms",
+      "variants": [
+        "automated tools",
+        "automated technologies",
+        "automated decision tools"
+      ],
+      "why": "US regulator stand-in for AI"
+    },
+    {
+      "term": "touchless processing",
+      "tier": "context",
+      "group": "euphemisms",
+      "variants": [
+        "no-touch processing",
+        "zero-touch",
+        "lights-out operations",
+        "autonomous processing",
+        "autonomous finance"
+      ],
+      "why": "full automation claims"
+    },
+    {
+      "term": "automated content",
+      "tier": "context",
+      "group": "euphemisms",
+      "variants": [
+        "automated writing",
+        "automated reporting",
+        "automated drafting"
+      ],
+      "why": "generation without naming AI"
+    },
+    {
+      "term": "next-generation technology",
+      "tier": "context",
+      "group": "euphemisms",
+      "variants": [
+        "next-gen technology",
+        "next-generation capabilities",
+        "next-generation tools"
+      ],
+      "why": "vague wording often covering AI"
+    }
+  ]
+}

@@ -1,0 +1,535 @@
+{
+  "id": "80",
+  "name": "Investigation and security activities",
+  "section": "O",
+  "summary": "Security companies describe a shift from labour-intensive guarding to technology-enabled services: AI video analytics, remote video monitoring, facial and licence-plate recognition, alarm verification, security robots and predictive risk intelligence. Background-screening and investigation firms automate record matching and adjudication under FCRA-type rules; all face biometric privacy law, the EU AI Act's remote biometric identification limits, deepfake-driven identity fraud, and rising demand for protecting data centres.",
+  "terms": [
+    {
+      "term": "AI video analytics",
+      "tier": "ai",
+      "variants": [
+        "video analytics",
+        "intelligent video analytics",
+        "video content analysis",
+        "AI-powered video surveillance",
+        "smart camera analytics",
+        "AI camera"
+      ],
+      "why": "ML detection of events in camera feeds"
+    },
+    {
+      "term": "remote video monitoring",
+      "tier": "context",
+      "variants": [
+        "remote guarding",
+        "virtual guarding",
+        "live video monitoring",
+        "video verification",
+        "remote monitoring centre",
+        "remote monitoring center"
+      ],
+      "why": "remote operators replacing on-site guards"
+    },
+    {
+      "term": "facial recognition",
+      "tier": "ai",
+      "variants": [
+        "face recognition",
+        "face matching",
+        "live facial recognition",
+        "facial recognition technology"
+      ],
+      "why": "biometric matching in surveillance and access"
+    },
+    {
+      "term": "remote biometric identification",
+      "tier": "context",
+      "variants": [
+        "real-time remote biometric identification",
+        "biometric categorisation",
+        "biometric categorization",
+        "biometric identification system"
+      ],
+      "why": "EU AI Act restricted surveillance use"
+    },
+    {
+      "term": "licence plate recognition",
+      "tier": "ai",
+      "variants": [
+        "license plate recognition",
+        "ANPR",
+        "ALPR",
+        "automatic number plate recognition",
+        "automatic license plate recognition"
+      ],
+      "case_sensitive_variants": [
+        "ANPR",
+        "ALPR"
+      ],
+      "why": "camera-based vehicle identification"
+    },
+    {
+      "term": "AI weapons detection",
+      "tier": "ai",
+      "variants": [
+        "weapon detection",
+        "gun detection",
+        "AI-based threat detection",
+        "AI screening system",
+        "Evolv"
+      ],
+      "why": "ML screening for concealed weapons"
+    },
+    {
+      "term": "video behaviour analysis",
+      "tier": "ai",
+      "variants": [
+        "video behavior analysis",
+        "behavioural detection",
+        "behavioral detection",
+        "loitering detection",
+        "crowd analytics",
+        "anomaly detection in video"
+      ],
+      "why": "models flagging suspicious conduct on video"
+    },
+    {
+      "term": "AI alarm verification",
+      "tier": "ai",
+      "variants": [
+        "AI-verified alarm",
+        "intelligent alarm filtering"
+      ],
+      "why": "ML filtering of false alarms"
+    },
+    {
+      "term": "false alarm reduction",
+      "tier": "context",
+      "variants": [
+        "false alarm filtering",
+        "alarm verification",
+        "false alarm rate"
+      ],
+      "why": "monitoring KPI targeted by AI filtering"
+    },
+    {
+      "term": "alarm monitoring",
+      "tier": "context",
+      "variants": [
+        "monitoring centre",
+        "monitoring center",
+        "alarm receiving centre",
+        "central station",
+        "alarm response"
+      ],
+      "why": "monitoring-centre service being automated"
+    },
+    {
+      "term": "security operations centre",
+      "tier": "context",
+      "variants": [
+        "security operations center",
+        "global security operations center",
+        "GSOC",
+        "command centre",
+        "command center"
+      ],
+      "case_sensitive_variants": [
+        "GSOC"
+      ],
+      "why": "hub where AI triages alerts"
+    },
+    {
+      "term": "security robot",
+      "tier": "context",
+      "variants": [
+        "autonomous security robot",
+        "robotic patrol",
+        "patrol robot",
+        "autonomous patrol"
+      ],
+      "why": "autonomous patrol machines"
+    },
+    {
+      "term": "security drone",
+      "tier": "context",
+      "variants": [
+        "drone-in-a-box",
+        "drone surveillance",
+        "counter-drone",
+        "drone detection"
+      ],
+      "why": "aerial surveillance with automated detection"
+    },
+    {
+      "term": "predictive risk intelligence",
+      "tier": "ai",
+      "variants": [
+        "risk intelligence platform",
+        "predictive security",
+        "AI-driven risk prediction",
+        "risk prediction model"
+      ],
+      "why": "models forecasting security incidents"
+    },
+    {
+      "term": "intrusion detection",
+      "tier": "context",
+      "variants": [
+        "perimeter detection",
+        "AI perimeter protection",
+        "perimeter intrusion detection"
+      ],
+      "why": "perimeter sensing with ML classification"
+    },
+    {
+      "term": "access control",
+      "tier": "context",
+      "variants": [
+        "biometric access control",
+        "mobile credential",
+        "visitor management system"
+      ],
+      "why": "entry systems adding biometrics and ML"
+    },
+    {
+      "term": "body-worn camera",
+      "tier": "context",
+      "variants": [
+        "bodycam",
+        "body-worn video"
+      ],
+      "why": "officer video feeding analytics"
+    },
+    {
+      "term": "electronic security",
+      "tier": "context",
+      "variants": [
+        "integrated security solutions",
+        "technology-enabled security",
+        "security technology and solutions",
+        "tech-enabled guarding",
+        "technology and solutions"
+      ],
+      "why": "technology business line versus guarding"
+    },
+    {
+      "term": "manned guarding",
+      "tier": "context",
+      "variants": [
+        "on-site guarding",
+        "security officer",
+        "guard hours",
+        "guarding services",
+        "labour-intensive"
+      ],
+      "why": "labour model substituted by remote and AI services"
+    },
+    {
+      "term": "guard shortage",
+      "tier": "context",
+      "variants": [
+        "labour shortage",
+        "labor shortage",
+        "wage inflation",
+        "officer turnover"
+      ],
+      "why": "staffing pressure driving automation"
+    },
+    {
+      "term": "AI-enabled guarding",
+      "tier": "ai",
+      "variants": [
+        "AI-assisted security officer",
+        "AI-powered security",
+        "AI security solution",
+        "AI-driven security services"
+      ],
+      "why": "AI tools supporting security officers"
+    },
+    {
+      "term": "data center security",
+      "tier": "context",
+      "variants": [
+        "data centre security",
+        "security for data centers",
+        "critical infrastructure protection",
+        "data center client"
+      ],
+      "why": "AI infrastructure sites as growing client segment"
+    },
+    {
+      "term": "biometric privacy law",
+      "tier": "context",
+      "variants": [
+        "Biometric Information Privacy Act",
+        "BIPA",
+        "biometric data consent",
+        "biometric information"
+      ],
+      "case_sensitive_variants": [
+        "BIPA"
+      ],
+      "why": "statutes restricting face and voice data"
+    },
+    {
+      "term": "surveillance regulation",
+      "tier": "context",
+      "variants": [
+        "mass surveillance",
+        "video surveillance regulation",
+        "data protection impact assessment",
+        "GDPR video surveillance"
+      ],
+      "why": "legal limits on AI monitoring"
+    },
+    {
+      "term": "responsible use of facial recognition",
+      "tier": "ai",
+      "variants": [
+        "ethical use of surveillance AI",
+        "ethical AI in security",
+        "facial recognition ban",
+        "facial recognition misidentification"
+      ],
+      "why": "ethics positions on surveillance AI"
+    },
+    {
+      "term": "deepfake detection",
+      "tier": "ai",
+      "variants": [
+        "deepfake",
+        "synthetic media detection",
+        "deepfake impersonation",
+        "voice cloning"
+      ],
+      "why": "tools and services against synthetic media"
+    },
+    {
+      "term": "identity verification",
+      "tier": "context",
+      "variants": [
+        "identity fraud",
+        "document verification",
+        "liveness detection",
+        "identity proofing",
+        "synthetic identity"
+      ],
+      "why": "identity checks threatened by synthetic media"
+    },
+    {
+      "term": "AI-enabled threat",
+      "tier": "ai",
+      "variants": [
+        "AI-enabled attack",
+        "AI-powered social engineering",
+        "AI-generated phishing",
+        "AI-assisted intrusion"
+      ],
+      "why": "adversaries using AI against clients"
+    },
+    {
+      "term": "smart home security",
+      "tier": "context",
+      "variants": [
+        "connected home",
+        "interactive security",
+        "smart doorbell",
+        "smart camera",
+        "home automation"
+      ],
+      "why": "residential systems with AI camera features"
+    },
+    {
+      "term": "AI camera alert",
+      "tier": "ai",
+      "variants": [
+        "person detection",
+        "package detection",
+        "AI-powered home security"
+      ],
+      "why": "person and package detection in home systems"
+    }
+  ],
+  "class_terms": {
+    "8011": [
+      {
+        "term": "background screening",
+        "tier": "context",
+        "variants": [
+          "background check",
+          "employment screening",
+          "pre-employment screening",
+          "tenant screening"
+        ],
+        "why": "employment and tenant checks being automated"
+      },
+      {
+        "term": "automated adjudication",
+        "tier": "context",
+        "variants": [
+          "automated screening decision",
+          "adjudication matrix",
+          "automated eligibility decision"
+        ],
+        "why": "rule and model-based hiring decisions on checks"
+      },
+      {
+        "term": "Fair Credit Reporting Act",
+        "tier": "context",
+        "variants": [
+          "FCRA",
+          "adverse action notice",
+          "consumer reporting agency",
+          "maximum possible accuracy"
+        ],
+        "case_sensitive_variants": [
+          "FCRA"
+        ],
+        "why": "US accuracy and adverse-action rules for screening"
+      },
+      {
+        "term": "record matching",
+        "tier": "context",
+        "variants": [
+          "data matching",
+          "false match",
+          "name-match error",
+          "automated record search"
+        ],
+        "why": "matching accuracy of automated searches"
+      },
+      {
+        "term": "AI-assisted investigation",
+        "tier": "ai",
+        "variants": [
+          "AI-powered due diligence",
+          "AI-assisted fraud investigation"
+        ],
+        "why": "AI in due diligence and forensic work"
+      },
+      {
+        "term": "open-source intelligence",
+        "tier": "context",
+        "variants": [
+          "OSINT",
+          "digital forensics",
+          "threat intelligence"
+        ],
+        "case_sensitive_variants": [
+          "OSINT"
+        ],
+        "why": "investigative data sources mined with AI"
+      },
+      {
+        "term": "social media screening",
+        "tier": "context",
+        "variants": [
+          "AI-powered social media screening",
+          "adverse media screening",
+          "online reputation check"
+        ],
+        "why": "automated review of candidates' online content"
+      },
+      {
+        "term": "continuous monitoring",
+        "tier": "context",
+        "variants": [
+          "post-hire monitoring",
+          "continuous screening",
+          "rescreening"
+        ],
+        "why": "ongoing automated checks after hire"
+      },
+      {
+        "term": "candidate fraud",
+        "tier": "context",
+        "variants": [
+          "deepfake candidate",
+          "fake applicant",
+          "identity fraud in hiring",
+          "synthetic applicant"
+        ],
+        "why": "fake identities and deepfake applicants"
+      },
+      {
+        "term": "cash management",
+        "tier": "context",
+        "variants": [
+          "cash forecasting",
+          "smart safe",
+          "ATM cash optimisation",
+          "ATM cash optimization",
+          "cash-in-transit",
+          "route optimisation",
+          "route optimization"
+        ],
+        "why": "cash logistics with forecasting models"
+      },
+      {
+        "term": "executive protection",
+        "tier": "context",
+        "variants": [
+          "deepfake impersonation of executives",
+          "executive impersonation",
+          "threat monitoring of executives"
+        ],
+        "why": "services addressing deepfake targeting of leaders"
+      }
+    ],
+    "8019": [
+      {
+        "term": "professional monitoring",
+        "tier": "context",
+        "variants": [
+          "monitored security",
+          "interactive services",
+          "self-monitoring",
+          "DIY security"
+        ],
+        "why": "subscription monitoring with AI triage"
+      },
+      {
+        "term": "video doorbell",
+        "tier": "context",
+        "variants": [
+          "doorbell camera",
+          "outdoor camera",
+          "indoor camera"
+        ],
+        "why": "consumer camera products with AI detection"
+      },
+      {
+        "term": "alarm dispatch",
+        "tier": "context",
+        "variants": [
+          "verified response",
+          "police dispatch",
+          "false dispatch",
+          "emergency dispatch"
+        ],
+        "why": "verified-response rules favouring AI video checks"
+      },
+      {
+        "term": "fire detection analytics",
+        "tier": "ai",
+        "variants": [
+          "video smoke detection",
+          "AI fire detection",
+          "AI-based flame detection"
+        ],
+        "why": "camera and sensor ML for fire and smoke"
+      },
+      {
+        "term": "attrition prediction",
+        "tier": "context",
+        "variants": [
+          "customer attrition model",
+          "churn prediction",
+          "retention model"
+        ],
+        "why": "models predicting subscriber churn"
+      }
+    ]
+  }
+}

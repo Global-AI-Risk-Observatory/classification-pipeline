@@ -1,0 +1,421 @@
+{
+  "id": "02",
+  "name": "Forestry and logging",
+  "section": "A",
+  "summary": "Forestry and timberland companies use AI mostly for remote-sensing forest inventory, species and damage detection, wildfire and pest early warning, harvest planning and log measurement. Machine automation (operator assistance, teleoperated and autonomous harvesters and forwarders) and satellite monitoring of carbon and deforestation are the other recurring themes. AI as a demand driver is marginal and appears, if at all, as land demand for data centres and energy projects.",
+  "terms": [
+    {
+      "term": "precision forestry",
+      "tier": "context",
+      "variants": [
+        "digital forestry",
+        "smart forestry",
+        "forestry 4.0",
+        "intelligent forestry",
+        "data-driven forestry"
+      ],
+      "why": "umbrella for data-driven forest management"
+    },
+    {
+      "term": "forest inventory",
+      "tier": "context",
+      "variants": [
+        "forest resource assessment",
+        "stand inventory",
+        "timber cruise",
+        "timber cruising",
+        "inventory update model"
+      ],
+      "why": "stand data increasingly derived from remote sensing"
+    },
+    {
+      "term": "AI-based forest inventory",
+      "tier": "ai",
+      "variants": [
+        "machine learning inventory",
+        "lidar-based inventory",
+        "remote sensing inventory",
+        "drone-based inventory",
+        "satellite-based inventory"
+      ],
+      "why": "ML estimation of volume and species"
+    },
+    {
+      "term": "LiDAR",
+      "tier": "context",
+      "variants": [
+        "airborne laser scanning",
+        "laser scanning",
+        "point cloud"
+      ],
+      "why": "laser scanning data for tree-level models"
+    },
+    {
+      "term": "satellite imagery",
+      "tier": "context",
+      "variants": [
+        "remote sensing",
+        "earth observation",
+        "multispectral imagery",
+        "hyperspectral imagery",
+        "aerial imagery",
+        "satellite monitoring"
+      ],
+      "why": "imagery input for monitoring and change detection"
+    },
+    {
+      "term": "drone survey",
+      "tier": "context",
+      "variants": [
+        "UAV survey",
+        "drone imagery",
+        "drone mapping",
+        "drone inventory",
+        "unmanned aerial vehicle",
+        "drone monitoring"
+      ],
+      "why": "UAV data capture over stands and plantations"
+    },
+    {
+      "term": "tree species classification",
+      "tier": "ai",
+      "variants": [
+        "tree species identification",
+        "species recognition",
+        "species mapping model",
+        "automated species classification"
+      ],
+      "why": "ML recognition of species from imagery"
+    },
+    {
+      "term": "individual tree detection",
+      "tier": "ai",
+      "variants": [
+        "tree crown detection",
+        "tree counting",
+        "tree-level inventory",
+        "single-tree detection",
+        "crown delineation",
+        "stem detection"
+      ],
+      "why": "tree-level segmentation and counting"
+    },
+    {
+      "term": "forest health monitoring",
+      "tier": "context",
+      "variants": [
+        "bark beetle detection",
+        "pest outbreak detection",
+        "damage mapping",
+        "storm damage assessment",
+        "canopy health",
+        "tree mortality mapping"
+      ],
+      "why": "detection of pest, drought and storm damage"
+    },
+    {
+      "term": "change detection",
+      "tier": "ai",
+      "variants": [
+        "disturbance detection",
+        "harvest detection",
+        "canopy change"
+      ],
+      "why": "algorithmic detection of harvest, damage or clearing"
+    },
+    {
+      "term": "wildfire detection",
+      "tier": "context",
+      "variants": [
+        "fire detection camera",
+        "early fire detection",
+        "smoke detection camera",
+        "fire early warning",
+        "fire surveillance",
+        "fire lookout camera"
+      ],
+      "why": "camera, sensor and satellite fire early warning"
+    },
+    {
+      "term": "AI-powered wildfire detection",
+      "tier": "ai",
+      "variants": [
+        "AI fire detection",
+        "automated smoke detection",
+        "intelligent fire monitoring",
+        "fire detection algorithm"
+      ],
+      "why": "ML smoke and fire recognition"
+    },
+    {
+      "term": "wildfire risk modelling",
+      "tier": "context",
+      "variants": [
+        "wildfire risk modeling",
+        "fire risk model",
+        "fire behaviour modelling",
+        "fire behavior modeling",
+        "fire spread prediction",
+        "fire danger forecasting"
+      ],
+      "why": "predictive fire spread and risk analytics"
+    },
+    {
+      "term": "deforestation monitoring",
+      "tier": "context",
+      "variants": [
+        "deforestation detection",
+        "deforestation alert",
+        "deforestation-free verification",
+        "geolocation data",
+        "land-use change monitoring"
+      ],
+      "why": "satellite verification of deforestation-free supply"
+    },
+    {
+      "term": "illegal logging detection",
+      "tier": "ai",
+      "variants": [
+        "illegal logging alert",
+        "acoustic monitoring",
+        "logging detection"
+      ],
+      "why": "satellite and acoustic detection of illegal felling"
+    },
+    {
+      "term": "forest carbon monitoring",
+      "tier": "context",
+      "variants": [
+        "biomass estimation",
+        "above-ground biomass",
+        "carbon stock mapping",
+        "digital MRV",
+        "measurement, reporting and verification",
+        "carbon credit verification"
+      ],
+      "why": "remote-sensing carbon stock and offset verification"
+    },
+    {
+      "term": "biodiversity monitoring",
+      "tier": "context",
+      "variants": [
+        "bioacoustic monitoring",
+        "camera trap",
+        "eDNA monitoring",
+        "automated species monitoring",
+        "wildlife monitoring"
+      ],
+      "why": "acoustic and camera-trap species recognition"
+    },
+    {
+      "term": "growth and yield modelling",
+      "tier": "context",
+      "variants": [
+        "growth and yield modeling",
+        "forest growth model",
+        "growth simulation",
+        "stand growth prediction"
+      ],
+      "why": "simulation of stand growth, increasingly ML-enhanced"
+    },
+    {
+      "term": "harvest planning optimisation",
+      "tier": "context",
+      "variants": [
+        "harvest planning optimization",
+        "harvest scheduling",
+        "wood flow optimisation",
+        "wood flow optimization",
+        "wood supply optimisation",
+        "wood supply optimization",
+        "tactical planning model"
+      ],
+      "why": "algorithmic scheduling of harvests and wood flows"
+    },
+    {
+      "term": "bucking optimisation",
+      "tier": "context",
+      "variants": [
+        "bucking optimization",
+        "cut-to-length optimisation",
+        "cut-to-length optimization",
+        "harvester computer",
+        "harvester production data",
+        "value bucking"
+      ],
+      "why": "on-board algorithms optimising log cutting"
+    },
+    {
+      "term": "autonomous forwarder",
+      "tier": "ai",
+      "variants": [
+        "autonomous forest machine",
+        "unmanned forwarder",
+        "autonomous harvester",
+        "self-driving forwarder",
+        "autonomous logging machine",
+        "autonomous log loader"
+      ],
+      "why": "self-driving forest machines"
+    },
+    {
+      "term": "teleoperated forest machine",
+      "tier": "context",
+      "variants": [
+        "remote-controlled harvester",
+        "teleoperated harvester",
+        "tele-operated logging",
+        "remote-controlled felling",
+        "remote operated machine"
+      ],
+      "why": "remote operation of harvesters and loaders"
+    },
+    {
+      "term": "operator assistance",
+      "tier": "context",
+      "variants": [
+        "intelligent boom control",
+        "operator assist",
+        "crane-tip control",
+        "smooth boom control",
+        "operator support system"
+      ],
+      "why": "boom-tip control and assist functions on machines"
+    },
+    {
+      "term": "log scanning",
+      "tier": "context",
+      "variants": [
+        "log scanner",
+        "X-ray log scanning",
+        "CT log scanning",
+        "3D log scanning",
+        "log sorting line"
+      ],
+      "why": "scanners measuring and grading logs"
+    },
+    {
+      "term": "automated log grading",
+      "tier": "ai",
+      "variants": [
+        "automated timber measurement",
+        "image-based log measurement",
+        "photo-optical measurement",
+        "AI log scaling",
+        "automated log scaling",
+        "timber grading camera"
+      ],
+      "why": "machine vision grading and measurement of timber"
+    },
+    {
+      "term": "drone seeding",
+      "tier": "context",
+      "variants": [
+        "drone planting",
+        "seedling drone",
+        "planting robot",
+        "automated planting machine",
+        "mechanised planting",
+        "mechanized planting"
+      ],
+      "why": "automated regeneration and planting"
+    },
+    {
+      "term": "nursery automation",
+      "tier": "context",
+      "variants": [
+        "automated nursery",
+        "seedling sorting",
+        "robotic seedling handling",
+        "seedling grading machine"
+      ],
+      "why": "automated seedling production and sorting"
+    },
+    {
+      "term": "genomic selection",
+      "tier": "context",
+      "variants": [
+        "genomic tree breeding",
+        "genomic prediction",
+        "tree improvement programme",
+        "tree improvement program"
+      ],
+      "why": "data-driven tree breeding for improved seedlings"
+    },
+    {
+      "term": "digital twin",
+      "tier": "context",
+      "variants": [
+        "virtual forest"
+      ],
+      "why": "virtual stand and wood supply-chain models"
+    },
+    {
+      "term": "forest management system",
+      "tier": "context",
+      "variants": [
+        "forest information system",
+        "GIS platform",
+        "geographic information system",
+        "forest planning system",
+        "land management system"
+      ],
+      "why": "GIS and planning platforms hosting analytics"
+    },
+    {
+      "term": "predictive maintenance",
+      "tier": "ai",
+      "variants": [
+        "predictive machine maintenance"
+      ],
+      "why": "ML failure prediction for forest machines and trucks"
+    },
+    {
+      "term": "machine telematics",
+      "tier": "context",
+      "variants": [
+        "fleet telematics",
+        "machine data",
+        "connected machine",
+        "fleet management system"
+      ],
+      "why": "connected machine data for productivity analytics"
+    },
+    {
+      "term": "timber transport optimisation",
+      "tier": "context",
+      "variants": [
+        "timber transport optimization",
+        "log truck dispatch",
+        "haulage optimisation",
+        "haulage optimization",
+        "route optimisation",
+        "route optimization",
+        "logistics optimisation",
+        "logistics optimization"
+      ],
+      "why": "algorithmic truck routing and dispatch"
+    },
+    {
+      "term": "beyond visual line of sight",
+      "tier": "context",
+      "variants": [
+        "BVLOS"
+      ],
+      "case_sensitive_variants": [
+        "BVLOS"
+      ],
+      "why": "drone rule constraining large-area surveys"
+    },
+    {
+      "term": "data center",
+      "tier": "context",
+      "variants": [
+        "data centre",
+        "hyperscaler"
+      ],
+      "why": "timberland sales and energy demand tied to AI build-out"
+    }
+  ],
+  "class_terms": {}
+}

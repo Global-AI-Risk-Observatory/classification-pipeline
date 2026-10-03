@@ -1,0 +1,251 @@
+{
+  "id": "75",
+  "name": "Veterinary activities",
+  "section": "N",
+  "summary": "Veterinary groups mention AI in diagnostic imaging and laboratory analysis, ambient clinical note-taking, triage and client communication, usually framed as relief for the veterinarian shortage. Risk and regulation language covers telehealth and the veterinarian-client-patient relationship, clinical liability for AI-assisted diagnoses, and the value of clinical record data.",
+  "terms": [
+    {
+      "term": "AI-assisted radiology",
+      "tier": "ai",
+      "variants": [
+        "AI radiograph interpretation",
+        "veterinary AI radiology",
+        "AI radiology",
+        "SignalPET",
+        "Vetology",
+        "AI imaging analysis"
+      ],
+      "why": "ML reading of veterinary X-rays and scans"
+    },
+    {
+      "term": "teleradiology",
+      "tier": "context",
+      "variants": [
+        "remote radiology",
+        "telediagnostics"
+      ],
+      "why": "remote imaging reads, increasingly AI-supported"
+    },
+    {
+      "term": "AI-powered diagnostics",
+      "tier": "ai",
+      "variants": [
+        "AI cytology",
+        "AI urine sediment analysis",
+        "inVue Dx",
+        "SediVue",
+        "Vetscan Imagyst",
+        "AI-based diagnostics",
+        "AI diagnostic tool"
+      ],
+      "why": "ML analysis of blood, urine and cytology samples"
+    },
+    {
+      "term": "digital pathology",
+      "tier": "context",
+      "variants": [
+        "digital cytology",
+        "whole slide imaging",
+        "AI pathology"
+      ],
+      "why": "scanned slides analysed by models"
+    },
+    {
+      "term": "reference laboratory",
+      "tier": "context",
+      "variants": [
+        "point-of-care diagnostics",
+        "in-clinic analyser",
+        "in-clinic analyzer",
+        "diagnostic laboratory"
+      ],
+      "why": "lab network where diagnostic AI is deployed"
+    },
+    {
+      "term": "AI scribe",
+      "tier": "ai",
+      "variants": [
+        "ambient scribe",
+        "AI clinical notes",
+        "automated SOAP notes",
+        "AI-generated clinical records",
+        "AI dictation"
+      ],
+      "why": "ambient note-taking in consultations"
+    },
+    {
+      "term": "clinical decision support",
+      "tier": "context",
+      "variants": [
+        "decision support tool",
+        "treatment recommendation tool",
+        "diagnostic support tool"
+      ],
+      "why": "software suggesting diagnoses and treatment"
+    },
+    {
+      "term": "AI triage",
+      "tier": "ai",
+      "variants": [
+        "AI symptom checker",
+        "symptom checker"
+      ],
+      "why": "automated assessment of pet symptoms"
+    },
+    {
+      "term": "veterinary telehealth",
+      "tier": "context",
+      "variants": [
+        "veterinary telemedicine",
+        "telemedicine",
+        "televet",
+        "virtual care",
+        "video consultation"
+      ],
+      "why": "remote consults, regulatory limits apply"
+    },
+    {
+      "term": "veterinarian-client-patient relationship",
+      "tier": "context",
+      "variants": [
+        "VCPR",
+        "under care guidance",
+        "RCVS under care"
+      ],
+      "case_sensitive_variants": [
+        "VCPR"
+      ],
+      "why": "legal precondition limiting remote and AI care"
+    },
+    {
+      "term": "veterinarian shortage",
+      "tier": "context",
+      "variants": [
+        "vet shortage",
+        "shortage of veterinarians",
+        "clinician burnout",
+        "veterinary workforce shortage",
+        "clinical capacity"
+      ],
+      "why": "staffing gap cited as reason for AI"
+    },
+    {
+      "term": "practice management system",
+      "tier": "context",
+      "variants": [
+        "practice management software",
+        "PIMS",
+        "practice information management system"
+      ],
+      "case_sensitive_variants": [
+        "PIMS"
+      ],
+      "why": "clinic software embedding AI features"
+    },
+    {
+      "term": "AI receptionist",
+      "tier": "ai",
+      "variants": [
+        "AI call answering",
+        "AI-powered client communication",
+        "virtual receptionist"
+      ],
+      "why": "automated call answering and booking"
+    },
+    {
+      "term": "client communication automation",
+      "tier": "context",
+      "variants": [
+        "automated appointment reminder",
+        "automated client reminder",
+        "client engagement app"
+      ],
+      "why": "automated reminders and follow-ups"
+    },
+    {
+      "term": "predictive disease detection",
+      "tier": "ai",
+      "variants": [
+        "early disease detection model",
+        "cancer screening algorithm",
+        "AI-based screening",
+        "predictive health model"
+      ],
+      "why": "models flagging early illness"
+    },
+    {
+      "term": "pet wearable",
+      "tier": "context",
+      "variants": [
+        "wearable pet monitor",
+        "smart collar",
+        "activity monitor",
+        "remote patient monitoring"
+      ],
+      "why": "activity and health data feeding models"
+    },
+    {
+      "term": "precision livestock farming",
+      "tier": "context",
+      "variants": [
+        "livestock monitoring",
+        "herd health monitoring",
+        "computer vision livestock monitoring",
+        "automated lameness detection"
+      ],
+      "why": "sensor and vision monitoring of herds"
+    },
+    {
+      "term": "clinical record data",
+      "tier": "context",
+      "variants": [
+        "pet health data",
+        "anonymised clinical records",
+        "anonymized clinical records",
+        "clinical data platform"
+      ],
+      "why": "patient data assets used to train models"
+    },
+    {
+      "term": "clinical liability",
+      "tier": "context",
+      "variants": [
+        "professional liability",
+        "clinical governance",
+        "over-reliance on AI diagnostics"
+      ],
+      "why": "misdiagnosis exposure from AI-assisted care"
+    },
+    {
+      "term": "pet insurance claims automation",
+      "tier": "context",
+      "variants": [
+        "automated pet insurance claims",
+        "direct claims processing"
+      ],
+      "why": "automated claims between clinic and insurer"
+    },
+    {
+      "term": "inventory forecasting",
+      "tier": "context",
+      "variants": [
+        "demand forecasting",
+        "automated ordering",
+        "rota optimisation",
+        "rota optimization"
+      ],
+      "why": "model-driven pharmacy and stock planning"
+    },
+    {
+      "term": "clinician productivity",
+      "tier": "context",
+      "variants": [
+        "vet productivity",
+        "administrative burden",
+        "time spent on clinical notes"
+      ],
+      "why": "time saved per vet through AI tools"
+    }
+  ],
+  "class_terms": {}
+}

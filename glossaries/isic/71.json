@@ -1,0 +1,389 @@
+{
+  "id": "71",
+  "name": "Architectural and engineering activities; technical testing and analysis",
+  "section": "N",
+  "summary": "Engineering and architecture firms use AI in generative and automated design, BIM, digital twins and reality-capture inspection, and report strong demand from data-centre, power and semiconductor facility projects driven by AI. Testing, inspection and certification companies automate laboratory and inspection work and sell AI assurance, conformity assessment and ISO/IEC 42001 certification; both groups flag pressure on hours-based fees and professional liability for AI-assisted work.",
+  "terms": [
+    {
+      "term": "generative design",
+      "tier": "ai",
+      "variants": [
+        "AI-generated design",
+        "generative layout",
+        "AI-assisted design",
+        "AI-driven design"
+      ],
+      "why": "AI-generated design options"
+    },
+    {
+      "term": "design automation",
+      "tier": "context",
+      "variants": [
+        "automated design",
+        "automated drawing production",
+        "parametric design",
+        "computational design"
+      ],
+      "why": "automated production of drawings and models"
+    },
+    {
+      "term": "building information modelling",
+      "tier": "context",
+      "variants": [
+        "building information modeling",
+        "BIM",
+        "BIM model"
+      ],
+      "case_sensitive_variants": [
+        "BIM"
+      ],
+      "why": "3D model data underpinning design AI"
+    },
+    {
+      "term": "digital twin",
+      "tier": "context",
+      "variants": [
+        "digital twin platform",
+        "asset digital twin",
+        "infrastructure digital twin"
+      ],
+      "why": "virtual asset model used for simulation and AI"
+    },
+    {
+      "term": "reality capture",
+      "tier": "context",
+      "variants": [
+        "LiDAR survey",
+        "drone survey",
+        "laser scanning",
+        "point cloud",
+        "photogrammetry"
+      ],
+      "why": "scans and imagery analysed by ML"
+    },
+    {
+      "term": "predictive maintenance",
+      "tier": "context",
+      "variants": [
+        "asset performance management",
+        "predictive asset management",
+        "condition-based maintenance"
+      ],
+      "why": "failure prediction for client assets"
+    },
+    {
+      "term": "geospatial analytics",
+      "tier": "context",
+      "variants": [
+        "geospatial intelligence",
+        "remote sensing analytics",
+        "earth observation data"
+      ],
+      "why": "ML on satellite and mapping data"
+    },
+    {
+      "term": "AI-enabled delivery",
+      "tier": "ai",
+      "variants": [
+        "AI-augmented delivery",
+        "AI-assisted engineering",
+        "AI-powered delivery",
+        "AI-enabled solutions"
+      ],
+      "why": "AI embedded in project delivery"
+    },
+    {
+      "term": "engineering productivity",
+      "tier": "context",
+      "variants": [
+        "design productivity",
+        "billable hours",
+        "hourly rate",
+        "hours-based fee"
+      ],
+      "why": "hours saved in design work by AI"
+    },
+    {
+      "term": "global delivery centre",
+      "tier": "context",
+      "variants": [
+        "global delivery center",
+        "offshore design centre",
+        "offshore design center",
+        "global design centre"
+      ],
+      "why": "offshore design capacity alongside automation"
+    },
+    {
+      "term": "professional liability",
+      "tier": "context",
+      "variants": [
+        "professional indemnity",
+        "design liability",
+        "errors and omissions"
+      ],
+      "why": "design-error exposure from AI-assisted work"
+    },
+    {
+      "term": "data center project",
+      "tier": "context",
+      "variants": [
+        "data centre project",
+        "data center design",
+        "data centre design",
+        "data center client",
+        "data centre client",
+        "data center market"
+      ],
+      "why": "AI-driven demand for design and commissioning"
+    },
+    {
+      "term": "mission-critical facility",
+      "tier": "context",
+      "variants": [
+        "mission critical",
+        "advanced facilities",
+        "critical facilities",
+        "hyperscale client",
+        "hyperscaler"
+      ],
+      "why": "market segment label for AI infrastructure work"
+    },
+    {
+      "term": "AI infrastructure demand",
+      "tier": "ai",
+      "variants": [
+        "AI-driven demand",
+        "AI data center",
+        "AI data centre",
+        "AI factory",
+        "AI-related infrastructure"
+      ],
+      "why": "AI build-out as revenue driver"
+    },
+    {
+      "term": "power demand from data centers",
+      "tier": "context",
+      "variants": [
+        "power demand from data centres",
+        "data center load growth",
+        "grid interconnection study",
+        "grid modernisation",
+        "grid modernization"
+      ],
+      "why": "grid and generation work driven by AI load"
+    }
+  ],
+  "class_terms": {
+    "7110": [
+      {
+        "term": "automated clash detection",
+        "tier": "context",
+        "variants": [
+          "clash detection",
+          "automated code compliance checking",
+          "automated plan review"
+        ],
+        "why": "model checking in coordinated designs"
+      },
+      {
+        "term": "AI-assisted permitting",
+        "tier": "ai",
+        "variants": [
+          "AI-enabled permitting",
+          "AI-assisted environmental impact assessment"
+        ],
+        "why": "AI in environmental and permit documents"
+      },
+      {
+        "term": "semiconductor fabrication facility",
+        "tier": "context",
+        "variants": [
+          "semiconductor fab",
+          "fab construction",
+          "chip manufacturing facility"
+        ],
+        "why": "chip-plant design demand linked to AI"
+      },
+      {
+        "term": "liquid cooling design",
+        "tier": "context",
+        "variants": [
+          "high-density cooling",
+          "direct-to-chip cooling",
+          "immersion cooling"
+        ],
+        "why": "cooling engineering for AI data centres"
+      },
+      {
+        "term": "AI-based flood modelling",
+        "tier": "ai",
+        "variants": [
+          "AI-based flood modeling",
+          "machine learning hydrological model",
+          "AI weather model",
+          "AI-based climate risk model"
+        ],
+        "why": "ML in water and climate models"
+      },
+      {
+        "term": "AI-based traffic modelling",
+        "tier": "ai",
+        "variants": [
+          "AI-based traffic modeling"
+        ],
+        "why": "ML in transport planning"
+      },
+      {
+        "term": "construction monitoring",
+        "tier": "context",
+        "variants": [
+          "automated progress monitoring",
+          "AI site monitoring",
+          "schedule risk prediction"
+        ],
+        "why": "site progress tracked by computer vision"
+      },
+      {
+        "term": "fixed-price contract",
+        "tier": "context",
+        "variants": [
+          "lump-sum contract",
+          "time-and-materials",
+          "value-based fee"
+        ],
+        "why": "fee model where AI savings accrue to firm"
+      }
+    ],
+    "7120": [
+      {
+        "term": "AI assurance",
+        "tier": "ai",
+        "variants": [
+          "AI testing",
+          "AI system testing",
+          "AI assurance services",
+          "AI audit",
+          "algorithm audit"
+        ],
+        "why": "testing and assuring clients' AI systems"
+      },
+      {
+        "term": "AI certification",
+        "tier": "ai",
+        "variants": [
+          "AI conformity assessment",
+          "ISO/IEC 42001 certification",
+          "ISO 42001 certification",
+          "AI management system certification",
+          "AI quality mark"
+        ],
+        "why": "certification services for AI systems"
+      },
+      {
+        "term": "notified body",
+        "tier": "context",
+        "variants": [
+          "conformity assessment body",
+          "third-party conformity assessment",
+          "notified body designation"
+        ],
+        "why": "EU role for AI Act conformity assessment"
+      },
+      {
+        "term": "automated inspection",
+        "tier": "context",
+        "variants": [
+          "AI-based defect detection",
+          "AI visual inspection",
+          "automated defect recognition",
+          "automated visual inspection"
+        ],
+        "why": "machine-vision inspection of products and assets"
+      },
+      {
+        "term": "remote inspection",
+        "tier": "context",
+        "variants": [
+          "drone inspection",
+          "digital inspection",
+          "remote audit",
+          "robotic inspection"
+        ],
+        "why": "inspections via imagery and ML review"
+      },
+      {
+        "term": "laboratory automation",
+        "tier": "context",
+        "variants": [
+          "automated laboratory",
+          "lab automation",
+          "robotic sample handling",
+          "laboratory digitalisation"
+        ],
+        "why": "automated sample handling and analysis"
+      },
+      {
+        "term": "AI-assisted image analysis",
+        "tier": "ai",
+        "variants": [
+          "AI-assisted pathology",
+          "AI-assisted microscopy",
+          "automated image analysis"
+        ],
+        "why": "ML reading of lab images and spectra"
+      },
+      {
+        "term": "ADAS testing",
+        "tier": "context",
+        "variants": [
+          "autonomous vehicle testing",
+          "automated driving validation",
+          "advanced driver assistance system testing"
+        ],
+        "why": "testing demand from automated driving"
+      },
+      {
+        "term": "data center commissioning",
+        "tier": "context",
+        "variants": [
+          "data centre commissioning",
+          "data center testing",
+          "data centre testing"
+        ],
+        "why": "testing services for AI infrastructure"
+      },
+      {
+        "term": "AI-enabled product testing",
+        "tier": "ai",
+        "variants": [
+          "testing of AI-enabled devices",
+          "AI in medical device testing",
+          "functional safety of AI",
+          "AI-enabled medical device"
+        ],
+        "why": "testing products that embed AI"
+      },
+      {
+        "term": "cybersecurity certification",
+        "tier": "context",
+        "variants": [
+          "Cyber Resilience Act",
+          "cybersecurity testing",
+          "connected product testing"
+        ],
+        "why": "adjacent assurance line sold with AI assurance"
+      },
+      {
+        "term": "report automation",
+        "tier": "context",
+        "variants": [
+          "automated report generation",
+          "AI-generated inspection report",
+          "automated certificate issuance"
+        ],
+        "why": "AI drafting of inspection and test reports"
+      }
+    ]
+  }
+}

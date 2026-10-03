@@ -1,0 +1,389 @@
+{
+  "id": "22",
+  "name": "Manufacture of rubber and plastic products",
+  "section": "C",
+  "summary": "Tyre makers write about AI in virtual tyre development, compound design, sensor-equipped 'intelligent' tyres and fleet data services, and about autonomous vehicles and robotaxis as a new tyre market. Plastics and rubber processors mention self-optimising moulding and extrusion, camera-based quality inspection and AI-based sorting of plastic waste for recycling. Hose, seal and compound makers increasingly cite data center liquid cooling and chip fabs as demand drivers.",
+  "terms": [
+    {
+      "term": "predictive maintenance",
+      "tier": "ai",
+      "variants": [
+        "prescriptive maintenance"
+      ],
+      "why": "ML on machine data for presses, extruders, mixers"
+    },
+    {
+      "term": "machine vision",
+      "tier": "ai",
+      "variants": [
+        "vision inspection system",
+        "camera-based inspection",
+        "inline vision system"
+      ],
+      "why": "camera inspection of moulded and extruded parts"
+    },
+    {
+      "term": "automated visual inspection",
+      "tier": "ai",
+      "variants": [
+        "automated optical inspection",
+        "automated defect detection",
+        "automated quality inspection",
+        "inline quality inspection"
+      ],
+      "why": "AI defect detection replacing manual inspection"
+    },
+    {
+      "term": "predictive quality",
+      "tier": "ai",
+      "variants": [
+        "quality prediction",
+        "scrap prediction",
+        "scrap rate prediction"
+      ],
+      "why": "ML prediction of part quality and scrap"
+    },
+    {
+      "term": "adaptive process control",
+      "tier": "context",
+      "variants": [
+        "self-optimising process",
+        "self-optimizing process",
+        "closed-loop process control",
+        "self-learning process control",
+        "intelligent process control"
+      ],
+      "why": "self-adjusting moulding and extrusion parameters"
+    },
+    {
+      "term": "operator assistance system",
+      "tier": "context",
+      "variants": [
+        "machine setting assistant",
+        "setup assistant",
+        "digital assistance system"
+      ],
+      "why": "software guidance for machine setters and operators"
+    },
+    {
+      "term": "materials informatics",
+      "tier": "ai",
+      "variants": [
+        "material informatics",
+        "polymer informatics",
+        "AI-assisted formulation",
+        "formulation optimisation",
+        "formulation optimization",
+        "digital formulation"
+      ],
+      "why": "ML-guided polymer and compound formulation"
+    },
+    {
+      "term": "smart factory",
+      "tier": "context",
+      "variants": [
+        "intelligent factory",
+        "factory of the future",
+        "digital factory",
+        "lights-out manufacturing"
+      ],
+      "why": "connected plant programmes where AI use is reported"
+    },
+    {
+      "term": "Industry 4.0",
+      "tier": "context",
+      "variants": [
+        "Industrie 4.0",
+        "fourth industrial revolution"
+      ],
+      "why": "umbrella label for connected, data-driven production"
+    },
+    {
+      "term": "digital twin",
+      "tier": "context",
+      "variants": [
+        "virtual prototyping"
+      ],
+      "why": "virtual process or product model paired with AI"
+    },
+    {
+      "term": "collaborative robot",
+      "tier": "context",
+      "variants": [
+        "cobot",
+        "robotic handling cell",
+        "robotic palletising",
+        "robotic palletizing"
+      ],
+      "why": "flexible handling at presses and packing lines"
+    },
+    {
+      "term": "autonomous mobile robot",
+      "tier": "ai",
+      "variants": [
+        "AMR"
+      ],
+      "case_sensitive_variants": [
+        "AMR"
+      ],
+      "why": "self-navigating intralogistics vehicles in plants"
+    },
+    {
+      "term": "automated guided vehicle",
+      "tier": "context",
+      "variants": [
+        "AGV",
+        "driverless transport system"
+      ],
+      "case_sensitive_variants": [
+        "AGV"
+      ],
+      "why": "driverless material transport in plants"
+    },
+    {
+      "term": "AI-based sorting",
+      "tier": "ai",
+      "variants": [
+        "AI-powered sorting",
+        "AI sorting",
+        "intelligent sorting",
+        "robotic sorting",
+        "deep learning sorting"
+      ],
+      "why": "AI recognition of plastics in waste streams"
+    },
+    {
+      "term": "optical sorting",
+      "tier": "context",
+      "variants": [
+        "sensor-based sorting",
+        "near-infrared sorting",
+        "NIR sorting",
+        "flake sorting"
+      ],
+      "why": "sorting lines where AI classification is applied"
+    },
+    {
+      "term": "digital watermark",
+      "tier": "context",
+      "variants": [
+        "HolyGrail 2.0"
+      ],
+      "why": "machine-readable packaging codes for automated sorting"
+    },
+    {
+      "term": "smart packaging",
+      "tier": "context",
+      "variants": [
+        "intelligent packaging",
+        "connected packaging"
+      ],
+      "why": "sensor and code-enabled packaging feeding data services"
+    },
+    {
+      "term": "data center",
+      "tier": "context",
+      "variants": [
+        "data centre",
+        "datacenter",
+        "datacentre"
+      ],
+      "why": "cooling hoses, seals, cable compounds for AI build-out"
+    },
+    {
+      "term": "liquid cooling",
+      "tier": "context",
+      "variants": [
+        "direct-to-chip",
+        "immersion cooling",
+        "cooling hose",
+        "coolant distribution"
+      ],
+      "why": "hoses, seals and tubing for AI server cooling"
+    },
+    {
+      "term": "hyperscaler",
+      "tier": "context",
+      "variants": [
+        "hyperscale"
+      ],
+      "why": "large cloud and AI customers behind cooling demand"
+    },
+    {
+      "term": "semiconductor manufacturing",
+      "tier": "context",
+      "variants": [
+        "semiconductor fab",
+        "wafer handling",
+        "perfluoroelastomer",
+        "high-purity fluoropolymer"
+      ],
+      "why": "high-purity plastic parts and seals for chip fabs"
+    },
+    {
+      "term": "autonomous vehicle",
+      "tier": "ai",
+      "variants": [
+        "autonomous driving",
+        "self-driving vehicle",
+        "robotaxi",
+        "autonomous shuttle"
+      ],
+      "why": "driverless fleets as new market for tyres, parts"
+    }
+  ],
+  "class_terms": {
+    "2211": [
+      {
+        "term": "intelligent tyre",
+        "tier": "context",
+        "variants": [
+          "intelligent tire",
+          "smart tyre",
+          "smart tire",
+          "connected tyre",
+          "connected tire",
+          "sensor-equipped tyre",
+          "sensor-equipped tire"
+        ],
+        "why": "sensor-equipped tyres producing data for algorithms"
+      },
+      {
+        "term": "tyre sensor",
+        "tier": "context",
+        "variants": [
+          "tire sensor",
+          "tyre-mounted sensor",
+          "tire-mounted sensor",
+          "tyre pressure and temperature sensing"
+        ],
+        "why": "in-tyre sensing hardware behind data services"
+      },
+      {
+        "term": "tyre intelligence",
+        "tier": "ai",
+        "variants": [
+          "tire intelligence",
+          "tyre data analytics",
+          "tire data analytics"
+        ],
+        "why": "tyre makers' label for sensor-plus-algorithm services"
+      },
+      {
+        "term": "Cyber Tyre",
+        "tier": "context",
+        "variants": [
+          "Cyber Tire",
+          "SightLine",
+          "ContiConnect",
+          "Webfleet"
+        ],
+        "why": "branded sensor and software tyre systems"
+      },
+      {
+        "term": "tyre wear prediction",
+        "tier": "ai",
+        "variants": [
+          "tire wear prediction",
+          "tread wear prediction",
+          "predictive tyre maintenance",
+          "predictive tire maintenance",
+          "tyre health monitoring",
+          "tire health monitoring"
+        ],
+        "why": "algorithms predicting wear and failures from tyre data"
+      },
+      {
+        "term": "road friction estimation",
+        "tier": "ai",
+        "variants": [
+          "grip estimation",
+          "road condition detection",
+          "tyre-road friction",
+          "tire-road friction"
+        ],
+        "why": "tyre-as-sensor algorithms feeding driver assistance"
+      },
+      {
+        "term": "virtual tyre development",
+        "tier": "context",
+        "variants": [
+          "virtual tire development",
+          "virtual tyre design",
+          "virtual tire design",
+          "virtual tyre testing",
+          "virtual tire testing",
+          "virtual tyre prototyping",
+          "virtual tire prototyping"
+        ],
+        "why": "simulation and AI replacing physical prototypes"
+      },
+      {
+        "term": "compound development",
+        "tier": "context",
+        "variants": [
+          "virtual compound design",
+          "compound simulation",
+          "rubber compound optimisation",
+          "rubber compound optimization"
+        ],
+        "why": "AI-assisted rubber compound design"
+      },
+      {
+        "term": "driving simulator",
+        "tier": "context",
+        "variants": [
+          "simulator-based development"
+        ],
+        "why": "virtual testing with tyre models"
+      },
+      {
+        "term": "tyre-as-a-service",
+        "tier": "context",
+        "variants": [
+          "tire-as-a-service",
+          "tyres as a service",
+          "tires as a service",
+          "pay-per-kilometre",
+          "pay-per-mile"
+        ],
+        "why": "data-enabled pay-per-use tyre business models"
+      },
+      {
+        "term": "fleet telematics",
+        "tier": "context",
+        "variants": [
+          "connected fleet",
+          "fleet management solution",
+          "fleet solutions"
+        ],
+        "why": "connected fleet data business of tyre makers"
+      },
+      {
+        "term": "tread depth scanner",
+        "tier": "context",
+        "variants": [
+          "tread scanner",
+          "tyre scanning",
+          "tire scanning",
+          "drive-over scanner",
+          "automated tyre inspection",
+          "automated tire inspection"
+        ],
+        "why": "automated tyre scanning and inspection at depots"
+      },
+      {
+        "term": "automated tyre building",
+        "tier": "context",
+        "variants": [
+          "automated tire building",
+          "tyre building machine",
+          "tire building machine",
+          "tyre uniformity",
+          "tire uniformity"
+        ],
+        "why": "highly automated building lines with ML quality control"
+      }
+    ]
+  }
+}

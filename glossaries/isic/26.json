@@ -1,0 +1,1657 @@
+{
+  "id": "26",
+  "name": "Manufacture of computer, electronic and optical products",
+  "section": "C",
+  "summary": "This division builds the AI hardware stack, so AI appears first as demand: accelerators, high bandwidth memory, advanced packaging, AI servers, optical and networking gear, power and thermal components, with hyperscaler capex, supply tightness and export controls on advanced chips as the main risks. AI is also a product feature (AI PCs and phones, edge AI, video analytics, AI-enabled medical imaging and hearing aids, autonomous sensing, defence electronics) and an internal tool for chip design, yield and inspection. Regulation shows up as chip export rules, CHIPS-type subsidies and medical-device rules for AI software.",
+  "terms": [
+    {
+      "term": "AI accelerator",
+      "tier": "ai",
+      "variants": [
+        "AI chip",
+        "AI processor",
+        "AI semiconductor",
+        "AI silicon",
+        "AI ASIC",
+        "accelerator chip"
+      ],
+      "why": "chips built to run AI training and inference"
+    },
+    {
+      "term": "graphics processing unit",
+      "tier": "context",
+      "variants": [
+        "GPU"
+      ],
+      "case_sensitive_variants": [
+        "GPU"
+      ],
+      "why": "main AI compute chip; also graphics"
+    },
+    {
+      "term": "accelerated computing",
+      "tier": "ai",
+      "variants": [
+        "accelerated compute",
+        "AI computing",
+        "AI compute",
+        "compute demand"
+      ],
+      "why": "industry label for GPU-based AI compute"
+    },
+    {
+      "term": "high-performance computing",
+      "tier": "context",
+      "variants": [
+        "HPC",
+        "high performance compute",
+        "supercomputer",
+        "supercomputing",
+        "exascale"
+      ],
+      "case_sensitive_variants": [
+        "HPC"
+      ],
+      "why": "segment name under which AI demand is reported"
+    },
+    {
+      "term": "AI server",
+      "tier": "ai",
+      "variants": [
+        "GPU server",
+        "AI rack",
+        "AI-optimized server",
+        "AI-optimised server",
+        "accelerated server"
+      ],
+      "why": "servers built around AI accelerators"
+    },
+    {
+      "term": "AI infrastructure",
+      "tier": "ai",
+      "variants": [
+        "AI build-out",
+        "AI buildout",
+        "AI factory",
+        "AI cluster",
+        "AI data center",
+        "AI data centre",
+        "AI datacenter"
+      ],
+      "why": "the data center build-out for AI"
+    },
+    {
+      "term": "sovereign AI",
+      "tier": "ai",
+      "variants": [
+        "neocloud",
+        "GPU cloud",
+        "AI cloud provider",
+        "GPU-as-a-service"
+      ],
+      "why": "state-backed and specialist AI compute buyers"
+    },
+    {
+      "term": "data center",
+      "tier": "context",
+      "variants": [
+        "data centre",
+        "datacenter",
+        "datacentre"
+      ],
+      "why": "end market where AI hardware demand is reported"
+    },
+    {
+      "term": "hyperscaler",
+      "tier": "context",
+      "variants": [
+        "hyperscale",
+        "cloud service provider"
+      ],
+      "why": "largest buyers of AI hardware"
+    },
+    {
+      "term": "cloud capex",
+      "tier": "context",
+      "variants": [
+        "cloud capital expenditure",
+        "AI capex",
+        "AI capital expenditure",
+        "AI investment cycle",
+        "AI spending"
+      ],
+      "why": "customer spending that drives AI hardware revenue"
+    },
+    {
+      "term": "edge AI",
+      "tier": "ai",
+      "variants": [
+        "on-device AI",
+        "AI at the edge",
+        "endpoint AI",
+        "embedded AI",
+        "tinyML",
+        "AI-enabled device",
+        "on-device intelligence"
+      ],
+      "why": "AI running on devices rather than in data centers"
+    },
+    {
+      "term": "neural processing unit",
+      "tier": "ai",
+      "variants": [
+        "NPU",
+        "neural engine",
+        "tensor processing unit",
+        "TPU",
+        "AI engine"
+      ],
+      "case_sensitive_variants": [
+        "NPU",
+        "TPU"
+      ],
+      "why": "on-chip AI engines in PCs, phones, devices"
+    },
+    {
+      "term": "inference workload",
+      "tier": "ai",
+      "variants": [
+        "AI inference",
+        "inferencing",
+        "AI training",
+        "training workload",
+        "AI workload",
+        "training cluster",
+        "inference chip"
+      ],
+      "why": "how hardware makers describe AI compute demand"
+    },
+    {
+      "term": "machine vision",
+      "tier": "ai",
+      "variants": [
+        "vision system",
+        "3D vision",
+        "deep learning vision",
+        "vision sensor",
+        "embedded vision"
+      ],
+      "why": "vision AI products and own inspection use"
+    },
+    {
+      "term": "automated optical inspection",
+      "tier": "ai",
+      "variants": [
+        "AOI",
+        "automated X-ray inspection",
+        "solder paste inspection",
+        "automatic defect classification"
+      ],
+      "case_sensitive_variants": [
+        "AOI"
+      ],
+      "why": "AI inspection of boards, wafers and assemblies"
+    },
+    {
+      "term": "predictive maintenance",
+      "tier": "ai",
+      "why": "ML on fab and assembly equipment data"
+    },
+    {
+      "term": "smart factory",
+      "tier": "context",
+      "variants": [
+        "smart manufacturing",
+        "intelligent factory",
+        "lights-out factory",
+        "digital factory"
+      ],
+      "why": "plant programmes under which AI use is reported"
+    },
+    {
+      "term": "Industry 4.0",
+      "tier": "context",
+      "variants": [
+        "Industrie 4.0",
+        "industrial internet of things",
+        "IIoT"
+      ],
+      "case_sensitive_variants": [
+        "IIoT"
+      ],
+      "why": "umbrella label for connected, data-driven production"
+    },
+    {
+      "term": "digital twin",
+      "tier": "context",
+      "why": "virtual fab, product or system model paired with AI"
+    },
+    {
+      "term": "export controls",
+      "tier": "context",
+      "variants": [
+        "export restrictions",
+        "export licence",
+        "export license",
+        "chip export ban",
+        "advanced computing rule"
+      ],
+      "why": "restrictions on selling advanced AI chips and tools"
+    },
+    {
+      "term": "Entity List",
+      "tier": "context",
+      "variants": [
+        "Bureau of Industry and Security",
+        "foreign direct product rule",
+        "military end-user",
+        "unverified list"
+      ],
+      "why": "US trade lists limiting chip sales to named buyers"
+    },
+    {
+      "term": "AI diffusion rule",
+      "tier": "ai",
+      "variants": [
+        "AI Diffusion Framework",
+        "Framework for Artificial Intelligence Diffusion",
+        "Chip Security Act",
+        "GAIN AI Act"
+      ],
+      "why": "US rules capping AI chip exports by country"
+    },
+    {
+      "term": "CHIPS Act",
+      "tier": "context",
+      "variants": [
+        "CHIPS and Science Act",
+        "chip subsidies",
+        "semiconductor incentives"
+      ],
+      "why": "subsidy regimes for chip capacity"
+    },
+    {
+      "term": "liquid cooling",
+      "tier": "context",
+      "variants": [
+        "direct-to-chip",
+        "cold plate",
+        "immersion cooling",
+        "coolant distribution unit",
+        "CDU",
+        "liquid-cooled"
+      ],
+      "case_sensitive_variants": [
+        "CDU"
+      ],
+      "why": "cooling hardware needed for dense AI racks"
+    },
+    {
+      "term": "thermal module",
+      "tier": "context",
+      "variants": [
+        "vapor chamber",
+        "vapour chamber",
+        "heat sink",
+        "heat pipe",
+        "thermal interface material",
+        "thermal solution"
+      ],
+      "why": "heat-removal parts for AI chips and servers"
+    },
+    {
+      "term": "power density",
+      "tier": "context",
+      "variants": [
+        "kW per rack",
+        "high-density rack",
+        "megawatt rack",
+        "rack density"
+      ],
+      "why": "rising rack power driven by AI accelerators"
+    },
+    {
+      "term": "supply tightness",
+      "tier": "context",
+      "variants": [
+        "capacity tightness",
+        "supply allocation",
+        "supply shortage",
+        "component shortage",
+        "long lead times"
+      ],
+      "why": "AI-driven shortages of chips, memory, substrates"
+    },
+    {
+      "term": "performance per watt",
+      "tier": "context",
+      "variants": [
+        "energy-efficient computing",
+        "energy efficiency of AI",
+        "power-efficient AI",
+        "compute efficiency"
+      ],
+      "why": "energy efficiency as selling point for AI hardware"
+    },
+    {
+      "term": "humanoid robot",
+      "tier": "ai",
+      "variants": [
+        "humanoid",
+        "physical AI",
+        "embodied AI",
+        "robot brain"
+      ],
+      "why": "new end market for chips, sensors and modules"
+    },
+    {
+      "term": "autonomous driving",
+      "tier": "ai",
+      "variants": [
+        "ADAS",
+        "advanced driver assistance system",
+        "automated driving",
+        "autonomous vehicle",
+        "robotaxi"
+      ],
+      "case_sensitive_variants": [
+        "ADAS"
+      ],
+      "why": "automotive chips, sensors and cameras for driver assistance"
+    }
+  ],
+  "class_terms": {
+    "2611": [
+      {
+        "term": "load growth",
+        "tier": "context",
+        "variants": [
+          "electricity demand growth",
+          "power demand growth",
+          "AI-driven power demand",
+          "surging electricity demand"
+        ],
+        "why": "data center power demand as solar demand driver"
+      },
+      {
+        "term": "behind-the-meter",
+        "tier": "context",
+        "variants": [
+          "on-site generation",
+          "onsite generation",
+          "co-located generation",
+          "bring your own power",
+          "time to power",
+          "speed to power"
+        ],
+        "why": "on-site solar and storage for data centers"
+      },
+      {
+        "term": "virtual power plant",
+        "tier": "context",
+        "variants": [
+          "distributed energy resource management",
+          "DERMS",
+          "grid services",
+          "demand response",
+          "energy management system",
+          "home energy management"
+        ],
+        "case_sensitive_variants": [
+          "DERMS"
+        ],
+        "why": "software-orchestrated fleets of inverters and batteries"
+      },
+      {
+        "term": "solar forecasting",
+        "tier": "ai",
+        "variants": [
+          "production forecasting",
+          "irradiance forecasting",
+          "PV forecasting",
+          "AI-based energy optimisation",
+          "AI-based energy optimization",
+          "self-learning energy management"
+        ],
+        "why": "ML forecasting and optimisation of PV output"
+      },
+      {
+        "term": "solid-state transformer",
+        "tier": "context",
+        "variants": [
+          "800V DC",
+          "800 VDC",
+          "DC power architecture",
+          "medium-voltage power conversion"
+        ],
+        "why": "inverter makers pivoting power electronics to AI data centers"
+      }
+    ],
+    "2619": [
+      {
+        "term": "high bandwidth memory",
+        "tier": "context",
+        "variants": [
+          "HBM",
+          "HBM3E",
+          "HBM4"
+        ],
+        "case_sensitive_variants": [
+          "HBM",
+          "HBM3E",
+          "HBM4"
+        ],
+        "why": "memory sold into AI accelerators"
+      },
+      {
+        "term": "advanced packaging",
+        "tier": "context",
+        "variants": [
+          "2.5D packaging",
+          "3D packaging",
+          "heterogeneous integration",
+          "chiplet",
+          "fan-out panel-level packaging",
+          "FOPLP",
+          "wafer-level packaging"
+        ],
+        "case_sensitive_variants": [
+          "FOPLP"
+        ],
+        "why": "packaging capacity gating AI chip supply"
+      },
+      {
+        "term": "CoWoS",
+        "tier": "context",
+        "variants": [
+          "chip-on-wafer-on-substrate",
+          "SoIC",
+          "Foveros",
+          "EMIB"
+        ],
+        "case_sensitive_variants": [
+          "CoWoS",
+          "SoIC",
+          "EMIB"
+        ],
+        "why": "TSMC packaging used for AI accelerators"
+      },
+      {
+        "term": "hybrid bonding",
+        "tier": "context",
+        "variants": [
+          "through-silicon via",
+          "TSV",
+          "thermocompression bonding",
+          "TC bonder"
+        ],
+        "case_sensitive_variants": [
+          "TSV"
+        ],
+        "why": "stacking technology for HBM and AI chips"
+      },
+      {
+        "term": "interposer",
+        "tier": "context",
+        "variants": [
+          "glass core substrate",
+          "glass substrate",
+          "redistribution layer"
+        ],
+        "why": "package layer connecting AI chips and memory"
+      },
+      {
+        "term": "ABF substrate",
+        "tier": "context",
+        "variants": [
+          "IC substrate",
+          "FC-BGA",
+          "flip-chip BGA",
+          "package substrate",
+          "Ajinomoto build-up film",
+          "substrate capacity"
+        ],
+        "why": "package substrates in short supply for AI chips"
+      },
+      {
+        "term": "leading-edge node",
+        "tier": "context",
+        "variants": [
+          "advanced node",
+          "leading-edge process",
+          "3nm",
+          "2nm",
+          "gate-all-around",
+          "backside power delivery",
+          "angstrom node"
+        ],
+        "why": "process nodes where AI chips are made"
+      },
+      {
+        "term": "EUV lithography",
+        "tier": "context",
+        "variants": [
+          "EUV",
+          "extreme ultraviolet",
+          "high-NA"
+        ],
+        "case_sensitive_variants": [
+          "EUV"
+        ],
+        "why": "tooling for leading-edge AI chips; export-controlled"
+      },
+      {
+        "term": "wafer foundry",
+        "tier": "context",
+        "variants": [
+          "foundry capacity",
+          "pure-play foundry",
+          "foundry customer",
+          "wafer starts",
+          "foundry services"
+        ],
+        "why": "contract capacity AI chip designers depend on"
+      },
+      {
+        "term": "DRAM",
+        "tier": "context",
+        "variants": [
+          "DDR5",
+          "LPDDR5X",
+          "memory pricing",
+          "memory supercycle"
+        ],
+        "case_sensitive_variants": [
+          "DRAM"
+        ],
+        "why": "memory demand and pricing driven by AI servers"
+      },
+      {
+        "term": "enterprise SSD",
+        "tier": "context",
+        "variants": [
+          "eSSD",
+          "NAND",
+          "high-capacity SSD",
+          "QLC"
+        ],
+        "case_sensitive_variants": [
+          "eSSD",
+          "NAND",
+          "QLC"
+        ],
+        "why": "storage demand from AI data centers"
+      },
+      {
+        "term": "neuromorphic chip",
+        "tier": "ai",
+        "variants": [
+          "neuromorphic computing",
+          "in-memory computing",
+          "processing-in-memory",
+          "analog AI"
+        ],
+        "why": "brain-inspired and in-memory AI hardware"
+      },
+      {
+        "term": "custom silicon",
+        "tier": "context",
+        "variants": [
+          "custom ASIC",
+          "XPU",
+          "in-house chip",
+          "application-specific integrated circuit",
+          "custom accelerator"
+        ],
+        "case_sensitive_variants": [
+          "XPU"
+        ],
+        "why": "hyperscaler-specific AI chips"
+      },
+      {
+        "term": "field-programmable gate array",
+        "tier": "context",
+        "variants": [
+          "FPGA",
+          "adaptive SoC"
+        ],
+        "case_sensitive_variants": [
+          "FPGA"
+        ],
+        "why": "reconfigurable chips used for AI inference"
+      },
+      {
+        "term": "data processing unit",
+        "tier": "context",
+        "variants": [
+          "DPU",
+          "SmartNIC",
+          "network interface card"
+        ],
+        "case_sensitive_variants": [
+          "DPU"
+        ],
+        "why": "networking chips offloading AI data center tasks"
+      },
+      {
+        "term": "SerDes",
+        "tier": "context",
+        "variants": [
+          "retimer",
+          "PCIe 6.0",
+          "PCIe 7.0",
+          "224G",
+          "high-speed interface",
+          "connectivity IC"
+        ],
+        "case_sensitive_variants": [
+          "224G"
+        ],
+        "why": "high-speed connectivity chips for AI clusters"
+      },
+      {
+        "term": "power management IC",
+        "tier": "context",
+        "variants": [
+          "PMIC",
+          "voltage regulator module",
+          "vertical power delivery",
+          "power stage",
+          "48V power delivery",
+          "multiphase controller"
+        ],
+        "case_sensitive_variants": [
+          "PMIC"
+        ],
+        "why": "power delivery chips for AI accelerators"
+      },
+      {
+        "term": "gallium nitride",
+        "tier": "context",
+        "variants": [
+          "GaN",
+          "silicon carbide",
+          "SiC",
+          "wide bandgap"
+        ],
+        "case_sensitive_variants": [
+          "GaN",
+          "SiC"
+        ],
+        "why": "efficient power devices for AI server power"
+      },
+      {
+        "term": "multilayer ceramic capacitor",
+        "tier": "context",
+        "variants": [
+          "MLCC",
+          "multi-layer ceramic capacitor",
+          "silicon capacitor",
+          "polymer capacitor",
+          "power inductor",
+          "passive components"
+        ],
+        "case_sensitive_variants": [
+          "MLCC"
+        ],
+        "why": "passives content rising in AI servers"
+      },
+      {
+        "term": "printed circuit board",
+        "tier": "context",
+        "variants": [
+          "multilayer board",
+          "HDI board",
+          "high-layer-count board",
+          "backplane",
+          "substrate-like PCB"
+        ],
+        "why": "high-layer boards for AI servers and switches"
+      },
+      {
+        "term": "copper clad laminate",
+        "tier": "context",
+        "variants": [
+          "low-loss laminate",
+          "ultra-low-loss material",
+          "high-speed laminate",
+          "CCL"
+        ],
+        "case_sensitive_variants": [
+          "CCL"
+        ],
+        "why": "low-loss board materials for AI hardware"
+      },
+      {
+        "term": "high-speed connector",
+        "tier": "context",
+        "variants": [
+          "high-speed interconnect",
+          "active electrical cable",
+          "direct attach copper",
+          "twinax",
+          "high-speed cable assembly",
+          "overpass cable"
+        ],
+        "why": "interconnects inside AI racks"
+      },
+      {
+        "term": "electronic design automation",
+        "tier": "context",
+        "variants": [
+          "EDA",
+          "AI-driven chip design",
+          "AI-assisted chip design",
+          "design technology co-optimization"
+        ],
+        "case_sensitive_variants": [
+          "EDA"
+        ],
+        "why": "chip design tools, increasingly AI-driven"
+      },
+      {
+        "term": "virtual metrology",
+        "tier": "ai",
+        "variants": [
+          "fault detection and classification",
+          "run-to-run control",
+          "wafer map analysis",
+          "AI-based process control",
+          "yield prediction"
+        ],
+        "why": "ML process control and yield models in fabs"
+      },
+      {
+        "term": "image sensor",
+        "tier": "context",
+        "variants": [
+          "on-sensor AI processing",
+          "stacked CMOS sensor",
+          "time-of-flight sensor"
+        ],
+        "why": "sensors feeding vision AI, some with on-chip processing"
+      }
+    ],
+    "2620": [
+      {
+        "term": "AI PC",
+        "tier": "ai",
+        "variants": [
+          "Copilot+ PC",
+          "AI laptop",
+          "AI-enabled PC",
+          "AI notebook",
+          "AI workstation",
+          "GPU workstation"
+        ],
+        "why": "PCs with on-device AI hardware"
+      },
+      {
+        "term": "rack-scale",
+        "tier": "context",
+        "variants": [
+          "rack integration",
+          "L11 integration",
+          "full-rack solution",
+          "rack-level solution"
+        ],
+        "why": "servers sold as integrated AI racks"
+      },
+      {
+        "term": "original design manufacturer",
+        "tier": "context",
+        "variants": [
+          "ODM direct",
+          "white-box server",
+          "ODM"
+        ],
+        "case_sensitive_variants": [
+          "ODM"
+        ],
+        "why": "contract builders of hyperscaler AI servers"
+      },
+      {
+        "term": "general-purpose server",
+        "tier": "context",
+        "variants": [
+          "general server",
+          "traditional server",
+          "server refresh",
+          "enterprise server"
+        ],
+        "why": "non-AI server demand contrasted with AI servers"
+      },
+      {
+        "term": "Blackwell",
+        "tier": "ai",
+        "variants": [
+          "GB200",
+          "GB300",
+          "Vera Rubin",
+          "HGX",
+          "MGX",
+          "DGX",
+          "NVL72"
+        ],
+        "case_sensitive_variants": [
+          "HGX",
+          "MGX",
+          "DGX"
+        ],
+        "why": "NVIDIA platform generations server makers ship"
+      },
+      {
+        "term": "nearline",
+        "tier": "context",
+        "variants": [
+          "high-capacity hard drive",
+          "HAMR",
+          "exabyte shipments",
+          "mass capacity storage"
+        ],
+        "case_sensitive_variants": [
+          "HAMR"
+        ],
+        "why": "high-capacity drives for AI data storage"
+      },
+      {
+        "term": "all-flash array",
+        "tier": "context",
+        "variants": [
+          "AI storage",
+          "storage for AI",
+          "data lake storage",
+          "high-performance storage",
+          "parallel file system"
+        ],
+        "why": "storage systems positioned for AI data pipelines"
+      },
+      {
+        "term": "PC refresh cycle",
+        "tier": "context",
+        "variants": [
+          "Windows 10 end of life",
+          "commercial PC refresh",
+          "PC replacement cycle"
+        ],
+        "why": "AI PCs as trigger for replacement demand"
+      }
+    ],
+    "2630": [
+      {
+        "term": "AI-RAN",
+        "tier": "ai",
+        "variants": [
+          "AI-native network",
+          "AI-native RAN",
+          "AI-native 6G",
+          "AI for RAN",
+          "AI on RAN"
+        ],
+        "why": "AI embedded in radio access networks"
+      },
+      {
+        "term": "self-organizing network",
+        "tier": "ai",
+        "variants": [
+          "self-organising network",
+          "self-optimizing network",
+          "self-optimising network",
+          "self-healing network"
+        ],
+        "why": "networks that tune themselves with ML"
+      },
+      {
+        "term": "autonomous network",
+        "tier": "ai",
+        "variants": [
+          "zero-touch",
+          "intent-based networking",
+          "closed-loop automation",
+          "network autonomy"
+        ],
+        "why": "operator networks run by closed-loop AI"
+      },
+      {
+        "term": "RAN intelligent controller",
+        "tier": "ai",
+        "variants": [
+          "RIC",
+          "rApp",
+          "xApp"
+        ],
+        "case_sensitive_variants": [
+          "RIC",
+          "rApp",
+          "xApp"
+        ],
+        "why": "Open RAN component hosting ML apps"
+      },
+      {
+        "term": "Open RAN",
+        "tier": "context",
+        "variants": [
+          "O-RAN",
+          "Cloud RAN",
+          "vRAN",
+          "virtualised RAN",
+          "virtualized RAN"
+        ],
+        "case_sensitive_variants": [
+          "O-RAN",
+          "vRAN"
+        ],
+        "why": "open radio architecture enabling AI apps"
+      },
+      {
+        "term": "AIOps",
+        "tier": "ai",
+        "variants": [
+          "AI for IT operations",
+          "network assurance",
+          "AI-driven network operations",
+          "AI for networking",
+          "network copilot"
+        ],
+        "why": "AI-driven network operations and assurance"
+      },
+      {
+        "term": "AI networking",
+        "tier": "ai",
+        "variants": [
+          "back-end network",
+          "AI fabric",
+          "AI Ethernet",
+          "scale-out networking",
+          "scale-up networking",
+          "networking for AI"
+        ],
+        "why": "switching and interconnect for AI clusters"
+      },
+      {
+        "term": "InfiniBand",
+        "tier": "context",
+        "variants": [
+          "Ultra Ethernet",
+          "RoCE",
+          "Ethernet switch",
+          "800GbE",
+          "merchant silicon",
+          "white-box switch"
+        ],
+        "case_sensitive_variants": [
+          "RoCE"
+        ],
+        "why": "switching technologies competing inside AI clusters"
+      },
+      {
+        "term": "optical transceiver",
+        "tier": "context",
+        "variants": [
+          "optical module",
+          "pluggable optics",
+          "800G",
+          "1.6T",
+          "LPO",
+          "active optical cable"
+        ],
+        "case_sensitive_variants": [
+          "LPO",
+          "800G",
+          "1.6T"
+        ],
+        "why": "optics demand driven by AI clusters"
+      },
+      {
+        "term": "co-packaged optics",
+        "tier": "context",
+        "variants": [
+          "silicon photonics",
+          "optical interconnect",
+          "photonic integrated circuit",
+          "optical engine",
+          "optical I/O"
+        ],
+        "why": "next-generation optics for AI switches"
+      },
+      {
+        "term": "coherent optics",
+        "tier": "context",
+        "variants": [
+          "400ZR",
+          "800ZR",
+          "coherent pluggable",
+          "optical transport",
+          "wavelength capacity"
+        ],
+        "why": "long-reach optics linking AI data centers"
+      },
+      {
+        "term": "datacom",
+        "tier": "context",
+        "variants": [
+          "EML",
+          "VCSEL",
+          "indium phosphide",
+          "CW laser",
+          "electro-absorption modulated laser"
+        ],
+        "case_sensitive_variants": [
+          "EML",
+          "VCSEL"
+        ],
+        "why": "laser and optics segment tied to AI demand"
+      },
+      {
+        "term": "AI smartphone",
+        "tier": "ai",
+        "variants": [
+          "AI phone",
+          "Galaxy AI",
+          "Apple Intelligence",
+          "AI handset"
+        ],
+        "why": "handsets marketed on on-device AI features"
+      },
+      {
+        "term": "video analytics",
+        "tier": "ai",
+        "variants": [
+          "intelligent video",
+          "AI camera",
+          "smart camera",
+          "AI-powered video",
+          "video AI",
+          "object detection camera"
+        ],
+        "why": "AI analysis of camera feeds"
+      },
+      {
+        "term": "licence plate recognition",
+        "tier": "ai",
+        "variants": [
+          "license plate recognition",
+          "automatic number plate recognition",
+          "ANPR",
+          "LPR",
+          "vehicle recognition"
+        ],
+        "case_sensitive_variants": [
+          "ANPR",
+          "LPR"
+        ],
+        "why": "vehicle recognition products for police and cities"
+      },
+      {
+        "term": "facial recognition",
+        "tier": "ai",
+        "variants": [
+          "face recognition",
+          "face matching",
+          "biometric identification"
+        ],
+        "why": "biometric matching in cameras and devices; regulated"
+      },
+      {
+        "term": "video surveillance",
+        "tier": "context",
+        "variants": [
+          "video security",
+          "security camera",
+          "body-worn camera",
+          "CCTV",
+          "public safety technology"
+        ],
+        "why": "camera products that carry AI features"
+      }
+    ],
+    "2640": [
+      {
+        "term": "voice assistant",
+        "tier": "ai",
+        "variants": [
+          "virtual assistant",
+          "Alexa",
+          "Bixby",
+          "voice control",
+          "voice-controlled"
+        ],
+        "why": "speech AI in consumer devices"
+      },
+      {
+        "term": "smart speaker",
+        "tier": "context",
+        "variants": [
+          "smart display",
+          "smart home",
+          "connected home"
+        ],
+        "why": "device category carrying voice AI"
+      },
+      {
+        "term": "AI upscaling",
+        "tier": "ai",
+        "variants": [
+          "AI TV",
+          "AI picture quality",
+          "AI sound",
+          "AI picture processor",
+          "AI-powered TV"
+        ],
+        "why": "AI picture and sound processing in TVs"
+      },
+      {
+        "term": "AI glasses",
+        "tier": "ai",
+        "variants": [
+          "AI wearable",
+          "AI pin",
+          "AI companion device",
+          "wearable AI"
+        ],
+        "why": "wearables built around an AI assistant"
+      },
+      {
+        "term": "smart glasses",
+        "tier": "context",
+        "variants": [
+          "AR glasses",
+          "XR headset",
+          "mixed reality headset",
+          "augmented reality glasses",
+          "spatial computing"
+        ],
+        "why": "eyewear and headsets carrying AI features"
+      },
+      {
+        "term": "computational photography",
+        "tier": "ai",
+        "variants": [
+          "AI camera features",
+          "scene recognition",
+          "AI photo editing",
+          "AI image enhancement"
+        ],
+        "why": "AI image processing in cameras and phones"
+      },
+      {
+        "term": "AI noise cancellation",
+        "tier": "ai",
+        "variants": [
+          "computational audio",
+          "AI-powered audio",
+          "live translation",
+          "real-time translation",
+          "adaptive audio"
+        ],
+        "why": "AI audio features in earbuds and headsets"
+      }
+    ],
+    "2651": [
+      {
+        "term": "automatic test equipment",
+        "tier": "context",
+        "variants": [
+          "semiconductor test",
+          "SoC tester",
+          "memory tester",
+          "probe card",
+          "burn-in",
+          "system-level test",
+          "test intensity",
+          "known good die"
+        ],
+        "why": "chip testers; AI chips need more test"
+      },
+      {
+        "term": "metrology and inspection",
+        "tier": "context",
+        "variants": [
+          "inline metrology",
+          "process control metrology",
+          "optical metrology",
+          "3D metrology",
+          "defect inspection",
+          "e-beam inspection"
+        ],
+        "why": "process control tools for advanced chips and packages"
+      },
+      {
+        "term": "high-speed digital test",
+        "tier": "context",
+        "variants": [
+          "signal integrity test",
+          "optical test",
+          "interconnect test",
+          "network emulation",
+          "protocol test"
+        ],
+        "why": "test gear demand from AI networking and optics"
+      },
+      {
+        "term": "lidar",
+        "tier": "context",
+        "variants": [
+          "light detection and ranging",
+          "imaging radar",
+          "radar sensor"
+        ],
+        "why": "ranging sensors for autonomous machines"
+      },
+      {
+        "term": "sensor fusion",
+        "tier": "ai",
+        "variants": [
+          "perception system",
+          "perception software",
+          "environment perception"
+        ],
+        "why": "combining sensors into machine perception"
+      },
+      {
+        "term": "precise positioning",
+        "tier": "context",
+        "variants": [
+          "inertial navigation",
+          "GNSS",
+          "RTK",
+          "high-precision positioning",
+          "GNSS correction"
+        ],
+        "case_sensitive_variants": [
+          "GNSS",
+          "RTK"
+        ],
+        "why": "positioning products enabling machine autonomy"
+      },
+      {
+        "term": "autonomous navigation",
+        "tier": "ai",
+        "variants": [
+          "autosteer",
+          "auto-guidance",
+          "autonomy kit",
+          "autonomous machine control",
+          "GPS-denied navigation",
+          "visual navigation"
+        ],
+        "why": "self-steering functions sold with positioning gear"
+      },
+      {
+        "term": "industrial autonomy",
+        "tier": "ai",
+        "variants": [
+          "autonomous operations",
+          "autonomous plant",
+          "industrial AI",
+          "industrial copilot",
+          "IA2IA",
+          "self-optimising plant",
+          "self-optimizing plant"
+        ],
+        "case_sensitive_variants": [
+          "IA2IA"
+        ],
+        "why": "control vendors' label for AI-run plants"
+      },
+      {
+        "term": "advanced process control",
+        "tier": "context",
+        "variants": [
+          "model predictive control",
+          "multivariable control",
+          "distributed control system",
+          "process automation system"
+        ],
+        "why": "control products where ML optimisers are embedded"
+      },
+      {
+        "term": "smart meter",
+        "tier": "context",
+        "variants": [
+          "advanced metering infrastructure",
+          "smart metering",
+          "intelligent endpoint"
+        ],
+        "why": "metering endpoints hosting edge intelligence"
+      },
+      {
+        "term": "grid edge intelligence",
+        "tier": "ai",
+        "variants": [
+          "distributed intelligence",
+          "grid-edge computing",
+          "meter data analytics",
+          "load disaggregation"
+        ],
+        "why": "ML applications running on meters and grid devices"
+      },
+      {
+        "term": "automatic target recognition",
+        "tier": "ai",
+        "variants": [
+          "aided target recognition",
+          "target classification",
+          "AI-based target detection"
+        ],
+        "why": "AI classification in radar and electro-optics"
+      },
+      {
+        "term": "cognitive electronic warfare",
+        "tier": "ai",
+        "variants": [
+          "cognitive radar",
+          "cognitive EW",
+          "software-defined radar",
+          "software-defined defence",
+          "software-defined defense",
+          "AI-enabled sensing"
+        ],
+        "why": "AI-adaptive radar and jamming"
+      },
+      {
+        "term": "electronic warfare",
+        "tier": "context",
+        "variants": [
+          "signals intelligence",
+          "SIGINT",
+          "C4ISR",
+          "intelligence, surveillance and reconnaissance",
+          "multi-domain operations",
+          "counter-UAS",
+          "counter-drone"
+        ],
+        "case_sensitive_variants": [
+          "SIGINT",
+          "C4ISR"
+        ],
+        "why": "defence electronics segments where AI is applied"
+      },
+      {
+        "term": "automated threat detection",
+        "tier": "ai",
+        "variants": [
+          "automatic threat recognition",
+          "prohibited item detection",
+          "AI-based screening",
+          "automated object recognition"
+        ],
+        "why": "AI recognition in security screening equipment"
+      },
+      {
+        "term": "laboratory automation",
+        "tier": "context",
+        "variants": [
+          "lab automation",
+          "automated sample preparation",
+          "self-driving laboratory",
+          "autonomous lab",
+          "intelligent instrument"
+        ],
+        "why": "analytical instruments with automated, AI-assisted workflows"
+      }
+    ],
+    "2652": [
+      {
+        "term": "smartwatch",
+        "tier": "context",
+        "variants": [
+          "connected watch",
+          "wearable device",
+          "fitness tracker",
+          "smart ring"
+        ],
+        "why": "wearables carrying health-sensing algorithms"
+      },
+      {
+        "term": "health monitoring algorithm",
+        "tier": "ai",
+        "variants": [
+          "sleep tracking algorithm",
+          "heart rhythm notification",
+          "fall detection",
+          "AI health coach",
+          "AI fitness coach"
+        ],
+        "why": "ML features interpreting wearable sensor data"
+      }
+    ],
+    "2660": [
+      {
+        "term": "AI-enabled medical device",
+        "tier": "ai",
+        "variants": [
+          "AI/ML-enabled",
+          "AI-powered imaging",
+          "AI-based medical device",
+          "machine learning-enabled device"
+        ],
+        "why": "regulatory category for devices with AI functions"
+      },
+      {
+        "term": "software as a medical device",
+        "tier": "context",
+        "variants": [
+          "SaMD",
+          "medical device software"
+        ],
+        "case_sensitive_variants": [
+          "SaMD"
+        ],
+        "why": "regulatory class covering most clinical AI"
+      },
+      {
+        "term": "predetermined change control plan",
+        "tier": "ai",
+        "variants": [
+          "PCCP"
+        ],
+        "case_sensitive_variants": [
+          "PCCP"
+        ],
+        "why": "FDA mechanism for updating AI device software"
+      },
+      {
+        "term": "computer-aided detection",
+        "tier": "ai",
+        "variants": [
+          "computer-aided diagnosis",
+          "CADe",
+          "CADx",
+          "AI-assisted diagnosis",
+          "AI triage",
+          "automated lesion detection"
+        ],
+        "case_sensitive_variants": [
+          "CADe",
+          "CADx"
+        ],
+        "why": "AI flagging findings in medical images"
+      },
+      {
+        "term": "deep learning reconstruction",
+        "tier": "ai",
+        "variants": [
+          "AI-based image reconstruction",
+          "deep learning image reconstruction",
+          "AI reconstruction",
+          "automated segmentation",
+          "auto-contouring",
+          "automated contouring",
+          "auto-segmentation"
+        ],
+        "why": "AI image reconstruction and contouring in scanners"
+      },
+      {
+        "term": "adaptive radiotherapy",
+        "tier": "context",
+        "variants": [
+          "adaptive radiation therapy",
+          "online adaptive",
+          "automated treatment planning",
+          "treatment planning system"
+        ],
+        "why": "treatment workflows relying on AI contouring and planning"
+      },
+      {
+        "term": "radiology AI",
+        "tier": "ai",
+        "variants": [
+          "imaging AI",
+          "AI-Rad Companion",
+          "AI-powered radiology",
+          "AI in medical imaging",
+          "AI-assisted reading"
+        ],
+        "why": "AI reading and workflow tools sold with imaging"
+      },
+      {
+        "term": "clinical decision support",
+        "tier": "context",
+        "variants": [
+          "diagnostic decision support",
+          "decision support software",
+          "radiology workflow",
+          "imaging workflow",
+          "enterprise imaging"
+        ],
+        "why": "software category where diagnostic AI is sold"
+      },
+      {
+        "term": "AI-guided ultrasound",
+        "tier": "ai",
+        "variants": [
+          "AI-assisted ultrasound",
+          "automated measurement",
+          "auto-measurement",
+          "image acquisition guidance"
+        ],
+        "why": "AI guidance and auto-measurement in ultrasound"
+      },
+      {
+        "term": "remote patient monitoring",
+        "tier": "context",
+        "variants": [
+          "remote monitoring",
+          "implantable cardiac monitor",
+          "wearable ECG",
+          "insertable cardiac monitor"
+        ],
+        "why": "connected cardiac and vital-sign devices feeding algorithms"
+      },
+      {
+        "term": "arrhythmia detection",
+        "tier": "ai",
+        "variants": [
+          "AI ECG",
+          "AI-enabled ECG",
+          "ECG algorithm",
+          "atrial fibrillation detection",
+          "automated ECG interpretation"
+        ],
+        "why": "ECG algorithms in monitors and implants"
+      },
+      {
+        "term": "AI hearing aid",
+        "tier": "ai",
+        "variants": [
+          "deep neural network hearing aid",
+          "DNN-based noise reduction",
+          "AI sound processing",
+          "AI-powered hearing",
+          "speech enhancement"
+        ],
+        "why": "hearing aids with on-chip neural networks"
+      },
+      {
+        "term": "medical device cybersecurity",
+        "tier": "context",
+        "variants": [
+          "premarket cybersecurity",
+          "software bill of materials",
+          "SBOM",
+          "device security vulnerability"
+        ],
+        "case_sensitive_variants": [
+          "SBOM"
+        ],
+        "why": "security duties for connected, software-driven devices"
+      }
+    ],
+    "2670": [
+      {
+        "term": "AI autofocus",
+        "tier": "ai",
+        "variants": [
+          "subject recognition",
+          "subject detection autofocus",
+          "eye-detection autofocus",
+          "deep learning autofocus",
+          "subject tracking"
+        ],
+        "why": "deep-learning subject recognition in cameras"
+      },
+      {
+        "term": "computational imaging",
+        "tier": "ai",
+        "variants": [
+          "AI image processing",
+          "AI noise reduction",
+          "neural network upscaling",
+          "in-camera AI"
+        ],
+        "why": "AI processing inside cameras and optics"
+      },
+      {
+        "term": "content credentials",
+        "tier": "context",
+        "variants": [
+          "C2PA",
+          "content authenticity",
+          "image provenance",
+          "image authenticity"
+        ],
+        "case_sensitive_variants": [
+          "C2PA"
+        ],
+        "why": "camera provenance features against AI-generated fakes"
+      },
+      {
+        "term": "lithography optics",
+        "tier": "context",
+        "variants": [
+          "EUV optics",
+          "semiconductor optics",
+          "projection optics",
+          "semiconductor manufacturing optics",
+          "mask inspection"
+        ],
+        "why": "optics for tools making AI chips"
+      },
+      {
+        "term": "AI-assisted microscopy",
+        "tier": "ai",
+        "variants": [
+          "automated image analysis",
+          "AI-based cell analysis",
+          "smart microscopy",
+          "digital pathology",
+          "whole slide imaging"
+        ],
+        "why": "AI image analysis in microscopes and pathology scanners"
+      },
+      {
+        "term": "automotive camera lens",
+        "tier": "context",
+        "variants": [
+          "automotive lens",
+          "in-vehicle camera",
+          "sensing camera",
+          "vehicle camera module",
+          "lidar optics"
+        ],
+        "why": "optics for driver-assistance cameras and lidar"
+      }
+    ]
+  }
+}

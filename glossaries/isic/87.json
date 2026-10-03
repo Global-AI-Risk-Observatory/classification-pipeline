@@ -1,0 +1,451 @@
+{
+  "id": "87",
+  "name": "Residential care activities",
+  "section": "R",
+  "summary": "Nursing home, aged care and residential behavioural health operators mostly describe AI as a response to staff shortages and safety incidents: fall detection and resident monitoring, deterioration and readmission prediction, care documentation, rostering and occupancy sales. Risk passages concern resident privacy and dignity under camera or sensor monitoring, reliance on vendors, and Medicare Advantage or insurer algorithms that shorten authorised stays.",
+  "terms": [
+    {
+      "term": "fall detection",
+      "tier": "context",
+      "variants": [
+        "fall prevention technology",
+        "fall monitoring",
+        "falls prevention",
+        "fall prediction",
+        "fall risk assessment"
+      ],
+      "why": "most common monitoring use case in care homes"
+    },
+    {
+      "term": "AI fall detection",
+      "tier": "ai",
+      "variants": [
+        "AI-powered fall detection",
+        "computer vision fall detection",
+        "fall detection camera",
+        "radar fall detection",
+        "AI fall prevention",
+        "predictive fall risk"
+      ],
+      "why": "computer vision or radar detecting resident falls"
+    },
+    {
+      "term": "resident monitoring",
+      "tier": "context",
+      "variants": [
+        "remote resident monitoring",
+        "passive monitoring",
+        "ambient monitoring",
+        "in-room sensor",
+        "acoustic monitoring",
+        "night-time monitoring",
+        "motion sensing",
+        "contactless monitoring"
+      ],
+      "why": "sensor-based oversight substituting night checks"
+    },
+    {
+      "term": "nurse call system",
+      "tier": "context",
+      "variants": [
+        "call bell",
+        "emergency call system",
+        "wander management",
+        "real-time location system",
+        "location tracking"
+      ],
+      "why": "alerting infrastructure now linked to analytics"
+    },
+    {
+      "term": "resident privacy",
+      "tier": "context",
+      "variants": [
+        "in-room camera",
+        "camera monitoring",
+        "resident dignity",
+        "consent to monitoring",
+        "surveillance in care homes"
+      ],
+      "why": "dignity and consent issues from in-room monitoring"
+    },
+    {
+      "term": "electronic care record",
+      "tier": "context",
+      "variants": [
+        "electronic health record",
+        "digital care plan",
+        "electronic care planning",
+        "care management software",
+        "point-of-care documentation",
+        "eMAR",
+        "electronic medication administration record"
+      ],
+      "case_sensitive_variants": [
+        "eMAR"
+      ],
+      "why": "digital care documentation that AI tools draw on"
+    },
+    {
+      "term": "care documentation",
+      "tier": "context",
+      "variants": [
+        "voice documentation",
+        "speech-to-text care notes",
+        "documentation burden",
+        "progress note",
+        "care notes",
+        "handover note"
+      ],
+      "why": "note-taking burden targeted by speech and language AI"
+    },
+    {
+      "term": "AI-assisted care planning",
+      "tier": "ai",
+      "variants": [
+        "AI care planning",
+        "AI-generated care plan",
+        "AI-assisted documentation",
+        "AI care assistant",
+        "AI nursing assistant",
+        "ambient documentation"
+      ],
+      "why": "AI drafting care plans and notes"
+    },
+    {
+      "term": "staff rostering",
+      "tier": "context",
+      "variants": [
+        "workforce scheduling",
+        "shift scheduling",
+        "predictive scheduling",
+        "staffing optimisation",
+        "staffing optimization",
+        "rostering",
+        "workforce management system"
+      ],
+      "why": "scheduling optimisation under labour shortage"
+    },
+    {
+      "term": "caregiver shortage",
+      "tier": "context",
+      "variants": [
+        "care worker shortage",
+        "nursing shortage",
+        "labour shortage",
+        "labor shortage",
+        "agency staffing",
+        "staff turnover",
+        "minimum staffing",
+        "staffing mandate"
+      ],
+      "why": "labour gap motivating automation in care"
+    },
+    {
+      "term": "care robot",
+      "tier": "ai",
+      "variants": [
+        "companion robot",
+        "social robot",
+        "robotic companion",
+        "assistive robot",
+        "carebot",
+        "lifting robot",
+        "robotic pet",
+        "humanoid care robot"
+      ],
+      "why": "robots assisting or accompanying residents"
+    },
+    {
+      "term": "resident deterioration",
+      "tier": "context",
+      "variants": [
+        "change in condition",
+        "early detection of deterioration",
+        "avoidable hospitalization",
+        "avoidable hospitalisation",
+        "rehospitalization",
+        "hospital readmission",
+        "hospital transfer"
+      ],
+      "why": "health decline that predictive tools aim to catch"
+    },
+    {
+      "term": "resident risk prediction",
+      "tier": "ai",
+      "variants": [
+        "fall risk prediction",
+        "pressure injury prediction",
+        "readmission risk prediction",
+        "deterioration prediction",
+        "predictive care analytics",
+        "predictive resident analytics"
+      ],
+      "why": "predictive models on falls, wounds and readmissions"
+    },
+    {
+      "term": "pressure injury",
+      "tier": "context",
+      "variants": [
+        "pressure ulcer",
+        "wound assessment",
+        "wound imaging",
+        "digital wound care",
+        "wound measurement"
+      ],
+      "why": "wound outcome tracked with imaging tools"
+    },
+    {
+      "term": "AI wound assessment",
+      "tier": "ai",
+      "variants": [
+        "AI wound measurement",
+        "wound imaging AI",
+        "AI-powered wound care",
+        "automated wound measurement"
+      ],
+      "why": "image AI measuring and staging wounds"
+    },
+    {
+      "term": "PainChek",
+      "tier": "ai",
+      "variants": [
+        "AI pain assessment",
+        "facial analysis pain assessment",
+        "automated pain assessment"
+      ],
+      "why": "facial-analysis AI pain assessment used in aged care"
+    },
+    {
+      "term": "medication management",
+      "tier": "context",
+      "variants": [
+        "medication administration",
+        "automated medication dispensing",
+        "medication error",
+        "medication dispensing robot",
+        "medication round"
+      ],
+      "why": "dispensing and administration steps being automated"
+    },
+    {
+      "term": "remote patient monitoring",
+      "tier": "context",
+      "variants": [
+        "vital signs monitoring",
+        "contactless vital signs",
+        "wearable sensor",
+        "remote monitoring",
+        "telehealth",
+        "telemedicine",
+        "virtual physician"
+      ],
+      "why": "vitals monitoring feeding alerts and telehealth"
+    },
+    {
+      "term": "agetech",
+      "tier": "context",
+      "variants": [
+        "age-tech",
+        "ageing in place",
+        "aging in place",
+        "assistive technology",
+        "ambient assisted living",
+        "smart care home",
+        "connected care",
+        "smart room"
+      ],
+      "why": "technology for older people, where AI is marketed"
+    },
+    {
+      "term": "cognitive assessment",
+      "tier": "context",
+      "variants": [
+        "cognitive screening",
+        "dementia detection",
+        "cognitive stimulation",
+        "cognitive decline monitoring"
+      ],
+      "why": "dementia screening and stimulation using AI tools"
+    },
+    {
+      "term": "resident engagement",
+      "tier": "context",
+      "variants": [
+        "family communication app",
+        "family portal",
+        "resident experience app",
+        "social isolation",
+        "loneliness",
+        "smart speaker",
+        "voice-activated device"
+      ],
+      "why": "family and social apps adding AI features"
+    },
+    {
+      "term": "case-mix classification",
+      "tier": "context",
+      "variants": [
+        "Minimum Data Set",
+        "MDS assessment",
+        "PDPM",
+        "Patient-Driven Payment Model",
+        "AN-ACC",
+        "clinical reimbursement"
+      ],
+      "case_sensitive_variants": [
+        "PDPM",
+        "AN-ACC"
+      ],
+      "why": "funding assessments coded with software support"
+    },
+    {
+      "term": "prior authorization",
+      "tier": "context",
+      "variants": [
+        "prior authorisation",
+        "Medicare Advantage denial",
+        "payer denial",
+        "claim denial",
+        "managed care denial",
+        "length-of-stay authorization"
+      ],
+      "why": "payer approval of stays, increasingly algorithmic"
+    },
+    {
+      "term": "nH Predict",
+      "tier": "ai",
+      "variants": [
+        "naviHealth",
+        "algorithmic coverage denial",
+        "AI-driven denial",
+        "algorithm-driven discharge"
+      ],
+      "why": "insurer algorithm predicting post-acute length of stay"
+    },
+    {
+      "term": "occupancy forecasting",
+      "tier": "context",
+      "variants": [
+        "census forecasting",
+        "move-in lead scoring",
+        "lead scoring",
+        "sales lead management",
+        "occupancy prediction"
+      ],
+      "why": "sales and census planning using predictive scoring"
+    },
+    {
+      "term": "quality rating",
+      "tier": "context",
+      "variants": [
+        "star rating",
+        "quality indicator",
+        "quality measure",
+        "care quality inspection",
+        "serious incident reporting"
+      ],
+      "why": "inspection and star ratings influenced by monitoring data"
+    }
+  ],
+  "class_terms": {
+    "8720": [
+      {
+        "term": "telepsychiatry",
+        "tier": "context",
+        "variants": [
+          "teletherapy",
+          "virtual behavioral health",
+          "virtual behavioural health",
+          "telebehavioral health",
+          "digital mental health"
+        ],
+        "why": "remote behavioural care where AI triage is added"
+      },
+      {
+        "term": "relapse prediction",
+        "tier": "ai",
+        "variants": [
+          "relapse risk model",
+          "suicide risk prediction",
+          "self-harm risk prediction",
+          "predictive relapse monitoring"
+        ],
+        "why": "predictive models of relapse or self-harm risk"
+      },
+      {
+        "term": "AI therapy",
+        "tier": "ai",
+        "variants": [
+          "AI therapist",
+          "therapy chatbot",
+          "mental health chatbot",
+          "AI companion"
+        ],
+        "why": "chatbot-delivered mental health support"
+      },
+      {
+        "term": "patient observation",
+        "tier": "context",
+        "variants": [
+          "observation rounds",
+          "contact-free monitoring",
+          "vision-based patient monitoring",
+          "ligature risk",
+          "safety check"
+        ],
+        "why": "safety checks supported by camera or sensor monitoring"
+      }
+    ],
+    "8730": [
+      {
+        "term": "memory care",
+        "tier": "context",
+        "variants": [
+          "dementia care",
+          "wander prevention",
+          "elopement risk",
+          "behaviour monitoring",
+          "behavior monitoring"
+        ],
+        "why": "dementia units using location and behaviour monitoring"
+      },
+      {
+        "term": "senior living technology",
+        "tier": "context",
+        "variants": [
+          "senior living community",
+          "independent living",
+          "assisted living technology",
+          "resident app",
+          "smart apartment"
+        ],
+        "why": "resident-facing technology in retirement communities"
+      }
+    ],
+    "8791": [
+      {
+        "term": "senior living referral",
+        "tier": "context",
+        "variants": [
+          "senior care referral",
+          "placement service",
+          "family advisor",
+          "community matching",
+          "care home directory",
+          "care finder"
+        ],
+        "why": "placement intermediaries using matching and lead scoring"
+      },
+      {
+        "term": "AI care matching",
+        "tier": "ai",
+        "variants": [
+          "AI-powered placement",
+          "AI care advisor",
+          "AI-driven community matching"
+        ],
+        "why": "AI matching families to care providers"
+      }
+    ]
+  }
+}

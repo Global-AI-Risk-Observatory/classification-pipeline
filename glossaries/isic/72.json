@@ -1,0 +1,544 @@
+{
+  "id": "72",
+  "name": "Scientific research and development",
+  "section": "N",
+  "summary": "R&D companies, mostly biotech and platform drug-discovery firms plus research institutes, present AI as the core of the discovery engine: generative molecular design, structure prediction, phenomics, in silico screening and automated labs, backed by proprietary datasets and GPU compute. Filings cite regulator positions on AI in drug development, patentability and inventorship of AI-generated inventions, biosecurity and data-privacy risk, and pharma partnerships priced on the AI platform.",
+  "terms": [
+    {
+      "term": "AI drug discovery",
+      "tier": "ai",
+      "variants": [
+        "AI-driven drug discovery",
+        "AI-enabled drug discovery",
+        "AI-powered drug discovery",
+        "AI-first biotech",
+        "techbio",
+        "AI-native biotech"
+      ],
+      "why": "AI applied to finding drug candidates"
+    },
+    {
+      "term": "generative chemistry",
+      "tier": "ai",
+      "variants": [
+        "generative molecular design",
+        "de novo design",
+        "generative biology",
+        "de novo protein design",
+        "de novo antibody design",
+        "generative design of molecules"
+      ],
+      "why": "models proposing novel molecules"
+    },
+    {
+      "term": "protein structure prediction",
+      "tier": "ai",
+      "variants": [
+        "AlphaFold",
+        "RoseTTAFold",
+        "ESMFold",
+        "structure prediction model",
+        "protein folding model"
+      ],
+      "why": "ML prediction of protein folding"
+    },
+    {
+      "term": "protein language model",
+      "tier": "ai",
+      "variants": [
+        "biological foundation model",
+        "protein foundation model",
+        "single-cell foundation model",
+        "foundation model for biology",
+        "virtual cell"
+      ],
+      "why": "sequence models for biology"
+    },
+    {
+      "term": "in silico",
+      "tier": "context",
+      "variants": [
+        "in silico screening",
+        "in silico modelling",
+        "in silico modeling",
+        "virtual screening",
+        "in silico prediction"
+      ],
+      "why": "computational experimentation replacing wet lab"
+    },
+    {
+      "term": "computational chemistry",
+      "tier": "context",
+      "variants": [
+        "physics-based modelling",
+        "physics-based modeling",
+        "molecular dynamics",
+        "free energy perturbation",
+        "computational platform"
+      ],
+      "why": "physics and ML modelling of molecules"
+    },
+    {
+      "term": "computational biology",
+      "tier": "context",
+      "variants": [
+        "bioinformatics",
+        "multi-omics",
+        "multiomics",
+        "genomic data analysis"
+      ],
+      "why": "data-driven biology underpinning AI discovery"
+    },
+    {
+      "term": "target identification",
+      "tier": "context",
+      "variants": [
+        "AI-driven target discovery",
+        "target discovery platform",
+        "novel target identification",
+        "target validation"
+      ],
+      "why": "discovery step now model-driven"
+    },
+    {
+      "term": "lead optimisation",
+      "tier": "context",
+      "variants": [
+        "lead optimization",
+        "hit-to-lead",
+        "hit identification",
+        "design-make-test-analyze",
+        "DMTA cycle"
+      ],
+      "why": "discovery step accelerated by ML"
+    },
+    {
+      "term": "ADMET prediction",
+      "tier": "ai",
+      "variants": [
+        "property prediction model",
+        "toxicity prediction",
+        "binding affinity prediction"
+      ],
+      "why": "ML prediction of drug properties"
+    },
+    {
+      "term": "phenomics",
+      "tier": "context",
+      "variants": [
+        "phenomic screening",
+        "high-content imaging",
+        "high-throughput screening",
+        "cell painting"
+      ],
+      "why": "image-based screening analysed by ML"
+    },
+    {
+      "term": "self-driving lab",
+      "tier": "ai",
+      "variants": [
+        "autonomous laboratory",
+        "closed-loop experimentation",
+        "lab-in-the-loop",
+        "AI-directed experiments"
+      ],
+      "why": "closed-loop AI-directed experimentation"
+    },
+    {
+      "term": "automated wet lab",
+      "tier": "context",
+      "variants": [
+        "lab automation",
+        "laboratory automation",
+        "robotic laboratory",
+        "automated synthesis",
+        "automated chemistry"
+      ],
+      "why": "robotic labs generating training data"
+    },
+    {
+      "term": "proprietary dataset",
+      "tier": "context",
+      "variants": [
+        "proprietary data",
+        "data generation engine",
+        "data flywheel",
+        "training data generated in-house",
+        "data moat"
+      ],
+      "why": "data moat used to train discovery models"
+    },
+    {
+      "term": "knowledge graph",
+      "tier": "context",
+      "variants": [
+        "biomedical knowledge graph",
+        "literature mining"
+      ],
+      "why": "biomedical graph used for target finding"
+    },
+    {
+      "term": "AI-discovered drug",
+      "tier": "ai",
+      "variants": [
+        "AI-designed molecule",
+        "AI-derived candidate",
+        "AI-designed drug",
+        "AI-generated candidate",
+        "AI-discovered molecule"
+      ],
+      "why": "pipeline assets attributed to AI"
+    },
+    {
+      "term": "discovery timeline",
+      "tier": "context",
+      "variants": [
+        "time to candidate",
+        "cost per candidate",
+        "reduced attrition",
+        "probability of technical success"
+      ],
+      "why": "speed claims for AI platforms"
+    },
+    {
+      "term": "biomarker discovery",
+      "tier": "context",
+      "variants": [
+        "AI-derived biomarker",
+        "digital biomarker",
+        "predictive biomarker"
+      ],
+      "why": "ML-derived patient and response markers"
+    },
+    {
+      "term": "patient stratification",
+      "tier": "context",
+      "variants": [
+        "patient selection",
+        "precision medicine",
+        "responder prediction"
+      ],
+      "why": "models selecting trial patients"
+    },
+    {
+      "term": "AI-enabled clinical trial",
+      "tier": "ai",
+      "variants": [
+        "AI patient recruitment",
+        "AI-driven trial design",
+        "trial site selection model",
+        "AI-optimised trial",
+        "AI-optimized trial"
+      ],
+      "why": "AI in trial design and recruitment"
+    },
+    {
+      "term": "synthetic control arm",
+      "tier": "context",
+      "variants": [
+        "external control arm",
+        "in silico trial",
+        "patient digital twin",
+        "digital twin of patients"
+      ],
+      "why": "modelled comparators replacing trial arms"
+    },
+    {
+      "term": "real-world data",
+      "tier": "context",
+      "variants": [
+        "real-world evidence",
+        "de-identified patient data"
+      ],
+      "why": "datasets feeding trial and outcome models"
+    },
+    {
+      "term": "computational pathology",
+      "tier": "ai",
+      "variants": [
+        "AI pathology",
+        "AI-based image analysis"
+      ],
+      "why": "ML reading of tissue images"
+    },
+    {
+      "term": "GPU cluster",
+      "tier": "context",
+      "variants": [
+        "supercomputer",
+        "high-performance computing",
+        "compute infrastructure",
+        "BioHive",
+        "compute capacity"
+      ],
+      "why": "compute capacity for model training"
+    },
+    {
+      "term": "NVIDIA BioNeMo",
+      "tier": "ai",
+      "variants": [
+        "BioNeMo",
+        "collaboration with NVIDIA",
+        "AI partnership",
+        "technology partnership with AI company"
+      ],
+      "why": "AI tooling partnerships in life sciences"
+    },
+    {
+      "term": "platform collaboration",
+      "tier": "context",
+      "variants": [
+        "discovery collaboration",
+        "platform partnership",
+        "AI collaboration with pharma",
+        "technology access fee"
+      ],
+      "why": "pharma deals priced on the AI platform"
+    },
+    {
+      "term": "FDA guidance on AI",
+      "tier": "ai",
+      "variants": [
+        "use of artificial intelligence to support regulatory decision-making",
+        "credibility assessment framework",
+        "EMA reflection paper on AI",
+        "AI in regulatory submissions"
+      ],
+      "why": "US regulator stance on AI in submissions"
+    },
+    {
+      "term": "model-informed drug development",
+      "tier": "context",
+      "variants": [
+        "MIDD",
+        "quantitative systems pharmacology"
+      ],
+      "case_sensitive_variants": [
+        "MIDD"
+      ],
+      "why": "regulator-accepted modelling pathway"
+    },
+    {
+      "term": "new approach methodologies",
+      "tier": "context",
+      "variants": [
+        "NAMs",
+        "FDA Modernization Act 2.0",
+        "animal testing alternatives"
+      ],
+      "case_sensitive_variants": [
+        "NAMs"
+      ],
+      "why": "non-animal methods incl. in silico models"
+    },
+    {
+      "term": "AI inventorship",
+      "tier": "ai",
+      "variants": [
+        "inventorship of AI-generated inventions",
+        "patentability of AI-generated inventions",
+        "AI-generated invention",
+        "DABUS"
+      ],
+      "why": "patent risk for AI-generated inventions"
+    },
+    {
+      "term": "biosecurity",
+      "tier": "context",
+      "variants": [
+        "dual-use research",
+        "AI-enabled biological risk",
+        "biological design tool"
+      ],
+      "why": "misuse risk of AI biological design"
+    },
+    {
+      "term": "genomic data privacy",
+      "tier": "context",
+      "variants": [
+        "patient data privacy",
+        "consent for secondary use",
+        "health data regulation"
+      ],
+      "why": "consent and privacy limits on training data"
+    },
+    {
+      "term": "materials informatics",
+      "tier": "ai",
+      "variants": [
+        "AI materials discovery",
+        "AI-driven materials discovery",
+        "materials discovery platform"
+      ],
+      "why": "ML for materials and chemicals R&D"
+    },
+    {
+      "term": "surrogate model",
+      "tier": "ai",
+      "variants": [
+        "AI-accelerated simulation",
+        "physics-informed neural network",
+        "physics-informed machine learning"
+      ],
+      "why": "ML emulation of physical simulation"
+    },
+    {
+      "term": "predictive breeding",
+      "tier": "ai",
+      "variants": [
+        "computational breeding",
+        "AI-assisted breeding"
+      ],
+      "why": "genomic ML in crop and animal R&D"
+    },
+    {
+      "term": "AI for science",
+      "tier": "ai",
+      "variants": [
+        "AI scientist",
+        "AI co-scientist",
+        "scientific AI",
+        "AI-driven research",
+        "AI research agent"
+      ],
+      "why": "AI as research method"
+    },
+    {
+      "term": "research integrity",
+      "tier": "context",
+      "variants": [
+        "paper mill",
+        "AI-generated research",
+        "AI use in research policy",
+        "fabricated data"
+      ],
+      "why": "AI-generated content in scientific output"
+    },
+    {
+      "term": "R&D productivity",
+      "tier": "context",
+      "variants": [
+        "research productivity",
+        "R&D efficiency",
+        "Eroom's law"
+      ],
+      "why": "efficiency case for AI in research"
+    },
+    {
+      "term": "AI research talent",
+      "tier": "ai",
+      "variants": [
+        "machine learning scientist",
+        "AI researcher",
+        "competition for AI talent"
+      ],
+      "why": "competition for ML scientists"
+    }
+  ],
+  "class_terms": {
+    "7210": [
+      {
+        "term": "antibody discovery platform",
+        "tier": "context",
+        "variants": [
+          "AI antibody design",
+          "AI-guided antibody discovery",
+          "zero-shot antibody design"
+        ],
+        "why": "AI-guided biologics discovery"
+      },
+      {
+        "term": "CRISPR guide design",
+        "tier": "context",
+        "variants": [
+          "AI-designed gene editor",
+          "guide RNA design model"
+        ],
+        "why": "ML-designed gene editing tools"
+      },
+      {
+        "term": "contract research",
+        "tier": "context",
+        "variants": [
+          "contract research organisation",
+          "contract research organization",
+          "AI-enabled CRO"
+        ],
+        "why": "outsourced R&D adopting AI tooling"
+      },
+      {
+        "term": "AI chip research",
+        "tier": "ai",
+        "variants": [
+          "AI hardware research",
+          "neuromorphic",
+          "AI accelerator research"
+        ],
+        "why": "semiconductor and compute R&D for AI"
+      },
+      {
+        "term": "autonomous systems research",
+        "tier": "ai",
+        "variants": [
+          "autonomous driving research",
+          "robot learning",
+          "embodied AI research"
+        ],
+        "why": "R&D on self-directed machines"
+      }
+    ],
+    "7220": [
+      {
+        "term": "computational social science",
+        "tier": "context",
+        "variants": [
+          "automated content analysis",
+          "large-scale text analysis",
+          "text-as-data",
+          "digital humanities"
+        ],
+        "why": "ML methods in social research"
+      },
+      {
+        "term": "synthetic respondent",
+        "tier": "ai",
+        "variants": [
+          "silicon sample",
+          "simulated respondent",
+          "synthetic survey data"
+        ],
+        "why": "LLM-simulated survey participants"
+      },
+      {
+        "term": "AI policy research",
+        "tier": "ai",
+        "variants": [
+          "AI governance research",
+          "AI safety research",
+          "research on the societal impact of AI"
+        ],
+        "why": "research on AI governance and impacts"
+      },
+      {
+        "term": "labour market effects of AI",
+        "tier": "ai",
+        "variants": [
+          "labor market effects of AI",
+          "AI and employment",
+          "AI exposure of occupations",
+          "economic impact of AI"
+        ],
+        "why": "economic research topic"
+      },
+      {
+        "term": "research ethics",
+        "tier": "context",
+        "variants": [
+          "ethics review of AI",
+          "responsible use of AI in research"
+        ],
+        "why": "review of AI use with human-subject data"
+      }
+    ]
+  }
+}

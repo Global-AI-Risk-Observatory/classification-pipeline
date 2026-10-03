@@ -1,0 +1,440 @@
+{
+  "id": "95",
+  "name": "Repair and maintenance of computers, personal and household goods, and motor vehicles and motorcycles",
+  "section": "T",
+  "summary": "Repair businesses write about AI through diagnostics and labour: remote and AI-assisted fault finding, photo-based damage estimating, automated inspection and grading, technician guidance, and scheduling and parts forecasting under a technician shortage. Vehicle repairers add the cost and demand effects of driver-assistance systems and software-defined vehicles; electronics repairers add device refresh cycles and servicing of AI servers.",
+  "terms": [
+    {
+      "term": "AI diagnostics",
+      "tier": "ai",
+      "variants": [
+        "AI-powered diagnostics",
+        "AI-assisted diagnosis",
+        "AI fault diagnosis",
+        "automated fault detection",
+        "AI-based troubleshooting",
+        "AI repair assistant",
+        "AI technician assistant",
+        "technician copilot"
+      ],
+      "why": "AI identifying faults in vehicles or devices"
+    },
+    {
+      "term": "remote diagnostics",
+      "tier": "context",
+      "variants": [
+        "remote diagnosis",
+        "remote troubleshooting",
+        "remote support",
+        "remote repair",
+        "self-diagnosis",
+        "diagnostic tool",
+        "fault code"
+      ],
+      "why": "diagnosing faults over a data connection"
+    },
+    {
+      "term": "predictive maintenance",
+      "tier": "ai",
+      "variants": [
+        "prognostics",
+        "failure prediction",
+        "predictive repair",
+        "predictive service alert",
+        "predictive diagnostics"
+      ],
+      "why": "predicting failures from equipment data"
+    },
+    {
+      "term": "technician shortage",
+      "tier": "context",
+      "variants": [
+        "skilled technician shortage",
+        "technician productivity",
+        "technician training",
+        "technician retention",
+        "mechanic shortage",
+        "skilled labour shortage",
+        "skilled labor shortage",
+        "technician utilisation",
+        "technician utilization"
+      ],
+      "why": "skilled labour gap that AI tools address"
+    },
+    {
+      "term": "first-time fix rate",
+      "tier": "context",
+      "variants": [
+        "first time fix",
+        "repair turnaround time",
+        "repair cycle time",
+        "mean time to repair",
+        "cycle time",
+        "repair quality"
+      ],
+      "why": "repair quality metrics that guidance tools target"
+    },
+    {
+      "term": "repair knowledge base",
+      "tier": "context",
+      "variants": [
+        "repair manual",
+        "service manual",
+        "repair database",
+        "technical service bulletin",
+        "repair information",
+        "OEM repair procedure"
+      ],
+      "why": "repair information searched by AI assistants"
+    },
+    {
+      "term": "remote expert assistance",
+      "tier": "context",
+      "variants": [
+        "AR-guided repair",
+        "augmented reality repair",
+        "remote expert",
+        "guided repair",
+        "step-by-step repair guidance",
+        "smart glasses"
+      ],
+      "why": "guided repair using AR and remote specialists"
+    },
+    {
+      "term": "parts availability",
+      "tier": "context",
+      "variants": [
+        "parts inventory",
+        "spare parts forecasting",
+        "parts demand forecasting",
+        "parts pricing",
+        "parts procurement",
+        "parts ordering"
+      ],
+      "why": "inventory and ordering supported by forecasting"
+    },
+    {
+      "term": "field service management",
+      "tier": "context",
+      "variants": [
+        "technician dispatch",
+        "job scheduling",
+        "route optimisation",
+        "route optimization",
+        "dispatch optimisation",
+        "dispatch optimization",
+        "work order management",
+        "shop management system",
+        "workshop management system"
+      ],
+      "why": "dispatch and scheduling optimised by algorithms"
+    },
+    {
+      "term": "virtual service advisor",
+      "tier": "ai",
+      "variants": [
+        "AI service advisor",
+        "AI receptionist",
+        "AI phone agent",
+        "AI-powered service scheduling",
+        "AI booking assistant"
+      ],
+      "why": "AI handling booking calls and customer updates"
+    },
+    {
+      "term": "right to repair",
+      "tier": "context",
+      "variants": [
+        "repairability",
+        "Right to Repair Directive",
+        "repair information access",
+        "access to diagnostic data",
+        "parts pairing",
+        "software lock"
+      ],
+      "why": "access to data and tools needed for diagnostics"
+    },
+    {
+      "term": "extended warranty",
+      "tier": "context",
+      "variants": [
+        "vehicle service contract",
+        "warranty claim",
+        "claims adjudication",
+        "protection plan",
+        "home warranty",
+        "device protection",
+        "warranty fraud"
+      ],
+      "why": "claims handling being automated"
+    }
+  ],
+  "class_terms": {
+    "9510": [
+      {
+        "term": "device grading",
+        "tier": "context",
+        "variants": [
+          "cosmetic grading",
+          "automated device testing",
+          "device diagnostics",
+          "refurbished device",
+          "trade-in",
+          "device triage",
+          "data erasure"
+        ],
+        "why": "refurbishment testing increasingly automated"
+      },
+      {
+        "term": "AI grading",
+        "tier": "ai",
+        "variants": [
+          "automated cosmetic grading",
+          "AI device grading",
+          "robotic device testing",
+          "computer vision grading",
+          "automated screen inspection"
+        ],
+        "why": "computer vision grading and testing of devices"
+      },
+      {
+        "term": "robotic disassembly",
+        "tier": "ai",
+        "variants": [
+          "automated disassembly",
+          "robotic repair",
+          "automated device repair",
+          "repair robot"
+        ],
+        "why": "robots performing repair and dismantling steps"
+      },
+      {
+        "term": "AI PC",
+        "tier": "ai",
+        "variants": [
+          "AI-capable PC",
+          "AI smartphone",
+          "on-device AI",
+          "Copilot+ PC"
+        ],
+        "why": "AI-capable devices changing repair and refresh demand"
+      },
+      {
+        "term": "device refresh cycle",
+        "tier": "context",
+        "variants": [
+          "upgrade cycle",
+          "replacement cycle",
+          "device lifecycle",
+          "device-as-a-service",
+          "IT asset disposition",
+          "ITAD"
+        ],
+        "case_sensitive_variants": [
+          "ITAD"
+        ],
+        "why": "replacement timing that drives repair volumes"
+      },
+      {
+        "term": "third-party maintenance",
+        "tier": "context",
+        "variants": [
+          "data center hardware maintenance",
+          "data centre hardware maintenance",
+          "server repair",
+          "GPU server",
+          "board-level repair",
+          "depot repair",
+          "hardware break-fix"
+        ],
+        "why": "servicing of data centre and AI server hardware"
+      }
+    ],
+    "9521": [
+      {
+        "term": "consumer electronics repair",
+        "tier": "context",
+        "variants": [
+          "smartphone repair",
+          "device repair",
+          "screen repair",
+          "repair kiosk",
+          "mail-in repair"
+        ],
+        "why": "device repair segment using automated triage"
+      }
+    ],
+    "9522": [
+      {
+        "term": "connected appliance",
+        "tier": "context",
+        "variants": [
+          "smart appliance",
+          "appliance diagnostics",
+          "appliance telemetry",
+          "home appliance repair",
+          "HVAC diagnostics",
+          "connected home device"
+        ],
+        "why": "appliances reporting faults for remote diagnosis"
+      }
+    ],
+    "9531": [
+      {
+        "term": "advanced driver assistance systems",
+        "tier": "context",
+        "variants": [
+          "ADAS",
+          "ADAS calibration",
+          "ADAS recalibration",
+          "sensor calibration",
+          "camera calibration",
+          "driver assistance",
+          "windshield calibration"
+        ],
+        "case_sensitive_variants": [
+          "ADAS"
+        ],
+        "why": "sensors raising repair complexity and calibration work"
+      },
+      {
+        "term": "collision frequency",
+        "tier": "context",
+        "variants": [
+          "accident frequency",
+          "claim frequency",
+          "collision avoidance",
+          "crash avoidance",
+          "automatic emergency braking",
+          "autonomous vehicle",
+          "self-driving vehicle",
+          "repairable claims"
+        ],
+        "why": "accident volumes reduced by vehicle automation"
+      },
+      {
+        "term": "software-defined vehicle",
+        "tier": "context",
+        "variants": [
+          "connected vehicle",
+          "connected car",
+          "vehicle telematics",
+          "vehicle data access",
+          "over-the-air update",
+          "telematics data"
+        ],
+        "why": "vehicle software limiting independent diagnostics"
+      },
+      {
+        "term": "vehicle complexity",
+        "tier": "context",
+        "variants": [
+          "repair complexity",
+          "electric vehicle repair",
+          "EV servicing",
+          "high-voltage training",
+          "scan tool",
+          "pre-scan and post-scan",
+          "OEM certification"
+        ],
+        "why": "technology content raising repair cost and skill needs"
+      },
+      {
+        "term": "AI damage assessment",
+        "tier": "ai",
+        "variants": [
+          "AI photo estimating",
+          "AI estimating",
+          "automated damage appraisal",
+          "AI-based damage detection",
+          "computer vision damage assessment",
+          "AI estimate",
+          "Tractable",
+          "touchless estimate"
+        ],
+        "case_sensitive_variants": [
+          "Tractable"
+        ],
+        "why": "image AI estimating collision repair cost"
+      },
+      {
+        "term": "collision estimating",
+        "tier": "context",
+        "variants": [
+          "estimating system",
+          "repair estimate",
+          "damage appraisal",
+          "photo-based estimating",
+          "virtual estimating",
+          "total loss determination",
+          "direct repair program",
+          "direct repair programme"
+        ],
+        "why": "estimating workflow shared with insurers"
+      },
+      {
+        "term": "digital vehicle inspection",
+        "tier": "context",
+        "variants": [
+          "digital inspection",
+          "multi-point inspection",
+          "vehicle health check",
+          "electronic vehicle health check"
+        ],
+        "why": "inspection reports generated with imaging tools"
+      },
+      {
+        "term": "AI vehicle inspection",
+        "tier": "ai",
+        "variants": [
+          "automated vehicle inspection",
+          "drive-through inspection scanner",
+          "UVeye",
+          "AI tyre scanning",
+          "AI tire scanning",
+          "automated underbody scan"
+        ],
+        "why": "automated scanners inspecting vehicles"
+      },
+      {
+        "term": "on-board diagnostics",
+        "tier": "context",
+        "variants": [
+          "OBD-II",
+          "diagnostic trouble code",
+          "telematics-based diagnostics",
+          "prognostic alert",
+          "vehicle health data"
+        ],
+        "why": "vehicle fault data used by diagnostic software"
+      }
+    ],
+    "9540": [
+      {
+        "term": "repair marketplace",
+        "tier": "context",
+        "variants": [
+          "repair booking platform",
+          "service marketplace",
+          "mechanic marketplace",
+          "instant quote",
+          "repair price estimate",
+          "tradesperson matching",
+          "online repair booking"
+        ],
+        "why": "booking intermediaries using matching and quoting engines"
+      },
+      {
+        "term": "automated repair quote",
+        "tier": "ai",
+        "variants": [
+          "AI-generated quote",
+          "instant AI estimate",
+          "AI price estimate",
+          "algorithmic quote"
+        ],
+        "why": "AI-generated price estimates for repairs"
+      }
+    ]
+  }
+}

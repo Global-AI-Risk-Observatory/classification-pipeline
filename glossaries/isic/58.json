@@ -1,0 +1,1229 @@
+{
+ "id": "58",
+ "name": "Publishing activities",
+ "section": "J",
+ "summary": "Publishers of books, news and journals write about AI mainly as an intellectual-property and traffic problem (unlicensed training on their content, AI answers replacing search referrals) and as a new revenue line (AI licensing deals), plus newsroom and editorial use, research-integrity threats and AI products built on proprietary content. Software and video game publishers write about AI features, copilots and agents in their products, how they price them (seats versus consumption), the compute cost behind them, and AI-native competitors that threaten per-seat software.",
+ "terms": [
+  {
+   "term": "AI licensing agreement",
+   "tier": "ai",
+   "variants": [
+    "AI licensing deal",
+    "AI licensing revenue",
+    "AI content licensing",
+    "AI partnership agreement",
+    "content licensing agreement with AI",
+    "licensing content for AI"
+   ],
+   "why": "content licensed to AI developers"
+  },
+  {
+   "term": "AI training data",
+   "tier": "ai",
+   "variants": [
+    "training of AI models",
+    "train AI models",
+    "AI training licence",
+    "AI training license",
+    "training data licence",
+    "training data license",
+    "used to train AI"
+   ],
+   "why": "published content used to train models"
+  },
+  {
+   "term": "copyright infringement by AI",
+   "tier": "ai",
+   "variants": [
+    "unauthorised use of content",
+    "unauthorized use of content",
+    "unlicensed use of content",
+    "AI copyright litigation",
+    "infringement by AI developers",
+    "AI copyright"
+   ],
+   "why": "litigation over unlicensed training"
+  },
+  {
+   "term": "text and data mining",
+   "tier": "context",
+   "variants": [
+    "TDM",
+    "TDM exception",
+    "TDM opt-out",
+    "rights reservation",
+    "machine-readable opt-out"
+   ],
+   "case_sensitive_variants": [
+    "TDM"
+   ],
+   "why": "legal exception governing AI training"
+  },
+  {
+   "term": "fair use",
+   "tier": "context",
+   "variants": [
+    "fair dealing",
+    "copyright exception",
+    "transformative use",
+    "copyright reform"
+   ],
+   "why": "US defence invoked by AI developers"
+  },
+  {
+   "term": "content scraping",
+   "tier": "context",
+   "variants": [
+    "web scraping",
+    "scraping of content",
+    "unauthorised scraping",
+    "unauthorized scraping",
+    "robots.txt",
+    "paywall circumvention"
+   ],
+   "why": "bots harvesting published content"
+  },
+  {
+   "term": "AI crawler",
+   "tier": "ai",
+   "variants": [
+    "AI bot",
+    "AI scraper",
+    "GPTBot",
+    "AI web crawler",
+    "bot blocking",
+    "pay-per-crawl"
+   ],
+   "why": "bots collecting content for models"
+  },
+  {
+   "term": "AI-generated content",
+   "tier": "ai",
+   "variants": [
+    "AI-generated text",
+    "machine-generated content",
+    "synthetic content",
+    "AI slop",
+    "AI-written",
+    "AI-generated material"
+   ],
+   "why": "machine-written text competing with publishers"
+  },
+  {
+   "term": "AI disruption",
+   "tier": "ai",
+   "variants": [
+    "AI-driven disruption",
+    "disruption from AI",
+    "AI substitution",
+    "AI disintermediation",
+    "competition from AI",
+    "AI-native competitor"
+   ],
+   "why": "AI as threat to publishing model"
+  },
+  {
+   "term": "intellectual property rights",
+   "tier": "context",
+   "variants": [
+    "copyright protection",
+    "copyright law",
+    "copyright framework",
+    "neighbouring rights",
+    "neighboring rights",
+    "licensing rights"
+   ],
+   "why": "core asset exposed to AI use"
+  },
+  {
+   "term": "AI Act transparency",
+   "tier": "ai",
+   "variants": [
+    "training data transparency",
+    "transparency of training data",
+    "copyright and AI consultation",
+    "AI and copyright",
+    "Copyright and AI"
+   ],
+   "why": "EU duties on disclosing training content"
+  },
+  {
+   "term": "AI-assisted content creation",
+   "tier": "ai",
+   "variants": [
+    "AI-assisted editing",
+    "AI-assisted writing",
+    "AI-assisted production",
+    "AI in content creation",
+    "AI-supported content production",
+    "AI content generation"
+   ],
+   "why": "AI tools in editorial and production workflows"
+  },
+  {
+   "term": "human oversight of AI content",
+   "tier": "ai",
+   "variants": [
+    "human in the loop",
+    "human review of AI",
+    "AI editorial guidelines",
+    "AI usage policy",
+    "AI content labelling",
+    "AI content labeling"
+   ],
+   "why": "editorial control over AI output"
+  },
+  {
+   "term": "AI translation",
+   "tier": "ai",
+   "variants": [
+    "machine translation",
+    "AI-translated",
+    "automated translation",
+    "neural machine translation"
+   ],
+   "why": "machine translation of published works"
+  },
+  {
+   "term": "AI-powered personalisation",
+   "tier": "ai",
+   "variants": [
+    "AI-powered personalization",
+    "personalised recommendations",
+    "personalized recommendations",
+    "content recommendation",
+    "recommendation engine"
+   ],
+   "why": "ML tailoring content and offers"
+  },
+  {
+   "term": "AI-powered search",
+   "tier": "ai",
+   "variants": [
+    "AI-powered discovery",
+    "semantic search",
+    "conversational search",
+    "AI search tool",
+    "natural language search"
+   ],
+   "why": "AI discovery over publisher content"
+  },
+  {
+   "term": "proprietary content",
+   "tier": "context",
+   "variants": [
+    "trusted content",
+    "curated content",
+    "proprietary data",
+    "authoritative content",
+    "premium content",
+    "content assets"
+   ],
+   "why": "unique content as AI-era advantage"
+  }
+ ],
+ "class_terms": {
+  "5811": [
+   {
+    "term": "AI-generated book",
+    "tier": "ai",
+    "variants": [
+     "AI-written book",
+     "AI-generated titles",
+     "AI-generated manuscripts",
+     "AI-authored"
+    ],
+    "why": "machine-written titles flooding retail"
+   },
+   {
+    "term": "AI narration",
+    "tier": "ai",
+    "variants": [
+     "AI-narrated audiobook",
+     "digital narration",
+     "synthetic narration",
+     "AI voice narration",
+     "virtual voice",
+     "auto-narrated",
+     "text-to-speech audiobook"
+    ],
+    "why": "synthetic voices for audiobooks"
+   },
+   {
+    "term": "audiobook",
+    "tier": "context",
+    "variants": [
+     "audio book",
+     "audio publishing",
+     "narrator"
+    ],
+    "why": "format where synthetic voice is spreading"
+   },
+   {
+    "term": "AI-generated cover",
+    "tier": "ai",
+    "variants": [
+     "AI-generated illustration",
+     "AI cover design",
+     "AI-generated artwork"
+    ],
+    "why": "AI imagery in book production"
+   },
+   {
+    "term": "author contract",
+    "tier": "context",
+    "variants": [
+     "author agreement",
+     "author royalties",
+     "author consent",
+     "Authors Guild",
+     "Society of Authors",
+     "rights and permissions"
+    ],
+    "why": "agreements now covering AI rights"
+   },
+   {
+    "term": "AI rights clause",
+    "tier": "ai",
+    "variants": [
+     "AI clause",
+     "no AI training",
+     "AI opt-in",
+     "AI royalty",
+     "reserved for AI training"
+    ],
+    "why": "contract terms on AI training use"
+   },
+   {
+    "term": "adaptive learning",
+    "tier": "ai",
+    "variants": [
+     "adaptive courseware",
+     "personalised learning",
+     "personalized learning",
+     "AI tutor",
+     "AI study tool",
+     "AI-powered learning",
+     "intelligent tutoring"
+    ],
+    "why": "ML-personalised courseware"
+   },
+   {
+    "term": "educational publishing",
+    "tier": "context",
+    "variants": [
+     "courseware",
+     "textbook",
+     "digital learning",
+     "higher education publishing",
+     "learning platform",
+     "assessment content"
+    ],
+    "why": "courseware exposed to AI study tools"
+   },
+   {
+    "term": "AI-based metadata",
+    "tier": "ai",
+    "variants": [
+     "automated metadata",
+     "AI tagging",
+     "AI-driven demand forecasting",
+     "AI-assisted print run planning"
+    ],
+    "why": "ML tagging and discoverability"
+   }
+  ],
+  "5812": [
+   {
+    "term": "referral traffic",
+    "tier": "context",
+    "variants": [
+     "search traffic",
+     "search referrals",
+     "organic traffic",
+     "traffic from search",
+     "audience traffic",
+     "platform traffic",
+     "Google traffic"
+    ],
+    "why": "search and social visits AI reduces"
+   },
+   {
+    "term": "AI Overviews",
+    "tier": "ai",
+    "variants": [
+     "AI summaries",
+     "AI-generated summaries",
+     "AI answers",
+     "zero-click",
+     "AI Mode",
+     "answer engine"
+    ],
+    "why": "AI answers cutting news referrals"
+   },
+   {
+    "term": "AI in the newsroom",
+    "tier": "ai",
+    "variants": [
+     "newsroom AI",
+     "AI-assisted journalism",
+     "AI in journalism",
+     "AI-assisted reporting",
+     "AI newsroom tools",
+     "AI-generated articles",
+     "automated journalism",
+     "robot journalism"
+    ],
+    "why": "editorial use of AI tools"
+   },
+   {
+    "term": "AI-generated summaries of articles",
+    "tier": "ai",
+    "variants": [
+     "article summarisation",
+     "article summarization",
+     "AI summarisation",
+     "AI summarization",
+     "AI-generated headlines",
+     "AI briefing",
+     "AI news digest"
+    ],
+    "why": "automated article summarisation features"
+   },
+   {
+    "term": "AI-generated misinformation",
+    "tier": "ai",
+    "variants": [
+     "AI-generated disinformation",
+     "synthetic media",
+     "AI-driven misinformation",
+     "AI fakes",
+     "AI-generated fake news"
+    ],
+    "why": "synthetic false content"
+   },
+   {
+    "term": "misinformation",
+    "tier": "context",
+    "variants": [
+     "disinformation",
+     "fake news",
+     "trusted journalism",
+     "trusted news",
+     "fact-checking",
+     "news integrity",
+     "quality journalism"
+    ],
+    "why": "context for trust in journalism versus AI"
+   },
+   {
+    "term": "news publisher",
+    "tier": "context",
+    "variants": [
+     "press publisher",
+     "press publishers' right",
+     "news media bargaining code",
+     "News Media Alliance",
+     "News/Media Alliance",
+     "publisher rights"
+    ],
+    "why": "party in AI bargaining and licensing"
+   },
+   {
+    "term": "dynamic paywall",
+    "tier": "ai",
+    "variants": [
+     "AI-driven paywall",
+     "propensity paywall",
+     "smart paywall",
+     "propensity to subscribe",
+     "subscriber propensity model"
+    ],
+    "why": "ML decides when to ask readers to pay"
+   },
+   {
+    "term": "digital subscription",
+    "tier": "context",
+    "variants": [
+     "digital subscribers",
+     "reader revenue",
+     "paywall",
+     "subscriber churn",
+     "direct audience",
+     "first-party audience"
+    ],
+    "why": "reader revenue hedged against AI traffic loss"
+   },
+   {
+    "term": "programmatic advertising",
+    "tier": "context",
+    "variants": [
+     "digital advertising revenue",
+     "advertising yield",
+     "page views",
+     "audience reach",
+     "ad impressions"
+    ],
+    "why": "ad revenue tied to traffic volumes"
+   },
+   {
+    "term": "content provenance",
+    "tier": "ai",
+    "variants": [
+     "content authenticity",
+     "C2PA",
+     "content credentials",
+     "provenance metadata",
+     "AI labelling",
+     "AI labeling",
+     "AI watermarking"
+    ],
+    "why": "proving authenticity of news content"
+   },
+   {
+    "term": "editorial independence",
+    "tier": "context",
+    "variants": [
+     "editorial standards",
+     "editorial code",
+     "journalistic standards",
+     "press council",
+     "editorial integrity"
+    ],
+    "why": "standards governing AI use in news"
+   },
+   {
+    "term": "journalist",
+    "tier": "context",
+    "variants": [
+     "newsroom headcount",
+     "editorial staff",
+     "newsroom restructuring",
+     "editorial redundancies",
+     "NewsGuild",
+     "National Union of Journalists"
+    ],
+    "why": "workforce affected by newsroom AI"
+   }
+  ],
+  "5813": [
+   {
+    "term": "paper mill",
+    "tier": "ai",
+    "variants": [
+     "papermill",
+     "AI-generated papers",
+     "fabricated research",
+     "AI-generated manuscripts in journals",
+     "tortured phrases"
+    ],
+    "why": "fabricated papers, now AI-generated"
+   },
+   {
+    "term": "research integrity",
+    "tier": "context",
+    "variants": [
+     "publication ethics",
+     "retraction",
+     "peer review integrity",
+     "image manipulation",
+     "plagiarism detection",
+     "Committee on Publication Ethics"
+    ],
+    "why": "journal trust threatened by AI text"
+   },
+   {
+    "term": "AI in peer review",
+    "tier": "ai",
+    "variants": [
+     "AI-assisted peer review",
+     "AI reviewer",
+     "AI manuscript screening",
+     "automated manuscript checks",
+     "AI integrity checks",
+     "AI detection tool"
+    ],
+    "why": "ML assistance in manuscript evaluation"
+   },
+   {
+    "term": "AI research assistant",
+    "tier": "ai",
+    "variants": [
+     "AI-powered research tool",
+     "Scopus AI",
+     "ScienceDirect AI",
+     "research copilot",
+     "AI literature review",
+     "AI-powered research assistant"
+    ],
+    "why": "GenAI tools over scholarly content"
+   },
+   {
+    "term": "open access",
+    "tier": "context",
+    "variants": [
+     "article processing charge",
+     "transformative agreement",
+     "CC BY",
+     "Creative Commons",
+     "read-and-publish"
+    ],
+    "why": "licences that ease AI reuse of articles"
+   },
+   {
+    "term": "AI-powered decision tools",
+    "tier": "ai",
+    "variants": [
+     "AI-enabled decision tools",
+     "AI-powered analytics tools",
+     "AI-enabled information products",
+     "AI-powered legal research",
+     "AI-powered clinical decision support",
+     "Lexis+ AI",
+     "CoCounsel",
+     "Protégé"
+    ],
+    "case_sensitive_variants": [
+     "Protégé"
+    ],
+    "why": "analytics products built on proprietary content"
+   },
+   {
+    "term": "information-based analytics",
+    "tier": "context",
+    "variants": [
+     "information-based analytics and decision tools",
+     "professional information",
+     "legal research",
+     "scientific, technical and medical",
+     "STM publishing"
+    ],
+    "why": "professional data products embedding AI"
+   },
+   {
+    "term": "B2B information",
+    "tier": "context",
+    "variants": [
+     "trade publication",
+     "business intelligence products",
+     "data subscription",
+     "market intelligence",
+     "specialist information"
+    ],
+    "why": "trade publishing pivoting to data and AI"
+   }
+  ],
+  "5819": [
+   {
+    "term": "directory publishing",
+    "tier": "context",
+    "variants": [
+     "directories",
+     "mailing lists",
+     "catalogue publishing",
+     "catalog publishing",
+     "online directory"
+    ],
+    "why": "listings content displaced by AI answers"
+   },
+   {
+    "term": "AI-generated images",
+    "tier": "ai",
+    "variants": [
+     "AI image generation",
+     "AI-generated visuals",
+     "AI-generated photos",
+     "generative image",
+     "text-to-image",
+     "AI image generator"
+    ],
+    "why": "synthetic visuals competing with stock libraries"
+   },
+   {
+    "term": "stock photography",
+    "tier": "context",
+    "variants": [
+     "stock images",
+     "stock content",
+     "image library",
+     "visual content licensing",
+     "contributor fund",
+     "photo licensing"
+    ],
+    "why": "image libraries licensed for AI training"
+   }
+  ],
+  "5821": [
+   {
+    "term": "AI in game development",
+    "tier": "ai",
+    "variants": [
+     "AI-assisted game development",
+     "generative AI in games",
+     "AI-assisted asset creation",
+     "AI-generated assets",
+     "AI-generated game content",
+     "AI development tools"
+    ],
+    "why": "AI tools in game production"
+   },
+   {
+    "term": "AI-driven NPC",
+    "tier": "ai",
+    "variants": [
+     "AI NPC",
+     "generative NPC",
+     "AI-powered characters",
+     "AI companion",
+     "non-player character AI"
+    ],
+    "why": "AI-controlled non-player characters"
+   },
+   {
+    "term": "procedural content generation",
+    "tier": "ai",
+    "variants": [
+     "procedural generation",
+     "AI-generated levels",
+     "AI world generation",
+     "AI-generated worlds"
+    ],
+    "why": "algorithmic creation of game worlds"
+   },
+   {
+    "term": "AI voice replica",
+    "tier": "ai",
+    "variants": [
+     "digital replica",
+     "AI-generated voice",
+     "synthetic performance",
+     "AI voice acting",
+     "Interactive Media Agreement",
+     "SAG-AFTRA strike"
+    ],
+    "why": "synthetic performer voices and likenesses"
+   },
+   {
+    "term": "AI-based player matchmaking",
+    "tier": "ai",
+    "variants": [
+     "AI matchmaking",
+     "dynamic difficulty adjustment",
+     "AI-driven live operations",
+     "AI-powered live ops",
+     "player churn prediction",
+     "AI-driven user acquisition"
+    ],
+    "why": "ML matchmaking and engagement optimisation"
+   },
+   {
+    "term": "AI moderation in games",
+    "tier": "ai",
+    "variants": [
+     "AI-based anti-cheat",
+     "AI cheat detection",
+     "toxicity detection",
+     "AI voice moderation",
+     "AI-powered player safety"
+    ],
+    "why": "ML detection of cheating and toxicity"
+   },
+   {
+    "term": "development costs",
+    "tier": "context",
+    "variants": [
+     "game development costs",
+     "development budget",
+     "AAA development",
+     "development cycle",
+     "capitalised development costs",
+     "capitalized development costs"
+    ],
+    "why": "rising budgets AI is meant to contain"
+   },
+   {
+    "term": "user-generated content",
+    "tier": "context",
+    "variants": [
+     "UGC",
+     "creator tools",
+     "modding",
+     "creator economy"
+    ],
+    "case_sensitive_variants": [
+     "UGC"
+    ],
+    "why": "creator content increasingly AI-assisted"
+   },
+   {
+    "term": "loot box",
+    "tier": "context",
+    "variants": [
+     "in-game purchases",
+     "live services",
+     "player engagement",
+     "microtransactions"
+    ],
+    "why": "game monetisation regulation context"
+   },
+   {
+    "term": "AI disclosure on storefronts",
+    "tier": "ai",
+    "variants": [
+     "AI content disclosure",
+     "AI-generated content disclosure",
+     "Steam AI disclosure",
+     "made with AI"
+    ],
+    "why": "platform rules on labelling AI content"
+   }
+  ],
+  "5829": [
+   {
+    "term": "AI copilot",
+    "tier": "ai",
+    "variants": [
+     "embedded AI assistant",
+     "in-product AI",
+     "in-product assistant",
+     "AI sidekick",
+     "AI teammate"
+    ],
+    "why": "assistant embedded in software products"
+   },
+   {
+    "term": "agentic platform",
+    "tier": "ai",
+    "variants": [
+     "agentic workflow",
+     "agent builder",
+     "digital agent",
+     "agentic capabilities",
+     "agentic product",
+     "agent marketplace",
+     "agentic enterprise",
+     "digital labour",
+     "digital labor"
+    ],
+    "why": "autonomous agents sold in software"
+   },
+   {
+    "term": "AI features",
+    "tier": "ai",
+    "variants": [
+     "AI-powered features",
+     "AI capabilities",
+     "AI functionality",
+     "embedded AI",
+     "AI-infused",
+     "AI-enabled product",
+     "built-in AI"
+    ],
+    "why": "AI functionality added to products"
+   },
+   {
+    "term": "AI monetisation",
+    "tier": "ai",
+    "variants": [
+     "AI monetization",
+     "monetisation of AI",
+     "monetization of AI",
+     "AI attach rate",
+     "AI upsell",
+     "AI add-on",
+     "AI SKU",
+     "AI premium tier"
+    ],
+    "why": "turning AI features into revenue"
+   },
+   {
+    "term": "AI ARR",
+    "tier": "ai",
+    "variants": [
+     "AI annual recurring revenue",
+     "AI revenue",
+     "AI-related revenue",
+     "AI bookings",
+     "AI run-rate revenue",
+     "AI product revenue",
+     "AI net new ARR"
+    ],
+    "why": "recurring revenue from AI products"
+   },
+   {
+    "term": "seat-based pricing",
+    "tier": "context",
+    "variants": [
+     "per-seat pricing",
+     "per-user pricing",
+     "seat licence",
+     "seat license",
+     "seat count",
+     "seat growth",
+     "seat compression",
+     "seat expansion"
+    ],
+    "why": "per-user licences threatened by AI agents"
+   },
+   {
+    "term": "consumption-based pricing",
+    "tier": "ai",
+    "variants": [
+     "usage-based pricing",
+     "AI credits",
+     "pay-per-use AI",
+     "consumption model",
+     "outcome-based pricing",
+     "per-conversation pricing",
+     "per-resolution pricing",
+     "token-based pricing"
+    ],
+    "why": "usage pricing adopted for AI features"
+   },
+   {
+    "term": "net revenue retention",
+    "tier": "context",
+    "variants": [
+     "net retention rate",
+     "dollar-based net retention",
+     "gross retention",
+     "annual recurring revenue",
+     "remaining performance obligations"
+    ],
+    "why": "SaaS metric watched for AI seat effects"
+   },
+   {
+    "term": "inference cost",
+    "tier": "ai",
+    "variants": [
+     "cost of inference",
+     "AI compute costs",
+     "model costs",
+     "AI hosting costs",
+     "cost of AI features",
+     "AI cost of revenue",
+     "GPU costs"
+    ],
+    "why": "compute cost of serving AI features"
+   },
+   {
+    "term": "subscription gross margin",
+    "tier": "context",
+    "variants": [
+     "hosting costs",
+     "cloud infrastructure costs",
+     "third-party cloud costs"
+    ],
+    "why": "margin pressure from AI compute costs"
+   },
+   {
+    "term": "AI-native startup",
+    "tier": "ai",
+    "variants": [
+     "AI-native vendor",
+     "AI-native entrant",
+     "AI-first competitor",
+     "AI-native application",
+     "AI challengers",
+     "AI-native software"
+    ],
+    "why": "start-ups built on models attacking incumbents"
+   },
+   {
+    "term": "AI replacing software",
+    "tier": "ai",
+    "variants": [
+     "SaaS disruption",
+     "AI disruption of software",
+     "vibe coding",
+     "AI-generated software",
+     "build versus buy with AI",
+     "death of SaaS"
+    ],
+    "why": "fear that models displace applications"
+   },
+   {
+    "term": "foundation model provider",
+    "tier": "ai",
+    "variants": [
+     "model provider",
+     "third-party models",
+     "third-party AI models",
+     "LLM provider",
+     "model partner",
+     "multi-model",
+     "model-agnostic"
+    ],
+    "why": "upstream vendors and potential competitors"
+   },
+   {
+    "term": "AI platform",
+    "tier": "ai",
+    "variants": [
+     "AI layer",
+     "AI engine",
+     "AI foundation",
+     "AI cloud",
+     "agent platform",
+     "AI studio",
+     "trust layer",
+     "AI operating system"
+    ],
+    "why": "vendor's layer for building AI apps"
+   },
+   {
+    "term": "proprietary model",
+    "tier": "ai",
+    "variants": [
+     "domain-specific model",
+     "in-house model",
+     "custom model",
+     "first-party model",
+     "fine-tuned model",
+     "industry-specific AI"
+    ],
+    "why": "vendor-trained domain models"
+   },
+   {
+    "term": "customer data for AI training",
+    "tier": "ai",
+    "variants": [
+     "train on customer data",
+     "customer data used to train",
+     "training on customer content",
+     "data usage for AI",
+     "opt-out of AI training"
+    ],
+    "why": "use of customer data to train models"
+   },
+   {
+    "term": "AI output liability",
+    "tier": "ai",
+    "variants": [
+     "inaccurate AI output",
+     "AI indemnification",
+     "AI indemnity",
+     "copyright indemnity",
+     "AI-generated output",
+     "erroneous output"
+    ],
+    "why": "responsibility for inaccurate AI outputs"
+   },
+   {
+    "term": "AI code generation",
+    "tier": "ai",
+    "variants": [
+     "AI coding assistant",
+     "code completion",
+     "AI-assisted coding",
+     "AI-generated code",
+     "AI developer tools",
+     "AI pair programmer"
+    ],
+    "why": "AI writing software for developers"
+   },
+   {
+    "term": "AI-powered workflow",
+    "tier": "ai",
+    "variants": [
+     "AI-driven workflow",
+     "intelligent workflow",
+     "AI workflow automation",
+     "workflow automation with AI",
+     "AI-powered process automation"
+    ],
+    "why": "automation features inside business software"
+   },
+   {
+    "term": "predictive insights",
+    "tier": "ai",
+    "variants": [
+     "predictive analytics",
+     "AI-driven insights",
+     "AI-powered insights",
+     "predictive scoring",
+     "AI forecasting",
+     "AI recommendations"
+    ],
+    "why": "ML forecasting inside applications"
+   },
+   {
+    "term": "natural language interface",
+    "tier": "ai",
+    "variants": [
+     "natural language query",
+     "conversational interface",
+     "conversational analytics",
+     "text-to-SQL",
+     "ask questions in natural language"
+    ],
+    "why": "conversational access to software"
+   },
+   {
+    "term": "AI security product",
+    "tier": "ai",
+    "variants": [
+     "AI-powered threat detection",
+     "AI-native security",
+     "security for AI",
+     "AI-driven security",
+     "AI SOC",
+     "AI-powered cybersecurity"
+    ],
+    "why": "ML-based cyber products and AI protection"
+   },
+   {
+    "term": "AI R&D investment",
+    "tier": "ai",
+    "variants": [
+     "investment in AI",
+     "AI research and development",
+     "AI engineering",
+     "AI product development",
+     "AI roadmap",
+     "AI innovation"
+    ],
+    "why": "research spending on AI products"
+   },
+   {
+    "term": "research and development expense",
+    "tier": "context",
+    "variants": [
+     "R&D expense",
+     "product development expense",
+     "capitalised software",
+     "capitalized software",
+     "engineering headcount"
+    ],
+    "why": "cost line carrying AI build"
+   },
+   {
+    "term": "software-as-a-service",
+    "tier": "context",
+    "variants": [
+     "SaaS",
+     "subscription software",
+     "cloud subscription",
+     "subscription revenue",
+     "cloud revenue"
+    ],
+    "case_sensitive_variants": [
+     "SaaS"
+    ],
+    "why": "delivery model whose economics AI changes"
+   },
+   {
+    "term": "open-source model",
+    "tier": "context",
+    "variants": [
+     "open weights",
+     "open source AI",
+     "open source licence",
+     "open source license",
+     "copyleft"
+    ],
+    "why": "open models and licence exposure"
+   },
+   {
+    "term": "AI trust and safety",
+    "tier": "ai",
+    "variants": [
+     "AI guardrails",
+     "AI transparency",
+     "AI trust",
+     "trustworthy AI",
+     "AI safety commitments",
+     "AI ethics"
+    ],
+    "why": "vendor assurances on AI behaviour"
+   },
+   {
+    "term": "product liability",
+    "tier": "context",
+    "variants": [
+     "Product Liability Directive",
+     "Cyber Resilience Act",
+     "software liability",
+     "high-risk AI system"
+    ],
+    "why": "software liability rules extending to AI"
+   },
+   {
+    "term": "AI data residency",
+    "tier": "ai",
+    "variants": [
+     "sovereign AI",
+     "AI sovereignty",
+     "regional AI processing",
+     "EU data boundary",
+     "in-region inference"
+    ],
+    "why": "where customer data is processed by AI"
+   },
+   {
+    "term": "AI-driven productivity",
+    "tier": "ai",
+    "variants": [
+     "AI productivity gains",
+     "AI-enabled efficiency",
+     "developer productivity",
+     "AI-driven efficiencies",
+     "AI-assisted engineering"
+    ],
+    "why": "own workforce efficiency from AI"
+   },
+   {
+    "term": "workforce reduction",
+    "tier": "context",
+    "variants": [
+     "headcount reduction",
+     "restructuring plan",
+     "layoffs",
+     "reallocation of resources",
+     "hiring slowdown",
+     "reskilling"
+    ],
+    "why": "restructurings attributed to AI shift"
+   },
+   {
+    "term": "vertical software",
+    "tier": "context",
+    "variants": [
+     "vertical SaaS",
+     "industry cloud",
+     "enterprise applications",
+     "business applications",
+     "enterprise resource planning",
+     "customer relationship management"
+    ],
+    "why": "industry applications embedding AI"
+   },
+   {
+    "term": "design software",
+    "tier": "context",
+    "variants": [
+     "creative software",
+     "CAD software",
+     "simulation software",
+     "engineering software",
+     "creative tools"
+    ],
+    "why": "creative tools reshaped by generative AI"
+   },
+   {
+    "term": "generative design",
+    "tier": "ai",
+    "variants": [
+     "AI-driven design",
+     "AI-assisted design",
+     "generative fill",
+     "Firefly",
+     "text-to-CAD",
+     "AI-powered simulation",
+     "generative credits"
+    ],
+    "why": "AI producing designs in engineering software"
+   }
+  ]
+ }
+}

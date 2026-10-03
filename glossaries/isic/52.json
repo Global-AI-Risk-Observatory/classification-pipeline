@@ -1,0 +1,900 @@
+{
+ "id": "52",
+ "name": "Warehousing and support activities for transportation",
+ "section": "H",
+ "summary": "Warehousing, terminal, airport, toll-road and freight-forwarding companies write about AI in warehouse robotics and automated picking, slotting and labour planning, terminal and port automation, predictive ETAs and visibility platforms, digital freight matching and automated quoting, and document and customs processing. Infrastructure operators add computer vision for security, passenger flow and traffic management, while booking intermediaries face AI assistants as a new distribution channel. Workforce and union issues around automation, safety of autonomous equipment and cyber risk recur, and logistics property owners note data centre conversion demand.",
+ "terms": [
+  {
+   "term": "warehouse automation",
+   "tier": "context",
+   "variants": [
+    "automated warehouse",
+    "warehouse robotics",
+    "warehouse automation technology",
+    "highly automated warehouse",
+    "dark warehouse",
+    "lights-out warehouse",
+    "automated fulfilment",
+    "automated fulfillment"
+   ],
+   "why": "automated storage, picking and sortation"
+  },
+  {
+   "term": "autonomous mobile robot",
+   "tier": "ai",
+   "variants": [
+    "AMR",
+    "automated guided vehicle",
+    "AGV",
+    "collaborative robot",
+    "cobot",
+    "goods-to-person",
+    "robotic fleet"
+   ],
+   "case_sensitive_variants": [
+    "AMR",
+    "AGV"
+   ],
+   "why": "self-navigating robots in warehouses"
+  },
+  {
+   "term": "robotic picking",
+   "tier": "ai",
+   "variants": [
+    "robot picking",
+    "piece picking robot",
+    "AI-powered picking",
+    "robotic arm",
+    "robotic depalletising",
+    "robotic depalletizing",
+    "robotic palletising",
+    "robotic palletizing",
+    "item-picking robot"
+   ],
+   "why": "AI-guided robot arms handling items"
+  },
+  {
+   "term": "automated storage and retrieval",
+   "tier": "context",
+   "variants": [
+    "AS/RS",
+    "ASRS",
+    "shuttle system",
+    "AutoStore",
+    "cube storage",
+    "automated high-bay"
+   ],
+   "why": "high-density automated storage systems"
+  },
+  {
+   "term": "robotic sortation",
+   "tier": "ai",
+   "variants": [
+    "sortation robot",
+    "AI-based sorting",
+    "robotic sorting",
+    "AI-powered sortation"
+   ],
+   "why": "ML and vision in parcel and item sorting"
+  },
+  {
+   "term": "automated sortation",
+   "tier": "context",
+   "variants": [
+    "automated sorting",
+    "sortation system",
+    "sortation capacity"
+   ],
+   "why": "sorting equipment context for AI vision"
+  },
+  {
+   "term": "slotting optimisation",
+   "tier": "ai",
+   "variants": [
+    "slotting optimization",
+    "AI slotting",
+    "pick path optimisation",
+    "pick path optimization",
+    "AI-driven wave planning",
+    "order batching optimisation",
+    "order batching optimization"
+   ],
+   "why": "ML placement of stock in warehouse"
+  },
+  {
+   "term": "AI-powered warehouse management",
+   "tier": "ai",
+   "variants": [
+    "AI-driven warehouse management",
+    "intelligent warehouse",
+    "smart warehouse",
+    "warehouse digital twin",
+    "AI-enabled warehouse",
+    "warehouse orchestration",
+    "warehouse execution system"
+   ],
+   "why": "ML inside warehouse systems"
+  },
+  {
+   "term": "warehouse management system",
+   "tier": "context",
+   "variants": [
+    "WMS",
+    "transport management system",
+    "transportation management system",
+    "TMS",
+    "yard management system"
+   ],
+   "case_sensitive_variants": [
+    "WMS",
+    "TMS"
+   ],
+   "why": "core system where AI features land"
+  },
+  {
+   "term": "labour planning using AI",
+   "tier": "ai",
+   "variants": [
+    "AI-driven labour planning",
+    "AI-driven labor planning",
+    "AI workforce planning",
+    "labour management system",
+    "labor management system",
+    "predictive staffing",
+    "AI-based shift planning"
+   ],
+   "why": "ML forecasting of warehouse staffing"
+  },
+  {
+   "term": "warehouse labour",
+   "tier": "context",
+   "variants": [
+    "warehouse labor",
+    "warehouse workers",
+    "labour shortage",
+    "labor shortage",
+    "pick rate",
+    "units per hour",
+    "labour productivity",
+    "labor productivity"
+   ],
+   "why": "workforce affected by robotics"
+  },
+  {
+   "term": "humanoid robot",
+   "tier": "ai",
+   "variants": [
+    "humanoid",
+    "physical AI",
+    "embodied AI",
+    "general-purpose robot",
+    "robotics foundation model"
+   ],
+   "why": "general-purpose robots trialled in logistics"
+  },
+  {
+   "term": "AI camera",
+   "tier": "ai",
+   "variants": [
+    "vision AI",
+    "computer vision system",
+    "AI-powered cameras",
+    "automated damage detection",
+    "AI dimensioning",
+    "vision-based inventory",
+    "drone inventory counting",
+    "AI video analytics"
+   ],
+   "why": "cameras for counting, damage and safety"
+  },
+  {
+   "term": "predictive ETA",
+   "tier": "ai",
+   "variants": [
+    "predicted time of arrival",
+    "predictive arrival",
+    "AI-based ETA",
+    "dynamic ETA",
+    "estimated time of arrival prediction"
+   ],
+   "why": "ML arrival-time prediction"
+  },
+  {
+   "term": "supply chain visibility",
+   "tier": "context",
+   "variants": [
+    "real-time visibility",
+    "visibility platform",
+    "control tower",
+    "supply chain control tower",
+    "predictive visibility",
+    "shipment visibility"
+   ],
+   "why": "real-time tracking platforms with ML"
+  },
+  {
+   "term": "route optimisation",
+   "tier": "ai",
+   "variants": [
+    "route optimization",
+    "AI-based routing",
+    "load optimisation",
+    "load optimization",
+    "network optimisation using AI",
+    "network optimization using AI",
+    "dynamic routing"
+   ],
+   "why": "ML planning of transport legs"
+  },
+  {
+   "term": "demand forecasting",
+   "tier": "ai",
+   "variants": [
+    "volume forecasting",
+    "AI-based forecasting",
+    "predictive volume planning",
+    "AI forecasting",
+    "capacity forecasting",
+    "predictive capacity planning"
+   ],
+   "why": "ML prediction of volumes"
+  },
+  {
+   "term": "AI document processing",
+   "tier": "ai",
+   "variants": [
+    "intelligent document processing",
+    "automated customs clearance",
+    "AI customs classification",
+    "HS code classification",
+    "automated document processing",
+    "AI-powered customs",
+    "optical character recognition"
+   ],
+   "why": "automated bills of lading and customs papers"
+  },
+  {
+   "term": "AI-powered customer service",
+   "tier": "ai",
+   "variants": [
+    "AI customer service",
+    "AI email automation",
+    "automated email handling",
+    "AI agent for customer enquiries",
+    "AI shipment tracking assistant"
+   ],
+   "why": "automated shipment enquiries"
+  },
+  {
+   "term": "predictive maintenance",
+   "tier": "ai",
+   "variants": [
+    "condition-based maintenance",
+    "condition monitoring",
+    "predictive asset management",
+    "AI-based maintenance",
+    "equipment health monitoring"
+   ],
+   "why": "ML on equipment and infrastructure"
+  },
+  {
+   "term": "AI-driven efficiency",
+   "tier": "ai",
+   "variants": [
+    "AI-driven productivity",
+    "AI-enabled efficiency",
+    "AI productivity gains",
+    "AI-driven cost savings",
+    "AI-enabled productivity",
+    "AI use cases"
+   ],
+   "why": "cost savings attributed to AI"
+  },
+  {
+   "term": "supply chain AI",
+   "tier": "ai",
+   "variants": [
+    "AI-powered supply chain",
+    "AI-driven logistics",
+    "AI in logistics",
+    "AI-powered logistics",
+    "logistics AI",
+    "AI-enabled logistics",
+    "agentic supply chain"
+   ],
+   "why": "AI across logistics offerings"
+  },
+  {
+   "term": "workforce reduction",
+   "tier": "context",
+   "variants": [
+    "headcount reduction",
+    "job displacement",
+    "redundancies",
+    "reskilling",
+    "upskilling",
+    "workforce transition"
+   ],
+   "why": "job effects of automation"
+  }
+ ],
+ "class_terms": {
+  "5210": [
+   {
+    "term": "contract logistics",
+    "tier": "context",
+    "variants": [
+     "third-party logistics",
+     "3PL",
+     "fulfilment services",
+     "fulfillment services",
+     "multi-client warehouse",
+     "e-fulfilment",
+     "e-fulfillment"
+    ],
+    "case_sensitive_variants": [
+     "3PL"
+    ],
+    "why": "outsourced warehousing where robotics is deployed"
+   },
+   {
+    "term": "robotics-as-a-service",
+    "tier": "ai",
+    "variants": [
+     "RaaS",
+     "robots as a service",
+     "robot subscription",
+     "pay-per-pick"
+    ],
+    "case_sensitive_variants": [
+     "RaaS"
+    ],
+    "why": "robots paid per use in warehouses"
+   },
+   {
+    "term": "cold storage",
+    "tier": "context",
+    "variants": [
+     "cold chain",
+     "temperature-controlled warehouse",
+     "automated cold storage",
+     "frozen storage",
+     "pallet positions"
+    ],
+    "why": "temperature-controlled warehouses automating heavily"
+   },
+   {
+    "term": "logistics real estate",
+    "tier": "context",
+    "variants": [
+     "logistics property",
+     "industrial real estate",
+     "warehouse rents",
+     "built-to-suit",
+     "data centre conversion",
+     "data center conversion",
+     "power capacity",
+     "powered land"
+    ],
+    "why": "warehouse owners with automation-ready and data centre sites"
+   },
+   {
+    "term": "data centre development",
+    "tier": "context",
+    "variants": [
+     "data center development",
+     "data centre pipeline",
+     "data center pipeline",
+     "data centre opportunity",
+     "data center opportunity",
+     "powered shell"
+    ],
+    "why": "logistics landlords converting sites for AI demand"
+   },
+   {
+    "term": "AI energy optimisation",
+    "tier": "ai",
+    "variants": [
+     "AI energy optimization",
+     "AI-controlled refrigeration",
+     "smart energy management",
+     "AI-based energy management"
+    ],
+    "why": "ML control of warehouse energy and refrigeration"
+   },
+   {
+    "term": "data storage services",
+    "tier": "context",
+    "variants": [
+     "records management",
+     "document storage",
+     "digitisation services",
+     "digitization services",
+     "document scanning"
+    ],
+    "why": "records and archive storage adding AI services"
+   }
+  ],
+  "5221": [
+   {
+    "term": "AI traffic management",
+    "tier": "ai",
+    "variants": [
+     "intelligent transport system",
+     "intelligent transportation system",
+     "AI-based traffic management",
+     "adaptive traffic control",
+     "smart motorway",
+     "traffic prediction",
+     "AI incident detection"
+    ],
+    "why": "ML control of road and rail flows"
+   },
+   {
+    "term": "free-flow tolling",
+    "tier": "ai",
+    "variants": [
+     "automatic number plate recognition",
+     "ANPR",
+     "licence plate recognition",
+     "license plate recognition",
+     "barrier-free tolling",
+     "AI-based vehicle classification",
+     "multi-lane free-flow"
+    ],
+    "why": "camera and ML based toll collection"
+   },
+   {
+    "term": "toll road",
+    "tier": "context",
+    "variants": [
+     "motorway concession",
+     "traffic volume",
+     "traffic forecast",
+     "electronic toll collection",
+     "tolling system"
+    ],
+    "why": "concessions using ML traffic forecasting"
+   },
+   {
+    "term": "AI parking management",
+    "tier": "ai",
+    "variants": [
+     "smart parking",
+     "dynamic parking pricing",
+     "AI-powered parking",
+     "camera-based parking"
+    ],
+    "why": "vision and ML in car parks"
+   },
+   {
+    "term": "connected and autonomous vehicles",
+    "tier": "context",
+    "variants": [
+     "autonomous vehicles",
+     "vehicle-to-infrastructure",
+     "V2X",
+     "self-driving trucks",
+     "autonomous truck corridor"
+    ],
+    "case_sensitive_variants": [
+     "V2X"
+    ],
+    "why": "infrastructure readiness for self-driving"
+   }
+  ],
+  "5222": [
+   {
+    "term": "automated container terminal",
+    "tier": "context",
+    "variants": [
+     "terminal automation",
+     "port automation",
+     "automated terminal",
+     "semi-automated terminal",
+     "fully automated terminal",
+     "smart port",
+     "smart terminal"
+    ],
+    "why": "ports with automated cranes and vehicles"
+   },
+   {
+    "term": "automated stacking crane",
+    "tier": "context",
+    "variants": [
+     "remote-controlled crane",
+     "automated rail-mounted gantry",
+     "automated RTG",
+     "remote crane operation",
+     "autonomous crane",
+     "automated quay crane"
+    ],
+    "why": "remote and autonomous yard cranes"
+   },
+   {
+    "term": "autonomous terminal truck",
+    "tier": "ai",
+    "variants": [
+     "autonomous yard truck",
+     "driverless terminal tractor",
+     "automated straddle carrier",
+     "autonomous straddle carrier",
+     "automated guided vehicles in terminal",
+     "autonomous prime mover"
+    ],
+    "why": "driverless yard vehicles in ports"
+   },
+   {
+    "term": "berth optimisation",
+    "tier": "ai",
+    "variants": [
+     "berth optimization",
+     "AI berth planning",
+     "yard optimisation",
+     "yard optimization",
+     "vessel turnaround prediction",
+     "AI stowage planning",
+     "port call optimisation",
+     "port call optimization"
+    ],
+    "why": "ML planning of berths and yard"
+   },
+   {
+    "term": "terminal operating system",
+    "tier": "context",
+    "variants": [
+     "port community system",
+     "gate automation",
+     "optical character recognition gate",
+     "automated gate",
+     "vessel traffic services"
+    ],
+    "why": "port system where AI modules run"
+   },
+   {
+    "term": "dockworkers",
+    "tier": "context",
+    "variants": [
+     "longshoremen",
+     "International Longshoremen's Association",
+     "ILWU",
+     "dock labour",
+     "dock labor",
+     "automation ban",
+     "stevedores"
+    ],
+    "case_sensitive_variants": [
+     "ILWU"
+    ],
+    "why": "union resistance to port automation"
+   }
+  ],
+  "5223": [
+   {
+    "term": "AI passenger flow management",
+    "tier": "ai",
+    "variants": [
+     "passenger flow prediction",
+     "queue prediction",
+     "AI crowd management",
+     "AI-based queue management",
+     "passenger flow analytics",
+     "security wait time prediction"
+    ],
+    "why": "ML and vision for queues and crowding"
+   },
+   {
+    "term": "biometric boarding",
+    "tier": "ai",
+    "variants": [
+     "biometric identity",
+     "facial recognition",
+     "face recognition",
+     "biometric gates",
+     "e-gates",
+     "seamless travel",
+     "biometric check-in",
+     "digital identity"
+    ],
+    "why": "face recognition at airport touchpoints"
+   },
+   {
+    "term": "AI security screening",
+    "tier": "ai",
+    "variants": [
+     "automated threat recognition",
+     "AI-based screening",
+     "CT scanners",
+     "automated prohibited item detection",
+     "AI X-ray analysis",
+     "smart security lanes"
+    ],
+    "why": "automated threat detection in scanners"
+   },
+   {
+    "term": "AI turnaround management",
+    "tier": "ai",
+    "variants": [
+     "AI apron management",
+     "turnaround monitoring",
+     "AI stand allocation",
+     "AI gate allocation",
+     "airport operations AI",
+     "predictive turnaround"
+    ],
+    "why": "vision AI monitoring aircraft turnarounds"
+   },
+   {
+    "term": "AI air traffic management",
+    "tier": "ai",
+    "variants": [
+     "digital tower",
+     "remote tower",
+     "AI-based air traffic flow management",
+     "AI in air traffic control",
+     "AI trajectory prediction",
+     "AI-assisted controller tools"
+    ],
+    "why": "ML in air navigation services"
+   },
+   {
+    "term": "airport operations",
+    "tier": "context",
+    "variants": [
+     "airport operations centre",
+     "airport operations center",
+     "total airport management",
+     "airport collaborative decision making",
+     "A-CDM",
+     "on-time performance",
+     "baggage handling system"
+    ],
+    "why": "operational centre where ML forecasting is used"
+   },
+   {
+    "term": "autonomous ground vehicles",
+    "tier": "ai",
+    "variants": [
+     "autonomous baggage tractor",
+     "autonomous ground support equipment",
+     "autonomous airside vehicle",
+     "autonomous shuttle",
+     "baggage robot"
+    ],
+    "why": "driverless airside equipment"
+   }
+  ],
+  "5224": [
+   {
+    "term": "automated cargo handling",
+    "tier": "ai",
+    "variants": [
+     "cargo handling automation",
+     "automated loading",
+     "robotic unloading",
+     "truck unloading robot",
+     "automated cargo terminal",
+     "robotic container unloading"
+    ],
+    "why": "robotic handling of freight"
+   },
+   {
+    "term": "stevedoring",
+    "tier": "context",
+    "variants": [
+     "cargo handling equipment",
+     "ground handling",
+     "cargo terminal",
+     "break-bulk",
+     "bulk handling"
+    ],
+    "why": "manual cargo work exposed to automation"
+   }
+  ],
+  "5229": [
+   {
+    "term": "AI-powered freight forwarding",
+    "tier": "ai",
+    "variants": [
+     "AI-enabled forwarding",
+     "digital forwarder",
+     "AI freight agents",
+     "AI operations agents",
+     "forwarding automation",
+     "AI-powered shipment management",
+     "AI agents in logistics"
+    ],
+    "why": "AI in forwarding workflows"
+   },
+   {
+    "term": "automated quoting",
+    "tier": "ai",
+    "variants": [
+     "instant quote",
+     "AI quoting",
+     "AI-powered pricing",
+     "dynamic freight pricing",
+     "automated rate management",
+     "AI spot pricing",
+     "algorithmic freight pricing"
+    ],
+    "why": "ML instant freight quotes"
+   },
+   {
+    "term": "freight forwarder",
+    "tier": "context",
+    "variants": [
+     "freight forwarding",
+     "forwarding files",
+     "shipments per employee",
+     "productivity per FTE",
+     "conversion ratio",
+     "shared service centre",
+     "shared service center"
+    ],
+    "why": "asset-light intermediaries automating back offices"
+   },
+   {
+    "term": "customs brokerage",
+    "tier": "context",
+    "variants": [
+     "customs clearance",
+     "customs declaration",
+     "trade compliance",
+     "tariff classification",
+     "customs broker"
+    ],
+    "why": "document-heavy work automated with AI"
+   }
+  ],
+  "5231": [
+   {
+    "term": "digital freight matching",
+    "tier": "ai",
+    "variants": [
+     "digital freight brokerage",
+     "AI load matching",
+     "automated load matching",
+     "digital freight platform",
+     "freight marketplace",
+     "AI-powered brokerage",
+     "automated carrier matching"
+    ],
+    "why": "ML matching of loads and carriers"
+   },
+   {
+    "term": "AI freight broker agents",
+    "tier": "ai",
+    "variants": [
+     "AI agents for brokerage",
+     "agentic brokerage",
+     "AI carrier sales",
+     "automated load booking",
+     "AI voice agent for carriers",
+     "AI-powered quoting agent",
+     "touchless load"
+    ],
+    "why": "agents automating brokerage calls and emails"
+   },
+   {
+    "term": "freight brokerage",
+    "tier": "context",
+    "variants": [
+     "truckload brokerage",
+     "load board",
+     "spot market",
+     "gross profit per load",
+     "brokerage productivity",
+     "loads per person per day",
+     "carrier network"
+    ],
+    "why": "intermediaries whose margin AI entrants target"
+   },
+   {
+    "term": "freight fraud detection",
+    "tier": "ai",
+    "variants": [
+     "double brokering",
+     "carrier identity fraud",
+     "AI carrier vetting",
+     "cargo theft prediction",
+     "fraudulent carrier detection",
+     "strategic cargo theft"
+    ],
+    "why": "ML against identity theft and double brokering"
+   }
+  ],
+  "5232": [
+   {
+    "term": "AI travel assistant",
+    "tier": "ai",
+    "variants": [
+     "AI trip planner",
+     "AI travel agent",
+     "AI-powered trip planning",
+     "AI travel planning",
+     "agentic travel",
+     "AI itinerary",
+     "conversational booking",
+     "connected trip"
+    ],
+    "why": "conversational trip planning and booking"
+   },
+   {
+    "term": "AI disintermediation",
+    "tier": "ai",
+    "variants": [
+     "disintermediation by AI",
+     "AI search",
+     "traffic from AI",
+     "AI referrals",
+     "AI answer engine",
+     "agentic booking",
+     "AI agents booking",
+     "generative search"
+    ],
+    "why": "AI assistants as gatekeepers to bookings"
+   },
+   {
+    "term": "online travel agency",
+    "tier": "context",
+    "variants": [
+     "OTA",
+     "metasearch",
+     "travel marketplace",
+     "global distribution system",
+     "GDS",
+     "performance marketing",
+     "traffic acquisition",
+     "direct traffic"
+    ],
+    "case_sensitive_variants": [
+     "OTA",
+     "GDS"
+    ],
+    "why": "booking intermediaries dependent on search traffic"
+   },
+   {
+    "term": "ride-hailing matching algorithm",
+    "tier": "ai",
+    "variants": [
+     "surge pricing",
+     "matching algorithm",
+     "dispatch algorithm",
+     "upfront pricing",
+     "dynamic pricing",
+     "AI dispatch",
+     "marketplace algorithm"
+    ],
+    "why": "ML dispatch and pricing on mobility platforms"
+   },
+   {
+    "term": "robotaxi",
+    "tier": "ai",
+    "variants": [
+     "autonomous ride-hailing",
+     "autonomous vehicle partnership",
+     "self-driving",
+     "driverless rides",
+     "AV partner",
+     "Waymo",
+     "autonomous mobility"
+    ],
+    "why": "autonomous vehicles on mobility platforms"
+   },
+   {
+    "term": "platform work",
+    "tier": "context",
+    "variants": [
+     "algorithmic management",
+     "Platform Work Directive",
+     "driver classification",
+     "gig workers",
+     "independent contractor",
+     "driver deactivation"
+    ],
+    "why": "regulation of algorithmically managed drivers"
+   }
+  ]
+ }
+}

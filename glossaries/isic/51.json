@@ -1,0 +1,576 @@
+{
+ "id": "51",
+ "name": "Air transport",
+ "section": "H",
+ "summary": "Airlines write about AI in revenue management and offer pricing (continuous and personalised pricing, NDC retailing), in operations (disruption recovery, crew and fleet scheduling, fuel and flight-path optimisation, predictive maintenance) and in customer service and rebooking. Risks cited include regulatory and public scrutiny of AI-based fare setting, liability for chatbot statements, safety certification of AI in aviation, cyber and third-party IT outages, and AI agents changing how tickets are distributed. Cargo carriers add capacity forecasting, dynamic cargo pricing and automated handling.",
+ "terms": [
+  {
+   "term": "revenue management system",
+   "tier": "context",
+   "variants": [
+    "revenue management",
+    "yield management",
+    "revenue optimisation",
+    "revenue optimization"
+   ],
+   "why": "seat pricing function where ML is applied"
+  },
+  {
+   "term": "AI-powered revenue management",
+   "tier": "ai",
+   "variants": [
+    "AI-driven revenue management",
+    "machine learning revenue management",
+    "AI-based revenue management",
+    "demand forecasting model",
+    "AI revenue optimisation",
+    "AI revenue optimization"
+   ],
+   "why": "ML forecasting and pricing of seats"
+  },
+  {
+   "term": "dynamic pricing",
+   "tier": "ai",
+   "variants": [
+    "continuous pricing",
+    "AI-driven pricing",
+    "AI pricing",
+    "algorithmic pricing",
+    "AI-based fare",
+    "dynamic fare",
+    "AI-powered pricing",
+    "price optimisation",
+    "price optimization"
+   ],
+   "why": "fares adjusted by algorithm"
+  },
+  {
+   "term": "personalised pricing",
+   "tier": "ai",
+   "variants": [
+    "personalized pricing",
+    "surveillance pricing",
+    "individualised pricing",
+    "individualized pricing",
+    "personalised offers",
+    "personalized offers",
+    "willingness to pay"
+   ],
+   "why": "individualised fares and offers set by ML"
+  },
+  {
+   "term": "offer and order",
+   "tier": "context",
+   "variants": [
+    "offers and orders",
+    "New Distribution Capability",
+    "NDC",
+    "modern airline retailing",
+    "dynamic offers",
+    "offer management"
+   ],
+   "case_sensitive_variants": [
+    "NDC"
+   ],
+   "why": "retailing model enabling ML-built offers"
+  },
+  {
+   "term": "ancillary optimisation",
+   "tier": "ai",
+   "variants": [
+    "ancillary optimization",
+    "dynamic ancillary pricing",
+    "AI-driven upsell",
+    "seat pricing model",
+    "upgrade pricing model",
+    "AI merchandising"
+   ],
+   "why": "ML pricing of bags, seats and upgrades"
+  },
+  {
+   "term": "demand forecasting",
+   "tier": "ai",
+   "variants": [
+    "booking forecast",
+    "no-show prediction",
+    "overbooking model",
+    "AI-based demand forecasting",
+    "passenger demand prediction",
+    "AI forecasting"
+   ],
+   "why": "ML prediction of bookings and no-shows"
+  },
+  {
+   "term": "predictive maintenance",
+   "tier": "ai",
+   "variants": [
+    "aircraft health monitoring",
+    "predictive aircraft maintenance",
+    "engine health monitoring",
+    "AI-based maintenance",
+    "prognostics",
+    "Skywise",
+    "predictive analytics for maintenance"
+   ],
+   "why": "ML forecasting of aircraft component failures"
+  },
+  {
+   "term": "AI-assisted inspection",
+   "tier": "ai",
+   "variants": [
+    "drone inspection",
+    "automated visual inspection",
+    "AI borescope inspection",
+    "AI damage detection",
+    "computer vision inspection"
+   ],
+   "why": "vision AI and drones checking aircraft"
+  },
+  {
+   "term": "AI-powered disruption management",
+   "tier": "ai",
+   "variants": [
+    "AI-based disruption recovery",
+    "operations recovery optimiser",
+    "operations recovery optimizer",
+    "AI-driven rebooking",
+    "automated rebooking",
+    "delay prediction"
+   ],
+   "why": "ML recovery from irregular operations"
+  },
+  {
+   "term": "crew scheduling optimisation",
+   "tier": "ai",
+   "variants": [
+    "crew scheduling optimization",
+    "AI crew scheduling",
+    "crew pairing optimisation",
+    "crew pairing optimization",
+    "AI rostering",
+    "crew recovery"
+   ],
+   "why": "ML rostering of pilots and cabin crew"
+  },
+  {
+   "term": "fuel optimisation",
+   "tier": "context",
+   "variants": [
+    "fuel optimization",
+    "AI-based fuel efficiency",
+    "flight path optimisation",
+    "flight path optimization",
+    "AI flight planning",
+    "contrail avoidance",
+    "contrail prediction",
+    "route optimisation",
+    "route optimization"
+   ],
+   "why": "ML reducing fuel burn"
+  },
+  {
+   "term": "turnaround optimisation",
+   "tier": "ai",
+   "variants": [
+    "turnaround optimization",
+    "AI turnaround monitoring",
+    "AI gate management",
+    "AI-based ground operations",
+    "smart gating",
+    "connection saver",
+    "ConnectionSaver"
+   ],
+   "why": "vision AI monitoring gate operations"
+  },
+  {
+   "term": "network planning using AI",
+   "tier": "ai",
+   "variants": [
+    "AI-based network planning",
+    "schedule optimisation",
+    "schedule optimization",
+    "fleet assignment model",
+    "AI-driven scheduling",
+    "tail assignment"
+   ],
+   "why": "ML route and schedule design"
+  },
+  {
+   "term": "AI-powered customer service",
+   "tier": "ai",
+   "variants": [
+    "AI customer service",
+    "AI virtual agent",
+    "virtual assistant for customers",
+    "AI travel assistant",
+    "AI concierge",
+    "AI-powered chat",
+    "AI-generated responses to customers"
+   ],
+   "why": "automated passenger support"
+  },
+  {
+   "term": "biometric boarding",
+   "tier": "ai",
+   "variants": [
+    "facial recognition",
+    "biometric identity",
+    "biometric check-in",
+    "touchless boarding",
+    "face matching",
+    "One ID"
+   ],
+   "why": "face recognition at check-in and gates"
+  },
+  {
+   "term": "AI baggage tracking",
+   "tier": "ai",
+   "variants": [
+    "AI-based baggage handling",
+    "mishandled baggage prediction",
+    "AI lost baggage",
+    "bag tag recognition"
+   ],
+   "why": "vision and ML for bags"
+  },
+  {
+   "term": "AI in the operations control centre",
+   "tier": "ai",
+   "variants": [
+    "AI in the operations control center",
+    "AI operations assistant",
+    "operations decision support",
+    "AI-based operations control",
+    "integrated operations centre",
+    "integrated operations center"
+   ],
+   "why": "decision support for airline operations"
+  },
+  {
+   "term": "AI-driven efficiency",
+   "tier": "ai",
+   "variants": [
+    "AI-driven productivity",
+    "AI-enabled efficiency",
+    "AI productivity gains",
+    "AI-driven cost savings",
+    "AI use cases",
+    "AI-enabled productivity",
+    "AI initiatives"
+   ],
+   "why": "cost savings attributed to AI"
+  },
+  {
+   "term": "agentic booking",
+   "tier": "ai",
+   "variants": [
+    "AI travel agent",
+    "AI agents booking",
+    "AI trip planner",
+    "agentic travel",
+    "AI-powered trip planning",
+    "booking through AI assistants",
+    "AI search for flights"
+   ],
+   "why": "AI agents searching and buying tickets"
+  },
+  {
+   "term": "direct distribution",
+   "tier": "context",
+   "variants": [
+    "global distribution system",
+    "GDS",
+    "online travel agency",
+    "metasearch",
+    "direct booking",
+    "distribution costs",
+    "airline.com"
+   ],
+   "case_sensitive_variants": [
+    "GDS"
+   ],
+   "why": "channel shift shaped by AI intermediaries"
+  },
+  {
+   "term": "loyalty programme",
+   "tier": "context",
+   "variants": [
+    "loyalty program",
+    "frequent flyer programme",
+    "frequent flyer program",
+    "co-brand credit card",
+    "member data",
+    "loyalty data"
+   ],
+   "why": "member data used for ML personalisation"
+  },
+  {
+   "term": "AI personalisation",
+   "tier": "ai",
+   "variants": [
+    "AI personalization",
+    "personalised travel experience",
+    "personalized travel experience",
+    "hyper-personalisation",
+    "hyper-personalization",
+    "AI-driven recommendations",
+    "next best offer"
+   ],
+   "why": "ML tailoring offers and inflight content"
+  },
+  {
+   "term": "fare transparency",
+   "tier": "context",
+   "variants": [
+    "price transparency",
+    "junk fees",
+    "unfair or deceptive practices",
+    "price discrimination",
+    "fare discrimination"
+   ],
+   "why": "scrutiny of algorithmic and personalised fares"
+  },
+  {
+   "term": "AI in aviation safety",
+   "tier": "ai",
+   "variants": [
+    "EASA AI roadmap",
+    "AI trustworthiness in aviation",
+    "certification of AI",
+    "machine learning in safety-critical systems",
+    "AI assurance in aviation"
+   ],
+   "why": "regulator approach to AI in aviation"
+  },
+  {
+   "term": "single-pilot operations",
+   "tier": "context",
+   "variants": [
+    "reduced crew operations",
+    "extended minimum crew operations",
+    "eMCO",
+    "autonomous flight",
+    "autonomous aircraft",
+    "pilotless aircraft"
+   ],
+   "why": "automation reducing flight-deck crew"
+  },
+  {
+   "term": "pilot shortage",
+   "tier": "context",
+   "variants": [
+    "pilot union",
+    "ALPA",
+    "pilot supply",
+    "crew costs"
+   ],
+   "case_sensitive_variants": [
+    "ALPA"
+   ],
+   "why": "labour constraint and union stance on automation"
+  },
+  {
+   "term": "IT outage",
+   "tier": "context",
+   "variants": [
+    "system outage",
+    "technology failure",
+    "legacy systems",
+    "passenger service system",
+    "third-party technology providers",
+    "cyber incident"
+   ],
+   "why": "technology failure risk incl. third-party systems"
+  },
+  {
+   "term": "digital twin",
+   "tier": "context",
+   "variants": [
+    "engine digital twin",
+    "aircraft digital twin",
+    "operations digital twin"
+   ],
+   "why": "virtual model of fleet or engine"
+  },
+  {
+   "term": "on-time performance",
+   "tier": "context",
+   "variants": [
+    "completion factor",
+    "punctuality",
+    "misconnection",
+    "irregular operations",
+    "disruption management",
+    "cancellations and delays",
+    "controllable delays"
+   ],
+   "why": "operational metric AI targets"
+  },
+  {
+   "term": "AI-generated marketing content",
+   "tier": "ai",
+   "variants": [
+    "AI-generated advertising",
+    "AI-powered marketing",
+    "AI campaign optimisation",
+    "AI campaign optimization",
+    "AI content creation"
+   ],
+   "why": "GenAI in airline marketing"
+  },
+  {
+   "term": "AI employee tools",
+   "tier": "ai",
+   "variants": [
+    "AI assistant for agents",
+    "AI assistant for employees",
+    "AI for frontline staff",
+    "AI knowledge assistant",
+    "AI maintenance assistant",
+    "AI copilot for engineers"
+   ],
+   "why": "GenAI assistants for crew and agents"
+  },
+  {
+   "term": "AI training simulation",
+   "tier": "ai",
+   "variants": [
+    "AI-based pilot training",
+    "adaptive training",
+    "evidence-based training analytics",
+    "AI flight simulator"
+   ],
+   "why": "adaptive pilot and crew training"
+  },
+  {
+   "term": "air traffic control",
+   "tier": "context",
+   "variants": [
+    "air traffic management",
+    "ATC modernisation",
+    "ATC modernization",
+    "airspace congestion",
+    "NextGen",
+    "SESAR"
+   ],
+   "why": "external constraint where AI modernisation is discussed"
+  }
+ ],
+ "class_terms": {
+  "5110": [
+   {
+    "term": "AI seat pricing",
+    "tier": "ai",
+    "variants": [
+     "AI fare setting",
+     "AI-set fares",
+     "fare personalisation",
+     "fare personalization",
+     "AI-determined pricing",
+     "Fetcherr"
+    ],
+    "why": "ML pricing of seats and cabins"
+   },
+   {
+    "term": "passenger experience",
+    "tier": "context",
+    "variants": [
+     "inflight entertainment",
+     "in-flight connectivity",
+     "customer satisfaction",
+     "net promoter score",
+     "self-service"
+    ],
+    "why": "service area for personalisation and assistants"
+   },
+   {
+    "term": "AI chatbot liability",
+    "tier": "ai",
+    "variants": [
+     "chatbot misinformation",
+     "chatbot error",
+     "negligent misrepresentation by chatbot",
+     "inaccurate AI responses"
+    ],
+    "why": "airline held to chatbot statements"
+   },
+   {
+    "term": "passenger rights",
+    "tier": "context",
+    "variants": [
+     "EU261",
+     "EC 261",
+     "denied boarding",
+     "passenger compensation",
+     "refund rules"
+    ],
+    "why": "compensation rules during AI-handled disruption"
+   }
+  ],
+  "5120": [
+   {
+    "term": "cargo capacity forecasting",
+    "tier": "ai",
+    "variants": [
+     "cargo demand forecasting",
+     "cargo revenue management",
+     "AI cargo booking",
+     "cargo no-show prediction",
+     "AI load planning",
+     "unit load device optimisation",
+     "unit load device optimization"
+    ],
+    "why": "ML predicting freight space and show-up"
+   },
+   {
+    "term": "dynamic cargo pricing",
+    "tier": "ai",
+    "variants": [
+     "AI cargo pricing",
+     "dynamic air freight pricing",
+     "automated cargo quoting",
+     "cargo yield optimisation",
+     "cargo yield optimization"
+    ],
+    "why": "ML spot rates for air freight"
+   },
+   {
+    "term": "air cargo",
+    "tier": "context",
+    "variants": [
+     "air freight",
+     "freighter",
+     "belly capacity",
+     "e-commerce shipments",
+     "cargo terminal",
+     "e-booking"
+    ],
+    "why": "freight business digitising booking and handling"
+   },
+   {
+    "term": "automated cargo handling",
+    "tier": "ai",
+    "variants": [
+     "cargo handling automation",
+     "AI dimensioning",
+     "automated ULD build-up",
+     "robotic cargo handling",
+     "AI dangerous goods detection",
+     "undeclared dangerous goods detection"
+    ],
+    "why": "robotics and vision in cargo terminals"
+   },
+   {
+    "term": "express network",
+    "tier": "context",
+    "variants": [
+     "air hub",
+     "sort facility",
+     "integrator",
+     "hub automation"
+    ],
+    "why": "integrator hubs using automated sortation"
+   }
+  ]
+ }
+}

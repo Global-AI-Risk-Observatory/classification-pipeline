@@ -1,0 +1,418 @@
+{
+  "id": "23",
+  "name": "Manufacture of other non-metallic mineral products",
+  "section": "C",
+  "summary": "Cement, lime and glass producers describe AI mainly as kiln, furnace and mill optimisation (expert systems, soft sensors, autonomous plants), predictive maintenance and quality prediction. Glass, technical-ceramics, quartz and graphite makers sell into the AI hardware chain: glass cloth and glass core substrates for AI server boards and chip packages, photomask blanks, ceramic parts for chip-making tools, optical fibre. Building-material producers cite data center construction as a demand driver.",
+  "terms": [
+    {
+      "term": "predictive maintenance",
+      "tier": "ai",
+      "variants": [
+        "prescriptive maintenance"
+      ],
+      "why": "ML on kiln, mill and furnace equipment data"
+    },
+    {
+      "term": "machine vision",
+      "tier": "ai",
+      "variants": [
+        "automated visual inspection",
+        "automated defect detection",
+        "surface inspection system",
+        "automated surface inspection"
+      ],
+      "why": "camera-based defect detection on glass, tiles, boards"
+    },
+    {
+      "term": "advanced process control",
+      "tier": "context",
+      "variants": [
+        "model predictive control",
+        "process control optimisation",
+        "process control optimization"
+      ],
+      "why": "control layer where ML optimisers are deployed"
+    },
+    {
+      "term": "soft sensor",
+      "tier": "ai",
+      "variants": [
+        "virtual sensor",
+        "inferential sensor"
+      ],
+      "why": "ML estimate of unmeasured process variables"
+    },
+    {
+      "term": "predictive quality",
+      "tier": "ai",
+      "variants": [
+        "quality prediction",
+        "inline quality forecasting"
+      ],
+      "why": "ML prediction of product quality from process data"
+    },
+    {
+      "term": "digital twin",
+      "tier": "context",
+      "variants": [
+        "virtual plant model"
+      ],
+      "why": "virtual plant model used with AI optimisation"
+    },
+    {
+      "term": "Industry 4.0",
+      "tier": "context",
+      "variants": [
+        "Industrie 4.0"
+      ],
+      "why": "umbrella label for connected, data-driven plants"
+    },
+    {
+      "term": "smart plant",
+      "tier": "context",
+      "variants": [
+        "smart factory",
+        "digital plant",
+        "connected plant",
+        "plant of the future"
+      ],
+      "why": "connected plant programmes where AI use is reported"
+    },
+    {
+      "term": "remote operations centre",
+      "tier": "context",
+      "variants": [
+        "remote operations center",
+        "remote operation centre",
+        "remote control centre",
+        "remote control center",
+        "central control room"
+      ],
+      "why": "centralised control enabling AI-assisted operation"
+    },
+    {
+      "term": "drone inspection",
+      "tier": "context",
+      "variants": [
+        "drone survey",
+        "drone-based stockpile measurement",
+        "robotic inspection",
+        "kiln inspection robot"
+      ],
+      "why": "drones and robots surveying stockpiles, kilns, quarries"
+    },
+    {
+      "term": "autonomous haulage",
+      "tier": "ai",
+      "variants": [
+        "autonomous haul truck",
+        "autonomous quarry truck",
+        "autonomous truck",
+        "driverless truck"
+      ],
+      "why": "self-driving trucks in quarries"
+    },
+    {
+      "term": "dispatch optimisation",
+      "tier": "context",
+      "variants": [
+        "dispatch optimization",
+        "delivery route optimisation",
+        "delivery route optimization",
+        "dynamic dispatching",
+        "logistics optimisation",
+        "logistics optimization"
+      ],
+      "why": "algorithmic scheduling of ready-mix and aggregates deliveries"
+    },
+    {
+      "term": "data center",
+      "tier": "context",
+      "variants": [
+        "data centre",
+        "datacenter",
+        "datacentre"
+      ],
+      "why": "construction and materials demand from AI build-out"
+    },
+    {
+      "term": "hyperscaler",
+      "tier": "context",
+      "variants": [
+        "hyperscale"
+      ],
+      "why": "large cloud and AI customers behind construction demand"
+    },
+    {
+      "term": "AI server",
+      "tier": "ai",
+      "variants": [
+        "AI accelerator",
+        "AI infrastructure"
+      ],
+      "why": "end product pulling glass cloth, substrates, ceramics"
+    },
+    {
+      "term": "semiconductor manufacturing equipment",
+      "tier": "context",
+      "variants": [
+        "semiconductor production equipment",
+        "wafer fab equipment",
+        "chip-making equipment"
+      ],
+      "why": "end market for ceramic, quartz and glass parts"
+    },
+    {
+      "term": "advanced packaging",
+      "tier": "context",
+      "variants": [
+        "2.5D packaging",
+        "chip packaging substrate"
+      ],
+      "why": "chip packaging trend driving glass and ceramic substrates"
+    }
+  ],
+  "class_terms": {
+    "2310": [
+      {
+        "term": "glass core substrate",
+        "tier": "context",
+        "variants": [
+          "glass substrate",
+          "glass interposer",
+          "through-glass via"
+        ],
+        "why": "glass replacing organic cores in AI chip packages"
+      },
+      {
+        "term": "glass cloth",
+        "tier": "context",
+        "variants": [
+          "T-glass",
+          "NE-glass",
+          "low-Dk glass",
+          "low-CTE glass",
+          "glass fibre fabric",
+          "glass fiber fabric",
+          "low dielectric glass"
+        ],
+        "why": "low-loss glass fabric for AI server boards"
+      },
+      {
+        "term": "photomask blank",
+        "tier": "context",
+        "variants": [
+          "mask blank",
+          "photomask substrate"
+        ],
+        "why": "mask substrates for leading-edge AI chips"
+      },
+      {
+        "term": "synthetic quartz",
+        "tier": "context",
+        "variants": [
+          "fused silica",
+          "quartz glass",
+          "quartz crucible",
+          "quartzware"
+        ],
+        "why": "quartz and silica consumed in chip manufacturing"
+      },
+      {
+        "term": "optical fibre",
+        "tier": "context",
+        "variants": [
+          "optical fiber",
+          "optical connectivity",
+          "fibre optic",
+          "fiber optic"
+        ],
+        "why": "fibre demand from AI data center connectivity"
+      },
+      {
+        "term": "advanced driver assistance system",
+        "tier": "ai",
+        "variants": [
+          "ADAS",
+          "driver assistance camera",
+          "autonomous driving sensor"
+        ],
+        "case_sensitive_variants": [
+          "ADAS"
+        ],
+        "why": "glazing designed around cameras and lidar"
+      },
+      {
+        "term": "furnace optimisation",
+        "tier": "context",
+        "variants": [
+          "furnace optimization",
+          "melting furnace control",
+          "furnace expert system",
+          "batch-to-furnace control"
+        ],
+        "why": "AI control of glass melting furnaces"
+      }
+    ],
+    "2391": [
+      {
+        "term": "refractory wear prediction",
+        "tier": "ai",
+        "variants": [
+          "lining wear prediction",
+          "refractory lifetime prediction",
+          "Automated Process Optimization",
+          "automated process optimisation",
+          "lining life prediction"
+        ],
+        "why": "ML forecasts of lining life at customers"
+      },
+      {
+        "term": "lining measurement",
+        "tier": "context",
+        "variants": [
+          "laser lining scan",
+          "laser scanning of linings",
+          "refractory monitoring",
+          "robotic gunning",
+          "robotic relining"
+        ],
+        "why": "laser and robotic lining data feeding wear models"
+      }
+    ],
+    "2393": [
+      {
+        "term": "electrostatic chuck",
+        "tier": "context",
+        "variants": [
+          "ceramic heater",
+          "wafer chuck",
+          "semiconductor ceramics",
+          "fine ceramics for semiconductor"
+        ],
+        "why": "ceramic parts inside chip-making tools"
+      },
+      {
+        "term": "ceramic substrate",
+        "tier": "context",
+        "variants": [
+          "ceramic package",
+          "silicon nitride substrate",
+          "aluminium nitride substrate",
+          "aluminum nitride substrate",
+          "ceramic circuit board"
+        ],
+        "why": "ceramic packages for optical transceivers and power modules"
+      }
+    ],
+    "2394": [
+      {
+        "term": "kiln optimisation",
+        "tier": "context",
+        "variants": [
+          "kiln optimization",
+          "kiln control system",
+          "mill optimisation",
+          "mill optimization",
+          "pyroprocess optimisation",
+          "pyroprocess optimization"
+        ],
+        "why": "main AI use case in cement and lime"
+      },
+      {
+        "term": "expert system",
+        "tier": "ai",
+        "variants": [
+          "Expert Optimizer",
+          "expert control system",
+          "ProcessExpert"
+        ],
+        "why": "rule and ML based kiln and mill controllers"
+      },
+      {
+        "term": "autonomous plant",
+        "tier": "ai",
+        "variants": [
+          "autonomous cement plant",
+          "autonomous kiln",
+          "autonomous mill",
+          "self-driving plant",
+          "Plants of Tomorrow",
+          "plant autopilot",
+          "autonomous operation"
+        ],
+        "why": "plants run by self-optimising control"
+      },
+      {
+        "term": "free lime prediction",
+        "tier": "ai",
+        "variants": [
+          "clinker quality model",
+          "cement strength prediction",
+          "Blaine prediction"
+        ],
+        "why": "ML prediction of clinker and cement properties"
+      },
+      {
+        "term": "alternative fuel optimisation",
+        "tier": "context",
+        "variants": [
+          "alternative fuel optimization",
+          "fuel mix optimisation",
+          "fuel mix optimization"
+        ],
+        "why": "ML stabilising kilns burning variable waste fuels"
+      }
+    ],
+    "2395": [
+      {
+        "term": "concrete mix optimisation",
+        "tier": "ai",
+        "variants": [
+          "concrete mix optimization",
+          "AI-optimised mix design",
+          "mix design optimisation",
+          "mix design optimization",
+          "concrete strength prediction",
+          "AI mix design"
+        ],
+        "why": "AI-designed mixes cutting cement content"
+      },
+      {
+        "term": "concrete sensor",
+        "tier": "context",
+        "variants": [
+          "maturity sensor",
+          "concrete maturity monitoring",
+          "in-transit concrete monitoring"
+        ],
+        "why": "sensor data feeding strength and slump models"
+      },
+      {
+        "term": "precast automation",
+        "tier": "context",
+        "variants": [
+          "automated precast plant",
+          "robotic formwork",
+          "precast plant automation",
+          "3D concrete printing"
+        ],
+        "why": "robotised precast plants and printed concrete"
+      }
+    ],
+    "2399": [
+      {
+        "term": "focus ring",
+        "tier": "context",
+        "variants": [
+          "solid SiC",
+          "SiC-coated graphite",
+          "graphite susceptor",
+          "isostatic graphite",
+          "specialty graphite"
+        ],
+        "why": "graphite and SiC consumables for chip-making tools"
+      }
+    ]
+  }
+}

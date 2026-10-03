@@ -1,0 +1,479 @@
+{
+ "id": "56",
+ "name": "Food and beverage service activities",
+ "section": "I",
+ "summary": "Restaurant chains and caterers write about AI in order taking (voice AI at the drive-thru, kiosks, phone ordering), kitchen and labour automation, demand forecasting and inventory, personalised loyalty marketing and dynamic menu pricing. Food delivery intermediaries add dispatch and ranking algorithms, courier management and autonomous delivery. Recurring risks are consumer backlash to surge pricing, biometric and voice-data privacy litigation, labour displacement and third-party technology dependence.",
+ "terms": [
+  {
+   "term": "voice AI ordering",
+   "tier": "ai",
+   "variants": [
+    "AI drive-thru",
+    "drive-thru voice AI",
+    "automated order taking",
+    "AI order taking",
+    "voice ordering",
+    "AI phone ordering",
+    "conversational ordering",
+    "voice AI",
+    "automated order taker"
+   ],
+   "why": "speech AI taking drive-thru and phone orders"
+  },
+  {
+   "term": "kitchen automation",
+   "tier": "ai",
+   "variants": [
+    "robotic kitchen",
+    "automated makeline",
+    "kitchen robotics",
+    "robotic fryer",
+    "cooking robot",
+    "Flippy",
+    "Autocado",
+    "automated beverage system",
+    "automated digital makeline"
+   ],
+   "why": "robots and ML in food preparation"
+  },
+  {
+   "term": "AI-powered kitchen display",
+   "tier": "ai",
+   "variants": [
+    "smart kitchen",
+    "kitchen management system",
+    "AI kitchen management",
+    "order sequencing",
+    "AI-based order timing",
+    "connected kitchen",
+    "Byte by Yum"
+   ],
+   "why": "ML sequencing and timing of orders"
+  },
+  {
+   "term": "demand forecasting",
+   "tier": "ai",
+   "variants": [
+    "AI-based forecasting",
+    "AI forecasting",
+    "sales forecasting model",
+    "AI prep forecasting",
+    "predictive prep",
+    "AI-driven inventory management",
+    "automated inventory management",
+    "predictive ordering"
+   ],
+   "why": "ML prediction of sales, prep and staffing"
+  },
+  {
+   "term": "labour scheduling using AI",
+   "tier": "ai",
+   "variants": [
+    "labor scheduling using AI",
+    "AI-driven labour scheduling",
+    "AI-driven labor scheduling",
+    "AI scheduling",
+    "predictive scheduling",
+    "AI shift management",
+    "AI labour management",
+    "AI labor management"
+   ],
+   "why": "ML rostering of restaurant crews"
+  },
+  {
+   "term": "dynamic pricing",
+   "tier": "ai",
+   "variants": [
+    "dynamic menu pricing",
+    "surge pricing",
+    "AI-driven pricing",
+    "menu price optimisation",
+    "menu price optimization",
+    "daypart pricing",
+    "algorithmic pricing"
+   ],
+   "why": "menu prices varied by time or demand"
+  },
+  {
+   "term": "digital menu board",
+   "tier": "context",
+   "variants": [
+    "digital menuboard",
+    "self-order kiosk",
+    "ordering kiosk",
+    "self-service kiosk",
+    "digital ordering",
+    "mobile order and pay"
+   ],
+   "why": "displays enabling dynamic and personalised menus"
+  },
+  {
+   "term": "suggestive selling",
+   "tier": "ai",
+   "variants": [
+    "AI upselling",
+    "AI upsell",
+    "personalised recommendations",
+    "personalized recommendations",
+    "recommendation engine",
+    "AI-driven suggestive sell",
+    "Dynamic Yield",
+    "decision technology"
+   ],
+   "why": "ML upsell prompts at kiosk and drive-thru"
+  },
+  {
+   "term": "AI-powered personalisation",
+   "tier": "ai",
+   "variants": [
+    "AI-powered personalization",
+    "personalised marketing",
+    "personalized marketing",
+    "personalised offers",
+    "personalized offers",
+    "AI-driven marketing",
+    "one-to-one marketing",
+    "hyper-personalisation",
+    "hyper-personalization"
+   ],
+   "why": "ML-targeted offers through loyalty apps"
+  },
+  {
+   "term": "loyalty programme",
+   "tier": "context",
+   "variants": [
+    "loyalty program",
+    "rewards members",
+    "loyalty app",
+    "first-party data",
+    "digital sales mix",
+    "customer data platform"
+   ],
+   "why": "member data feeding personalisation models"
+  },
+  {
+   "term": "computer vision in restaurants",
+   "tier": "ai",
+   "variants": [
+    "AI order accuracy",
+    "AI cameras",
+    "vision AI",
+    "drive-thru timing analytics",
+    "AI-powered scale",
+    "accuracy scale",
+    "AI food safety monitoring"
+   ],
+   "why": "cameras checking order accuracy and speed"
+  },
+  {
+   "term": "AI food waste reduction",
+   "tier": "ai",
+   "variants": [
+    "food waste tracking AI",
+    "AI-based waste monitoring",
+    "AI waste analytics",
+    "Winnow",
+    "AI food waste"
+   ],
+   "why": "vision and ML tracking kitchen waste"
+  },
+  {
+   "term": "predictive equipment maintenance",
+   "tier": "ai",
+   "variants": [
+    "connected equipment",
+    "predictive maintenance",
+    "equipment health monitoring",
+    "connected restaurant",
+    "edge computing in restaurants"
+   ],
+   "why": "ML on connected kitchen equipment"
+  },
+  {
+   "term": "AI restaurant manager assistant",
+   "tier": "ai",
+   "variants": [
+    "AI assistant for restaurant managers",
+    "AI manager assistant",
+    "AI crew assistant",
+    "AI-powered coaching",
+    "AI-enabled training",
+    "generative AI virtual manager"
+   ],
+   "why": "GenAI assistants for managers and crew"
+  },
+  {
+   "term": "AI hiring assistant",
+   "tier": "ai",
+   "variants": [
+    "AI recruiting",
+    "AI hiring",
+    "automated candidate screening",
+    "AI-powered hiring",
+    "AI interview scheduling"
+   ],
+   "why": "automated recruiting of crew"
+  },
+  {
+   "term": "AI-driven efficiency",
+   "tier": "ai",
+   "variants": [
+    "AI-driven productivity",
+    "AI-enabled efficiency",
+    "AI use cases",
+    "AI-driven cost savings",
+    "AI initiatives",
+    "AI-enabled productivity"
+   ],
+   "why": "cost savings attributed to AI"
+  },
+  {
+   "term": "restaurant labour",
+   "tier": "context",
+   "variants": [
+    "restaurant labor",
+    "crew members",
+    "labour costs",
+    "labor costs",
+    "team member turnover",
+    "labour hours",
+    "labor hours"
+   ],
+   "why": "crew costs and jobs affected by automation"
+  },
+  {
+   "term": "franchisee technology",
+   "tier": "context",
+   "variants": [
+    "franchisee adoption",
+    "technology fees",
+    "restaurant technology platform",
+    "point-of-sale system",
+    "technology rollout to franchisees"
+   ],
+   "why": "franchise owners adopting brand technology"
+  },
+  {
+   "term": "biometric privacy",
+   "tier": "context",
+   "variants": [
+    "Biometric Information Privacy Act",
+    "BIPA",
+    "voiceprint",
+    "biometric data",
+    "voice recordings"
+   ],
+   "case_sensitive_variants": [
+    "BIPA"
+   ],
+   "why": "litigation over voice and face data"
+  },
+  {
+   "term": "AI customer service",
+   "tier": "ai",
+   "variants": [
+    "AI-powered customer service",
+    "AI guest feedback analysis",
+    "AI review analysis",
+    "sentiment analysis of guest feedback",
+    "AI customer care"
+   ],
+   "why": "automated guest support and feedback analysis"
+  },
+  {
+   "term": "AI site selection",
+   "tier": "ai",
+   "variants": [
+    "AI-based site selection",
+    "predictive site modelling",
+    "predictive site modeling",
+    "AI real estate analytics",
+    "site selection model"
+   ],
+   "why": "ML choosing new restaurant locations"
+  },
+  {
+   "term": "AI marketing content",
+   "tier": "ai",
+   "variants": [
+    "AI-generated advertising",
+    "AI-generated marketing",
+    "AI menu development",
+    "AI-generated menu",
+    "AI campaign optimisation",
+    "AI campaign optimization"
+   ],
+   "why": "GenAI in advertising and menu innovation"
+  }
+ ],
+ "class_terms": {
+  "5610": [
+   {
+    "term": "drive-thru automation",
+    "tier": "ai",
+    "variants": [
+     "automated drive-thru",
+     "AI-powered drive-thru",
+     "drive-thru AI",
+     "automated order taking in drive-thru",
+     "drive-thru of the future",
+     "licence plate recognition",
+     "license plate recognition"
+    ],
+    "why": "automated lanes and order taking"
+   },
+   {
+    "term": "speed of service",
+    "tier": "context",
+    "variants": [
+     "order accuracy",
+     "drive-thru times",
+     "service times",
+     "drive-thru throughput"
+    ],
+    "why": "drive-thru metric AI targets"
+   }
+  ],
+  "5621": [
+   {
+    "term": "AI menu planning",
+    "tier": "ai",
+    "variants": [
+     "AI-based menu planning",
+     "AI production planning",
+     "AI-based meal forecasting",
+     "AI-driven procurement",
+     "predictive catering demand"
+    ],
+    "why": "ML planning of menus and production for catering"
+   }
+  ],
+  "5629": [
+   {
+    "term": "autonomous canteen",
+    "tier": "ai",
+    "variants": [
+     "smart fridge",
+     "autonomous micro-market",
+     "AI vending",
+     "checkout-free canteen",
+     "AI-powered checkout",
+     "smart vending",
+     "computer vision checkout"
+    ],
+    "why": "unattended AI-enabled food outlets"
+   },
+   {
+    "term": "contract catering",
+    "tier": "context",
+    "variants": [
+     "foodservice contracts",
+     "workplace catering",
+     "unit-level labour",
+     "unit-level labor",
+     "client retention"
+    ],
+    "why": "food services with AI waste and demand tools"
+   }
+  ],
+  "5640": [
+   {
+    "term": "dispatch algorithm",
+    "tier": "ai",
+    "variants": [
+     "matching algorithm",
+     "batching algorithm",
+     "order batching",
+     "AI dispatch",
+     "courier assignment algorithm",
+     "delivery time prediction",
+     "estimated delivery time model"
+    ],
+    "why": "ML matching of orders and couriers"
+   },
+   {
+    "term": "restaurant ranking algorithm",
+    "tier": "ai",
+    "variants": [
+     "search ranking",
+     "ranking algorithm",
+     "recommendation algorithm",
+     "AI-powered recommendations",
+     "sponsored listings",
+     "AI-powered search",
+     "personalised feed",
+     "personalized feed"
+    ],
+    "why": "ML ordering of merchants in the app"
+   },
+   {
+    "term": "autonomous delivery",
+    "tier": "ai",
+    "variants": [
+     "delivery robot",
+     "sidewalk robot",
+     "drone delivery",
+     "autonomous vehicle delivery",
+     "robot delivery",
+     "Serve Robotics",
+     "delivery drone"
+    ],
+    "why": "robots and drones delivering meals"
+   },
+   {
+    "term": "algorithmic management",
+    "tier": "context",
+    "variants": [
+     "Platform Work Directive",
+     "gig workers",
+     "courier classification",
+     "independent contractor",
+     "rider status",
+     "account deactivation",
+     "dynamic courier pay"
+    ],
+    "why": "automated control of couriers' work and pay"
+   },
+   {
+    "term": "AI ordering assistant",
+    "tier": "ai",
+    "variants": [
+     "AI assistant in app",
+     "AI-powered ordering",
+     "AI voice ordering for merchants",
+     "AI menu photos",
+     "AI-generated menu descriptions",
+     "AI phone answering"
+    ],
+    "why": "conversational ordering in delivery apps"
+   },
+   {
+    "term": "food delivery platform",
+    "tier": "context",
+    "variants": [
+     "food delivery marketplace",
+     "delivery aggregator",
+     "gross order value",
+     "gross transaction value",
+     "take rate",
+     "delivery fees",
+     "dark kitchen",
+     "quick commerce"
+    ],
+    "why": "intermediaries built on ML logistics and ranking"
+   },
+   {
+    "term": "AI fraud detection",
+    "tier": "ai",
+    "variants": [
+     "refund abuse detection",
+     "promotion abuse",
+     "AI-based fraud prevention",
+     "fake order detection",
+     "account fraud model"
+    ],
+    "why": "ML against refund and promotion abuse"
+   }
+  ]
+ }
+}

@@ -1,0 +1,656 @@
+{
+  "id": "92",
+  "name": "Gambling and betting activities",
+  "section": "S",
+  "summary": "Betting, gaming, casino and lottery operators describe AI mostly through player data: models that detect markers of harm and trigger safer-gambling interactions (now a licence expectation in several markets), personalisation of offers and game lobbies, automated odds and trading, and fraud, AML and integrity monitoring. Risk passages cover regulators' scrutiny of profiling and marketing to vulnerable players, facial recognition and surveillance in venues, bots and AI-assisted cheating, and generative AI in game content and customer contact.",
+  "terms": [
+    {
+      "term": "responsible gambling",
+      "tier": "context",
+      "variants": [
+        "responsible gaming",
+        "safer gambling",
+        "safer gaming",
+        "player protection",
+        "player safety",
+        "sustainable play",
+        "positive play"
+      ],
+      "why": "player protection area where harm models run"
+    },
+    {
+      "term": "problem gambling",
+      "tier": "context",
+      "variants": [
+        "gambling harm",
+        "gambling-related harm",
+        "at-risk player",
+        "harmful play",
+        "gambling addiction",
+        "problem gambler",
+        "vulnerable player",
+        "compulsive gambling",
+        "gambling disorder"
+      ],
+      "why": "harm that operators' detection models target"
+    },
+    {
+      "term": "markers of harm",
+      "tier": "context",
+      "variants": [
+        "risk indicator",
+        "behavioural indicator",
+        "behavioral indicator",
+        "indicators of harm",
+        "harm indicator"
+      ],
+      "why": "behavioural indicators fed into risk models"
+    },
+    {
+      "term": "problem gambling detection",
+      "tier": "ai",
+      "variants": [
+        "at-risk player detection",
+        "gambling harm detection",
+        "harm detection model",
+        "player risk score",
+        "player risk model",
+        "predictive harm model",
+        "Player Safety Early Detection System",
+        "risk detection algorithm",
+        "player risk profiling"
+      ],
+      "why": "models scoring players for risk of harm"
+    },
+    {
+      "term": "automated early detection",
+      "tier": "ai",
+      "variants": [
+        "early detection of problem gambling",
+        "algorithmic harm detection",
+        "algorithm-based player monitoring",
+        "automated risk assessment of players",
+        "early detection system",
+        "automated player monitoring"
+      ],
+      "why": "regulator-mandated algorithmic monitoring of play"
+    },
+    {
+      "term": "behavioural monitoring",
+      "tier": "context",
+      "variants": [
+        "behavioral monitoring",
+        "player behaviour monitoring",
+        "player behavior monitoring",
+        "real-time player monitoring",
+        "play pattern",
+        "behavioural tracking",
+        "behavioral tracking",
+        "player activity monitoring"
+      ],
+      "why": "tracking of play patterns for risk and marketing"
+    },
+    {
+      "term": "safer gambling interaction",
+      "tier": "context",
+      "variants": [
+        "customer interaction",
+        "player intervention",
+        "real-time intervention",
+        "personalised intervention",
+        "personalized intervention",
+        "automated intervention",
+        "safer gambling message",
+        "tailored messaging"
+      ],
+      "why": "interventions triggered by risk scores"
+    },
+    {
+      "term": "Advanced Responsibility and Care",
+      "tier": "ai",
+      "variants": [
+        "Advanced Responsibility & Care",
+        "Mindway AI",
+        "GameScanner",
+        "BetBuddy",
+        "Playscan",
+        "Neccton",
+        "Bettor Sense",
+        "PlayerSafe"
+      ],
+      "why": "named operator harm-detection programmes"
+    },
+    {
+      "term": "affordability check",
+      "tier": "context",
+      "variants": [
+        "financial risk assessment",
+        "financial vulnerability check",
+        "financial risk check",
+        "affordability assessment",
+        "source of funds",
+        "enhanced due diligence"
+      ],
+      "why": "financial risk checks using automated data sources"
+    },
+    {
+      "term": "self-exclusion",
+      "tier": "context",
+      "variants": [
+        "self-excluded player",
+        "GAMSTOP",
+        "BetStop",
+        "exclusion register",
+        "excluded patron",
+        "exclusion scheme"
+      ],
+      "why": "exclusion schemes enforced with identity matching"
+    },
+    {
+      "term": "deposit limit",
+      "tier": "context",
+      "variants": [
+        "loss limit",
+        "stake limit",
+        "spending limit",
+        "play limit",
+        "mandatory limit",
+        "time-out",
+        "cooling-off period",
+        "reality check"
+      ],
+      "why": "limit tools set or prompted by risk models"
+    },
+    {
+      "term": "duty of care",
+      "tier": "context",
+      "variants": [
+        "duty-of-care obligation",
+        "player protection obligation",
+        "social responsibility code",
+        "Licence Conditions and Codes of Practice",
+        "LCCP",
+        "remote customer interaction"
+      ],
+      "case_sensitive_variants": [
+        "LCCP"
+      ],
+      "why": "legal standard behind monitoring obligations"
+    },
+    {
+      "term": "licence condition",
+      "tier": "context",
+      "variants": [
+        "license condition",
+        "regulatory settlement",
+        "licence review",
+        "license review",
+        "gaming regulator",
+        "gaming control board",
+        "Gambling Commission",
+        "regulatory sanction"
+      ],
+      "why": "regulatory leverage over operator algorithms"
+    },
+    {
+      "term": "single customer view",
+      "tier": "context",
+      "variants": [
+        "cross-operator data sharing",
+        "GamProtect",
+        "shared exclusion data"
+      ],
+      "why": "cross-operator data sharing on at-risk players"
+    },
+    {
+      "term": "age verification",
+      "tier": "context",
+      "variants": [
+        "age assurance",
+        "underage gambling",
+        "identity verification",
+        "know your customer",
+        "KYC",
+        "customer due diligence",
+        "document verification"
+      ],
+      "case_sensitive_variants": [
+        "KYC"
+      ],
+      "why": "identity checks increasingly biometric"
+    },
+    {
+      "term": "facial age estimation",
+      "tier": "ai",
+      "variants": [
+        "biometric age estimation",
+        "biometric age verification",
+        "AI age verification",
+        "AI age estimation"
+      ],
+      "why": "biometric estimate of a customer's age"
+    },
+    {
+      "term": "facial recognition surveillance",
+      "tier": "ai",
+      "variants": [
+        "facial recognition for excluded patrons",
+        "facial recognition camera",
+        "biometric surveillance",
+        "facial recognition in casinos",
+        "facial recognition in venues",
+        "licence plate recognition",
+        "license plate recognition"
+      ],
+      "why": "venue cameras matching excluded or banned patrons"
+    },
+    {
+      "term": "casino surveillance",
+      "tier": "context",
+      "variants": [
+        "surveillance system",
+        "eye in the sky",
+        "video surveillance",
+        "CCTV",
+        "advantage play",
+        "card counting",
+        "cheating detection"
+      ],
+      "case_sensitive_variants": [
+        "CCTV"
+      ],
+      "why": "camera operations adopting video analytics"
+    },
+    {
+      "term": "anti-money laundering",
+      "tier": "context",
+      "variants": [
+        "AML",
+        "transaction monitoring",
+        "suspicious activity",
+        "source of wealth",
+        "counter-terrorist financing",
+        "financial crime"
+      ],
+      "case_sensitive_variants": [
+        "AML"
+      ],
+      "why": "transaction monitoring using risk models"
+    },
+    {
+      "term": "bonus abuse",
+      "tier": "context",
+      "variants": [
+        "promotion abuse",
+        "multi-accounting",
+        "account takeover",
+        "payment fraud",
+        "chargeback fraud",
+        "collusion",
+        "syndicate betting",
+        "arbitrage betting"
+      ],
+      "why": "fraud typologies caught by behavioural models"
+    },
+    {
+      "term": "real-time assistance",
+      "tier": "ai",
+      "variants": [
+        "RTA tool",
+        "poker bot",
+        "poker solver",
+        "bot detection",
+        "AI-assisted cheating",
+        "automated play",
+        "botting"
+      ],
+      "case_sensitive_variants": [
+        "RTA tool"
+      ],
+      "why": "AI solvers and bots used to cheat online games"
+    },
+    {
+      "term": "match-fixing",
+      "tier": "context",
+      "variants": [
+        "betting integrity",
+        "sports integrity",
+        "suspicious betting",
+        "integrity monitoring",
+        "betting pattern",
+        "competition manipulation",
+        "Universal Fraud Detection System"
+      ],
+      "why": "integrity threat monitored by betting-pattern models"
+    },
+    {
+      "term": "geolocation compliance",
+      "tier": "context",
+      "variants": [
+        "geolocation",
+        "geofencing",
+        "location verification",
+        "GeoComply",
+        "VPN detection",
+        "device fingerprinting"
+      ],
+      "why": "location and device checks for licensed play"
+    },
+    {
+      "term": "player profiling",
+      "tier": "context",
+      "variants": [
+        "customer profiling",
+        "behavioural data",
+        "behavioral data",
+        "player data protection",
+        "profiling of customers",
+        "special category data"
+      ],
+      "why": "data protection issue in scoring customers"
+    },
+    {
+      "term": "odds compilation",
+      "tier": "context",
+      "variants": [
+        "odds setting",
+        "sportsbook trading",
+        "sports trading",
+        "risk and trading",
+        "price making",
+        "odds feed",
+        "trading team"
+      ],
+      "why": "price-setting work moving to models"
+    },
+    {
+      "term": "automated odds compilation",
+      "tier": "ai",
+      "variants": [
+        "algorithmic pricing",
+        "AI-driven odds",
+        "automated pricing engine",
+        "automated trading",
+        "automated risk management",
+        "AI-powered trading",
+        "predictive pricing model",
+        "AI pricing"
+      ],
+      "why": "model-driven pricing and risk management of bets"
+    },
+    {
+      "term": "in-play betting",
+      "tier": "context",
+      "variants": [
+        "in-game betting",
+        "live betting",
+        "micro-betting",
+        "micro-market",
+        "micromarket",
+        "player props",
+        "same game parlay",
+        "bet builder",
+        "in-running"
+      ],
+      "why": "live markets generated from real-time data models"
+    },
+    {
+      "term": "official sports data",
+      "tier": "context",
+      "variants": [
+        "live data feed",
+        "player tracking data",
+        "optical tracking",
+        "low-latency data feed",
+        "betting data rights",
+        "official data"
+      ],
+      "why": "data feeds powering automated markets"
+    },
+    {
+      "term": "computer vision data collection",
+      "tier": "ai",
+      "variants": [
+        "computer vision tracking",
+        "AI-driven data collection",
+        "automated data collection from video",
+        "computer vision at the table"
+      ],
+      "why": "AI extracting betting data from video"
+    },
+    {
+      "term": "game recommendation",
+      "tier": "ai",
+      "variants": [
+        "bet recommendation",
+        "personalised lobby",
+        "personalized lobby",
+        "recommended bets",
+        "AI-curated bet",
+        "personalised game recommendation",
+        "personalized game recommendation"
+      ],
+      "why": "recommender systems for games and bets"
+    },
+    {
+      "term": "personalised offer",
+      "tier": "context",
+      "variants": [
+        "personalized offer",
+        "personalised bonus",
+        "personalized bonus",
+        "bonus optimisation",
+        "bonus optimization",
+        "real-time personalisation",
+        "real-time personalization",
+        "player segmentation",
+        "personalised experience",
+        "personalized experience"
+      ],
+      "why": "tailored bonuses and messaging driven by models"
+    },
+    {
+      "term": "player churn",
+      "tier": "context",
+      "variants": [
+        "player retention",
+        "player lifetime value",
+        "predicted lifetime value",
+        "VIP player",
+        "high-value customer",
+        "customer lifetime value",
+        "player reactivation"
+      ],
+      "why": "retention and value outcomes that models predict"
+    },
+    {
+      "term": "gambling advertising",
+      "tier": "context",
+      "variants": [
+        "advertising restriction",
+        "targeted advertising",
+        "marketing to vulnerable customers",
+        "direct marketing consent",
+        "bonus inducement",
+        "affiliate marketing"
+      ],
+      "why": "marketing rules limiting algorithmic targeting"
+    },
+    {
+      "term": "addictive design",
+      "tier": "context",
+      "variants": [
+        "manipulative design",
+        "dark pattern",
+        "intensity of play",
+        "speed of play",
+        "game design restriction"
+      ],
+      "why": "regulatory concern about engineered engagement"
+    },
+    {
+      "term": "AI betting assistant",
+      "tier": "ai",
+      "variants": [
+        "AI bet assistant",
+        "conversational betting",
+        "bet construction assistant",
+        "AI tipster",
+        "AI-generated betting tips",
+        "AI picks",
+        "betting copilot"
+      ],
+      "why": "conversational AI helping customers build bets"
+    },
+    {
+      "term": "AI-generated commentary",
+      "tier": "ai",
+      "variants": [
+        "automated commentary",
+        "AI commentary",
+        "AI-generated match preview",
+        "automated highlights",
+        "automated betting content"
+      ],
+      "why": "automated content around betting events"
+    },
+    {
+      "term": "live dealer",
+      "tier": "context",
+      "variants": [
+        "live casino",
+        "game presenter",
+        "live studio",
+        "game show"
+      ],
+      "why": "studio games using recognition and automation"
+    },
+    {
+      "term": "AI dealer",
+      "tier": "ai",
+      "variants": [
+        "virtual dealer",
+        "AI game presenter",
+        "AI-generated host",
+        "digital dealer",
+        "AI croupier"
+      ],
+      "why": "synthetic hosts replacing human dealers"
+    },
+    {
+      "term": "game studio",
+      "tier": "context",
+      "variants": [
+        "slot game development",
+        "game content",
+        "content pipeline",
+        "game art",
+        "game mathematics",
+        "slot content",
+        "game development"
+      ],
+      "why": "content pipeline where generative tools are used"
+    },
+    {
+      "term": "AI-generated game content",
+      "tier": "ai",
+      "variants": [
+        "AI-assisted game development",
+        "AI game art",
+        "AI-generated game art",
+        "AI-assisted game design",
+        "AI-generated slot"
+      ],
+      "why": "generative AI in game art, maths and design"
+    },
+    {
+      "term": "virtual sports",
+      "tier": "context",
+      "variants": [
+        "virtual racing",
+        "simulated sports",
+        "simulated reality",
+        "fantasy sports",
+        "daily fantasy",
+        "esports betting"
+      ],
+      "why": "simulated events priced and rendered by models"
+    },
+    {
+      "term": "smart table",
+      "tier": "context",
+      "variants": [
+        "table game tracking",
+        "RFID chip",
+        "bet recognition",
+        "chip recognition",
+        "electronic table game",
+        "table management system"
+      ],
+      "why": "table-game tracking using recognition technology"
+    },
+    {
+      "term": "player tracking system",
+      "tier": "context",
+      "variants": [
+        "casino management system",
+        "carded play",
+        "player loyalty card",
+        "loyalty programme data",
+        "loyalty program data",
+        "player card"
+      ],
+      "why": "casino systems supplying behavioural data"
+    },
+    {
+      "term": "cashless gaming",
+      "tier": "context",
+      "variants": [
+        "cashless wagering",
+        "mandatory carded play",
+        "account-based play",
+        "digital gaming wallet"
+      ],
+      "why": "account-based play enabling full behavioural tracking"
+    },
+    {
+      "term": "slot floor optimisation",
+      "tier": "context",
+      "variants": [
+        "slot floor optimization",
+        "floor mix",
+        "gaming floor yield",
+        "hotel yield management",
+        "comp optimisation",
+        "comp optimization",
+        "host management"
+      ],
+      "why": "floor and yield decisions supported by prediction"
+    },
+    {
+      "term": "game integrity",
+      "tier": "context",
+      "variants": [
+        "game fairness",
+        "game certification",
+        "independent testing laboratory",
+        "certified random number generator",
+        "return to player"
+      ],
+      "why": "fairness and certification of game software"
+    },
+    {
+      "term": "iLottery",
+      "tier": "context",
+      "variants": [
+        "online lottery",
+        "digital lottery",
+        "eInstant",
+        "lottery terminal",
+        "lottery retailer"
+      ],
+      "why": "online lottery channels using player data models"
+    }
+  ],
+  "class_terms": {}
+}

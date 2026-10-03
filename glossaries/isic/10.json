@@ -1,0 +1,1050 @@
+{
+  "id": "10",
+  "name": "Manufacture of food products",
+  "section": "C",
+  "summary": "Food manufacturers mostly report AI as an operations and commercial tool: vision-based sorting and inspection, predictive maintenance, demand sensing, revenue growth management and AI-assisted recipe, flavour and ingredient development. Consumer-goods players add generative AI in marketing, personalised nutrition and the emerging risk that AI shopping agents mediate brand discovery. Upstream, AI appears in precision agriculture, deforestation monitoring and livestock or aquaculture automation, and for a few diversified groups as AI-server demand for electronic materials.",
+  "terms": [
+    {
+      "term": "predictive maintenance",
+      "tier": "ai",
+      "variants": [
+        "prescriptive maintenance",
+        "predictive asset maintenance"
+      ],
+      "case_sensitive_variants": [],
+      "why": "ML-based prediction of equipment failure"
+    },
+    {
+      "term": "condition monitoring",
+      "tier": "context",
+      "variants": [
+        "vibration monitoring",
+        "equipment health monitoring",
+        "asset health monitoring"
+      ],
+      "case_sensitive_variants": [],
+      "why": "sensor data feeding maintenance models"
+    },
+    {
+      "term": "machine vision",
+      "tier": "ai",
+      "variants": [
+        "vision inspection",
+        "automated visual inspection",
+        "vision-guided",
+        "AI visual inspection",
+        "camera-based inspection"
+      ],
+      "case_sensitive_variants": [],
+      "why": "camera-based inspection and grading of food"
+    },
+    {
+      "term": "optical sorting",
+      "tier": "context",
+      "variants": [
+        "optical sorter",
+        "laser sorting",
+        "sensor-based sorting",
+        "automated grading",
+        "automated sorting"
+      ],
+      "case_sensitive_variants": [],
+      "why": "sorters increasingly use learned classifiers"
+    },
+    {
+      "term": "AI-powered sorting",
+      "tier": "ai",
+      "variants": [
+        "AI-based sorting",
+        "AI sorting",
+        "deep learning sorting",
+        "AI-driven grading",
+        "AI grading"
+      ],
+      "case_sensitive_variants": [],
+      "why": "learning-based sorting of produce and ingredients"
+    },
+    {
+      "term": "foreign object detection",
+      "tier": "context",
+      "variants": [
+        "foreign body detection",
+        "foreign material detection",
+        "contaminant detection",
+        "X-ray inspection"
+      ],
+      "case_sensitive_variants": [],
+      "why": "contaminant detection, often vision or X-ray AI"
+    },
+    {
+      "term": "hyperspectral imaging",
+      "tier": "context",
+      "variants": [
+        "near-infrared spectroscopy",
+        "NIR analysis",
+        "spectral imaging"
+      ],
+      "case_sensitive_variants": [],
+      "why": "imaging input for quality and safety models"
+    },
+    {
+      "term": "predictive food safety",
+      "tier": "ai",
+      "variants": [
+        "AI-enabled food safety",
+        "AI-based pathogen detection",
+        "predictive microbiology",
+        "food safety prediction"
+      ],
+      "case_sensitive_variants": [],
+      "why": "models predicting contamination and pathogen risk"
+    },
+    {
+      "term": "pathogen detection",
+      "tier": "context",
+      "variants": [
+        "environmental monitoring programme",
+        "environmental monitoring program",
+        "whole genome sequencing"
+      ],
+      "case_sensitive_variants": [],
+      "why": "food safety testing where AI is applied"
+    },
+    {
+      "term": "shelf-life prediction",
+      "tier": "ai",
+      "variants": [
+        "predictive shelf life",
+        "dynamic shelf life",
+        "freshness prediction",
+        "spoilage prediction"
+      ],
+      "case_sensitive_variants": [],
+      "why": "models predicting freshness and spoilage"
+    },
+    {
+      "term": "automated quality control",
+      "tier": "context",
+      "variants": [
+        "inline quality control",
+        "in-line quality inspection",
+        "real-time quality monitoring",
+        "automated quality inspection",
+        "digital quality management"
+      ],
+      "case_sensitive_variants": [],
+      "why": "inline quality checks, often vision AI"
+    },
+    {
+      "term": "smart factory",
+      "tier": "context",
+      "variants": [
+        "smart manufacturing",
+        "factory of the future",
+        "connected factory",
+        "digital factory",
+        "intelligent manufacturing",
+        "intelligent factory",
+        "Industry 4.0",
+        "Industrie 4.0",
+        "fourth industrial revolution"
+      ],
+      "case_sensitive_variants": [],
+      "why": "connected-plant programmes framing AI use"
+    },
+    {
+      "term": "Global Lighthouse Network",
+      "tier": "context",
+      "variants": [
+        "lighthouse factory",
+        "lighthouse plant",
+        "manufacturing lighthouse",
+        "lighthouse site"
+      ],
+      "case_sensitive_variants": [],
+      "why": "WEF recognition for AI-heavy plants"
+    },
+    {
+      "term": "lights-out manufacturing",
+      "tier": "context",
+      "variants": [
+        "dark factory",
+        "lights-out factory",
+        "lights-out warehouse",
+        "autonomous plant",
+        "autonomous factory",
+        "unmanned factory"
+      ],
+      "case_sensitive_variants": [],
+      "why": "fully automated plant ambition"
+    },
+    {
+      "term": "digital twin",
+      "tier": "context",
+      "variants": [
+        "virtual twin"
+      ],
+      "case_sensitive_variants": [],
+      "why": "virtual plant, process or product model"
+    },
+    {
+      "term": "advanced process control",
+      "tier": "context",
+      "variants": [
+        "model predictive control",
+        "closed-loop control",
+        "real-time process control"
+      ],
+      "case_sensitive_variants": [],
+      "why": "model-based control of cooking, drying, mixing"
+    },
+    {
+      "term": "process optimisation",
+      "tier": "context",
+      "variants": [
+        "process optimization",
+        "yield optimisation",
+        "yield optimization",
+        "line optimisation",
+        "line optimization",
+        "production optimisation",
+        "production optimization"
+      ],
+      "case_sensitive_variants": [],
+      "why": "generic phrase around AI in production"
+    },
+    {
+      "term": "overall equipment effectiveness",
+      "tier": "context",
+      "variants": [
+        "OEE",
+        "line efficiency"
+      ],
+      "case_sensitive_variants": [
+        "OEE"
+      ],
+      "why": "line efficiency metric AI projects target"
+    },
+    {
+      "term": "industrial internet of things",
+      "tier": "context",
+      "variants": [
+        "IIoT",
+        "industrial IoT",
+        "industrial internet",
+        "connected sensors",
+        "smart sensors"
+      ],
+      "case_sensitive_variants": [],
+      "why": "plant sensor networks feeding models"
+    },
+    {
+      "term": "energy optimisation",
+      "tier": "context",
+      "variants": [
+        "energy optimization",
+        "energy management system",
+        "smart energy management"
+      ],
+      "case_sensitive_variants": [],
+      "why": "AI used to cut plant energy use"
+    },
+    {
+      "term": "collaborative robot",
+      "tier": "context",
+      "variants": [
+        "cobot",
+        "industrial robot",
+        "robotic cell",
+        "robotic palletising",
+        "robotic palletizing",
+        "robotic arm"
+      ],
+      "case_sensitive_variants": [],
+      "why": "robots on production and packing lines"
+    },
+    {
+      "term": "automated warehouse",
+      "tier": "context",
+      "variants": [
+        "warehouse automation",
+        "automated storage and retrieval",
+        "automated distribution centre",
+        "automated distribution center",
+        "automated guided vehicle",
+        "AGV",
+        "autonomous forklift",
+        "autonomous mobile robot",
+        "intelligent warehousing"
+      ],
+      "case_sensitive_variants": [
+        "AGV"
+      ],
+      "why": "robotic storage and logistics"
+    },
+    {
+      "term": "labour-saving automation",
+      "tier": "context",
+      "variants": [
+        "labor-saving automation",
+        "automation of manual tasks",
+        "automation of repetitive tasks",
+        "machine substitution",
+        "reduce reliance on manual labour",
+        "reduce reliance on manual labor"
+      ],
+      "case_sensitive_variants": [],
+      "why": "automation motivated by labour cost and shortages"
+    },
+    {
+      "term": "connected worker",
+      "tier": "context",
+      "variants": [
+        "digital work instructions",
+        "smart glasses",
+        "digital shop floor"
+      ],
+      "case_sensitive_variants": [],
+      "why": "digital shop-floor tools incl. AI assistants"
+    },
+    {
+      "term": "operational technology",
+      "tier": "context",
+      "variants": [
+        "OT security",
+        "OT cybersecurity",
+        "industrial control system",
+        "SCADA"
+      ],
+      "case_sensitive_variants": [],
+      "why": "plant control systems exposed to cyber risk"
+    },
+    {
+      "term": "demand sensing",
+      "tier": "ai",
+      "variants": [],
+      "case_sensitive_variants": [],
+      "why": "ML short-term demand signal modelling"
+    },
+    {
+      "term": "demand forecasting",
+      "tier": "context",
+      "variants": [
+        "demand planning",
+        "forecast accuracy",
+        "sales forecasting",
+        "integrated business planning"
+      ],
+      "case_sensitive_variants": [],
+      "why": "planning process where AI is commonly applied"
+    },
+    {
+      "term": "AI-driven demand forecasting",
+      "tier": "ai",
+      "variants": [
+        "AI-powered demand forecasting",
+        "AI-based demand forecasting",
+        "AI demand planning",
+        "machine learning demand forecasting",
+        "predictive demand planning",
+        "AI-powered forecasting"
+      ],
+      "case_sensitive_variants": [],
+      "why": "explicit AI forecasting claim"
+    },
+    {
+      "term": "autonomous planning",
+      "tier": "ai",
+      "variants": [
+        "touchless planning",
+        "touchless forecasting",
+        "autonomous supply chain",
+        "self-driving supply chain",
+        "no-touch planning"
+      ],
+      "case_sensitive_variants": [],
+      "why": "self-adjusting supply chain planning by learning systems"
+    },
+    {
+      "term": "supply chain control tower",
+      "tier": "context",
+      "variants": [
+        "control tower",
+        "supply chain visibility",
+        "supply chain digital twin"
+      ],
+      "case_sensitive_variants": [],
+      "why": "visibility layer where predictive tools sit"
+    },
+    {
+      "term": "route optimisation",
+      "tier": "context",
+      "variants": [
+        "route optimization",
+        "dynamic routing",
+        "load optimisation",
+        "load optimization",
+        "delivery optimisation",
+        "delivery optimization"
+      ],
+      "case_sensitive_variants": [],
+      "why": "logistics optimisation, often AI-based"
+    },
+    {
+      "term": "commodity price forecasting",
+      "tier": "context",
+      "variants": [
+        "predictive procurement",
+        "commodity forecasting",
+        "commodity risk model",
+        "procurement analytics"
+      ],
+      "case_sensitive_variants": [],
+      "why": "procurement forecasting, increasingly ML"
+    },
+    {
+      "term": "AI-driven product development",
+      "tier": "ai",
+      "variants": [
+        "AI-assisted product development",
+        "AI-powered product development",
+        "AI-enabled innovation",
+        "AI-accelerated innovation",
+        "AI-driven R&D",
+        "AI-enabled R&D",
+        "AI-assisted formulation"
+      ],
+      "case_sensitive_variants": [],
+      "why": "AI used in the food innovation pipeline"
+    },
+    {
+      "term": "recipe optimisation",
+      "tier": "context",
+      "variants": [
+        "recipe optimization",
+        "formulation optimisation",
+        "formulation optimization",
+        "recipe reformulation",
+        "digital formulation"
+      ],
+      "case_sensitive_variants": [],
+      "why": "formulation work where AI is applied"
+    },
+    {
+      "term": "AI-generated recipe",
+      "tier": "ai",
+      "variants": [
+        "AI recipe",
+        "AI-developed recipe",
+        "AI-formulated",
+        "AI-created recipe",
+        "AI-designed product"
+      ],
+      "case_sensitive_variants": [],
+      "why": "recipes or formulations proposed by AI"
+    },
+    {
+      "term": "AI flavour development",
+      "tier": "ai",
+      "variants": [
+        "AI flavor development",
+        "AI-driven flavor development",
+        "AI-driven flavour development",
+        "AI-created flavour",
+        "AI-created flavor",
+        "flavour prediction",
+        "flavor prediction",
+        "taste prediction"
+      ],
+      "case_sensitive_variants": [],
+      "why": "AI in flavour and taste design"
+    },
+    {
+      "term": "electronic nose",
+      "tier": "context",
+      "variants": [
+        "e-nose",
+        "electronic tongue",
+        "digital sensory",
+        "sensory analytics"
+      ],
+      "case_sensitive_variants": [],
+      "why": "sensory instruments analysed with pattern recognition"
+    },
+    {
+      "term": "AI-discovered ingredient",
+      "tier": "ai",
+      "variants": [
+        "AI-discovered bioactive",
+        "AI-powered ingredient discovery",
+        "AI-driven ingredient discovery",
+        "AI-discovered peptide",
+        "AI protein discovery",
+        "AI-designed protein"
+      ],
+      "case_sensitive_variants": [],
+      "why": "bioactives and ingredients found via AI"
+    },
+    {
+      "term": "ingredient discovery",
+      "tier": "context",
+      "variants": [
+        "bioactive discovery",
+        "peptide discovery",
+        "protein discovery"
+      ],
+      "case_sensitive_variants": [],
+      "why": "R&D area where AI platforms are used"
+    },
+    {
+      "term": "precision fermentation",
+      "tier": "context",
+      "variants": [
+        "strain engineering",
+        "synthetic biology",
+        "computational biology",
+        "biomanufacturing"
+      ],
+      "case_sensitive_variants": [],
+      "why": "bio-manufacturing often paired with AI design"
+    },
+    {
+      "term": "personalised nutrition",
+      "tier": "context",
+      "variants": [
+        "personalized nutrition",
+        "precision nutrition",
+        "nutrition personalisation",
+        "nutrition personalization",
+        "personalised diet",
+        "personalized diet"
+      ],
+      "case_sensitive_variants": [],
+      "why": "tailored diets driven by data and AI"
+    },
+    {
+      "term": "AI nutrition coach",
+      "tier": "ai",
+      "variants": [
+        "AI-powered recipe assistant",
+        "AI meal planner",
+        "AI-powered meal planning",
+        "AI cooking assistant",
+        "virtual nutrition coach",
+        "AI-powered nutrition"
+      ],
+      "case_sensitive_variants": [],
+      "why": "consumer-facing AI assistants from food brands"
+    },
+    {
+      "term": "smart packaging",
+      "tier": "context",
+      "variants": [
+        "connected packaging",
+        "intelligent packaging",
+        "QR-enabled packaging"
+      ],
+      "case_sensitive_variants": [],
+      "why": "connected packs generating consumer data"
+    },
+    {
+      "term": "precision marketing",
+      "tier": "context",
+      "variants": [
+        "personalised marketing",
+        "personalized marketing",
+        "personalisation at scale",
+        "personalization at scale",
+        "hyper-personalisation",
+        "hyper-personalization"
+      ],
+      "case_sensitive_variants": [],
+      "why": "data-driven targeting and personalisation"
+    },
+    {
+      "term": "first-party data",
+      "tier": "context",
+      "variants": [
+        "consumer data platform",
+        "customer data platform",
+        "zero-party data",
+        "consumer data ecosystem"
+      ],
+      "case_sensitive_variants": [],
+      "why": "consumer data assets feeding AI marketing"
+    },
+    {
+      "term": "AI-generated creative",
+      "tier": "ai",
+      "variants": [
+        "AI-generated advertising",
+        "AI-generated campaign",
+        "AI-generated ad",
+        "AI-powered creative",
+        "AI content creation",
+        "AI-generated marketing content"
+      ],
+      "case_sensitive_variants": [],
+      "why": "generative AI in advertising production"
+    },
+    {
+      "term": "marketing mix modelling",
+      "tier": "context",
+      "variants": [
+        "marketing mix modeling",
+        "media mix modelling",
+        "media mix modeling",
+        "media optimisation",
+        "media optimization",
+        "marketing spend optimisation",
+        "marketing spend optimization"
+      ],
+      "case_sensitive_variants": [],
+      "why": "marketing spend models, increasingly ML-based"
+    },
+    {
+      "term": "social listening",
+      "tier": "context",
+      "variants": [
+        "trend prediction",
+        "trend forecasting",
+        "consumer trend detection",
+        "trend spotting"
+      ],
+      "case_sensitive_variants": [],
+      "why": "consumer trend mining, often AI-based"
+    },
+    {
+      "term": "AI-powered consumer insights",
+      "tier": "ai",
+      "variants": [
+        "AI-driven consumer insights",
+        "AI-enabled insights",
+        "predictive consumer insights",
+        "AI-based consumer research",
+        "synthetic consumer panel",
+        "synthetic respondents"
+      ],
+      "case_sensitive_variants": [],
+      "why": "AI analysis of consumer behaviour"
+    },
+    {
+      "term": "revenue growth management",
+      "tier": "context",
+      "variants": [
+        "RGM",
+        "net revenue management",
+        "strategic revenue management"
+      ],
+      "case_sensitive_variants": [
+        "RGM"
+      ],
+      "why": "pricing, mix and promo discipline using ML"
+    },
+    {
+      "term": "trade promotion optimisation",
+      "tier": "context",
+      "variants": [
+        "promotion optimisation",
+        "promotion optimization",
+        "trade promotion management",
+        "promotional effectiveness"
+      ],
+      "case_sensitive_variants": [],
+      "why": "promo planning where AI is applied"
+    },
+    {
+      "term": "dynamic pricing",
+      "tier": "context",
+      "variants": [
+        "price optimisation",
+        "price optimization",
+        "pricing analytics",
+        "price elasticity model"
+      ],
+      "case_sensitive_variants": [],
+      "why": "price setting where learning systems are used"
+    },
+    {
+      "term": "AI-powered pricing",
+      "tier": "ai",
+      "variants": [
+        "AI-driven pricing",
+        "algorithmic pricing",
+        "AI pricing tool",
+        "machine learning pricing"
+      ],
+      "case_sensitive_variants": [],
+      "why": "explicit AI pricing tools"
+    },
+    {
+      "term": "predictive ordering",
+      "tier": "ai",
+      "variants": [
+        "AI-suggested order",
+        "suggested order algorithm",
+        "order recommendation engine",
+        "predictive replenishment"
+      ],
+      "case_sensitive_variants": [],
+      "why": "ML order suggestions for retail customers"
+    },
+    {
+      "term": "automated replenishment",
+      "tier": "context",
+      "variants": [
+        "auto-replenishment",
+        "vendor-managed inventory",
+        "inventory optimisation",
+        "inventory optimization"
+      ],
+      "case_sensitive_variants": [],
+      "why": "store and customer replenishment systems"
+    },
+    {
+      "term": "shelf image recognition",
+      "tier": "ai",
+      "variants": [
+        "in-store image recognition",
+        "shelf monitoring",
+        "planogram compliance",
+        "shelf recognition",
+        "image-based shelf audit"
+      ],
+      "case_sensitive_variants": [],
+      "why": "vision AI auditing in-store execution"
+    },
+    {
+      "term": "digital shelf",
+      "tier": "context",
+      "variants": [
+        "retail media",
+        "e-commerce content optimisation",
+        "e-commerce content optimization",
+        "search ranking optimisation"
+      ],
+      "case_sensitive_variants": [],
+      "why": "e-commerce content where AI optimises listings"
+    },
+    {
+      "term": "agentic commerce",
+      "tier": "ai",
+      "variants": [
+        "AI shopping agent",
+        "AI-mediated shopping",
+        "agentic shopping",
+        "generative engine optimisation",
+        "generative engine optimization",
+        "answer engine optimisation",
+        "answer engine optimization"
+      ],
+      "case_sensitive_variants": [],
+      "why": "AI agents shopping on consumers' behalf"
+    },
+    {
+      "term": "precision agriculture",
+      "tier": "context",
+      "variants": [
+        "precision farming",
+        "smart farming",
+        "digital agriculture",
+        "digital farming",
+        "digital agronomy"
+      ],
+      "case_sensitive_variants": [],
+      "why": "data-driven farming in the sourcing base"
+    },
+    {
+      "term": "crop yield prediction",
+      "tier": "ai",
+      "variants": [
+        "yield prediction model",
+        "predictive crop model",
+        "yield forecasting",
+        "harvest forecasting",
+        "crop forecasting"
+      ],
+      "case_sensitive_variants": [],
+      "why": "models forecasting harvests and supply"
+    },
+    {
+      "term": "satellite imagery",
+      "tier": "context",
+      "variants": [
+        "remote sensing",
+        "satellite monitoring",
+        "drone imagery",
+        "geospatial analysis",
+        "geospatial data"
+      ],
+      "case_sensitive_variants": [],
+      "why": "remote sensing analysed with ML"
+    },
+    {
+      "term": "deforestation monitoring",
+      "tier": "context",
+      "variants": [
+        "deforestation alert",
+        "farm polygon mapping",
+        "farm mapping",
+        "geolocation data",
+        "deforestation-free verification"
+      ],
+      "case_sensitive_variants": [],
+      "why": "satellite and AI supply-chain surveillance"
+    },
+    {
+      "term": "digital traceability",
+      "tier": "context",
+      "variants": [
+        "farm-to-fork traceability",
+        "blockchain traceability",
+        "end-to-end traceability",
+        "traceability platform"
+      ],
+      "case_sensitive_variants": [],
+      "why": "supply chain data backbone for monitoring tools"
+    }
+  ],
+  "class_terms": {
+    "1010": [
+      {
+        "term": "automated deboning",
+        "tier": "context",
+        "variants": [
+          "robotic deboning",
+          "automated butchery",
+          "robotic butchering",
+          "robotic carcass processing",
+          "automated carcass cutting"
+        ],
+        "why": "robotics replacing manual butchery"
+      },
+      {
+        "term": "carcass grading",
+        "tier": "context",
+        "variants": [
+          "vision grading",
+          "meat grading camera",
+          "yield grading camera"
+        ],
+        "why": "vision-based grading of meat"
+      },
+      {
+        "term": "precision livestock farming",
+        "tier": "context",
+        "variants": [
+          "smart livestock",
+          "livestock monitoring",
+          "smart poultry house",
+          "smart barn"
+        ],
+        "why": "sensor and AI monitoring of animals"
+      },
+      {
+        "term": "animal welfare monitoring",
+        "tier": "context",
+        "variants": [
+          "camera-based welfare monitoring",
+          "video auditing"
+        ],
+        "why": "camera and AI welfare audits"
+      }
+    ],
+    "1020": [
+      {
+        "term": "automated feeding",
+        "tier": "context",
+        "variants": [
+          "remote feeding",
+          "feeding centre",
+          "feeding center",
+          "camera-based feeding",
+          "smart feeding"
+        ],
+        "why": "camera-controlled fish feeding"
+      },
+      {
+        "term": "automated lice counting",
+        "tier": "ai",
+        "variants": [
+          "AI lice counting",
+          "lice detection camera",
+          "sea lice detection",
+          "laser delousing"
+        ],
+        "why": "vision AI counting sea lice"
+      },
+      {
+        "term": "biomass estimation",
+        "tier": "ai",
+        "variants": [
+          "biomass camera",
+          "biomass measurement",
+          "fish weight estimation"
+        ],
+        "why": "camera-based fish weight estimation"
+      },
+      {
+        "term": "fish welfare monitoring",
+        "tier": "context",
+        "variants": [
+          "fish health monitoring",
+          "underwater camera monitoring",
+          "fish behaviour monitoring",
+          "fish behavior monitoring"
+        ],
+        "why": "sensor-based welfare indicators"
+      },
+      {
+        "term": "automated filleting",
+        "tier": "context",
+        "variants": [
+          "robotic filleting",
+          "pin bone detection",
+          "automated portioning",
+          "water-jet cutting"
+        ],
+        "why": "robotic fish processing"
+      }
+    ],
+    "1040": [
+      {
+        "term": "FFB grading",
+        "tier": "context",
+        "variants": [
+          "fresh fruit bunch grading",
+          "ripeness detection",
+          "automated fruit grading"
+        ],
+        "why": "AI ripeness grading of palm fruit"
+      },
+      {
+        "term": "plantation mechanisation",
+        "tier": "context",
+        "variants": [
+          "plantation mechanization",
+          "mechanised harvesting",
+          "mechanized harvesting",
+          "autonomous harvesting",
+          "harvesting robot",
+          "plantation digitalisation",
+          "plantation digitalization"
+        ],
+        "why": "automation of labour-intensive estates"
+      },
+      {
+        "term": "traceability to plantation",
+        "tier": "context",
+        "variants": [
+          "traceability to mill",
+          "mill traceability",
+          "plantation mapping"
+        ],
+        "why": "mapped supply base monitored by satellite"
+      }
+    ],
+    "1050": [
+      {
+        "term": "milk supply forecasting",
+        "tier": "context",
+        "variants": [
+          "milk intake forecasting",
+          "milk volume forecasting",
+          "milk collection optimisation",
+          "milk collection optimization"
+        ],
+        "why": "ML forecasting of milk intake"
+      },
+      {
+        "term": "herd management",
+        "tier": "context",
+        "variants": [
+          "smart dairy farming",
+          "cow monitoring",
+          "robotic milking",
+          "automated milking",
+          "herd health monitoring"
+        ],
+        "why": "sensor-based dairy farm tools"
+      }
+    ],
+    "1075": [
+      {
+        "term": "recipe recommendation",
+        "tier": "ai",
+        "variants": [
+          "menu recommendation",
+          "personalised menu",
+          "personalized menu",
+          "menu personalisation",
+          "menu personalization",
+          "meal recommendation"
+        ],
+        "why": "personalised menus in meal kits"
+      }
+    ],
+    "1079": [
+      {
+        "term": "Ajinomoto Build-up Film",
+        "tier": "context",
+        "variants": [
+          "build-up film",
+          "semiconductor packaging material",
+          "interlayer insulating material",
+          "functional materials for semiconductors"
+        ],
+        "why": "chip-substrate insulation; AI-server demand"
+      },
+      {
+        "term": "AI server",
+        "tier": "ai",
+        "variants": [
+          "AI semiconductor",
+          "AI-related semiconductor demand",
+          "AI data center",
+          "AI data centre",
+          "generative AI-related demand"
+        ],
+        "why": "AI hardware demand for electronic materials"
+      }
+    ],
+    "1080": [
+      {
+        "term": "feed formulation optimisation",
+        "tier": "context",
+        "variants": [
+          "feed formulation optimization",
+          "least-cost formulation",
+          "precision feeding",
+          "precision animal nutrition",
+          "feed efficiency model"
+        ],
+        "why": "optimisation of feed recipes"
+      },
+      {
+        "term": "personalised pet nutrition",
+        "tier": "context",
+        "variants": [
+          "personalized pet nutrition",
+          "pet health monitoring",
+          "pet tech",
+          "smart feeder",
+          "pet health data"
+        ],
+        "why": "tailored pet food and health services"
+      },
+      {
+        "term": "AI pet health",
+        "tier": "ai",
+        "variants": [
+          "AI-powered pet health",
+          "AI veterinary diagnostic",
+          "AI pet diagnostics",
+          "pet health algorithm"
+        ],
+        "why": "AI diagnostics from pet-care groups"
+      }
+    ]
+  }
+}

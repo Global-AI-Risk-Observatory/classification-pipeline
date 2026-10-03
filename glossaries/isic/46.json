@@ -1,0 +1,809 @@
+{
+ "id": "46",
+ "name": "Wholesale trade",
+ "section": "G",
+ "summary": "Wholesalers and distributors write about AI in pricing, demand planning, inventory and sales-force tools, and in digital ordering platforms for business customers. Technology and electronics distributors are also direct beneficiaries of the AI build-out: they sell AI servers, GPUs, components and AI PCs, so AI shows up as a driver of revenue mix, margins, working capital and export-control exposure. Commodity and industrial wholesalers mention AI mainly through data centre demand for power equipment, metals and fuel, and through trading and logistics optimisation.",
+ "terms": [
+  {
+   "term": "AI-driven pricing",
+   "tier": "ai",
+   "variants": [
+    "AI-powered pricing",
+    "price optimisation",
+    "price optimization",
+    "dynamic pricing",
+    "algorithmic pricing",
+    "AI pricing tool",
+    "pricing analytics engine"
+   ],
+   "why": "ML price setting for B2B customers"
+  },
+  {
+   "term": "demand forecasting",
+   "tier": "ai",
+   "variants": [
+    "AI-driven forecasting",
+    "AI-based demand planning",
+    "demand sensing",
+    "predictive demand planning",
+    "AI forecasting",
+    "demand planning using machine learning"
+   ],
+   "why": "ML prediction of customer orders"
+  },
+  {
+   "term": "inventory optimisation",
+   "tier": "ai",
+   "variants": [
+    "inventory optimization",
+    "AI-driven inventory management",
+    "AI-powered inventory",
+    "predictive inventory",
+    "AI stock allocation",
+    "multi-echelon inventory optimisation"
+   ],
+   "why": "ML stock positioning across branches"
+  },
+  {
+   "term": "automated replenishment",
+   "tier": "ai",
+   "variants": [
+    "AI-driven replenishment",
+    "predictive replenishment",
+    "auto-replenishment",
+    "vendor-managed inventory with AI",
+    "predictive ordering",
+    "automated purchasing"
+   ],
+   "why": "ML ordering for customers and branches"
+  },
+  {
+   "term": "inventory turns",
+   "tier": "context",
+   "variants": [
+    "inventory turnover",
+    "days inventory outstanding",
+    "fill rate",
+    "service level",
+    "stock availability",
+    "slow-moving inventory"
+   ],
+   "why": "inventory investment AI planning aims to cut"
+  },
+  {
+   "term": "AI-powered sales tools",
+   "tier": "ai",
+   "variants": [
+    "AI sales assistant",
+    "next best action",
+    "AI-guided selling",
+    "AI-driven lead scoring",
+    "sales recommendations",
+    "AI quoting",
+    "automated quoting",
+    "AI-generated quotes"
+   ],
+   "why": "ML guidance for sales representatives"
+  },
+  {
+   "term": "AI-enabled ordering",
+   "tier": "ai",
+   "variants": [
+    "AI-powered ordering",
+    "AI order entry",
+    "automated order processing",
+    "order capture using AI",
+    "AI-powered e-commerce",
+    "conversational ordering",
+    "email order automation"
+   ],
+   "why": "AI in B2B ordering channels"
+  },
+  {
+   "term": "B2B e-commerce",
+   "tier": "context",
+   "variants": [
+    "digital ordering platform",
+    "e-commerce penetration",
+    "digital sales",
+    "online ordering",
+    "B2B marketplace",
+    "electronic data interchange"
+   ],
+   "why": "digital ordering channel carrying AI features"
+  },
+  {
+   "term": "product recommendation",
+   "tier": "ai",
+   "variants": [
+    "recommendation engine",
+    "personalised recommendations",
+    "personalized recommendations",
+    "AI-powered search",
+    "AI product search",
+    "cross-sell model"
+   ],
+   "why": "ML cross-sell suggestions for trade customers"
+  },
+  {
+   "term": "customer churn prediction",
+   "tier": "ai",
+   "variants": [
+    "churn model",
+    "customer attrition model",
+    "propensity model",
+    "customer segmentation model",
+    "predictive customer analytics"
+   ],
+   "why": "ML flagging at-risk accounts"
+  },
+  {
+   "term": "product data enrichment",
+   "tier": "ai",
+   "variants": [
+    "AI-generated product descriptions",
+    "AI product content",
+    "AI catalogue management",
+    "AI catalog management",
+    "automated product classification",
+    "product information management with AI"
+   ],
+   "why": "AI cleaning and generating catalogue data"
+  },
+  {
+   "term": "warehouse automation",
+   "tier": "context",
+   "variants": [
+    "automated distribution centre",
+    "automated distribution center",
+    "robotic picking",
+    "goods-to-person",
+    "autonomous mobile robot",
+    "automated storage and retrieval",
+    "AutoStore"
+   ],
+   "why": "automated storage and picking in distribution"
+  },
+  {
+   "term": "route optimisation",
+   "tier": "ai",
+   "variants": [
+    "route optimization",
+    "AI-based routing",
+    "delivery optimisation",
+    "delivery optimization",
+    "dynamic routing",
+    "AI fleet planning"
+   ],
+   "why": "ML delivery planning for fleets"
+  },
+  {
+   "term": "supply chain AI",
+   "tier": "ai",
+   "variants": [
+    "AI-powered supply chain",
+    "AI-driven supply chain",
+    "AI in the supply chain",
+    "supply chain control tower",
+    "predictive supply chain",
+    "supply chain visibility platform"
+   ],
+   "why": "ML across sourcing and distribution"
+  },
+  {
+   "term": "AI document processing",
+   "tier": "ai",
+   "variants": [
+    "intelligent document processing",
+    "invoice automation",
+    "accounts payable automation",
+    "AI invoice matching",
+    "automated customs documentation"
+   ],
+   "why": "automated invoices and customs documents"
+  },
+  {
+   "term": "AI-driven efficiency",
+   "tier": "ai",
+   "variants": [
+    "AI-driven productivity",
+    "AI-enabled efficiency",
+    "AI productivity gains",
+    "AI-driven cost savings",
+    "AI-enabled productivity",
+    "AI use cases"
+   ],
+   "why": "cost savings attributed to AI"
+  },
+  {
+   "term": "AI customer service",
+   "tier": "ai",
+   "variants": [
+    "AI-powered customer service",
+    "virtual assistant for customers",
+    "AI customer support",
+    "AI service agent",
+    "AI technical support"
+   ],
+   "why": "automated support for trade customers"
+  },
+  {
+   "term": "disintermediation",
+   "tier": "context",
+   "variants": [
+    "direct-to-customer",
+    "marketplace competition",
+    "channel disruption",
+    "Amazon Business",
+    "digital competitors"
+   ],
+   "why": "risk of manufacturers or marketplaces bypassing distributors"
+  },
+  {
+   "term": "AI-enabled procurement",
+   "tier": "ai",
+   "variants": [
+    "AI sourcing",
+    "AI-driven procurement",
+    "supplier risk prediction",
+    "AI spend analysis",
+    "predictive procurement"
+   ],
+   "why": "ML in sourcing and supplier selection"
+  },
+  {
+   "term": "private label",
+   "tier": "context",
+   "variants": [
+    "own brand",
+    "assortment optimisation",
+    "assortment optimization",
+    "category management",
+    "SKU rationalisation",
+    "SKU rationalization"
+   ],
+   "why": "range decisions supported by ML assortment tools"
+  },
+  {
+   "term": "supplier rebates",
+   "tier": "context",
+   "variants": [
+    "vendor rebates",
+    "contract pricing",
+    "price files",
+    "margin management",
+    "gross margin optimisation",
+    "gross margin optimization"
+   ],
+   "why": "complex supplier pricing handled with ML tools"
+  },
+  {
+   "term": "AI-powered credit decisions",
+   "tier": "ai",
+   "variants": [
+    "AI credit scoring",
+    "automated credit decisioning",
+    "AI collections",
+    "predictive collections",
+    "credit risk model"
+   ],
+   "why": "ML credit limits for trade customers"
+  },
+  {
+   "term": "data centre demand",
+   "tier": "context",
+   "variants": [
+    "data center demand",
+    "data centre end market",
+    "data center end market",
+    "data centre customers",
+    "data center customers",
+    "data centre projects",
+    "data center projects",
+    "data centre construction",
+    "data center construction"
+   ],
+   "why": "AI build-out lifting sales of distributed products"
+  }
+ ],
+ "class_terms": {
+  "4610": [
+   {
+    "term": "AI-powered matching",
+    "tier": "ai",
+    "variants": [
+     "AI sourcing platform",
+     "AI supplier matching",
+     "AI-driven trade platform",
+     "smart sourcing",
+     "AI trade assistant"
+    ],
+    "why": "ML matching buyers and suppliers"
+   },
+   {
+    "term": "B2B platform",
+    "tier": "context",
+    "variants": [
+     "trade platform",
+     "sourcing platform",
+     "commission-based",
+     "trading platform",
+     "cross-border e-commerce"
+    ],
+    "why": "agent and broker platforms adding AI"
+   }
+  ],
+  "4620": [
+   {
+    "term": "AI commodity forecasting",
+    "tier": "ai",
+    "variants": [
+     "crop yield prediction",
+     "satellite crop monitoring",
+     "AI-based grain grading",
+     "AI trading models",
+     "predictive commodity analytics"
+    ],
+    "why": "ML crop and price prediction for traders"
+   },
+   {
+    "term": "agricultural commodities",
+    "tier": "context",
+    "variants": [
+     "grain trading",
+     "origination",
+     "commodity merchandising",
+     "crop intelligence",
+     "precision agriculture data"
+    ],
+    "why": "trading and origination using ML signals"
+   }
+  ],
+  "4630": [
+   {
+    "term": "AI food distribution tools",
+    "tier": "ai",
+    "variants": [
+     "AI menu recommendations",
+     "AI-powered ordering for restaurants",
+     "AI sales consultant tools",
+     "AI-driven food waste reduction",
+     "predictive ordering for foodservice"
+    ],
+    "why": "AI ordering and menu tools for foodservice customers"
+   },
+   {
+    "term": "foodservice distribution",
+    "tier": "context",
+    "variants": [
+     "broadline",
+     "foodservice distributor",
+     "case volume",
+     "sales consultants",
+     "cash and carry"
+    ],
+    "why": "broadline distributors digitising sales"
+   }
+  ],
+  "4649": [
+   {
+    "term": "AI in pharmaceutical distribution",
+    "tier": "ai",
+    "variants": [
+     "AI-driven specialty pharmacy",
+     "AI prior authorisation",
+     "AI prior authorization",
+     "AI in drug distribution",
+     "predictive drug shortage",
+     "AI patient support"
+    ],
+    "why": "ML for drug supply and patient services"
+   },
+   {
+    "term": "pharmaceutical wholesale",
+    "tier": "context",
+    "variants": [
+     "pharmaceutical distribution",
+     "drug distribution",
+     "specialty distribution",
+     "serialisation",
+     "serialization",
+     "track and trace"
+    ],
+    "why": "drug distributors with automated depots"
+   }
+  ],
+  "4651": [
+   {
+    "term": "AI server",
+    "tier": "ai",
+    "variants": [
+     "GPU server",
+     "AI systems",
+     "accelerated server",
+     "AI rack",
+     "AI infrastructure solutions",
+     "AI hardware"
+    ],
+    "why": "GPU systems resold by distributors"
+   },
+   {
+    "term": "AI PC",
+    "tier": "ai",
+    "variants": [
+     "AI-capable PC",
+     "Copilot+ PC",
+     "AI-enabled PC",
+     "AI laptop",
+     "on-device AI",
+     "neural processing unit",
+     "NPU"
+    ],
+    "case_sensitive_variants": [
+     "NPU"
+    ],
+    "why": "PCs with on-device AI driving refresh"
+   },
+   {
+    "term": "AI infrastructure demand",
+    "tier": "ai",
+    "variants": [
+     "AI-related demand",
+     "AI-driven demand",
+     "demand for AI",
+     "AI-related sales",
+     "AI revenue",
+     "AI projects",
+     "AI opportunity",
+     "AI build-out"
+    ],
+    "why": "AI build-out as distributor growth driver"
+   },
+   {
+    "term": "GPU",
+    "tier": "context",
+    "variants": [
+     "graphics processing unit",
+     "AI accelerator",
+     "NVIDIA",
+     "AMD",
+     "AI chip",
+     "DGX"
+    ],
+    "case_sensitive_variants": [
+     "GPU",
+     "AMD"
+    ],
+    "why": "accelerators in distributed hardware"
+   },
+   {
+    "term": "hyperscaler",
+    "tier": "context",
+    "variants": [
+     "hyperscale customer",
+     "cloud service provider",
+     "neocloud",
+     "tier 2 cloud",
+     "sovereign AI customer"
+    ],
+    "why": "large cloud buyers of AI hardware"
+   },
+   {
+    "term": "AI solutions practice",
+    "tier": "ai",
+    "variants": [
+     "AI enablement",
+     "AI partner programme",
+     "AI partner program",
+     "AI centre of excellence",
+     "AI center of excellence",
+     "AI solutions portfolio",
+     "AI lab",
+     "AI ecosystem"
+    ],
+    "why": "distributor programmes enabling AI resale"
+   },
+   {
+    "term": "value-added reseller",
+    "tier": "context",
+    "variants": [
+     "channel partner",
+     "managed service provider",
+     "systems integrator",
+     "solution provider",
+     "reseller"
+    ],
+    "why": "channel partners selling AI solutions"
+   },
+   {
+    "term": "cloud marketplace",
+    "tier": "context",
+    "variants": [
+     "cloud commerce platform",
+     "XaaS",
+     "software subscriptions",
+     "recurring revenue platform",
+     "Xvantage",
+     "StreamOne",
+     "ArrowSphere"
+    ],
+    "why": "distributor platforms selling AI subscriptions"
+   },
+   {
+    "term": "AI software licences",
+    "tier": "ai",
+    "variants": [
+     "AI software licenses",
+     "Copilot licences",
+     "Copilot licenses",
+     "Microsoft 365 Copilot",
+     "AI subscriptions",
+     "AI software resale",
+     "AI attach"
+    ],
+    "why": "resale of AI subscriptions and copilots"
+   },
+   {
+    "term": "PC refresh",
+    "tier": "context",
+    "variants": [
+     "Windows 11 refresh",
+     "refresh cycle",
+     "client devices",
+     "endpoint solutions",
+     "device refresh"
+    ],
+    "why": "device cycle linked to AI PCs"
+   },
+   {
+    "term": "advanced solutions",
+    "tier": "context",
+    "variants": [
+     "data centre solutions",
+     "data center solutions",
+     "enterprise computing",
+     "servers and storage",
+     "networking and security",
+     "high-growth technologies"
+    ],
+    "why": "data centre product segment carrying AI gear"
+   },
+   {
+    "term": "lower-margin",
+    "tier": "context",
+    "variants": [
+     "margin dilution",
+     "netted down revenue",
+     "gross-to-net",
+     "low-margin hyperscale"
+    ],
+    "why": "AI server deals dilute distributor margins"
+   }
+  ],
+  "4652": [
+   {
+    "term": "AI-related components",
+    "tier": "ai",
+    "variants": [
+     "components for AI",
+     "AI server components",
+     "AI-driven component demand",
+     "AI applications",
+     "AI semiconductors",
+     "edge AI modules",
+     "AI at the edge"
+    ],
+    "why": "chips and parts for AI servers"
+   },
+   {
+    "term": "semiconductor distribution",
+    "tier": "context",
+    "variants": [
+     "electronic components distribution",
+     "component shortage",
+     "product allocation",
+     "component lead times",
+     "book-to-bill",
+     "inventory correction",
+     "design wins"
+    ],
+    "why": "component channel exposed to AI cycle"
+   },
+   {
+    "term": "high-bandwidth memory",
+    "tier": "context",
+    "variants": [
+     "HBM",
+     "DRAM pricing",
+     "memory pricing",
+     "memory shortage",
+     "NAND",
+     "memory supercycle"
+    ],
+    "case_sensitive_variants": [
+     "HBM"
+    ],
+    "why": "memory for AI accelerators"
+   },
+   {
+    "term": "export controls",
+    "tier": "context",
+    "variants": [
+     "export restrictions",
+     "export licence",
+     "export license",
+     "Entity List",
+     "Bureau of Industry and Security",
+     "diversion risk",
+     "re-export",
+     "transshipment"
+    ],
+    "why": "restrictions on shipping AI chips"
+   },
+   {
+    "term": "power management components",
+    "tier": "context",
+    "variants": [
+     "power semiconductors",
+     "interconnect",
+     "passive components",
+     "optical transceivers",
+     "connectors for data centres",
+     "connectors for data centers"
+    ],
+    "why": "parts demand from AI data centre power"
+   }
+  ],
+  "4659": [
+   {
+    "term": "electrical distribution",
+    "tier": "context",
+    "variants": [
+     "switchgear",
+     "power distribution equipment",
+     "uninterruptible power supply",
+     "busway",
+     "transformers",
+     "electrical products",
+     "datacom"
+    ],
+    "why": "electrical gear demand from data centre build-out"
+   },
+   {
+    "term": "data centre solutions for AI",
+    "tier": "ai",
+    "variants": [
+     "data center solutions for AI",
+     "AI data centre",
+     "AI data center",
+     "liquid cooling",
+     "thermal management",
+     "data centre infrastructure",
+     "data center infrastructure"
+    ],
+    "why": "distributor offerings for AI facility builds"
+   },
+   {
+    "term": "industrial distribution",
+    "tier": "context",
+    "variants": [
+     "MRO",
+     "maintenance, repair and operations",
+     "vending solutions",
+     "onsite solutions",
+     "industrial supplies"
+    ],
+    "case_sensitive_variants": [
+     "MRO"
+    ],
+    "why": "MRO distributors applying ML to pricing and inventory"
+   },
+   {
+    "term": "predictive maintenance",
+    "tier": "ai",
+    "variants": [
+     "condition monitoring",
+     "machine health monitoring",
+     "remote monitoring services",
+     "AI-based equipment diagnostics"
+    ],
+    "why": "ML services sold with distributed machinery"
+   }
+  ],
+  "4661": [
+   {
+    "term": "AI vehicle remarketing",
+    "tier": "ai",
+    "variants": [
+     "AI vehicle valuation",
+     "AI condition report",
+     "AI damage detection",
+     "automated vehicle inspection",
+     "AI-powered auction",
+     "vehicle imaging AI"
+    ],
+    "why": "ML valuation in wholesale vehicle auctions"
+   },
+   {
+    "term": "vehicle auction",
+    "tier": "context",
+    "variants": [
+     "wholesale auction",
+     "remarketing",
+     "digital auction",
+     "used vehicle wholesale"
+    ],
+    "why": "wholesale remarketing digitised with imaging and ML"
+   }
+  ],
+  "4671": [
+   {
+    "term": "fuel distribution",
+    "tier": "context",
+    "variants": [
+     "backup fuel for data centres",
+     "backup fuel for data centers",
+     "power generation demand",
+     "natural gas demand from data centres",
+     "natural gas demand from data centers",
+     "LNG demand"
+    ],
+    "why": "fuel and power demand from data centres"
+   },
+   {
+    "term": "AI trading optimisation",
+    "tier": "ai",
+    "variants": [
+     "AI trading optimization",
+     "algorithmic trading",
+     "AI-based price forecasting",
+     "AI cargo optimisation",
+     "AI cargo optimization",
+     "predictive trading analytics"
+    ],
+    "why": "ML in energy trading and logistics"
+   }
+  ],
+  "4672": [
+   {
+    "term": "copper demand",
+    "tier": "context",
+    "variants": [
+     "demand from data centres",
+     "demand from data centers",
+     "critical minerals",
+     "electrification demand",
+     "aluminium demand",
+     "aluminum demand"
+    ],
+    "why": "metals demand tied to AI data centres"
+   }
+  ],
+  "4679": [
+   {
+    "term": "specialty chemicals for semiconductors",
+    "tier": "context",
+    "variants": [
+     "electronic chemicals",
+     "semiconductor materials",
+     "immersion cooling fluids",
+     "data centre coolants",
+     "data center coolants"
+    ],
+    "why": "chemical distribution into chip and data centre supply chains"
+   },
+   {
+    "term": "AI scrap sorting",
+    "tier": "ai",
+    "variants": [
+     "AI-based sorting",
+     "sensor-based sorting",
+     "AI metal recognition",
+     "automated scrap grading",
+     "robotic sorting"
+    ],
+    "why": "vision AI in scrap and recycling trade"
+   }
+  ]
+ }
+}

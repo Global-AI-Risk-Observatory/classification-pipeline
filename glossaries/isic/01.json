@@ -1,0 +1,835 @@
+{
+  "id": "01",
+  "name": "Crop and animal production, hunting and related service activities",
+  "section": "A",
+  "summary": "Agricultural producers describe AI mainly as own-use precision agriculture: satellite and drone imagery, yield prediction, autonomous machinery, camera-guided weeding and spraying, automated grading and livestock monitoring, usually framed as an answer to labour shortages and input costs. Plantation, greenhouse and livestock groups add mechanisation, climate-control and animal-health monitoring programmes, and seed and breeding companies write about predictive breeding and phenotyping. AI is rarely a demand driver here; farm-data ownership, rural connectivity and drone rules are the sector-specific risk angles.",
+  "terms": [
+    {
+      "term": "precision agriculture",
+      "tier": "context",
+      "variants": [
+        "precision farming",
+        "precision ag",
+        "precision agronomy"
+      ],
+      "why": "umbrella term for data-driven field management"
+    },
+    {
+      "term": "smart farming",
+      "tier": "context",
+      "variants": [
+        "digital farming",
+        "digital agriculture",
+        "smart agriculture",
+        "intelligent farming",
+        "intelligent agriculture",
+        "data-driven farming",
+        "data-driven agriculture"
+      ],
+      "why": "umbrella for sensor- and AI-based farming"
+    },
+    {
+      "term": "agtech",
+      "tier": "context",
+      "variants": [
+        "agritech",
+        "agri-tech",
+        "ag-tech",
+        "agricultural technology"
+      ],
+      "why": "sector label for farm technology including AI"
+    },
+    {
+      "term": "variable rate application",
+      "tier": "context",
+      "variants": [
+        "variable rate technology",
+        "variable rate seeding",
+        "variable rate fertilisation",
+        "variable rate fertilization",
+        "variable rate irrigation",
+        "VRT"
+      ],
+      "case_sensitive_variants": [
+        "VRT"
+      ],
+      "why": "prescription-based input dosing from field data"
+    },
+    {
+      "term": "prescription map",
+      "tier": "context",
+      "variants": [
+        "variable rate prescription",
+        "seeding prescription",
+        "fertiliser prescription",
+        "fertilizer prescription"
+      ],
+      "why": "algorithmic field prescriptions for seeding and fertiliser"
+    },
+    {
+      "term": "autonomous tractor",
+      "tier": "ai",
+      "variants": [
+        "driverless tractor",
+        "autonomous farm machinery",
+        "autonomous farm equipment",
+        "autonomous agricultural machinery",
+        "autonomous sprayer",
+        "autonomous combine"
+      ],
+      "why": "driverless field machinery"
+    },
+    {
+      "term": "agricultural robot",
+      "tier": "ai",
+      "variants": [
+        "farm robot",
+        "agri-robot",
+        "agribot",
+        "agricultural robotics",
+        "farm robotics",
+        "field robot"
+      ],
+      "why": "field and barn robotics"
+    },
+    {
+      "term": "robotic harvesting",
+      "tier": "ai",
+      "variants": [
+        "harvesting robot",
+        "robotic harvester",
+        "fruit-picking robot",
+        "picking robot",
+        "robotic picker",
+        "automated harvesting"
+      ],
+      "why": "robots replacing manual picking labour"
+    },
+    {
+      "term": "precision spraying",
+      "tier": "ai",
+      "variants": [
+        "spot spraying",
+        "See & Spray",
+        "selective spraying",
+        "smart sprayer",
+        "targeted spraying",
+        "green-on-green"
+      ],
+      "why": "camera-guided plant-level herbicide application"
+    },
+    {
+      "term": "robotic weeding",
+      "tier": "ai",
+      "variants": [
+        "weeding robot",
+        "laser weeding",
+        "autonomous weeder",
+        "intelligent weeding"
+      ],
+      "why": "vision-guided mechanical or laser weeding"
+    },
+    {
+      "term": "yield prediction",
+      "tier": "ai",
+      "variants": [
+        "predictive yield modelling",
+        "predictive yield modeling",
+        "yield forecasting model",
+        "yield forecast model",
+        "yield estimation model"
+      ],
+      "why": "ML yield forecasts for planning and hedging"
+    },
+    {
+      "term": "harvest forecasting",
+      "tier": "context",
+      "variants": [
+        "yield forecasting",
+        "crop forecasting",
+        "harvest forecast",
+        "crop estimate model"
+      ],
+      "why": "crop volume forecasts, increasingly model-based"
+    },
+    {
+      "term": "yield mapping",
+      "tier": "context",
+      "variants": [
+        "yield map",
+        "yield monitor"
+      ],
+      "why": "harvest data layers feeding agronomic models"
+    },
+    {
+      "term": "crop monitoring",
+      "tier": "context",
+      "variants": [
+        "crop scouting",
+        "crop health monitoring",
+        "field monitoring",
+        "digital scouting",
+        "automated scouting"
+      ],
+      "why": "satellite, drone or sensor surveillance of crops"
+    },
+    {
+      "term": "satellite imagery",
+      "tier": "context",
+      "variants": [
+        "remote sensing",
+        "earth observation",
+        "multispectral imagery",
+        "hyperspectral imaging",
+        "NDVI",
+        "vegetation index"
+      ],
+      "why": "remote sensing input for crop models"
+    },
+    {
+      "term": "agricultural drone",
+      "tier": "context",
+      "variants": [
+        "drone spraying",
+        "crop-spraying drone",
+        "spraying drone",
+        "drone imagery",
+        "UAV imagery",
+        "drone mapping",
+        "drone surveillance"
+      ],
+      "why": "UAVs for imaging, spraying and counting"
+    },
+    {
+      "term": "pest and disease detection",
+      "tier": "context",
+      "variants": [
+        "pest monitoring",
+        "disease monitoring",
+        "pest forecasting",
+        "disease forecasting",
+        "early disease detection"
+      ],
+      "why": "scouting task increasingly done by image recognition"
+    },
+    {
+      "term": "plant disease recognition",
+      "tier": "ai",
+      "variants": [
+        "automated pest detection",
+        "image-based disease detection",
+        "pest prediction model",
+        "disease prediction model",
+        "pest identification app",
+        "weed recognition"
+      ],
+      "why": "image-based identification of pests and diseases"
+    },
+    {
+      "term": "agronomic decision support",
+      "tier": "context",
+      "variants": [
+        "decision support system",
+        "decision support tool",
+        "agronomic recommendation",
+        "digital agronomy",
+        "agronomic advice platform",
+        "agronomic insights"
+      ],
+      "why": "advisory software turning field data into recommendations"
+    },
+    {
+      "term": "AI agronomist",
+      "tier": "ai",
+      "variants": [
+        "digital agronomist",
+        "virtual agronomist",
+        "AI-powered agronomy",
+        "AI-driven agronomy"
+      ],
+      "why": "AI-generated agronomic advice"
+    },
+    {
+      "term": "farm management software",
+      "tier": "context",
+      "variants": [
+        "farm management system",
+        "farm management information system",
+        "farm management platform",
+        "digital farm platform"
+      ],
+      "why": "data platforms underpinning farm analytics"
+    },
+    {
+      "term": "farm data",
+      "tier": "context",
+      "variants": [
+        "agronomic data",
+        "agricultural data",
+        "field data platform",
+        "grower data"
+      ],
+      "why": "ownership and privacy of agronomic data"
+    },
+    {
+      "term": "rural connectivity",
+      "tier": "context",
+      "variants": [
+        "farm connectivity",
+        "rural broadband",
+        "in-field connectivity"
+      ],
+      "why": "network coverage as limit on digital farming"
+    },
+    {
+      "term": "controlled environment agriculture",
+      "tier": "context",
+      "variants": [
+        "vertical farming",
+        "vertical farm",
+        "indoor farming",
+        "CEA",
+        "plant factory"
+      ],
+      "case_sensitive_variants": [
+        "CEA"
+      ],
+      "why": "indoor growing with algorithmic climate control"
+    },
+    {
+      "term": "smart greenhouse",
+      "tier": "context",
+      "variants": [
+        "intelligent greenhouse",
+        "greenhouse climate computer",
+        "climate control system",
+        "greenhouse automation",
+        "high-tech greenhouse"
+      ],
+      "why": "sensor-controlled climate, irrigation and lighting"
+    },
+    {
+      "term": "autonomous greenhouse",
+      "tier": "ai",
+      "variants": [
+        "autonomous growing",
+        "AI climate control",
+        "autonomous cultivation",
+        "AI-driven greenhouse",
+        "autonomous crop management"
+      ],
+      "why": "AI-controlled growing with minimal human intervention"
+    },
+    {
+      "term": "smart irrigation",
+      "tier": "context",
+      "variants": [
+        "precision irrigation",
+        "irrigation scheduling",
+        "intelligent irrigation",
+        "automated irrigation",
+        "irrigation optimisation",
+        "irrigation optimization"
+      ],
+      "why": "sensor- and model-driven water scheduling"
+    },
+    {
+      "term": "soil moisture sensor",
+      "tier": "context",
+      "variants": [
+        "soil sensor",
+        "soil probe",
+        "soil moisture monitoring",
+        "digital soil mapping",
+        "in-field sensor"
+      ],
+      "why": "in-field sensing feeding irrigation and agronomy models"
+    },
+    {
+      "term": "auto-steer",
+      "tier": "context",
+      "variants": [
+        "autosteer",
+        "auto-guidance",
+        "GPS guidance",
+        "automatic steering",
+        "machine guidance"
+      ],
+      "why": "GPS guidance, precursor of autonomous machinery"
+    },
+    {
+      "term": "machine telematics",
+      "tier": "context",
+      "variants": [
+        "connected machinery",
+        "fleet telematics",
+        "telematics data",
+        "connected equipment"
+      ],
+      "why": "connected machinery data used for optimisation"
+    },
+    {
+      "term": "plant phenotyping",
+      "tier": "context",
+      "variants": [
+        "high-throughput phenotyping",
+        "digital phenotyping",
+        "phenomics",
+        "automated phenotyping"
+      ],
+      "why": "imaging-based trait measurement for breeding"
+    },
+    {
+      "term": "predictive breeding",
+      "tier": "ai",
+      "variants": [
+        "AI-assisted breeding",
+        "genomic prediction",
+        "AI-driven trait discovery",
+        "breeding algorithm",
+        "digital breeding"
+      ],
+      "why": "ML-assisted selection in seed and livestock genetics"
+    },
+    {
+      "term": "genomic selection",
+      "tier": "context",
+      "variants": [
+        "genomic breeding value",
+        "marker-assisted selection",
+        "genomic evaluation"
+      ],
+      "why": "data-intensive breeding where ML is applied"
+    },
+    {
+      "term": "crop modelling",
+      "tier": "context",
+      "variants": [
+        "crop modeling",
+        "crop model",
+        "crop growth model",
+        "crop simulation",
+        "agronomic model"
+      ],
+      "why": "simulation models for growth and climate scenarios"
+    },
+    {
+      "term": "hyperlocal weather forecast",
+      "tier": "context",
+      "variants": [
+        "weather modelling",
+        "weather modeling",
+        "weather analytics",
+        "microclimate forecasting",
+        "field-level weather"
+      ],
+      "why": "weather analytics driving field decisions"
+    },
+    {
+      "term": "optical sorting",
+      "tier": "context",
+      "variants": [
+        "optical sorter",
+        "optical grading",
+        "automated grading",
+        "machine vision grading",
+        "vision grading",
+        "electronic grading",
+        "colour sorter",
+        "color sorter"
+      ],
+      "why": "camera-based sorting and grading of produce"
+    },
+    {
+      "term": "AI-powered sorting",
+      "tier": "ai",
+      "variants": [
+        "AI grading",
+        "AI-based grading",
+        "AI sorting",
+        "automated defect detection",
+        "automated quality inspection",
+        "defect detection camera"
+      ],
+      "why": "ML defect and quality recognition on packing lines"
+    },
+    {
+      "term": "packhouse automation",
+      "tier": "context",
+      "variants": [
+        "robotic packing",
+        "automated packhouse",
+        "packing robot",
+        "automated packing line",
+        "robotic palletising",
+        "robotic palletizing"
+      ],
+      "why": "robotic packing and palletising after harvest"
+    },
+    {
+      "term": "automated plant counting",
+      "tier": "ai",
+      "variants": [
+        "tree counting",
+        "fruit counting",
+        "automated stand count",
+        "stand count analysis",
+        "bunch counting"
+      ],
+      "why": "image-based counts of plants, trees and fruit"
+    },
+    {
+      "term": "ripeness detection",
+      "tier": "ai",
+      "variants": [
+        "maturity detection",
+        "ripeness assessment camera",
+        "harvest timing model",
+        "fruit maturity prediction"
+      ],
+      "why": "vision-based maturity and harvest timing"
+    },
+    {
+      "term": "precision livestock farming",
+      "tier": "context",
+      "variants": [
+        "precision livestock",
+        "smart livestock",
+        "digital livestock",
+        "smart barn",
+        "intelligent livestock"
+      ],
+      "why": "sensor and camera monitoring of individual animals"
+    },
+    {
+      "term": "livestock monitoring",
+      "tier": "context",
+      "variants": [
+        "animal monitoring",
+        "herd monitoring",
+        "smart collar",
+        "electronic ear tag",
+        "smart ear tag",
+        "rumination monitoring",
+        "animal wearable"
+      ],
+      "why": "wearables and cameras tracking animal health"
+    },
+    {
+      "term": "automated animal health monitoring",
+      "tier": "ai",
+      "variants": [
+        "AI-based animal health",
+        "lameness detection",
+        "cough detection",
+        "animal behaviour recognition",
+        "animal behavior recognition",
+        "early illness detection",
+        "computer vision welfare monitoring"
+      ],
+      "why": "ML detection of illness, lameness or distress"
+    },
+    {
+      "term": "camera-based weighing",
+      "tier": "ai",
+      "variants": [
+        "automated weight estimation",
+        "3D camera weighing",
+        "vision-based weighing",
+        "automated body condition scoring"
+      ],
+      "why": "computer vision estimation of animal weight"
+    },
+    {
+      "term": "animal facial recognition",
+      "tier": "ai",
+      "variants": [
+        "cattle facial recognition",
+        "pig face recognition",
+        "livestock biometrics",
+        "individual animal identification"
+      ],
+      "why": "biometric identification of individual livestock"
+    },
+    {
+      "term": "precision feeding",
+      "tier": "context",
+      "variants": [
+        "automated feeding system",
+        "feed optimisation",
+        "feed optimization",
+        "intelligent feeding system",
+        "smart feeding",
+        "feed formulation optimisation",
+        "feed formulation optimization"
+      ],
+      "why": "algorithmic ration and feed dosing"
+    },
+    {
+      "term": "mechanisation and automation",
+      "tier": "context",
+      "variants": [
+        "mechanization and automation",
+        "farm mechanisation",
+        "farm mechanization",
+        "labour-saving technology",
+        "labor-saving technology"
+      ],
+      "why": "labour-saving programmes, often cited with AI"
+    },
+    {
+      "term": "seasonal labour shortage",
+      "tier": "context",
+      "variants": [
+        "seasonal labor shortage",
+        "farm labour shortage",
+        "farm labor shortage",
+        "harvest labour",
+        "harvest labor",
+        "labour availability",
+        "labor availability"
+      ],
+      "why": "workforce pressure motivating robotics"
+    },
+    {
+      "term": "beyond visual line of sight",
+      "tier": "context",
+      "variants": [
+        "BVLOS",
+        "drone regulation",
+        "drone licence",
+        "drone license",
+        "unmanned aircraft regulation"
+      ],
+      "case_sensitive_variants": [
+        "BVLOS"
+      ],
+      "why": "drone regulation limiting autonomous aerial operations"
+    },
+    {
+      "term": "digital MRV",
+      "tier": "context",
+      "variants": [
+        "measurement, reporting and verification",
+        "carbon farming",
+        "soil carbon measurement",
+        "soil carbon modelling",
+        "soil carbon modeling",
+        "remote sensing verification"
+      ],
+      "why": "remote-sensing verification of carbon farming"
+    },
+    {
+      "term": "digital twin",
+      "tier": "context",
+      "variants": [
+        "virtual farm model"
+      ],
+      "why": "virtual model of fields, greenhouses or herds"
+    },
+    {
+      "term": "commodity price forecasting",
+      "tier": "context",
+      "variants": [
+        "price prediction model",
+        "predictive pricing",
+        "market forecasting model"
+      ],
+      "why": "ML used in crop marketing and hedging"
+    }
+  ],
+  "class_terms": {
+    "0121": [
+      {
+        "term": "precision viticulture",
+        "tier": "context",
+        "variants": [
+          "smart vineyard",
+          "vineyard mapping",
+          "digital viticulture",
+          "vineyard sensor"
+        ],
+        "why": "vineyard sensing, mapping and yield estimation"
+      }
+    ],
+    "0126": [
+      {
+        "term": "FFB grading",
+        "tier": "ai",
+        "variants": [
+          "fresh fruit bunch grading",
+          "automated bunch grading",
+          "ripeness grading",
+          "AI-based FFB grading"
+        ],
+        "why": "AI grading of fresh fruit bunches at mills"
+      },
+      {
+        "term": "mechanised harvesting",
+        "tier": "context",
+        "variants": [
+          "mechanized harvesting",
+          "motorised cutter",
+          "motorized cutter",
+          "harvesting mechanisation",
+          "harvesting mechanization",
+          "mechanical harvester"
+        ],
+        "why": "palm harvest mechanisation to cut labour dependency"
+      },
+      {
+        "term": "foreign worker dependency",
+        "tier": "context",
+        "variants": [
+          "reliance on foreign workers",
+          "foreign labour",
+          "foreign labor",
+          "worker shortage"
+        ],
+        "why": "labour shortage driving plantation automation"
+      },
+      {
+        "term": "palm census",
+        "tier": "ai",
+        "variants": [
+          "palm tree census",
+          "drone census",
+          "tree census",
+          "palm counting"
+        ],
+        "why": "drone and ML palm inventories"
+      },
+      {
+        "term": "smart plantation",
+        "tier": "context",
+        "variants": [
+          "digital plantation",
+          "plantation of the future",
+          "intelligent plantation",
+          "plantation digitalisation",
+          "plantation digitalization"
+        ],
+        "why": "digital plantation programmes"
+      }
+    ],
+    "0141": [
+      {
+        "term": "robotic milking",
+        "tier": "context",
+        "variants": [
+          "milking robot",
+          "automatic milking system",
+          "automated milking",
+          "voluntary milking system"
+        ],
+        "why": "automated milking with herd data analytics"
+      },
+      {
+        "term": "virtual fencing",
+        "tier": "context",
+        "variants": [
+          "virtual fence",
+          "virtual herding"
+        ],
+        "why": "GPS collars with algorithmic herd control"
+      },
+      {
+        "term": "heat detection",
+        "tier": "context",
+        "variants": [
+          "estrus detection",
+          "oestrus detection",
+          "calving alert",
+          "calving detection"
+        ],
+        "why": "sensor-based oestrus detection in dairy herds"
+      }
+    ],
+    "0145": [
+      {
+        "term": "smart pig farm",
+        "tier": "context",
+        "variants": [
+          "intelligent pig farming",
+          "intelligent pig farm",
+          "intelligent breeding",
+          "smart pig house",
+          "digital pig farm",
+          "intelligent piggery"
+        ],
+        "why": "Chinese hog producers' intelligent farming programmes"
+      },
+      {
+        "term": "inspection robot",
+        "tier": "ai",
+        "variants": [
+          "patrol robot",
+          "barn inspection robot",
+          "robotic inspection"
+        ],
+        "why": "patrol robots monitoring pig houses"
+      },
+      {
+        "term": "electronic sow feeding",
+        "tier": "context",
+        "variants": [
+          "electronic sow feeder",
+          "individual feeding station"
+        ],
+        "why": "individualised automated feeding stations"
+      },
+      {
+        "term": "intelligent environmental control",
+        "tier": "context",
+        "variants": [
+          "intelligent ventilation",
+          "intelligent environment control",
+          "smart environmental control"
+        ],
+        "why": "automated barn ventilation and climate"
+      },
+      {
+        "term": "biosecurity monitoring",
+        "tier": "context",
+        "variants": [
+          "biosecurity surveillance",
+          "intelligent biosecurity"
+        ],
+        "why": "AI video checks of biosecurity compliance"
+      }
+    ],
+    "0146": [
+      {
+        "term": "in-ovo sexing",
+        "tier": "context",
+        "variants": [
+          "in-ovo gender determination",
+          "egg sexing"
+        ],
+        "why": "imaging and ML sex determination in hatching eggs"
+      },
+      {
+        "term": "automated egg grading",
+        "tier": "context",
+        "variants": [
+          "egg grading machine",
+          "crack detection",
+          "egg candling automation"
+        ],
+        "why": "vision-based egg inspection"
+      },
+      {
+        "term": "smart poultry house",
+        "tier": "context",
+        "variants": [
+          "smart chicken house",
+          "intelligent poultry house",
+          "poultry house controller",
+          "broiler monitoring",
+          "flock monitoring"
+        ],
+        "why": "sensor- and camera-controlled broiler houses"
+      }
+    ]
+  }
+}

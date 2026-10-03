@@ -1,0 +1,1469 @@
+{
+  "id": "86",
+  "name": "Human health activities",
+  "section": "R",
+  "summary": "Providers, laboratories and imaging groups write about AI as a clinical tool (imaging and pathology reads, decision support, deterioration and readmission prediction) and as an administrative one (ambient documentation, coding, revenue cycle, scheduling), usually framed by clinician shortages and documentation burden. Risk passages cover patient safety and malpractice when AI informs care, device and state rules on clinical algorithms, patient data used for AI, and payers' algorithmic prior authorisation and claim denials that hit revenue.",
+  "terms": [
+    {
+      "term": "clinical AI",
+      "tier": "ai",
+      "variants": [
+        "clinical artificial intelligence",
+        "healthcare AI",
+        "health AI",
+        "medical AI",
+        "AI in healthcare",
+        "AI in health care",
+        "AI in medicine",
+        "AI-enabled care"
+      ],
+      "why": "umbrella phrase for AI used in care delivery"
+    },
+    {
+      "term": "clinical decision support",
+      "tier": "context",
+      "variants": [
+        "clinical decision support system",
+        "CDS tool",
+        "CDSS",
+        "decision support tool"
+      ],
+      "case_sensitive_variants": [
+        "CDS tool",
+        "CDSS"
+      ],
+      "why": "software guiding diagnosis and treatment decisions"
+    },
+    {
+      "term": "AI-assisted diagnosis",
+      "tier": "ai",
+      "variants": [
+        "AI-aided diagnosis",
+        "AI diagnostics",
+        "AI-based diagnostics",
+        "AI-powered diagnostics",
+        "AI-enabled diagnostics",
+        "AI diagnostic tool",
+        "diagnostic AI",
+        "AI dermatology"
+      ],
+      "why": "AI supporting clinicians' diagnostic reads"
+    },
+    {
+      "term": "computer-aided detection",
+      "tier": "ai",
+      "variants": [
+        "computer-aided diagnosis",
+        "computer-assisted detection",
+        "computer-assisted diagnosis",
+        "CADe",
+        "CADx"
+      ],
+      "case_sensitive_variants": [
+        "CADe",
+        "CADx"
+      ],
+      "why": "software flagging suspicious findings on images"
+    },
+    {
+      "term": "AI-assisted radiology",
+      "tier": "ai",
+      "variants": [
+        "AI-enabled radiology",
+        "AI-powered radiology",
+        "radiology AI",
+        "AI in radiology",
+        "imaging AI",
+        "medical imaging AI",
+        "AI-powered imaging",
+        "AI-enabled imaging",
+        "AI image analysis"
+      ],
+      "why": "AI reading or triaging imaging studies"
+    },
+    {
+      "term": "AI mammography",
+      "tier": "ai",
+      "variants": [
+        "AI-assisted mammography",
+        "AI-enhanced mammography",
+        "AI breast cancer screening",
+        "AI-powered breast screening",
+        "enhanced breast cancer detection"
+      ],
+      "why": "AI breast screening reads, often patient-paid"
+    },
+    {
+      "term": "deep learning reconstruction",
+      "tier": "ai",
+      "variants": [
+        "deep learning image reconstruction",
+        "AI image reconstruction",
+        "AI-accelerated MRI",
+        "AI-enhanced scan"
+      ],
+      "why": "AI image reconstruction shortening scan times"
+    },
+    {
+      "term": "radiomics",
+      "tier": "ai",
+      "variants": [
+        "radiogenomics",
+        "quantitative imaging biomarker"
+      ],
+      "why": "quantitative ML features extracted from medical images"
+    },
+    {
+      "term": "computational pathology",
+      "tier": "ai",
+      "variants": [
+        "AI-assisted pathology",
+        "AI-powered pathology",
+        "pathology AI",
+        "AI pathology",
+        "AI-assisted cytology",
+        "digital cytology"
+      ],
+      "why": "AI analysis of digitised tissue slides"
+    },
+    {
+      "term": "digital pathology",
+      "tier": "context",
+      "variants": [
+        "whole slide imaging",
+        "whole-slide image",
+        "slide scanner",
+        "slide digitisation",
+        "slide digitization"
+      ],
+      "why": "slide digitisation that enables pathology AI"
+    },
+    {
+      "term": "AI-assisted endoscopy",
+      "tier": "ai",
+      "variants": [
+        "AI-assisted colonoscopy",
+        "computer-aided polyp detection",
+        "AI polyp detection",
+        "GI Genius"
+      ],
+      "why": "AI polyp detection during GI procedures"
+    },
+    {
+      "term": "AI-ECG",
+      "tier": "ai",
+      "variants": [
+        "AI-enabled ECG",
+        "AI electrocardiogram",
+        "AI-enabled electrocardiogram",
+        "AI-guided echocardiography",
+        "AI echocardiography",
+        "AI cardiac imaging"
+      ],
+      "why": "AI interpretation of cardiac signals and images"
+    },
+    {
+      "term": "retinal imaging",
+      "tier": "context",
+      "variants": [
+        "diabetic retinopathy screening",
+        "fundus photography",
+        "retinal scan",
+        "teleophthalmology"
+      ],
+      "why": "eye scans read by autonomous screening AI"
+    },
+    {
+      "term": "autonomous AI",
+      "tier": "ai",
+      "variants": [
+        "autonomous AI diagnostic",
+        "autonomous diagnostic system",
+        "autonomous AI system"
+      ],
+      "why": "AI issuing a diagnosis without clinician read"
+    },
+    {
+      "term": "AI stroke triage",
+      "tier": "ai",
+      "variants": [
+        "AI stroke detection",
+        "large vessel occlusion detection",
+        "AI-powered stroke care",
+        "AI care coordination"
+      ],
+      "why": "AI flagging strokes on CT for faster treatment"
+    },
+    {
+      "term": "nodule detection",
+      "tier": "context",
+      "variants": [
+        "lung nodule detection",
+        "incidental finding",
+        "lung cancer screening",
+        "opportunistic screening"
+      ],
+      "why": "lung findings commonly flagged by imaging AI"
+    },
+    {
+      "term": "sepsis prediction",
+      "tier": "ai",
+      "variants": [
+        "sepsis prediction model",
+        "sepsis early warning",
+        "sepsis algorithm",
+        "sepsis alert",
+        "predictive sepsis"
+      ],
+      "why": "predictive model alerting on sepsis risk"
+    },
+    {
+      "term": "early warning score",
+      "tier": "context",
+      "variants": [
+        "patient deterioration",
+        "deterioration index",
+        "deterioration alert",
+        "early warning system",
+        "rapid response alert"
+      ],
+      "why": "deterioration scoring increasingly ML-driven"
+    },
+    {
+      "term": "readmission prediction",
+      "tier": "ai",
+      "variants": [
+        "readmission risk model",
+        "length of stay prediction",
+        "length-of-stay forecasting",
+        "no-show prediction",
+        "predictive risk model",
+        "clinical prediction model",
+        "predictive clinical model"
+      ],
+      "why": "predictive models for readmission and length of stay"
+    },
+    {
+      "term": "risk stratification",
+      "tier": "context",
+      "variants": [
+        "patient risk stratification",
+        "risk scoring",
+        "high-risk patient identification",
+        "rising-risk patient"
+      ],
+      "why": "sorting patients by predicted risk"
+    },
+    {
+      "term": "population health",
+      "tier": "context",
+      "variants": [
+        "care gap",
+        "gaps in care",
+        "chronic disease management",
+        "disease management programme",
+        "disease management program"
+      ],
+      "why": "cohort management built on predictive analytics"
+    },
+    {
+      "term": "value-based care",
+      "tier": "context",
+      "variants": [
+        "value-based contract",
+        "value-based arrangement",
+        "accountable care organization",
+        "accountable care organisation"
+      ],
+      "why": "risk contracts that drive predictive analytics use"
+    },
+    {
+      "term": "precision medicine",
+      "tier": "context",
+      "variants": [
+        "personalised medicine",
+        "personalized medicine",
+        "precision oncology",
+        "genomic medicine",
+        "precision health"
+      ],
+      "why": "genomics-led care relying on ML"
+    },
+    {
+      "term": "patient digital twin",
+      "tier": "ai",
+      "variants": [
+        "digital twin of the patient",
+        "in silico trial"
+      ],
+      "why": "simulated patient model for treatment planning"
+    },
+    {
+      "term": "clinical trial matching",
+      "tier": "context",
+      "variants": [
+        "trial matching",
+        "clinical trial recruitment",
+        "patient recruitment for trials",
+        "trial eligibility screening"
+      ],
+      "why": "matching patients to trials, often AI-driven"
+    },
+    {
+      "term": "real-world evidence",
+      "tier": "context",
+      "variants": [
+        "real-world data",
+        "clinicogenomic data",
+        "multimodal clinical data",
+        "data licensing revenue"
+      ],
+      "why": "clinical datasets monetised for AI and research"
+    },
+    {
+      "term": "de-identified patient data",
+      "tier": "context",
+      "variants": [
+        "de-identified data",
+        "deidentified data",
+        "de-identified health data",
+        "anonymised patient data",
+        "anonymized patient data",
+        "pseudonymised data",
+        "pseudonymized data"
+      ],
+      "why": "patient data used or licensed to train AI"
+    },
+    {
+      "term": "secondary use of health data",
+      "tier": "context",
+      "variants": [
+        "European Health Data Space",
+        "EHDS",
+        "health data space",
+        "health data access body"
+      ],
+      "case_sensitive_variants": [
+        "EHDS"
+      ],
+      "why": "rules on reusing patient data for AI"
+    },
+    {
+      "term": "ambient clinical documentation",
+      "tier": "ai",
+      "variants": [
+        "ambient documentation",
+        "ambient listening",
+        "ambient clinical intelligence",
+        "ambient scribe",
+        "ambient AI",
+        "ambient voice technology",
+        "ambient clinical voice"
+      ],
+      "why": "AI listening to visits and drafting notes"
+    },
+    {
+      "term": "AI scribe",
+      "tier": "ai",
+      "variants": [
+        "AI medical scribe",
+        "digital scribe",
+        "AI-generated clinical note",
+        "AI note-taking",
+        "AI documentation assistant",
+        "AI-powered documentation"
+      ],
+      "why": "AI note-taking for clinicians"
+    },
+    {
+      "term": "documentation burden",
+      "tier": "context",
+      "variants": [
+        "administrative burden",
+        "clinician burnout",
+        "physician burnout",
+        "pajama time",
+        "cognitive burden",
+        "time spent on documentation"
+      ],
+      "why": "clinician admin load AI promises to cut"
+    },
+    {
+      "term": "medical transcription",
+      "tier": "context",
+      "variants": [
+        "clinical dictation",
+        "medical dictation",
+        "front-end speech recognition",
+        "voice-to-text documentation",
+        "clinical speech recognition"
+      ],
+      "why": "dictation workflows replaced by speech AI"
+    },
+    {
+      "term": "electronic health record",
+      "tier": "context",
+      "variants": [
+        "electronic medical record",
+        "electronic patient record",
+        "EHR",
+        "EMR",
+        "EPR"
+      ],
+      "case_sensitive_variants": [
+        "EHR",
+        "EMR",
+        "EPR"
+      ],
+      "why": "system in which clinical AI is embedded"
+    },
+    {
+      "term": "clinical documentation improvement",
+      "tier": "context",
+      "variants": [
+        "clinical documentation integrity",
+        "documentation integrity",
+        "clinical note",
+        "discharge summary",
+        "discharge letter"
+      ],
+      "why": "coding-quality review now AI-assisted"
+    },
+    {
+      "term": "patient message drafting",
+      "tier": "ai",
+      "variants": [
+        "AI-drafted response",
+        "AI-drafted reply",
+        "AI-generated reply",
+        "AI-generated patient message",
+        "automated message drafting"
+      ],
+      "why": "generative AI drafting replies to patient messages"
+    },
+    {
+      "term": "patient portal",
+      "tier": "context",
+      "variants": [
+        "in-basket message",
+        "inbox message",
+        "patient messaging",
+        "patient engagement tool"
+      ],
+      "why": "messaging channel where AI drafting and triage run"
+    },
+    {
+      "term": "revenue cycle",
+      "tier": "context",
+      "variants": [
+        "charge capture",
+        "claims scrubbing",
+        "billing automation",
+        "patient billing",
+        "RCM"
+      ],
+      "case_sensitive_variants": [
+        "RCM"
+      ],
+      "why": "billing chain, a heavy AI automation target"
+    },
+    {
+      "term": "autonomous coding",
+      "tier": "ai",
+      "variants": [
+        "autonomous medical coding",
+        "automated medical coding",
+        "computer-assisted coding",
+        "AI-powered coding",
+        "AI medical coding",
+        "AI-assisted coding"
+      ],
+      "why": "AI assigning billing codes from clinical notes"
+    },
+    {
+      "term": "medical coding",
+      "tier": "context",
+      "variants": [
+        "clinical coding",
+        "ICD-10 coding",
+        "coding accuracy",
+        "coder productivity",
+        "risk adjustment coding",
+        "HCC coding",
+        "hierarchical condition category"
+      ],
+      "why": "code assignment AI automates and payers audit"
+    },
+    {
+      "term": "prior authorization",
+      "tier": "context",
+      "variants": [
+        "prior authorisation",
+        "pre-authorization",
+        "pre-authorisation",
+        "preauthorization",
+        "utilization management",
+        "utilisation management",
+        "utilization review",
+        "utilisation review"
+      ],
+      "why": "payer approval step automated on both sides"
+    },
+    {
+      "term": "payer denial",
+      "tier": "context",
+      "variants": [
+        "payor denial",
+        "claim denial",
+        "denial rate",
+        "denial management",
+        "medical necessity determination",
+        "coverage determination",
+        "appeal of denied claims"
+      ],
+      "why": "claim denials providers attribute to payer algorithms"
+    },
+    {
+      "term": "AI-driven denial",
+      "tier": "ai",
+      "variants": [
+        "algorithmic denial",
+        "AI-generated denial",
+        "automated claim denial",
+        "AI-powered denial",
+        "algorithm-driven denial",
+        "automated coverage denial",
+        "AI claims review"
+      ],
+      "why": "payers' algorithmic claim and coverage denials"
+    },
+    {
+      "term": "AI-generated appeal",
+      "tier": "ai",
+      "variants": [
+        "AI appeal letter",
+        "automated appeal letter",
+        "AI-powered appeals",
+        "automated denial appeal"
+      ],
+      "why": "providers using AI to contest payer denials"
+    },
+    {
+      "term": "patient flow",
+      "tier": "context",
+      "variants": [
+        "bed management",
+        "capacity management",
+        "capacity command center",
+        "capacity command centre",
+        "discharge planning",
+        "throughput optimisation",
+        "throughput optimization"
+      ],
+      "why": "bed and capacity logistics optimised by prediction"
+    },
+    {
+      "term": "nurse staffing",
+      "tier": "context",
+      "variants": [
+        "nurse scheduling",
+        "predictive staffing",
+        "staffing optimisation",
+        "staffing optimization",
+        "workforce scheduling",
+        "shift scheduling"
+      ],
+      "why": "scheduling and staffing forecast use cases"
+    },
+    {
+      "term": "clinician shortage",
+      "tier": "context",
+      "variants": [
+        "physician shortage",
+        "nursing shortage",
+        "radiologist shortage",
+        "pathologist shortage",
+        "nurse shortage",
+        "healthcare workforce shortage"
+      ],
+      "why": "labour gap motivating AI adoption"
+    },
+    {
+      "term": "virtual nursing",
+      "tier": "context",
+      "variants": [
+        "virtual nurse",
+        "virtual sitter",
+        "tele-sitting",
+        "virtual sitting",
+        "virtual observation",
+        "smart patient room"
+      ],
+      "why": "remote nurses plus camera monitoring at bedside"
+    },
+    {
+      "term": "fall detection",
+      "tier": "context",
+      "variants": [
+        "fall prevention technology",
+        "fall prediction",
+        "fall risk monitoring",
+        "patient monitoring camera",
+        "computer vision monitoring"
+      ],
+      "why": "camera or sensor monitoring, often computer vision"
+    },
+    {
+      "term": "remote patient monitoring",
+      "tier": "context",
+      "variants": [
+        "remote monitoring",
+        "remote physiologic monitoring",
+        "continuous patient monitoring",
+        "wearable device",
+        "connected medical device",
+        "continuous glucose monitor"
+      ],
+      "why": "home vitals data feeding predictive alerts"
+    },
+    {
+      "term": "virtual ward",
+      "tier": "context",
+      "variants": [
+        "hospital at home",
+        "acute care at home",
+        "hospital in the home",
+        "virtual hospital"
+      ],
+      "why": "home acute care run on monitoring and triage"
+    },
+    {
+      "term": "telehealth",
+      "tier": "context",
+      "variants": [
+        "telemedicine",
+        "virtual care",
+        "virtual visit",
+        "video consultation",
+        "teleconsultation",
+        "tele-ICU",
+        "virtual ICU",
+        "eICU"
+      ],
+      "why": "virtual visits where triage and scribing AI run"
+    },
+    {
+      "term": "symptom checker",
+      "tier": "context",
+      "variants": [
+        "digital triage",
+        "online triage",
+        "symptom assessment tool",
+        "digital front door",
+        "self-triage"
+      ],
+      "why": "patient-facing triage tool, often AI-driven"
+    },
+    {
+      "term": "AI triage",
+      "tier": "ai",
+      "variants": [
+        "AI-powered triage",
+        "AI-driven triage",
+        "automated triage",
+        "AI symptom assessment",
+        "AI-based triage",
+        "AI care navigation"
+      ],
+      "why": "AI routing patients to the right care"
+    },
+    {
+      "term": "virtual health assistant",
+      "tier": "ai",
+      "variants": [
+        "AI health assistant",
+        "AI health coach",
+        "virtual health coach",
+        "AI doctor",
+        "AI nurse",
+        "AI physician",
+        "AI care agent",
+        "AI clinical agent",
+        "AI care navigator"
+      ],
+      "why": "conversational AI for patients"
+    },
+    {
+      "term": "AI therapy",
+      "tier": "ai",
+      "variants": [
+        "AI therapist",
+        "therapy chatbot",
+        "mental health chatbot",
+        "AI mental health",
+        "AI companion",
+        "AI-delivered therapy",
+        "AI counselling",
+        "AI counseling"
+      ],
+      "why": "AI-delivered mental health support"
+    },
+    {
+      "term": "digital therapeutic",
+      "tier": "context",
+      "variants": [
+        "prescription digital therapeutic",
+        "DTx",
+        "digital health application",
+        "DiGA",
+        "digital mental health"
+      ],
+      "case_sensitive_variants": [
+        "DTx",
+        "DiGA"
+      ],
+      "why": "software treatments, some ML-adaptive"
+    },
+    {
+      "term": "robotic-assisted surgery",
+      "tier": "context",
+      "variants": [
+        "robot-assisted surgery",
+        "robotic surgery",
+        "surgical robot",
+        "robotic surgical system",
+        "da Vinci surgical system",
+        "robotic-assisted procedure",
+        "surgical navigation"
+      ],
+      "why": "surgical robots with growing AI guidance"
+    },
+    {
+      "term": "surgical video analysis",
+      "tier": "ai",
+      "variants": [
+        "AI-guided surgery",
+        "AI surgical planning",
+        "AI-assisted surgery",
+        "surgical intelligence",
+        "operating room intelligence"
+      ],
+      "why": "AI reviewing operative video and workflow"
+    },
+    {
+      "term": "operating room scheduling",
+      "tier": "context",
+      "variants": [
+        "OR scheduling",
+        "theatre scheduling",
+        "surgical scheduling",
+        "operating theatre utilisation",
+        "operating room utilization",
+        "block scheduling"
+      ],
+      "case_sensitive_variants": [
+        "OR scheduling"
+      ],
+      "why": "theatre utilisation optimised by prediction"
+    },
+    {
+      "term": "pharmacy automation",
+      "tier": "context",
+      "variants": [
+        "automated dispensing",
+        "medication dispensing robot",
+        "automated dispensing cabinet",
+        "medication reconciliation",
+        "closed-loop medication"
+      ],
+      "why": "dispensing robots and automated medication checks"
+    },
+    {
+      "term": "laboratory automation",
+      "tier": "context",
+      "variants": [
+        "lab automation",
+        "total laboratory automation",
+        "automated laboratory",
+        "laboratory information system",
+        "digital microbiology",
+        "automated plate reading"
+      ],
+      "why": "automated lab lines enabling AI reads"
+    },
+    {
+      "term": "software as a medical device",
+      "tier": "context",
+      "variants": [
+        "SaMD",
+        "medical device software",
+        "software in a medical device",
+        "clinical software regulation"
+      ],
+      "case_sensitive_variants": [
+        "SaMD"
+      ],
+      "why": "regulatory category covering clinical algorithms"
+    },
+    {
+      "term": "AI-enabled medical device",
+      "tier": "ai",
+      "variants": [
+        "AI/ML-enabled medical device",
+        "AI-enabled device",
+        "AI as a medical device",
+        "AIaMD",
+        "machine learning-enabled device",
+        "AI-enabled device software function"
+      ],
+      "case_sensitive_variants": [
+        "AIaMD"
+      ],
+      "why": "regulators' term for devices embedding AI"
+    },
+    {
+      "term": "predetermined change control plan",
+      "tier": "ai",
+      "variants": [
+        "PCCP",
+        "Good Machine Learning Practice",
+        "GMLP",
+        "algorithm change protocol"
+      ],
+      "case_sensitive_variants": [
+        "PCCP",
+        "GMLP"
+      ],
+      "why": "FDA pathway for updating AI devices"
+    },
+    {
+      "term": "FDA clearance",
+      "tier": "context",
+      "variants": [
+        "FDA-cleared",
+        "510(k) clearance",
+        "510(k)-cleared",
+        "De Novo authorization",
+        "CE-marked",
+        "CE marking",
+        "UKCA marking",
+        "TGA approval"
+      ],
+      "why": "marketing authorisation status of AI tools"
+    },
+    {
+      "term": "decision support intervention",
+      "tier": "ai",
+      "variants": [
+        "predictive decision support intervention",
+        "HTI-1"
+      ],
+      "case_sensitive_variants": [
+        "HTI-1"
+      ],
+      "why": "ONC transparency rule for predictive EHR algorithms"
+    },
+    {
+      "term": "clinical algorithm",
+      "tier": "context",
+      "variants": [
+        "race-based algorithm",
+        "race-adjusted algorithm",
+        "biased clinical algorithm",
+        "patient care decision support tool",
+        "Section 1557"
+      ],
+      "why": "rules or models steering care; target of bias rules"
+    },
+    {
+      "term": "AB 3030",
+      "tier": "ai",
+      "variants": [
+        "Assembly Bill 3030",
+        "SB 1120",
+        "Physicians Make Decisions Act",
+        "AB 489"
+      ],
+      "case_sensitive_variants": [
+        "AB 3030",
+        "SB 1120",
+        "AB 489"
+      ],
+      "why": "California laws on AI in patient care"
+    },
+    {
+      "term": "AI reimbursement",
+      "tier": "ai",
+      "variants": [
+        "reimbursement for AI",
+        "AI CPT code",
+        "payment for AI services",
+        "AI-enabled service reimbursement",
+        "patient-pay AI"
+      ],
+      "why": "whether payers pay for AI-enabled services"
+    },
+    {
+      "term": "new technology add-on payment",
+      "tier": "context",
+      "variants": [
+        "NTAP",
+        "Category III CPT code",
+        "New Technology APC"
+      ],
+      "case_sensitive_variants": [
+        "NTAP"
+      ],
+      "why": "Medicare payment routes for novel AI tools"
+    },
+    {
+      "term": "diagnostic error",
+      "tier": "context",
+      "variants": [
+        "misdiagnosis",
+        "missed diagnosis",
+        "diagnostic accuracy",
+        "false positive",
+        "false negative",
+        "delayed diagnosis"
+      ],
+      "why": "missed or wrong diagnoses; AI liability angle"
+    },
+    {
+      "term": "clinical negligence",
+      "tier": "context",
+      "variants": [
+        "medical malpractice",
+        "malpractice liability",
+        "professional liability claim",
+        "standard of care"
+      ],
+      "why": "malpractice exposure when AI informs care"
+    },
+    {
+      "term": "clinician in the loop",
+      "tier": "ai",
+      "variants": [
+        "physician in the loop",
+        "human clinician review",
+        "clinician oversight of AI",
+        "physician oversight of AI"
+      ],
+      "why": "requirement that clinicians review AI output"
+    },
+    {
+      "term": "clinical governance",
+      "tier": "context",
+      "variants": [
+        "clinical safety",
+        "clinical risk management",
+        "patient safety incident",
+        "clinical validation",
+        "clinical safety case"
+      ],
+      "why": "oversight framework applied to clinical AI"
+    },
+    {
+      "term": "patient consent",
+      "tier": "context",
+      "variants": [
+        "informed consent",
+        "consent to recording",
+        "patient notification",
+        "disclosure to patients"
+      ],
+      "why": "consent for AI recording and data use"
+    },
+    {
+      "term": "health equity",
+      "tier": "context",
+      "variants": [
+        "health disparities",
+        "underrepresented populations",
+        "bias in clinical AI",
+        "algorithmic bias in healthcare"
+      ],
+      "why": "bias concerns over models trained on skewed data"
+    },
+    {
+      "term": "Nuance DAX",
+      "tier": "ai",
+      "variants": [
+        "DAX Copilot",
+        "Dragon Copilot",
+        "Dragon Ambient eXperience",
+        "Dragon Medical"
+      ],
+      "why": "Microsoft ambient documentation product"
+    },
+    {
+      "term": "Abridge",
+      "tier": "ai",
+      "case_sensitive_variants": [
+        "Abridge"
+      ],
+      "why": "ambient documentation vendor"
+    },
+    {
+      "term": "Aidoc",
+      "tier": "ai",
+      "why": "imaging triage AI vendor"
+    },
+    {
+      "term": "Viz.ai",
+      "tier": "ai",
+      "why": "stroke and care-coordination AI vendor"
+    },
+    {
+      "term": "DeepHealth",
+      "tier": "ai",
+      "variants": [
+        "Saige-Dx",
+        "SmartMammo"
+      ],
+      "why": "RadNet's imaging AI subsidiary"
+    },
+    {
+      "term": "Harrison.ai",
+      "tier": "ai",
+      "variants": [
+        "annalise.ai",
+        "Franklin.ai"
+      ],
+      "why": "radiology and pathology AI vendor"
+    },
+    {
+      "term": "PathAI",
+      "tier": "ai",
+      "variants": [
+        "Ibex Medical Analytics",
+        "Paige AI"
+      ],
+      "why": "pathology AI vendor"
+    },
+    {
+      "term": "Hippocratic AI",
+      "tier": "ai",
+      "why": "healthcare AI agent vendor"
+    },
+    {
+      "term": "OpenEvidence",
+      "tier": "ai",
+      "why": "clinician-facing medical answer engine"
+    },
+    {
+      "term": "Tempus AI",
+      "tier": "ai",
+      "variants": [
+        "Tempus One"
+      ],
+      "why": "clinicogenomic data and AI diagnostics company"
+    }
+  ],
+  "class_terms": {
+    "8610": [
+      {
+        "term": "smart hospital",
+        "tier": "context",
+        "variants": [
+          "digital hospital",
+          "smart ward",
+          "smart operating room",
+          "hospital command center",
+          "hospital command centre",
+          "clinical command centre",
+          "clinical command center"
+        ],
+        "why": "instrumented hospital with AI-run operations"
+      },
+      {
+        "term": "AI-generated discharge summary",
+        "tier": "ai",
+        "variants": [
+          "automated discharge summary",
+          "AI discharge letter",
+          "AI-drafted discharge summary",
+          "AI handover note",
+          "AI-generated handoff"
+        ],
+        "why": "generative drafting of inpatient handover documents"
+      },
+      {
+        "term": "emergency department triage",
+        "tier": "context",
+        "variants": [
+          "ED triage",
+          "emergency department crowding",
+          "emergency department wait time",
+          "ambulance handover",
+          "acuity scoring"
+        ],
+        "case_sensitive_variants": [
+          "ED triage"
+        ],
+        "why": "front-door acuity sorting targeted by AI"
+      },
+      {
+        "term": "intensive care monitoring",
+        "tier": "context",
+        "variants": [
+          "ICU monitoring",
+          "critical care monitoring",
+          "bedside monitoring",
+          "alarm fatigue",
+          "continuous vital sign monitoring"
+        ],
+        "why": "ICU data streams used for predictive alerts"
+      },
+      {
+        "term": "AI nursing assistant",
+        "tier": "ai",
+        "variants": [
+          "AI nurse assistant",
+          "AI-assisted nursing",
+          "nursing copilot",
+          "AI charting"
+        ],
+        "why": "AI support for bedside nursing tasks"
+      }
+    ],
+    "8620": [
+      {
+        "term": "dental AI",
+        "tier": "ai",
+        "variants": [
+          "AI dental imaging",
+          "AI-powered dental diagnostics",
+          "dental radiograph analysis",
+          "AI caries detection",
+          "AI-assisted dentistry",
+          "Pearl AI",
+          "Overjet",
+          "VideaHealth"
+        ],
+        "why": "AI reading dental radiographs and planning treatment"
+      },
+      {
+        "term": "intraoral scan",
+        "tier": "context",
+        "variants": [
+          "intraoral scanner",
+          "digital impression",
+          "digital dentistry",
+          "CAD/CAM dentistry",
+          "chairside milling"
+        ],
+        "why": "digital dental impressions feeding AI planning"
+      },
+      {
+        "term": "digital treatment planning",
+        "tier": "context",
+        "variants": [
+          "treatment planning software",
+          "aligner treatment plan",
+          "treatment simulation",
+          "smile simulation"
+        ],
+        "why": "software-planned orthodontic and implant cases"
+      },
+      {
+        "term": "teledentistry",
+        "tier": "context",
+        "variants": [
+          "remote dental monitoring",
+          "dental monitoring app",
+          "virtual dental consultation"
+        ],
+        "why": "remote dental monitoring with image AI"
+      },
+      {
+        "term": "practice management system",
+        "tier": "context",
+        "variants": [
+          "practice management software",
+          "patient scheduling",
+          "appointment scheduling",
+          "online booking",
+          "patient recall"
+        ],
+        "why": "practice software where vendors add AI"
+      },
+      {
+        "term": "AI receptionist",
+        "tier": "ai",
+        "variants": [
+          "AI phone agent",
+          "AI front desk",
+          "AI scheduling assistant",
+          "AI call handling",
+          "AI-powered patient scheduling",
+          "voice AI agent"
+        ],
+        "why": "AI answering calls and booking appointments"
+      },
+      {
+        "term": "physician productivity",
+        "tier": "context",
+        "variants": [
+          "clinician productivity",
+          "provider productivity",
+          "patient panel size",
+          "visits per provider",
+          "time with patients"
+        ],
+        "why": "visit capacity gains claimed from AI tools"
+      },
+      {
+        "term": "embryo selection",
+        "tier": "context",
+        "variants": [
+          "embryo assessment",
+          "embryo grading",
+          "time-lapse embryo imaging",
+          "embryo ranking"
+        ],
+        "why": "IVF step where AI grading is applied"
+      },
+      {
+        "term": "AI embryo selection",
+        "tier": "ai",
+        "variants": [
+          "AI embryo assessment",
+          "AI embryo grading",
+          "AI-assisted embryo selection"
+        ],
+        "why": "AI ranking IVF embryos"
+      }
+    ],
+    "8691": [
+      {
+        "term": "telehealth platform",
+        "tier": "context",
+        "variants": [
+          "virtual care platform",
+          "telemedicine platform",
+          "digital health platform",
+          "online consultation platform",
+          "digital health marketplace"
+        ],
+        "why": "intermediary model where AI triage and matching run"
+      },
+      {
+        "term": "provider matching",
+        "tier": "context",
+        "variants": [
+          "doctor matching",
+          "therapist matching",
+          "physician matching",
+          "care matching",
+          "provider search",
+          "provider directory"
+        ],
+        "why": "algorithmic matching of patients to clinicians"
+      },
+      {
+        "term": "AI-powered matching",
+        "tier": "ai",
+        "variants": [
+          "AI provider matching",
+          "AI therapist matching",
+          "AI-driven care matching",
+          "AI-powered care navigation"
+        ],
+        "why": "AI pairing patients with providers or therapy"
+      },
+      {
+        "term": "care navigation",
+        "tier": "context",
+        "variants": [
+          "care navigator",
+          "care concierge",
+          "health navigation",
+          "benefits navigation",
+          "member navigation"
+        ],
+        "why": "guiding members to services, increasingly by AI"
+      },
+      {
+        "term": "asynchronous care",
+        "tier": "context",
+        "variants": [
+          "asynchronous telehealth",
+          "asynchronous visit",
+          "asynchronous consultation",
+          "store-and-forward",
+          "online questionnaire consultation"
+        ],
+        "why": "questionnaire-based visits suited to automation"
+      },
+      {
+        "term": "personalized treatment plan",
+        "tier": "context",
+        "variants": [
+          "personalised treatment plan",
+          "personalized care plan",
+          "personalised care plan",
+          "personalized dosing",
+          "customised treatment"
+        ],
+        "why": "algorithmically tailored regimens sold direct to consumers"
+      },
+      {
+        "term": "appointment booking platform",
+        "tier": "context",
+        "variants": [
+          "online appointment booking",
+          "doctor booking platform",
+          "medical booking platform",
+          "Doctolib",
+          "Zocdoc"
+        ],
+        "why": "scheduling intermediaries adding AI assistants"
+      }
+    ],
+    "8699": [
+      {
+        "term": "teleradiology",
+        "tier": "context",
+        "variants": [
+          "remote radiology reporting",
+          "outsourced radiology reads",
+          "remote reading"
+        ],
+        "why": "remote reads where AI triages worklists"
+      },
+      {
+        "term": "worklist prioritisation",
+        "tier": "ai",
+        "variants": [
+          "worklist prioritization",
+          "AI worklist triage",
+          "AI-prioritised worklist",
+          "AI-prioritized worklist",
+          "radiology workflow orchestration"
+        ],
+        "why": "AI ordering radiologist queues by urgency"
+      },
+      {
+        "term": "radiologist productivity",
+        "tier": "context",
+        "variants": [
+          "reading efficiency",
+          "reads per radiologist",
+          "radiology workflow",
+          "report turnaround time",
+          "reporting backlog"
+        ],
+        "why": "reading capacity AI is meant to expand"
+      },
+      {
+        "term": "automated radiology report",
+        "tier": "ai",
+        "variants": [
+          "AI-generated radiology report",
+          "radiology report generation",
+          "automated impression",
+          "AI-drafted report",
+          "AI reporting assistant"
+        ],
+        "why": "generative drafting of imaging reports"
+      },
+      {
+        "term": "AI-assisted cervical screening",
+        "tier": "ai",
+        "variants": [
+          "automated cervical screening",
+          "AI cytology screening",
+          "digital cytology screening"
+        ],
+        "why": "AI reading cervical cytology slides"
+      },
+      {
+        "term": "AI-powered diagnostic test",
+        "tier": "ai",
+        "variants": [
+          "AI-derived biomarker",
+          "machine learning classifier",
+          "algorithm-based test",
+          "AI-based assay",
+          "algorithmic diagnostic"
+        ],
+        "why": "lab tests whose result comes from ML"
+      },
+      {
+        "term": "variant interpretation",
+        "tier": "context",
+        "variants": [
+          "variant classification",
+          "variant calling",
+          "bioinformatics pipeline",
+          "genomic data analysis",
+          "polygenic risk score"
+        ],
+        "why": "genomic analysis step run by ML pipelines"
+      },
+      {
+        "term": "multi-cancer early detection",
+        "tier": "context",
+        "variants": [
+          "liquid biopsy",
+          "methylation classifier",
+          "cell-free DNA analysis",
+          "minimal residual disease",
+          "MCED"
+        ],
+        "case_sensitive_variants": [
+          "MCED"
+        ],
+        "why": "blood tests built on ML classifiers"
+      },
+      {
+        "term": "biomarker discovery",
+        "tier": "context",
+        "variants": [
+          "digital biomarker",
+          "multi-omics",
+          "multiomic data",
+          "proteomic profiling"
+        ],
+        "why": "lab data mined with ML for new tests"
+      },
+      {
+        "term": "laboratory developed test",
+        "tier": "context",
+        "variants": [
+          "LDT",
+          "In Vitro Diagnostic Regulation",
+          "IVDR"
+        ],
+        "case_sensitive_variants": [
+          "LDT",
+          "IVDR"
+        ],
+        "why": "regulatory status of algorithm-based lab assays"
+      },
+      {
+        "term": "test result interpretation",
+        "tier": "context",
+        "variants": [
+          "result interpretation",
+          "patient-friendly report",
+          "automated result reporting",
+          "lab report explanation"
+        ],
+        "why": "reporting step where generative AI explains results"
+      },
+      {
+        "term": "emergency medical dispatch",
+        "tier": "context",
+        "variants": [
+          "ambulance dispatch",
+          "emergency call triage",
+          "medical transport routing",
+          "non-emergency medical transportation"
+        ],
+        "why": "ambulance triage and routing supported by prediction"
+      }
+    ]
+  }
+}

@@ -1,0 +1,548 @@
+{
+  "id": "24",
+  "name": "Manufacture of basic metals",
+  "section": "C",
+  "summary": "Steel, aluminium and non-ferrous producers report AI in furnace and mill control, surface-defect and scrap recognition, quality prediction, alloy design and predictive maintenance under 'smart factory' or 'lighthouse' programmes. AI is also a demand story: copper foil, sputtering targets and high-purity metals for AI servers and chips, electrical steel for transformers, structural steel, copper and aluminium for data centers and grids, superalloys for gas turbines. Risks include competition with data centers for electricity and export controls on chip metals such as gallium and germanium.",
+  "terms": [
+    {
+      "term": "predictive maintenance",
+      "tier": "ai",
+      "variants": [
+        "prescriptive maintenance"
+      ],
+      "why": "ML on mill, furnace and smelter equipment data"
+    },
+    {
+      "term": "digital twin",
+      "tier": "context",
+      "variants": [
+        "virtual plant model"
+      ],
+      "why": "virtual process model used with AI optimisation"
+    },
+    {
+      "term": "smart factory",
+      "tier": "context",
+      "variants": [
+        "smart plant",
+        "smart mill",
+        "smart steelworks",
+        "smart smelter",
+        "intelligent factory",
+        "digital plant"
+      ],
+      "why": "plant programmes under which AI use is reported"
+    },
+    {
+      "term": "Global Lighthouse Network",
+      "tier": "context",
+      "variants": [
+        "lighthouse factory",
+        "lighthouse plant"
+      ],
+      "why": "WEF award for AI-heavy plants cited in filings"
+    },
+    {
+      "term": "Industry 4.0",
+      "tier": "context",
+      "variants": [
+        "Industrie 4.0",
+        "cyber-physical system"
+      ],
+      "why": "umbrella label for connected, data-driven plants"
+    },
+    {
+      "term": "advanced process control",
+      "tier": "context",
+      "variants": [
+        "model predictive control",
+        "process control optimisation",
+        "process control optimization",
+        "level 2 automation"
+      ],
+      "why": "control layer where ML optimisers are deployed"
+    },
+    {
+      "term": "machine vision",
+      "tier": "ai",
+      "variants": [
+        "automated visual inspection",
+        "camera-based inspection",
+        "vision-based measurement"
+      ],
+      "why": "camera AI for inspection and measurement in mills"
+    },
+    {
+      "term": "predictive quality",
+      "tier": "ai",
+      "variants": [
+        "quality prediction",
+        "mechanical property prediction",
+        "property prediction model"
+      ],
+      "why": "ML prediction of product properties from process data"
+    },
+    {
+      "term": "soft sensor",
+      "tier": "ai",
+      "variants": [
+        "virtual sensor"
+      ],
+      "why": "ML estimate of unmeasured process variables"
+    },
+    {
+      "term": "materials informatics",
+      "tier": "ai",
+      "variants": [
+        "material informatics",
+        "AI-driven alloy design",
+        "alloy design by machine learning"
+      ],
+      "why": "ML-guided alloy and materials development"
+    },
+    {
+      "term": "computational materials engineering",
+      "tier": "context",
+      "variants": [
+        "ICME",
+        "computational alloy design",
+        "accelerated alloy development"
+      ],
+      "case_sensitive_variants": [
+        "ICME"
+      ],
+      "why": "simulation-led alloy design increasingly ML-assisted"
+    },
+    {
+      "term": "autonomous crane",
+      "tier": "ai",
+      "variants": [
+        "unmanned crane",
+        "driverless crane",
+        "automated crane"
+      ],
+      "why": "self-operating cranes in yards and melt shops"
+    },
+    {
+      "term": "remote operations centre",
+      "tier": "context",
+      "variants": [
+        "remote operations center",
+        "integrated operations centre",
+        "integrated operations center",
+        "remote control room"
+      ],
+      "why": "centralised control enabling AI-assisted operation"
+    },
+    {
+      "term": "robotic inspection",
+      "tier": "context",
+      "variants": [
+        "inspection robot",
+        "drone inspection",
+        "robotic sampling",
+        "robotic tapping"
+      ],
+      "why": "robots and drones replacing people in hazardous areas"
+    },
+    {
+      "term": "video analytics",
+      "tier": "ai",
+      "variants": [
+        "intelligent video surveillance",
+        "AI safety monitoring",
+        "smart CCTV",
+        "PPE detection"
+      ],
+      "why": "camera AI for worker safety in plants"
+    },
+    {
+      "term": "production scheduling optimisation",
+      "tier": "context",
+      "variants": [
+        "production scheduling optimization",
+        "advanced planning and scheduling",
+        "caster scheduling",
+        "schedule optimisation",
+        "schedule optimization"
+      ],
+      "why": "algorithmic sequencing of casters and mills"
+    },
+    {
+      "term": "energy consumption forecasting",
+      "tier": "context",
+      "variants": [
+        "power consumption prediction",
+        "energy demand forecasting"
+      ],
+      "why": "ML forecasting of furnace and plant energy use"
+    },
+    {
+      "term": "data center",
+      "tier": "context",
+      "variants": [
+        "data centre",
+        "datacenter",
+        "datacentre"
+      ],
+      "why": "metal demand driver and competing power user"
+    },
+    {
+      "term": "hyperscaler",
+      "tier": "context",
+      "variants": [
+        "hyperscale"
+      ],
+      "why": "large cloud and AI customers behind demand"
+    },
+    {
+      "term": "AI server",
+      "tier": "ai",
+      "variants": [
+        "AI accelerator",
+        "AI infrastructure",
+        "AI data center",
+        "AI data centre"
+      ],
+      "why": "end market for copper foil, targets, alloys"
+    },
+    {
+      "term": "load growth",
+      "tier": "context",
+      "variants": [
+        "electricity demand growth",
+        "power demand growth",
+        "rising power demand"
+      ],
+      "why": "power demand surge lifting metal demand and prices"
+    },
+    {
+      "term": "grid infrastructure",
+      "tier": "context",
+      "variants": [
+        "grid investment",
+        "grid expansion",
+        "grid modernisation",
+        "grid modernization",
+        "transformer demand",
+        "transformer shortage"
+      ],
+      "why": "grid build-out for data centers consumes metals"
+    },
+    {
+      "term": "power availability",
+      "tier": "context",
+      "variants": [
+        "competition for power",
+        "competition for electricity",
+        "grid capacity"
+      ],
+      "why": "smelters compete with data centers for electricity"
+    },
+    {
+      "term": "thermal management",
+      "tier": "context",
+      "variants": [
+        "heat sink",
+        "cold plate",
+        "liquid cooling"
+      ],
+      "why": "copper and aluminium parts for server cooling"
+    },
+    {
+      "term": "busbar",
+      "tier": "context",
+      "variants": [
+        "bus bar",
+        "busway"
+      ],
+      "why": "copper and aluminium conductors for data center power"
+    },
+    {
+      "term": "server rack",
+      "tier": "context",
+      "variants": [
+        "rack enclosure",
+        "server cabinet"
+      ],
+      "why": "steel and aluminium racks and enclosures"
+    },
+    {
+      "term": "gas turbine",
+      "tier": "context",
+      "variants": [
+        "turbine alloy",
+        "aeroderivative"
+      ],
+      "why": "alloy demand from gas power for data centers"
+    },
+    {
+      "term": "superalloy",
+      "tier": "context",
+      "variants": [
+        "nickel-based alloy",
+        "high-temperature alloy"
+      ],
+      "why": "turbine alloys in demand for data center power"
+    },
+    {
+      "term": "small modular reactor",
+      "tier": "context",
+      "variants": [
+        "microreactor",
+        "advanced reactor",
+        "nuclear-grade alloy",
+        "zirconium alloy"
+      ],
+      "why": "nuclear alloys demand tied to AI power needs"
+    },
+    {
+      "term": "export controls",
+      "tier": "context",
+      "variants": [
+        "export restrictions",
+        "export ban",
+        "export licensing regime"
+      ],
+      "why": "restrictions on chip-related metals and materials"
+    },
+    {
+      "term": "rare earth magnet",
+      "tier": "context",
+      "variants": [
+        "permanent magnet",
+        "NdFeB",
+        "neodymium magnet"
+      ],
+      "why": "robot and motor demand; export-controlled supply"
+    }
+  ],
+  "class_terms": {
+    "2410": [
+      {
+        "term": "furnace optimisation",
+        "tier": "context",
+        "variants": [
+          "furnace optimization",
+          "blast furnace control system",
+          "AI blast furnace",
+          "autonomous blast furnace",
+          "EAF optimisation",
+          "EAF optimization"
+        ],
+        "why": "main AI use case in iron and steelmaking"
+      },
+      {
+        "term": "surface defect detection",
+        "tier": "ai",
+        "variants": [
+          "surface inspection system",
+          "automated surface inspection",
+          "automatic surface inspection",
+          "defect classification"
+        ],
+        "why": "vision AI classifying strip and slab defects"
+      },
+      {
+        "term": "scrap classification",
+        "tier": "ai",
+        "variants": [
+          "scrap recognition",
+          "automated scrap grading",
+          "AI-based scrap sorting",
+          "scrap grading system",
+          "scrap image recognition"
+        ],
+        "why": "camera AI grading incoming scrap"
+      },
+      {
+        "term": "scrap sorting",
+        "tier": "context",
+        "variants": [
+          "sensor-based sorting",
+          "LIBS sorting",
+          "XRF sorting",
+          "scrap mix optimisation",
+          "scrap mix optimization",
+          "charge mix optimisation",
+          "charge mix optimization"
+        ],
+        "why": "sorting and charge-mix steps optimised with ML"
+      },
+      {
+        "term": "electrical steel",
+        "tier": "context",
+        "variants": [
+          "transformer steel",
+          "silicon steel",
+          "transformer core"
+        ],
+        "why": "transformer and motor steel for grid and data centers"
+      },
+      {
+        "term": "amorphous alloy",
+        "tier": "context",
+        "variants": [
+          "amorphous ribbon",
+          "amorphous metal",
+          "nanocrystalline alloy",
+          "soft magnetic material"
+        ],
+        "why": "low-loss core material for transformers and server inductors"
+      },
+      {
+        "term": "through-process optimisation",
+        "tier": "context",
+        "variants": [
+          "through-process optimization",
+          "through-process quality control",
+          "quality tracking system"
+        ],
+        "why": "data linking of process steps for quality models"
+      }
+    ],
+    "2420": [
+      {
+        "term": "copper foil",
+        "tier": "context",
+        "variants": [
+          "HVLP",
+          "electrolytic foil",
+          "rolled-annealed foil",
+          "carrier-attached foil"
+        ],
+        "case_sensitive_variants": [
+          "HVLP"
+        ],
+        "why": "foil for AI server circuit boards"
+      },
+      {
+        "term": "sputtering target",
+        "tier": "context",
+        "variants": [
+          "high-purity copper",
+          "tantalum target",
+          "thin-film material",
+          "high-purity metal"
+        ],
+        "why": "high-purity metals deposited in chip manufacturing"
+      },
+      {
+        "term": "bonding wire",
+        "tier": "context",
+        "variants": [
+          "wire bonding material",
+          "lead frame alloy",
+          "leadframe"
+        ],
+        "why": "metal interconnect materials for chip packaging"
+      },
+      {
+        "term": "semiconductor materials",
+        "tier": "context",
+        "variants": [
+          "electronic materials",
+          "semiconductor-grade",
+          "InP substrate",
+          "compound semiconductor wafer"
+        ],
+        "why": "segment name where AI chip demand is reported"
+      },
+      {
+        "term": "gallium",
+        "tier": "context",
+        "variants": [
+          "germanium",
+          "indium"
+        ],
+        "why": "chip metals under Chinese export controls"
+      },
+      {
+        "term": "copper demand",
+        "tier": "context",
+        "variants": [
+          "copper intensity",
+          "copper-intensive",
+          "copper consumption"
+        ],
+        "why": "AI data centers cited as copper demand driver"
+      },
+      {
+        "term": "solder",
+        "tier": "context",
+        "variants": [
+          "tin demand",
+          "tin consumption"
+        ],
+        "why": "tin demand tied to electronics and AI hardware"
+      },
+      {
+        "term": "smelter optimisation",
+        "tier": "context",
+        "variants": [
+          "smelter optimization",
+          "potline optimisation",
+          "potline optimization",
+          "pot control system",
+          "cell control system"
+        ],
+        "why": "ML control of potlines and smelting furnaces"
+      }
+    ],
+    "2431": [
+      {
+        "term": "casting simulation",
+        "tier": "context",
+        "variants": [
+          "solidification simulation",
+          "mould filling simulation",
+          "mold filling simulation"
+        ],
+        "why": "simulation paired with ML defect prediction"
+      },
+      {
+        "term": "casting defect detection",
+        "tier": "ai",
+        "variants": [
+          "casting defect prediction",
+          "porosity prediction",
+          "AI-based casting inspection"
+        ],
+        "why": "ML detection and prediction of casting defects"
+      },
+      {
+        "term": "smart foundry",
+        "tier": "context",
+        "variants": [
+          "digital foundry",
+          "foundry 4.0",
+          "connected foundry"
+        ],
+        "why": "connected foundry programmes where AI is reported"
+      }
+    ],
+    "2432": [
+      {
+        "term": "automated X-ray inspection",
+        "tier": "ai",
+        "variants": [
+          "automated radiographic inspection",
+          "computed tomography inspection",
+          "CT inspection",
+          "automatic defect recognition"
+        ],
+        "why": "automatic defect recognition in cast parts"
+      },
+      {
+        "term": "die casting process monitoring",
+        "tier": "context",
+        "variants": [
+          "shot monitoring",
+          "die casting cell automation",
+          "real-time process monitoring"
+        ],
+        "why": "shot data feeding quality models"
+      }
+    ]
+  }
+}

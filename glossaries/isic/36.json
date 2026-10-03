@@ -1,0 +1,387 @@
+{
+  "id": "36",
+  "name": "Water collection, treatment and supply",
+  "section": "E",
+  "summary": "Water utilities describe AI in network operations: leak and burst prediction from acoustic loggers and smart meters, pressure and pump optimisation, treatment process control and digital twins of networks. Data-centre and semiconductor water demand, and supply of recycled water for cooling, are emerging demand and resilience topics. Cyber risk to operational technology is the main sector-specific risk angle.",
+  "terms": [
+    {
+      "term": "smart water network",
+      "tier": "context",
+      "variants": [
+        "smart network",
+        "intelligent water network",
+        "smart water",
+        "digital water",
+        "intelligent network",
+        "smart water grid"
+      ],
+      "why": "sensorised networks enabling analytics"
+    },
+    {
+      "term": "leak detection",
+      "tier": "context",
+      "variants": [
+        "leakage detection",
+        "acoustic logger",
+        "acoustic sensor",
+        "leak noise logger",
+        "noise correlator",
+        "leakage reduction technology",
+        "hydrophone",
+        "satellite leakage"
+      ],
+      "why": "finding leaks via acoustic, satellite and meter data"
+    },
+    {
+      "term": "AI leak detection",
+      "tier": "ai",
+      "variants": [
+        "AI-based leak detection",
+        "machine learning leak detection",
+        "leak detection algorithm",
+        "automated leak detection",
+        "intelligent leak detection",
+        "predictive leakage",
+        "leak prediction"
+      ],
+      "why": "ML localisation and prioritisation of leaks"
+    },
+    {
+      "term": "non-revenue water",
+      "tier": "context",
+      "variants": [
+        "NRW",
+        "water loss reduction",
+        "unaccounted-for water",
+        "leakage target",
+        "water loss management"
+      ],
+      "case_sensitive_variants": [
+        "NRW"
+      ],
+      "why": "loss metric targeted by analytics"
+    },
+    {
+      "term": "smart water meter",
+      "tier": "context",
+      "variants": [
+        "smart meter",
+        "smart metering",
+        "advanced metering infrastructure",
+        "AMI",
+        "automatic meter reading",
+        "meter data analytics"
+      ],
+      "case_sensitive_variants": [
+        "AMI"
+      ],
+      "why": "consumption data feeding leak and demand models"
+    },
+    {
+      "term": "customer-side leak alert",
+      "tier": "context",
+      "variants": [
+        "continuous flow alert",
+        "leak alert",
+        "high consumption alert",
+        "consumption analytics",
+        "customer leak detection",
+        "usage insights"
+      ],
+      "why": "automated alerts derived from meter data"
+    },
+    {
+      "term": "pipe failure prediction",
+      "tier": "ai",
+      "variants": [
+        "burst prediction",
+        "main break prediction",
+        "predictive pipe replacement",
+        "asset deterioration model",
+        "failure prediction",
+        "likelihood of failure model"
+      ],
+      "why": "ML ranking of mains by burst risk"
+    },
+    {
+      "term": "pipe condition assessment",
+      "tier": "context",
+      "variants": [
+        "risk-based pipe replacement",
+        "mains renewal prioritisation",
+        "mains renewal prioritization",
+        "asset risk model",
+        "in-pipe inspection",
+        "pipeline inspection robot"
+      ],
+      "why": "inspection data used to prioritise renewal"
+    },
+    {
+      "term": "lead service line prediction",
+      "tier": "ai",
+      "variants": [
+        "lead service line inventory",
+        "predictive lead model",
+        "lead pipe identification",
+        "service line material prediction"
+      ],
+      "why": "ML inventory of lead pipes"
+    },
+    {
+      "term": "pressure management",
+      "tier": "context",
+      "variants": [
+        "pressure optimisation",
+        "pressure optimization",
+        "calm network",
+        "transient monitoring",
+        "pressure transient",
+        "smart pressure valve",
+        "pressure control valve"
+      ],
+      "why": "algorithmic pressure control to cut bursts and leakage"
+    },
+    {
+      "term": "pump optimisation",
+      "tier": "context",
+      "variants": [
+        "pump optimization",
+        "pump scheduling",
+        "pumping energy optimisation",
+        "pumping energy optimization",
+        "pump efficiency monitoring"
+      ],
+      "why": "energy-efficient pump scheduling"
+    },
+    {
+      "term": "demand forecasting",
+      "tier": "context",
+      "variants": [
+        "water demand forecast",
+        "demand prediction",
+        "consumption forecasting",
+        "demand model"
+      ],
+      "why": "consumption prediction for production planning"
+    },
+    {
+      "term": "treatment process optimisation",
+      "tier": "context",
+      "variants": [
+        "treatment process optimization",
+        "chemical dosing optimisation",
+        "chemical dosing optimization",
+        "coagulant dosing",
+        "treatment plant optimisation",
+        "treatment plant optimization",
+        "real-time process control",
+        "advanced process control",
+        "membrane fouling prediction"
+      ],
+      "why": "algorithmic control of dosing and filtration"
+    },
+    {
+      "term": "desalination optimisation",
+      "tier": "context",
+      "variants": [
+        "desalination optimization",
+        "reverse osmosis optimisation",
+        "reverse osmosis optimization",
+        "membrane performance prediction",
+        "energy recovery optimisation"
+      ],
+      "why": "energy and membrane optimisation in desalination"
+    },
+    {
+      "term": "water quality monitoring",
+      "tier": "context",
+      "variants": [
+        "water quality sensor",
+        "water quality prediction",
+        "event detection system",
+        "real-time water quality",
+        "water quality analytics",
+        "contamination warning system"
+      ],
+      "why": "online sensing with automated event detection"
+    },
+    {
+      "term": "digital twin",
+      "tier": "context",
+      "variants": [
+        "virtual twin",
+        "hydraulic model",
+        "network model"
+      ],
+      "why": "virtual model of network or treatment works"
+    },
+    {
+      "term": "predictive maintenance",
+      "tier": "ai",
+      "variants": [
+        "predictive asset maintenance",
+        "pump failure prediction",
+        "prognostics",
+        "predictive asset management"
+      ],
+      "why": "ML failure prediction for pumps and plant"
+    },
+    {
+      "term": "condition monitoring",
+      "tier": "context",
+      "variants": [
+        "condition-based maintenance",
+        "asset health",
+        "asset performance management",
+        "vibration monitoring",
+        "remote asset monitoring"
+      ],
+      "why": "sensor data on pumps and assets for analytics"
+    },
+    {
+      "term": "intelligent control centre",
+      "tier": "context",
+      "variants": [
+        "intelligent control center",
+        "operations control centre",
+        "operations control center",
+        "integrated control centre",
+        "integrated control center",
+        "real-time network monitoring",
+        "network operations centre",
+        "network operations center"
+      ],
+      "why": "central rooms using real-time analytics for operations"
+    },
+    {
+      "term": "telemetry",
+      "tier": "context",
+      "variants": [
+        "SCADA",
+        "remote monitoring",
+        "network sensor",
+        "pressure logger",
+        "flow logger",
+        "remote telemetry unit"
+      ],
+      "why": "remote data collection underpinning analytics and control"
+    },
+    {
+      "term": "operational technology",
+      "tier": "context",
+      "variants": [
+        "OT security",
+        "OT cybersecurity",
+        "industrial control system",
+        "control system security",
+        "critical national infrastructure"
+      ],
+      "why": "control systems exposed to cyber attack"
+    },
+    {
+      "term": "catchment modelling",
+      "tier": "context",
+      "variants": [
+        "catchment modeling",
+        "reservoir inflow forecasting",
+        "drought forecasting",
+        "inflow prediction",
+        "water resource modelling",
+        "water resource modeling",
+        "rainfall forecasting"
+      ],
+      "why": "predictive models of inflow, drought and raw water quality"
+    },
+    {
+      "term": "drone inspection",
+      "tier": "context",
+      "variants": [
+        "satellite imagery",
+        "dam monitoring",
+        "UAV inspection",
+        "aerial survey",
+        "InSAR",
+        "remote sensing"
+      ],
+      "why": "UAV and satellite surveys of dams and pipelines"
+    },
+    {
+      "term": "work scheduling optimisation",
+      "tier": "context",
+      "variants": [
+        "work scheduling optimization",
+        "field workforce scheduling",
+        "job scheduling optimisation",
+        "dynamic scheduling",
+        "crew dispatch",
+        "workforce management system"
+      ],
+      "why": "algorithmic dispatch of field crews and repairs"
+    },
+    {
+      "term": "propensity to pay model",
+      "tier": "ai",
+      "variants": [
+        "arrears prediction",
+        "debt analytics",
+        "vulnerability identification",
+        "bad debt prediction",
+        "customer segmentation model"
+      ],
+      "why": "ML targeting of collections and affordability support"
+    },
+    {
+      "term": "data center",
+      "tier": "context",
+      "variants": [
+        "data centre"
+      ],
+      "why": "large new water users and reuse customers"
+    },
+    {
+      "term": "hyperscaler",
+      "tier": "context",
+      "variants": [
+        "hyperscale"
+      ],
+      "why": "tech companies seeking water supply and sites"
+    },
+    {
+      "term": "cooling water",
+      "tier": "context",
+      "variants": [
+        "water for cooling",
+        "evaporative cooling",
+        "water-intensive",
+        "water consumption of data centers",
+        "water consumption of data centres"
+      ],
+      "why": "water for server cooling as demand and stress issue"
+    },
+    {
+      "term": "ultrapure water",
+      "tier": "context",
+      "variants": [
+        "semiconductor fab",
+        "semiconductor manufacturing",
+        "chip plant",
+        "industrial water demand",
+        "high-purity water"
+      ],
+      "why": "chip-fab demand for high-grade water"
+    },
+    {
+      "term": "reclaimed water",
+      "tier": "context",
+      "variants": [
+        "recycled water",
+        "water reuse",
+        "purified recycled water",
+        "non-potable reuse",
+        "industrial reuse"
+      ],
+      "why": "recycled water supplied to data centres and fabs"
+    }
+  ],
+  "class_terms": {}
+}

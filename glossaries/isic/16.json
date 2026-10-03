@@ -1,0 +1,486 @@
+{
+  "id": "16",
+  "name": "Manufacture of wood and of products of wood and cork, except furniture; manufacture of articles of straw and plaiting materials",
+  "section": "C",
+  "summary": "Wood product manufacturers use AI mostly inside the mill: log scanning and sawing optimisation, automated lumber grading, defect detection on boards and panels, kiln and press control, and predictive maintenance. Upstream they describe LiDAR and satellite-based forest inventory, harvest planning, wildfire and pest detection, and timber traceability. Demand-side links are indirect: data-centre-driven grid expansion (utility poles), mass-timber data centres and automated offsite construction.",
+  "terms": [
+    {
+      "term": "log scanning",
+      "tier": "context",
+      "variants": [
+        "log scanner",
+        "log optimisation",
+        "log optimization",
+        "bucking optimisation",
+        "bucking optimization"
+      ],
+      "case_sensitive_variants": [],
+      "why": "scanner data driving optimised breakdown"
+    },
+    {
+      "term": "sawmill optimisation",
+      "tier": "context",
+      "variants": [
+        "sawmill optimization",
+        "edger optimiser",
+        "edger optimizer",
+        "trimmer optimiser",
+        "trimmer optimizer",
+        "sawing optimisation",
+        "sawing optimization",
+        "lumber recovery",
+        "recovery optimisation",
+        "recovery optimization"
+      ],
+      "case_sensitive_variants": [],
+      "why": "optimiser systems maximising recovery"
+    },
+    {
+      "term": "automated lumber grading",
+      "tier": "ai",
+      "variants": [
+        "automated grading",
+        "AI lumber grading",
+        "vision grading",
+        "automatic grading system",
+        "AI-based grading",
+        "grade scanner"
+      ],
+      "case_sensitive_variants": [],
+      "why": "vision and deep-learning grading of boards"
+    },
+    {
+      "term": "defect detection",
+      "tier": "context",
+      "variants": [
+        "knot detection",
+        "surface inspection system",
+        "panel surface inspection",
+        "board scanner",
+        "veneer scanning",
+        "veneer grading"
+      ],
+      "case_sensitive_variants": [],
+      "why": "scanner-based detection of knots and surface flaws"
+    },
+    {
+      "term": "machine vision",
+      "tier": "ai",
+      "variants": [
+        "vision inspection",
+        "automated visual inspection",
+        "AI visual inspection",
+        "vision scanning"
+      ],
+      "case_sensitive_variants": [],
+      "why": "camera-based inspection in mills"
+    },
+    {
+      "term": "predictive maintenance",
+      "tier": "ai",
+      "variants": [
+        "prescriptive maintenance",
+        "predictive asset maintenance"
+      ],
+      "case_sensitive_variants": [],
+      "why": "ML-based prediction of equipment failure"
+    },
+    {
+      "term": "mill automation",
+      "tier": "context",
+      "variants": [
+        "automated sawmill",
+        "mill modernisation",
+        "mill modernization",
+        "automated sorting line",
+        "automated stacking",
+        "robotic stacking",
+        "automated handling"
+      ],
+      "case_sensitive_variants": [],
+      "why": "automated handling replacing manual work"
+    },
+    {
+      "term": "kiln optimisation",
+      "tier": "context",
+      "variants": [
+        "kiln optimization",
+        "drying optimisation",
+        "drying optimization",
+        "kiln control system",
+        "moisture detection"
+      ],
+      "case_sensitive_variants": [],
+      "why": "model-based drying control"
+    },
+    {
+      "term": "advanced process control",
+      "tier": "context",
+      "variants": [
+        "process optimisation",
+        "process optimization",
+        "model predictive control",
+        "press control system"
+      ],
+      "case_sensitive_variants": [],
+      "why": "model-based control of presses and dryers"
+    },
+    {
+      "term": "yield optimisation",
+      "tier": "context",
+      "variants": [
+        "yield optimization",
+        "recovery improvement",
+        "fibre recovery",
+        "fiber recovery",
+        "raw material yield"
+      ],
+      "case_sensitive_variants": [],
+      "why": "fibre recovery targets that AI projects address"
+    },
+    {
+      "term": "smart factory",
+      "tier": "context",
+      "variants": [
+        "smart manufacturing",
+        "factory of the future",
+        "connected factory",
+        "digital factory",
+        "intelligent manufacturing",
+        "intelligent factory",
+        "Industry 4.0",
+        "Industrie 4.0",
+        "fourth industrial revolution"
+      ],
+      "case_sensitive_variants": [],
+      "why": "connected-plant programmes framing AI use"
+    },
+    {
+      "term": "digital twin",
+      "tier": "context",
+      "variants": [
+        "virtual twin"
+      ],
+      "case_sensitive_variants": [],
+      "why": "virtual plant, process or product model"
+    },
+    {
+      "term": "collaborative robot",
+      "tier": "context",
+      "variants": [
+        "cobot",
+        "industrial robot",
+        "robotic cell",
+        "robotic palletising",
+        "robotic palletizing",
+        "robotic arm"
+      ],
+      "case_sensitive_variants": [],
+      "why": "robots on production and packing lines"
+    },
+    {
+      "term": "labour-saving automation",
+      "tier": "context",
+      "variants": [
+        "labor-saving automation",
+        "automation of manual tasks",
+        "automation of repetitive tasks",
+        "machine substitution",
+        "reduce reliance on manual labour",
+        "reduce reliance on manual labor"
+      ],
+      "case_sensitive_variants": [],
+      "why": "automation motivated by labour cost and shortages"
+    },
+    {
+      "term": "energy optimisation",
+      "tier": "context",
+      "variants": [
+        "energy optimization",
+        "energy management system",
+        "smart energy management"
+      ],
+      "case_sensitive_variants": [],
+      "why": "AI used to cut plant energy use"
+    },
+    {
+      "term": "proximity detection",
+      "tier": "context",
+      "variants": [
+        "pedestrian detection",
+        "collision avoidance system",
+        "safety camera"
+      ],
+      "case_sensitive_variants": [],
+      "why": "sensor and vision systems protecting workers"
+    },
+    {
+      "term": "operational technology",
+      "tier": "context",
+      "variants": [
+        "OT security",
+        "OT cybersecurity",
+        "industrial control system",
+        "SCADA"
+      ],
+      "case_sensitive_variants": [],
+      "why": "plant control systems exposed to cyber risk"
+    },
+    {
+      "term": "LiDAR",
+      "tier": "context",
+      "variants": [
+        "airborne laser scanning",
+        "laser scanning inventory",
+        "remote sensing",
+        "drone inventory",
+        "satellite imagery"
+      ],
+      "case_sensitive_variants": [],
+      "why": "remote sensing input for forest models"
+    },
+    {
+      "term": "digital forest inventory",
+      "tier": "context",
+      "variants": [
+        "precision forestry",
+        "smart forestry",
+        "digital forestry",
+        "forest digitalisation",
+        "forest digitalization",
+        "tree-level inventory"
+      ],
+      "case_sensitive_variants": [],
+      "why": "data-driven forest management"
+    },
+    {
+      "term": "harvest planning",
+      "tier": "context",
+      "variants": [
+        "harvest optimisation",
+        "harvest optimization",
+        "wood flow optimisation",
+        "wood flow optimization",
+        "fibre supply optimisation",
+        "fiber supply optimization",
+        "wood procurement optimisation"
+      ],
+      "case_sensitive_variants": [],
+      "why": "optimisation of wood flows"
+    },
+    {
+      "term": "carbon stock modelling",
+      "tier": "context",
+      "variants": [
+        "forest carbon modelling",
+        "forest carbon modeling",
+        "carbon stock estimation",
+        "biomass estimation",
+        "growth and yield model"
+      ],
+      "case_sensitive_variants": [],
+      "why": "growth and carbon estimation from remote sensing"
+    },
+    {
+      "term": "wildfire detection",
+      "tier": "context",
+      "variants": [
+        "wildfire monitoring",
+        "fire detection camera",
+        "wildfire risk modelling",
+        "wildfire risk modeling",
+        "fire risk prediction"
+      ],
+      "case_sensitive_variants": [],
+      "why": "camera and satellite fire monitoring"
+    },
+    {
+      "term": "AI wildfire detection",
+      "tier": "ai",
+      "variants": [
+        "AI-enabled fire detection",
+        "AI-powered wildfire camera",
+        "AI smoke detection"
+      ],
+      "case_sensitive_variants": [],
+      "why": "explicit AI fire detection claim"
+    },
+    {
+      "term": "pest detection",
+      "tier": "context",
+      "variants": [
+        "bark beetle detection",
+        "bark beetle monitoring",
+        "forest health monitoring",
+        "forest damage detection",
+        "storm damage assessment"
+      ],
+      "case_sensitive_variants": [],
+      "why": "remote-sensing monitoring of forest damage"
+    },
+    {
+      "term": "timber traceability",
+      "tier": "context",
+      "variants": [
+        "wood traceability",
+        "geolocation data",
+        "deforestation-free",
+        "wood origin tracking",
+        "digital chain of custody"
+      ],
+      "case_sensitive_variants": [],
+      "why": "origin data required by deforestation rules"
+    },
+    {
+      "term": "autonomous log loader",
+      "tier": "context",
+      "variants": [
+        "autonomous crane",
+        "remote-controlled crane",
+        "automated log yard",
+        "autonomous log handling",
+        "teleoperated harvester",
+        "autonomous forwarder",
+        "autonomous forestry machine"
+      ],
+      "case_sensitive_variants": [],
+      "why": "automated and remote-operated log handling"
+    },
+    {
+      "term": "data center",
+      "tier": "context",
+      "variants": [
+        "data centre",
+        "load growth",
+        "grid expansion",
+        "electricity demand growth",
+        "utility infrastructure investment"
+      ],
+      "case_sensitive_variants": [],
+      "why": "grid build-out drives utility pole demand"
+    },
+    {
+      "term": "timber data center",
+      "tier": "context",
+      "variants": [
+        "timber data centre",
+        "wooden data center",
+        "wooden data centre"
+      ],
+      "case_sensitive_variants": [],
+      "why": "mass timber used in data centre construction"
+    },
+    {
+      "term": "offsite construction",
+      "tier": "context",
+      "variants": [
+        "off-site construction",
+        "prefabrication",
+        "prefabricated timber",
+        "modular construction",
+        "industrialised construction",
+        "industrialized construction",
+        "house factory",
+        "automated framing",
+        "robotic framing"
+      ],
+      "case_sensitive_variants": [],
+      "why": "factory-built timber housing using automation"
+    },
+    {
+      "term": "CNC",
+      "tier": "context",
+      "variants": [
+        "computer numerical control",
+        "robotic nailing",
+        "automated truss assembly",
+        "automated truss production"
+      ],
+      "case_sensitive_variants": [],
+      "why": "computer-controlled machining of timber elements"
+    },
+    {
+      "term": "building information modelling",
+      "tier": "context",
+      "variants": [
+        "building information modeling",
+        "BIM",
+        "design-to-fabrication",
+        "parametric design",
+        "digital fabrication"
+      ],
+      "case_sensitive_variants": [
+        "BIM"
+      ],
+      "why": "digital design-to-fabrication chain"
+    },
+    {
+      "term": "demand forecasting",
+      "tier": "context",
+      "variants": [
+        "demand planning",
+        "sales and operations planning"
+      ],
+      "case_sensitive_variants": [],
+      "why": "planning process where AI is applied"
+    }
+  ],
+  "class_terms": {
+    "1621": [
+      {
+        "term": "continuous press control",
+        "tier": "context",
+        "variants": [
+          "press line optimisation",
+          "press line optimization",
+          "resin dosing optimisation",
+          "resin dosing optimization",
+          "glue dosing control",
+          "mat forming control"
+        ],
+        "why": "model-based control of panel press lines"
+      }
+    ],
+    "1622": [
+      {
+        "term": "product configurator",
+        "tier": "context",
+        "variants": [
+          "online configurator",
+          "3D configurator",
+          "design visualiser",
+          "design visualizer",
+          "automated quoting"
+        ],
+        "why": "digital tools for windows, doors and joinery orders"
+      }
+    ],
+    "1623": [
+      {
+        "term": "pallet tracking",
+        "tier": "context",
+        "variants": [
+          "smart pallet",
+          "IoT pallet",
+          "automated pallet sorting",
+          "automated pallet inspection",
+          "robotic pallet repair",
+          "pallet dismantling robot"
+        ],
+        "why": "sensor data and automation in pallet pools"
+      }
+    ],
+    "1629": [
+      {
+        "term": "automated cork sorting",
+        "tier": "context",
+        "variants": [
+          "optical cork sorting",
+          "cork stopper inspection",
+          "automated visual grading"
+        ],
+        "why": "vision-based grading of cork stoppers"
+      }
+    ]
+  }
+}

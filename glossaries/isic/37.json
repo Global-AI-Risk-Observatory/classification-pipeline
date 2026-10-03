@@ -1,0 +1,345 @@
+{
+  "id": "37",
+  "name": "Sewerage",
+  "section": "E",
+  "summary": "Wastewater operators use AI for sewer monitoring and blockage or spill prediction, automated coding of CCTV sewer surveys, real-time network control and energy-saving treatment optimisation such as aeration control. In the UK the discussion is tied to storm-overflow monitoring and pollution-incident commitments. Reuse of treated effluent for data-centre cooling and cyber risk to control systems are secondary themes.",
+  "terms": [
+    {
+      "term": "smart sewer",
+      "tier": "context",
+      "variants": [
+        "intelligent sewer",
+        "smart wastewater network",
+        "intelligent wastewater network",
+        "smart network",
+        "digital sewer",
+        "smart drainage"
+      ],
+      "why": "sensorised wastewater networks"
+    },
+    {
+      "term": "sewer level monitor",
+      "tier": "context",
+      "variants": [
+        "sewer monitor",
+        "sewer level sensor",
+        "sewer sensor",
+        "network sensor",
+        "sewer depth monitor",
+        "manhole sensor"
+      ],
+      "why": "sensors feeding blockage and spill analytics"
+    },
+    {
+      "term": "blockage prediction",
+      "tier": "ai",
+      "variants": [
+        "blockage detection",
+        "predictive blockage analytics",
+        "blockage early warning",
+        "blockage forecasting",
+        "predictive sewer analytics",
+        "fatberg detection"
+      ],
+      "why": "ML early warning of sewer blockages"
+    },
+    {
+      "term": "spill prediction",
+      "tier": "ai",
+      "variants": [
+        "overflow prediction",
+        "pollution incident prediction",
+        "predictive spill analytics",
+        "spill forecasting",
+        "pollution prediction",
+        "sewer flooding prediction",
+        "flood prediction"
+      ],
+      "why": "forecasting overflows and pollution incidents"
+    },
+    {
+      "term": "storm overflow",
+      "tier": "context",
+      "variants": [
+        "event duration monitoring",
+        "EDM",
+        "combined sewer overflow",
+        "spill monitoring",
+        "overflow monitoring"
+      ],
+      "case_sensitive_variants": [
+        "EDM"
+      ],
+      "why": "regulated discharges monitored and predicted with analytics"
+    },
+    {
+      "term": "pollution incident",
+      "tier": "context",
+      "variants": [
+        "pollution reduction plan",
+        "serious pollution"
+      ],
+      "why": "performance commitment motivating predictive analytics"
+    },
+    {
+      "term": "real-time control",
+      "tier": "context",
+      "variants": [
+        "dynamic sewer control",
+        "active network control",
+        "intelligent network control",
+        "smart pumping",
+        "real-time network control",
+        "automated sluice control"
+      ],
+      "why": "dynamic operation of sewers, storage and pumps"
+    },
+    {
+      "term": "automated CCTV defect coding",
+      "tier": "ai",
+      "variants": [
+        "AI sewer inspection",
+        "automated defect recognition",
+        "sewer defect detection",
+        "AI-based CCTV analysis",
+        "automated sewer survey",
+        "defect coding automation",
+        "AI CCTV"
+      ],
+      "why": "computer vision on sewer survey footage"
+    },
+    {
+      "term": "CCTV survey",
+      "tier": "context",
+      "variants": [
+        "CCTV inspection",
+        "sewer inspection",
+        "sewer survey",
+        "pipe inspection camera"
+      ],
+      "why": "inspection footage as source for automated coding"
+    },
+    {
+      "term": "inspection robot",
+      "tier": "ai",
+      "variants": [
+        "sewer robot",
+        "robotic crawler",
+        "sewer drone",
+        "tunnel inspection drone",
+        "robotic sewer rehabilitation",
+        "cutter robot"
+      ],
+      "why": "robotic crawlers and drones inside sewers"
+    },
+    {
+      "term": "sewer deterioration model",
+      "tier": "ai",
+      "variants": [
+        "sewer condition prediction",
+        "collapse prediction",
+        "sewer collapse risk model",
+        "asset deterioration model",
+        "predictive rehabilitation",
+        "risk-based sewer renewal"
+      ],
+      "why": "predicting collapse and rehabilitation needs"
+    },
+    {
+      "term": "infiltration and inflow",
+      "tier": "context",
+      "variants": [
+        "infiltration detection",
+        "inflow and infiltration",
+        "flow monitoring",
+        "infiltration reduction",
+        "misconnection detection"
+      ],
+      "why": "unwanted flows located through sensor analytics"
+    },
+    {
+      "term": "hydraulic modelling",
+      "tier": "context",
+      "variants": [
+        "hydraulic modeling",
+        "hydraulic model",
+        "drainage model",
+        "sewer network model",
+        "live network model",
+        "catchment model"
+      ],
+      "why": "network models, increasingly ML-calibrated and real-time"
+    },
+    {
+      "term": "rainfall forecasting",
+      "tier": "context",
+      "variants": [
+        "radar rainfall",
+        "rainfall prediction",
+        "rainfall nowcasting",
+        "weather radar data",
+        "storm forecasting"
+      ],
+      "why": "weather input to overflow and flood prediction"
+    },
+    {
+      "term": "aeration control",
+      "tier": "context",
+      "variants": [
+        "aeration optimisation",
+        "aeration optimization",
+        "blower control",
+        "dissolved oxygen control",
+        "aeration energy"
+      ],
+      "why": "largest energy use, optimised by algorithms"
+    },
+    {
+      "term": "AI-controlled treatment",
+      "tier": "ai",
+      "variants": [
+        "AI-controlled aeration",
+        "AI process control",
+        "machine learning process control",
+        "intelligent treatment control",
+        "autonomous treatment plant",
+        "self-optimising treatment works",
+        "self-optimizing plant"
+      ],
+      "why": "ML set-point control of wastewater treatment"
+    },
+    {
+      "term": "wastewater treatment optimisation",
+      "tier": "context",
+      "variants": [
+        "wastewater treatment optimization",
+        "treatment process optimisation",
+        "treatment process optimization",
+        "advanced process control",
+        "chemical dosing optimisation",
+        "chemical dosing optimization",
+        "nutrient removal optimisation",
+        "process control optimisation"
+      ],
+      "why": "process optimisation of treatment works"
+    },
+    {
+      "term": "soft sensor",
+      "tier": "ai",
+      "variants": [
+        "virtual sensor",
+        "effluent quality prediction",
+        "inferential sensor",
+        "ammonia prediction",
+        "effluent compliance prediction"
+      ],
+      "why": "ML inference of effluent quality parameters"
+    },
+    {
+      "term": "sludge and biogas optimisation",
+      "tier": "context",
+      "variants": [
+        "digester optimisation",
+        "digester optimization",
+        "biogas optimisation",
+        "biogas optimization",
+        "sludge dewatering optimisation",
+        "bioresources optimisation",
+        "anaerobic digestion control"
+      ],
+      "why": "digester and bioresources process control"
+    },
+    {
+      "term": "digital twin",
+      "tier": "context",
+      "variants": [
+        "virtual twin",
+        "digital replica",
+        "live digital model"
+      ],
+      "why": "virtual sewer network or treatment works"
+    },
+    {
+      "term": "predictive maintenance",
+      "tier": "ai",
+      "variants": [
+        "pump failure prediction",
+        "predictive asset maintenance",
+        "prognostics",
+        "rising main burst detection",
+        "predictive asset management"
+      ],
+      "why": "ML failure prediction for pumps and plant"
+    },
+    {
+      "term": "pumping station monitoring",
+      "tier": "context",
+      "variants": [
+        "pump station monitoring",
+        "pump station telemetry",
+        "telemetry alarm",
+        "remote monitoring",
+        "SCADA",
+        "condition monitoring",
+        "alarm rationalisation"
+      ],
+      "why": "pump telemetry used for anomaly detection"
+    },
+    {
+      "term": "intelligent control centre",
+      "tier": "context",
+      "variants": [
+        "intelligent control center",
+        "wastewater control centre",
+        "operations control centre",
+        "operations control center",
+        "network control room",
+        "alarm management"
+      ],
+      "why": "central monitoring hub applying real-time analytics"
+    },
+    {
+      "term": "operational technology",
+      "tier": "context",
+      "variants": [
+        "OT security",
+        "OT cybersecurity",
+        "industrial control system",
+        "control system security"
+      ],
+      "why": "control systems exposed to cyber attack"
+    },
+    {
+      "term": "effluent reuse",
+      "tier": "context",
+      "variants": [
+        "reclaimed water",
+        "recycled water",
+        "water reuse",
+        "water recycling",
+        "non-potable reuse"
+      ],
+      "why": "treated wastewater supplied for data-centre cooling"
+    },
+    {
+      "term": "data center",
+      "tier": "context",
+      "variants": [
+        "data centre",
+        "hyperscaler"
+      ],
+      "why": "cooling demand for recycled water and sewer capacity"
+    },
+    {
+      "term": "sewer heat recovery",
+      "tier": "context",
+      "variants": [
+        "wastewater heat recovery",
+        "heat from wastewater",
+        "sewage heat"
+      ],
+      "why": "heat exchange between sewers, buildings and data centres"
+    }
+  ],
+  "class_terms": {}
+}
