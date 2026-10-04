@@ -13,11 +13,13 @@ Each term has a tier:
 from __future__ import annotations
 
 import json
+import os
 import re
 from functools import lru_cache
 from pathlib import Path
 
-GLOSSARY_DIR = Path(__file__).resolve().parents[2] / "glossaries"
+# Repo checkout: <root>/glossaries. Installed package (container): set AIRO_GLOSSARIES.
+GLOSSARY_DIR = Path(os.environ.get("AIRO_GLOSSARIES") or Path(__file__).resolve().parents[2] / "glossaries")
 TIERS = ("ai", "context")
 
 
