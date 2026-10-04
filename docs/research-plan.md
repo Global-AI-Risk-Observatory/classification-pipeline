@@ -1,6 +1,7 @@
 # Research plan: evaluation design for the classifier
 
-Status: proposal, 2026-10-03. Items 1 and 2 of the original list (criteria-based value
+Status: proposal, 2026-10-03. Scope of the first phase: US filings (Form 10-K and related SEC
+forms). Other jurisdictions follow once the US pipeline is validated. Items 1 and 2 of the original list (criteria-based value
 definitions, disclosure traits as a label field) are implemented in taxonomy v0.3 and are not
 repeated here. Everything below is open.
 
@@ -30,7 +31,7 @@ boundaries for non-10-K formats.
 
 **Activation rate.** Per report: the share of AI passages with at least one disclosure trait, and
 the share per trait (boilerplate, hedging, externalisation, vagueness, safe harbour). Ten lines in
-`aggregate.py`; reported per report, then per year, ISIC division and country.
+`aggregate.py`; reported per report, then per year and ISIC division.
 
 **Detection accuracy.** Per field: the share of passages on which the passage-only label equals
 the full-context label (item 1), and, once human labels exist, equals the human label.
@@ -71,8 +72,10 @@ when, and whether the paths follow auditors, law firms, sectors or countries.
 ## 5. Research questions the pipeline is being built to answer
 
 1. **Obscuring traits in AI risk disclosure.** Which disclosure traits dominate AI risk language,
-   and do they increase after regulatory pressure (SEC Item 1C from 2023, EU AI Act)? Metric:
-   activation rate per report, year, industry.
+   and do they increase after regulatory pressure (SEC cybersecurity disclosure rule, Item 1C,
+   effective for fiscal years ending on or after 15 December 2023; SEC enforcement and comment
+   letters on misleading AI claims, "AI washing", since 2024)? Metric: activation rate per
+   report, year, industry.
 2. **How much of the label lies outside the passage.** Divergence between passage-only and
    full-context coding, per field (item 1).
 3. **Detection asymmetry.** Does classification accuracy, for models and for humans, fall as the
