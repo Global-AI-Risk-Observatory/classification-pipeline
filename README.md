@@ -15,10 +15,9 @@ Without installing, prefix the commands below with `PYTHONPATH=src`.
 
 ## Stages and files
 
-Interim layout: all files live in one local working directory, set with `--data` (default
-`data`). The target deployment is Google Cloud (filings and per-document outputs in Cloud
-Storage, labels and summaries in BigQuery, runs as Cloud Batch jobs); the local layout exists
-for development until the cloud project is set up.
+All files live in one working directory, set with `--data` (default `data`). Locally that is a
+directory; in the cloud it is a mounted Cloud Storage bucket (see "Google Cloud" below). Labels
+and summaries move to BigQuery once the first cloud runs are done.
 
 | Stage | Command | Reads | Writes |
 |---|---|---|---|
@@ -63,8 +62,8 @@ that pass the pipeline's own validation as JSONL for `accept`, and a `<out>.run.
 run's totals (tasks, succeeded, failed, tokens by kind, wall time, model, estimated cost).
 
     python -m airo.coders.gemini --tasks data/tasks.jsonl --codebook data/codebook.md \
-        --out data/labels_in/gemini.jsonl --model gemini-2.5-flash \
-        --project <gcp-project-id> --location us-central1 \
+        --out data/labels_in/gemini.jsonl --model gemini-3.8-flash \
+        --project gario-1 --location us-central1 \
         [--workers 4] [--thinking-budget N] [--price-input X --price-output Y] [--limit N]
     python -m airo --data data accept data/labels_in/gemini.jsonl --coder gemini
 
@@ -78,6 +77,34 @@ Failed passages (transient errors after retries, invalid or schema-breaking outp
 evidence) are listed in the run file and left out of the labels file; re-run with `--limit` or a
 filtered task file to retry them. The live call has not yet been exercised: the module was written
 against the SDK's documented interface and tested only with a fake client.
+
+## Google Cloud
+
+The pipeline is deployed on Google Cloud; the settings are in `cloud/config.env` (no secrets).
+
+| Item | Value |
+|---|---|
+| Project | `gario-1`, region `us-central1` |
+| Raw filings | bucket `airo-filings-raw` (regional, Standard, uniform access, no public access) |
+| Pipeline outputs | bucket `airo-pipeline-data` (same settings) |
+| Pipeline identity | service account `airo-pipeline@gario-1.iam.gserviceaccount.com`: Storage Object User, Agent Platform (Vertex AI) User, Batch Job Editor, BigQuery Data Editor, BigQuery Job User, Secret Manager Secret Accessor, Artifact Registry Reader, Batch Agent Reporter, Logs Writer |
+| Model | Gemini `gemini-3.8-flash` through Vertex AI, tested in Vertex AI Studio |
+| Image | `us-central1-docker.pkg.dev/gario-1/airo/pipeline` (Artifact Registry repository `airo`), built from `Dockerfile` |
+| Build | Cloud Build trigger `airo-main` on every push to `main` of this repository (GitHub connection `GithubAIRO`, 2nd gen): runs the tests, builds and pushes the image (`cloudbuild.yaml`), as service account `cloudbuild-airo@gario-1.iam.gserviceaccount.com` |
+| Enabled APIs | Cloud Storage, Vertex AI, Batch, BigQuery, Secret Manager, Artifact Registry, Cloud Build, Compute Engine |
+| Budget | budget alert on the billing account (warns, does not cap) |
+
+Set up and pending:
+
+- Done: project, billing, IAM for the team, buckets, service accounts, APIs, Gemini access, GitHub
+  connection, build trigger; the first build succeeded (tests passed in the cloud, image pushed).
+- Pending: the data provider's API key in Secret Manager (`financialreports-api-key`), which is
+  needed only to download filings; the first Cloud Batch run of the pipeline over the raw bucket;
+  the BigQuery tables for labels and summaries.
+
+The container runs `python -m airo <command>` with `AIRO_GLOSSARIES=/app/glossaries`. A Batch job
+mounts the two buckets and calls `run`, `tasks`, the Gemini coder, `accept`, `adjudicate`,
+`aggregate` in that order.
 
 ## Design
 
@@ -163,7 +190,8 @@ of the AI statement before judging any role or trait; criteria marked "frame-dep
   environment); the three-coder runs so far were done by agents handing in label files.
 - Input is HTML / inline XBRL only. There is no PDF reader. Metadata comes only from inline XBRL `dei:`
   facts and is empty for plain HTML.
-- `run` parallelises over the cores of one machine; there is no distribution over several machines yet.
+- `run` parallelises over the cores of one machine; distribution over several machines comes with
+  the Cloud Batch job definition, which is not written yet.
   Two `run` commands on the same `--data` directory at the same time are not supported: each reads the
   index once at start and removes the other's temporary directories. The skip is by file hash, so a file
   is re-processed only if its bytes change or `--retry-failed` is given; a changed glossary or parser
