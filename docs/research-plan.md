@@ -88,3 +88,74 @@ when, and whether the paths follow auditors, law firms, sectors or countries.
 6. **Role instead of risk.** In industries where AI is a demand driver (energy, mining,
    semiconductors), AI risk appears as market risk, not technology risk. Does the risk type shift
    systematically with the company's position in the AI value chain (ISIC division)?
+
+# Jesse's Research Thoughts
+
+## High Level
+- RQ1 - What are the dominant discourse themes regarding AI in USA SEC Form 10-K filings, and have these shifted over time.
+- RQ 2 - How has the substantiveness of AI related discourse in USA SEC Form 10-K filings shifted over time.
+
+## Specific Questions
+- Can these shifts be mapped to external factors (inform a hypothesis based on literature review from policy team) 
+- Does discourse/substantiveness change at different business ‘levels’ (i.e. state vs federal, different industries, F500 vs rest) and how do these map to external factors.
+
+## Corpus
+- All US based companies annual report filings from 2020 - Current day 
+- Only ONE 10-K form per issuer/fiscal year.
+- Thanks financial filings :) 
+
+## Methodology
+### 1 - Extract AI related mentions 
+- Use Diana’s glossaries (direct AI mention vs general industry specific contextual mentions)
+- LLM evaluator/human QA to check accuracy 
+- Evaluate precision vs recall of extraction
+### 2 - Classify data points 
+- Possibly conduct EDA to identify groupings
+  - Potential to use Evalet for this.
+  - Alternatively use embedding/clustering methods to identify text groupings and qualitative evaluation to get themes.
+- Otherwise define groupings based on policy team literature review for relevant AI-discourse themes (slightly changes RQ1)
+- Classify data at scale using LLM with strict guidelines
+  - JEV vs DSpy vs Normal LLM
+  - Note (DSPy requires training data to optimize classification accuracy, would need large enough human annotated dataset)
+### 3 - Evaluate classifier performance (Quality Assurance)
+- Compare with the human annotated ‘golden set’?
+- Inter-rater reliability (Cohens Kappa, Threshold = 0.8)
+### 4 - Analyse classified data trends (RQ1)
+- Provides broad high-level response to RQ1.
+- What classification is mentioned most?
+- What is the change in mentions over time?
+- Hypothesis - Strong increase in adoption/risk related mentions over time
+### 5 - Link classified data trends to external factors (RQ1)
+- Can specific external factors be linked to changes in reporting?
+- Have policy/regulations lagged behind company AI disclosures or preceded?
+### 6 - Evaluate substantiveness (RQ2)
+- Use Evalet to analyse substantiveness scores across classification groups/business levels over 2020 - Current time period.
+- Exploratory data analysis to find trends in substantiveness.
+- Evalet identifies functions that are relevant to the evaluation criteria.
+- This can be used as a method to identify discourse trends.
+Further informs exploratory data analysis linking to external factors.
+- E.g. High substantiveness datapoints all reference clear roadmaps for delivery as a function. Through further analysis we find that there was a significant increase in references to clear roadmaps for delivery after the EU Artificial Intelligence Act (2024) was passed. This trend was observed first in predominantly F500 companies, with smaller, non-international businesses lagging behind by 1-2 fiscal years.
+
+## Note - External Factors Definition
+- Below is a list of things that can be considered ‘external factors’. List can be adjusted over time as research goes on. These are just potential things to consider right now.
+- Any state, federal, or international government policies, frameworks, or regulations related to AI governance and use. (primary focus factor)
+- Global economic factors such as recession or hardware availability and price.
+- Highly publicised AI ‘scandals’. I.e. OpenAI breach of Australian health system/hugging face
+Social sentiment
+
+## Note - Substantiveness
+- Substantiveness is just a placeholder definition to mean the quality of a datapoint, which is the extracted text of an AI mention.
+- It is being used because that was the terminology Bart defined in the UKAIRO project.
+- The term is open to change depending on results of literature reviews and relevant research that further informs this topic.
+There is strong potential to add further criteria that relate to the perceived ‘quality’ of a datapoint. Examples below.
+- Relevance (How relevant is this datapoint to global discourse around AI at the time it was published)
+- Social acceptability (Does the content of the datapoint describe any actions that may not be well received by the public?)
+- Morality (Is the use of AI described in the datapoint likely to produce discriminatory systems that violate human rights, autonomy,  or social and cultural values?)
+- Believability (Similar to substantiveness but focuses on if the claim made in the datapoint is believable/realistic. E.g. not believable = Elon Musk promising 1 million fully automatic robotaxis by end of 2020 in 2019)
+- These criteria all provide rich avenues of evaluation, but mostly derive from how substantive a datapoint is. If a datapoint is not substantive and just contains boilerplate, then it is unlikely to generate a strong signal from any of these other criteria too.
+- A potential analysis option could be evaluate substantiveness → Filter out low substantive data points → Evaluate additional criteria
+
+## Notes - Quality Assurance
+- Need to design a technical evaluation of classification performance to verify data quality.
+- Most likely using multiple human annotators on the same subset of data points then verifying inter-rater agreement between human annotators (human - human) and annotators to LLM classifier (annotators - LLM)
+- If classification categories are similar to UKAIRO, compare with that data too.
