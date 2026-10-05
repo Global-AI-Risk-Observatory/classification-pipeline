@@ -295,3 +295,57 @@ frame leans on section and heading, and section detection knows only Form 10-K "
 of tests in the frame decision rules (harm, then remit, then market, then business) is a
 judgement from four passages. Whether `market_driver` in frame `risk_factor` now drops cases
 that v0.3 caught (a risk factor that implies demand without stating it) is unmeasured.
+
+---
+
+## 11. Source: US filings as Markdown from one provider, stored once in Cloud Storage
+
+**Original.** The UK pipeline collected annual reports of companies listed in London from
+several places: PDFs and metadata from the Companies House API (`src/companies_house.py`, key
+`COMPANIES_HOUSE_API_KEY`), iXBRL from filings.xbrl.org, and Markdown from the data provider's
+API (`scripts/fetch_fr_dataset.py`, London Stock Exchange only, with three local cache
+directories). Up to entry 10 this repository had no download at all: `run` was given HTML
+files that someone had saved by hand.
+
+**New** (`src/airo/fetch.py`, `python -m airo fetch`; `ingest.parse_markdown`). One source and
+one country: filings of US companies from the FinancialReports API (financialfilings.com). No
+Companies House, no UK data, no other key than the provider's.
+
+- Only the provider's Markdown rendering of a filing is fetched, not the filing package (HTML,
+  XBRL, exhibits). `ingest` reads that Markdown: paragraphs, bold lines as headings, pipe-table
+  rows; the Item sections are found as before.
+- The filings go to the raw bucket (`gs://airo-filings-raw/markdown/<filing id>.md`), not to a
+  local directory and not into the repository. `run` reads the mounted bucket.
+- A filing is stored once: the object name is the provider's filing id, the names in the
+  bucket are read before anything is requested, and objects are created only if absent.
+- The API key is personal and stays in each person's `.env.local`, because the provider counts
+  requests per key. It is not in Secret Manager.
+- Metadata costs no request per filing. Fiscal year, period and source filing id come with the
+  listing (`view=full`); CIK, ticker and exchange from the provider's list of US companies,
+  read once and kept in the bucket (`companies/us.jsonl`); the filing's cover page fills what
+  the provider leaves empty; a field that is still empty holds a notice text.
+- Which filing types are fetched is not fixed in the code: `--types` is required, `--form`
+  narrows to one SEC form.
+
+**Why.** The research plan is about US filings, and the provider has them for 22,027 US
+companies in one format. Markdown is a tenth of the size of the package and needs no HTML
+parser per filer. Storage in one bucket that all five team members write to makes "already
+fetched" a property of the bucket, not of anyone's disk, and saves the API requests for
+filings that are there. A per-filing detail request would have doubled the requests (about
+160,000 more for the Form 10-K filings); the listing and the company list give the same fields
+for about 220 requests in total.
+
+**Better.** Measured on the live API on 2026-10-05, with four and five filings: a second fetch
+of the same range requested no Markdown for filings already stored; the Boeing 10-K for 2024
+gave the same form, period end, fiscal year and 23 Item sections from Markdown as from the
+HTML package; the manifests carried CIK, ticker, exchange, fiscal year and source filing id
+without a request per filing.
+
+**Not better / open.** Nothing has been written to the real bucket yet; the Cloud Storage code
+was tested against a fake bucket and, read-only, against the real one. The provider's type
+"10-K" mixes SEC forms (10-K, 10-K/A, ARS, N-CSR, 20-F, 40-F, 10-KT), and the same report can
+appear under two filing ids (a 10-K and the ARS that reprints it): such a pair is stored twice
+unless `--form` excludes one. Markdown has no XBRL facts, so the filer category is lost. The
+company list has a ticker for half of the companies and an exchange for a quarter. The notice
+text sits in fields that are otherwise numbers or dates (`fiscal_year`, `period_end`), which
+every consumer of the manifest has to expect. The Markdown reader has been run on six filings.

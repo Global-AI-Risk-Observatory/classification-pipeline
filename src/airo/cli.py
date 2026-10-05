@@ -1,5 +1,6 @@
 """Command line: one sub-command per stage, files in, files out.
 
+    python -m airo fetch <out> --types T      -> <out>/markdown/<filing id>.md, <out>/manifest/<filing id>.json
     python -m airo run <dir-or-files...>      -> docs/<doc_id>/{document.json,blocks.jsonl,passages.jsonl}, index/files.jsonl
     python -m airo tasks                      -> tasks.jsonl, codebook.md, hints.jsonl
     python -m airo accept <file> --coder X    -> labels/X.jsonl (validated)
@@ -18,7 +19,7 @@ import sys
 from pathlib import Path
 from typing import Iterator
 
-from . import aggregate, classify, runner, taxonomy
+from . import aggregate, classify, fetch, runner, taxonomy
 
 
 def _read(path: Path) -> list[dict]:
@@ -44,10 +45,17 @@ def _direct(passages: list[dict]) -> list[dict]:
     return [p for p in passages if p["mention"] == "direct"]
 
 
+def cmd_fetch(args) -> None:
+    fetch.fetch(
+        args.out, fetch.api_key(), args.types, form=args.form,
+        since=args.since, until=args.until, limit=args.limit,
+    )
+
+
 def cmd_run(args) -> None:
     files = []
     for p in map(Path, args.inputs):
-        files += sorted(p.glob("*.htm*")) if p.is_dir() else [p]
+        files += sorted([*p.glob("*.md"), *p.glob("*.htm*")]) if p.is_dir() else [p]
     runner.run(
         files, args.data, manifest=args.manifest, workers=args.workers,
         context=args.context, retry_failed=args.retry_failed,
@@ -110,9 +118,17 @@ def main(argv: list[str] | None = None) -> None:
     parser.add_argument("--data", type=Path, default=Path("data"), help="working directory (default: data)")
     sub = parser.add_subparsers(dest="command", required=True)
 
+    p = sub.add_parser("fetch", help="store the Markdown of US companies' filings from the data provider, each filing once")
+    p.add_argument("out", help="gs://bucket[/prefix] or a directory; receives markdown/ and manifest/")
+    p.add_argument("--types", required=True, help="the provider's filing type codes, comma-separated (e.g. 10-K,10-Q)")
+    p.add_argument("--form", help="only filings submitted as this form (e.g. 10-K, which leaves out 10-K/A, 20-F, ARS)")
+    p.add_argument("--since", help="released on or after this date (YYYY-MM-DD)")
+    p.add_argument("--until", help="released on or before this date (YYYY-MM-DD)")
+    p.add_argument("--limit", type=int, default=10, help="filings to store at most in this call (default 10)")
+    p.set_defaults(func=cmd_fetch)
     p = sub.add_parser("run", help="parse filings and find candidate passages, one directory per document")
-    p.add_argument("inputs", nargs="+", help="HTML files or directories containing them")
-    p.add_argument("--manifest", type=Path, help="JSONL with one row per file: file, isic_class, ...")
+    p.add_argument("inputs", nargs="+", help="Markdown or HTML files, or directories containing them")
+    p.add_argument("--manifest", type=Path, help="one row per file (file, isic_class, ...): a JSONL file or a directory of JSON files")
     p.add_argument("--workers", type=int, help="processes (default: all CPUs)")
     p.add_argument("--context", type=int, default=1, help="neighbouring blocks on each side of a hit")
     p.add_argument("--retry-failed", action="store_true", help="process files whose last attempt failed again")

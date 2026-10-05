@@ -155,7 +155,13 @@ def run(
     meta = {}
     if manifest:
         # Provider metadata per file (ISIC class, country, filing id, ...).
-        meta = {row.pop("file"): row for row in _read_jsonl(manifest)}
+        # Either one JSONL file or, as `fetch` writes it, one JSON file per filing.
+        rows = (
+            [json.loads(f.read_text(encoding="utf-8")) for f in sorted(manifest.glob("*.json"))]
+            if manifest.is_dir()
+            else _read_jsonl(manifest)
+        )
+        meta = {row.pop("file"): row for row in rows}
     known = read_index(data)
     for stale in (data / "docs").glob(f"{_TMP}*") if (data / "docs").exists() else []:
         shutil.rmtree(stale)  # left by a killed run; its file is not indexed and is redone

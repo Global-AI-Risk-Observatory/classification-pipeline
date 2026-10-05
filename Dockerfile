@@ -5,7 +5,7 @@ WORKDIR /app
 COPY pyproject.toml README.md ./
 COPY src ./src
 COPY glossaries ./glossaries
-RUN pip install --no-cache-dir ".[gemini]"
+RUN pip install --no-cache-dir ".[gemini,gcs]"
 ENV AIRO_GLOSSARIES=/app/glossaries
 
 ENTRYPOINT ["python", "-m", "airo"]

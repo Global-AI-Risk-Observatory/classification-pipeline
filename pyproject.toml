@@ -8,6 +8,7 @@ dependencies = ["lxml>=5", "pydantic>=2"]
 [project.optional-dependencies]
 dev = ["pytest>=8"]
 gemini = ["google-genai>=1"]
+gcs = ["google-cloud-storage>=2"]
 
 [build-system]
 requires = ["setuptools>=68"]
