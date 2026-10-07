@@ -159,3 +159,23 @@ There is strong potential to add further criteria that relate to the perceived â
 - Need to design a technical evaluation of classification performance to verify data quality.
 - Most likely using multiple human annotators on the same subset of data points then verifying inter-rater agreement between human annotators (human - human) and annotators to LLM classifier (annotators - LLM)
 - If classification categories are similar to UKAIRO, compare with that data too.
+
+# Dan's Research Thoughts
+
+## High Level
+
+- RQ1 - To what extent are AI risks disclosed by companies avoidable, reducible, trade-off bound, irreducible, or better addressed by not using AI for the relevant task?
+  - Go beyond identifying which risks companies mention and consider how far those risks can be addressed. This might be more relevant to some risk categories than others.
+- RQ2 - When a company discloses a specific AI risk, does it subsequently make observable changes that appear to address that risk?
+  - Possible changes could include governance, controls, mitigation, adoption decisions, vendor choices or policies.
+- RQ3 - To what extent do companies demonstrate awareness of the AI risks associated with their own AI use, adoption, products or dependencies?
+  - Distinguish generic acknowledgement from understanding of concrete risks connected to the company's activities and responses. This concerns what companies demonstrate through disclosure, rather than what they know internally.
+
+## Notes / Other Ideas
+
+- Compare changes in AI disclosures with model releases and vendor activity.
+- Explore a lightweight, reproducible report labeler using lexical retrieval and a small trained classifier, rather than repeated general-purpose LLM calls.
+- Use cosine similarity / embeddings to classify mentions into the taxonomy and explore how clearly categories can be distinguished.
+- Use interpretable ML to inspect what distinguishes taxonomy categories and whether some should be merged, split or redefined.
+- Compare LLM-written and human-written disclosures: do they mention different risks, or differ in specificity or how they obscure risks?
+- Explore compliance-oriented versus concern-oriented disclosure through observable language characteristics, potentially as part of RQ3.
