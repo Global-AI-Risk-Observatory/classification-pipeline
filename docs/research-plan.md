@@ -179,3 +179,19 @@ There is strong potential to add further criteria that relate to the perceived â
 - Use interpretable ML to inspect what distinguishes taxonomy categories and whether some should be merged, split or redefined.
 - Compare LLM-written and human-written disclosures: do they mention different risks, or differ in specificity or how they obscure risks?
 - Explore compliance-oriented versus concern-oriented disclosure through observable language characteristics, potentially as part of RQ3.
+
+# Rahul's Research Thoughts
+
+## Research Questions
+-RQ1- How can the MIT taxonomy be extended to rate the severity of AI risks, not only their type,
+based on the level of AI adoption and exposure to market risk?
+-RQ2- How well do the AI risks companies disclose match the risks implied by their AI adoption,
+and what explains the gaps?
+-RQ3- What new AI risks have emerged since the last version of the taxonomy, and what changes
+to its domains or subdomains would be needed to cover them?
+
+## Proposed Methodologies
+For RQ1- The framework employed in this paper (https://arxiv.org/pdf/2602.04358) could be used for reference along with the domains and subdomains in MIT Risk Taxonomy.
+For RQ2- Could use AI Incident tracker to obtain risks associated with particular uses of AI and use that as reference to cross check with disclosure by the company. Can be combined with Dan's RQ3.
+For RQ3- Probably classification and then modifying Evalet for clustering similar new risks.
+
