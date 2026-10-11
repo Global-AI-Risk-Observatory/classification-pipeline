@@ -1,0 +1,2603 @@
+{
+  "generatedFrom": "context/regulation-timeline.md",
+  "asOf": "2026-10-11",
+  "eventCount": 163,
+  "events": [
+    {
+      "id": "cn-140",
+      "date": "2022-03-01",
+      "datePrecision": "day",
+      "dateLabel": "2022-03-01",
+      "jurisdiction": "CN",
+      "track": "China",
+      "instrument": "Provisions on Algorithmic Recommendation Management (CAC, MIIT, MPS, SAMR; issued 2022-01-04)",
+      "effect": "Algorithm filing, transparency, minors/elderly protections",
+      "sourceUrls": [
+        "https://www.cac.gov.cn/2022-01/04/c_1642894606258238.htm"
+      ],
+      "sourceNote": "https://www.cac.gov.cn/2022-01/04/c_1642894606258238.htm",
+      "status": "VERIFIED",
+      "statusNote": "VERIFIED"
+    },
+    {
+      "id": "us-1",
+      "date": "2022-08-09",
+      "datePrecision": "day",
+      "dateLabel": "2022-08-09",
+      "jurisdiction": "US",
+      "track": "US federal, Congress, states, export controls",
+      "instrument": "CHIPS and Science Act, P.L. 117-167 (H.R. 4346)",
+      "effect": "$52.7B semiconductor manufacturing incentives + R&D",
+      "sourceUrls": [
+        "https://www.congress.gov/bill/117th-congress/house-bill/4346"
+      ],
+      "sourceNote": "https://www.congress.gov/bill/117th-congress/house-bill/4346",
+      "status": "VERIFIED",
+      "statusNote": "VERIFIED"
+    },
+    {
+      "id": "us-2",
+      "date": "2022-10-07",
+      "datePrecision": "day",
+      "dateLabel": "2022-10-07",
+      "jurisdiction": "US",
+      "track": "US federal, Congress, states, export controls",
+      "instrument": "BIS rule: advanced computing + semiconductor manufacturing controls on PRC",
+      "effect": "First chip/SME export controls; phased effective 10-07/10-12/10-21",
+      "sourceUrls": [
+        "https://www.bis.gov/press-release/commerce-implements-new-export-controls-advanced-computing-semiconductor-manufacturing-items-peoples"
+      ],
+      "sourceNote": "https://www.bis.gov/press-release/commerce-implements-new-export-controls-advanced-computing-semiconductor-manufacturing-items-peoples",
+      "status": "VERIFIED",
+      "statusNote": "VERIFIED"
+    },
+    {
+      "id": "cn-141",
+      "date": "2023-01-10",
+      "datePrecision": "day",
+      "dateLabel": "2023-01-10",
+      "jurisdiction": "CN",
+      "track": "China",
+      "instrument": "Provisions on Deep Synthesis Management (issued 2022-11-25)",
+      "effect": "Labeling, real-name, security assessment for deepfakes",
+      "sourceUrls": [
+        "https://www.cac.gov.cn/2022-12/11/c_1672221949354811.htm"
+      ],
+      "sourceNote": "https://www.cac.gov.cn/2022-12/11/c_1672221949354811.htm",
+      "status": "VERIFIED",
+      "statusNote": "VERIFIED"
+    },
+    {
+      "id": "us-3",
+      "date": "2023-01-26",
+      "datePrecision": "day",
+      "dateLabel": "2023-01-26",
+      "jurisdiction": "US",
+      "track": "US federal, Congress, states, export controls",
+      "instrument": "NIST AI RMF 1.0",
+      "effect": "Voluntary AI risk framework",
+      "sourceUrls": [
+        "https://www.nist.gov/itl/ai-risk-management-framework"
+      ],
+      "sourceNote": "https://www.nist.gov/itl/ai-risk-management-framework",
+      "status": "VERIFIED",
+      "statusNote": "VERIFIED"
+    },
+    {
+      "id": "eu-101",
+      "date": "2023-04-25",
+      "datePrecision": "day",
+      "dateLabel": "2023-04-25",
+      "jurisdiction": "EU",
+      "track": "EU",
+      "instrument": "DSA (Reg. 2022/2065)",
+      "effect": "First 17 VLOPs + 2 VLOSEs designated; compliance within four months",
+      "sourceUrls": [
+        "https://ec.europa.eu/commission/presscorner/detail/en/ip_23_2413"
+      ],
+      "sourceNote": "https://ec.europa.eu/commission/presscorner/detail/en/ip_23_2413",
+      "status": "VERIFIED",
+      "statusNote": "VERIFIED"
+    },
+    {
+      "id": "us-58",
+      "date": "2023-05-18",
+      "datePrecision": "day",
+      "dateLabel": "2023-05-18",
+      "jurisdiction": "US",
+      "track": "US agencies and courts",
+      "instrument": "EEOC technical assistance on AI in employment selection (Title VII)",
+      "effect": "Disparate-impact rules apply to algorithmic selection tools",
+      "sourceUrls": [
+        "https://www.eeoc.gov/history/eeoc-history-2020-2024"
+      ],
+      "sourceNote": "https://www.eeoc.gov/history/eeoc-history-2020-2024 (original page now 404)",
+      "status": "VERIFIED",
+      "statusNote": "VERIFIED"
+    },
+    {
+      "id": "cn-142",
+      "date": "2023-05-31",
+      "datePrecision": "day",
+      "dateLabel": "2023-05-31",
+      "jurisdiction": "CN",
+      "track": "China",
+      "instrument": "State Council 2023 Legislative Work Plan",
+      "effect": "Lists AI Law draft for NPCSC review",
+      "sourceUrls": [
+        "https://www.gov.cn/zhengce/content/202306/content_6884925.htm"
+      ],
+      "sourceNote": "https://www.gov.cn/zhengce/content/202306/content_6884925.htm",
+      "status": "VERIFIED",
+      "statusNote": "VERIFIED"
+    },
+    {
+      "id": "us-4",
+      "date": "2023-07-05",
+      "datePrecision": "day",
+      "dateLabel": "2023-07-05",
+      "jurisdiction": "US",
+      "track": "US federal, Congress, states, export controls",
+      "instrument": "NYC Local Law 144 (AEDT) enforcement begins",
+      "effect": "Bias audits + notices for automated hiring tools",
+      "sourceUrls": [
+        "https://www.nyc.gov/site/dca/about/automated-employment-decision-tools.page"
+      ],
+      "sourceNote": "https://www.nyc.gov/site/dca/about/automated-employment-decision-tools.page",
+      "status": "VERIFIED",
+      "statusNote": "VERIFIED"
+    },
+    {
+      "id": "us-5",
+      "date": "2023-07-26",
+      "datePrecision": "day",
+      "dateLabel": "2023-07-26",
+      "jurisdiction": "US",
+      "track": "US federal, Congress, states, export controls",
+      "instrument": "SEC cybersecurity disclosure rules (Reg S-K Item 106 / 10-K Item 1C; 8-K Item 1.05)",
+      "effect": "10-K disclosure for FY ending on/after 2023-12-15; 8-K Item 1.05 from 2023-12-18",
+      "sourceUrls": [
+        "https://www.sec.gov/newsroom/press-releases/2023-139"
+      ],
+      "sourceNote": "https://www.sec.gov/newsroom/press-releases/2023-139",
+      "status": "VERIFIED",
+      "statusNote": "VERIFIED"
+    },
+    {
+      "id": "us-59",
+      "date": "2023-07-26",
+      "datePrecision": "day",
+      "dateLabel": "2023-07-26",
+      "jurisdiction": "US",
+      "track": "US agencies and courts",
+      "instrument": "SEC final rule, cybersecurity disclosure (Rel. 33-11216)",
+      "effect": "8-K Item 1.05 incident disclosure; Reg S-K Item 106 annual disclosure",
+      "sourceUrls": [
+        "https://www.sec.gov/newsroom/press-releases/2023-139"
+      ],
+      "sourceNote": "https://www.sec.gov/newsroom/press-releases/2023-139",
+      "status": "VERIFIED",
+      "statusNote": "VERIFIED"
+    },
+    {
+      "id": "us-60",
+      "date": "2023-07-26",
+      "datePrecision": "day",
+      "dateLabel": "2023-07-26",
+      "jurisdiction": "US",
+      "track": "US agencies and courts",
+      "instrument": "SEC proposed rule, predictive data analytics conflicts (S7-12-23)",
+      "effect": "Broker-dealers/advisers to eliminate AI conflicts",
+      "sourceUrls": [
+        "https://www.sec.gov/newsroom/press-releases/2023-140"
+      ],
+      "sourceNote": "https://www.sec.gov/newsroom/press-releases/2023-140",
+      "status": "VERIFIED",
+      "statusNote": "VERIFIED"
+    },
+    {
+      "id": "cn-143",
+      "date": "2023-08-15",
+      "datePrecision": "day",
+      "dateLabel": "2023-08-15",
+      "jurisdiction": "CN",
+      "track": "China",
+      "instrument": "Interim Measures for Generative AI Services (issued 2023-07-13)",
+      "effect": "Security assessment and filing for public GenAI",
+      "sourceUrls": [
+        "https://www.cac.gov.cn/2023-07/13/c_1690898326795531.htm"
+      ],
+      "sourceNote": "https://www.cac.gov.cn/2023-07/13/c_1690898326795531.htm",
+      "status": "VERIFIED",
+      "statusNote": "VERIFIED"
+    },
+    {
+      "id": "eu-102",
+      "date": "2023-09-06",
+      "datePrecision": "day",
+      "dateLabel": "2023-09-06",
+      "jurisdiction": "EU",
+      "track": "EU",
+      "instrument": "DMA (Reg. 2022/1925)",
+      "effect": "Six gatekeepers designated",
+      "sourceUrls": [
+        "https://ec.europa.eu/commission/presscorner/detail/en/ip_23_4328"
+      ],
+      "sourceNote": "https://ec.europa.eu/commission/presscorner/detail/en/ip_23_4328",
+      "status": "VERIFIED",
+      "statusNote": "VERIFIED"
+    },
+    {
+      "id": "us-61",
+      "date": "2023-09-19",
+      "datePrecision": "day",
+      "dateLabel": "2023-09-19",
+      "jurisdiction": "US",
+      "track": "US agencies and courts",
+      "instrument": "CFPB Circular 2023-03, adverse action notices",
+      "effect": "Creditors using complex/AI models must give specific reasons",
+      "sourceUrls": [
+        "https://www.consumerfinance.gov/compliance/circulars/circular-2023-03-adverse-action-notification-requirements-and-the-proper-use-of-the-cfpbs-sample-forms-provided-in-regulation-b/"
+      ],
+      "sourceNote": "https://www.consumerfinance.gov/compliance/circulars/circular-2023-03-adverse-action-notification-requirements-and-the-proper-use-of-the-cfpbs-sample-forms-provided-in-regulation-b/",
+      "status": "VERIFIED",
+      "statusNote": "VERIFIED (withdrawn 2025-05-12)"
+    },
+    {
+      "id": "us-6",
+      "date": "2023-10-17",
+      "datePrecision": "day",
+      "dateLabel": "2023-10-17",
+      "jurisdiction": "US",
+      "track": "US federal, Congress, states, export controls",
+      "instrument": "BIS updated advanced-computing/SME rules + Entity List",
+      "effect": "Performance-density threshold; closes Oct-2022 gaps",
+      "sourceUrls": [
+        "https://beta.bis.gov/press-release/commerce-strengthens-restrictions-advanced-computing-semiconductors-semiconductor"
+      ],
+      "sourceNote": "https://beta.bis.gov/press-release/commerce-strengthens-restrictions-advanced-computing-semiconductors-semiconductor",
+      "status": "VERIFIED",
+      "statusNote": "VERIFIED"
+    },
+    {
+      "id": "us-7",
+      "date": "2023-10-30",
+      "datePrecision": "day",
+      "dateLabel": "2023-10-30",
+      "jurisdiction": "US",
+      "track": "US federal, Congress, states, export controls",
+      "instrument": "EO 14110 Safe, Secure, and Trustworthy AI",
+      "effect": "Comprehensive federal AI directives",
+      "sourceUrls": [
+        "https://www.federalregister.gov/documents/2023/11/01/2023-24283/safe-secure-and-trustworthy-development-and-use-of-artificial-intelligence"
+      ],
+      "sourceNote": "https://www.federalregister.gov/documents/2023/11/01/2023-24283/safe-secure-and-trustworthy-development-and-use-of-artificial-intelligence",
+      "status": "VERIFIED",
+      "statusNote": "VERIFIED"
+    },
+    {
+      "id": "cn-144",
+      "date": "2023-12-01",
+      "datePrecision": "day",
+      "dateLabel": "2023-12-01",
+      "jurisdiction": "CN",
+      "track": "China",
+      "instrument": "Measures for Ethical Review of Science and Technology (Trial)",
+      "effect": "Mandatory ethics review for AI research",
+      "sourceUrls": [
+        "https://www.most.gov.cn/xxgk/xinxifenlei/fdzdgknr/fgzc/gfxwj/gfxwj2023/202310/t20231008_188309.html"
+      ],
+      "sourceNote": "https://www.most.gov.cn/xxgk/xinxifenlei/fdzdgknr/fgzc/gfxwj/gfxwj2023/202310/t20231008_188309.html",
+      "status": "VERIFIED",
+      "statusNote": "VERIFIED"
+    },
+    {
+      "id": "us-62",
+      "date": "2023-12-19",
+      "datePrecision": "day",
+      "dateLabel": "2023-12-19",
+      "jurisdiction": "US",
+      "track": "US agencies and courts",
+      "instrument": "FTC consent order, Rite Aid",
+      "effect": "5-year ban on facial-recognition surveillance",
+      "sourceUrls": [
+        "https://www.ftc.gov/news-events/news/press-releases/2023/12/rite-aid-banned-using-ai-facial-recognition-after-ftc-says-retailer-deployed-technology-without"
+      ],
+      "sourceNote": "https://www.ftc.gov/news-events/news/press-releases/2023/12/rite-aid-banned-using-ai-facial-recognition-after-ftc-says-retailer-deployed-technology-without",
+      "status": "VERIFIED",
+      "statusNote": "VERIFIED"
+    },
+    {
+      "id": "us-63",
+      "date": "2024-02-08",
+      "datePrecision": "day",
+      "dateLabel": "2024-02-08",
+      "jurisdiction": "US",
+      "track": "US agencies and courts",
+      "instrument": "FCC Declaratory Ruling (FCC 24-17)",
+      "effect": "AI-cloned voices are \"artificial\" under TCPA",
+      "sourceUrls": [
+        "https://docs.fcc.gov/public/attachments/FCC-24-17A1.pdf"
+      ],
+      "sourceNote": "https://docs.fcc.gov/public/attachments/FCC-24-17A1.pdf",
+      "status": "VERIFIED",
+      "statusNote": "VERIFIED"
+    },
+    {
+      "id": "eu-103",
+      "date": "2024-02-17",
+      "datePrecision": "day",
+      "dateLabel": "2024-02-17",
+      "jurisdiction": "EU",
+      "track": "EU",
+      "instrument": "DSA",
+      "effect": "Applies to all intermediaries/platforms",
+      "sourceUrls": [
+        "https://digital-strategy.ec.europa.eu/en/faqs/digital-services-act-questions-and-answers"
+      ],
+      "sourceNote": "https://digital-strategy.ec.europa.eu/en/faqs/digital-services-act-questions-and-answers",
+      "status": "VERIFIED",
+      "statusNote": "VERIFIED"
+    },
+    {
+      "id": "cn-145",
+      "date": "2024-02-29",
+      "datePrecision": "day",
+      "dateLabel": "2024-02-29",
+      "jurisdiction": "CN",
+      "track": "China",
+      "instrument": "TC260-003 Basic Security Requirements for GenAI Services",
+      "effect": "Corpus/model/security requirements for filing",
+      "sourceUrls": [
+        "https://www.tc260.org.cn/portal/article/2/20240301164054"
+      ],
+      "sourceNote": "https://www.tc260.org.cn/portal/article/2/20240301164054",
+      "status": "UNVERIFIED",
+      "statusNote": "UNVERIFIED (portal post dated 2024-03-01)"
+    },
+    {
+      "id": "eu-104",
+      "date": "2024-03-07",
+      "datePrecision": "day",
+      "dateLabel": "2024-03-07",
+      "jurisdiction": "EU",
+      "track": "EU",
+      "instrument": "DMA",
+      "effect": "Gatekeeper compliance deadline",
+      "sourceUrls": [
+        "https://ec.europa.eu/commission/presscorner/detail/en/ip_24_1342"
+      ],
+      "sourceNote": "https://ec.europa.eu/commission/presscorner/detail/en/ip_24_1342",
+      "status": "VERIFIED",
+      "statusNote": "VERIFIED"
+    },
+    {
+      "id": "us-8",
+      "date": "2024-03-13",
+      "datePrecision": "day",
+      "dateLabel": "2024-03-13",
+      "jurisdiction": "US",
+      "track": "US federal, Congress, states, export controls",
+      "instrument": "Utah SB 149 AI Policy Act signed (effective 2024-05-01)",
+      "effect": "GenAI disclosure duties; Office of AI Policy",
+      "sourceUrls": [
+        "https://le.utah.gov/~2024/bills/static/SB0149.html"
+      ],
+      "sourceNote": "https://le.utah.gov/~2024/bills/static/SB0149.html",
+      "status": "VERIFIED",
+      "statusNote": "VERIFIED"
+    },
+    {
+      "id": "us-64",
+      "date": "2024-03-18",
+      "datePrecision": "day",
+      "dateLabel": "2024-03-18",
+      "jurisdiction": "US",
+      "track": "US agencies and courts",
+      "instrument": "SEC settled actions, Delphia and Global Predictions",
+      "effect": "First \"AI-washing\" cases; $225k + $175k",
+      "sourceUrls": [
+        "https://www.sec.gov/newsroom/press-releases/2024-36"
+      ],
+      "sourceNote": "https://www.sec.gov/newsroom/press-releases/2024-36",
+      "status": "VERIFIED",
+      "statusNote": "VERIFIED"
+    },
+    {
+      "id": "us-9",
+      "date": "2024-03-28",
+      "datePrecision": "day",
+      "dateLabel": "2024-03-28",
+      "jurisdiction": "US",
+      "track": "US federal, Congress, states, export controls",
+      "instrument": "OMB M-24-10",
+      "effect": "Agency AI governance/risk rules under EO 14110",
+      "sourceUrls": [
+        "https://www.whitehouse.gov/wp-content/uploads/2024/03/M-24-10-Advancing-Governance-Innovation-and-Risk-Management-for-Agency-Use-of-Artificial-Intelligence.pdf"
+      ],
+      "sourceNote": "https://www.whitehouse.gov/wp-content/uploads/2024/03/M-24-10-Advancing-Governance-Innovation-and-Risk-Management-for-Agency-Use-of-Artificial-Intelligence.pdf",
+      "status": "VERIFIED",
+      "statusNote": "VERIFIED"
+    },
+    {
+      "id": "cn-146",
+      "date": "2024-05-06",
+      "datePrecision": "day",
+      "dateLabel": "2024-05-06",
+      "jurisdiction": "CN",
+      "track": "China",
+      "instrument": "State Council 2024 Legislative Work Plan",
+      "effect": "Again lists AI Law draft",
+      "sourceUrls": [
+        "https://www.gov.cn/yaowen/liebiao/202405/content_6950151.htm"
+      ],
+      "sourceNote": "https://www.gov.cn/yaowen/liebiao/202405/content_6950151.htm",
+      "status": "VERIFIED",
+      "statusNote": "VERIFIED"
+    },
+    {
+      "id": "us-10",
+      "date": "2024-05-17",
+      "datePrecision": "day",
+      "dateLabel": "2024-05-17",
+      "jurisdiction": "US",
+      "track": "US federal, Congress, states, export controls",
+      "instrument": "Colorado SB 24-205 signed",
+      "effect": "High-risk AI duties, originally from 2026-02-01",
+      "sourceUrls": [
+        "https://leg.colorado.gov/bills/sb24-205"
+      ],
+      "sourceNote": "https://leg.colorado.gov/bills/sb24-205",
+      "status": "VERIFIED",
+      "statusNote": "VERIFIED"
+    },
+    {
+      "id": "eu-105",
+      "date": "2024-07-12",
+      "datePrecision": "day",
+      "dateLabel": "2024-07-12",
+      "jurisdiction": "EU",
+      "track": "EU",
+      "instrument": "AI Act, Reg. (EU) 2024/1689",
+      "effect": "Published in OJ L",
+      "sourceUrls": [
+        "https://eur-lex.europa.eu/eli/reg/2024/1689/oj"
+      ],
+      "sourceNote": "https://eur-lex.europa.eu/eli/reg/2024/1689/oj",
+      "status": "VERIFIED",
+      "statusNote": "VERIFIED"
+    },
+    {
+      "id": "us-11",
+      "date": "2024-07-26",
+      "datePrecision": "day",
+      "dateLabel": "2024-07-26",
+      "jurisdiction": "US",
+      "track": "US federal, Congress, states, export controls",
+      "instrument": "NIST AI 600-1 GenAI Profile",
+      "effect": "GenAI companion to AI RMF",
+      "sourceUrls": [
+        "https://www.nist.gov/publications/artificial-intelligence-risk-management-framework-generative-artificial-intelligence"
+      ],
+      "sourceNote": "https://www.nist.gov/publications/artificial-intelligence-risk-management-framework-generative-artificial-intelligence",
+      "status": "VERIFIED",
+      "statusNote": "VERIFIED"
+    },
+    {
+      "id": "us-65",
+      "date": "2024-07-31",
+      "datePrecision": "day",
+      "dateLabel": "2024-07-31",
+      "jurisdiction": "US",
+      "track": "US agencies and courts",
+      "instrument": "US Copyright Office, Report Part 1: Digital Replicas",
+      "effect": "Recommends federal digital-replica right",
+      "sourceUrls": [
+        "https://www.copyright.gov/ai/"
+      ],
+      "sourceNote": "https://www.copyright.gov/ai/",
+      "status": "VERIFIED",
+      "statusNote": "VERIFIED"
+    },
+    {
+      "id": "eu-106",
+      "date": "2024-08-01",
+      "datePrecision": "day",
+      "dateLabel": "2024-08-01",
+      "jurisdiction": "EU",
+      "track": "EU",
+      "instrument": "AI Act",
+      "effect": "Entry into force",
+      "sourceUrls": [
+        "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=OJ:L_202401689"
+      ],
+      "sourceNote": "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=OJ:L_202401689",
+      "status": "VERIFIED",
+      "statusNote": "VERIFIED"
+    },
+    {
+      "id": "us-66",
+      "date": "2024-08-05",
+      "datePrecision": "day",
+      "dateLabel": "2024-08-05",
+      "jurisdiction": "US",
+      "track": "US agencies and courts",
+      "instrument": "US v. Google (D.D.C.), liability opinion, ECF 1033",
+      "effect": "Section 2 liability in general search",
+      "sourceUrls": [
+        "https://storage.courtlistener.com/recap/gov.uscourts.dcd.223205/gov.uscourts.dcd.223205.1033.0.pdf"
+      ],
+      "sourceNote": "https://storage.courtlistener.com/recap/gov.uscourts.dcd.223205/gov.uscourts.dcd.223205.1033.0.pdf",
+      "status": "VERIFIED",
+      "statusNote": "VERIFIED"
+    },
+    {
+      "id": "us-12",
+      "date": "2024-08-09",
+      "datePrecision": "day",
+      "dateLabel": "2024-08-09",
+      "jurisdiction": "US",
+      "track": "US federal, Congress, states, export controls",
+      "instrument": "Illinois HB 3773 / P.A. 103-0804 signed (effective 2026-01-01)",
+      "effect": "AI discrimination + notice in employment (IHRA)",
+      "sourceUrls": [
+        "https://www.ilga.gov/Legislation/publicacts/view/103-0804"
+      ],
+      "sourceNote": "https://www.ilga.gov/Legislation/publicacts/view/103-0804",
+      "status": "VERIFIED",
+      "statusNote": "VERIFIED"
+    },
+    {
+      "id": "eu-107",
+      "date": "2024-09-05",
+      "datePrecision": "day",
+      "dateLabel": "2024-09-05",
+      "jurisdiction": "EU",
+      "track": "EU",
+      "instrument": "CoE Framework Convention on AI (CETS 225)",
+      "effect": "Opened for signature; EU, UK, US sign",
+      "sourceUrls": [
+        "https://digital-strategy.ec.europa.eu/en/news/commission-signs-council-europe-framework-convention-artificial-intelligence"
+      ],
+      "sourceNote": "https://digital-strategy.ec.europa.eu/en/news/commission-signs-council-europe-framework-convention-artificial-intelligence",
+      "status": "VERIFIED",
+      "statusNote": "VERIFIED"
+    },
+    {
+      "id": "cn-147",
+      "date": "2024-09-09",
+      "datePrecision": "day",
+      "dateLabel": "2024-09-09",
+      "jurisdiction": "CN",
+      "track": "China",
+      "instrument": "AI Safety Governance Framework 1.0 (TC260)",
+      "effect": "Non-binding risk taxonomy",
+      "sourceUrls": [
+        "https://www.cac.gov.cn/2024-09/09/c_1727567886199789.htm"
+      ],
+      "sourceNote": "https://www.cac.gov.cn/2024-09/09/c_1727567886199789.htm",
+      "status": "VERIFIED",
+      "statusNote": "VERIFIED"
+    },
+    {
+      "id": "us-67",
+      "date": "2024-09-23",
+      "datePrecision": "day",
+      "dateLabel": "2024-09-23",
+      "jurisdiction": "US",
+      "track": "US agencies and courts",
+      "instrument": "DOJ Criminal Division, Evaluation of Corporate Compliance Programs (Sept 2024 update)",
+      "effect": "Prosecutors assess management of AI risk",
+      "sourceUrls": [
+        "https://www.justice.gov/criminal/criminal-fraud/page/file/937501/dl"
+      ],
+      "sourceNote": "https://www.justice.gov/criminal/criminal-fraud/page/file/937501/dl",
+      "status": "VERIFIED",
+      "statusNote": "VERIFIED"
+    },
+    {
+      "id": "us-68",
+      "date": "2024-09-25",
+      "datePrecision": "day",
+      "dateLabel": "2024-09-25",
+      "jurisdiction": "US",
+      "track": "US agencies and courts",
+      "instrument": "FTC \"Operation AI Comply\" (DoNotPay, Rytr, Ascend Ecom, Ecommerce Empire Builders, FBA Machine)",
+      "effect": "Five actions over deceptive AI claims",
+      "sourceUrls": [
+        "https://www.ftc.gov/news-events/news/press-releases/2024/09/ftc-announces-crackdown-deceptive-ai-claims-schemes"
+      ],
+      "sourceNote": "https://www.ftc.gov/news-events/news/press-releases/2024/09/ftc-announces-crackdown-deceptive-ai-claims-schemes",
+      "status": "VERIFIED",
+      "statusNote": "VERIFIED"
+    },
+    {
+      "id": "us-13",
+      "date": "2024-09-28",
+      "datePrecision": "day",
+      "dateLabel": "2024-09-28",
+      "jurisdiction": "US",
+      "track": "US federal, Congress, states, export controls",
+      "instrument": "California AB 2013 signed, ch. 817 (effective 2026-01-01)",
+      "effect": "GenAI training-data documentation",
+      "sourceUrls": [
+        "https://leginfo.legislature.ca.gov/faces/billStatusClient.xhtml?bill_id=202320240AB2013"
+      ],
+      "sourceNote": "https://leginfo.legislature.ca.gov/faces/billStatusClient.xhtml?bill_id=202320240AB2013",
+      "status": "VERIFIED",
+      "statusNote": "VERIFIED"
+    },
+    {
+      "id": "us-14",
+      "date": "2024-09-29",
+      "datePrecision": "day",
+      "dateLabel": "2024-09-29",
+      "jurisdiction": "US",
+      "track": "US federal, Congress, states, export controls",
+      "instrument": "California SB 1047 vetoed",
+      "effect": "Frontier-model safety bill killed",
+      "sourceUrls": [
+        "https://www.gov.ca.gov/wp-content/uploads/2024/09/SB-1047-Veto-Message.pdf"
+      ],
+      "sourceNote": "https://www.gov.ca.gov/wp-content/uploads/2024/09/SB-1047-Veto-Message.pdf",
+      "status": "VERIFIED",
+      "statusNote": "VERIFIED"
+    },
+    {
+      "id": "eu-108",
+      "date": "2024-10-17",
+      "datePrecision": "day",
+      "dateLabel": "2024-10-17",
+      "jurisdiction": "EU",
+      "track": "EU",
+      "instrument": "NIS2 (Dir. 2022/2555)",
+      "effect": "Transposition deadline",
+      "sourceUrls": [
+        "https://digital-strategy.ec.europa.eu/en/policies/nis2-directive"
+      ],
+      "sourceNote": "https://digital-strategy.ec.europa.eu/en/policies/nis2-directive",
+      "status": "VERIFIED",
+      "statusNote": "VERIFIED"
+    },
+    {
+      "id": "us-69",
+      "date": "2024-10-21",
+      "datePrecision": "day",
+      "dateLabel": "2024-10-21",
+      "jurisdiction": "US",
+      "track": "US agencies and courts",
+      "instrument": "SEC Division of Examinations, FY2025 Priorities",
+      "effect": "AI named as exam focus",
+      "sourceUrls": [
+        "https://www.sec.gov/newsroom/press-releases/2024-172"
+      ],
+      "sourceNote": "https://www.sec.gov/newsroom/press-releases/2024-172",
+      "status": "VERIFIED",
+      "statusNote": "VERIFIED"
+    },
+    {
+      "id": "us-70",
+      "date": "2024-10-28",
+      "datePrecision": "day",
+      "dateLabel": "2024-10-28",
+      "jurisdiction": "US",
+      "track": "US agencies and courts",
+      "instrument": "Treasury, Outbound Investment Security Program final rule (EO 14105)",
+      "effect": "Restricts US investment in China-linked AI/semiconductors/quantum; effective 2025-01-02",
+      "sourceUrls": [
+        "https://home.treasury.gov/news/press-releases/jy2687"
+      ],
+      "sourceNote": "https://home.treasury.gov/news/press-releases/jy2687",
+      "status": "VERIFIED",
+      "statusNote": "VERIFIED"
+    },
+    {
+      "id": "eu-109",
+      "date": "2024-11-18",
+      "datePrecision": "day",
+      "dateLabel": "2024-11-18",
+      "jurisdiction": "EU",
+      "track": "EU",
+      "instrument": "Product Liability Directive (EU) 2024/2853",
+      "effect": "Published in OJ; in force 2024-12-08",
+      "sourceUrls": [
+        "https://eur-lex.europa.eu/eli/dir/2024/2853/oj"
+      ],
+      "sourceNote": "https://eur-lex.europa.eu/eli/dir/2024/2853/oj",
+      "status": "VERIFIED",
+      "statusNote": "VERIFIED"
+    },
+    {
+      "id": "us-15",
+      "date": "2024-12-02",
+      "datePrecision": "day",
+      "dateLabel": "2024-12-02",
+      "jurisdiction": "US",
+      "track": "US federal, Congress, states, export controls",
+      "instrument": "BIS HBM + SME controls; 140 Entity List additions",
+      "effect": "Expanded China chip controls",
+      "sourceUrls": [
+        "https://www.bis.gov/press-release/commerce-strengthens-export-controls-restrict-chinas-capability-produce-advanced-semiconductors-military"
+      ],
+      "sourceNote": "https://www.bis.gov/press-release/commerce-strengthens-export-controls-restrict-chinas-capability-produce-advanced-semiconductors-military",
+      "status": "VERIFIED",
+      "statusNote": "VERIFIED"
+    },
+    {
+      "id": "eu-110",
+      "date": "2024-12-10",
+      "datePrecision": "day",
+      "dateLabel": "2024-12-10",
+      "jurisdiction": "EU",
+      "track": "EU",
+      "instrument": "Cyber Resilience Act, Reg. (EU) 2024/2847",
+      "effect": "Entry into force",
+      "sourceUrls": [
+        "https://eur-lex.europa.eu/eli/reg/2024/2847/oj"
+      ],
+      "sourceNote": "https://eur-lex.europa.eu/eli/reg/2024/2847/oj",
+      "status": "VERIFIED",
+      "statusNote": "VERIFIED"
+    },
+    {
+      "id": "us-71",
+      "date": "2024-12-18",
+      "datePrecision": "day",
+      "dateLabel": "2024-12-18",
+      "jurisdiction": "US",
+      "track": "US agencies and courts",
+      "instrument": "FTC final consent order, Rytr",
+      "effect": "Bars AI review-generation service",
+      "sourceUrls": [
+        "https://www.ftc.gov/news-events/news/press-releases/2024/12/ftc-approves-final-order-against-rytr-seller-ai-testimonial-review-service-providing-subscribers"
+      ],
+      "sourceNote": "https://www.ftc.gov/news-events/news/press-releases/2024/12/ftc-approves-final-order-against-rytr-seller-ai-testimonial-review-service-providing-subscribers",
+      "status": "VERIFIED",
+      "statusNote": "VERIFIED"
+    },
+    {
+      "id": "eu-116",
+      "date": "2025-01-01",
+      "datePrecision": "year",
+      "dateLabel": "2025 (FY2024)",
+      "jurisdiction": "EU",
+      "track": "EU",
+      "instrument": "CSRD wave 1",
+      "effect": "First reports for FY2024 published in 2025",
+      "sourceUrls": [
+        "https://finance.ec.europa.eu/capital-markets-union-and-financial-markets/company-reporting-and-auditing/company-reporting/corporate-sustainability-reporting_en"
+      ],
+      "sourceNote": "https://finance.ec.europa.eu/capital-markets-union-and-financial-markets/company-reporting-and-auditing/company-reporting/corporate-sustainability-reporting_en",
+      "status": "VERIFIED",
+      "statusNote": "VERIFIED"
+    },
+    {
+      "id": "cn-148",
+      "date": "2025-01-01",
+      "datePrecision": "day",
+      "dateLabel": "2025-01-01",
+      "jurisdiction": "CN",
+      "track": "China",
+      "instrument": "Network Data Security Management Regulations (State Council Order 790; signed 2024-09-24)",
+      "effect": "Binding data-security regime incl. AI training data",
+      "sourceUrls": [
+        "https://www.gov.cn/zhengce/content/202409/content_6977766.htm"
+      ],
+      "sourceNote": "https://www.gov.cn/zhengce/content/202409/content_6977766.htm",
+      "status": "VERIFIED",
+      "statusNote": "VERIFIED"
+    },
+    {
+      "id": "us-72",
+      "date": "2025-01-06",
+      "datePrecision": "day",
+      "dateLabel": "2025-01-06",
+      "jurisdiction": "US",
+      "track": "US agencies and courts",
+      "instrument": "FDA draft guidance, AI in drug/biologic regulatory decision-making",
+      "effect": "Risk-based credibility framework; still draft",
+      "sourceUrls": [
+        "https://www.fda.gov/news-events/press-announcements/fda-proposes-framework-advance-credibility-ai-models-used-drug-and-biological-product-submissions"
+      ],
+      "sourceNote": "https://www.fda.gov/news-events/press-announcements/fda-proposes-framework-advance-credibility-ai-models-used-drug-and-biological-product-submissions",
+      "status": "VERIFIED",
+      "statusNote": "VERIFIED"
+    },
+    {
+      "id": "us-73",
+      "date": "2025-01-07",
+      "datePrecision": "day",
+      "dateLabel": "2025-01-07",
+      "jurisdiction": "US",
+      "track": "US agencies and courts",
+      "instrument": "FDA draft guidance, AI-Enabled Device Software Functions",
+      "effect": "Lifecycle recommendations; still draft",
+      "sourceUrls": [
+        "https://www.fda.gov/media/184856/download"
+      ],
+      "sourceNote": "https://www.fda.gov/media/184856/download",
+      "status": "VERIFIED",
+      "statusNote": "VERIFIED"
+    },
+    {
+      "id": "us-16",
+      "date": "2025-01-13",
+      "datePrecision": "day",
+      "dateLabel": "2025-01-13",
+      "jurisdiction": "US",
+      "track": "US federal, Congress, states, export controls",
+      "instrument": "BIS \"Framework for AI Diffusion\" IFR (published 2025-01-15, 90 FR 4544)",
+      "effect": "Effective 2025-01-13; compliance from 2025-05-15",
+      "sourceUrls": [
+        "https://www.federalregister.gov/documents/2025/01/15/2025-00636/framework-for-artificial-intelligence-diffusion"
+      ],
+      "sourceNote": "https://www.federalregister.gov/documents/2025/01/15/2025-00636/framework-for-artificial-intelligence-diffusion",
+      "status": "VERIFIED",
+      "statusNote": "VERIFIED"
+    },
+    {
+      "id": "us-74",
+      "date": "2025-01-14",
+      "datePrecision": "day",
+      "dateLabel": "2025-01-14",
+      "jurisdiction": "US",
+      "track": "US agencies and courts",
+      "instrument": "SEC settled cease-and-desist, Presto Automation (Rel. 33-11352)",
+      "effect": "False statements about voice AI; no penalty",
+      "sourceUrls": [
+        "https://www.sec.gov/enforcement-litigation/administrative-proceedings/33-11352-s"
+      ],
+      "sourceNote": "https://www.sec.gov/enforcement-litigation/administrative-proceedings/33-11352-s",
+      "status": "VERIFIED",
+      "statusNote": "VERIFIED"
+    },
+    {
+      "id": "eu-111",
+      "date": "2025-01-17",
+      "datePrecision": "day",
+      "dateLabel": "2025-01-17",
+      "jurisdiction": "EU",
+      "track": "EU",
+      "instrument": "DORA, Reg. (EU) 2022/2554",
+      "effect": "Applies (Art. 64)",
+      "sourceUrls": [
+        "https://eur-lex.europa.eu/eli/reg/2022/2554/oj"
+      ],
+      "sourceNote": "https://eur-lex.europa.eu/eli/reg/2022/2554/oj",
+      "status": "VERIFIED",
+      "statusNote": "VERIFIED"
+    },
+    {
+      "id": "us-17",
+      "date": "2025-01-20",
+      "datePrecision": "day",
+      "dateLabel": "2025-01-20",
+      "jurisdiction": "US",
+      "track": "US federal, Congress, states, export controls",
+      "instrument": "EO 14148 Initial Rescissions",
+      "effect": "Revokes EO 14110",
+      "sourceUrls": [
+        "https://www.whitehouse.gov/presidential-actions/2025/01/initial-rescissions-of-harmful-executive-orders-and-actions/"
+      ],
+      "sourceNote": "https://www.whitehouse.gov/presidential-actions/2025/01/initial-rescissions-of-harmful-executive-orders-and-actions/",
+      "status": "VERIFIED",
+      "statusNote": "VERIFIED"
+    },
+    {
+      "id": "us-18",
+      "date": "2025-01-23",
+      "datePrecision": "day",
+      "dateLabel": "2025-01-23",
+      "jurisdiction": "US",
+      "track": "US federal, Congress, states, export controls",
+      "instrument": "EO 14179 Removing Barriers to American Leadership in AI",
+      "effect": "Orders AI Action Plan; OMB memo revisions",
+      "sourceUrls": [
+        "https://www.whitehouse.gov/presidential-actions/2025/01/removing-barriers-to-american-leadership-in-artificial-intelligence/"
+      ],
+      "sourceNote": "https://www.whitehouse.gov/presidential-actions/2025/01/removing-barriers-to-american-leadership-in-artificial-intelligence/",
+      "status": "VERIFIED",
+      "statusNote": "VERIFIED"
+    },
+    {
+      "id": "us-75",
+      "date": "2025-01-27",
+      "datePrecision": "day",
+      "dateLabel": "2025-01-27",
+      "jurisdiction": "US",
+      "track": "US agencies and courts",
+      "instrument": "EEOC removes AI technical assistance pages after EO 14179",
+      "effect": "Guidance no longer posted",
+      "sourceUrls": [],
+      "sourceNote": "404 confirmed; date from secondary sources",
+      "status": "UNVERIFIED",
+      "statusNote": "UNVERIFIED"
+    },
+    {
+      "id": "us-76",
+      "date": "2025-01-29",
+      "datePrecision": "day",
+      "dateLabel": "2025-01-29",
+      "jurisdiction": "US",
+      "track": "US agencies and courts",
+      "instrument": "US Copyright Office, Report Part 2: Copyrightability",
+      "effect": "Human authorship required",
+      "sourceUrls": [
+        "https://www.copyright.gov/ai/"
+      ],
+      "sourceNote": "https://www.copyright.gov/ai/",
+      "status": "VERIFIED",
+      "statusNote": "VERIFIED"
+    },
+    {
+      "id": "eu-112",
+      "date": "2025-02-02",
+      "datePrecision": "day",
+      "dateLabel": "2025-02-02",
+      "jurisdiction": "EU",
+      "track": "EU",
+      "instrument": "AI Act",
+      "effect": "Chapters I-II apply: prohibited practices (Art. 5) + AI literacy (Art. 4)",
+      "sourceUrls": [
+        "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=OJ:L_202401689"
+      ],
+      "sourceNote": "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=OJ:L_202401689 (Art. 113(a))",
+      "status": "VERIFIED",
+      "statusNote": "VERIFIED"
+    },
+    {
+      "id": "eu-113",
+      "date": "2025-02-04",
+      "datePrecision": "day",
+      "dateLabel": "2025-02-04",
+      "jurisdiction": "EU",
+      "track": "EU",
+      "instrument": "Commission guidelines on prohibited practices",
+      "effect": "Non-binding Art. 5 guidance",
+      "sourceUrls": [
+        "https://digital-strategy.ec.europa.eu/en/library/commission-publishes-guidelines-prohibited-artificial-intelligence-ai-practices-defined-ai-act"
+      ],
+      "sourceNote": "https://digital-strategy.ec.europa.eu/en/library/commission-publishes-guidelines-prohibited-artificial-intelligence-ai-practices-defined-ai-act",
+      "status": "VERIFIED",
+      "statusNote": "VERIFIED"
+    },
+    {
+      "id": "us-77",
+      "date": "2025-02-11",
+      "datePrecision": "day",
+      "dateLabel": "2025-02-11",
+      "jurisdiction": "US",
+      "track": "US agencies and courts",
+      "instrument": "FTC final order, DoNotPay",
+      "effect": "$193k relief; ban on unsubstantiated \"robot lawyer\" claims",
+      "sourceUrls": [
+        "https://www.ftc.gov/news-events/news/press-releases/2025/02/ftc-finalizes-order-donotpay-prohibits-deceptive-ai-lawyer-claims-imposes-monetary-relief-requires"
+      ],
+      "sourceNote": "https://www.ftc.gov/news-events/news/press-releases/2025/02/ftc-finalizes-order-donotpay-prohibits-deceptive-ai-lawyer-claims-imposes-monetary-relief-requires",
+      "status": "VERIFIED",
+      "statusNote": "VERIFIED"
+    },
+    {
+      "id": "us-78",
+      "date": "2025-02-11",
+      "datePrecision": "day",
+      "dateLabel": "2025-02-11",
+      "jurisdiction": "US",
+      "track": "US agencies and courts",
+      "instrument": "Thomson Reuters v. Ross Intelligence (D. Del.)",
+      "effect": "Headnotes copyrightable; AI-training use not fair use",
+      "sourceUrls": [
+        "https://www.ded.uscourts.gov/sites/ded/files/opinions/20-613_5.pdf"
+      ],
+      "sourceNote": "https://www.ded.uscourts.gov/sites/ded/files/opinions/20-613_5.pdf",
+      "status": "VERIFIED",
+      "statusNote": "VERIFIED"
+    },
+    {
+      "id": "eu-114",
+      "date": "2025-02-11",
+      "datePrecision": "day",
+      "dateLabel": "2025-02-11",
+      "jurisdiction": "EU",
+      "track": "EU",
+      "instrument": "Commission Work Programme 2025",
+      "effect": "Announces withdrawal of AI Liability Directive proposal",
+      "sourceUrls": [
+        "https://commission.europa.eu/strategy-and-policy/strategy-documents/commission-work-programme/commission-work-programme-2025_en"
+      ],
+      "sourceNote": "https://commission.europa.eu/strategy-and-policy/strategy-documents/commission-work-programme/commission-work-programme-2025_en",
+      "status": "VERIFIED",
+      "statusNote": "VERIFIED"
+    },
+    {
+      "id": "cn-149",
+      "date": "2025-02-28",
+      "datePrecision": "day",
+      "dateLabel": "2025-02-28",
+      "jurisdiction": "CN",
+      "track": "China",
+      "instrument": "GB 45438-2025 Labeling method for AI-generated content (mandatory; effective 2025-09-01)",
+      "effect": "First mandatory AI national standard",
+      "sourceUrls": [
+        "https://openstd.samr.gov.cn/bzgk/std/newGbInfo?hcno=F32EA2A561F1886CD8D606513512D547"
+      ],
+      "sourceNote": "https://openstd.samr.gov.cn/bzgk/std/newGbInfo?hcno=F32EA2A561F1886CD8D606513512D547",
+      "status": "VERIFIED",
+      "statusNote": "VERIFIED"
+    },
+    {
+      "id": "cn-150",
+      "date": "2025-03-07",
+      "datePrecision": "day",
+      "dateLabel": "2025-03-07 / published 2025-03-14",
+      "jurisdiction": "CN",
+      "track": "China",
+      "instrument": "Measures for Labeling AI-Generated Synthetic Content (effective 2025-09-01)",
+      "effect": "Mandatory explicit + implicit labeling",
+      "sourceUrls": [
+        "https://www.cac.gov.cn/2025-03/14/c_1743654684782215.htm"
+      ],
+      "sourceNote": "https://www.cac.gov.cn/2025-03/14/c_1743654684782215.htm",
+      "status": "VERIFIED",
+      "statusNote": "VERIFIED"
+    },
+    {
+      "id": "us-79",
+      "date": "2025-03-18",
+      "datePrecision": "day",
+      "dateLabel": "2025-03-18",
+      "jurisdiction": "US",
+      "track": "US agencies and courts",
+      "instrument": "Thaler v. Perlmutter (D.C. Cir.)",
+      "effect": "AI-generated work unregistrable",
+      "sourceUrls": [
+        "https://www.cadc.uscourts.gov/opinions/docs/2025/03/23-5233.pdf"
+      ],
+      "sourceNote": "https://www.cadc.uscourts.gov/opinions/docs/2025/03/23-5233.pdf",
+      "status": "VERIFIED",
+      "statusNote": "VERIFIED"
+    },
+    {
+      "id": "us-19",
+      "date": "2025-03-24",
+      "datePrecision": "day",
+      "dateLabel": "2025-03-24",
+      "jurisdiction": "US",
+      "track": "US federal, Congress, states, export controls",
+      "instrument": "Virginia HB 2094 vetoed (veto sustained 2025-04-01)",
+      "effect": "High-risk AI developer/deployer act fails",
+      "sourceUrls": [
+        "https://lis.virginia.gov/bill-details/20251/HB2094"
+      ],
+      "sourceNote": "https://lis.virginia.gov/bill-details/20251/HB2094",
+      "status": "VERIFIED",
+      "statusNote": "VERIFIED"
+    },
+    {
+      "id": "us-20",
+      "date": "2025-04-03",
+      "datePrecision": "day",
+      "dateLabel": "2025-04-03",
+      "jurisdiction": "US",
+      "track": "US federal, Congress, states, export controls",
+      "instrument": "OMB M-25-21 and M-25-22",
+      "effect": "Replace M-24-10/M-24-18; \"high-impact AI\" category",
+      "sourceUrls": [
+        "https://www.whitehouse.gov/releases/2025/04/white-house-releases-new-policies-on-federal-agency-ai-use-and-procurement/"
+      ],
+      "sourceNote": "https://www.whitehouse.gov/releases/2025/04/white-house-releases-new-policies-on-federal-agency-ai-use-and-procurement/",
+      "status": "VERIFIED",
+      "statusNote": "VERIFIED"
+    },
+    {
+      "id": "us-21",
+      "date": "2025-04-09",
+      "datePrecision": "day",
+      "dateLabel": "2025-04-09",
+      "jurisdiction": "US",
+      "track": "US federal, Congress, states, export controls",
+      "instrument": "USG imposes license requirement on Nvidia H20 to China (indefinite 04-14; 8-K filed 04-15)",
+      "effect": "Up to $5.5B charge announced",
+      "sourceUrls": [
+        "https://www.sec.gov/Archives/edgar/data/1045810/000104581025000082/nvda-20250409.htm"
+      ],
+      "sourceNote": "https://www.sec.gov/Archives/edgar/data/1045810/000104581025000082/nvda-20250409.htm",
+      "status": "VERIFIED",
+      "statusNote": "VERIFIED"
+    },
+    {
+      "id": "us-80",
+      "date": "2025-04-09",
+      "datePrecision": "day",
+      "dateLabel": "2025-04-09",
+      "jurisdiction": "US",
+      "track": "US agencies and courts",
+      "instrument": "SEC v. Saniger (Nate, Inc.), S.D.N.Y. complaint (LR-26282 dated 04-11)",
+      "effect": "Fraud for claiming AI when orders processed manually",
+      "sourceUrls": [
+        "https://www.sec.gov/enforcement-litigation/litigation-releases/lr-26282"
+      ],
+      "sourceNote": "https://www.sec.gov/enforcement-litigation/litigation-releases/lr-26282",
+      "status": "VERIFIED",
+      "statusNote": "VERIFIED"
+    },
+    {
+      "id": "eu-115",
+      "date": "2025-04-16",
+      "datePrecision": "day",
+      "dateLabel": "2025-04-16",
+      "jurisdiction": "EU",
+      "track": "EU",
+      "instrument": "CSRD \"stop-the-clock\" Directive (EU) 2025/794",
+      "effect": "OJ publication; waves 2 and 3 postponed two years; CSDDD one year",
+      "sourceUrls": [
+        "https://eur-lex.europa.eu/eli/dir/2025/794/oj"
+      ],
+      "sourceNote": "https://eur-lex.europa.eu/eli/dir/2025/794/oj",
+      "status": "VERIFIED",
+      "statusNote": "VERIFIED"
+    },
+    {
+      "id": "cn-151",
+      "date": "2025-04-25",
+      "datePrecision": "day",
+      "dateLabel": "2025-04-25",
+      "jurisdiction": "CN",
+      "track": "China",
+      "instrument": "GB/T 45654-2025 Basic security requirements for GenAI services (effective 2025-11-01)",
+      "effect": "National-standard successor to TC260-003",
+      "sourceUrls": [
+        "https://openstd.samr.gov.cn/bzgk/std/newGbInfo?hcno=F67D3F376E0A0A0FF5317FB36B32A30A"
+      ],
+      "sourceNote": "https://openstd.samr.gov.cn/bzgk/std/newGbInfo?hcno=F67D3F376E0A0A0FF5317FB36B32A30A",
+      "status": "VERIFIED",
+      "statusNote": "VERIFIED"
+    },
+    {
+      "id": "us-22",
+      "date": "2025-05-09",
+      "datePrecision": "day",
+      "dateLabel": "2025-05-09",
+      "jurisdiction": "US",
+      "track": "US federal, Congress, states, export controls",
+      "instrument": "NY FY26 budget (S3008C, ch. 58) adds GBL 349-a Algorithmic Pricing Disclosure; effective 2025-11-10",
+      "effect": "Notice when price set by algorithm using personal data",
+      "sourceUrls": [
+        "https://www.nysenate.gov/legislation/bills/2025/S3008"
+      ],
+      "sourceNote": "https://www.nysenate.gov/legislation/bills/2025/S3008",
+      "status": "VERIFIED",
+      "statusNote": "VERIFIED"
+    },
+    {
+      "id": "us-81",
+      "date": "2025-05-09",
+      "datePrecision": "day",
+      "dateLabel": "2025-05-09",
+      "jurisdiction": "US",
+      "track": "US agencies and courts",
+      "instrument": "US Copyright Office, Report Part 3: GenAI Training (pre-publication)",
+      "effect": "Training fair use case-by-case; market dilution relevant",
+      "sourceUrls": [
+        "https://www.copyright.gov/ai/"
+      ],
+      "sourceNote": "https://www.copyright.gov/ai/",
+      "status": "VERIFIED",
+      "statusNote": "VERIFIED"
+    },
+    {
+      "id": "us-82",
+      "date": "2025-05-12",
+      "datePrecision": "day",
+      "dateLabel": "2025-05-12",
+      "jurisdiction": "US",
+      "track": "US agencies and courts",
+      "instrument": "CFPB withdrawal of 67 guidance documents (90 FR 20084)",
+      "effect": "Includes Circulars 2022-03 and 2023-03 on algorithms",
+      "sourceUrls": [
+        "https://www.federalregister.gov/documents/2025/05/12/2025-08286/interpretive-rules-policy-statements-and-advisory-opinions-withdrawal"
+      ],
+      "sourceNote": "https://www.federalregister.gov/documents/2025/05/12/2025-08286/interpretive-rules-policy-statements-and-advisory-opinions-withdrawal",
+      "status": "VERIFIED",
+      "statusNote": "VERIFIED"
+    },
+    {
+      "id": "us-23",
+      "date": "2025-05-13",
+      "datePrecision": "day",
+      "dateLabel": "2025-05-13",
+      "jurisdiction": "US",
+      "track": "US federal, Congress, states, export controls",
+      "instrument": "BIS announces rescission of AI Diffusion rule",
+      "effect": "Non-enforcement; new chip guidance",
+      "sourceUrls": [
+        "https://www.bis.gov/press-release/department-commerce-announces-rescission-biden-era-artificial-intelligence-diffusion-rule-strengthens"
+      ],
+      "sourceNote": "https://www.bis.gov/press-release/department-commerce-announces-rescission-biden-era-artificial-intelligence-diffusion-rule-strengthens",
+      "status": "VERIFIED",
+      "statusNote": "VERIFIED"
+    },
+    {
+      "id": "cn-152",
+      "date": "2025-05-14",
+      "datePrecision": "day",
+      "dateLabel": "2025-05-14",
+      "jurisdiction": "CN",
+      "track": "China",
+      "instrument": "State Council 2025 Legislative Work Plan",
+      "effect": "No AI Law draft listed",
+      "sourceUrls": [
+        "https://www.gov.cn/yaowen/liebiao/202505/content_7023700.htm"
+      ],
+      "sourceNote": "https://www.gov.cn/yaowen/liebiao/202505/content_7023700.htm",
+      "status": "VERIFIED",
+      "statusNote": "VERIFIED"
+    },
+    {
+      "id": "us-24",
+      "date": "2025-05-19",
+      "datePrecision": "day",
+      "dateLabel": "2025-05-19",
+      "jurisdiction": "US",
+      "track": "US federal, Congress, states, export controls",
+      "instrument": "TAKE IT DOWN Act, P.L. 119-12 (S. 146)",
+      "effect": "Bans nonconsensual intimate images incl. deepfakes; 48-hr takedown",
+      "sourceUrls": [
+        "https://www.congress.gov/bill/119th-congress/senate-bill/146"
+      ],
+      "sourceNote": "https://www.congress.gov/bill/119th-congress/senate-bill/146",
+      "status": "VERIFIED",
+      "statusNote": "VERIFIED"
+    },
+    {
+      "id": "us-83",
+      "date": "2025-06-12",
+      "datePrecision": "day",
+      "dateLabel": "2025-06-12",
+      "jurisdiction": "US",
+      "track": "US agencies and courts",
+      "instrument": "SEC withdrawal of proposed rules (Rel. 33-11377)",
+      "effect": "Withdraws predictive-data-analytics proposal",
+      "sourceUrls": [
+        "https://www.sec.gov/rules-regulations/2025/06/s7-12-23"
+      ],
+      "sourceNote": "https://www.sec.gov/rules-regulations/2025/06/s7-12-23",
+      "status": "VERIFIED",
+      "statusNote": "VERIFIED"
+    },
+    {
+      "id": "us-25",
+      "date": "2025-06-22",
+      "datePrecision": "day",
+      "dateLabel": "2025-06-22",
+      "jurisdiction": "US",
+      "track": "US federal, Congress, states, export controls",
+      "instrument": "Texas HB 149 TRAIGA signed (effective 2026-01-01)",
+      "effect": "Use-based AI prohibitions; AG enforcement",
+      "sourceUrls": [
+        "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=89R&Bill=HB149"
+      ],
+      "sourceNote": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=89R&Bill=HB149",
+      "status": "VERIFIED",
+      "statusNote": "VERIFIED"
+    },
+    {
+      "id": "us-84",
+      "date": "2025-06-23",
+      "datePrecision": "day",
+      "dateLabel": "2025-06-23",
+      "jurisdiction": "US",
+      "track": "US agencies and courts",
+      "instrument": "Bartz v. Anthropic (N.D. Cal.), fair-use order, ECF 231",
+      "effect": "Training on books fair use; pirated library copies not",
+      "sourceUrls": [
+        "https://storage.courtlistener.com/recap/gov.uscourts.cand.434709/gov.uscourts.cand.434709.231.0.pdf"
+      ],
+      "sourceNote": "https://storage.courtlistener.com/recap/gov.uscourts.cand.434709/gov.uscourts.cand.434709.231.0.pdf",
+      "status": "VERIFIED",
+      "statusNote": "VERIFIED"
+    },
+    {
+      "id": "us-85",
+      "date": "2025-06-25",
+      "datePrecision": "day",
+      "dateLabel": "2025-06-25",
+      "jurisdiction": "US",
+      "track": "US agencies and courts",
+      "instrument": "Kadrey v. Meta (N.D. Cal.), summary judgment, ECF 598",
+      "effect": "Llama training fair use on this record",
+      "sourceUrls": [
+        "https://storage.courtlistener.com/recap/gov.uscourts.cand.415175/gov.uscourts.cand.415175.598.0.pdf"
+      ],
+      "sourceNote": "https://storage.courtlistener.com/recap/gov.uscourts.cand.415175/gov.uscourts.cand.415175.598.0.pdf",
+      "status": "VERIFIED",
+      "statusNote": "VERIFIED"
+    },
+    {
+      "id": "us-26",
+      "date": "2025-07-01",
+      "datePrecision": "day",
+      "dateLabel": "2025-07-01",
+      "jurisdiction": "US",
+      "track": "US federal, Congress, states, export controls",
+      "instrument": "Senate adopts Blackburn Amdt. 2814, 99-1 (Roll Call 363)",
+      "effect": "Strips 10-yr state AI-law moratorium",
+      "sourceUrls": [
+        "https://www.senate.gov/legislative/LIS/roll_call_votes/vote1191/vote_119_1_00363.htm"
+      ],
+      "sourceNote": "https://www.senate.gov/legislative/LIS/roll_call_votes/vote1191/vote_119_1_00363.htm",
+      "status": "VERIFIED",
+      "statusNote": "VERIFIED"
+    },
+    {
+      "id": "eu-117",
+      "date": "2025-07-10",
+      "datePrecision": "day",
+      "dateLabel": "2025-07-10",
+      "jurisdiction": "EU",
+      "track": "EU",
+      "instrument": "GPAI Code of Practice",
+      "effect": "Final Code published",
+      "sourceUrls": [
+        "https://digital-strategy.ec.europa.eu/en/news/general-purpose-ai-code-practice-now-available"
+      ],
+      "sourceNote": "https://digital-strategy.ec.europa.eu/en/news/general-purpose-ai-code-practice-now-available",
+      "status": "VERIFIED",
+      "statusNote": "VERIFIED"
+    },
+    {
+      "id": "us-27",
+      "date": "2025-07-14",
+      "datePrecision": "day",
+      "dateLabel": "2025-07-14",
+      "jurisdiction": "US",
+      "track": "US federal, Congress, states, export controls",
+      "instrument": "Nvidia: USG \"assured\" H20 licenses will be granted (granted Aug 2025 per 10-Q)",
+      "effect": "Reversal of April restriction",
+      "sourceUrls": [
+        "https://blogs.nvidia.com/blog/nvidia-ceo-promotes-ai-in-dc-and-china/"
+      ],
+      "sourceNote": "https://blogs.nvidia.com/blog/nvidia-ceo-promotes-ai-in-dc-and-china/",
+      "status": "VERIFIED",
+      "statusNote": "VERIFIED"
+    },
+    {
+      "id": "us-28",
+      "date": "2025-07-18",
+      "datePrecision": "day",
+      "dateLabel": "2025-07-18",
+      "jurisdiction": "US",
+      "track": "US federal, Congress, states, export controls",
+      "instrument": "GENIUS Act, P.L. 119-27 (S. 1582)",
+      "effect": "Federal stablecoin regime",
+      "sourceUrls": [
+        "https://www.congress.gov/bill/119th-congress/senate-bill/1582"
+      ],
+      "sourceNote": "https://www.congress.gov/bill/119th-congress/senate-bill/1582",
+      "status": "VERIFIED",
+      "statusNote": "VERIFIED"
+    },
+    {
+      "id": "eu-118",
+      "date": "2025-07-18",
+      "datePrecision": "day",
+      "dateLabel": "2025-07-18",
+      "jurisdiction": "EU",
+      "track": "EU",
+      "instrument": "Commission guidelines on GPAI providers (C(2025) 5045)",
+      "effect": "Scope of GPAI obligations",
+      "sourceUrls": [
+        "https://digital-strategy.ec.europa.eu/en/news/commission-publishes-guidelines-providers-general-purpose-ai-models"
+      ],
+      "sourceNote": "https://digital-strategy.ec.europa.eu/en/news/commission-publishes-guidelines-providers-general-purpose-ai-models",
+      "status": "VERIFIED",
+      "statusNote": "VERIFIED"
+    },
+    {
+      "id": "us-29",
+      "date": "2025-07-23",
+      "datePrecision": "day",
+      "dateLabel": "2025-07-23",
+      "jurisdiction": "US",
+      "track": "US federal, Congress, states, export controls",
+      "instrument": "America's AI Action Plan + EO 14318 (data-center permitting), EO 14319 (Preventing Woke AI), EO 14320 (AI exports)",
+      "effect": "90+ federal actions; EOs published 2025-07-28",
+      "sourceUrls": [
+        "https://www.whitehouse.gov/releases/2025/07/white-house-unveils-americas-ai-action-plan/"
+      ],
+      "sourceNote": "https://www.whitehouse.gov/releases/2025/07/white-house-unveils-americas-ai-action-plan/",
+      "status": "VERIFIED",
+      "statusNote": "VERIFIED"
+    },
+    {
+      "id": "eu-119",
+      "date": "2025-08-02",
+      "datePrecision": "day",
+      "dateLabel": "2025-08-02",
+      "jurisdiction": "EU",
+      "track": "EU",
+      "instrument": "AI Act",
+      "effect": "GPAI obligations (Ch. V), governance, penalties apply (Art. 113(b))",
+      "sourceUrls": [
+        "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=OJ:L_202401689"
+      ],
+      "sourceNote": "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=OJ:L_202401689",
+      "status": "VERIFIED",
+      "statusNote": "VERIFIED"
+    },
+    {
+      "id": "us-86",
+      "date": "2025-08-14",
+      "datePrecision": "day",
+      "dateLabel": "2025-08-14",
+      "jurisdiction": "US",
+      "track": "US agencies and courts",
+      "instrument": "Getty Images v. Stability AI refiled N.D. Cal. (3:25-cv-06891)",
+      "effect": "Pending",
+      "sourceUrls": [],
+      "sourceNote": "no primary document fetched",
+      "status": "UNVERIFIED",
+      "statusNote": "UNVERIFIED"
+    },
+    {
+      "id": "cn-153",
+      "date": "2025-08-21",
+      "datePrecision": "day",
+      "dateLabel": "2025-08-21 / published 2025-08-26",
+      "jurisdiction": "CN",
+      "track": "China",
+      "instrument": "State Council Opinions on \"AI Plus\" Action",
+      "effect": "Adoption targets 70% (2027), 90% (2030)",
+      "sourceUrls": [
+        "https://www.gov.cn/yaowen/liebiao/202508/content_7037868.htm"
+      ],
+      "sourceNote": "https://www.gov.cn/yaowen/liebiao/202508/content_7037868.htm",
+      "status": "VERIFIED",
+      "statusNote": "VERIFIED"
+    },
+    {
+      "id": "us-30",
+      "date": "2025-08-28",
+      "datePrecision": "day",
+      "dateLabel": "2025-08-28",
+      "jurisdiction": "US",
+      "track": "US federal, Congress, states, export controls",
+      "instrument": "Colorado SB 25B-004 signed",
+      "effect": "Delays SB 24-205 to 2026-06-30",
+      "sourceUrls": [
+        "https://leg.colorado.gov/bills/sb25b-004"
+      ],
+      "sourceNote": "https://leg.colorado.gov/bills/sb25b-004",
+      "status": "VERIFIED",
+      "statusNote": "VERIFIED"
+    },
+    {
+      "id": "us-87",
+      "date": "2025-08-28",
+      "datePrecision": "day",
+      "dateLabel": "2025-08-28",
+      "jurisdiction": "US",
+      "track": "US agencies and courts",
+      "instrument": "FTC final order vs Workado (AI-detector accuracy)",
+      "effect": "Accuracy claims substantiation",
+      "sourceUrls": [
+        "https://www.ftc.gov/news-events/news/press-releases/2025/08/ftc-approves-final-order-against-workado-llc-which-misrepresented-accuracy-its-artificial"
+      ],
+      "sourceNote": "https://www.ftc.gov/news-events/news/press-releases/2025/08/ftc-approves-final-order-against-workado-llc-which-misrepresented-accuracy-its-artificial",
+      "status": "VERIFIED",
+      "statusNote": "VERIFIED"
+    },
+    {
+      "id": "us-88",
+      "date": "2025-09-02",
+      "datePrecision": "day",
+      "dateLabel": "2025-09-02",
+      "jurisdiction": "US",
+      "track": "US agencies and courts",
+      "instrument": "US v. Google (D.D.C.), remedies opinion, ECF 1435",
+      "effect": "Bans exclusive distribution deals incl. Gemini; no Chrome divestiture",
+      "sourceUrls": [
+        "https://www.justice.gov/opa/pr/department-justice-wins-significant-remedies-against-google"
+      ],
+      "sourceNote": "https://www.justice.gov/opa/pr/department-justice-wins-significant-remedies-against-google",
+      "status": "VERIFIED",
+      "statusNote": "VERIFIED"
+    },
+    {
+      "id": "us-89",
+      "date": "2025-09-11",
+      "datePrecision": "day",
+      "dateLabel": "2025-09-11",
+      "jurisdiction": "US",
+      "track": "US agencies and courts",
+      "instrument": "FTC 6(b) orders to Alphabet, Character.AI, Instagram, Meta, OpenAI, Snap, xAI",
+      "effect": "Companion-chatbot child-safety study",
+      "sourceUrls": [
+        "https://www.ftc.gov/news-events/news/press-releases/2025/09/ftc-launches-inquiry-ai-chatbots-acting-companions"
+      ],
+      "sourceNote": "https://www.ftc.gov/news-events/news/press-releases/2025/09/ftc-launches-inquiry-ai-chatbots-acting-companions",
+      "status": "VERIFIED",
+      "statusNote": "VERIFIED"
+    },
+    {
+      "id": "eu-120",
+      "date": "2025-09-12",
+      "datePrecision": "day",
+      "dateLabel": "2025-09-12",
+      "jurisdiction": "EU",
+      "track": "EU",
+      "instrument": "Data Act, Reg. (EU) 2023/2854",
+      "effect": "Applies (Art. 50)",
+      "sourceUrls": [
+        "https://eur-lex.europa.eu/eli/reg/2023/2854/oj"
+      ],
+      "sourceNote": "https://eur-lex.europa.eu/eli/reg/2023/2854/oj",
+      "status": "VERIFIED",
+      "statusNote": "VERIFIED"
+    },
+    {
+      "id": "cn-154",
+      "date": "2025-09-15",
+      "datePrecision": "day",
+      "dateLabel": "2025-09-15",
+      "jurisdiction": "CN",
+      "track": "China",
+      "instrument": "AI Safety Governance Framework 2.0 (TC260)",
+      "effect": "Revised risk classification",
+      "sourceUrls": [
+        "https://www.cac.gov.cn/2025-09/15/c_1759653448369123.htm"
+      ],
+      "sourceNote": "https://www.cac.gov.cn/2025-09/15/c_1759653448369123.htm",
+      "status": "VERIFIED",
+      "statusNote": "VERIFIED"
+    },
+    {
+      "id": "us-31",
+      "date": "2025-09-23",
+      "datePrecision": "day",
+      "dateLabel": "2025-09-23",
+      "jurisdiction": "US",
+      "track": "US federal, Congress, states, export controls",
+      "instrument": "CPPA announces OAL approval of ADMT/risk-assessment/cyber-audit regs (effective 2026-01-01; ADMT compliance 2027-01-01)",
+      "effect": "CCPA ADMT rules final",
+      "sourceUrls": [
+        "https://cppa.ca.gov/announcements/2025/20250923.html"
+      ],
+      "sourceNote": "https://cppa.ca.gov/announcements/2025/20250923.html",
+      "status": "VERIFIED",
+      "statusNote": "VERIFIED"
+    },
+    {
+      "id": "us-90",
+      "date": "2025-09-25",
+      "datePrecision": "day",
+      "dateLabel": "2025-09-25",
+      "jurisdiction": "US",
+      "track": "US agencies and courts",
+      "instrument": "Bartz v. Anthropic, preliminary approval of $1.5bn settlement",
+      "effect": "~$3,000 per work",
+      "sourceUrls": [],
+      "sourceNote": "docket date only",
+      "status": "UNVERIFIED",
+      "statusNote": "UNVERIFIED"
+    },
+    {
+      "id": "us-32",
+      "date": "2025-09-29",
+      "datePrecision": "day",
+      "dateLabel": "2025-09-29",
+      "jurisdiction": "US",
+      "track": "US federal, Congress, states, export controls",
+      "instrument": "California SB 53 TFAIA signed (effective 2026-01-01)",
+      "effect": "Frontier-developer frameworks, incident reports, whistleblowers",
+      "sourceUrls": [
+        "https://www.gov.ca.gov/2025/09/29/governor-newsom-signs-sb-53-advancing-californias-world-leading-artificial-intelligence-industry/"
+      ],
+      "sourceNote": "https://www.gov.ca.gov/2025/09/29/governor-newsom-signs-sb-53-advancing-californias-world-leading-artificial-intelligence-industry/",
+      "status": "VERIFIED",
+      "statusNote": "VERIFIED"
+    },
+    {
+      "id": "eu-121",
+      "date": "2025-10-06",
+      "datePrecision": "day",
+      "dateLabel": "2025-10-06",
+      "jurisdiction": "EU",
+      "track": "EU",
+      "instrument": "AI Liability Directive proposal",
+      "effect": "Formal withdrawal in OJ (C/2025/5423)",
+      "sourceUrls": [
+        "https://eur-lex.europa.eu/legal-content/EN/TXT/PDF/?uri=CELEX:52025XC05423"
+      ],
+      "sourceNote": "https://eur-lex.europa.eu/legal-content/EN/TXT/PDF/?uri=CELEX:52025XC05423",
+      "status": "VERIFIED",
+      "statusNote": "VERIFIED"
+    },
+    {
+      "id": "eu-122",
+      "date": "2025-10-08",
+      "datePrecision": "day",
+      "dateLabel": "2025-10-08",
+      "jurisdiction": "EU",
+      "track": "EU",
+      "instrument": "Apply AI Strategy + AI in Science Strategy",
+      "effect": "Commission strategies, ~EUR 1 bn",
+      "sourceUrls": [
+        "https://commission.europa.eu/news-and-media/news/keeping-european-industry-and-science-forefront-ai-2025-10-08_en"
+      ],
+      "sourceNote": "https://commission.europa.eu/news-and-media/news/keeping-european-industry-and-science-forefront-ai-2025-10-08_en",
+      "status": "VERIFIED",
+      "statusNote": "VERIFIED"
+    },
+    {
+      "id": "us-33",
+      "date": "2025-10-13",
+      "datePrecision": "day",
+      "dateLabel": "2025-10-13",
+      "jurisdiction": "US",
+      "track": "US federal, Congress, states, export controls",
+      "instrument": "California SB 243 companion chatbots signed",
+      "effect": "Disclosure + self-harm protocols; reporting from 2027-07-01",
+      "sourceUrls": [
+        "https://www.gov.ca.gov/2025/10/13/governor-newsom-signs-bills-to-further-strengthen-californias-leadership-in-protecting-children-online/"
+      ],
+      "sourceNote": "https://www.gov.ca.gov/2025/10/13/governor-newsom-signs-bills-to-further-strengthen-californias-leadership-in-protecting-children-online/",
+      "status": "VERIFIED",
+      "statusNote": "VERIFIED"
+    },
+    {
+      "id": "cn-155",
+      "date": "2025-10-28",
+      "datePrecision": "day",
+      "dateLabel": "2025-10-28",
+      "jurisdiction": "CN",
+      "track": "China",
+      "instrument": "NPCSC Decision amending the Cybersecurity Law (effective 2026-01-01)",
+      "effect": "New Art. 20 on AI research, infrastructure, ethics, risk monitoring",
+      "sourceUrls": [
+        "http://www.npc.gov.cn/npc/c2/c30834/202510/t20251028_449048.html"
+      ],
+      "sourceNote": "http://www.npc.gov.cn/npc/c2/c30834/202510/t20251028_449048.html",
+      "status": "VERIFIED",
+      "statusNote": "VERIFIED"
+    },
+    {
+      "id": "us-91",
+      "date": "2025-11-17",
+      "datePrecision": "day",
+      "dateLabel": "2025-11-17",
+      "jurisdiction": "US",
+      "track": "US agencies and courts",
+      "instrument": "SEC Division of Examinations, FY2026 Priorities",
+      "effect": "Does not name AI",
+      "sourceUrls": [
+        "https://www.sec.gov/newsroom/press-releases/2025-132-sec-division-examinations-announces-2026-priorities"
+      ],
+      "sourceNote": "https://www.sec.gov/newsroom/press-releases/2025-132-sec-division-examinations-announces-2026-priorities",
+      "status": "VERIFIED",
+      "statusNote": "VERIFIED"
+    },
+    {
+      "id": "eu-123",
+      "date": "2025-11-19",
+      "datePrecision": "day",
+      "dateLabel": "2025-11-19",
+      "jurisdiction": "EU",
+      "track": "EU",
+      "instrument": "Digital Omnibus package",
+      "effect": "Digital Omnibus (data/GDPR/cyber), Digital Omnibus on AI, Data Union Strategy",
+      "sourceUrls": [
+        "https://ec.europa.eu/commission/presscorner/detail/en/ip_25_2718"
+      ],
+      "sourceNote": "https://ec.europa.eu/commission/presscorner/detail/en/ip_25_2718",
+      "status": "VERIFIED",
+      "statusNote": "VERIFIED"
+    },
+    {
+      "id": "us-92",
+      "date": "2025-12-05",
+      "datePrecision": "day",
+      "dateLabel": "2025-12-05",
+      "jurisdiction": "US",
+      "track": "US agencies and courts",
+      "instrument": "US v. Google, final judgment, ECF 1462",
+      "effect": "Remedies entered; on appeal",
+      "sourceUrls": [
+        "https://storage.courtlistener.com/recap/gov.uscourts.dcd.223205/gov.uscourts.dcd.223205.1462.0.pdf"
+      ],
+      "sourceNote": "https://storage.courtlistener.com/recap/gov.uscourts.dcd.223205/gov.uscourts.dcd.223205.1462.0.pdf",
+      "status": "VERIFIED",
+      "statusNote": "VERIFIED"
+    },
+    {
+      "id": "us-34",
+      "date": "2025-12-11",
+      "datePrecision": "day",
+      "dateLabel": "2025-12-11",
+      "jurisdiction": "US",
+      "track": "US federal, Congress, states, export controls",
+      "instrument": "EO 14365 Ensuring a National Policy Framework for AI (published 2025-12-16)",
+      "effect": "DOJ AI Litigation Task Force; Commerce review of state laws; BEAD conditions",
+      "sourceUrls": [
+        "https://www.federalregister.gov/documents/2025/12/16/2025-23092/ensuring-a-national-policy-framework-for-artificial-intelligence"
+      ],
+      "sourceNote": "https://www.federalregister.gov/documents/2025/12/16/2025-23092/ensuring-a-national-policy-framework-for-artificial-intelligence",
+      "status": "VERIFIED",
+      "statusNote": "VERIFIED"
+    },
+    {
+      "id": "us-35",
+      "date": "2025-12-11",
+      "datePrecision": "day",
+      "dateLabel": "2025-12-11",
+      "jurisdiction": "US",
+      "track": "US federal, Congress, states, export controls",
+      "instrument": "OMB M-26-04 Unbiased AI Principles",
+      "effect": "Implements EO 14319 in LLM procurement",
+      "sourceUrls": [
+        "https://www.whitehouse.gov/wp-content/uploads/2025/12/M-26-04-Increasing-Public-Trust-in-Artificial-Intelligence-Through-Unbiased-AI-Principles-1.pdf"
+      ],
+      "sourceNote": "https://www.whitehouse.gov/wp-content/uploads/2025/12/M-26-04-Increasing-Public-Trust-in-Artificial-Intelligence-Through-Unbiased-AI-Principles-1.pdf",
+      "status": "VERIFIED",
+      "statusNote": "VERIFIED"
+    },
+    {
+      "id": "us-36",
+      "date": "2025-12-18",
+      "datePrecision": "day",
+      "dateLabel": "2025-12-18",
+      "jurisdiction": "US",
+      "track": "US federal, Congress, states, export controls",
+      "instrument": "FY2026 NDAA, P.L. 119-60 (S. 1071)",
+      "effect": "DoD AI governance (secs. 1512, 1532, 1533); DeepSeek ban; NSA AI security guidance",
+      "sourceUrls": [
+        "https://www.congress.gov/bill/119th-congress/senate-bill/1071"
+      ],
+      "sourceNote": "https://www.congress.gov/bill/119th-congress/senate-bill/1071",
+      "status": "VERIFIED",
+      "statusNote": "VERIFIED"
+    },
+    {
+      "id": "us-37",
+      "date": "2025-12-19",
+      "datePrecision": "day",
+      "dateLabel": "2025-12-19",
+      "jurisdiction": "US",
+      "track": "US federal, Congress, states, export controls",
+      "instrument": "New York RAISE Act signed (S6953B/A6453B, ch. 699)",
+      "effect": "Frontier-developer safety frameworks, 72-hr incident reports",
+      "sourceUrls": [
+        "https://www.governor.ny.gov/news/governor-hochul-signs-nation-leading-legislation-require-ai-frameworks-ai-frontier-models"
+      ],
+      "sourceNote": "https://www.governor.ny.gov/news/governor-hochul-signs-nation-leading-legislation-require-ai-frameworks-ai-frontier-models",
+      "status": "VERIFIED",
+      "statusNote": "VERIFIED"
+    },
+    {
+      "id": "us-93",
+      "date": "2025-12-22",
+      "datePrecision": "day",
+      "dateLabel": "2025-12-22",
+      "jurisdiction": "US",
+      "track": "US agencies and courts",
+      "instrument": "FTC sets aside Rytr final order",
+      "effect": "Vacated per AI Action Plan",
+      "sourceUrls": [
+        "https://www.ftc.gov/news-events/news/press-releases/2025/12/ftc-reopens-sets-aside-rytr-final-order-response-trump-administrations-ai-action-plan"
+      ],
+      "sourceNote": "https://www.ftc.gov/news-events/news/press-releases/2025/12/ftc-reopens-sets-aside-rytr-final-order-response-trump-administrations-ai-action-plan",
+      "status": "VERIFIED",
+      "statusNote": "VERIFIED"
+    },
+    {
+      "id": "cn-156",
+      "date": "2025-12-26",
+      "datePrecision": "day",
+      "dateLabel": "2025-12-26 / published 2026-01-23",
+      "jurisdiction": "CN",
+      "track": "China",
+      "instrument": "Measures on Online Information Affecting Minors (effective 2026-03-01)",
+      "effect": "Art. 9 covers recommender and GenAI providers",
+      "sourceUrls": [
+        "https://www.cac.gov.cn/2026-01/23/c_1770728781060093.htm"
+      ],
+      "sourceNote": "https://www.cac.gov.cn/2026-01/23/c_1770728781060093.htm",
+      "status": "VERIFIED",
+      "statusNote": "VERIFIED"
+    },
+    {
+      "id": "cn-157",
+      "date": "2025-12-27",
+      "datePrecision": "day",
+      "dateLabel": "2025-12-27",
+      "jurisdiction": "CN",
+      "track": "China",
+      "instrument": "Draft Interim Measures for AI Anthropomorphic Interactive Services",
+      "effect": "\"AI companion\" rules draft",
+      "sourceUrls": [
+        "https://www.cac.gov.cn/2025-12/27/c_1768571207311996.htm"
+      ],
+      "sourceNote": "https://www.cac.gov.cn/2025-12/27/c_1768571207311996.htm",
+      "status": "VERIFIED",
+      "statusNote": "VERIFIED"
+    },
+    {
+      "id": "us-94",
+      "date": "2026-01-05",
+      "datePrecision": "day",
+      "dateLabel": "2026-01-05",
+      "jurisdiction": "US",
+      "track": "US agencies and courts",
+      "instrument": "In re OpenAI Copyright Litigation (S.D.N.Y. MDL 3143)",
+      "effect": "20m ChatGPT logs order; NYT v. OpenAI pending",
+      "sourceUrls": [],
+      "sourceNote": "order itself not retrieved",
+      "status": "UNVERIFIED",
+      "statusNote": "UNVERIFIED"
+    },
+    {
+      "id": "us-38",
+      "date": "2026-01-09",
+      "datePrecision": "day",
+      "dateLabel": "2026-01-09",
+      "jurisdiction": "US",
+      "track": "US federal, Congress, states, export controls",
+      "instrument": "AG memo establishing DOJ AI Litigation Task Force",
+      "effect": "Challenges to state AI laws",
+      "sourceUrls": [
+        "https://www.justice.gov/ag/media/1422986/dl?inline="
+      ],
+      "sourceNote": "https://www.justice.gov/ag/media/1422986/dl?inline=",
+      "status": "VERIFIED",
+      "statusNote": "VERIFIED"
+    },
+    {
+      "id": "us-95",
+      "date": "2026-01-13",
+      "datePrecision": "day",
+      "dateLabel": "2026-01-13",
+      "jurisdiction": "US",
+      "track": "US agencies and courts",
+      "instrument": "BIS revised license review policy for advanced chips (published 2026-01-15)",
+      "effect": "Case-by-case review of H200 / MI325X exports to China",
+      "sourceUrls": [
+        "https://www.bis.gov/press-release/department-commerce-revises-license-review-policy-semiconductors-exported-china"
+      ],
+      "sourceNote": "https://www.bis.gov/press-release/department-commerce-revises-license-review-policy-semiconductors-exported-china",
+      "status": "VERIFIED",
+      "statusNote": "VERIFIED"
+    },
+    {
+      "id": "eu-124",
+      "date": "2026-01-21",
+      "datePrecision": "day",
+      "dateLabel": "2026-01-21",
+      "jurisdiction": "EU",
+      "track": "EU",
+      "instrument": "Digital Networks Act proposal",
+      "effect": "Replacement of EECC proposed",
+      "sourceUrls": [
+        "https://commission.europa.eu/news-and-media/news/supporting-digital-connectivity-simpler-rules-2026-01-21_en"
+      ],
+      "sourceNote": "https://commission.europa.eu/news-and-media/news/supporting-digital-connectivity-simpler-rules-2026-01-21_en",
+      "status": "VERIFIED",
+      "statusNote": "VERIFIED"
+    },
+    {
+      "id": "us-96",
+      "date": "2026-03-02",
+      "datePrecision": "day",
+      "dateLabel": "2026-03-02",
+      "jurisdiction": "US",
+      "track": "US agencies and courts",
+      "instrument": "Supreme Court denies cert, Thaler v. Perlmutter (25-449)",
+      "effect": "Human-authorship ruling stands",
+      "sourceUrls": [
+        "https://www.supremecourt.gov/docket/docketfiles/html/public/25-449.html"
+      ],
+      "sourceNote": "https://www.supremecourt.gov/docket/docketfiles/html/public/25-449.html",
+      "status": "VERIFIED",
+      "statusNote": "VERIFIED"
+    },
+    {
+      "id": "us-39",
+      "date": "2026-03-17",
+      "datePrecision": "day",
+      "dateLabel": "2026-03-17",
+      "jurisdiction": "US",
+      "track": "US federal, Congress, states, export controls",
+      "instrument": "Washington SSB 5886 signed (ch. 69)",
+      "effect": "Personality rights cover forged digital likenesses",
+      "sourceUrls": [
+        "https://lawfilesext.leg.wa.gov/biennium/2025-26/Pdf/Bill%20Reports/Senate/5886-S%20SBR%20FBR%2026.pdf"
+      ],
+      "sourceNote": "https://lawfilesext.leg.wa.gov/biennium/2025-26/Pdf/Bill%20Reports/Senate/5886-S%20SBR%20FBR%2026.pdf",
+      "status": "VERIFIED",
+      "statusNote": "VERIFIED"
+    },
+    {
+      "id": "us-40",
+      "date": "2026-03-20",
+      "datePrecision": "day",
+      "dateLabel": "2026-03-20",
+      "jurisdiction": "US",
+      "track": "US federal, Congress, states, export controls",
+      "instrument": "White House National Policy Framework for AI: Legislative Recommendations",
+      "effect": "Non-binding call for uniform federal standard preempting state laws",
+      "sourceUrls": [
+        "https://www.whitehouse.gov/wp-content/uploads/2026/03/03.20.26-National-Policy-Framework-for-Artificial-Intelligence-Legislative-Recommendations.pdf"
+      ],
+      "sourceNote": "https://www.whitehouse.gov/wp-content/uploads/2026/03/03.20.26-National-Policy-Framework-for-Artificial-Intelligence-Legislative-Recommendations.pdf",
+      "status": "VERIFIED",
+      "statusNote": "VERIFIED"
+    },
+    {
+      "id": "us-41",
+      "date": "2026-03-24",
+      "datePrecision": "day",
+      "dateLabel": "2026-03-24",
+      "jurisdiction": "US",
+      "track": "US federal, Congress, states, export controls",
+      "instrument": "Washington HB 2225 (companion chatbots, eff. 2027-01-01) and HB 1170 (AI provenance/disclosure, eff. 2028-01-01) signed",
+      "effect": "Chatbot safeguards; latent disclosures",
+      "sourceUrls": [
+        "https://lawfilesext.leg.wa.gov/biennium/2025-26/Pdf/Bills/Session%20Laws/House/2225-S.SL.pdf"
+      ],
+      "sourceNote": "https://lawfilesext.leg.wa.gov/biennium/2025-26/Pdf/Bills/Session%20Laws/House/2225-S.SL.pdf",
+      "status": "VERIFIED",
+      "statusNote": "VERIFIED"
+    },
+    {
+      "id": "us-42",
+      "date": "2026-03-27",
+      "datePrecision": "day",
+      "dateLabel": "2026-03-27",
+      "jurisdiction": "US",
+      "track": "US federal, Congress, states, export controls",
+      "instrument": "New York S8828 RAISE Act chapter amendment signed (ch. 96)",
+      "effect": "Repeals/replaces Art. 44-B; effective 2027-01-01",
+      "sourceUrls": [
+        "https://www.nysenate.gov/legislation/bills/2025/S8828"
+      ],
+      "sourceNote": "https://www.nysenate.gov/legislation/bills/2025/S8828",
+      "status": "VERIFIED",
+      "statusNote": "VERIFIED"
+    },
+    {
+      "id": "us-43",
+      "date": "2026-03-31",
+      "datePrecision": "day",
+      "dateLabel": "2026-03-31",
+      "jurisdiction": "US",
+      "track": "US federal, Congress, states, export controls",
+      "instrument": "Oregon SB 1546 signed (ch. 85; eff. 2027-01-01)",
+      "effect": "AI companion disclosure + self-harm safeguards",
+      "sourceUrls": [
+        "https://www.oregonlegislature.gov/bills_laws/lawsstatutes/2026orLaw0085.pdf"
+      ],
+      "sourceNote": "https://www.oregonlegislature.gov/bills_laws/lawsstatutes/2026orLaw0085.pdf",
+      "status": "VERIFIED",
+      "statusNote": "VERIFIED"
+    },
+    {
+      "id": "cn-158",
+      "date": "2026-04-10",
+      "datePrecision": "day",
+      "dateLabel": "2026-04-10",
+      "jurisdiction": "CN",
+      "track": "China",
+      "instrument": "Interim Measures for AI Anthropomorphic Interactive Services (CAC Order 21; effective 2026-07-15)",
+      "effect": "Bans virtual partner services to minors; anti-dependency duties",
+      "sourceUrls": [
+        "https://www.cac.gov.cn/2026-04/10/c_1777558395078289.htm"
+      ],
+      "sourceNote": "https://www.cac.gov.cn/2026-04/10/c_1777558395078289.htm",
+      "status": "VERIFIED",
+      "statusNote": "VERIFIED"
+    },
+    {
+      "id": "eu-125",
+      "date": "2026-04-21",
+      "datePrecision": "day",
+      "dateLabel": "2026-04-21",
+      "jurisdiction": "EU",
+      "track": "EU",
+      "instrument": "Council Decision (EU) 2026/1080",
+      "effect": "EU concludes CoE Framework Convention on AI",
+      "sourceUrls": [
+        "https://eur-lex.europa.eu/eli/dec/2026/1080/oj/eng"
+      ],
+      "sourceNote": "https://eur-lex.europa.eu/eli/dec/2026/1080/oj/eng",
+      "status": "VERIFIED",
+      "statusNote": "VERIFIED"
+    },
+    {
+      "id": "us-44",
+      "date": "2026-05-07",
+      "datePrecision": "day",
+      "dateLabel": "2026-05-07",
+      "jurisdiction": "US",
+      "track": "US federal, Congress, states, export controls",
+      "instrument": "Minnesota HF 1606 signed (ch. 72; eff. 2026-08-01)",
+      "effect": "Bans access to \"nudification\" tools; $500k/violation",
+      "sourceUrls": [
+        "https://www.revisor.mn.gov/bills/94/2025/0/HF/1606/"
+      ],
+      "sourceNote": "https://www.revisor.mn.gov/bills/94/2025/0/HF/1606/",
+      "status": "VERIFIED",
+      "statusNote": "VERIFIED"
+    },
+    {
+      "id": "eu-126",
+      "date": "2026-05-07",
+      "datePrecision": "day",
+      "dateLabel": "2026-05-07",
+      "jurisdiction": "EU",
+      "track": "EU",
+      "instrument": "Digital Omnibus on AI",
+      "effect": "Political agreement EP-Council",
+      "sourceUrls": [
+        "https://digital-strategy.ec.europa.eu/en/news/eu-agrees-simplify-ai-rules-boost-innovation-and-ban-nudification-apps-protect-citizens"
+      ],
+      "sourceNote": "https://digital-strategy.ec.europa.eu/en/news/eu-agrees-simplify-ai-rules-boost-innovation-and-ban-nudification-apps-protect-citizens",
+      "status": "VERIFIED",
+      "statusNote": "VERIFIED"
+    },
+    {
+      "id": "cn-159",
+      "date": "2026-05-08",
+      "datePrecision": "day",
+      "dateLabel": "2026-05-08",
+      "jurisdiction": "CN",
+      "track": "China",
+      "instrument": "Implementation Opinions on AI Agents (CAC, NDRC, MIIT)",
+      "effect": "First national agent-specific instrument",
+      "sourceUrls": [
+        "https://www.cac.gov.cn/2026-05/08/c_1779979789738376.htm"
+      ],
+      "sourceNote": "https://www.cac.gov.cn/2026-05/08/c_1779979789738376.htm",
+      "status": "VERIFIED",
+      "statusNote": "VERIFIED"
+    },
+    {
+      "id": "cn-160",
+      "date": "2026-05-08",
+      "datePrecision": "day",
+      "dateLabel": "2026-05-08 / published 2026-05-11",
+      "jurisdiction": "CN",
+      "track": "China",
+      "instrument": "State Council 2026 Legislative Work Plan",
+      "effect": "Calls for comprehensive AI legislation; no named AI Law draft",
+      "sourceUrls": [
+        "https://www.gov.cn/zhengce/content/202605/content_7068345.htm"
+      ],
+      "sourceNote": "https://www.gov.cn/zhengce/content/202605/content_7068345.htm",
+      "status": "VERIFIED",
+      "statusNote": "VERIFIED"
+    },
+    {
+      "id": "us-45",
+      "date": "2026-05-13",
+      "datePrecision": "day",
+      "dateLabel": "2026-05-13",
+      "jurisdiction": "US",
+      "track": "US federal, Congress, states, export controls",
+      "instrument": "Public Citizen tracker: 30 states have election-deepfake laws (Maryland 30th)",
+      "effect": "State count citation",
+      "sourceUrls": [
+        "https://www.citizen.org/news/30-states-now-have-laws-to-regulate-election-deepfakes/"
+      ],
+      "sourceNote": "https://www.citizen.org/news/30-states-now-have-laws-to-regulate-election-deepfakes/",
+      "status": "VERIFIED",
+      "statusNote": "VERIFIED"
+    },
+    {
+      "id": "us-46",
+      "date": "2026-05-14",
+      "datePrecision": "day",
+      "dateLabel": "2026-05-14",
+      "jurisdiction": "US",
+      "track": "US federal, Congress, states, export controls",
+      "instrument": "Colorado SB 26-189 signed",
+      "effect": "Repeals/reenacts SB 24-205 as ADMT law; obligations from 2027-01-01",
+      "sourceUrls": [
+        "https://leg.colorado.gov/bills/sb26-189"
+      ],
+      "sourceNote": "https://leg.colorado.gov/bills/sb26-189",
+      "status": "VERIFIED",
+      "statusNote": "VERIFIED"
+    },
+    {
+      "id": "us-47",
+      "date": "2026-05-26",
+      "datePrecision": "day",
+      "dateLabel": "2026-05-26",
+      "jurisdiction": "US",
+      "track": "US federal, Congress, states, export controls",
+      "instrument": "Maryland SB 720 AI Ready Schools Act signed (ch. 634; eff. 2026-06-01)",
+      "effect": "K-12 AI guidance and coordinators",
+      "sourceUrls": [
+        "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb0720?ys=2026RS"
+      ],
+      "sourceNote": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb0720?ys=2026RS",
+      "status": "VERIFIED",
+      "statusNote": "VERIFIED"
+    },
+    {
+      "id": "us-48",
+      "date": "2026-05-27",
+      "datePrecision": "day",
+      "dateLabel": "2026-05-27",
+      "jurisdiction": "US",
+      "track": "US federal, Congress, states, export controls",
+      "instrument": "Connecticut SB 5 / P.A. 26-15 CART Act signed",
+      "effect": "Chatbot, employment-ADMT, AI-layoff notice rules",
+      "sourceUrls": [
+        "https://www.cga.ct.gov/asp/CGABillStatus/cgabillstatus.asp?selBillType=Bill&bill_num=SB5"
+      ],
+      "sourceNote": "https://www.cga.ct.gov/asp/CGABillStatus/cgabillstatus.asp?selBillType=Bill&bill_num=SB5",
+      "status": "VERIFIED",
+      "statusNote": "VERIFIED"
+    },
+    {
+      "id": "us-49",
+      "date": "2026-06-02",
+      "datePrecision": "day",
+      "dateLabel": "2026-06-02",
+      "jurisdiction": "US",
+      "track": "US federal, Congress, states, export controls",
+      "instrument": "EO 14409 Promoting Advanced AI Innovation and Security (published 2026-06-05)",
+      "effect": "Voluntary pre-release frontier-model access; cyber clearinghouse; no licensing",
+      "sourceUrls": [
+        "https://www.federalregister.gov/documents/2026/06/05/2026-11415/promoting-advanced-artificial-intelligence-innovation-and-security"
+      ],
+      "sourceNote": "https://www.federalregister.gov/documents/2026/06/05/2026-11415/promoting-advanced-artificial-intelligence-innovation-and-security",
+      "status": "VERIFIED",
+      "statusNote": "VERIFIED"
+    },
+    {
+      "id": "eu-127",
+      "date": "2026-06-03",
+      "datePrecision": "day",
+      "dateLabel": "2026-06-03",
+      "jurisdiction": "EU",
+      "track": "EU",
+      "instrument": "Cloud and AI Development Act proposal (+ Chips Act 2.0)",
+      "effect": "Commission proposal",
+      "sourceUrls": [
+        "https://commission.europa.eu/news-and-media/news/strengthening-europes-tech-sovereignty-2026-06-03_en"
+      ],
+      "sourceNote": "https://commission.europa.eu/news-and-media/news/strengthening-europes-tech-sovereignty-2026-06-03_en",
+      "status": "VERIFIED",
+      "statusNote": "VERIFIED"
+    },
+    {
+      "id": "us-50",
+      "date": "2026-06-04",
+      "datePrecision": "day",
+      "dateLabel": "2026-06-04",
+      "jurisdiction": "US",
+      "track": "US federal, Congress, states, export controls",
+      "instrument": "\"Great American AI Act\" discussion draft (Obernolte/Trahan)",
+      "effect": "3-yr preemption of state AI-development laws; not introduced; no vote as of 2026-10",
+      "sourceUrls": [],
+      "sourceNote": "secondary only",
+      "status": "UNVERIFIED",
+      "statusNote": "UNVERIFIED"
+    },
+    {
+      "id": "us-51",
+      "date": "2026-06-05",
+      "datePrecision": "day",
+      "dateLabel": "2026-06-05",
+      "jurisdiction": "US",
+      "track": "US federal, Congress, states, export controls",
+      "instrument": "NSPM-11 AI in the National Security Enterprise",
+      "effect": "Rapid AI adoption across IC/DoD",
+      "sourceUrls": [
+        "https://www.whitehouse.gov/fact-sheets/2026/06/fact-sheet-president-donald-j-trump-signs-historic-directive-on-ai-in-the-national-security-enterprise/"
+      ],
+      "sourceNote": "https://www.whitehouse.gov/fact-sheets/2026/06/fact-sheet-president-donald-j-trump-signs-historic-directive-on-ai-in-the-national-security-enterprise/",
+      "status": "VERIFIED",
+      "statusNote": "VERIFIED"
+    },
+    {
+      "id": "eu-128",
+      "date": "2026-06-16",
+      "datePrecision": "day",
+      "dateLabel": "2026-06-16 / 2026-06-29",
+      "jurisdiction": "EU",
+      "track": "EU",
+      "instrument": "Digital Omnibus on AI",
+      "effect": "EP final vote / Council adoption",
+      "sourceUrls": [
+        "https://oeil.europarl.europa.eu/oeil/en/procedure-file?reference=2025/0359(COD"
+      ],
+      "sourceNote": "https://oeil.europarl.europa.eu/oeil/en/procedure-file?reference=2025/0359(COD)",
+      "status": "VERIFIED",
+      "statusNote": "VERIFIED"
+    },
+    {
+      "id": "us-52",
+      "date": "2026-06-24",
+      "datePrecision": "day",
+      "dateLabel": "2026-06-24",
+      "jurisdiction": "US",
+      "track": "US federal, Congress, states, export controls",
+      "instrument": "NO FAKES Act of 2026 (S. 4591, introduced 2026-05-20) placed on Senate calendar; not enacted",
+      "effect": "Digital-replica right",
+      "sourceUrls": [
+        "https://www.congress.gov/bill/119th-congress/senate-bill/4591"
+      ],
+      "sourceNote": "https://www.congress.gov/bill/119th-congress/senate-bill/4591",
+      "status": "VERIFIED",
+      "statusNote": "VERIFIED"
+    },
+    {
+      "id": "us-53",
+      "date": "2026-06-29",
+      "datePrecision": "day",
+      "dateLabel": "2026-06-29",
+      "jurisdiction": "US",
+      "track": "US federal, Congress, states, export controls",
+      "instrument": "House passes H.R. 7757 KIDS Act, 267-117; in Senate Commerce since 2026-07-13",
+      "effect": "KOSA-derived provisions, AI chatbot disclosure to minors",
+      "sourceUrls": [
+        "https://www.congress.gov/bill/119th-congress/house-bill/7757/all-actions"
+      ],
+      "sourceNote": "https://www.congress.gov/bill/119th-congress/house-bill/7757/all-actions",
+      "status": "VERIFIED",
+      "statusNote": "VERIFIED"
+    },
+    {
+      "id": "us-97",
+      "date": "2026-07-01",
+      "datePrecision": "day",
+      "dateLabel": "2026-07-01",
+      "jurisdiction": "US",
+      "track": "US agencies and courts",
+      "instrument": "FTC proposed Policy Statement on Suppression of Accuracy in AI Systems",
+      "effect": "Section 5 applies to distorted outputs; asserts preemption of conflicting state laws",
+      "sourceUrls": [
+        "https://www.ftc.gov/news-events/news/press-releases/2026/07/ftc-seeks-public-comment-policy-statement-addressing-ai-accuracy"
+      ],
+      "sourceNote": "https://www.ftc.gov/news-events/news/press-releases/2026/07/ftc-seeks-public-comment-policy-statement-addressing-ai-accuracy",
+      "status": "VERIFIED",
+      "statusNote": "VERIFIED"
+    },
+    {
+      "id": "us-98",
+      "date": "2026-07-20",
+      "datePrecision": "day",
+      "dateLabel": "2026-07-20",
+      "jurisdiction": "US",
+      "track": "US agencies and courts",
+      "instrument": "Bartz v. Anthropic, final approval, ECF 680",
+      "effect": "$1.5bn settlement final",
+      "sourceUrls": [
+        "https://storage.courtlistener.com/recap/gov.uscourts.cand.434709/gov.uscourts.cand.434709.680.0_5.pdf"
+      ],
+      "sourceNote": "https://storage.courtlistener.com/recap/gov.uscourts.cand.434709/gov.uscourts.cand.434709.680.0_5.pdf",
+      "status": "VERIFIED",
+      "statusNote": "VERIFIED"
+    },
+    {
+      "id": "eu-129",
+      "date": "2026-07-24",
+      "datePrecision": "day",
+      "dateLabel": "2026-07-24",
+      "jurisdiction": "EU",
+      "track": "EU",
+      "instrument": "Digital Omnibus on AI, Reg. (EU) 2026/1744 (signed 2026-07-08)",
+      "effect": "OJ publication",
+      "sourceUrls": [
+        "https://eur-lex.europa.eu/eli/reg/2026/1744/oj"
+      ],
+      "sourceNote": "https://eur-lex.europa.eu/eli/reg/2026/1744/oj",
+      "status": "VERIFIED",
+      "statusNote": "VERIFIED"
+    },
+    {
+      "id": "eu-130",
+      "date": "2026-07-27",
+      "datePrecision": "day",
+      "dateLabel": "2026-07-27",
+      "jurisdiction": "EU",
+      "track": "EU",
+      "instrument": "Reg. 2026/1744",
+      "effect": "Entry into force; Annex III high-risk deferred to 2027-12-02, Annex I to 2028-08-02; Art. 50 not deferred; two new Art. 5 prohibitions from 2026-12-02",
+      "sourceUrls": [
+        "https://eur-lex.europa.eu/eli/reg/2026/1744/oj"
+      ],
+      "sourceNote": "https://eur-lex.europa.eu/eli/reg/2026/1744/oj",
+      "status": "VERIFIED",
+      "statusNote": "VERIFIED"
+    },
+    {
+      "id": "cn-161",
+      "date": "2026-07-28",
+      "datePrecision": "day",
+      "dateLabel": "2026-07-28",
+      "jurisdiction": "CN",
+      "track": "China",
+      "instrument": "SAC approves mandatory national standard plan for agent application security",
+      "effect": "Drafting stage",
+      "sourceUrls": [
+        "https://www.news.cn/tech/20260728/8ebf5083cf0e487287f894fb31e123f5/c.html"
+      ],
+      "sourceNote": "https://www.news.cn/tech/20260728/8ebf5083cf0e487287f894fb31e123f5/c.html",
+      "status": "VERIFIED",
+      "statusNote": "VERIFIED (Xinhua)"
+    },
+    {
+      "id": "eu-131",
+      "date": "2026-08-02",
+      "datePrecision": "day",
+      "dateLabel": "2026-08-02",
+      "jurisdiction": "EU",
+      "track": "EU",
+      "instrument": "AI Act",
+      "effect": "General application: Art. 50 transparency, enforcement; high-risk deferred",
+      "sourceUrls": [
+        "https://commission.europa.eu/news-and-media/news/safer-and-more-transparent-ai-2026-08-02_en"
+      ],
+      "sourceNote": "https://commission.europa.eu/news-and-media/news/safer-and-more-transparent-ai-2026-08-02_en",
+      "status": "VERIFIED",
+      "statusNote": "VERIFIED"
+    },
+    {
+      "id": "us-99",
+      "date": "2026-08-18",
+      "datePrecision": "day",
+      "dateLabel": "2026-08-18",
+      "jurisdiction": "US",
+      "track": "US agencies and courts",
+      "instrument": "FDA discussion paper on generative-AI-enabled devices (comments to 2026-10-19)",
+      "effect": "Regulatory approach consultation",
+      "sourceUrls": [
+        "https://www.fda.gov/news-events/press-announcements/fda-seeks-public-feedback-inform-regulatory-approach-generative-ai-enabled-medical-devices"
+      ],
+      "sourceNote": "https://www.fda.gov/news-events/press-announcements/fda-seeks-public-feedback-inform-regulatory-approach-generative-ai-enabled-medical-devices",
+      "status": "VERIFIED",
+      "statusNote": "VERIFIED"
+    },
+    {
+      "id": "eu-132",
+      "date": "2026-08-31",
+      "datePrecision": "day",
+      "dateLabel": "2026-08-31",
+      "jurisdiction": "EU",
+      "track": "EU",
+      "instrument": "DSA",
+      "effect": "ChatGPT designated VLOSE; Reddit, Roblox VLOPs",
+      "sourceUrls": [
+        "https://ec.europa.eu/commission/presscorner/detail/en/ip_26_1772"
+      ],
+      "sourceNote": "https://ec.europa.eu/commission/presscorner/detail/en/ip_26_1772",
+      "status": "VERIFIED",
+      "statusNote": "VERIFIED"
+    },
+    {
+      "id": "us-54",
+      "date": "2026-09-10",
+      "datePrecision": "day",
+      "dateLabel": "2026-09-10",
+      "jurisdiction": "US",
+      "track": "US federal, Congress, states, export controls",
+      "instrument": "California child-safety package signed (SB 1119 chatbots, SB 867 chatbot toys, AB 1709, AB 1856)",
+      "effect": "Minor protections for chatbots/platforms",
+      "sourceUrls": [
+        "https://www.gov.ca.gov/2026/09/10/governor-newsom-signs-the-strongest-child-safety-chatbot-and-social-media-laws-in-the-nation/"
+      ],
+      "sourceNote": "https://www.gov.ca.gov/2026/09/10/governor-newsom-signs-the-strongest-child-safety-chatbot-and-social-media-laws-in-the-nation/",
+      "status": "VERIFIED",
+      "statusNote": "VERIFIED"
+    },
+    {
+      "id": "eu-133",
+      "date": "2026-09-11",
+      "datePrecision": "day",
+      "dateLabel": "2026-09-11",
+      "jurisdiction": "EU",
+      "track": "EU",
+      "instrument": "CRA",
+      "effect": "Reporting obligations apply",
+      "sourceUrls": [
+        "https://digital-strategy.ec.europa.eu/en/policies/cyber-resilience-act"
+      ],
+      "sourceNote": "https://digital-strategy.ec.europa.eu/en/policies/cyber-resilience-act",
+      "status": "VERIFIED",
+      "statusNote": "VERIFIED"
+    },
+    {
+      "id": "eu-134",
+      "date": "2026-09-12",
+      "datePrecision": "day",
+      "dateLabel": "2026-09-12",
+      "jurisdiction": "EU",
+      "track": "EU",
+      "instrument": "Data Act Art. 3(1)",
+      "effect": "Access-by-design for new connected products",
+      "sourceUrls": [
+        "https://eur-lex.europa.eu/eli/reg/2023/2854/oj"
+      ],
+      "sourceNote": "https://eur-lex.europa.eu/eli/reg/2023/2854/oj",
+      "status": "VERIFIED",
+      "statusNote": "VERIFIED"
+    },
+    {
+      "id": "cn-162",
+      "date": "2026-09-14",
+      "datePrecision": "day",
+      "dateLabel": "2026-09-14",
+      "jurisdiction": "CN",
+      "track": "China",
+      "instrument": "AI Safety Governance Framework 3.0 (TC260)",
+      "effect": "Agent and embodied-AI risks as separate categories",
+      "sourceUrls": [
+        "https://www.cac.gov.cn/2026-09/17/c_1791397053329870.htm"
+      ],
+      "sourceNote": "https://www.cac.gov.cn/2026-09/17/c_1791397053329870.htm",
+      "status": "VERIFIED",
+      "statusNote": "VERIFIED"
+    },
+    {
+      "id": "us-55",
+      "date": "2026-09-18",
+      "datePrecision": "day",
+      "dateLabel": "2026-09-18",
+      "jurisdiction": "US",
+      "track": "US federal, Congress, states, export controls",
+      "instrument": "California EO N-9-26",
+      "effect": "Independent AI oversight; frontier \"kill switch\"",
+      "sourceUrls": [
+        "https://www.gov.ca.gov/2026/09/18/governor-newsom-issues-executive-order-to-accelerate-independent-oversight-and-advance-the-creation-of-an-ai-kill-switch/"
+      ],
+      "sourceNote": "https://www.gov.ca.gov/2026/09/18/governor-newsom-issues-executive-order-to-accelerate-independent-oversight-and-advance-the-creation-of-an-ai-kill-switch/",
+      "status": "VERIFIED",
+      "statusNote": "VERIFIED"
+    },
+    {
+      "id": "cn-163",
+      "date": "2026-09-18",
+      "datePrecision": "day",
+      "dateLabel": "2026-09-18",
+      "jurisdiction": "CN",
+      "track": "China",
+      "instrument": "Draft State Council Regulations on Minors' Safe Use of the Internet (comments to 2026-10-17)",
+      "effect": "Minors mode for cognition-affecting AI services",
+      "sourceUrls": [
+        "https://www.cac.gov.cn/2026-09/18/c_1791482017777471.htm"
+      ],
+      "sourceNote": "https://www.cac.gov.cn/2026-09/18/c_1791482017777471.htm",
+      "status": "VERIFIED",
+      "statusNote": "VERIFIED (draft)"
+    },
+    {
+      "id": "us-56",
+      "date": "2026-09-29",
+      "datePrecision": "day",
+      "dateLabel": "2026-09-29",
+      "jurisdiction": "US",
+      "track": "US federal, Congress, states, export controls",
+      "instrument": "EO 14434 Inaugurating the Era of Super Intelligence (published 2026-10-02)",
+      "effect": "Executive branch to use \"Super Intelligence/SI\" in place of \"AI\"",
+      "sourceUrls": [
+        "https://www.federalregister.gov/documents/2026/10/02/2026-20321/inaugurating-the-era-of-super-intelligence"
+      ],
+      "sourceNote": "https://www.federalregister.gov/documents/2026/10/02/2026-20321/inaugurating-the-era-of-super-intelligence",
+      "status": "VERIFIED",
+      "statusNote": "VERIFIED"
+    },
+    {
+      "id": "us-100",
+      "date": "2026-09-29",
+      "datePrecision": "day",
+      "dateLabel": "2026-09-29",
+      "jurisdiction": "US",
+      "track": "US agencies and courts",
+      "instrument": "Thomson Reuters v. Ross (3d Cir., precedential)",
+      "effect": "Affirms: AI-training copying by competitor not fair use",
+      "sourceUrls": [
+        "https://www2.ca3.uscourts.gov/opinarch/252153p.pdf"
+      ],
+      "sourceNote": "https://www2.ca3.uscourts.gov/opinarch/252153p.pdf",
+      "status": "VERIFIED",
+      "statusNote": "VERIFIED"
+    },
+    {
+      "id": "us-57",
+      "date": "2026-09-30",
+      "datePrecision": "day",
+      "dateLabel": "2026-09-30",
+      "jurisdiction": "US",
+      "track": "US federal, Congress, states, export controls",
+      "instrument": "Sen. Paul blocks KOSA unanimous consent",
+      "effect": "Senate KOSA stalled",
+      "sourceUrls": [],
+      "sourceNote": "secondary only",
+      "status": "UNVERIFIED",
+      "statusNote": "UNVERIFIED"
+    },
+    {
+      "id": "eu-135",
+      "date": "2026-12-02",
+      "datePrecision": "day",
+      "dateLabel": "2026-12-02",
+      "jurisdiction": "EU",
+      "track": "EU",
+      "instrument": "AI Act (as amended)",
+      "effect": "New Art. 5 prohibitions (intimate imagery / CSAM) apply",
+      "sourceUrls": [
+        "https://eur-lex.europa.eu/eli/reg/2026/1744/oj"
+      ],
+      "sourceNote": "https://eur-lex.europa.eu/eli/reg/2026/1744/oj",
+      "status": "VERIFIED",
+      "statusNote": "VERIFIED"
+    },
+    {
+      "id": "eu-136",
+      "date": "2026-12-09",
+      "datePrecision": "day",
+      "dateLabel": "2026-12-09",
+      "jurisdiction": "EU",
+      "track": "EU",
+      "instrument": "PLD 2024/2853",
+      "effect": "Transposition deadline; applies to products placed on market after this date",
+      "sourceUrls": [
+        "https://eur-lex.europa.eu/eli/dir/2024/2853/oj"
+      ],
+      "sourceNote": "https://eur-lex.europa.eu/eli/dir/2024/2853/oj",
+      "status": "VERIFIED",
+      "statusNote": "VERIFIED"
+    },
+    {
+      "id": "eu-137",
+      "date": "2027-12-02",
+      "datePrecision": "day",
+      "dateLabel": "2027-12-02",
+      "jurisdiction": "EU",
+      "track": "EU",
+      "instrument": "AI Act (as amended)",
+      "effect": "Annex III high-risk obligations apply",
+      "sourceUrls": [
+        "https://eur-lex.europa.eu/eli/reg/2026/1744/oj"
+      ],
+      "sourceNote": "https://eur-lex.europa.eu/eli/reg/2026/1744/oj",
+      "status": "VERIFIED",
+      "statusNote": "VERIFIED"
+    },
+    {
+      "id": "eu-138",
+      "date": "2027-12-11",
+      "datePrecision": "day",
+      "dateLabel": "2027-12-11",
+      "jurisdiction": "EU",
+      "track": "EU",
+      "instrument": "CRA",
+      "effect": "Main obligations apply",
+      "sourceUrls": [
+        "https://digital-strategy.ec.europa.eu/en/policies/cyber-resilience-act"
+      ],
+      "sourceNote": "https://digital-strategy.ec.europa.eu/en/policies/cyber-resilience-act",
+      "status": "VERIFIED",
+      "statusNote": "VERIFIED"
+    },
+    {
+      "id": "eu-139",
+      "date": "2028-08-02",
+      "datePrecision": "day",
+      "dateLabel": "2028-08-02",
+      "jurisdiction": "EU",
+      "track": "EU",
+      "instrument": "AI Act (as amended)",
+      "effect": "Annex I / Art. 6(1) high-risk obligations apply",
+      "sourceUrls": [
+        "https://eur-lex.europa.eu/eli/reg/2026/1744/oj"
+      ],
+      "sourceNote": "https://eur-lex.europa.eu/eli/reg/2026/1744/oj",
+      "status": "VERIFIED",
+      "statusNote": "VERIFIED"
+    }
+  ]
+}

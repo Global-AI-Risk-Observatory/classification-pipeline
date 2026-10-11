@@ -1,0 +1,188 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #0b0c0c;
+  --muted: #505a5f;
+  --muted-foreground: #6f777b;
+  --card: #ffffff;
+  --card-foreground: #0b0c0c;
+  --popover: #ffffff;
+  --popover-foreground: #0b0c0c;
+  --primary: #0b0c0c;
+  --primary-foreground: #ffffff;
+  --secondary: #f3f2f1;
+  --secondary-foreground: #0b0c0c;
+  --accent: #e63946; /* AISI Signal Red */
+  --accent-foreground: #ffffff;
+  --border: #b1b4b6;
+  --input: #b1b4b6;
+  --ring: #0b0c0c;
+  --radius: 4px; /* Subtle rounded corners for visual polish */
+  /* Font Stack matching the clean geometric sans used by AISI */
+  --font-sans: var(--font-onest), ui-sans-serif, system-ui, sans-serif;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-border: var(--border);
+  --font-sans: var(--font-sans);
+  --border-radius-sm: 2px;
+  --border-radius-md: var(--radius);
+  --border-radius-lg: 8px;
+  --border-radius-xl: 12px;
+}
+
+/* Force light mode styling regardless of system preference */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #ffffff;
+    --foreground: #0b0c0c;
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+@layer base {
+  button:not(:disabled) {
+    cursor: pointer;
+  }
+
+  button:disabled {
+    cursor: not-allowed;
+  }
+}
+
+/* Custom Utilities for AISI style */
+@layer utilities {
+  .aisi-container {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+  
+  .aisi-h1 {
+    @apply text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight text-primary uppercase;
+  }
+
+  .aisi-h2 {
+    @apply text-2xl sm:text-3xl font-bold tracking-tight text-primary;
+  }
+
+  .aisi-tag {
+    @apply inline-block text-[11px] font-bold uppercase tracking-[0.1em] text-accent mb-2;
+  }
+
+  .aisi-pill {
+    @apply inline-flex items-center px-3 py-0.5 rounded-full text-[11px] font-bold transition-colors;
+  }
+
+  /* Specific bubble colors based on AISI style */
+  .pill-amber { @apply bg-amber-100 text-amber-700 border border-amber-200; }
+  .pill-sky { @apply bg-sky-100 text-sky-700 border border-sky-200; }
+  .pill-violet { @apply bg-violet-100 text-violet-700 border border-violet-200; }
+  .pill-red { @apply bg-red-100 text-red-700 border border-red-200; }
+  .pill-emerald { @apply bg-emerald-100 text-emerald-700 border border-emerald-200; }
+  .pill-teal { @apply bg-teal-100 text-teal-700 border border-teal-200; }
+  .pill-orange { @apply bg-orange-100 text-orange-700 border border-orange-200; }
+  .pill-slate { @apply bg-slate-100 text-slate-700 border border-slate-200; }
+  .pill-indigo { @apply bg-indigo-100 text-indigo-700 border border-indigo-200; }
+  .pill-pink { @apply bg-pink-100 text-pink-700 border border-pink-200; }
+
+  .aisi-metadata {
+    @apply text-xs text-muted-foreground flex items-center gap-2;
+  }
+
+  .aisi-metadata span:not(:last-child)::after {
+    content: "•";
+    @apply ml-2 text-border;
+  }
+
+  .aisi-nav-link {
+    @apply text-sm font-bold text-muted hover:text-foreground transition-colors uppercase tracking-wider;
+  }
+
+  .aisi-select {
+    @apply h-10 border border-border bg-white px-3 pr-12 rounded text-sm font-medium tracking-normal normal-case text-primary focus:outline-none focus:ring-1 focus:ring-accent;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 14 14' fill='none'%3E%3Cpath d='M3 5.25L7 9.25L11 5.25' stroke='%23292724' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+    background-position: right 1rem center;
+    background-repeat: no-repeat;
+    background-size: 14px 14px;
+    font-family: var(--font-sans);
+  }
+
+  .animate-rise {
+    animation: rise 0.6s ease-out both;
+  }
+}
+
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.year-range-slider:focus {
+  outline: none;
+}
+
+.year-range-slider::-webkit-slider-runnable-track {
+  height: 0;
+  background: transparent;
+}
+
+.year-range-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  pointer-events: auto;
+  width: 12px;
+  height: 12px;
+  border-radius: 9999px;
+  border: 2px solid var(--accent);
+  background: #ffffff;
+  cursor: pointer;
+  margin-top: -5px;
+}
+
+.year-range-slider::-moz-range-track {
+  height: 0;
+  background: transparent;
+  border: none;
+}
+
+.year-range-slider::-moz-range-thumb {
+  pointer-events: auto;
+  width: 12px;
+  height: 12px;
+  border-radius: 9999px;
+  border: 2px solid var(--accent);
+  background: #ffffff;
+  cursor: pointer;
+}

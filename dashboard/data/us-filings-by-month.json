@@ -1,0 +1,16 @@
+{
+  "source": "gs://airo-filings-raw/manifest/*.json",
+  "field": "filing_date",
+  "asOf": "2026-10-11",
+  "totalFilings": 7794,
+  "uniqueCiks": 4743,
+  "filingTypes": { "10-K": 4027, "ARS": 2524, "10-K/A": 453, "20-F": 394, "N-CSR": 224, "other": 172 },
+  "months": [
+    { "month": "2025-01", "filings": 224 },
+    { "month": "2025-02", "filings": 1955 },
+    { "month": "2025-03", "filings": 2736 },
+    { "month": "2025-04", "filings": 2300 },
+    { "month": "2025-05", "filings": 408 },
+    { "month": "2025-06", "filings": 171 }
+  ]
+}
