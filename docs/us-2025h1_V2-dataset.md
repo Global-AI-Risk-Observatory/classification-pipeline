@@ -9,6 +9,7 @@ All files live in the project's Google Cloud bucket:
 ```
 gs://airo-pipeline-data/us-2025h1_V2/
 ├── chunks.jsonl                      28,395 chunks, 104 MB
+├── implicit_mention_ai.jsonl         63,801 passages with an implicit mention, not classified
 ├── documents_manifest.json           7,794 filings
 ├── README.md                         this description
 └── results/
@@ -39,7 +40,7 @@ Filings per month: Jan 224, Feb 1,955, Mar 2,736, Apr 2,300, May 408, Jun 171.
 ## Processing
 
 1. **Parsing:** `python -m airo run` (`src/airo/ingest.py`) reads each filing's Markdown into ordered text blocks (paragraphs, headings, list items, table rows), attaches the Form 10-K Item and the nearest heading to every block, and takes the filing's metadata from its manifest file. Filings with identical text are merged into one document.
-2. **Chunks:** `src/airo/retrieve.py` searches the blocks with the core glossary (500 terms) plus the glossary of the company's ISIC division and class, and joins every hit with one neighbouring block on each side, within the same section, into a passage. A passage with at least one term that itself denotes AI is a direct mention and is a chunk of this dataset: 28,395 chunks from 5,368 filings. The remaining 2,426 filings have no such passage and count as "no AI mention". Passages that only contain industry context terms (63,801) are not classified and are not part of this folder.
+2. **Chunks:** `src/airo/retrieve.py` searches the blocks with the core glossary (500 terms) plus the glossary of the company's ISIC division and class, and joins every hit with one neighbouring block on each side, within the same section, into a passage. A passage with at least one term that itself denotes AI is a direct mention and is a chunk of this dataset: 28,395 chunks from 5,368 filings. The remaining 2,426 filings have no such passage and count as "no AI mention". Passages that only contain industry context terms are implicit mentions: 63,801 passages, not classified, in `implicit_mention_ai.jsonl`.
 3. **Classification:** `python -m airo.coders.gemini` with `gemini-2.5-flash` on Vertex AI, temperature 0, thinking switched off, JSON output bound to the label schema, and the codebook in `results/classification_prompt.md`. Every label is checked by the pipeline's acceptance check (`classify.validate`): the schema's rules, and every evidence quote must be a verbatim stretch of the chunk. A quote that differs from the chunk only in quotation marks, apostrophes or dashes is stored in the chunk's own characters. A chunk whose label is rejected is asked again, with the rejected answer and the reason, up to two times. A label that is still rejected is left out: 464 chunks (1.6%) have no label (evidence not verbatim 443, `frame` missing 13, no evidence 5, other 3).
 4. **Aggregation:** `accept` and `adjudicate` (one coder), then `filing_metrics.jsonl` and `us-filing-metrics.json` roll the chunk labels up to filings and filing months.
 
@@ -60,6 +61,8 @@ The `airo` taxonomy v0.5 of this repository (`src/airo/taxonomy.py`), not the ta
 ## File schemas
 
 `chunks.jsonl`, one JSON object per line: `chunk_id` (`<text id>:<first block>-<last block>`), `document_id` (filing_id), `company_id` (CIK), `company_name`, `report_year`, `report_sections`, `heading`, `chunk_text`, `chunk_word_len`, `matched_keywords`, `blocks`.
+
+`implicit_mention_ai.jsonl`, one JSON object per line, with the fields of `chunks.jsonl`; `matched_keywords` holds the context terms found in the passage. These passages have no line in `classified_chunks.jsonl`.
 
 `classified_chunks.jsonl`, one object per classified chunk:
 
@@ -137,7 +140,7 @@ Same filings, different pipeline. The two runs differ in how chunks are found an
 
 - No human validation set exists for the US corpus yet.
 - 464 chunks have no label; 352 filings contain at least one of them, so their filing-level booleans can be understated.
-- Passages with industry context terms only are not classified.
+- Passages with industry context terms only (`implicit_mention_ai.jsonl`) are not classified.
 - Sections are detected from Form 10-K "Item" headings only; other forms get no sections.
 - Chunks are not capped in length: the median is 282 words, the mean 398, the longest 31,849.
 - The same report can appear under two filing ids (a 10-K and the ARS that reprints it); only filings with identical text are merged.
