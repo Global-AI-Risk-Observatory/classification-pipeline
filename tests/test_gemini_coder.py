@@ -443,7 +443,7 @@ def test_main_runs_end_to_end_with_a_fake_client(tmp_path, monkeypatch, capsys):
     monkeypatch.setattr(gemini, "make_client", fake_make_client)
     rc = gemini.main(
         ["--tasks", str(tasks_file), "--codebook", str(codebook_file), "--out", str(out), "--model", "m",
-         "--project", "proj", "--limit", "2", "--price-input", "1", "--price-output", "2"]
+         "--project", "proj", "--limit", "2", "--price-input", "1", "--price-output", "2", "--batch-size", "1"]
     )
     assert rc == 0
     assert made == {"project": "proj", "location": "us-central1"}
@@ -546,3 +546,120 @@ def test_the_fallback_can_be_switched_off():
     client = FakeClient(handler)
     results = gemini.code(TASKS[:1], CODEBOOK, model="m", client=client, backoff=0, max_repairs=0)
     assert results[0]["error"] is not None and results[0]["repairs"] == 0 and len(client.models.calls) == 1
+
+
+# --------------------------------------------------------------------------
+# Several tasks per request: the codebook once, every label checked on its own
+# --------------------------------------------------------------------------
+
+
+class BatchClient:
+    """Answers a batch request with {"labels": [...]} and a single request with one label.
+
+    `label(passage_id, call_number, is_batch)` gives the label of a task (None leaves it out of a batch
+    answer); `raw(call_number, is_batch)`, if given and not None, is returned as the answer text instead.
+    """
+
+    def __init__(self, label=None, raw=None):
+        self.label = label or (lambda pid, n, batch: LABELS[pid])
+        self.raw = raw or (lambda n, batch: None)
+        self.calls = []
+        self.models = self
+
+    def generate_content(self, *, model, contents, config):
+        ids = re.findall(r"^passage_id: (\S+)$", contents, re.M)
+        batch = "## Task 1" in contents
+        self.calls.append({"contents": contents, "config": config, "batch": batch, "ids": ids})
+        n = len(self.calls)
+        text = self.raw(n, batch)
+        if text is None:
+            if batch:
+                text = json.dumps({"labels": [l for l in (self.label(i, n, True) for i in ids) if l is not None]})
+            else:
+                text = json.dumps(self.label(ids[0], n, False))
+        return FakeResponse(text, prompt=1000 if batch else 100, output=60 * len(ids) if batch else 50)
+
+
+def test_a_batch_sends_the_codebook_once_and_returns_one_checked_label_per_task():
+    client = BatchClient()
+    results = gemini.code(TASKS, CODEBOOK, model="m", client=client, backoff=0, batch_size=40)
+
+    assert len(client.calls) == 1 and client.calls[0]["ids"] == [t["passage_id"] for t in TASKS]
+    prompt = client.calls[0]["contents"]
+    assert prompt.count(CODEBOOK.strip()) == 1 and f"There are {len(TASKS)} passages" in prompt
+    assert [r["passage_id"] for r in results] == [t["passage_id"] for t in TASKS]
+    assert all(r["error"] is None and r["repairs"] == 0 for r in results)
+    assert results[0]["label"]["evidence"] == LABELS[TASKS[0]["passage_id"]]["evidence"]
+    # the batch request's tokens are booked once
+    assert sum(r["usage"]["input_tokens"] for r in results) == 1000
+    config = client.calls[0]["config"]
+    assert config["response_schema"] is gemini.Labels and config["max_output_tokens"] >= 40 * 600
+
+
+def test_tasks_are_split_into_batches_in_order():
+    client = BatchClient()
+    results = gemini.code(TASKS, CODEBOOK, model="m", client=client, backoff=0, batch_size=2, workers=1)
+
+    assert [c["ids"] for c in client.calls] == [[TASKS[0]["passage_id"], TASKS[1]["passage_id"]], [TASKS[2]["passage_id"]]]
+    assert [r["passage_id"] for r in results] == [t["passage_id"] for t in TASKS]
+
+
+def test_a_rejected_label_of_a_batch_is_asked_again_on_its_own_and_the_rest_is_kept():
+    bad = TASKS[0]["passage_id"]
+
+    def label(pid, n, batch):
+        if pid == bad and batch:
+            return {**LABELS[pid], "evidence": ["AI models may be inaccurate..."]}
+        return LABELS[pid]
+
+    client = BatchClient(label)
+    results = gemini.code(TASKS, CODEBOOK, model="m", client=client, backoff=0, batch_size=40)
+
+    assert [c["batch"] for c in client.calls] == [True, False] and client.calls[1]["ids"] == [bad]
+    assert "not a verbatim quote" in client.calls[1]["contents"] and "AI models may be inaccurate..." in client.calls[1]["contents"]
+    assert all(r["error"] is None for r in results)
+    assert [r["repairs"] for r in results] == [1, 0, 0]
+    assert results[0]["label"]["evidence"] == LABELS[bad]["evidence"]
+
+
+def test_a_task_missing_from_the_batch_answer_is_asked_on_its_own():
+    missing = TASKS[1]["passage_id"]
+    client = BatchClient(lambda pid, n, batch: None if (pid == missing and batch) else LABELS[pid])
+    results = gemini.code(TASKS, CODEBOOK, model="m", client=client, backoff=0, batch_size=40)
+
+    assert [c["batch"] for c in client.calls] == [True, False] and client.calls[1]["ids"] == [missing]
+    assert "rejected by the automatic check" not in client.calls[1]["contents"]  # a plain request, there was no answer
+    assert all(r["error"] is None for r in results) and results[1]["repairs"] == 0
+
+
+def test_a_batch_answer_that_cannot_be_read_falls_back_to_one_request_per_task():
+    client = BatchClient(raw=lambda n, batch: "not json" if batch else None)
+    results = gemini.code(TASKS, CODEBOOK, model="m", client=client, backoff=0, batch_size=40)
+
+    assert [c["batch"] for c in client.calls] == [True, False, False, False]
+    assert all(r["error"] is None for r in results)
+
+
+def test_a_label_still_rejected_after_the_batch_fallback_stays_an_error():
+    bad = TASKS[0]["passage_id"]
+    client = BatchClient(lambda pid, n, batch: {**LABELS[pid], "evidence": ["made up"]} if pid == bad else LABELS[pid])
+    results = gemini.code(TASKS, CODEBOOK, model="m", client=client, backoff=0, batch_size=40, max_repairs=2)
+
+    assert "verbatim" in results[0]["error"] and results[0]["repairs"] == 2 and results[0]["label"]["evidence"] == ["made up"]
+    assert results[1]["error"] is None and results[2]["error"] is None
+    assert len(client.calls) == 3  # the batch, then two repair requests for the one task
+
+
+def test_the_command_line_uses_batches_of_40_by_default(tmp_path, monkeypatch):
+    base = ["--tasks", "t", "--codebook", "c", "--out", "o", "--model", "m", "--project", "p"]
+    assert gemini.parse_args(base).batch_size == 40 == gemini.BATCH_SIZE
+    assert gemini.parse_args(base + ["--batch-size", "1"]).batch_size == 1
+
+    (tmp_path / "tasks.jsonl").write_text("".join(json.dumps(t) + "\n" for t in TASKS), encoding="utf-8")
+    (tmp_path / "codebook.md").write_text(CODEBOOK, encoding="utf-8")
+    client = BatchClient()
+    monkeypatch.setattr(gemini, "make_client", lambda project, location: client)
+    rc = gemini.main(["--tasks", str(tmp_path / "tasks.jsonl"), "--codebook", str(tmp_path / "codebook.md"),
+                      "--out", str(tmp_path / "out.jsonl"), "--model", "m", "--project", "p"])
+    assert rc == 0 and len(client.calls) == 1 and client.calls[0]["batch"]
+    assert len((tmp_path / "out.jsonl").read_text(encoding="utf-8").splitlines()) == len(TASKS)

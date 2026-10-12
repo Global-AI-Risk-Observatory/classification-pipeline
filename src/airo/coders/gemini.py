@@ -4,9 +4,14 @@
         --out data/labels_in/gemini.jsonl --model gemini-2.5-flash \\
         --project <gcp-project> --location us-central1
 
-One request per task. Each request carries the full codebook and one rendered task
-(`build_prompt`) and asks for exactly one JSON object; the request runs in JSON mode
-(`response_mime_type="application/json"`, `response_schema=Label`) at temperature 0.
+One request per `--batch-size` tasks (default 40): the request carries the codebook once
+and the rendered tasks (`build_batch_prompt`) and asks for one JSON object with one label
+per task; it runs in JSON mode (`response_mime_type="application/json"`,
+`response_schema=Labels`) at temperature 0. Every label of the answer is checked on its
+own. A task whose label is missing or rejected is asked again on its own, with the
+codebook and the reason (see `code_one`), so one bad label costs one extra request and
+not the batch. With `--batch-size 1` every task is a request of its own
+(`build_prompt`, `response_schema=Label`).
 The SDK converts the pydantic `Label` class itself: `Optional[Literal[...]]` fields
 become nullable enums and `list[Literal[...]]` arrays of enums, so no flattening is
 needed. The schema cannot express the cross-field rules of `Label` (risk_types only
@@ -43,11 +48,22 @@ from concurrent.futures import ThreadPoolExecutor
 from pathlib import Path
 from typing import Any, Callable, Optional
 
+from pydantic import BaseModel
+
 from .. import classify
 from ..taxonomy import Label
 
 CODER = "gemini"
 MAX_OUTPUT_TOKENS = 4096
+BATCH_SIZE = 40
+# Output budget per label of a batch answer; a label is about 250 tokens.
+_TOKENS_PER_LABEL = 600
+
+
+class Labels(BaseModel):
+    """The answer to a batch request: one label per task."""
+
+    labels: list[Label]
 # HTTP status codes worth retrying: rate limit, timeout, and server-side failures.
 RETRY_CODES = {408, 429, 500, 502, 503, 504}
 _MAX_BACKOFF = 60.0
@@ -97,6 +113,31 @@ def build_prompt(codebook: str, task: dict) -> str:
     )
 
 
+def build_batch_prompt(codebook: str, tasks: list[dict]) -> str:
+    """The codebook once, the rendered tasks, and the request for one label per task."""
+    lines = [
+        codebook.rstrip(),
+        "",
+        "---",
+        "",
+        "# Tasks",
+        "",
+        f"There are {len(tasks)} passages below, each under its own \"## Task\" heading. Label every passage "
+        "on its own, from what that passage says: carry nothing over from one passage to another.",
+    ]
+    for n, task in enumerate(tasks, 1):
+        lines += ["", f"## Task {n}", "", render_task(task)]
+    lines += [
+        "",
+        "---",
+        "",
+        f"Return exactly one JSON object {{\"labels\": [...]}} with {len(tasks)} label objects, one per task and in "
+        "the order of the tasks, each with every field of the codebook and `passage_id` copied from its task, "
+        "and nothing else.",
+    ]
+    return "\n".join(lines)
+
+
 # --------------------------------------------------------------------------
 # Calling the model
 # --------------------------------------------------------------------------
@@ -113,13 +154,14 @@ def make_client(project: str, location: str):
     return genai.Client(vertexai=True, project=project, location=location)
 
 
-def request_config(thinking_budget: Optional[int] = None, max_output_tokens: int = MAX_OUTPUT_TOKENS) -> dict:
+def request_config(thinking_budget: Optional[int] = None, max_output_tokens: int = MAX_OUTPUT_TOKENS,
+                   schema: Any = Label) -> dict:
     """The `config` of every request (a GenerateContentConfigDict; the SDK validates it)."""
     config: dict[str, Any] = {
         "temperature": 0,
         "max_output_tokens": max_output_tokens,
         "response_mime_type": "application/json",
-        "response_schema": Label,
+        "response_schema": schema,
     }
     if thinking_budget is not None:
         config["thinking_config"] = {"thinking_budget": thinking_budget}
@@ -200,7 +242,8 @@ def repair_prompt(prompt: str, answer: str, error: str) -> str:
 
 
 def code_one(task: dict, codebook: str, *, model: str, client, config: dict,
-             max_retries: int = 5, backoff: float = 1.0, max_repairs: int = 2) -> dict:
+             max_retries: int = 5, backoff: float = 1.0, max_repairs: int = 2,
+             rejected: Optional[tuple[str, str]] = None) -> dict:
     """Label one task. Never raises: failures are captured in the result's `error`.
 
     `max_retries` is the number of retries after the first attempt of a request, with
@@ -212,6 +255,9 @@ def code_one(task: dict, codebook: str, *, model: str, client, config: dict,
     `max_repairs` times, with the rejected answer and the reason (`repair_prompt`). An
     answer that is still rejected after that stays an error; nothing is corrected by
     the coder itself. `repairs` counts these extra requests, `usage` covers all requests.
+
+    `rejected` is (answer, reason) of a label this task already got in a batch request and
+    that the check rejected: the first request here is then already the repair request.
     """
     prompt = build_prompt(codebook, task)
     result = {
@@ -226,6 +272,12 @@ def code_one(task: dict, codebook: str, *, model: str, client, config: dict,
     }
     start = time.perf_counter()
     contents = prompt
+    if rejected is not None:
+        if max_repairs < 1:
+            result["error"] = rejected[1]
+            return result
+        result["repairs"] = 1
+        contents = repair_prompt(prompt, *rejected)
     while True:
         response = None
         for attempt in range(max_retries + 1):
@@ -257,11 +309,77 @@ def code_one(task: dict, codebook: str, *, model: str, client, config: dict,
     return result
 
 
+def code_batch(tasks: list[dict], codebook: str, *, model: str, client, config: dict, single_config: dict,
+               max_retries: int = 5, backoff: float = 1.0, max_repairs: int = 2) -> list[dict]:
+    """Label several tasks with one request. Returns one result per task, in task order.
+
+    The answer's labels are matched to the tasks by `passage_id` and checked one by one.
+    A task whose label the check rejects is asked again on its own with that answer and
+    the reason; a task without a label in the answer, and every task of a request that
+    failed as a whole (error, empty or unreadable answer), is asked on its own from the
+    start. The tokens of the batch request are booked on the first task's result.
+    """
+    start = time.perf_counter()
+    usage = {"input_tokens": 0, "output_tokens": 0, "thinking_tokens": 0}
+    attempts, answer = 0, None
+    for attempt in range(max_retries + 1):
+        attempts += 1
+        try:
+            answer = client.models.generate_content(model=model, contents=build_batch_prompt(codebook, tasks), config=config)
+            break
+        except Exception as e:  # noqa: BLE001 - the tasks are then asked one by one
+            if attempt < max_retries and retryable(e):
+                if backoff:
+                    time.sleep(min(backoff * 2**attempt, _MAX_BACKOFF) * (1 + random.random()))
+                continue
+            break
+    by_id: dict[str, dict] = {}
+    if answer is not None:
+        usage = _usage(answer)
+        try:
+            parsed = json.loads(getattr(answer, "text", None) or "")
+            for label in parsed.get("labels") or [] if isinstance(parsed, dict) else []:
+                if isinstance(label, dict) and isinstance(label.get("passage_id"), str):
+                    by_id.setdefault(label["passage_id"], label)  # a repeated id: the first label counts
+        except json.JSONDecodeError:
+            pass
+    latency = round(time.perf_counter() - start, 3)
+
+    results = []
+    for task in tasks:
+        own = {"model": model, "config": single_config, "client": client,
+               "max_retries": max_retries, "backoff": backoff, "max_repairs": max_repairs}
+        raw = by_id.get(task["passage_id"])
+        if raw is None:
+            result = code_one(task, codebook, **own)
+        else:
+            text = json.dumps(raw, ensure_ascii=False)
+            label, error = _check(text, task)
+            if error is None:
+                result = {
+                    "passage_id": task["passage_id"], "label": label, "error": None,
+                    "usage": {"input_tokens": 0, "output_tokens": 0, "thinking_tokens": 0},
+                    "model": model, "latency_s": 0.0, "attempts": 0, "repairs": 0,
+                }
+            else:
+                result = code_one(task, codebook, rejected=(text, error), **own)
+                if result["label"] is None:
+                    result["label"] = label  # the rejected label, kept for inspection
+        results.append(result)
+    if results:
+        for kind, n in usage.items():
+            results[0]["usage"][kind] += n
+        results[0]["latency_s"] = round(results[0]["latency_s"] + latency, 3)
+        results[0]["attempts"] += attempts
+    return results
+
+
 def code(tasks: list[dict], codebook: str, *, model: str, client, workers: int = 4,
          max_retries: int = 5, thinking_budget: Optional[int] = None,
          max_output_tokens: int = MAX_OUTPUT_TOKENS, backoff: float = 1.0, max_repairs: int = 2,
+         batch_size: int = 1,
          on_result: Optional[Callable[[dict], None]] = None) -> list[dict]:
-    """Label every task, one request each, `workers` requests at a time.
+    """Label every task, `batch_size` tasks per request, `workers` requests at a time.
 
     Returns one result per task, in task order:
     {"passage_id", "label": dict or None, "error": str or None,
@@ -277,8 +395,23 @@ def code(tasks: list[dict], codebook: str, *, model: str, client, workers: int =
             on_result(result)
         return result
 
+    if batch_size <= 1:
+        with ThreadPoolExecutor(max_workers=max(1, workers)) as pool:
+            return list(pool.map(run, tasks))
+
+    batch_config = request_config(thinking_budget, max(max_output_tokens, _TOKENS_PER_LABEL * batch_size), schema=Labels)
+
+    def run_batch(batch: list[dict]) -> list[dict]:
+        results = code_batch(batch, codebook, model=model, client=client, config=batch_config, single_config=config,
+                             max_retries=max_retries, backoff=backoff, max_repairs=max_repairs)
+        if on_result:
+            for result in results:
+                on_result(result)
+        return results
+
+    batches = [tasks[i : i + batch_size] for i in range(0, len(tasks), batch_size)]
     with ThreadPoolExecutor(max_workers=max(1, workers)) as pool:
-        return list(pool.map(run, tasks))
+        return [result for results in pool.map(run_batch, batches) for result in results]
 
 
 # --------------------------------------------------------------------------
@@ -364,6 +497,8 @@ def parse_args(argv: Optional[list[str]] = None) -> argparse.Namespace:
     p.add_argument("--location", default="us-central1", help="Vertex AI region (default us-central1)")
     p.add_argument("--workers", type=int, default=4, help="concurrent requests (default 4)")
     p.add_argument("--max-retries", type=int, default=5, help="retries per task on transient errors (default 5)")
+    p.add_argument("--batch-size", type=int, default=BATCH_SIZE,
+                   help=f"tasks per request; the codebook is sent once per request (default {BATCH_SIZE}; 1 = one request per task)")
     p.add_argument("--max-repairs", type=int, default=2,
                    help="times a task is asked again when the acceptance check rejects its answer (default 2)")
     p.add_argument("--thinking-budget", type=int, default=None,
@@ -403,7 +538,8 @@ def main(argv: Optional[list[str]] = None) -> int:
     start = time.perf_counter()
     results = code(
         tasks, codebook, model=args.model, client=client, workers=args.workers,
-        max_retries=args.max_retries, max_repairs=args.max_repairs, thinking_budget=args.thinking_budget,
+        max_retries=args.max_retries, max_repairs=args.max_repairs, batch_size=args.batch_size,
+        thinking_budget=args.thinking_budget,
         max_output_tokens=args.max_output_tokens, on_result=progress,
     )
     summary = write_labels(results, args.out, prices=prices, wall_time_s=time.perf_counter() - start)
