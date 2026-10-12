@@ -47,6 +47,7 @@ def summarise(doc: dict, passages: list[dict], labels: list[dict]) -> dict:
         "risk_types": count("risk_types"),
         "adoption_stage": count("adoption_stage"),
         "ai_kind": count("ai_kind"),
+        "substantiveness": count("substantiveness"),
         "disclosure_traits": traits,
         # Analogue of PRISON's activation rate: share of AI passages with at least one trait, and per trait.
         "trait_activation_rate": round(sum(bool(l["disclosure_traits"]) for _, l in about_ai) / n_ai, 3)
@@ -87,6 +88,7 @@ def render(doc: dict, passages: list[dict], labels: list[dict], summary: dict) -
         f"- Risk types: {fmt(summary['risk_types'])}",
         f"- Adoption stage: {fmt(summary['adoption_stage'])}",
         f"- Kind of AI: {fmt(summary['ai_kind'])}",
+        f"- Substantiveness: {fmt(summary['substantiveness'])}",
         f"- Disclosure traits: {fmt(summary['disclosure_traits'])}",
         f"- Trait activation rate: {activation_line}",
         f"- Sections: {fmt(summary['sections'])}",
@@ -111,6 +113,8 @@ def render(doc: dict, passages: list[dict], labels: list[dict], summary: dict) -
                 tags.append(f"adoption: {l['adoption_stage']}")
             if l["ai_kind"]:
                 tags.append(f"kind: {l['ai_kind']}")
+            if l["substantiveness"]:
+                tags.append(f"substantiveness: {l['substantiveness']}")
             if l["disclosure_traits"]:
                 tags.append("traits: " + ", ".join(l["disclosure_traits"]))
             if l["needs_review"]:

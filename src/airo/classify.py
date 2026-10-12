@@ -19,7 +19,7 @@ from pydantic import ValidationError
 from .taxonomy import TAXONOMY_VERSION, Label
 
 _WS = re.compile(r"\s+")
-_SINGLE = ("ai_reference", "frame", "adoption_stage", "ai_kind")
+_SINGLE = ("ai_reference", "frame", "adoption_stage", "ai_kind", "substantiveness")
 _MULTI = ("roles", "risk_types", "disclosure_traits")
 
 
@@ -145,7 +145,8 @@ def adjudicate(labels_by_coder: dict[str, list[dict]]) -> tuple[list[dict], dict
         # Keep the voted label internally consistent with the schema's rules.
         if out["ai_reference"] in (None, "none"):
             out.update(
-                frame=None, roles=[], risk_types=[], disclosure_traits=[], adoption_stage=None, ai_kind=None
+                frame=None, roles=[], risk_types=[], disclosure_traits=[], adoption_stage=None, ai_kind=None,
+                substantiveness=None,
             )
         else:
             if not out["roles"]:

@@ -692,6 +692,7 @@ def label_fields(**overrides) -> dict:
         "roles": ["market_driver"],
         "ai_kind": "unspecified",
         "disclosure_traits": ["hedging"],
+        "substantiveness": "generic",
         "evidence": ["Demand for AI data centers is growing."],
         "confidence": "high",
     }
@@ -856,6 +857,7 @@ def test_taxonomy_definitions_and_schema_list_the_same_values():
     assert allowed("risk_types") == set(taxonomy.RISK_TYPES)
     assert allowed("adoption_stage") == set(taxonomy.ADOPTION_STAGES)
     assert allowed("ai_kind") == set(taxonomy.AI_KINDS)
+    assert allowed("substantiveness") == set(taxonomy.SUBSTANTIVENESS)
     assert allowed("disclosure_traits") == set(taxonomy.DISCLOSURE_TRAITS)
 
 
@@ -875,6 +877,7 @@ ALL_DEFINITIONS = (
     taxonomy.ADOPTION_STAGES,
     taxonomy.AI_KINDS,
     taxonomy.DISCLOSURE_TRAITS,
+    taxonomy.SUBSTANTIVENESS,
 )
 
 
@@ -1319,6 +1322,7 @@ def test_adjudicate_agreement_report():
         "frame": 1.0,  # P1 P2 P3 P4 (the fixture's default)
         "adoption_stage": 0.75,  # P1 P3 P4 (all empty)
         "ai_kind": 0.5,  # P1 P4
+        "substantiveness": 1.0,  # P1 P2 P3 P4 (the fixture's default)
         "roles": 0.5,  # P1 P3
         "risk_types": 0.5,  # P1 P3
         "disclosure_traits": 0.75,  # P1 P3 P4
@@ -1351,12 +1355,13 @@ def passage(pid: str, section: str | None, mention: str = "direct") -> dict:
 
 
 def final_label(pid: str, ai_reference: str | None, frame=None, roles=(), risk_types=(), adoption_stage=None,
-                ai_kind=None, disclosure_traits=(), entities=(), needs_review=False) -> dict:
+                ai_kind=None, disclosure_traits=(), entities=(), needs_review=False, substantiveness=None) -> dict:
     """A label in the shape classify.adjudicate writes to labels_final.jsonl."""
     return {
         "passage_id": pid, "ai_reference": ai_reference, "frame": frame, "roles": list(roles),
         "risk_types": list(risk_types), "adoption_stage": adoption_stage, "ai_kind": ai_kind,
         "disclosure_traits": list(disclosure_traits), "entities": list(entities), "needs_review": needs_review,
+        "substantiveness": substantiveness or ("generic" if ai_reference in ("explicit", "implicit") else None),
     }
 
 
@@ -1562,3 +1567,26 @@ def test_cli_runs_all_stages_through_their_files(tmp_path, capsys):
     assert "# Hints: implicit mentions, not classified" in report
     assert passages[1]["text"] in report
     capsys.readouterr()  # the stages print progress; keep it out of the test output
+
+
+def test_substantiveness_has_five_ordered_levels_and_is_required_for_ai_passages():
+    assert taxonomy.SUBSTANTIVENESS_LEVELS == {"boilerplate": 1, "generic": 2, "specific": 3, "detailed": 4, "quantified": 5}
+    for level in taxonomy.SUBSTANTIVENESS:
+        assert Label(**label_fields(substantiveness=level)).substantiveness == level
+        assert f"`{level}`" in taxonomy.codebook()
+    with pytest.raises(ValidationError, match="substantiveness is required"):
+        Label(**label_fields(substantiveness=None))
+    with pytest.raises(ValidationError):
+        Label(**label_fields(substantiveness="moderate"))
+    with pytest.raises(ValidationError, match="must leave all other label fields empty"):
+        Label(passage_id="d1:0-2", ai_reference="none", confidence="high", substantiveness="generic")
+
+
+def test_adjudicate_takes_the_majority_substantiveness_and_flags_a_three_way_split():
+    final, _ = adjudicated(by_coder(
+        coded(P1, "a", substantiveness="specific"), coded(P1, "b", substantiveness="specific"), coded(P1, "c", substantiveness="detailed"),
+        coded(P2, "a", substantiveness="boilerplate"), coded(P2, "b", substantiveness="specific"), coded(P2, "c", substantiveness="quantified"),
+    ))
+    p1, p2 = final[P1], final[P2]
+    assert p1["substantiveness"] == "specific" and "substantiveness" not in p1["disputed"]
+    assert p2["substantiveness"] is None and "substantiveness" in p2["disputed"]

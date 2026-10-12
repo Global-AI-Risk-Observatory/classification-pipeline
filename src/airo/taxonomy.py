@@ -15,7 +15,7 @@ from typing import Literal, Optional
 
 from pydantic import BaseModel, Field, model_validator
 
-TAXONOMY_VERSION = "0.4"
+TAXONOMY_VERSION = "0.5"
 
 # Each value: (definition, criteria). A value applies only if all its criteria hold.
 Definition = tuple[str, tuple[str, ...]]
@@ -388,7 +388,53 @@ DISCLOSURE_TRAITS: dict[str, Definition] = {
     ),
 }
 
+# Ordered from 1 (least) to 5 (most): every level includes what the level below requires.
+SUBSTANTIVENESS: dict[str, Definition] = {
+    "boilerplate": (
+        "Level 1. A general statement that could appear unchanged in any company's report.",
+        (
+            "no area of the business, system, use case, counterparty, figure, date or action is named",
+            "the sentence would remain equally fitting in another company's report",
+        ),
+    ),
+    "generic": (
+        "Level 2. Names an area the AI statement applies to, but nothing specific to the company.",
+        (
+            "an area is named (a function such as customer service, a kind of risk such as cybersecurity, "
+            "a market)",
+            "no concrete system, use case or mechanism of this company is named",
+        ),
+    ),
+    "specific": (
+        "Level 3. Names a concrete system, use case or mechanism of this company.",
+        (
+            "a named or described system, product, use case, counterparty or mechanism of effect that "
+            "belongs to this company's own situation",
+            "no concrete measure, responsibility or commitment is stated for it",
+        ),
+    ),
+    "detailed": (
+        "Level 4. As level 3, and states concrete measures, responsibilities or commitments.",
+        (
+            "meets the first criterion of `specific`",
+            "states what the company does or has decided about it: a measure, mitigation, assigned "
+            "responsibility, policy or commitment",
+            "no verifiable figure, amount, date or realised outcome is given",
+        ),
+    ),
+    "quantified": (
+        "Level 5. As level 4, and gives verifiable particulars.",
+        (
+            "meets the first two criteria of `detailed`",
+            "gives at least one verifiable particular about the AI statement: a figure, amount, date, "
+            "share or an outcome that has occurred",
+        ),
+    ),
+}
+SUBSTANTIVENESS_LEVELS = {name: level for level, name in enumerate(SUBSTANTIVENESS, 1)}
+
 Frame = Literal["risk_factor", "governance", "business", "market"]
+Substantiveness = Literal["boilerplate", "generic", "specific", "detailed", "quantified"]
 Role = Literal["market_driver", "adoption", "offering", "risk", "governance", "incident", "general"]
 RiskType = Literal[
     "market_demand", "strategic_competitive", "operational_reliability", "cybersecurity",
@@ -407,6 +453,7 @@ class Label(BaseModel):
     adoption_stage: Optional[Literal["planned", "piloting", "deployed", "unclear"]] = None
     ai_kind: Optional[Literal["generative", "non_generative", "unspecified"]] = None
     disclosure_traits: list[DisclosureTrait] = Field(default_factory=list)
+    substantiveness: Optional[Substantiveness] = None  # required when the passage is about AI
     entities: list[str] = Field(default_factory=list)
     evidence: list[str] = Field(default_factory=list)
     confidence: Literal["low", "medium", "high"]
@@ -417,7 +464,7 @@ class Label(BaseModel):
         if self.ai_reference == "none":
             filled = (
                 self.frame or self.roles or self.risk_types or self.adoption_stage or self.ai_kind
-                or self.disclosure_traits or self.evidence
+                or self.disclosure_traits or self.substantiveness or self.evidence
             )
             if filled:
                 raise ValueError("ai_reference 'none' must leave all other label fields empty")
@@ -436,6 +483,8 @@ class Label(BaseModel):
             raise ValueError("'externalisation' is not applicable in frame 'market'")
         if self.ai_kind is None or not self.evidence:
             raise ValueError("ai_kind and evidence are required when the passage is about AI")
+        if self.substantiveness is None:
+            raise ValueError("substantiveness is required when the passage is about AI")
         if len(self.evidence) > 3 or any(not q.strip() for q in self.evidence):
             raise ValueError("evidence must be a list of 1 to 3 non-empty quotes")
         return self
@@ -480,7 +529,7 @@ def codebook() -> str:
                 AI_REFERENCE,
             ),
             "If `ai_reference` is `none`: set `roles`, `risk_types`, `disclosure_traits`, `entities` and "
-            "`evidence` to `[]`, leave `frame`, `adoption_stage` and `ai_kind` as `null`, and still give "
+            "`evidence` to `[]`, leave `frame`, `adoption_stage`, `ai_kind` and `substantiveness` as `null`, and still give "
             "`confidence`; `note` may still be used.\n",
             _table(
                 "Step 1: determine the frame", "frame",
@@ -559,6 +608,15 @@ def codebook() -> str:
                 "`offering`, `governance` or `risk` and the frame is not `market`; in frame `market` it is not "
                 "applicable and is never set.",
                 DISCLOSURE_TRAITS,
+            ),
+            _table(
+                "How substantive is the AI statement?", "substantiveness",
+                "Exactly one value when `ai_reference` is `explicit` or `implicit`; `null` when it is `none`. "
+                "Five levels, ordered from 1 (`boilerplate`) to 5 (`quantified`). Judged on the AI-related "
+                "statements of the passage as a whole: give the highest level whose criteria they meet. "
+                "Particulars that are not about AI (the company's revenue, the date of the report) do not "
+                "count.",
+                SUBSTANTIVENESS,
             ),
             "### Other fields",
             "- `passage_id`: copied from the task.",
