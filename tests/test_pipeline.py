@@ -1590,3 +1590,32 @@ def test_adjudicate_takes_the_majority_substantiveness_and_flags_a_three_way_spl
     p1, p2 = final[P1], final[P2]
     assert p1["substantiveness"] == "specific" and "substantiveness" not in p1["disputed"]
     assert p2["substantiveness"] is None and "substantiveness" in p2["disputed"]
+
+
+def test_a_quote_that_differs_only_in_quotation_marks_or_dashes_is_stored_as_the_passage_has_it():
+    text = "We use generative artificial intelligence (\u201cAI\u201d) tools \u2013 and machine learning (\u201cML\u201d) \u2013 in our operations. It\u2019s new."
+    for quote in (
+        "generative artificial intelligence (\u2018\u2019AI\u2019\u2019) tools",  # as gemini-2.5-flash returned it
+        "generative artificial intelligence (\u2013AI\u2013) tools",
+        'generative artificial intelligence ("AI") tools - and machine learning',
+    ):
+        found = classify._locate(quote, classify._squash(text))
+        assert found is not None and found in text and found.startswith("generative artificial intelligence (\u201cAI\u201d) tools")
+    assert classify._locate("It's new.", text) == "It\u2019s new."
+    assert classify._locate("We use generative artificial intelligence", text) == "We use generative artificial intelligence"
+    # any other difference is not a quote
+    assert classify._locate("generative AI (\u201cAI\u201d) tools", text) is None
+    assert classify._locate("generative artificial intelligence (AI) tools", text) is None
+    assert classify._locate("generative artificial intelligence tools", text) is None
+    assert classify._locate("  ", text) is None
+
+
+def test_validate_stores_the_passage_wording_for_a_quote_with_other_quotation_marks():
+    passage = {"passage_id": "d1:0-2", "text": "Demand for \u201cAI\u201d data centers is growing."}
+    line = json.dumps(label_fields(evidence=["Demand for \u2018\u2019AI\u2019\u2019 data centers is growing."]))
+    accepted, problems = classify.validate([line], [passage], "a")
+    assert problems == [] and accepted[0]["evidence"] == ["Demand for \u201cAI\u201d data centers is growing."]
+
+    wrong = json.dumps(label_fields(evidence=["Demand for AI data centres is growing."]))
+    accepted, problems = classify.validate([wrong], [passage], "a")
+    assert accepted == [] and "not a verbatim quote" in problems[0]

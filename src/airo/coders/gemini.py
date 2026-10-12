@@ -176,13 +176,42 @@ def _check(text: str, task: dict) -> tuple[Optional[dict], Optional[str]]:
     return label, None
 
 
+def repair_prompt(prompt: str, answer: str, error: str) -> str:
+    """The task again, with the answer the acceptance check rejected and the reason."""
+    return "\n".join(
+        [
+            prompt,
+            "",
+            "---",
+            "",
+            "Your previous answer to this task was rejected by the automatic check.",
+            f"Reason: {error}",
+            "",
+            "Previous answer:",
+            answer,
+            "",
+            "Return the corrected JSON object for the same passage, and nothing else. Every quote in "
+            "`evidence` must be copied character for character from the passage text between <<< and >>>: "
+            "one continuous stretch of it, without ellipses, without joining separate sentences, without "
+            "changing punctuation, quotation marks or capitalisation. Give 1 to 3 quotes whenever "
+            "`ai_reference` is not `none`.",
+        ]
+    )
+
+
 def code_one(task: dict, codebook: str, *, model: str, client, config: dict,
-             max_retries: int = 5, backoff: float = 1.0) -> dict:
+             max_retries: int = 5, backoff: float = 1.0, max_repairs: int = 2) -> dict:
     """Label one task. Never raises: failures are captured in the result's `error`.
 
-    `max_retries` is the number of retries after the first attempt, with exponential
-    backoff (`backoff` * 2**attempt seconds plus jitter, capped at 60 s) on retryable
-    errors. `latency_s` covers all attempts.
+    `max_retries` is the number of retries after the first attempt of a request, with
+    exponential backoff (`backoff` * 2**attempt seconds plus jitter, capped at 60 s) on
+    retryable errors. `latency_s` covers all attempts.
+
+    Fallback for an answer the acceptance check rejects (invalid JSON, a schema rule,
+    evidence that is missing or not a verbatim quote): the task is asked again, up to
+    `max_repairs` times, with the rejected answer and the reason (`repair_prompt`). An
+    answer that is still rejected after that stays an error; nothing is corrected by
+    the coder itself. `repairs` counts these extra requests, `usage` covers all requests.
     """
     prompt = build_prompt(codebook, task)
     result = {
@@ -193,46 +222,57 @@ def code_one(task: dict, codebook: str, *, model: str, client, config: dict,
         "model": model,
         "latency_s": 0.0,
         "attempts": 0,
+        "repairs": 0,
     }
     start = time.perf_counter()
-    for attempt in range(max_retries + 1):
-        result["attempts"] = attempt + 1
-        try:
-            response = client.models.generate_content(model=model, contents=prompt, config=config)
-        except Exception as e:  # noqa: BLE001 - every failure is captured per task
-            result["error"] = f"{type(e).__name__}: {e}"
-            if attempt < max_retries and retryable(e):
-                if backoff:
-                    time.sleep(min(backoff * 2**attempt, _MAX_BACKOFF) * (1 + random.random()))
-                continue
+    contents = prompt
+    while True:
+        response = None
+        for attempt in range(max_retries + 1):
+            result["attempts"] += 1
+            try:
+                response = client.models.generate_content(model=model, contents=contents, config=config)
+                break
+            except Exception as e:  # noqa: BLE001 - every failure is captured per task
+                result["error"] = f"{type(e).__name__}: {e}"
+                if attempt < max_retries and retryable(e):
+                    if backoff:
+                        time.sleep(min(backoff * 2**attempt, _MAX_BACKOFF) * (1 + random.random()))
+                    continue
+                break
+        if response is None:
             break
-        result["usage"] = _usage(response)
+        for kind, n in _usage(response).items():
+            result["usage"][kind] += n
         text = getattr(response, "text", None)
         if not text:
             result["error"] = f"empty response (finish_reason={_finish_reason(response)})"
             break
         result["label"], result["error"] = _check(text, task)
-        break
+        if result["error"] is None or result["repairs"] >= max_repairs:
+            break
+        result["repairs"] += 1
+        contents = repair_prompt(prompt, text, result["error"])
     result["latency_s"] = round(time.perf_counter() - start, 3)
     return result
 
 
 def code(tasks: list[dict], codebook: str, *, model: str, client, workers: int = 4,
          max_retries: int = 5, thinking_budget: Optional[int] = None,
-         max_output_tokens: int = MAX_OUTPUT_TOKENS, backoff: float = 1.0,
+         max_output_tokens: int = MAX_OUTPUT_TOKENS, backoff: float = 1.0, max_repairs: int = 2,
          on_result: Optional[Callable[[dict], None]] = None) -> list[dict]:
     """Label every task, one request each, `workers` requests at a time.
 
     Returns one result per task, in task order:
     {"passage_id", "label": dict or None, "error": str or None,
-     "usage": {"input_tokens", "output_tokens", "thinking_tokens"}, "model", "latency_s"}.
+     "usage": {"input_tokens", "output_tokens", "thinking_tokens"}, "model", "latency_s", "repairs"}.
     `on_result`, if given, is called with each result as it completes.
     """
     config = request_config(thinking_budget, max_output_tokens)
 
     def run(task: dict) -> dict:
         result = code_one(task, codebook, model=model, client=client, config=config,
-                          max_retries=max_retries, backoff=backoff)
+                          max_retries=max_retries, backoff=backoff, max_repairs=max_repairs)
         if on_result:
             on_result(result)
         return result
@@ -274,6 +314,9 @@ def run_summary(results: list[dict], *, prices: Optional[dict] = None,
         "tasks": len(results),
         "succeeded": len(results) - len(failed),
         "failed": len(failed),
+        # Fallback: tasks whose first answer the acceptance check rejected, and how many of them it then accepted.
+        "asked_again": sum(1 for r in results if r.get("repairs")),
+        "accepted_after_asking_again": sum(1 for r in results if r.get("repairs") and r["error"] is None),
         "tokens": {**tokens, "total_tokens": sum(tokens.values())},
         "wall_time_s": round(wall_time_s, 3) if wall_time_s is not None else None,
         "latency_s_sum": round(sum(r["latency_s"] for r in results), 3),
@@ -321,6 +364,8 @@ def parse_args(argv: Optional[list[str]] = None) -> argparse.Namespace:
     p.add_argument("--location", default="us-central1", help="Vertex AI region (default us-central1)")
     p.add_argument("--workers", type=int, default=4, help="concurrent requests (default 4)")
     p.add_argument("--max-retries", type=int, default=5, help="retries per task on transient errors (default 5)")
+    p.add_argument("--max-repairs", type=int, default=2,
+                   help="times a task is asked again when the acceptance check rejects its answer (default 2)")
     p.add_argument("--thinking-budget", type=int, default=None,
                    help="thinking token budget; omitted = model default, 0 = off where the model allows")
     p.add_argument("--max-output-tokens", type=int, default=MAX_OUTPUT_TOKENS,
@@ -351,12 +396,14 @@ def main(argv: Optional[list[str]] = None) -> int:
         nonlocal done
         done += 1
         status = "ok" if r["error"] is None else f"FAILED: {r['error']}"
+        if r.get("repairs"):
+            status += f"  (asked again {r['repairs']}x)"
         print(f"[{done}/{len(tasks)}] {r['passage_id']}  {r['latency_s']}s  {status}", file=sys.stderr)
 
     start = time.perf_counter()
     results = code(
         tasks, codebook, model=args.model, client=client, workers=args.workers,
-        max_retries=args.max_retries, thinking_budget=args.thinking_budget,
+        max_retries=args.max_retries, max_repairs=args.max_repairs, thinking_budget=args.thinking_budget,
         max_output_tokens=args.max_output_tokens, on_result=progress,
     )
     summary = write_labels(results, args.out, prices=prices, wall_time_s=time.perf_counter() - start)

@@ -247,7 +247,7 @@ def test_invalid_json_is_an_error_for_that_task_only():
             return FakeResponse('{"passage_id": "abc123:40-41", "ai_reference": ')
         return respond_with_labels(pid, _n)
 
-    results = gemini.code(TASKS, CODEBOOK, model="m", client=FakeClient(handler), backoff=0)
+    results = gemini.code(TASKS, CODEBOOK, model="m", client=FakeClient(handler), backoff=0, max_repairs=0)
     assert results[0]["error"] is None and results[2]["error"] is None
     assert results[1]["label"] is None
     assert results[1]["error"].startswith("invalid JSON")
@@ -356,7 +356,7 @@ def test_write_labels_writes_only_successes_and_a_run_summary(tmp_path):
             return FakeResponse("not json", prompt=10, output=1, thoughts=5)
         return FakeResponse(json.dumps(LABELS[pid]), prompt=100, output=50, thoughts=200)
 
-    results = gemini.code(TASKS, CODEBOOK, model="gemini-test", client=FakeClient(handler), backoff=0)
+    results = gemini.code(TASKS, CODEBOOK, model="gemini-test", client=FakeClient(handler), backoff=0, max_repairs=0)
     out = tmp_path / "labels_in" / "gemini.jsonl"
     summary = gemini.write_labels(results, out, prices={"input": 0.30, "output": 2.50}, wall_time_s=12.3456)
 
@@ -489,3 +489,60 @@ def test_real_sdk_errors_are_classified():
     assert gemini.retryable(errors.ClientError(429, {"error": {"message": "quota"}}))
     assert gemini.retryable(errors.ServerError(503, {"error": {"message": "unavailable"}}))
     assert not gemini.retryable(errors.ClientError(400, {"error": {"message": "bad request"}}))
+
+
+# --------------------------------------------------------------------------
+# Fallback: an answer the acceptance check rejects is asked for again
+# --------------------------------------------------------------------------
+
+
+def test_a_rejected_answer_is_asked_for_again_with_the_reason_and_then_accepted():
+    pid = TASKS[0]["passage_id"]
+
+    def handler(_pid, n):
+        if n == 1:
+            return FakeResponse(json.dumps({**LABELS[pid], "evidence": ["AI models may be inaccurate..."]}))
+        return respond_with_labels(pid, n)
+
+    client = FakeClient(handler)
+    results = gemini.code(TASKS[:1], CODEBOOK, model="m", client=client, backoff=0)
+
+    assert results[0]["error"] is None and results[0]["label"]["evidence"] == LABELS[pid]["evidence"]
+    assert (results[0]["repairs"], results[0]["attempts"], len(client.models.calls)) == (1, 2, 2)
+    assert results[0]["usage"]["input_tokens"] == 200  # both requests are counted
+    second = client.models.calls[1]["contents"]
+    assert second.startswith(client.models.calls[0]["contents"])  # the same task
+    assert "not a verbatim quote" in second and "AI models may be inaccurate..." in second
+    assert "character for character" in second
+
+
+def test_missing_evidence_is_asked_for_again():
+    pid = TASKS[0]["passage_id"]
+
+    def handler(_pid, n):
+        return FakeResponse(json.dumps({**LABELS[pid], "evidence": []})) if n == 1 else respond_with_labels(pid, n)
+
+    results = gemini.code(TASKS[:1], CODEBOOK, model="m", client=FakeClient(handler), backoff=0)
+    assert results[0]["error"] is None and results[0]["repairs"] == 1
+
+
+def test_an_answer_still_rejected_after_the_fallback_stays_an_error_and_nothing_is_written(tmp_path):
+    def handler(pid, _n):
+        return FakeResponse(json.dumps({**LABELS[pid], "evidence": ["AI models may be inaccurate..."]}))
+
+    client = FakeClient(handler)
+    results = gemini.code(TASKS[:1], CODEBOOK, model="m", client=client, backoff=0, max_repairs=2)
+
+    assert "verbatim" in results[0]["error"] and results[0]["repairs"] == 2 and len(client.models.calls) == 3
+    summary = gemini.write_labels(results, tmp_path / "out.jsonl")
+    assert (tmp_path / "out.jsonl").read_text(encoding="utf-8") == ""
+    assert (summary["failed"], summary["asked_again"], summary["accepted_after_asking_again"]) == (1, 1, 0)
+
+
+def test_the_fallback_can_be_switched_off():
+    def handler(pid, _n):
+        return FakeResponse(json.dumps({**LABELS[pid], "evidence": []}))
+
+    client = FakeClient(handler)
+    results = gemini.code(TASKS[:1], CODEBOOK, model="m", client=client, backoff=0, max_repairs=0)
+    assert results[0]["error"] is not None and results[0]["repairs"] == 0 and len(client.models.calls) == 1

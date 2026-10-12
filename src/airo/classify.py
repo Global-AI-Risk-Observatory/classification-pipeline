@@ -47,6 +47,37 @@ def _squash(text: str) -> str:
     return _WS.sub(" ", text).strip()
 
 
+# Quotation marks, apostrophes and dashes in all their typographic forms. A model
+# asked for JSON tends to return other ones than the passage has.
+_MARKS = re.compile("[\"'`\u00b4\u2018-\u201f\u2010-\u2015\u2212-]+")
+
+
+def _locate(quote: str, text: str) -> str | None:
+    """The stretch of `text` that `quote` cites, or None if it cites none.
+
+    `text` is a squashed passage. A quote is found if it is in the passage as it
+    stands, or if it differs from a stretch of the passage only in which
+    quotation marks, apostrophes or dashes stand where the passage has some
+    (`("AI")` for the passage's curly-quoted one). The stretch is returned in the
+    passage's own characters; any other difference is not a quote.
+    """
+    quote = _squash(quote)
+    if not quote or quote in text:
+        return quote or None
+    plain, starts, ends = [], [], []  # `text` with every run of marks as one mark, and where each character came from
+    pos = 0
+    for m in _MARKS.finditer(text):
+        for i in range(pos, m.start()):
+            plain.append(text[i]); starts.append(i); ends.append(i + 1)
+        plain.append('"'); starts.append(m.start()); ends.append(m.end())
+        pos = m.end()
+    for i in range(pos, len(text)):
+        plain.append(text[i]); starts.append(i); ends.append(i + 1)
+    wanted = _MARKS.sub('"', quote)
+    at = "".join(plain).find(wanted)
+    return text[starts[at] : ends[at + len(wanted) - 1]] if at >= 0 else None
+
+
 def _reason(e: Exception) -> str:
     """Why a line was rejected. For a schema violation: the field and the rule that failed."""
     if not isinstance(e, ValidationError):
@@ -64,6 +95,10 @@ def validate(raw_lines: list[str], passages: list[dict], coder: str) -> tuple[li
     JSON, breaks the schema, names an unknown passage, or quotes evidence that
     is not in the passage (every quote in the list is checked). Missing and
     duplicate passages are reported too.
+
+    A quote that differs from the passage only in its quotation marks,
+    apostrophes or dashes is accepted and stored as the passage has it (see
+    `_locate`), so stored evidence is always a verbatim stretch of the passage.
     """
     text_by_id = {p["passage_id"]: _squash(p["text"]) for p in passages}
     accepted: dict[str, dict] = {}
@@ -81,10 +116,12 @@ def validate(raw_lines: list[str], passages: list[dict], coder: str) -> tuple[li
             problems.append(f"line {n}: unknown passage_id {pid}")
         elif pid in accepted:
             problems.append(f"line {n}: duplicate label for {pid}")
-        elif bad := [i for i, q in enumerate(label.evidence) if _squash(q) not in text_by_id[pid]]:
+        elif bad := [i for i, q in enumerate(label.evidence) if _locate(q, text_by_id[pid]) is None]:
             problems.append(f"line {n}: evidence[{', '.join(map(str, bad))}] is not a verbatim quote from {pid}")
         else:
-            accepted[pid] = {**label.model_dump(), "coder": coder, "taxonomy_version": TAXONOMY_VERSION}
+            # A quote found as it stands is kept as the coder wrote it; one found by its wording is replaced by the passage's.
+            evidence = [q if _squash(q) in text_by_id[pid] else _locate(q, text_by_id[pid]) for q in label.evidence]
+            accepted[pid] = {**label.model_dump(), "evidence": evidence, "coder": coder, "taxonomy_version": TAXONOMY_VERSION}
     problems += [f"missing label for {pid}" for pid in text_by_id if pid not in accepted]
     return list(accepted.values()), problems
 
