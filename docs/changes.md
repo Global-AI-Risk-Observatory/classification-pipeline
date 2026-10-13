@@ -636,7 +636,13 @@ What the taxonomy lacks is visible as `other` and can be read.
   `competitive_dynamics` and `governance_failure` as the firm's competition and its regulatory
   exposure. MIT's 6.4 is an AI race that releases unsafe systems, 6.5 is regulation lagging
   behind AI. The values are now named `ai_race_unsafe_deployment` and
-  `regulation_lagging_behind_ai`; definitions, numbers and the crosswalk are unchanged.
+  `regulation_lagging_behind_ai`. A second test run with the new names changed nothing: every
+  `strategic_competitive` passage still got 6.4 and every `regulatory_legal` passage 6.5, because
+  the "typical" line of the codebook pointed there. Both entries are now out of
+  `RISK_TYPE_SUBDOMAINS` (`strategic_competitive` -> `other`; `regulatory_legal` ->
+  `compromise_of_privacy`, `devaluation_of_human_effort`, `other`), and each of the two values has
+  a criterion that names the firm-centric reading as not this harm. Numbers and definitions are
+  unchanged.
 
 ---
 

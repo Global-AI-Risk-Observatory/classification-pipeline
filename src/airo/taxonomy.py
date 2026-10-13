@@ -463,6 +463,8 @@ MIT_SUBDOMAINS: dict[str, Definition] = {
         (
             "the stated harm is that competitive pressure leads to rushed, unsafe or premature AI"
             " development or deployment (by the company or in its market)",
+            "that competitors use AI and the company may fall behind, lose market share or fail to keep "
+            "up is not this harm (it is `strategic_competitive` with `other`)",
             "the passage states that harm as a risk to the company (`risk`) or as an event that "
             "occurred (`incident`), with AI as its cause or object",
         ),
@@ -473,7 +475,10 @@ MIT_SUBDOMAINS: dict[str, Definition] = {
         " manage AI risks.",
         (
             "the stated harm is that rules, standards or oversight for AI are absent, unclear, "
-            "lagging or inconsistent, including regulatory uncertainty the company faces",
+            "lagging or inconsistent, so that AI risks go unmanaged",
+            "that the company is subject to AI or data laws, must comply with them, or may face "
+            "enforcement, liability or compliance cost is not this harm (it is `regulatory_legal` with "
+            "`compromise_of_privacy`, `devaluation_of_human_effort` or `other`)",
             "the passage states that harm as a risk to the company (`risk`) or as an event that "
             "occurred (`incident`), with AI as its cause or object",
         ),
@@ -570,11 +575,11 @@ MIT_SUBDOMAINS: dict[str, Definition] = {
 # not a mapping published by MIT, and it never replaces coding from the passage.
 RISK_TYPE_SUBDOMAINS: dict[str, tuple[str, ...]] = {
     "market_demand": ("other",),
-    "strategic_competitive": ("ai_race_unsafe_deployment", "other"),
+    "strategic_competitive": ("other",),
     "operational_reliability": ("lack_of_capability_robustness", "false_or_misleading_information", "unfair_discrimination_misrepresentation", "unequal_performance_across_groups", "ai_pursuing_own_goals"),
     "cybersecurity": ("ai_system_security_vulnerabilities_attacks", "cyberattacks_weapons_mass_harm", "fraud_scams_targeted_manipulation"),
     "third_party": ("ai_system_security_vulnerabilities_attacks", "lack_of_capability_robustness", "power_centralization_unfair_benefits", "other"),
-    "regulatory_legal": ("regulation_lagging_behind_ai", "compromise_of_privacy", "devaluation_of_human_effort", "other"),
+    "regulatory_legal": ("compromise_of_privacy", "devaluation_of_human_effort", "other"),
     "workforce": ("inequality_decline_employment_quality",),
     "reputational_ethical": ("unfair_discrimination_misrepresentation", "exposure_to_toxic_content", "overreliance_unsafe_use", "lack_of_transparency_interpretability"),
     "information_integrity": ("false_or_misleading_information", "pollution_of_information_ecosystem", "disinformation_surveillance_influence", "fraud_scams_targeted_manipulation"),

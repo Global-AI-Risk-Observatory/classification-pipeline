@@ -1828,6 +1828,11 @@ def test_mit_subdomains_are_the_24_of_the_repository_plus_other_and_go_with_risk
     assert text.index("(`risk_types`)") < text.index("(`mit_subdomains`)") < text.index("(`adoption_stage`)")
     assert set(taxonomy.RISK_TYPE_SUBDOMAINS) == set(taxonomy.RISK_TYPES)
     assert all(v in taxonomy.MIT_SUBDOMAINS for vs in taxonomy.RISK_TYPE_SUBDOMAINS.values() for v in vs)
+    # The firm's competition and its compliance are not MIT's 6.4 and 6.5; the guidance does not point there.
+    assert "ai_race_unsafe_deployment" not in taxonomy.RISK_TYPE_SUBDOMAINS["strategic_competitive"]
+    assert "regulation_lagging_behind_ai" not in taxonomy.RISK_TYPE_SUBDOMAINS["regulatory_legal"]
+    assert "is not this harm" in taxonomy.MIT_SUBDOMAINS["ai_race_unsafe_deployment"][1][1]
+    assert "is not this harm" in taxonomy.MIT_SUBDOMAINS["regulation_lagging_behind_ai"][1][1]
 
 
 def test_adjudicate_votes_per_subdomain_and_clears_them_without_risk_or_incident():
