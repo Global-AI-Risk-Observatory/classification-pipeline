@@ -697,6 +697,11 @@ def label_fields(**overrides) -> dict:
         "confidence": "high",
     }
     fields.update(overrides)
+    # The fields a role requires, unless the test sets them itself.
+    if "adoption" in fields["roles"]:
+        fields.setdefault("business_functions", ["not_stated"])
+    if "governance" in fields["roles"]:
+        fields.setdefault("governance_responses", ["policies_processes"])
     return fields
 
 
@@ -875,6 +880,8 @@ ALL_DEFINITIONS = (
     taxonomy.ROLES,
     taxonomy.RISK_TYPES,
     taxonomy.ADOPTION_STAGES,
+    taxonomy.BUSINESS_FUNCTIONS,
+    taxonomy.GOVERNANCE_RESPONSES,
     taxonomy.AI_KINDS,
     taxonomy.DISCLOSURE_TRAITS,
     taxonomy.SUBSTANTIVENESS,
@@ -1325,6 +1332,8 @@ def test_adjudicate_agreement_report():
         "substantiveness": 1.0,  # P1 P2 P3 P4 (the fixture's default)
         "roles": 0.5,  # P1 P3
         "risk_types": 0.5,  # P1 P3
+        "business_functions": 1.0,  # empty on P1 P3 P4; on P2 all three give adoption with the same function
+        "governance_responses": 1.0,  # no coder gives the governance role
         "disclosure_traits": 0.75,  # P1 P3 P4
     }
     # 12 coder pairs; identical labels: three pairs on P1, b-c on P4.
@@ -1355,11 +1364,13 @@ def passage(pid: str, section: str | None, mention: str = "direct") -> dict:
 
 
 def final_label(pid: str, ai_reference: str | None, frame=None, roles=(), risk_types=(), adoption_stage=None,
-                ai_kind=None, disclosure_traits=(), entities=(), needs_review=False, substantiveness=None) -> dict:
+                ai_kind=None, disclosure_traits=(), entities=(), needs_review=False, substantiveness=None,
+                business_functions=(), governance_responses=()) -> dict:
     """A label in the shape classify.adjudicate writes to labels_final.jsonl."""
     return {
         "passage_id": pid, "ai_reference": ai_reference, "frame": frame, "roles": list(roles),
         "risk_types": list(risk_types), "adoption_stage": adoption_stage, "ai_kind": ai_kind,
+        "business_functions": list(business_functions), "governance_responses": list(governance_responses),
         "disclosure_traits": list(disclosure_traits), "entities": list(entities), "needs_review": needs_review,
         "substantiveness": substantiveness or ("generic" if ai_reference in ("explicit", "implicit") else None),
     }
@@ -1525,46 +1536,55 @@ def test_cli_runs_all_stages_through_their_files(tmp_path, capsys):
 
     assert [p["mention"] for p in passages] == ["direct", "implicit"]
 
+    # The recall check of the run: the reference patterns find nothing outside the passages.
+    assert doc["recall_check"] == {"blocks": 0, "by_pattern": {}}
+
+    # Every candidate passage is a task, the implicit mention too.
     run("tasks")
     tasks = read_jsonl(data / "tasks.jsonl")
-    hints = read_jsonl(data / "hints.jsonl")
-    assert [t["passage_id"] for t in tasks] == [passages[0]["passage_id"]]
-    assert [h["passage_id"] for h in hints] == [passages[1]["passage_id"]]
-    assert hints[0]["text"] == passages[1]["text"]
+    assert [(t["passage_id"], t["mention"]) for t in tasks] == [
+        (passages[0]["passage_id"], "direct"), (passages[1]["passage_id"], "implicit"),
+    ]
+    assert tasks[1]["text"] == passages[1]["text"]
+    assert not (data / "hints.jsonl").exists()
     assert (tasks[0]["company"], tasks[0]["form"], tasks[0]["fiscal_year"]) == ("ACME URANIUM CORP", "10-K", 2026)
     assert (tasks[0]["section"], tasks[0]["heading"]) == ("Item 1 Business", "Customers")
     assert (data / "codebook.md").read_text(encoding="utf-8") == taxonomy.codebook()
 
     coder_file = tmp_path / "alice.jsonl"
     about_ai = line(passage_id=passages[0]["passage_id"], evidence=["Demand for electricity from AI data centers is growing."])
-    hint_label = json.dumps({"passage_id": passages[1]["passage_id"], "ai_reference": "none", "confidence": "high"})
+    implicit_label = json.dumps({"passage_id": passages[1]["passage_id"], "ai_reference": "none", "confidence": "high"})
 
-    # A label for a hint (implicit mention) is not a task and is refused; an
-    # incomplete file is refused as a whole unless --partial is given.
-    coder_file.write_text(hint_label + "\n", encoding="utf-8")
+    # The implicit mention is a task like any other: a file without its label is
+    # incomplete and is refused as a whole unless --partial is given.
+    coder_file.write_text(about_ai + "\n", encoding="utf-8")
     with pytest.raises(SystemExit):
         run("accept", str(coder_file), "--coder", "alice")
     assert not (data / "labels" / "alice.jsonl").exists()
 
-    coder_file.write_text(about_ai + "\n", encoding="utf-8")
+    coder_file.write_text(about_ai + "\n" + implicit_label + "\n", encoding="utf-8")
     run("accept", str(coder_file), "--coder", "alice")
     accepted = read_jsonl(data / "labels" / "alice.jsonl")
-    assert [(l["coder"], l["taxonomy_version"]) for l in accepted] == [("alice", taxonomy.TAXONOMY_VERSION)]
+    assert [(l["coder"], l["taxonomy_version"]) for l in accepted] == [("alice", taxonomy.TAXONOMY_VERSION)] * 2
 
     run("adjudicate")
     final = read_jsonl(data / "labels_final.jsonl")
-    assert [f["ai_reference"] for f in final] == ["explicit"]
+    assert [f["ai_reference"] for f in final] == ["explicit", "none"]
     agreement = json.loads((data / "agreement.json").read_text(encoding="utf-8"))
-    assert (agreement["coders"], agreement["n_passages"], agreement["needs_review"]) == (["alice"], 1, [])
+    assert (agreement["coders"], agreement["n_passages"], agreement["needs_review"]) == (["alice"], 2, [])
 
     run("aggregate")
     (summary,) = read_jsonl(data / "report_summary.jsonl")
-    assert (summary["n_candidates"], summary["n_hints"], summary["n_ai_passages"], summary["n_false_candidates"]) == (1, 1, 1, 0)
+    assert (summary["n_candidates"], summary["n_direct_mentions"], summary["n_implicit_mentions"]) == (2, 1, 1)
+    assert (summary["n_ai_passages"], summary["n_ai_passages_from_implicit_mentions"], summary["n_false_candidates"]) == (1, 0, 1)
+    assert summary["recall_check"] == {"blocks": 0, "by_pattern": {}}
+    check = json.loads((data / "recall_check.json").read_text(encoding="utf-8"))
+    assert (check["documents"], check["documents_checked"], check["blocks_outside_passages"]) == (1, 1, 0)
     assert (summary["mentions_ai"], summary["ai_as_market_driver"], summary["ai_as_risk"]) == (True, True, False)
     report = (data / "reports" / f"{doc['doc_id']}.md").read_text(encoding="utf-8")
     assert report.startswith("# ACME URANIUM CORP | 10-K | fiscal year 2026")
     assert "> Demand for electricity from AI data centers is growing." in report
-    assert "# Hints: implicit mentions, not classified" in report
+    assert "implicit mention)" in report and "**AI reference: none**" in report
     assert passages[1]["text"] in report
     capsys.readouterr()  # the stages print progress; keep it out of the test output
 
@@ -1619,3 +1639,127 @@ def test_validate_stores_the_passage_wording_for_a_quote_with_other_quotation_ma
     wrong = json.dumps(label_fields(evidence=["Demand for AI data centres is growing."]))
     accepted, problems = classify.validate([wrong], [passage], "a")
     assert accepted == [] and "not a verbatim quote" in problems[0]
+
+
+# --------------------------------------------------------------------------
+# taxonomy v0.6: business functions, governance responses, national security
+# --------------------------------------------------------------------------
+
+
+def test_business_functions_are_given_if_and_only_if_adoption_is_a_role():
+    adoption = dict(roles=["adoption"], adoption_stage="deployed")
+    label = Label(**label_fields(**adoption, business_functions=["customer_service", "finance"]))
+    assert label.business_functions == ["customer_service", "finance"]
+    with pytest.raises(ValidationError, match="business_functions must be given if and only if"):
+        Label(**label_fields(**adoption, business_functions=[]))
+    with pytest.raises(ValidationError, match="business_functions must be given if and only if"):
+        Label(**label_fields(roles=["market_driver"], business_functions=["finance"]))
+    with pytest.raises(ValidationError):
+        Label(**label_fields(**adoption, business_functions=["logistics"]))  # not a value
+
+
+def test_not_stated_is_the_only_business_function_when_none_is_named():
+    adoption = dict(roles=["adoption"], adoption_stage="unclear")
+    assert Label(**label_fields(**adoption, business_functions=["not_stated"])).business_functions == ["not_stated"]
+    with pytest.raises(ValidationError, match="'not_stated' cannot be combined"):
+        Label(**label_fields(**adoption, business_functions=["not_stated", "operations"]))
+
+
+def test_governance_responses_are_given_if_and_only_if_governance_is_a_role():
+    label = Label(**label_fields(frame="governance", roles=["governance"],
+                                 governance_responses=["oversight_structure", "policies_processes"]))
+    assert label.governance_responses == ["oversight_structure", "policies_processes"]
+    with pytest.raises(ValidationError, match="governance_responses must be given if and only if"):
+        Label(**label_fields(frame="governance", roles=["governance"], governance_responses=[]))
+    with pytest.raises(ValidationError, match="governance_responses must be given if and only if"):
+        Label(**label_fields(roles=["market_driver"], governance_responses=["technical_controls"]))
+
+
+def test_the_six_groups_of_governance_responses_and_the_thirteen_functions_are_in_the_codebook():
+    assert list(taxonomy.GOVERNANCE_RESPONSES) == [
+        "oversight_structure", "policies_processes", "technical_controls", "third_party_controls",
+        "workforce_measures", "transparency_accountability", "other",
+    ]
+    assert len(taxonomy.BUSINESS_FUNCTIONS) == 13 and "not_stated" in taxonomy.BUSINESS_FUNCTIONS
+    text = taxonomy.codebook()
+    assert "(`business_functions`)" in text and "(`governance_responses`)" in text
+    assert text.index("(`adoption_stage`)") < text.index("(`business_functions`)") < text.index("(`ai_kind`)")
+    for value in [*taxonomy.BUSINESS_FUNCTIONS, *taxonomy.GOVERNANCE_RESPONSES]:
+        assert f"- `{value}`: " in text
+
+
+def test_a_passage_not_about_ai_leaves_the_new_fields_empty():
+    none = Label(passage_id="d1:0-2", ai_reference="none", confidence="high")
+    assert (none.business_functions, none.governance_responses) == ([], [])
+    for field in ("business_functions", "governance_responses"):
+        with pytest.raises(ValidationError, match="must leave all other label fields empty"):
+            Label(passage_id="d1:0-2", ai_reference="none", confidence="high", **{field: ["other"]})
+
+
+def test_national_security_is_a_risk_type():
+    label = Label(**label_fields(roles=["risk"], risk_types=["national_security", "regulatory_legal"]))
+    assert label.risk_types == ["national_security", "regulatory_legal"]
+    assert list(taxonomy.RISK_TYPES)[-2:] == ["national_security", "other"]
+    assert "export controls" in taxonomy.codebook().split("- `national_security`: ")[1].split("- `other`")[0]
+
+
+def test_adjudicate_votes_on_the_new_fields_and_clears_them_with_their_role():
+    adoption = dict(roles=["market_driver", "adoption"], adoption_stage="deployed")
+    final, _ = adjudicated(by_coder(
+        # P1: two of three name finance; operations has one vote only.
+        coded(P1, "a", **adoption, business_functions=["finance", "operations"]),
+        coded(P1, "b", **adoption, business_functions=["finance"]),
+        coded(P1, "c", **adoption, business_functions=["not_stated"]),
+        # P2: adoption loses the vote, so its functions go with it.
+        coded(P2, "a", **adoption, business_functions=["finance"]),
+        coded(P2, "b"),
+        coded(P2, "c"),
+        # P3: governance wins, but no response has a majority.
+        coded(P3, "a", roles=["governance"], governance_responses=["oversight_structure"]),
+        coded(P3, "b", roles=["governance"], governance_responses=["technical_controls"]),
+        coded(P3, "c"),
+    ))
+    assert final[P1]["business_functions"] == ["finance"] and not final[P1]["needs_review"]
+    assert (final[P2]["roles"], final[P2]["business_functions"]) == (["market_driver"], [])
+    assert final[P3]["governance_responses"] == [] and "governance_responses" in final[P3]["disputed"]
+
+
+def test_summarise_counts_the_new_fields_and_ai_passages_found_through_context_terms():
+    passages = [passage("d1:0-2", "Item 1"), passage("d1:5-7", "Item 1A", mention="implicit"),
+                passage("d1:9-9", "Item 7", mention="implicit")]
+    labels = [
+        final_label("d1:0-2", "explicit", frame="business", roles=["adoption", "governance"],
+                    adoption_stage="deployed", ai_kind="generative",
+                    business_functions=["customer_service", "finance"], governance_responses=["policies_processes"]),
+        final_label("d1:5-7", "implicit", frame="market", roles=["market_driver"], ai_kind="unspecified"),
+        final_label("d1:9-9", "none"),
+    ]
+
+    s = aggregate.summarise({**REPORT, "recall_check": {"blocks": 2, "by_pattern": {"autonomous": 2}}}, passages, labels)
+
+    assert (s["n_candidates"], s["n_direct_mentions"], s["n_implicit_mentions"]) == (3, 1, 2)
+    assert (s["n_ai_passages"], s["n_ai_passages_from_implicit_mentions"], s["n_false_candidates"]) == (2, 1, 1)
+    assert s["business_functions"] == {"customer_service": 1, "finance": 1}
+    assert s["governance_responses"] == {"policies_processes": 1}
+    assert s["recall_check"] == {"blocks": 2, "by_pattern": {"autonomous": 2}}
+    assert aggregate.summarise(REPORT, passages, labels)["recall_check"] is None  # document from before the check
+
+    rendered = aggregate.render(
+        REPORT,
+        [{**p, "section_title": None, "blocks": [0, 2]} for p in passages],
+        [{**l, "evidence": [], "notes": [], "disputed": []} for l in labels],
+        s,
+    )
+    assert "- Candidate passages: 3 (1 direct, 2 implicit mentions), of which about AI: 2 (1 from implicit mentions)" in rendered
+    assert "- Business functions: customer_service (1), finance (1)\n" in rendered
+    assert "| functions: customer_service, finance | responses: policies_processes" in rendered
+    assert rendered.count("implicit mention)") == 2
+
+
+def test_tasks_carry_the_kind_of_mention():
+    doc = {"doc_id": "d1", "company": "ACME", "form": "10-K", "fiscal_year": 2026}
+    rows = classify.tasks([doc], [
+        {"passage_id": "d1:0-2", "doc_id": "d1", "section": "Item 1", "section_title": "Business", "heading": None,
+         "mention": "implicit", "matched": {"context": ["data center"]}, "text": "..."},
+    ])
+    assert (rows[0]["mention"], rows[0]["matched_terms"]) == ("implicit", {"context": ["data center"]})

@@ -65,6 +65,7 @@ LABELS = {
         "roles": ["adoption", "risk"],
         "risk_types": ["operational_reliability", "reputational_ethical"],
         "adoption_stage": "deployed",
+        "business_functions": ["operations"],
         "ai_kind": "non_generative",
         "disclosure_traits": ["hedging"],
         "substantiveness": "specific",
@@ -258,7 +259,7 @@ def test_schema_violation_is_an_error_not_a_label():
     # risk_types without the `risk` role breaks Label's cross-field rule, which the
     # response schema cannot express; `accept` would reject it, so the coder must too.
     def handler(pid, _n):
-        return FakeResponse(json.dumps({**LABELS[pid], "roles": ["adoption"]}))
+        return FakeResponse(json.dumps({**LABELS[pid], "roles": ["adoption"]}))  # risk_types stay filled
 
     results = gemini.code(TASKS[:1], CODEBOOK, model="m", client=FakeClient(handler), backoff=0)
     assert results[0]["error"].startswith("rejected by validate")

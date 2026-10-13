@@ -43,10 +43,10 @@ BigQuery once the first cloud runs are done.
 |---|---|---|---|
 | 0 download | `fetch <out> --types T` | the data provider's API (US companies, Markdown only), the names already in `<out>` | `<out>/markdown/<filing id>.md`, `<out>/manifest/<filing id>.json`, once `<out>/companies/us.jsonl` |
 | 1+2 ingest, retrieve | `run <dir-or-files...>` | Markdown filings (also HTML / inline XBRL), `index/files.jsonl` | `docs/<doc_id>/document.json`, `docs/<doc_id>/blocks.jsonl`, `docs/<doc_id>/passages.jsonl`, `index/files.jsonl` |
-| 3 classify | `tasks` | `docs/*/document.json`, `docs/*/passages.jsonl` | `tasks.jsonl`, `hints.jsonl`, `codebook.md` |
+| 3 classify | `tasks` | `docs/*/document.json`, `docs/*/passages.jsonl` | `tasks.jsonl`, `codebook.md` |
 | | `accept <file> --coder X` | a coder's JSONL file, `docs/*/passages.jsonl` | `labels/X.jsonl` |
 | | `adjudicate` | `labels/*.jsonl` | `labels_final.jsonl`, `agreement.json` |
-| 4 aggregate | `aggregate` | `docs/*/document.json`, `docs/*/passages.jsonl`, `labels_final.jsonl` | `report_summary.jsonl`, `reports/<doc_id>.md` |
+| 4 aggregate | `aggregate` | `docs/*/document.json`, `docs/*/passages.jsonl`, `labels_final.jsonl` | `report_summary.jsonl`, `reports/<doc_id>.md`, `recall_check.json` |
 
 Run them in this order. `--data` is a global option and goes before the sub-command. `<raw>` is the path
 under which the raw bucket is mounted (in a Batch job; `run` reads files, not `gs://` locations).
@@ -190,50 +190,60 @@ The container runs `python -m airo <command>` with `AIRO_GLOSSARIES=/app/glossar
   files can be added at any time. The later stages iterate over `docs/*/` one document at a time and
   never load all blocks at once.
 - **A cheap lexical step selects what gets classified.** Every block is searched with the glossaries
-  under `glossaries/`: `core.json` (500 sector-independent AI terms) plus the glossary of the company's
+  under `glossaries/`: `core.json` (502 sector-independent AI terms) plus the glossary of the company's
   industry, `isic/<division>.json`, chosen from the 4-digit ISIC Rev. 5 class in the manifest (the
   classification the data provider attaches to every company; `isic_rev5.json` holds the official
   structure), including that file's `class_terms` for the exact class. Terms have a tier: `ai` (the term
   itself denotes AI) or `context` (industry lingo around which AI is discussed, such as "data center" for
   a uranium miner). This gives two kinds of mention: a passage with at least one `ai` hit is a **direct
-  mention** and goes to the classifier as a task; a passage with `context` hits only is an **implicit
-  mention** and is not classified but handed on as a hint, with its text and the wordings found, in
-  `hints.jsonl` and at the end of the report view. Phrases match
+  mention**; a passage with `context` hits only is an **implicit mention**. Both go to the classifier
+  as tasks: the tier decides what is found, the classifier decides whether it is about AI. The kind of
+  mention stays on the passage, the task and the report summary, so results can be split by it. Phrases match
   as whole words with plural and hyphen/space variation; short acronyms are case-sensitive. A trie-merged
   pre-filter keeps the search at about one second per 10-K. A hit block and its neighbours form a passage
   (page furniture is skipped, a following heading ends the window); overlapping or touching windows merge,
   and a window never crosses a section boundary. Only these passages become tasks, so a report without a
   hit costs no classification. The classifier can still label a candidate `none`.
+- **A second keyword list measures what the glossaries miss.** `recall.py` holds a reference list that
+  was written independently of the glossaries (the 66 keyword patterns of the predecessor UK pipeline).
+  `run` counts, per document, the blocks that match it but lie in no passage (`recall_check` in
+  `document.json`), and `aggregate` adds the counts up in `recall_check.json`. The hits do not become
+  passages; a term that turns up there is added to a glossary.
 - **The classifier stage is defined by two files, not by who codes.** `tasks.jsonl` (passage plus company,
-  form, fiscal year, section, heading, matched terms) and `codebook.md` go in; one label per passage comes
+  form, fiscal year, section, heading, kind of mention, matched terms) and `codebook.md` go in; one label per passage comes
   back as JSONL. A coder can be a person, an agent or a batch job against a model API.
 - **Every accepted label is validated.** `accept` checks each line against the schema in `taxonomy.py`,
   rejects unknown and duplicate passage ids and evidence that is not a verbatim quote from the passage
   (whitespace differences are tolerated), and reports passages without a label. Accepted labels and
   adjudicated labels carry `taxonomy_version`.
 - **Several coders are reconciled by majority vote.** `adjudicate` takes, per passage and field, the value
-  that more than half of the coders chose (per value for `roles` and `risk_types`). A passage with a field
+  that more than half of the coders chose (per value for the list fields, such as `roles` and `risk_types`). A passage with a field
   without majority, or with a coder missing, is flagged `needs_review`. `agreement.json` reports, per
   field, the share of passages on which all coders agree, the share of coder pairs with identical labels,
   and the passages to review.
 
-## Taxonomy v0.4
+## Taxonomy v0.6
 
 One label per passage. `taxonomy.py` is the single definition; `python -m airo tasks` renders it as the
 full codebook, with a definition and a checklist of criteria for every value (a value applies only if all
 its criteria hold) and the decision rules, to `data/codebook.md`. Since v0.4 the coder fixes the `frame`
 of the AI statement before judging any role or trait; criteria marked "frame-dependent" in the codebook
-(`market_driver`, `adoption`, `governance`, `externalisation`) are read in that frame.
+(`market_driver`, `adoption`, `governance`, `externalisation`) are read in that frame. v0.5 added
+`substantiveness`; v0.6 added `business_functions`, `governance_responses` and the risk type
+`national_security`.
 
 | Field | Allowed values | Rule |
 |---|---|---|
-| `ai_reference` | `explicit`, `implicit`, `none` | exactly one, judged from the passage alone; with `none` the next six fields and `evidence` stay empty |
+| `ai_reference` | `explicit`, `implicit`, `none` | exactly one, judged from the passage alone; with `none` the next nine fields and `evidence` stay empty |
 | `frame` | `risk_factor`, `governance`, `business`, `market` | exactly one when the passage is about AI, decided from section, heading and sentence function before any role or trait; `null` if and only if `ai_reference` is `none` |
 | `roles` | `market_driver`, `adoption`, `offering`, `risk`, `governance`, `incident`, `general` | one or more; `general` only alone |
-| `risk_types` | `market_demand`, `strategic_competitive`, `operational_reliability`, `cybersecurity`, `third_party`, `regulatory_legal`, `workforce`, `reputational_ethical`, `information_integrity`, `environmental`, `other` | one or more if and only if `risk` is a role |
+| `risk_types` | `market_demand`, `strategic_competitive`, `operational_reliability`, `cybersecurity`, `third_party`, `regulatory_legal`, `workforce`, `reputational_ethical`, `information_integrity`, `environmental`, `national_security`, `other` | one or more if and only if `risk` is a role |
 | `adoption_stage` | `planned`, `piloting`, `deployed`, `unclear` | exactly one if and only if `adoption` is a role |
+| `business_functions` | `customer_service`, `marketing_sales`, `operations`, `finance`, `hr_workforce`, `legal_compliance`, `rd_product`, `it_cybersecurity`, `supply_chain`, `manufacturing`, `decision_analytics`, `other`, `not_stated` | one or more if and only if `adoption` is a role; the company's own use; `not_stated` only alone |
+| `governance_responses` | `oversight_structure`, `policies_processes`, `technical_controls`, `third_party_controls`, `workforce_measures`, `transparency_accountability`, `other` | one or more if and only if `governance` is a role |
 | `ai_kind` | `generative`, `non_generative`, `unspecified` | exactly one |
 | `disclosure_traits` | `boilerplate`, `hedging`, `externalisation`, `vagueness`, `safe_harbour` | zero or more; `[]` when no trait applies (the statement is specific) and always when `ai_reference` is `none`; `externalisation` never in frame `market` |
+| `substantiveness` | `boilerplate`, `generic`, `specific`, `detailed`, `quantified` | exactly one when the passage is about AI; five ordered levels, the highest whose criteria the AI statements meet |
 | `entities` | list of names | organisations or AI products named in connection with AI |
 | `evidence` | list of 1 to 3 quotes | verbatim quotes from the passage, one per role where the roles rest on different sentences; `[]` if and only if `ai_reference` is `none` |
 | `confidence` | `low`, `medium`, `high` | always required |

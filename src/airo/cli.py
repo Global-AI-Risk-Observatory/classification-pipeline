@@ -2,10 +2,10 @@
 
     python -m airo fetch <out> --types T      -> <out>/markdown/<filing id>.md, <out>/manifest/<filing id>.json
     python -m airo run <dir-or-files...>      -> docs/<doc_id>/{document.json,blocks.jsonl,passages.jsonl}, index/files.jsonl
-    python -m airo tasks                      -> tasks.jsonl, codebook.md, hints.jsonl
+    python -m airo tasks                      -> tasks.jsonl, codebook.md
     python -m airo accept <file> --coder X    -> labels/X.jsonl (validated)
     python -m airo adjudicate                 -> labels_final.jsonl, agreement.json
-    python -m airo aggregate                  -> report_summary.jsonl, reports/<doc_id>.md
+    python -m airo aggregate                  -> report_summary.jsonl, reports/<doc_id>.md, recall_check.json
 
 Every stage reads only the previous stage's files, so stages can be re-run,
 parallelised per document, or moved to another machine independently.
@@ -16,10 +16,11 @@ from __future__ import annotations
 import argparse
 import json
 import sys
+from collections import Counter
 from pathlib import Path
 from typing import Iterator
 
-from . import aggregate, classify, fetch, runner, taxonomy
+from . import aggregate, classify, fetch, recall, runner, taxonomy
 
 
 def _read(path: Path) -> list[dict]:
@@ -40,11 +41,6 @@ def _docs(data: Path) -> Iterator[tuple[dict, list[dict]]]:
         yield json.loads((d / "document.json").read_text(encoding="utf-8")), _read(d / "passages.jsonl")
 
 
-def _direct(passages: list[dict]) -> list[dict]:
-    """The passages that are classified; implicit mentions are only reported as hints."""
-    return [p for p in passages if p["mention"] == "direct"]
-
-
 def cmd_fetch(args) -> None:
     fetch.fetch(
         args.out, fetch.api_key(), args.types, form=args.form,
@@ -63,26 +59,23 @@ def cmd_run(args) -> None:
 
 
 def cmd_tasks(args) -> None:
-    n = hints = 0
-    with open(args.data / "tasks.jsonl", "w", encoding="utf-8") as fh, open(
-        args.data / "hints.jsonl", "w", encoding="utf-8"
-    ) as hh:
+    # Every candidate passage is a task, direct and implicit mentions alike.
+    n: Counter = Counter()
+    with open(args.data / "tasks.jsonl", "w", encoding="utf-8") as fh:
         for doc, passages in _docs(args.data):
-            for row in classify.tasks([doc], _direct(passages)):
+            for row in classify.tasks([doc], passages):
                 fh.write(json.dumps(row, ensure_ascii=False) + "\n")
-                n += 1
-            # Implicit mentions are not classified; they are handed on as hints
-            # with their text so a reader can judge them.
-            for row in classify.tasks([doc], [p for p in passages if p["mention"] == "implicit"]):
-                hh.write(json.dumps(row, ensure_ascii=False) + "\n")
-                hints += 1
+                n[row["mention"]] += 1
     (args.data / "codebook.md").write_text(taxonomy.codebook(), encoding="utf-8")
-    print(f"{n} task(s) from direct mentions, {hints} hint(s) from implicit mentions, codebook v{taxonomy.TAXONOMY_VERSION}")
+    print(
+        f"{sum(n.values())} task(s): {n['direct']} direct and {n['implicit']} implicit mention(s), "
+        f"codebook v{taxonomy.TAXONOMY_VERSION}"
+    )
 
 
 def cmd_accept(args) -> None:
     lines = Path(args.file).read_text(encoding="utf-8").splitlines()
-    passages = [p for _, found in _docs(args.data) for p in _direct(found)]
+    passages = [p for _, found in _docs(args.data) for p in found]
     labels, problems = classify.validate(lines, passages, args.coder)
     for p in problems:
         print("REJECTED:", p)
@@ -111,6 +104,12 @@ def cmd_aggregate(args) -> None:
         out.write_text(aggregate.render(d, mine, labels, summary), encoding="utf-8")
         print(out)
     _write(args.data / "report_summary.jsonl", summaries)
+    check = recall.total(summaries)
+    (args.data / "recall_check.json").write_text(json.dumps(check, indent=2), encoding="utf-8")
+    print(
+        f"recall check: {check['blocks_outside_passages']} block(s) in {check['documents_affected']} of "
+        f"{check['documents']} document(s) match a reference pattern outside every passage"
+    )
 
 
 def main(argv: list[str] | None = None) -> None:

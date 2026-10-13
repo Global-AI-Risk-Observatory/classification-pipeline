@@ -15,7 +15,7 @@ from typing import Literal, Optional
 
 from pydantic import BaseModel, Field, model_validator
 
-TAXONOMY_VERSION = "0.5"
+TAXONOMY_VERSION = "0.6"
 
 # Each value: (definition, criteria). A value applies only if all its criteria hold.
 Definition = tuple[str, tuple[str, ...]]
@@ -270,6 +270,18 @@ RISK_TYPES: dict[str, Definition] = {
             "not as a demand opportunity",
         ),
     ),
+    "national_security": (
+        "AI as a matter of national security, defence or state control over strategic technology.",
+        (
+            "the harm concerns national security, defence, critical infrastructure or a restriction a state "
+            "imposes on security grounds (export controls, sanctions, foreign-investment review, procurement "
+            "bans, restrictions on foreign-made AI or chips)",
+            "AI or AI-linked technology (models, chips, compute, data) is the object or the cause of that "
+            "concern or restriction",
+            "the harm reaches the company: restricted sales or supply, lost contracts or licences, or "
+            "obligations it must meet",
+        ),
+    ),
     "other": (
         "A stated AI risk that fits none of the above.",
         (
@@ -310,6 +322,190 @@ ADOPTION_STAGES: dict[str, Definition] = {
             "the company's own use is asserted in a clause that is not a review or control remit (\"AI usage "
             "across our operations\" in a business description)",
             "the wording gives neither a tense nor a term that fits `planned`, `piloting` or `deployed`",
+        ),
+    ),
+}
+
+# v0.6: where in the business the company's own AI use sits.
+BUSINESS_FUNCTIONS: dict[str, Definition] = {
+    "customer_service": (
+        "Customer support, service and communication with customers.",
+        (
+            "the company's own AI use is stated for customer support, service, contact centres or "
+            "customer communication",
+            "the AI handles or supports the contact with customers; winning or pricing business "
+            "is `marketing_sales`",
+        ),
+    ),
+    "marketing_sales": (
+        "Marketing, advertising, sales, pricing and personalisation.",
+        (
+            "the company's own AI use is stated for marketing, advertising, sales, pricing, "
+            "recommendations or personalisation",
+            "the purpose is to win, target or price business, not to serve existing requests "
+            "(`customer_service`)",
+        ),
+    ),
+    "operations": (
+        "Running the core business: service delivery, logistics, maintenance, scheduling.",
+        (
+            "the company's own AI use is stated for running its operations or delivering its "
+            "service (scheduling, routing, maintenance, quality, claims or transaction handling)",
+            "no narrower function in this list fits (`manufacturing`, `supply_chain`)",
+        ),
+    ),
+    "finance": (
+        "Finance, accounting, treasury, underwriting and credit decisions as an internal "
+        "function.",
+        (
+            "the company's own AI use is stated for finance, accounting, forecasting, treasury, "
+            "underwriting, credit or fraud detection",
+            "it is the company's own financial work or decision; a product sold to clients is the "
+            "role `offering`",
+        ),
+    ),
+    "hr_workforce": (
+        "Hiring, training, staffing and employee productivity.",
+        (
+            "the company's own AI use is stated for hiring, training, staffing, employee "
+            "productivity or workforce management",
+            "it concerns the company's own employees or candidates",
+        ),
+    ),
+    "legal_compliance": (
+        "Legal work, compliance, risk management and audit.",
+        (
+            "the company's own AI use is stated for legal work, regulatory compliance, risk "
+            "management or audit",
+            "AI is the tool used in that work; rules that apply to AI are the role `governance`, "
+            "not this value",
+        ),
+    ),
+    "rd_product": (
+        "Research, development, engineering and design of products or services.",
+        (
+            "the company's own AI use is stated for research, development, engineering, design, "
+            "software development or discovery",
+            "the AI is a tool in that work; an AI capability sold to customers is the role "
+            "`offering`, not a business function",
+        ),
+    ),
+    "it_cybersecurity": (
+        "Information technology and security of the company's own systems.",
+        (
+            "the company's own AI use is stated for its IT, infrastructure, threat detection or "
+            "cybersecurity",
+            "it concerns the company's own systems; AI in the hands of attackers is a risk, not "
+            "adoption",
+        ),
+    ),
+    "supply_chain": (
+        "Procurement, inventory, demand planning and suppliers.",
+        (
+            "the company's own AI use is stated for procurement, inventory, demand planning, "
+            "sourcing or supplier management",
+            "it concerns the flow of goods or inputs to the company, not making them "
+            "(`manufacturing`)",
+        ),
+    ),
+    "manufacturing": (
+        "Production of goods.",
+        (
+            "the company's own AI use is stated for production, plants, process control or "
+            "factory automation",
+            "it concerns making the goods, not buying or moving them (`supply_chain`)",
+        ),
+    ),
+    "decision_analytics": (
+        "Analytics and decision support across functions.",
+        (
+            "the company's own AI use is stated for analytics, insights, forecasting or decision "
+            "support",
+            "no single function in this list is named as where it is applied",
+        ),
+    ),
+    "other": (
+        "A function is named that fits none of the above.",
+        (
+            "the passage names where the company uses AI",
+            "no other function meets its criteria",
+            "`note` names the function",
+        ),
+    ),
+    "not_stated": (
+        "The company's own AI use is stated without saying where in the business.",
+        (
+            "the passage states the company's own use or intention (\"we use AI\", \"across our "
+            "operations\", \"in our business\") without naming a function, process or purpose",
+            "only alone: never combined with another value",
+        ),
+    ),
+}
+
+# v0.6: what the company reports doing to manage AI. Six groups of responses.
+GOVERNANCE_RESPONSES: dict[str, Definition] = {
+    "oversight_structure": (
+        "Who is responsible: board or committee oversight, an AI governance body, a "
+        "responsible-AI function, named accountability.",
+        (
+            "the passage names a body, function or person of the company that oversees or is "
+            "accountable for AI (board, board committee, AI governance committee, management "
+            "council, a named officer)",
+            "AI is within what it oversees, as its subject or as an item in its remit",
+        ),
+    ),
+    "policies_processes": (
+        "Rules and procedures: AI policy, risk or impact assessment, approval of models or use "
+        "cases, AI inventory.",
+        (
+            "the passage names a policy, standard, framework, assessment, review, approval step "
+            "or inventory that applies to AI",
+            "it is a rule or procedure, not a body (`oversight_structure`) and not a control on a "
+            "system (`technical_controls`)",
+        ),
+    ),
+    "technical_controls": (
+        "Controls on the systems: testing, monitoring, human oversight, access, privacy and "
+        "security controls, model validation.",
+        (
+            "the passage names a control applied to AI systems or their use: testing, validation, "
+            "monitoring, human review of outputs, access restriction, privacy or security "
+            "safeguards",
+            "the control acts on the system, its data or its outputs",
+        ),
+    ),
+    "third_party_controls": (
+        "Controls on vendors: due diligence, contractual requirements, vendor monitoring.",
+        (
+            "the passage names a control the company applies to vendors, service providers or "
+            "partners in respect of AI: due diligence, contract terms, assessment or monitoring",
+            "it is the company's own measure towards that party, not the party's own control",
+        ),
+    ),
+    "workforce_measures": (
+        "Measures for employees: AI training, guidance on use, workforce transition programmes.",
+        (
+            "the passage names training, guidance, acceptable-use rules or transition programmes "
+            "for the company's employees in respect of AI",
+            "the measure is in place or decided; a risk that employees may misuse AI is not a "
+            "measure",
+        ),
+    ),
+    "transparency_accountability": (
+        "Auditing, reporting, documentation, explainability, incident reporting.",
+        (
+            "the passage names auditing, internal or external reporting, documentation, "
+            "explainability or incident reporting for AI",
+            "it produces a record or account that others can check (auditors, the board, "
+            "regulators, the public)",
+        ),
+    ),
+    "other": (
+        "A response to AI is named that fits none of the above.",
+        (
+            "the `governance` role applies",
+            "no other response meets its criteria",
+            "`note` names the response",
         ),
     ),
 }
@@ -439,7 +635,15 @@ Role = Literal["market_driver", "adoption", "offering", "risk", "governance", "i
 RiskType = Literal[
     "market_demand", "strategic_competitive", "operational_reliability", "cybersecurity",
     "third_party", "regulatory_legal", "workforce", "reputational_ethical",
-    "information_integrity", "environmental", "other",
+    "information_integrity", "environmental", "national_security", "other",
+]
+BusinessFunction = Literal[
+    "customer_service", "marketing_sales", "operations", "finance", "hr_workforce", "legal_compliance",
+    "rd_product", "it_cybersecurity", "supply_chain", "manufacturing", "decision_analytics", "other", "not_stated",
+]
+GovernanceResponse = Literal[
+    "oversight_structure", "policies_processes", "technical_controls", "third_party_controls",
+    "workforce_measures", "transparency_accountability", "other",
 ]
 DisclosureTrait = Literal["boilerplate", "hedging", "externalisation", "vagueness", "safe_harbour"]
 
@@ -451,6 +655,8 @@ class Label(BaseModel):
     roles: list[Role] = Field(default_factory=list)
     risk_types: list[RiskType] = Field(default_factory=list)
     adoption_stage: Optional[Literal["planned", "piloting", "deployed", "unclear"]] = None
+    business_functions: list[BusinessFunction] = Field(default_factory=list)
+    governance_responses: list[GovernanceResponse] = Field(default_factory=list)
     ai_kind: Optional[Literal["generative", "non_generative", "unspecified"]] = None
     disclosure_traits: list[DisclosureTrait] = Field(default_factory=list)
     substantiveness: Optional[Substantiveness] = None  # required when the passage is about AI
@@ -464,6 +670,7 @@ class Label(BaseModel):
         if self.ai_reference == "none":
             filled = (
                 self.frame or self.roles or self.risk_types or self.adoption_stage or self.ai_kind
+                or self.business_functions or self.governance_responses
                 or self.disclosure_traits or self.substantiveness or self.evidence
             )
             if filled:
@@ -479,6 +686,12 @@ class Label(BaseModel):
             raise ValueError("risk_types must be given if and only if 'risk' is among the roles")
         if (self.adoption_stage is not None) != ("adoption" in self.roles):
             raise ValueError("adoption_stage must be given if and only if 'adoption' is among the roles")
+        if bool(self.business_functions) != ("adoption" in self.roles):
+            raise ValueError("business_functions must be given if and only if 'adoption' is among the roles")
+        if "not_stated" in self.business_functions and len(self.business_functions) > 1:
+            raise ValueError("'not_stated' cannot be combined with other business functions")
+        if bool(self.governance_responses) != ("governance" in self.roles):
+            raise ValueError("governance_responses must be given if and only if 'governance' is among the roles")
         if "externalisation" in self.disclosure_traits and self.frame == "market":
             raise ValueError("'externalisation' is not applicable in frame 'market'")
         if self.ai_kind is None or not self.evidence:
@@ -528,8 +741,9 @@ def codebook() -> str:
                 "outside knowledge about the company.",
                 AI_REFERENCE,
             ),
-            "If `ai_reference` is `none`: set `roles`, `risk_types`, `disclosure_traits`, `entities` and "
-            "`evidence` to `[]`, leave `frame`, `adoption_stage`, `ai_kind` and `substantiveness` as `null`, and still give "
+            "If `ai_reference` is `none`: set `roles`, `risk_types`, `business_functions`, `governance_responses`, "
+            "`disclosure_traits`, `entities` and `evidence` to `[]`, leave `frame`, `adoption_stage`, `ai_kind` "
+            "and `substantiveness` as `null`, and still give "
             "`confidence`; `note` may still be used.\n",
             _table(
                 "Step 1: determine the frame", "frame",
@@ -582,6 +796,9 @@ def codebook() -> str:
                     "does not give `reputational_ethical`; that type needs trust, fairness or ethics content.",
                     "Manipulation or poisoning of training data by an attacker is `cybersecurity`; wrong or "
                     "biased outputs are `operational_reliability`; both when both are stated.",
+                    "A restriction imposed on security grounds (export controls on AI chips or models, "
+                    "sanctions, procurement bans) is `national_security`; add `regulatory_legal` only when the "
+                    "passage also states compliance costs, enforcement or liability for the company.",
                 ),
             ),
             _table(
@@ -589,6 +806,23 @@ def codebook() -> str:
                 "Exactly one value if and only if `adoption` is among the roles; otherwise `null`. "
                 "If several stages are stated, give the most advanced one.",
                 ADOPTION_STAGES,
+            ),
+            _table(
+                "Where in the business is AI used?", "business_functions",
+                "One or more values if and only if `adoption` is among the roles; otherwise `[]`. It describes "
+                "the company's OWN use: functions of vendors, customers or attackers do not count. Give every "
+                "function the passage names; `not_stated` only alone, when no function, process or purpose is "
+                "named. Do not infer a function from the company's industry.",
+                BUSINESS_FUNCTIONS,
+            ),
+            _table(
+                "What does the company do to manage AI?", "governance_responses",
+                "One or more values if and only if `governance` is among the roles; otherwise `[]`. Give every "
+                "response the passage names. Code only what the text supports: a broad statement of "
+                "responsible AI names no control. AI named as an item inside a broader remit takes the value of "
+                "that remit (a board or committee remit is `oversight_structure`; a risk review, programme or "
+                "policy is `policies_processes`).",
+                GOVERNANCE_RESPONSES,
             ),
             _table(
                 "What kind of AI?", "ai_kind",

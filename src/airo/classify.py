@@ -20,7 +20,7 @@ from .taxonomy import TAXONOMY_VERSION, Label
 
 _WS = re.compile(r"\s+")
 _SINGLE = ("ai_reference", "frame", "adoption_stage", "ai_kind", "substantiveness")
-_MULTI = ("roles", "risk_types", "disclosure_traits")
+_MULTI = ("roles", "risk_types", "business_functions", "governance_responses", "disclosure_traits")
 
 
 def tasks(docs: list[dict], passages: list[dict]) -> list[dict]:
@@ -36,6 +36,7 @@ def tasks(docs: list[dict], passages: list[dict]) -> list[dict]:
                 "fiscal_year": d["fiscal_year"],
                 "section": " ".join(x for x in (p["section"], p["section_title"]) if x) or None,
                 "heading": p["heading"],
+                "mention": p["mention"],
                 "matched_terms": p["matched"],
                 "text": p["text"],
             }
@@ -182,8 +183,8 @@ def adjudicate(labels_by_coder: dict[str, list[dict]]) -> tuple[list[dict], dict
         # Keep the voted label internally consistent with the schema's rules.
         if out["ai_reference"] in (None, "none"):
             out.update(
-                frame=None, roles=[], risk_types=[], disclosure_traits=[], adoption_stage=None, ai_kind=None,
-                substantiveness=None,
+                frame=None, roles=[], risk_types=[], business_functions=[], governance_responses=[],
+                disclosure_traits=[], adoption_stage=None, ai_kind=None, substantiveness=None,
             )
         else:
             if not out["roles"]:
@@ -194,8 +195,16 @@ def adjudicate(labels_by_coder: dict[str, list[dict]]) -> tuple[list[dict], dict
                 disputed.append("risk_types")
             if "adoption" not in out["roles"]:
                 out["adoption_stage"] = None
-            elif out["adoption_stage"] is None:
-                disputed.append("adoption_stage")
+                out["business_functions"] = []
+            else:
+                if out["adoption_stage"] is None:
+                    disputed.append("adoption_stage")
+                if not out["business_functions"]:
+                    disputed.append("business_functions")
+            if "governance" not in out["roles"]:
+                out["governance_responses"] = []
+            elif not out["governance_responses"]:
+                disputed.append("governance_responses")
 
         names = Counter()
         spelling = {}

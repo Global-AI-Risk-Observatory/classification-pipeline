@@ -784,6 +784,21 @@
       "why": "AI-driven mobility cited across sectors"
     },
     {
+      "term": "autonomous",
+      "tier": "context",
+      "group": "techniques",
+      "why": "used for AI-driven systems and for much else (autonomous regions, autonomous subsidiaries); the classifier decides"
+    },
+    {
+      "term": "multimodal",
+      "tier": "context",
+      "group": "techniques",
+      "variants": [
+        "multi-modal"
+      ],
+      "why": "used for models that combine text, image and audio, and for freight transport; the classifier decides"
+    },
+    {
       "term": "intelligent robotics",
       "tier": "context",
       "group": "techniques",

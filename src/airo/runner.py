@@ -6,7 +6,7 @@ directory of its own. A file index records every file seen, so re-issuing the
 same command after an interruption, or with new files added, processes only
 what is missing.
 
-    docs/<doc_id>/document.json    the document record
+    docs/<doc_id>/document.json    the document record, with its recall check (see recall.py)
     docs/<doc_id>/blocks.jsonl     its ordered text blocks
     docs/<doc_id>/passages.jsonl   its candidate passages
     index/files.jsonl              one row per input file; appended, never rewritten
@@ -30,7 +30,7 @@ from datetime import datetime, timezone
 from itertools import repeat
 from pathlib import Path
 
-from . import ingest, retrieve
+from . import ingest, recall, retrieve
 from .glossary import load
 
 _TMP = ".tmp-"  # prefix of a document directory that is still being written
@@ -117,6 +117,7 @@ def process(
         out = data / "docs" / doc["doc_id"]
         if not out.exists():
             passages = retrieve.passages(doc, blocks, context=context, matcher=load(doc.get("isic_class")))
+            doc["recall_check"] = recall.outside(blocks, passages)
             tmp = out.with_name(f"{_TMP}{doc['doc_id']}-{os.getpid()}")
             tmp.mkdir(parents=True)
             _write_doc(tmp / "document.json", doc)

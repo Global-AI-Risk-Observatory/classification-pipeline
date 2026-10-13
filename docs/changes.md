@@ -349,3 +349,112 @@ unless `--form` excludes one. Markdown has no XBRL facts, so the filer category 
 company list has a ticker for half of the companies and an exchange for a quarter. The notice
 text sits in fields that are otherwise numbers or dates (`fiscal_year`, `period_end`), which
 every consumer of the manifest has to expect. The Markdown reader has been run on six filings.
+
+---
+
+## 12. Every passage is classified; a recall check; fields for function and governance response (v0.6)
+
+**Original.** The UK pipeline gated on 66 keyword patterns (`src/utils/keywords.py`) and
+classified every chunk that passed the gate. It had no field for the business function of an AI
+use and none for the kind of governance response, and no measure of what the gate missed.
+
+**Before (entries 3 and 6, up to v0.5).** A passage with an `ai`-tier term was a direct mention
+and was classified. A passage with `context`-tier terms only was an implicit mention: it was
+written to `hints.jsonl` for a reader and not classified. Which text became a passage at all was
+decided by the glossaries alone.
+
+**New.**
+
+- Every candidate passage is a task (`cli.cmd_tasks`, `cmd_accept`; `aggregate.summarise`,
+  `render`). `hints.jsonl` is gone. The kind of mention (`direct`, `implicit`) stays on the
+  passage, is written to the task, and the report summary counts both kinds and the AI passages
+  that were found through context terms only (`n_ai_passages_from_implicit_mentions`).
+- `src/airo/recall.py`: the 66 patterns of the UK pipeline, kept as a reference list that is
+  independent of the glossaries. `run` stores per document how many blocks match it outside
+  every passage (`recall_check` in `document.json`); `aggregate` writes the totals of the run to
+  `recall_check.json`. The reference hits do not become passages.
+- `glossaries/core.json`: `autonomous` and `multimodal` as context terms (502 terms). Both were
+  in the UK list and absent here, so text that used only them was not stored as a passage.
+- Taxonomy v0.6 (`src/airo/taxonomy.py`): `business_functions` (13 values, one or more if and
+  only if `adoption` is a role, `not_stated` when the passage names no function),
+  `governance_responses` (six groups and `other`, one or more if and only if `governance` is a
+  role) and the risk type `national_security`. The two fields follow the operationalisation the
+  policy team asked for; its six governance groups are taken as they are, its single controls
+  (about 25) are named in the definitions and not coded one by one.
+
+**Why.** The run `us-2025h1_V2` (7,794 filings, v0.5) left 63,801 implicit mentions without a
+label. On 2026-10-13 a sample of 3,321 of them was classified with the v0.5 codebook and
+`gemini-2.5-flash` (`gs://airo-pipeline-data/us-2025h1_V2/implicit_sample/`; 3,309 labelled, 12
+rejected by the acceptance check):
+
+- 2,000 passages drawn at random, proportional to ISIC division, from the 62,480 passages without
+  a UK-pattern hit: 248 of 1,997 labelled passages are about AI, 12.4 % (95 % interval 11.0 to
+  13.9 %); 124 `explicit`, 124 `implicit`. "data center" alone carries 100 of the 248.
+- All 1,321 passages in which a UK pattern matches: 897 of 1,312 labelled passages are about AI,
+  68.4 % (65.8 to 70.8 %). By pattern: `predictive_analytics` 208 of 209, `autonomous` 502 of
+  615, `algorithmic` 62 of 66, `rpa` (spelled out) 56 of 58, `intelligent_automation` 36 of 41,
+  `multimodal` 19 of 43, `rpa_acronym` 22 of 282.
+
+Extrapolated, about 8,650 of the 63,801 unlabelled passages are about AI, against 25,362 among
+the labelled chunks of that run: the tier decided for about a quarter of the AI passages that
+they were never judged. A tier is a property of a word list; whether a passage is about AI is
+the classifier's question, and it has the value `none` for the answer no.
+
+**Decisions behind this version (2026-10-13).**
+
+| Decision | Alternatives considered | Reason |
+|---|---|---|
+| Classify every passage, whatever the tier of its terms | Keep the tier as the gate and move single terms to tier `ai`; classify a sample of the implicit mentions only | The sample showed AI passages behind many different context terms ("data center", "data science", "nvidia", "compute capacity", "predictive analytics"). Moving terms one by one repeats the same gap with the next term; the classifier already has `none` for a passage that is not about AI. |
+| Keep the UK keyword patterns as a reference list that measures, not as retrieval terms | Add all 66 patterns to the glossaries; ignore them | The first view, taken from the UK pipeline's own labels (96 to 100 % `none` for chunks found only through `autonomous`, `rpa_acronym`, `predictive_analytics`, `multimodal`, `algorithmic`), was to leave them out. The sample, labelled with this pipeline's codebook, gave the opposite picture for most of them. Two classifiers disagreeing is a reason to measure in every run, not to copy the list. |
+| `autonomous` and `multimodal` enter the core glossary as tier `context` | Tier `ai`; not at all | They were the patterns of the UK list for which this pipeline stored no passage at all. Both have common meanings that have nothing to do with AI, so they do not prove AI on their own; as context terms they are found, and the classifier decides. The phrases of the UK pattern `algorithmic` (trading, decision, bias) were already in the core glossary; nothing was added for it. |
+| `governance_responses` with the policy team's six groups | Its roughly 25 single controls as values | One label per passage cannot carry 25 values reliably, and no agreement figures exist yet even for the six groups. The single controls are named in the definitions, so a later split has the wording to start from. |
+| `business_functions` with a value `not_stated` | The policy team's twelve functions only | Many adoption statements name no function ("we use AI across our operations"). Without `not_stated` a coder has to guess one, and a required field with a guessed value cannot be told from a stated one. |
+| `national_security` as a risk type | Leave it under `regulatory_legal` or `other` | It is in the policy team's list and in the UK taxonomy, which labelled it on 161 chunks of the same filings, so it is rare but present. Export controls on AI chips are a different mechanism from compliance with AI rules. |
+| No separate 0 to 3 scale for governance responses | Add the policy team's scale as a field | `substantiveness` already orders every AI statement in five levels, including those with the `governance` role. Two overlapping scales would have to be kept apart by annotators and would be compared with each other, not with the text. |
+| `ai_kind` stays at three values | The policy team's eight kinds, several per passage | 18,083 of the 25,362 AI chunks of `us-2025h1_V2` are `unspecified`: most passages do not say which kind. The finer kinds can be derived from the matched glossary terms without a model. |
+| No adoption stage `scaling` | Add it after `deployed` | A single passage rarely shows whether a use that is in operation is also being scaled; this is a judgement about the text, it has not been measured. |
+| The comparison with a reference risk taxonomy is not part of the classifier | A field per reference category | It needs a crosswalk from `risk_types` to the reference categories and a comparison of shares. It can be built on any labelled run and changes no label. |
+| All of this goes into one new run in a new folder beside `us-2025h1_V2` | Label the implicit mentions of `us-2025h1_V2` now and add the new fields in later passes; overwrite `us-2025h1_V2` | Every additional pass over the corpus is paid again. A run under one taxonomy version in one folder can be compared with the earlier runs; a folder that mixes versions cannot. The run starts with a test set before the whole corpus. |
+| Human annotation starts after v0.6 | Annotate the v0.5 labels first | Annotators would otherwise go through the same passages a second time for the new fields. |
+
+**Better.** A passage can no longer be about AI and stay without a label because of the tier
+of its terms. A term the glossaries lack now shows up as a number in every run. The two policy
+fields are labelled in the same pass as the rest, so no second pass over the corpus is needed
+for them.
+
+**Not better / open.**
+
+- About three times as many passages go to the model (on that run 92,196 instead of 28,395),
+  most of them to receive `none`. The sample cost USD 0.0006 per passage.
+- The sample's labels are a model's, not people's. 124 passages of the random stratum are
+  labelled `explicit` although no `ai`-tier term is in them: the classifier reads terms such as
+  "predictive analytics" and "data science" as naming AI. Whether the codebook should, and
+  whether such terms move to tier `ai`, is undecided.
+- The UK pipeline's own labels for its chunks with these patterns say the opposite (`none` for
+  96 to 100 % of the chunks whose only pattern is `autonomous`, `rpa_acronym`,
+  `predictive_analytics`, `multimodal` or `algorithmic`). The two classifiers have not been
+  compared on the same passages.
+- The recall check counts blocks, not AI statements; most `autonomous` hits will be noise. It
+  says where to look, not how much is missed.
+- Found while testing v0.6 on 60 passages of the sample (20 that v0.5 had labelled with
+  `adoption`, 20 with `governance`, 10 with `risk` only, 10 `none`; `gemini-2.5-flash`,
+  temperature 0, 40 passages per request). The same request sent twice gave identical labels on
+  all 59 passages answered both times. The v0.5 codebook on the same passages in a different
+  grouping of 40 than in the stored run agreed with the stored labels on `ai_reference` for 44
+  of 59 and on `roles` for 35 of 59: a label depends on which other passages are in the request.
+  The v0.6 codebook against the v0.5 codebook in the same grouping agreed on `ai_reference` for
+  51 of 59 and on `roles` for 47 of 59: adding fields also moved the existing ones. The 60
+  passages are implicit mentions chosen for being borderline, so these shares are not those of a
+  run. A comparison of one passage per request against 40 per request on about 30 % of the
+  corpus on 2026-10-12 (not recorded in this repository) found almost no difference, so the
+  run keeps 40 passages per request. One passage per request costs about four times as much
+  (measured here: about 8,400 against about 780 input tokens per passage).
+- With the v0.6 codebook 58 of these 60 labels passed the acceptance check on the first answer
+  (two evidence quotes were not verbatim). In the 60 answers the classifier gave 25 business functions
+  on 17 adoption passages and 11 governance responses on 7 governance passages; nobody has
+  checked them against the text.
+- v0.6 has not been run on a corpus. `business_functions` and `governance_responses` have no
+  agreement figures; `scaling` as an adoption stage, a 0 to 3 scale for governance responses and
+  eight kinds of AI from the policy team's sheet were left out (the last can be derived from the
+  matched terms).
+

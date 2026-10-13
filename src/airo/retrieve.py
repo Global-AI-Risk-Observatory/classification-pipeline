@@ -2,7 +2,8 @@
 
 Cheap lexical recall step. Only passages found here are sent to the (expensive)
 classifier, so a report with no hit costs no model call at all. Precision is the
-classifier's job: it can label a candidate as not about AI.
+classifier's job: it can label a candidate as not about AI. Every passage found
+here is classified, whichever tier its terms have.
 
 The vocabulary comes from the glossaries (see glossary.py): the core AI list
 plus the glossary of the company's industry.
@@ -13,9 +14,12 @@ from __future__ import annotations
 from .glossary import Matcher, load
 
 # Every passage is one of two kinds of mention:
-#   "direct"    at least one ai-tier term: goes to the classifier,
-#   "implicit"  context-tier terms only: reported as a hint with its text,
-#               not classified.
+#   "direct"    at least one ai-tier term,
+#   "implicit"  context-tier terms only.
+# Both go to the classifier. The kind is kept on the passage, the task and the
+# report summary, so results can be split by it. (Until v0.5 implicit mentions
+# were not classified; on a sample of them the classifier found about one in
+# eight to be about AI.)
 MENTIONS = ("direct", "implicit")
 
 
