@@ -642,7 +642,11 @@ What the taxonomy lacks is visible as `other` and can be read.
   `RISK_TYPE_SUBDOMAINS` (`strategic_competitive` -> `other`; `regulatory_legal` ->
   `compromise_of_privacy`, `devaluation_of_human_effort`, `other`), and each of the two values has
   a criterion that names the firm-centric reading as not this harm. Numbers and definitions are
-  unchanged.
+  unchanged. A third test run then gave 6.4 to one passage instead of 17, and
+  6.5 to 14 instead of 17; the 14 state an uncertain or evolving legal and regulatory
+  environment for AI. Decision (2026-10-13): that is 6.5, regulation not keeping pace, not
+  `other`; the criterion stays as it is. Compliance obligations and compliance cost as such
+  remain excluded.
 
 ---
 
