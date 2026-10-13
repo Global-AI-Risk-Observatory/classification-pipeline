@@ -20,7 +20,7 @@ from .taxonomy import TAXONOMY_VERSION, Label
 
 _WS = re.compile(r"\s+")
 _SINGLE = ("ai_reference", "frame", "adoption_stage", "substantiveness")
-_MULTI = ("roles", "risk_types", "ai_kinds", "business_functions", "governance_responses", "disclosure_traits")
+_MULTI = ("roles", "risk_types", "mit_subdomains", "ai_kinds", "business_functions", "governance_responses", "disclosure_traits")
 
 
 def tasks(docs: list[dict], passages: list[dict]) -> list[dict]:
@@ -182,7 +182,7 @@ def adjudicate(labels_by_coder: dict[str, list[dict]]) -> tuple[list[dict], dict
         # Keep the voted label internally consistent with the schema's rules.
         if out["ai_reference"] in (None, "none"):
             out.update(
-                frame=None, roles=[], risk_types=[], business_functions=[], governance_responses=[],
+                frame=None, roles=[], risk_types=[], mit_subdomains=[], business_functions=[], governance_responses=[],
                 ai_kinds=[], disclosure_traits=[], adoption_stage=None, substantiveness=None,
             )
         else:
@@ -192,6 +192,10 @@ def adjudicate(labels_by_coder: dict[str, list[dict]]) -> tuple[list[dict], dict
                 out["risk_types"] = []
             elif not out["risk_types"]:
                 disputed.append("risk_types")
+            if "risk" not in out["roles"] and "incident" not in out["roles"]:
+                out["mit_subdomains"] = []
+            elif not out["mit_subdomains"]:
+                disputed.append("mit_subdomains")
             if not out["ai_kinds"]:
                 disputed.append("ai_kinds")
             if "adoption" not in out["roles"]:

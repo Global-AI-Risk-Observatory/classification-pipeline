@@ -45,6 +45,7 @@ def summarise(doc: dict, passages: list[dict], labels: list[dict]) -> dict:
         "frames": count("frame"),
         "roles": roles,
         "risk_types": count("risk_types"),
+        "mit_subdomains": count("mit_subdomains"),
         "adoption_stage": count("adoption_stage"),
         "business_functions": count("business_functions"),
         "governance_responses": count("governance_responses"),
@@ -94,6 +95,7 @@ def render(doc: dict, passages: list[dict], labels: list[dict], summary: dict) -
         f"- Frames: {fmt(summary['frames'])}",
         f"- Roles: {fmt(summary['roles'])}",
         f"- Risk types: {fmt(summary['risk_types'])}",
+        f"- MIT subdomains: {fmt(summary['mit_subdomains'])}",
         f"- Adoption stage: {fmt(summary['adoption_stage'])}",
         f"- Business functions: {fmt(summary['business_functions'])}",
         f"- Governance responses: {fmt(summary['governance_responses'])}",
@@ -119,6 +121,8 @@ def render(doc: dict, passages: list[dict], labels: list[dict], summary: dict) -
                 tags.append("roles: " + ", ".join(l["roles"]))
             if l["risk_types"]:
                 tags.append("risk: " + ", ".join(l["risk_types"]))
+            if l.get("mit_subdomains"):
+                tags.append("mit: " + ", ".join(l["mit_subdomains"]))
             if l["adoption_stage"]:
                 tags.append(f"adoption: {l['adoption_stage']}")
             if l.get("business_functions"):

@@ -15,7 +15,7 @@ from typing import Literal, Optional
 
 from pydantic import BaseModel, Field, model_validator
 
-TAXONOMY_VERSION = "0.8"
+TAXONOMY_VERSION = "0.9"
 
 # Each value: (definition, criteria). A value applies only if all its criteria hold.
 Definition = tuple[str, tuple[str, ...]]
@@ -284,6 +284,331 @@ RISK_TYPES: dict[str, Definition] = {
             "`note` explains the risk",
         ),
     ),
+}
+
+# v0.9: the MIT AI Risk Repository's Domain Taxonomy (7 domains, 24 subdomains; Slattery et al.,
+# arXiv 2408.12622, Table 2; airisk.mit.edu/risks). The shared key for linking disclosures to the
+# Repository, the Incident Tracker, the Delphi study and the Governance Map. Coded next to the
+# firm-centric `risk_types`, from what the passage states, for passages with the role `risk` or
+# `incident`. The value is the subdomain's number; `other` is the residual for stated harms the
+# taxonomy lacks (what the residual holds is itself a research question).
+MIT_SUBDOMAINS: dict[str, Definition] = {
+    "unfair_discrimination_misrepresentation": (
+        "1.1 Unfair discrimination and misrepresentation. Unequal treatment of individuals or groups "
+        "by AI, often based on race, gender, or other sensitive characteristics, resulting in "
+        "unfair outcomes and unfair representation of those groups.",
+        (
+            "the stated harm is unequal treatment, biased outcomes or misrepresentation of people"
+            " or groups by an AI system",
+            "the passage states that harm as a risk to the company (`risk`) or as an event that "
+            "occurred (`incident`), with AI as its cause or object",
+        ),
+    ),
+    "exposure_to_toxic_content": (
+        "1.2 Exposure to toxic content. AI that exposes users to harmful, abusive, unsafe or "
+        "inappropriate content, or provides advice or encourages action of that kind.",
+        (
+            "the stated harm is that users are shown or given harmful, abusive, unsafe or "
+            "inappropriate content by an AI system",
+            "the passage states that harm as a risk to the company (`risk`) or as an event that "
+            "occurred (`incident`), with AI as its cause or object",
+        ),
+    ),
+    "unequal_performance_across_groups": (
+        "1.3 Unequal performance across groups. Accuracy and effectiveness of AI decisions and "
+        "actions depend on group membership, through design decisions or biased training data.",
+        (
+            "the stated harm is that an AI system works worse for some groups than for others",
+            "the passage states that harm as a risk to the company (`risk`) or as an event that "
+            "occurred (`incident`), with AI as its cause or object",
+        ),
+    ),
+    "compromise_of_privacy": (
+        "2.1 Compromise of privacy by obtaining, leaking, or correctly inferring sensitive "
+        "information. AI systems that memorize and leak sensitive personal data or infer private "
+        "information without consent; unauthorized sharing of data that compromises privacy, "
+        "assists identity theft or loses confidential intellectual property.",
+        (
+            "the stated harm is the leak, memorisation, inference or unauthorised use of personal"
+            " data, confidential information or intellectual property through an AI system, "
+            "including the company's own data entered into third-party AI tools",
+            "the passage states that harm as a risk to the company (`risk`) or as an event that "
+            "occurred (`incident`), with AI as its cause or object",
+        ),
+    ),
+    "ai_system_security_vulnerabilities_attacks": (
+        "2.2 AI system security vulnerabilities and attacks. Vulnerabilities in AI systems, software "
+        "development toolchains and hardware that result in unauthorized access, data and privacy"
+        " breaches, or system manipulation causing unsafe outputs or behavior.",
+        (
+            "the stated harm is that an AI system the company uses or offers is attacked, "
+            "manipulated, poisoned or otherwise compromised (the AI is the target)",
+            "the passage states that harm as a risk to the company (`risk`) or as an event that "
+            "occurred (`incident`), with AI as its cause or object",
+        ),
+    ),
+    "false_or_misleading_information": (
+        "3.1 False or misleading information. AI systems that inadvertently generate or spread "
+        "incorrect or deceptive information, leading to inaccurate beliefs and to physical, "
+        "emotional or material harms from decisions based on them.",
+        (
+            "the stated harm is that an AI system produces wrong, fabricated or misleading output"
+            " that people or the company may act on (hallucination, inaccurate results)",
+            "the passage states that harm as a risk to the company (`risk`) or as an event that "
+            "occurred (`incident`), with AI as its cause or object",
+        ),
+    ),
+    "pollution_of_information_ecosystem": (
+        "3.2 Pollution of information ecosystem and loss of consensus reality. Highly personalized "
+        "AI-generated misinformation that creates filter bubbles, undermining shared reality and "
+        "weakening social cohesion and political processes.",
+        (
+            "the stated harm is to the information environment as a whole (misinformation at "
+            "scale, erosion of trust in information), not a single wrong output",
+            "the passage states that harm as a risk to the company (`risk`) or as an event that "
+            "occurred (`incident`), with AI as its cause or object",
+        ),
+    ),
+    "disinformation_surveillance_influence": (
+        "4.1 Disinformation, surveillance, and influence at scale. Using AI systems for large-scale "
+        "disinformation campaigns, malicious surveillance, or automated censorship and propaganda"
+        " to manipulate political processes, public opinion and behavior.",
+        (
+            "the stated harm involves an actor using AI for disinformation, surveillance, "
+            "censorship or influence campaigns",
+            "the passage states that harm as a risk to the company (`risk`) or as an event that "
+            "occurred (`incident`), with AI as its cause or object",
+        ),
+    ),
+    "cyberattacks_weapons_mass_harm": (
+        "4.2 Cyberattacks, weapon development or use, and mass harm. Using AI systems to develop "
+        "cyber weapons, to develop or enhance weapons, or to use weapons to cause mass harm.",
+        (
+            "the stated harm is an attacker's use of AI for cyberattacks, malware or weapons (AI "
+            "is the attacker's tool against the company or others)",
+            "the passage states that harm as a risk to the company (`risk`) or as an event that "
+            "occurred (`incident`), with AI as its cause or object",
+        ),
+    ),
+    "fraud_scams_targeted_manipulation": (
+        "4.3 Fraud, scams, and targeted manipulation. Using AI systems to gain a personal advantage "
+        "over others through cheating, fraud, scams, blackmail, or targeted manipulation, "
+        "including impersonation and synthetic imagery.",
+        (
+            "the stated harm is fraud, impersonation, deepfakes or scams carried out with AI "
+            "against the company, its customers or its staff",
+            "the passage states that harm as a risk to the company (`risk`) or as an event that "
+            "occurred (`incident`), with AI as its cause or object",
+        ),
+    ),
+    "overreliance_unsafe_use": (
+        "5.1 Overreliance and unsafe use. Anthropomorphizing, trusting or relying on AI systems by "
+        "users, leading to dependence, inappropriate expectations, exploitation of that trust, or"
+        " harm from inappropriate use in critical situations.",
+        (
+            "the stated harm is that people (staff, customers, patients) rely on or use an AI "
+            "system in a way that is unsafe or inappropriate, or trust its output too much",
+            "the passage states that harm as a risk to the company (`risk`) or as an event that "
+            "occurred (`incident`), with AI as its cause or object",
+        ),
+    ),
+    "loss_of_human_agency_autonomy": (
+        "5.2 Loss of human agency and autonomy. Delegation of key decisions to AI systems, or AI "
+        "systems that make decisions that diminish human control and autonomy.",
+        (
+            "the stated harm is a loss of human control, oversight or autonomy because decisions "
+            "are delegated to an AI system",
+            "the passage states that harm as a risk to the company (`risk`) or as an event that "
+            "occurred (`incident`), with AI as its cause or object",
+        ),
+    ),
+    "power_centralization_unfair_benefits": (
+        "6.1 Power centralization and unfair distribution of benefits. AI-driven concentration of "
+        "power and resources within entities with access to or ownership of powerful AI, leading "
+        "to inequitable distribution of benefits.",
+        (
+            "the stated harm is a concentration of power or benefits with the owners of AI "
+            "(dependence on a few AI providers, market power, unequal access)",
+            "the passage states that harm as a risk to the company (`risk`) or as an event that "
+            "occurred (`incident`), with AI as its cause or object",
+        ),
+    ),
+    "inequality_decline_employment_quality": (
+        "6.2 Increased inequality and decline in employment quality. Social and economic inequalities"
+        " caused by widespread use of AI, such as automating jobs, reducing the quality of "
+        "employment, or producing exploitative dependencies between workers and employers.",
+        (
+            "the stated harm concerns jobs, employment quality, skills or labour relations as a "
+            "consequence of AI",
+            "the passage states that harm as a risk to the company (`risk`) or as an event that "
+            "occurred (`incident`), with AI as its cause or object",
+        ),
+    ),
+    "devaluation_of_human_effort": (
+        "6.3 Economic and cultural devaluation of human effort. AI creating economic or cultural "
+        "value by reproducing human innovation or creativity, destabilizing systems that rely on "
+        "human effort and disrupting creative and knowledge-based industries.",
+        (
+            "the stated harm is that AI-generated work substitutes or devalues human creative or "
+            "knowledge work (content, art, code, research), including intellectual-property "
+            "disputes over AI-generated or AI-trained material",
+            "the passage states that harm as a risk to the company (`risk`) or as an event that "
+            "occurred (`incident`), with AI as its cause or object",
+        ),
+    ),
+    "competitive_dynamics": (
+        "6.4 Competitive dynamics. Competition by AI developers or state-like actors in an AI race, "
+        "rapidly developing and deploying AI to maximize advantage, increasing the risk of "
+        "releasing unsafe and error-prone systems.",
+        (
+            "the stated harm is that competitive pressure leads to rushed, unsafe or premature AI"
+            " development or deployment (by the company or in its market)",
+            "the passage states that harm as a risk to the company (`risk`) or as an event that "
+            "occurred (`incident`), with AI as its cause or object",
+        ),
+    ),
+    "governance_failure": (
+        "6.5 Governance failure. Inadequate regulatory frameworks and oversight mechanisms that fail "
+        "to keep pace with AI development, leading to ineffective governance and the inability to"
+        " manage AI risks.",
+        (
+            "the stated harm is that rules, standards or oversight for AI are absent, unclear, "
+            "lagging or inconsistent, including regulatory uncertainty the company faces",
+            "the passage states that harm as a risk to the company (`risk`) or as an event that "
+            "occurred (`incident`), with AI as its cause or object",
+        ),
+    ),
+    "environmental_harm": (
+        "6.6 Environmental harm. The development and operation of AI systems that cause environmental"
+        " harm, such as through energy consumption of data centers or the materials and carbon "
+        "footprint of AI hardware.",
+        (
+            "the stated harm is energy, water, carbon or resource use of AI or its infrastructure",
+            "the passage states that harm as a risk to the company (`risk`) or as an event that "
+            "occurred (`incident`), with AI as its cause or object",
+        ),
+    ),
+    "ai_pursuing_own_goals": (
+        "7.1 AI pursuing its own goals in conflict with human goals or values. AI systems that act in"
+        " conflict with ethical standards or human goals or values, including through misaligned "
+        "behaviour such as manipulation, deception or power-seeking.",
+        (
+            "the stated harm is an AI system acting against the goals or values of its designers,"
+            " users or society (misalignment, deception, unintended behaviour)",
+            "the passage states that harm as a risk to the company (`risk`) or as an event that "
+            "occurred (`incident`), with AI as its cause or object",
+        ),
+    ),
+    "ai_dangerous_capabilities": (
+        "7.2 AI possessing dangerous capabilities. AI systems that develop, access, or are provided "
+        "with capabilities that increase their potential to cause mass harm, such as deception, "
+        "weapons development, cyber-offense, or self-proliferation.",
+        (
+            "the stated harm is that AI itself has or gains capabilities that could cause mass "
+            "harm (frontier or dual-use capabilities), independent of a specific attacker",
+            "the passage states that harm as a risk to the company (`risk`) or as an event that "
+            "occurred (`incident`), with AI as its cause or object",
+        ),
+    ),
+    "lack_of_capability_robustness": (
+        "7.3 Lack of capability or robustness. AI systems that fail to perform reliably or "
+        "effectively under varying conditions, exposing them to errors and failures with "
+        "significant consequences.",
+        (
+            "the stated harm is that an AI system is unreliable, inaccurate, brittle or fails, in"
+            " a sense other than wrong information for users (3.1) or unequal performance across "
+            "groups (1.3)",
+            "the passage states that harm as a risk to the company (`risk`) or as an event that "
+            "occurred (`incident`), with AI as its cause or object",
+        ),
+    ),
+    "lack_of_transparency_interpretability": (
+        "7.4 Lack of transparency or interpretability. Challenges in understanding or explaining the "
+        "decision-making of AI systems, leading to mistrust, difficulty in enforcing compliance "
+        "or holding actors accountable, and inability to identify and correct errors.",
+        (
+            "the stated harm is that AI decisions cannot be explained, audited or understood "
+            "(black box, explainability, accountability)",
+            "the passage states that harm as a risk to the company (`risk`) or as an event that "
+            "occurred (`incident`), with AI as its cause or object",
+        ),
+    ),
+    "ai_welfare_and_rights": (
+        "7.5 AI welfare and rights. Ethical considerations regarding the treatment of potentially "
+        "sentient AI entities, including their potential rights and welfare.",
+        (
+            "the stated concern is the moral status, welfare or rights of AI systems themselves",
+            "the passage states that harm as a risk to the company (`risk`) or as an event that "
+            "occurred (`incident`), with AI as its cause or object",
+        ),
+    ),
+    "multi_agent_risks": (
+        "7.6 Multi-agent risks. Risks from multi-agent interactions due to incentives (conflict or "
+        "collusion) or the structure of multi-agent systems, which can create cascading failures,"
+        " selection pressures, new security vulnerabilities, and a lack of shared information and"
+        " trust.",
+        (
+            "the stated harm arises from several AI systems or agents interacting (cascading "
+            "failures, collusion, conflict, loss of control over agent systems)",
+            "the passage states that harm as a risk to the company (`risk`) or as an event that "
+            "occurred (`incident`), with AI as its cause or object",
+        ),
+    ),
+    "other": (
+        "A stated AI risk or incident that fits none of the 24 subdomains.",
+        (
+            "the `risk` or `incident` role applies",
+            "no subdomain meets its criteria (firm-centric harms such as lost sales, lost "
+            "competitiveness or compliance cost without a subdomain's mechanism)",
+            "`note` names the harm",
+        ),
+    ),
+}
+
+# Where a firm-centric risk type usually lands in the Domain Taxonomy. Guidance for coders and the
+# basis of a post-hoc approximation on labels without the field; it is this pipeline's reading,
+# not a mapping published by MIT, and it never replaces coding from the passage.
+RISK_TYPE_SUBDOMAINS: dict[str, tuple[str, ...]] = {
+    "market_demand": ("other",),
+    "strategic_competitive": ("competitive_dynamics", "other"),
+    "operational_reliability": ("lack_of_capability_robustness", "false_or_misleading_information", "unfair_discrimination_misrepresentation", "unequal_performance_across_groups", "ai_pursuing_own_goals"),
+    "cybersecurity": ("ai_system_security_vulnerabilities_attacks", "cyberattacks_weapons_mass_harm", "fraud_scams_targeted_manipulation"),
+    "third_party": ("ai_system_security_vulnerabilities_attacks", "lack_of_capability_robustness", "power_centralization_unfair_benefits", "other"),
+    "regulatory_legal": ("governance_failure", "compromise_of_privacy", "devaluation_of_human_effort", "other"),
+    "workforce": ("inequality_decline_employment_quality",),
+    "reputational_ethical": ("unfair_discrimination_misrepresentation", "exposure_to_toxic_content", "overreliance_unsafe_use", "lack_of_transparency_interpretability"),
+    "information_integrity": ("false_or_misleading_information", "pollution_of_information_ecosystem", "disinformation_surveillance_influence", "fraud_scams_targeted_manipulation"),
+    "environmental": ("environmental_harm",),
+    "national_security": ("cyberattacks_weapons_mass_harm", "disinformation_surveillance_influence", "power_centralization_unfair_benefits"),
+    "other": ("other",),
+}
+
+# The Repository's numbering of the subdomains, for joins with MIT's datasets.
+MIT_SUBDOMAIN_NUMBERS: dict[str, str] = {
+    "unfair_discrimination_misrepresentation": "1.1",
+    "exposure_to_toxic_content": "1.2",
+    "unequal_performance_across_groups": "1.3",
+    "compromise_of_privacy": "2.1",
+    "ai_system_security_vulnerabilities_attacks": "2.2",
+    "false_or_misleading_information": "3.1",
+    "pollution_of_information_ecosystem": "3.2",
+    "disinformation_surveillance_influence": "4.1",
+    "cyberattacks_weapons_mass_harm": "4.2",
+    "fraud_scams_targeted_manipulation": "4.3",
+    "overreliance_unsafe_use": "5.1",
+    "loss_of_human_agency_autonomy": "5.2",
+    "power_centralization_unfair_benefits": "6.1",
+    "inequality_decline_employment_quality": "6.2",
+    "devaluation_of_human_effort": "6.3",
+    "competitive_dynamics": "6.4",
+    "governance_failure": "6.5",
+    "environmental_harm": "6.6",
+    "ai_pursuing_own_goals": "7.1",
+    "ai_dangerous_capabilities": "7.2",
+    "lack_of_capability_robustness": "7.3",
+    "lack_of_transparency_interpretability": "7.4",
+    "ai_welfare_and_rights": "7.5",
+    "multi_agent_risks": "7.6",
 }
 
 ADOPTION_STAGES: dict[str, Definition] = {
@@ -681,6 +1006,33 @@ BusinessFunction = Literal[
     "customer_service", "marketing_sales", "operations", "finance", "hr_workforce", "legal_compliance",
     "rd_product", "it_cybersecurity", "supply_chain", "manufacturing", "decision_analytics", "other", "not_stated",
 ]
+MitSubdomain = Literal[
+    "unfair_discrimination_misrepresentation",
+    "exposure_to_toxic_content",
+    "unequal_performance_across_groups",
+    "compromise_of_privacy",
+    "ai_system_security_vulnerabilities_attacks",
+    "false_or_misleading_information",
+    "pollution_of_information_ecosystem",
+    "disinformation_surveillance_influence",
+    "cyberattacks_weapons_mass_harm",
+    "fraud_scams_targeted_manipulation",
+    "overreliance_unsafe_use",
+    "loss_of_human_agency_autonomy",
+    "power_centralization_unfair_benefits",
+    "inequality_decline_employment_quality",
+    "devaluation_of_human_effort",
+    "competitive_dynamics",
+    "governance_failure",
+    "environmental_harm",
+    "ai_pursuing_own_goals",
+    "ai_dangerous_capabilities",
+    "lack_of_capability_robustness",
+    "lack_of_transparency_interpretability",
+    "ai_welfare_and_rights",
+    "multi_agent_risks",
+    "other",
+]
 AiKind = Literal[
     "traditional_ml", "generative_llm", "computer_vision", "nlp", "recommendation", "agentic", "other",
     "unspecified",
@@ -698,6 +1050,7 @@ class Label(BaseModel):
     frame: Optional[Frame] = None  # required when the passage is about AI; decided before the roles
     roles: list[Role] = Field(default_factory=list)
     risk_types: list[RiskType] = Field(default_factory=list)
+    mit_subdomains: list[MitSubdomain] = Field(default_factory=list)  # with role risk or incident
     adoption_stage: Optional[Literal["planned", "piloting", "deployed", "unclear"]] = None
     business_functions: list[BusinessFunction] = Field(default_factory=list)
     governance_responses: list[GovernanceResponse] = Field(default_factory=list)
@@ -713,7 +1066,7 @@ class Label(BaseModel):
     def _consistent(self) -> "Label":
         if self.ai_reference == "none":
             filled = (
-                self.frame or self.roles or self.risk_types or self.adoption_stage or self.ai_kinds
+                self.frame or self.roles or self.risk_types or self.mit_subdomains or self.adoption_stage or self.ai_kinds
                 or self.business_functions or self.governance_responses
                 or self.disclosure_traits or self.substantiveness or self.evidence
             )
@@ -728,6 +1081,8 @@ class Label(BaseModel):
             raise ValueError("'general' cannot be combined with other roles")
         if bool(self.risk_types) != ("risk" in self.roles):
             raise ValueError("risk_types must be given if and only if 'risk' is among the roles")
+        if bool(self.mit_subdomains) != ("risk" in self.roles or "incident" in self.roles):
+            raise ValueError("mit_subdomains must be given if and only if 'risk' or 'incident' is among the roles")
         if (self.adoption_stage is not None) != ("adoption" in self.roles):
             raise ValueError("adoption_stage must be given if and only if 'adoption' is among the roles")
         if bool(self.business_functions) != ("adoption" in self.roles):
@@ -788,7 +1143,7 @@ def codebook() -> str:
                 "job is to decide whether the passage treats AI or the term is a false positive.",
                 AI_REFERENCE,
             ),
-            "If `ai_reference` is `none`: set `roles`, `risk_types`, `business_functions`, `governance_responses`, "
+            "If `ai_reference` is `none`: set `roles`, `risk_types`, `mit_subdomains`, `business_functions`, `governance_responses`, "
             "`ai_kinds`, `disclosure_traits`, `entities` and `evidence` to `[]`, leave `frame`, "
             "`adoption_stage` and `substantiveness` as `null`, and still give "
             "`confidence`; `note` may still be used.\n",
@@ -847,6 +1202,16 @@ def codebook() -> str:
                     "sanctions, procurement bans) is `national_security`; add `regulatory_legal` only when the "
                     "passage also states compliance costs, enforcement or liability for the company.",
                 ),
+            ),
+            _table(
+                "Which subdomains of the MIT AI Risk Repository?", "mit_subdomains",
+                "One or more values if and only if `risk` or `incident` is among the roles; otherwise `[]`. "
+                "Each value names a subdomain; its number is given in the definition. Code from the harm the passage states, not from the risk type you "
+                "gave: a passage can carry one `risk_types` value and two subdomains, or a subdomain the risk type "
+                "does not suggest. Firm-centric harms with no subdomain mechanism (lost sales, lost competitiveness, "
+                "compliance cost as such) are `other`. Typical, not binding: "
+                + "; ".join(f"`{k}` -> {', '.join(f'`{v}`' for v in vs)}" for k, vs in RISK_TYPE_SUBDOMAINS.items()) + ".",
+                MIT_SUBDOMAINS,
             ),
             _table(
                 "How far is the company's own use?", "adoption_stage",

@@ -700,6 +700,8 @@ def label_fields(**overrides) -> dict:
     # The fields a role requires, unless the test sets them itself.
     if "adoption" in fields["roles"]:
         fields.setdefault("business_functions", ["not_stated"])
+    if "risk" in fields["roles"] or "incident" in fields["roles"]:
+        fields.setdefault("mit_subdomains", ["other"])
     if "governance" in fields["roles"]:
         fields.setdefault("governance_responses", ["policies_processes"])
     return fields
@@ -860,6 +862,7 @@ def test_taxonomy_definitions_and_schema_list_the_same_values():
     assert allowed("frame") == set(taxonomy.FRAMES)
     assert allowed("roles") == set(taxonomy.ROLES)
     assert allowed("risk_types") == set(taxonomy.RISK_TYPES)
+    assert allowed("mit_subdomains") == set(taxonomy.MIT_SUBDOMAINS)
     assert allowed("adoption_stage") == set(taxonomy.ADOPTION_STAGES)
     assert allowed("ai_kinds") == set(taxonomy.AI_KINDS)
     assert allowed("substantiveness") == set(taxonomy.SUBSTANTIVENESS)
@@ -879,6 +882,7 @@ ALL_DEFINITIONS = (
     taxonomy.FRAMES,
     taxonomy.ROLES,
     taxonomy.RISK_TYPES,
+    taxonomy.MIT_SUBDOMAINS,
     taxonomy.ADOPTION_STAGES,
     taxonomy.BUSINESS_FUNCTIONS,
     taxonomy.GOVERNANCE_RESPONSES,
@@ -1326,6 +1330,7 @@ def test_adjudicate_agreement_report():
         "substantiveness": 1.0,  # P1 P2 P3 P4 (the fixture's default)
         "roles": 0.5,  # P1 P3
         "risk_types": 0.5,  # P1 P3
+        "mit_subdomains": 0.5,  # P1 P3 (the fixture's default `other` wherever risk is a role)
         "business_functions": 1.0,  # empty on P1 P3 P4; on P2 all three give adoption with the same function
         "governance_responses": 1.0,  # no coder gives the governance role
         "disclosure_traits": 0.75,  # P1 P3 P4
@@ -1358,13 +1363,14 @@ def passage(pid: str, section: str | None, mention: str = "direct") -> dict:
 
 
 def final_label(pid: str, ai_reference: str | None, frame=None, roles=(), risk_types=(), adoption_stage=None,
-                ai_kinds=[], disclosure_traits=(), entities=(), needs_review=False, substantiveness=None,
-                business_functions=(), governance_responses=()) -> dict:
+                ai_kinds=(), disclosure_traits=(), entities=(), needs_review=False, substantiveness=None,
+                business_functions=(), governance_responses=(), mit_subdomains=()) -> dict:
     """A label in the shape classify.adjudicate writes to labels_final.jsonl."""
     return {
         "passage_id": pid, "ai_reference": ai_reference, "frame": frame, "roles": list(roles),
         "risk_types": list(risk_types), "adoption_stage": adoption_stage, "ai_kinds": list(ai_kinds),
         "business_functions": list(business_functions), "governance_responses": list(governance_responses),
+        "mit_subdomains": list(mit_subdomains) or (["other"] if "risk" in roles or "incident" in roles else []),
         "disclosure_traits": list(disclosure_traits), "entities": list(entities), "needs_review": needs_review,
         "substantiveness": substantiveness or ("generic" if ai_reference == "explicit" else None),
     }
@@ -1795,4 +1801,65 @@ def test_adjudicate_votes_per_kind_of_ai():
         coded(P1, "c", ai_kinds=["unspecified"]),
     ))
     assert final[P1]["ai_kinds"] == ["generative_llm"] and not final[P1]["needs_review"]
+
+
+def test_mit_subdomains_are_the_24_of_the_repository_plus_other_and_go_with_risk_or_incident():
+    assert len(taxonomy.MIT_SUBDOMAINS) == 25 and list(taxonomy.MIT_SUBDOMAINS)[-1] == "other"
+    assert list(taxonomy.MIT_SUBDOMAIN_NUMBERS) == list(taxonomy.MIT_SUBDOMAINS)[:-1]
+    assert list(taxonomy.MIT_SUBDOMAIN_NUMBERS.values()) == [
+        "1.1", "1.2", "1.3", "2.1", "2.2", "3.1", "3.2", "4.1", "4.2", "4.3", "5.1", "5.2",
+        "6.1", "6.2", "6.3", "6.4", "6.5", "6.6", "7.1", "7.2", "7.3", "7.4", "7.5", "7.6",
+    ]
+    assert taxonomy.MIT_SUBDOMAINS["multi_agent_risks"][0].startswith("7.6 Multi-agent risks.")
+    label = Label(**label_fields(roles=["risk"], risk_types=["cybersecurity"], mit_subdomains=["ai_system_security_vulnerabilities_attacks", "fraud_scams_targeted_manipulation"]))
+    assert label.mit_subdomains == ["ai_system_security_vulnerabilities_attacks", "fraud_scams_targeted_manipulation"]
+    incident = Label(**label_fields(roles=["incident"], mit_subdomains=["compromise_of_privacy"]))
+    assert incident.mit_subdomains == ["compromise_of_privacy"] and incident.risk_types == []
+    with pytest.raises(ValidationError, match="mit_subdomains must be given if and only if"):
+        Label(**label_fields(roles=["risk"], risk_types=["cybersecurity"], mit_subdomains=[]))
+    with pytest.raises(ValidationError, match="mit_subdomains must be given if and only if"):
+        Label(**label_fields(roles=["adoption"], adoption_stage="deployed", mit_subdomains=["inequality_decline_employment_quality"]))
+    with pytest.raises(ValidationError):
+        Label(**label_fields(roles=["risk"], risk_types=["other"], mit_subdomains=["8.1"]))
+    assert Label(passage_id="d1:0-2", ai_reference="none", confidence="high").mit_subdomains == []
+    text = taxonomy.codebook()
+    assert "(`mit_subdomains`)" in text and "- `multi_agent_risks`: 7.6 Multi-agent risks." in text and "Typical, not binding" in text
+    assert text.index("(`risk_types`)") < text.index("(`mit_subdomains`)") < text.index("(`adoption_stage`)")
+    assert set(taxonomy.RISK_TYPE_SUBDOMAINS) == set(taxonomy.RISK_TYPES)
+    assert all(v in taxonomy.MIT_SUBDOMAINS for vs in taxonomy.RISK_TYPE_SUBDOMAINS.values() for v in vs)
+
+
+def test_adjudicate_votes_per_subdomain_and_clears_them_without_risk_or_incident():
+    risk = dict(roles=["risk"], risk_types=["cybersecurity"])
+    final, _ = adjudicated(by_coder(
+        coded(P1, "a", **risk, mit_subdomains=["ai_system_security_vulnerabilities_attacks", "fraud_scams_targeted_manipulation"]),
+        coded(P1, "b", **risk, mit_subdomains=["ai_system_security_vulnerabilities_attacks"]),
+        coded(P1, "c", **risk, mit_subdomains=["other"]),
+        # P2: risk loses the vote, so the subdomains go with it.
+        coded(P2, "a", **risk, mit_subdomains=["ai_system_security_vulnerabilities_attacks"]),
+        coded(P2, "b"),
+        coded(P2, "c"),
+        # P3: risk wins, but no subdomain has a majority.
+        coded(P3, "a", **risk, mit_subdomains=["ai_system_security_vulnerabilities_attacks"]),
+        coded(P3, "b", **risk, mit_subdomains=["cyberattacks_weapons_mass_harm"]),
+        coded(P3, "c", **risk, mit_subdomains=["fraud_scams_targeted_manipulation"]),
+    ))
+    assert final[P1]["mit_subdomains"] == ["ai_system_security_vulnerabilities_attacks"] and not final[P1]["needs_review"]
+    assert (final[P2]["roles"], final[P2]["mit_subdomains"]) == (["market_driver"], [])
+    assert final[P3]["mit_subdomains"] == [] and "mit_subdomains" in final[P3]["disputed"]
+
+
+def test_summarise_counts_the_subdomains():
+    passages = [passage("d1:0-2", "Item 1A"), passage("d1:5-7", "Item 1A")]
+    labels = [
+        final_label("d1:0-2", "explicit", frame="risk_factor", roles=["risk"], risk_types=["cybersecurity"],
+                    ai_kinds=["unspecified"], mit_subdomains=["ai_system_security_vulnerabilities_attacks", "fraud_scams_targeted_manipulation"]),
+        final_label("d1:5-7", "explicit", frame="risk_factor", roles=["risk"], risk_types=["workforce"],
+                    ai_kinds=["unspecified"], mit_subdomains=["inequality_decline_employment_quality"]),
+    ]
+    s = aggregate.summarise(REPORT, passages, labels)
+    assert s["mit_subdomains"] == {"ai_system_security_vulnerabilities_attacks": 1, "fraud_scams_targeted_manipulation": 1, "inequality_decline_employment_quality": 1}
+    rendered = aggregate.render(REPORT, [{**p, "section_title": None, "blocks": [0, 2], "text": "T"} for p in passages],
+                                [{**l, "evidence": [], "notes": [], "disputed": []} for l in labels], s)
+    assert "- MIT subdomains: ai_system_security_vulnerabilities_attacks (1), fraud_scams_targeted_manipulation (1), inequality_decline_employment_quality (1)\n" in rendered and "| mit: ai_system_security_vulnerabilities_attacks, fraud_scams_targeted_manipulation" in rendered
 

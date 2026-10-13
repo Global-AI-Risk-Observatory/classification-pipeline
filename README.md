@@ -234,7 +234,7 @@ of the AI statement before judging any role or trait; criteria marked "frame-dep
 `substantiveness`; v0.6 added `business_functions`, `governance_responses` and the risk type
 `national_security`; v0.7 removed `implicit` from `ai_reference`: a passage either treats AI or it does
 not, and context passages are not labelled at all; v0.8 made `ai_kinds` a list of eight kinds, coded only
-when named.
+when named; v0.9 added `mit_subdomains`, the shared key to the MIT AI Risk Repository.
 
 | Field | Allowed values | Rule |
 |---|---|---|
@@ -242,6 +242,7 @@ when named.
 | `frame` | `risk_factor`, `governance`, `business`, `market` | exactly one when the passage is about AI, decided from section, heading and sentence function before any role or trait; `null` if and only if `ai_reference` is `none` |
 | `roles` | `market_driver`, `adoption`, `offering`, `risk`, `governance`, `incident`, `general` | one or more; `general` only alone |
 | `risk_types` | `market_demand`, `strategic_competitive`, `operational_reliability`, `cybersecurity`, `third_party`, `regulatory_legal`, `workforce`, `reputational_ethical`, `information_integrity`, `environmental`, `national_security`, `other` | one or more if and only if `risk` is a role |
+| `mit_subdomains` | the 24 subdomains of the MIT AI Risk Repository by name (`unfair_discrimination_misrepresentation` … `multi_agent_risks`; `MIT_SUBDOMAIN_NUMBERS` maps them to `1.1` … `7.6`), `other` | one or more if and only if `risk` or `incident` is a role; coded from the stated harm, next to `risk_types` |
 | `adoption_stage` | `planned`, `piloting`, `deployed`, `unclear` | exactly one if and only if `adoption` is a role |
 | `business_functions` | `customer_service`, `marketing_sales`, `operations`, `finance`, `hr_workforce`, `legal_compliance`, `rd_product`, `it_cybersecurity`, `supply_chain`, `manufacturing`, `decision_analytics`, `other`, `not_stated` | one or more if and only if `adoption` is a role; the company's own use; `not_stated` only alone |
 | `governance_responses` | `oversight_structure`, `policies_processes`, `technical_controls`, `third_party_controls`, `workforce_measures`, `transparency_accountability`, `other` | one or more if and only if `governance` is a role |

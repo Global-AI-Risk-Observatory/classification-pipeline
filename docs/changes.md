@@ -578,3 +578,53 @@ as the measure of how much companies say about the AI they mean.
 - An `autonomous vehicle` is not `agentic` by the criteria; if the team wants autonomy as a
   kind, it is a one-line change and a glossary decision in one.
 
+---
+
+## 15. `mit_subdomains`: the shared key to the MIT AI Risk Repository (v0.9)
+
+**Original.** The UK pipeline's risk types were its own ten categories; no link to an external
+taxonomy.
+
+**Before (v0.4 to v0.8).** `risk_types`, twelve firm-centric values (what the harm is for the
+company). Nothing to join to the MIT Risk Repository, the Incident Tracker, the Delphi study
+or the Governance Map, which share one domain taxonomy.
+
+**New** (`src/airo/taxonomy.py`, `classify.py`, `aggregate.py`). `mit_subdomains`: one or more
+of the 24 subdomains of the Repository's Domain Taxonomy, by name (`unfair_discrimination_misrepresentation`
+to `multi_agent_risks`; `MIT_SUBDOMAIN_NUMBERS` maps each to the Repository's number for joins), plus the
+residual `other`; given if and only if `risk` or `incident` is among the roles, coded from the
+harm the passage states, next to `risk_types` and independently of it. Names and descriptions
+are those of Table 2 in Slattery et al. (arXiv 2408.12622, v3 of 2026-05-05) and of
+airisk.mit.edu/risks, read on 2026-10-13; both give the same 7 domains and 24 subdomains,
+including `7.5 AI welfare and rights` and `7.6 Multi-agent risks`. The criteria are this
+pipeline's (what the passage must state), with the second criterion the same for every
+value: the harm is stated as a risk to the company or as an event that occurred, with AI as
+its cause or object. `RISK_TYPE_SUBDOMAINS` records where each firm-centric risk type usually
+lands; the codebook shows it as "typical, not binding", and it is the basis of a post-hoc
+approximation on labels that lack the field. It is this pipeline's reading, not a mapping
+published by MIT. Adjudication votes per subdomain; aggregation counts them per report.
+
+**Why.** Every linkage in the research plan runs through this key: themes via subdomains (A1),
+the residual (A3), the gap between implied and disclosed risks (D1), severity weights (D2),
+and the policy team's "alignment with a reference taxonomy". The team briefing of 2026-10-08
+listed the field as the first taxonomy step; v0.5 added `substantiveness` instead. Coding it in
+the same pass as `roles` and `risk_types` keeps the three in one reading of the passage (entry
+12 measured how adding fields moves existing ones) and avoids a second pass over the roughly
+45 % of AI passages that carry the `risk` role.
+
+**Better.** A disclosed risk can be joined to the Repository's 1,700 risks, to incidents per
+subdomain and to the Delphi severity per subdomain without a crosswalk from firm-centric types.
+What the taxonomy lacks is visible as `other` and can be read.
+
+**Not better / open.**
+
+- The Repository assigns a risk to its single most appropriate subdomain; this field allows
+  several per passage. Counts per subdomain are therefore not directly comparable with the
+  Repository's; shares of passages per subdomain are.
+- MIT's subdomains describe societal hazards; a 10-K states risks to the company. The second
+  criterion bridges the two, and `other` catches what does not bridge (lost sales, lost
+  competitiveness, compliance cost as such). How large `other` is, and what it holds, is
+  unknown until a run.
+- v0.9 has not been run on a corpus. The codebook grew by 25 values; its length is now about
+  48,000 characters (v0.5: 24,000).
+

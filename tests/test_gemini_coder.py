@@ -64,6 +64,7 @@ LABELS = {
         "frame": "risk_factor",
         "roles": ["adoption", "risk"],
         "risk_types": ["operational_reliability", "reputational_ethical"],
+        "mit_subdomains": ["lack_of_capability_robustness", "unfair_discrimination_misrepresentation"],
         "adoption_stage": "deployed",
         "business_functions": ["operations"],
         "ai_kinds": ["traditional_ml"],
