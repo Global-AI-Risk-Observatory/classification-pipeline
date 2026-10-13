@@ -117,7 +117,7 @@ that pass the pipeline's own validation as JSONL for `accept`, and a `<out>.run.
 run's totals (tasks, succeeded, failed, tokens by kind, wall time, model, estimated cost).
 
     python -m airo.coders.gemini --tasks data/tasks.jsonl --codebook data/codebook.md \
-        --out data/labels_in/gemini.jsonl --model gemini-3.8-flash \
+        --out data/labels_in/gemini.jsonl --model gemini-2.5-flash --thinking-budget 0 \
         --project gario-1 --location us-central1 \
         [--workers 4] [--thinking-budget N] [--price-input X --price-output Y] [--limit N]
     python -m airo --data data accept data/labels_in/gemini.jsonl --coder gemini
@@ -130,8 +130,10 @@ built in: give `--price-input` and `--price-output` in USD per million tokens to
 output limit, so `--max-output-tokens` defaults to 4096 and `--thinking-budget` caps the thinking.
 Failed passages (transient errors after retries, invalid or schema-breaking output, paraphrased
 evidence) are listed in the run file and left out of the labels file; re-run with `--limit` or a
-filtered task file to retry them. The live call has not yet been exercised: the module was written
-against the SDK's documented interface and tested only with a fake client.
+filtered task file to retry them. The live call is exercised: `us-2025h1_V2` (taxonomy v0.5, 7,794
+filings), the 3,321-passage sample of context passages, the 40-filing tests and `us-2025h1_V3` (taxonomy
+v0.9) all ran with it against Vertex AI, 40 passages per request, temperature 0, thinking off; measured
+cost about USD 0.002 per passage. The unit tests use a fake client.
 
 ## Google Cloud
 
@@ -143,7 +145,7 @@ The pipeline is deployed on Google Cloud; the settings are in `cloud/config.env`
 | Raw filings | bucket `airo-filings-raw` (regional, Standard, uniform access, no public access, no versioning, deleted objects recoverable for 7 days): `markdown/<filing id>.md` and `manifest/<filing id>.json`, written by `fetch`, each filing once, and the company list `companies/us.jsonl` |
 | Pipeline outputs | bucket `airo-pipeline-data` (same settings) |
 | Pipeline identity | service account `airo-pipeline@gario-1.iam.gserviceaccount.com`: Storage Object User, Agent Platform (Vertex AI) User, Batch Job Editor, BigQuery Data Editor, BigQuery Job User, Secret Manager Secret Accessor, Artifact Registry Reader, Batch Agent Reporter, Logs Writer |
-| Model | Gemini `gemini-3.8-flash` through Vertex AI, tested in Vertex AI Studio |
+| Model | Gemini `gemini-2.5-flash` through Vertex AI: temperature 0, thinking off, 40 passages per request, JSON output bound to the label schema |
 | Image | `us-central1-docker.pkg.dev/gario-1/airo/pipeline` (Artifact Registry repository `airo`), built from `Dockerfile` |
 | Build | Cloud Build trigger `airo-main` on every push to `main` of this repository (GitHub connection `GithubAIRO`, 2nd gen): runs the tests, builds and pushes the image (`cloudbuild.yaml`), as service account `cloudbuild-airo@gario-1.iam.gserviceaccount.com` |
 | Enabled APIs | Cloud Storage, Vertex AI, Batch, BigQuery, Secret Manager, Artifact Registry, Cloud Build, Compute Engine |
@@ -152,9 +154,13 @@ The pipeline is deployed on Google Cloud; the settings are in `cloud/config.env`
 Set up and pending:
 
 - Done: project, billing, IAM for the team, buckets, service accounts, APIs, Gemini access, GitHub
-  connection, build trigger; the first build succeeded (tests passed in the cloud, image pushed).
-- Pending: the first `fetch` into the raw bucket; the first Cloud Batch run of the pipeline over the raw
-  bucket; the BigQuery tables for labels and summaries.
+  connection, build trigger; builds on every push to `main`; `fetch` of the 7,794 filings of 2025 H1 into
+  the raw bucket; the runs `us-2025h1` (UK pipeline), `us-2025h1_V2` (taxonomy v0.5) and `us-2025h1_V3`
+  (taxonomy v0.9) in the pipeline-data bucket.
+- Not done: a Cloud Batch run. `us-2025h1_V2` and `us-2025h1_V3` were run on a workstation with the
+  buckets as source and target. Three Batch job attempts on 2026-10-13 failed before the container's
+  script started; the cause is not established (probably the mount path `/mnt/out`, which lies outside
+  `/mnt/disks` on the Batch VM image). Also not done: the BigQuery tables for labels and summaries.
 
 The data provider's API key is not stored in the cloud (Secret Manager holds no secret): the provider
 counts requests per key, so every team member runs `fetch` from their own machine with their own key, and
@@ -226,7 +232,7 @@ The container runs `python -m airo <command>` with `AIRO_GLOSSARIES=/app/glossar
   field, the share of passages on which all coders agree, the share of coder pairs with identical labels,
   and the passages to review.
 
-## Taxonomy v0.7
+## Taxonomy v0.9
 
 One label per passage. `taxonomy.py` is the single definition; `python -m airo tasks` renders it as the
 full codebook, with a definition and a checklist of criteria for every value (a value applies only if all
@@ -261,10 +267,13 @@ when named; v0.9 added `mit_subdomains`, the shared key to the MIT AI Risk Repos
 - Section detection knows only Form 10-K "Item" headings ("Item 1A. Risk Factors"). A block belongs to the
   most recent Item heading, so content after the last one, such as the financial statements, is attributed
   to that last item. Other forms and other report formats get no sections.
-- The glossaries are English only, and were written from domain knowledge, not mined from filings; they
-  have been exercised on one 10-K so far and need review against real reports per industry.
-- The Gemini coder has not yet been run against Vertex AI (no credentials in the development
-  environment); the three-coder runs so far were done by agents handing in label files.
+- The glossaries are English only, and were written from domain knowledge, not mined from filings. They
+  have been exercised on the 2025 H1 corpus; the review so far is the recall check of each run and the
+  2026-10-13 sample of 3,321 context passages (`docs/changes.md`, entries 12 and 13). A review per
+  industry against real reports is still open.
+- No human-labelled US passage exists yet: every label so far is the model's. The three-coder runs of
+  the case study were agents handing in label files. Agreement with people is the open item 3 of the
+  research plan.
 - Input is the provider's Markdown (or HTML / inline XBRL). There is no PDF reader. A Markdown filing has no
   XBRL facts: its metadata comes from the manifest. The filer category (large accelerated filer, ...) is in
   neither the provider's data nor read from the cover page, so it is empty. A manifest field without a value
