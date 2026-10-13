@@ -124,3 +124,21 @@ def test_export_without_manifest_uses_the_document_record(tmp_path):
                      "filing_date": "2025-03-04", "form": "10-K", "isic_division": "07", "isic_class": "0721", "ticker": "ACM", "text_id": "d9"}]
     monthly = json.loads((tmp_path / "out" / "results" / "us-filing-metrics.json").read_text())
     assert monthly["invalidRows"] == 1 and monthly["months"][0]["aiMentionShare"] == 0.0
+
+
+def test_export_names_a_filing_after_its_file_when_the_manifest_lacks_it(tmp_path):
+    # A text carried by two filings, with a manifest row for the first only: the second keeps its own id.
+    data = tmp_path / "work"
+    d = doc("d7", 71, ["71.md", "72.md"])
+    (data / "docs" / "d7").mkdir(parents=True)
+    (data / "docs" / "d7" / "document.json").write_text(json.dumps(d), encoding="utf-8")
+    write_jsonl(data / "docs" / "d7" / "passages.jsonl", [passage("d7", (0, 1), "direct", "AI.")])
+    manifest = tmp_path / "manifest"
+    manifest.mkdir()
+    (manifest / "71.json").write_text(json.dumps({"file": "71.md", "filing_id": 71, "form": "10-K", "filing_date": "2025-03-04"}), encoding="utf-8")
+    export.export(data, tmp_path / "out", run_id="r", manifest=manifest, log=lambda *_: None)
+    rows = json.loads((tmp_path / "out" / "documents_manifest.json").read_text())["documents"]
+    assert [r["document_id"] for r in rows] == ["71", "72"]
+    metrics = [json.loads(l) for l in (tmp_path / "out" / "results" / "filing_metrics.jsonl").read_text().splitlines()]
+    assert [m["document_id"] for m in metrics] == ["71", "72"]
+

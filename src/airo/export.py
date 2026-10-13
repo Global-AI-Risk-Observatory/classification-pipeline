@@ -96,7 +96,8 @@ def _chunk(doc: dict, p: dict) -> dict:
     }
 
 
-def _filing_row(meta: dict, doc: dict, direct: list[dict], context: list[dict], labels: dict[str, dict]) -> dict:
+def _filing_row(name: str, meta: dict, doc: dict, direct: list[dict], context: list[dict],
+                labels: dict[str, dict]) -> dict:
     mine = [labels[p["passage_id"]] for p in direct if p["passage_id"] in labels]
     ai = [l for l in mine if l["ai_reference"] == "explicit"]
 
@@ -115,7 +116,8 @@ def _filing_row(meta: dict, doc: dict, direct: list[dict], context: list[dict], 
     roles = tally("roles")
     filing_date = meta.get("filing_date") or doc.get("filing_date")
     return {
-        "document_id": str(meta.get("filing_id") or _filing_id(meta.get("file", "")) or doc.get("filing_id")),
+        # The filing is the file; its id comes from the manifest row or, without one, from the file name.
+        "document_id": str(meta.get("filing_id") or _filing_id(name)),
         "text_id": doc["doc_id"],
         "company_id": meta.get("cik") or doc.get("cik"),
         "company_name": meta.get("company") or doc.get("company"),
@@ -265,7 +267,7 @@ def export(data: Path, out: Path, *, run_id: str, manifest: Path | None = None, 
                 counts["context"] += 1
             for name in doc.get("source_files") or [f"{doc.get('filing_id')}.md"]:
                 meta = meta_by_file.get(name, {})
-                row = _filing_row(meta, doc, direct, context, labels)
+                row = _filing_row(name, meta, doc, direct, context, labels)
                 metric_rows.append(row)
                 manifest_rows.append({
                     "document_id": row["document_id"],
