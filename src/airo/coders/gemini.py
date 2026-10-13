@@ -310,7 +310,7 @@ def code_one(task: dict, codebook: str, *, model: str, client, config: dict,
 
 
 def code_batch(tasks: list[dict], codebook: str, *, model: str, client, config: dict, single_config: dict,
-               max_retries: int = 5, backoff: float = 1.0, max_repairs: int = 2) -> list[dict]:
+               max_retries: int = 5, backoff: float = 1.0, max_repairs: int = 2, defer: bool = False) -> list[dict]:
     """Label several tasks with one request. Returns one result per task, in task order.
 
     The answer's labels are matched to the tasks by `passage_id` and checked one by one.
@@ -318,6 +318,11 @@ def code_batch(tasks: list[dict], codebook: str, *, model: str, client, config: 
     the reason; a task without a label in the answer, and every task of a request that
     failed as a whole (error, empty or unreadable answer), is asked on its own from the
     start. The tokens of the batch request are booked on the first task's result.
+
+    With `defer`, no task is asked on its own: such a task gets a result with `error`,
+    `deferred` True and `answer` (the rejected answer text, or None when there was none),
+    so that the re-asks can be run later, once their number is known (`--repairs-from`).
+    A single re-ask sends the whole codebook again, so they cost more than their share.
     """
     start = time.perf_counter()
     usage = {"input_tokens": 0, "output_tokens": 0, "thinking_tokens": 0}
@@ -350,17 +355,23 @@ def code_batch(tasks: list[dict], codebook: str, *, model: str, client, config: 
         own = {"model": model, "config": single_config, "client": client,
                "max_retries": max_retries, "backoff": backoff, "max_repairs": max_repairs}
         raw = by_id.get(task["passage_id"])
+        blank = {
+            "passage_id": task["passage_id"], "label": None, "error": None,
+            "usage": {"input_tokens": 0, "output_tokens": 0, "thinking_tokens": 0},
+            "model": model, "latency_s": 0.0, "attempts": 0, "repairs": 0,
+        }
         if raw is None:
-            result = code_one(task, codebook, **own)
+            if defer:
+                result = {**blank, "error": "no label in the batch answer", "deferred": True, "answer": None}
+            else:
+                result = code_one(task, codebook, **own)
         else:
             text = json.dumps(raw, ensure_ascii=False)
             label, error = _check(text, task)
             if error is None:
-                result = {
-                    "passage_id": task["passage_id"], "label": label, "error": None,
-                    "usage": {"input_tokens": 0, "output_tokens": 0, "thinking_tokens": 0},
-                    "model": model, "latency_s": 0.0, "attempts": 0, "repairs": 0,
-                }
+                result = {**blank, "label": label}
+            elif defer:
+                result = {**blank, "label": label, "error": error, "deferred": True, "answer": text}
             else:
                 result = code_one(task, codebook, rejected=(text, error), **own)
                 if result["label"] is None:
@@ -377,14 +388,15 @@ def code_batch(tasks: list[dict], codebook: str, *, model: str, client, config: 
 def code(tasks: list[dict], codebook: str, *, model: str, client, workers: int = 4,
          max_retries: int = 5, thinking_budget: Optional[int] = None,
          max_output_tokens: int = MAX_OUTPUT_TOKENS, backoff: float = 1.0, max_repairs: int = 2,
-         batch_size: int = 1,
+         batch_size: int = 1, defer: bool = False,
          on_result: Optional[Callable[[dict], None]] = None) -> list[dict]:
     """Label every task, `batch_size` tasks per request, `workers` requests at a time.
 
     Returns one result per task, in task order:
     {"passage_id", "label": dict or None, "error": str or None,
      "usage": {"input_tokens", "output_tokens", "thinking_tokens"}, "model", "latency_s", "repairs"}.
-    `on_result`, if given, is called with each result as it completes.
+    `on_result`, if given, is called with each result as it completes. `defer` (batches only)
+    leaves the single re-asks of rejected or missing labels for a later `repair` call.
     """
     config = request_config(thinking_budget, max_output_tokens)
 
@@ -403,7 +415,7 @@ def code(tasks: list[dict], codebook: str, *, model: str, client, workers: int =
 
     def run_batch(batch: list[dict]) -> list[dict]:
         results = code_batch(batch, codebook, model=model, client=client, config=batch_config, single_config=config,
-                             max_retries=max_retries, backoff=backoff, max_repairs=max_repairs)
+                             max_retries=max_retries, backoff=backoff, max_repairs=max_repairs, defer=defer)
         if on_result:
             for result in results:
                 on_result(result)
@@ -412,6 +424,32 @@ def code(tasks: list[dict], codebook: str, *, model: str, client, workers: int =
     batches = [tasks[i : i + batch_size] for i in range(0, len(tasks), batch_size)]
     with ThreadPoolExecutor(max_workers=max(1, workers)) as pool:
         return [result for results in pool.map(run_batch, batches) for result in results]
+
+
+def repair(tasks: list[dict], deferred: list[dict], codebook: str, *, model: str, client, workers: int = 4,
+           max_retries: int = 5, thinking_budget: Optional[int] = None,
+           max_output_tokens: int = MAX_OUTPUT_TOKENS, backoff: float = 1.0, max_repairs: int = 2,
+           on_result: Optional[Callable[[dict], None]] = None) -> list[dict]:
+    """The deferred re-asks: one request per task, with the rejected answer and the reason when there was one.
+
+    `deferred` are the rows of a `<out>.deferred.jsonl` file ({"passage_id", "answer", "error"});
+    tasks not among them are skipped. Returns one result per deferred task, in that order.
+    """
+    config = request_config(thinking_budget, max_output_tokens)
+    by_id = {t["passage_id"]: t for t in tasks}
+    todo = [d for d in deferred if d["passage_id"] in by_id]
+
+    def run(d: dict) -> dict:
+        task = by_id[d["passage_id"]]
+        rejected = (d["answer"], d["error"]) if d.get("answer") else None
+        result = code_one(task, codebook, model=model, client=client, config=config, max_retries=max_retries,
+                          backoff=backoff, max_repairs=max_repairs, rejected=rejected)
+        if on_result:
+            on_result(result)
+        return result
+
+    with ThreadPoolExecutor(max_workers=max(1, workers)) as pool:
+        return list(pool.map(run, todo))
 
 
 # --------------------------------------------------------------------------
@@ -439,14 +477,17 @@ def run_summary(results: list[dict], *, prices: Optional[dict] = None,
     for r in results:
         for k in tokens:
             tokens[k] += r["usage"].get(k, 0) or 0
-    failed = [r for r in results if r["error"] is not None]
+    failed = [r for r in results if r["error"] is not None and not r.get("deferred")]
+    deferred = [r for r in results if r.get("deferred")]
     models = sorted({r["model"] for r in results})
     return {
         "coder": CODER,
         "model": models[0] if len(models) == 1 else models,
         "tasks": len(results),
-        "succeeded": len(results) - len(failed),
+        "succeeded": len(results) - len(failed) - len(deferred),
         "failed": len(failed),
+        # Re-asks left for later (`--defer-repairs`): their answers are in <out>.deferred.jsonl.
+        "deferred": len(deferred),
         # Fallback: tasks whose first answer the acceptance check rejected, and how many of them it then accepted.
         "asked_again": sum(1 for r in results if r.get("repairs")),
         "accepted_after_asking_again": sum(1 for r in results if r.get("repairs") and r["error"] is None),
@@ -464,7 +505,9 @@ def write_labels(results: list[dict], path, *, prices: Optional[dict] = None,
     """Write the successful labels as JSONL to `path` and the run summary to `<path>.run.json`.
 
     Only results without an error are written, so the file is what
-    `python -m airo accept <path> --coder gemini` expects. Returns the summary.
+    `python -m airo accept <path> --coder gemini` expects. Deferred re-asks go to
+    `<path>.deferred.jsonl` (passage_id, the rejected answer or null, the reason), the input
+    of `--repairs-from`. Returns the summary.
     """
     path = Path(path)
     path.parent.mkdir(parents=True, exist_ok=True)
@@ -472,6 +515,12 @@ def write_labels(results: list[dict], path, *, prices: Optional[dict] = None,
         for r in results:
             if r["error"] is None and r["label"] is not None:
                 fh.write(json.dumps(r["label"], ensure_ascii=False) + "\n")
+    deferred = [r for r in results if r.get("deferred")]
+    if deferred:
+        with open(str(path) + ".deferred.jsonl", "w", encoding="utf-8") as fh:
+            for r in deferred:
+                fh.write(json.dumps({"passage_id": r["passage_id"], "answer": r.get("answer"), "error": r["error"]},
+                                    ensure_ascii=False) + "\n")
     summary = run_summary(results, prices=prices, wall_time_s=wall_time_s)
     with open(str(path) + ".run.json", "w", encoding="utf-8") as fh:
         json.dump(summary, fh, indent=2, ensure_ascii=False)
@@ -509,7 +558,15 @@ def parse_args(argv: Optional[list[str]] = None) -> argparse.Namespace:
     p.add_argument("--price-output", type=float, default=None,
                    help="USD per million output tokens (thinking tokens are billed as output)")
     p.add_argument("--limit", type=int, default=None, help="label only the first N tasks")
+    p.add_argument("--defer-repairs", action="store_true",
+                   help="do not ask rejected or missing labels again on their own; write them to <out>.deferred.jsonl "
+                        "and decide later (each single re-ask sends the whole codebook)")
+    p.add_argument("--repairs-from", type=Path, default=None,
+                   help="run the deferred re-asks of this <out>.deferred.jsonl file (one request per task) and write "
+                        "their labels to --out")
     args = p.parse_args(argv)
+    if args.defer_repairs and args.repairs_from:
+        p.error("--defer-repairs and --repairs-from exclude each other")
     if (args.price_input is None) != (args.price_output is None):
         p.error("--price-input and --price-output must be given together")
     return args
@@ -530,22 +587,33 @@ def main(argv: Optional[list[str]] = None) -> int:
     def progress(r: dict) -> None:
         nonlocal done
         done += 1
-        status = "ok" if r["error"] is None else f"FAILED: {r['error']}"
+        status = "ok" if r["error"] is None else f"DEFERRED: {r['error']}" if r.get("deferred") else f"FAILED: {r['error']}"
         if r.get("repairs"):
             status += f"  (asked again {r['repairs']}x)"
         print(f"[{done}/{len(tasks)}] {r['passage_id']}  {r['latency_s']}s  {status}", file=sys.stderr)
 
     start = time.perf_counter()
-    results = code(
-        tasks, codebook, model=args.model, client=client, workers=args.workers,
-        max_retries=args.max_retries, max_repairs=args.max_repairs, batch_size=args.batch_size,
-        thinking_budget=args.thinking_budget,
-        max_output_tokens=args.max_output_tokens, on_result=progress,
-    )
+    if args.repairs_from:
+        with open(args.repairs_from, encoding="utf-8") as fh:
+            deferred = [json.loads(line) for line in fh if line.strip()]
+        tasks = [t for t in tasks if t["passage_id"] in {d["passage_id"] for d in deferred}]
+        results = repair(
+            tasks, deferred, codebook, model=args.model, client=client, workers=args.workers,
+            max_retries=args.max_retries, max_repairs=args.max_repairs, thinking_budget=args.thinking_budget,
+            max_output_tokens=args.max_output_tokens, on_result=progress,
+        )
+    else:
+        results = code(
+            tasks, codebook, model=args.model, client=client, workers=args.workers,
+            max_retries=args.max_retries, max_repairs=args.max_repairs, batch_size=args.batch_size,
+            thinking_budget=args.thinking_budget, defer=args.defer_repairs,
+            max_output_tokens=args.max_output_tokens, on_result=progress,
+        )
     summary = write_labels(results, args.out, prices=prices, wall_time_s=time.perf_counter() - start)
     cost = summary["estimated_cost_usd"]
+    deferred_note = f", {summary['deferred']} deferred to {args.out}.deferred.jsonl" if summary["deferred"] else ""
     print(
-        f"{summary['succeeded']}/{summary['tasks']} labelled, {summary['failed']} failed; "
+        f"{summary['succeeded']}/{summary['tasks']} labelled, {summary['failed']} failed{deferred_note}; "
         f"{summary['tokens']['input_tokens']:,} in / {summary['tokens']['output_tokens']:,} out / "
         f"{summary['tokens']['thinking_tokens']:,} thinking tokens; "
         f"{summary['wall_time_s']}s; est. cost {'n/a' if cost is None else f'${cost:.4f}'}\n"

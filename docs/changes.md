@@ -687,3 +687,33 @@ with the same meaning, produced by code that is in the repository.
   (`docs/us-2025h1-dataset.md`, `docs/us-2025h1_V2-dataset.md`) say more. A run's description
   still needs a person.
 - Not yet run on a corpus.
+
+---
+
+## 17. Re-asks deferred: decide on them by their number, not one by one
+
+**Before.** A label the acceptance check rejects (most often an evidence quote that is not
+verbatim) was asked again at once, on its own, with the rejected answer and the reason, up to
+twice; a task missing from a batch answer was asked on its own from the start. Each such
+request carries the whole codebook (about 13,000 tokens at v0.9). On the 400-filing subset of
+`us-2025h1_V3`, 181 of 1,504 tasks (12 %) were asked again, and those requests made up an
+estimated 2.4 of the run's 6.5 million input tokens: the re-asks of one task in eight cost a
+third of the run.
+
+**New** (`src/airo/coders/gemini.py`). `--defer-repairs`: the coder makes no single request
+at all. A rejected or missing label gets a result marked `deferred`, with the rejected answer
+and the reason, and `write_labels` puts them in `<out>.deferred.jsonl`; `run.json` counts
+them as `deferred`, apart from `failed`. `--repairs-from <that file>` then runs exactly those
+re-asks (one request per task, with the previous answer and the reason when there was one)
+and writes their labels to its own `--out`, to be concatenated with the first file for
+`accept`. Without the flag the coder behaves as before.
+
+**Why.** The decision whether 12 % of the passages are worth a third of the cost is one to take
+with the number in hand, not one the coder takes for every passage as it goes. Decided on
+2026-10-14 after the cost of the subset was compared with that of `us-2025h1_V2`
+(USD 0.0021 against 0.0012 per task).
+
+**Not better / open.** The deferred passages have no label until the repairs run; a dataset
+exported in between is complete in chunks and incomplete in labels, which `chunks_without_label`
+in the filing metrics shows. Not yet used on a run.
+
