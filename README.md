@@ -47,6 +47,7 @@ BigQuery once the first cloud runs are done.
 | | `accept <file> --coder X` | a coder's JSONL file, `docs/*/passages.jsonl` | `labels/X.jsonl` |
 | | `adjudicate` | `labels/*.jsonl` | `labels_final.jsonl`, `agreement.json` |
 | 4 aggregate | `aggregate` | `docs/*/document.json`, `docs/*/passages.jsonl`, `labels_final.jsonl` | `report_summary.jsonl`, `reports/<doc_id>.md`, `recall_check.json` |
+| 5 export | `export <out> --run-id X [--manifest <raw>/manifest]` | the working directory | the run's dataset layout under `<out>`: `chunks.jsonl`, `context_passages.jsonl`, `documents_manifest.json`, `README.md`, `docs.tar.gz`, `reports.tar.gz`, `results/` (`classified_chunks.jsonl`, `filing_metrics.jsonl`, `us-filing-metrics.json`, codebook, labels, agreement, summaries, the coder's files) |
 
 Run them in this order. `--data` is a global option and goes before the sub-command. `<raw>` is the path
 under which the raw bucket is mounted (in a Batch job; `run` reads files, not `gs://` locations).
@@ -58,6 +59,7 @@ under which the raw bucket is mounted (in a Batch job; `run` reads files, not `g
     python -m airo --data data accept alice.jsonl --coder alice
     python -m airo --data data adjudicate
     python -m airo --data data aggregate
+    python -m airo --data data export <out> --run-id <run> --manifest <raw>/manifest --model <model>
 
 - `fetch` copies filings of US companies from the FinancialReports API (financialfilings.com) into the raw
   bucket. It stores the provider's Markdown rendering of each filing and nothing else: `markdown/<filing id>.md`

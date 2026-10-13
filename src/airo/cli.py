@@ -6,6 +6,7 @@
     python -m airo accept <file> --coder X    -> labels/X.jsonl (validated)
     python -m airo adjudicate                 -> labels_final.jsonl, agreement.json
     python -m airo aggregate                  -> report_summary.jsonl, reports/<doc_id>.md, recall_check.json
+    python -m airo export <out> --run-id X    -> the dataset layout of the run under <out>
 
 Every stage reads only the previous stage's files, so stages can be re-run,
 parallelised per document, or moved to another machine independently.
@@ -19,7 +20,7 @@ import sys
 from pathlib import Path
 from typing import Iterator
 
-from . import aggregate, classify, fetch, recall, runner, taxonomy
+from . import aggregate, classify, export, fetch, recall, runner, taxonomy
 
 
 def _read(path: Path) -> list[dict]:
@@ -119,6 +120,10 @@ def cmd_aggregate(args) -> None:
     )
 
 
+def cmd_export(args) -> None:
+    export.export(args.data, Path(args.out), run_id=args.run_id, manifest=args.manifest, model=args.model)
+
+
 def main(argv: list[str] | None = None) -> None:
     parser = argparse.ArgumentParser(prog="airo", description=__doc__.split("\n")[0])
     parser.add_argument("--data", type=Path, default=Path("data"), help="working directory (default: data)")
@@ -147,6 +152,12 @@ def main(argv: list[str] | None = None) -> None:
     p.set_defaults(func=cmd_accept)
     sub.add_parser("adjudicate").set_defaults(func=cmd_adjudicate)
     sub.add_parser("aggregate").set_defaults(func=cmd_aggregate)
+    p = sub.add_parser("export", help="write the dataset layout of the run (as kept in the bucket) to a directory")
+    p.add_argument("out", help="target directory, e.g. the mounted bucket folder of the run")
+    p.add_argument("--run-id", required=True, help="name of the run, e.g. us-2025h1_V3")
+    p.add_argument("--manifest", type=Path, help="the provider manifest given to `run`, for one row per filing")
+    p.add_argument("--model", help="model name written into the README and the metrics file")
+    p.set_defaults(func=cmd_export)
 
     args = parser.parse_args(argv)
     args.func(args)

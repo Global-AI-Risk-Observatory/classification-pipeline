@@ -628,3 +628,43 @@ What the taxonomy lacks is visible as `other` and can be read.
 - v0.9 has not been run on a corpus. The codebook grew by 25 values; its length is now about
   48,000 characters (v0.5: 24,000).
 
+---
+
+## 16. Export: the run's dataset layout as a stage of the pipeline
+
+**Original.** The UK pipeline exported from its SQLite database with scripts outside the
+pipeline's stages.
+
+**Before.** The runs `us-2025h1` and `us-2025h1_V2` in the bucket share one layout
+(`chunks.jsonl`, `documents_manifest.json`, `results/classified_chunks.jsonl`,
+`results/filing_metrics.jsonl`, `results/us-filing-metrics.json`, a README). The job
+definition of `us-2025h1_V2` calls `airo export` for it; no such command existed on `main`, so
+the layout was produced outside the repository and could not be reproduced from it.
+
+**New** (`src/airo/export.py`, `python -m airo --data <dir> export <out> --run-id X`).
+A fifth stage that writes the layout from the working directory: one row per classified
+passage with its text (`chunks.jsonl`), the context passages in the same shape
+(`context_passages.jsonl`, named for what they are since v0.7; `us-2025h1_V2` had them as
+`implicit_mention_ai.jsonl`), one manifest row and one metrics row per filing (a text carried
+by two filings, a 10-K and its ARS reprint, gives two rows with the same `text_id` and the same
+values), every label field per labelled passage, shares per filing month in the shape the
+dashboard reads, the codebook, the adjudication and summary files, the coder's files, the
+per-document files and report views as tarballs, and a README generated from the counts. The
+filing metrics carry the v0.6 to v0.9 fields (`mit_subdomains`, `business_functions`,
+`governance_responses`, `ai_kinds`, the trait activation rate) next to the booleans of the
+earlier runs, so that the three runs can be compared column by column.
+
+**Why.** Three runs on the same 7,794 filings are to be compared; that needs the same files
+with the same meaning, produced by code that is in the repository.
+
+**Better.** The layout is reproducible from a working directory with one command, and tested.
+
+**Not better / open.**
+
+- `export` writes to a directory; in a Batch job that is the mounted bucket folder. It does
+  not write to `gs://` itself.
+- The README it writes is generated; the hand-written descriptions of the earlier runs
+  (`docs/us-2025h1-dataset.md`, `docs/us-2025h1_V2-dataset.md`) say more. A run's description
+  still needs a person.
+- Not yet run on a corpus.
+
