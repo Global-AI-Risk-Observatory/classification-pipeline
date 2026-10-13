@@ -756,7 +756,7 @@ BUSINESS_FUNCTIONS: dict[str, Definition] = {
         (
             "the passage states the company's own use or intention (\"we use AI\", \"across our "
             "operations\", \"in our business\") without naming a function, process or purpose",
-            "only alone: never combined with another value",
+            "only alone: given next to a named function it is dropped on acceptance",
         ),
     ),
 }
@@ -898,7 +898,7 @@ AI_KINDS: dict[str, Definition] = {
             "the passage names AI only generically (AI, artificial intelligence, AI tools, AI technologies, "
             "AI capabilities)",
             "no term for a kind in this list appears for the actor the roles refer to",
-            "only alone: never combined with another value",
+            "only alone: given next to a named kind it is dropped on acceptance",
         ),
     ),
 }
@@ -1088,7 +1088,8 @@ class Label(BaseModel):
         if bool(self.business_functions) != ("adoption" in self.roles):
             raise ValueError("business_functions must be given if and only if 'adoption' is among the roles")
         if "not_stated" in self.business_functions and len(self.business_functions) > 1:
-            raise ValueError("'not_stated' cannot be combined with other business functions")
+            # A named function means the function is stated: the placeholder is dropped, not refused.
+            self.business_functions = [f for f in self.business_functions if f != "not_stated"]
         if bool(self.governance_responses) != ("governance" in self.roles):
             raise ValueError("governance_responses must be given if and only if 'governance' is among the roles")
         if "externalisation" in self.disclosure_traits and self.frame == "market":
@@ -1096,7 +1097,8 @@ class Label(BaseModel):
         if not self.ai_kinds or not self.evidence:
             raise ValueError("ai_kinds and evidence are required when the passage is about AI")
         if "unspecified" in self.ai_kinds and len(self.ai_kinds) > 1:
-            raise ValueError("'unspecified' cannot be combined with other kinds of AI")
+            # A named kind means the kind is specified: the placeholder is dropped, not refused.
+            self.ai_kinds = [k for k in self.ai_kinds if k != "unspecified"]
         if self.substantiveness is None:
             raise ValueError("substantiveness is required when the passage is about AI")
         if len(self.evidence) > 3 or any(not q.strip() for q in self.evidence):
@@ -1243,7 +1245,8 @@ def codebook() -> str:
                 "coded only when a term for it is in the passage: give every kind named, and do not estimate a "
                 "kind from the context, the industry, the product or the year. \"We want to use more AI in "
                 "customer service\" is `unspecified`. AI attributed only to vendors, customers or attackers "
-                "does not give the company's use a kind. `unspecified` only alone.",
+                "does not give the company's use a kind. `unspecified` only alone: once a kind is named, the AI is "
+                "specified, and `unspecified` given next to it is dropped on acceptance.",
                 AI_KINDS,
             ),
             _table(

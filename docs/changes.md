@@ -577,6 +577,10 @@ as the measure of how much companies say about the AI they mean.
   everything else that learns to `traditional_ml`. Whether coders hold that line is untested.
 - An `autonomous vehicle` is not `agentic` by the criteria; if the team wants autonomy as a
   kind, it is a one-line change and a glossary decision in one.
+- Amended the same day after the 40-filing test of v0.9: `unspecified` given next to a named
+  kind was refused by the schema, asked again up to twice, and lost 2 of 127 labels. Once a
+  kind is named the AI is specified, so acceptance now drops `unspecified` (and `not_stated` in
+  `business_functions`) instead of refusing the label. The codebook still says "only alone".
 
 ---
 

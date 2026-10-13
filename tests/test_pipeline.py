@@ -1662,8 +1662,8 @@ def test_business_functions_are_given_if_and_only_if_adoption_is_a_role():
 def test_not_stated_is_the_only_business_function_when_none_is_named():
     adoption = dict(roles=["adoption"], adoption_stage="unclear")
     assert Label(**label_fields(**adoption, business_functions=["not_stated"])).business_functions == ["not_stated"]
-    with pytest.raises(ValidationError, match="'not_stated' cannot be combined"):
-        Label(**label_fields(**adoption, business_functions=["not_stated", "operations"]))
+    # A named function next to the placeholder: the function is stated, the placeholder goes.
+    assert Label(**label_fields(**adoption, business_functions=["not_stated", "operations"])).business_functions == ["operations"]
 
 
 def test_governance_responses_are_given_if_and_only_if_governance_is_a_role():
@@ -1783,15 +1783,16 @@ def test_ai_kinds_are_a_list_coded_only_when_named_and_unspecified_stands_alone(
     assert label.ai_kinds == ["generative_llm", "nlp", "agentic"]
     with pytest.raises(ValidationError, match="ai_kinds and evidence are required"):
         Label(**label_fields(ai_kinds=[]))
-    with pytest.raises(ValidationError, match="'unspecified' cannot be combined"):
-        Label(**label_fields(ai_kinds=["unspecified", "traditional_ml"]))
+    # A named kind next to `unspecified`: the kind is specified, `unspecified` goes.
+    assert Label(**label_fields(ai_kinds=["unspecified", "traditional_ml"])).ai_kinds == ["traditional_ml"]
+    assert Label(**label_fields(ai_kinds=["unspecified"])).ai_kinds == ["unspecified"]
     with pytest.raises(ValidationError):
         Label(**label_fields(ai_kinds=["generative"]))  # the v0.7 value is gone
     none = Label(passage_id="d1:0-2", ai_reference="none", confidence="high")
     assert none.ai_kinds == []
     text = taxonomy.codebook()
     assert "do not estimate a kind from the context" in text
-    assert "`unspecified` only alone" in text
+    assert "`unspecified` only alone" in text and "is dropped on acceptance" in text
 
 
 def test_adjudicate_votes_per_kind_of_ai():
