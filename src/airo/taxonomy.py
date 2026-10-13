@@ -456,7 +456,7 @@ MIT_SUBDOMAINS: dict[str, Definition] = {
             "occurred (`incident`), with AI as its cause or object",
         ),
     ),
-    "competitive_dynamics": (
+    "ai_race_unsafe_deployment": (
         "6.4 Competitive dynamics. Competition by AI developers or state-like actors in an AI race, "
         "rapidly developing and deploying AI to maximize advantage, increasing the risk of "
         "releasing unsafe and error-prone systems.",
@@ -467,7 +467,7 @@ MIT_SUBDOMAINS: dict[str, Definition] = {
             "occurred (`incident`), with AI as its cause or object",
         ),
     ),
-    "governance_failure": (
+    "regulation_lagging_behind_ai": (
         "6.5 Governance failure. Inadequate regulatory frameworks and oversight mechanisms that fail "
         "to keep pace with AI development, leading to ineffective governance and the inability to"
         " manage AI risks.",
@@ -570,11 +570,11 @@ MIT_SUBDOMAINS: dict[str, Definition] = {
 # not a mapping published by MIT, and it never replaces coding from the passage.
 RISK_TYPE_SUBDOMAINS: dict[str, tuple[str, ...]] = {
     "market_demand": ("other",),
-    "strategic_competitive": ("competitive_dynamics", "other"),
+    "strategic_competitive": ("ai_race_unsafe_deployment", "other"),
     "operational_reliability": ("lack_of_capability_robustness", "false_or_misleading_information", "unfair_discrimination_misrepresentation", "unequal_performance_across_groups", "ai_pursuing_own_goals"),
     "cybersecurity": ("ai_system_security_vulnerabilities_attacks", "cyberattacks_weapons_mass_harm", "fraud_scams_targeted_manipulation"),
     "third_party": ("ai_system_security_vulnerabilities_attacks", "lack_of_capability_robustness", "power_centralization_unfair_benefits", "other"),
-    "regulatory_legal": ("governance_failure", "compromise_of_privacy", "devaluation_of_human_effort", "other"),
+    "regulatory_legal": ("regulation_lagging_behind_ai", "compromise_of_privacy", "devaluation_of_human_effort", "other"),
     "workforce": ("inequality_decline_employment_quality",),
     "reputational_ethical": ("unfair_discrimination_misrepresentation", "exposure_to_toxic_content", "overreliance_unsafe_use", "lack_of_transparency_interpretability"),
     "information_integrity": ("false_or_misleading_information", "pollution_of_information_ecosystem", "disinformation_surveillance_influence", "fraud_scams_targeted_manipulation"),
@@ -600,8 +600,8 @@ MIT_SUBDOMAIN_NUMBERS: dict[str, str] = {
     "power_centralization_unfair_benefits": "6.1",
     "inequality_decline_employment_quality": "6.2",
     "devaluation_of_human_effort": "6.3",
-    "competitive_dynamics": "6.4",
-    "governance_failure": "6.5",
+    "ai_race_unsafe_deployment": "6.4",
+    "regulation_lagging_behind_ai": "6.5",
     "environmental_harm": "6.6",
     "ai_pursuing_own_goals": "7.1",
     "ai_dangerous_capabilities": "7.2",
@@ -1022,8 +1022,8 @@ MitSubdomain = Literal[
     "power_centralization_unfair_benefits",
     "inequality_decline_employment_quality",
     "devaluation_of_human_effort",
-    "competitive_dynamics",
-    "governance_failure",
+    "ai_race_unsafe_deployment",
+    "regulation_lagging_behind_ai",
     "environmental_harm",
     "ai_pursuing_own_goals",
     "ai_dangerous_capabilities",

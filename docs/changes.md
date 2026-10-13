@@ -631,6 +631,12 @@ What the taxonomy lacks is visible as `other` and can be read.
   unknown until a run.
 - v0.9 has not been run on a corpus. The codebook grew by 25 values; its length is now about
   48,000 characters (v0.5: 24,000).
+- Amended the same day after the 40-filing test: the model labelled every `strategic_competitive`
+  passage 6.4 and every `regulatory_legal` passage 6.5, reading the value names
+  `competitive_dynamics` and `governance_failure` as the firm's competition and its regulatory
+  exposure. MIT's 6.4 is an AI race that releases unsafe systems, 6.5 is regulation lagging
+  behind AI. The values are now named `ai_race_unsafe_deployment` and
+  `regulation_lagging_behind_ai`; definitions, numbers and the crosswalk are unchanged.
 
 ---
 
@@ -671,4 +677,3 @@ with the same meaning, produced by code that is in the repository.
   (`docs/us-2025h1-dataset.md`, `docs/us-2025h1_V2-dataset.md`) say more. A run's description
   still needs a person.
 - Not yet run on a corpus.
-

@@ -49,7 +49,7 @@ def test_export_writes_the_bucket_layout(tmp_path):
     write_jsonl(data / "labels_final.jsonl", [
         label("d1:0-2", roles=["adoption", "risk"], adoption_stage="deployed", business_functions=["finance"],
               ai_kinds=["generative_llm"], entities=["OpenAI"], substantiveness="detailed"),
-        label("d1:5-6", risk_types=["regulatory_legal"], mit_subdomains=["governance_failure"]),
+        label("d1:5-6", risk_types=["regulatory_legal"], mit_subdomains=["regulation_lagging_behind_ai"]),
     ])
     (data / "codebook.md").write_text("# codebook", encoding="utf-8")
     (data / "reports").mkdir()
@@ -86,7 +86,7 @@ def test_export_writes_the_bucket_layout(tmp_path):
     assert (m11["document_id"], m11["month"], m11["chunks"], m11["chunks_labelled"], m11["chunks_context"]) == ("11", "2025-03", 2, 2, 1)
     assert (m11["ai_mention"], m11["adoption"], m11["risk"], m11["harm"], m11["vendor"], m11["llm_adoption"]) == (True, True, True, False, True, True)
     assert (m11["cyber_risk"], m11["regulatory_risk"]) == (True, True)
-    assert m11["mit_subdomains"] == ["ai_system_security_vulnerabilities_attacks", "governance_failure"]
+    assert m11["mit_subdomains"] == ["ai_system_security_vulnerabilities_attacks", "regulation_lagging_behind_ai"]
     assert m11["business_functions"] == ["finance"] and m11["ai_kinds"] == ["generative_llm", "unspecified"]
     assert m11["substantiveness"] == {"boilerplate": 0, "generic": 0, "specific": 1, "detailed": 1, "quantified": 0}
     assert (m11["highest_substantiveness"], m11["trait_activation_rate"]) == ("detailed", 1.0)
