@@ -233,7 +233,8 @@ of the AI statement before judging any role or trait; criteria marked "frame-dep
 (`market_driver`, `adoption`, `governance`, `externalisation`) are read in that frame. v0.5 added
 `substantiveness`; v0.6 added `business_functions`, `governance_responses` and the risk type
 `national_security`; v0.7 removed `implicit` from `ai_reference`: a passage either treats AI or it does
-not, and context passages are not labelled at all.
+not, and context passages are not labelled at all; v0.8 made `ai_kinds` a list of eight kinds, coded only
+when named.
 
 | Field | Allowed values | Rule |
 |---|---|---|
@@ -244,7 +245,7 @@ not, and context passages are not labelled at all.
 | `adoption_stage` | `planned`, `piloting`, `deployed`, `unclear` | exactly one if and only if `adoption` is a role |
 | `business_functions` | `customer_service`, `marketing_sales`, `operations`, `finance`, `hr_workforce`, `legal_compliance`, `rd_product`, `it_cybersecurity`, `supply_chain`, `manufacturing`, `decision_analytics`, `other`, `not_stated` | one or more if and only if `adoption` is a role; the company's own use; `not_stated` only alone |
 | `governance_responses` | `oversight_structure`, `policies_processes`, `technical_controls`, `third_party_controls`, `workforce_measures`, `transparency_accountability`, `other` | one or more if and only if `governance` is a role |
-| `ai_kind` | `generative`, `non_generative`, `unspecified` | exactly one |
+| `ai_kinds` | `traditional_ml`, `generative_llm`, `computer_vision`, `nlp`, `recommendation`, `agentic`, `other`, `unspecified` | one or more when the passage is about AI; a kind only when a term for it is in the passage, nothing estimated from context; `unspecified` only alone |
 | `disclosure_traits` | `boilerplate`, `hedging`, `externalisation`, `vagueness`, `safe_harbour` | zero or more; `[]` when no trait applies (the statement is specific) and always when `ai_reference` is `none`; `externalisation` never in frame `market` |
 | `substantiveness` | `boilerplate`, `generic`, `specific`, `detailed`, `quantified` | exactly one when the passage is about AI; five ordered levels, the highest whose criteria the AI statements meet |
 | `entities` | list of names | organisations or AI products named in connection with AI |

@@ -19,8 +19,8 @@ from pydantic import ValidationError
 from .taxonomy import TAXONOMY_VERSION, Label
 
 _WS = re.compile(r"\s+")
-_SINGLE = ("ai_reference", "frame", "adoption_stage", "ai_kind", "substantiveness")
-_MULTI = ("roles", "risk_types", "business_functions", "governance_responses", "disclosure_traits")
+_SINGLE = ("ai_reference", "frame", "adoption_stage", "substantiveness")
+_MULTI = ("roles", "risk_types", "ai_kinds", "business_functions", "governance_responses", "disclosure_traits")
 
 
 def tasks(docs: list[dict], passages: list[dict]) -> list[dict]:
@@ -183,7 +183,7 @@ def adjudicate(labels_by_coder: dict[str, list[dict]]) -> tuple[list[dict], dict
         if out["ai_reference"] in (None, "none"):
             out.update(
                 frame=None, roles=[], risk_types=[], business_functions=[], governance_responses=[],
-                disclosure_traits=[], adoption_stage=None, ai_kind=None, substantiveness=None,
+                ai_kinds=[], disclosure_traits=[], adoption_stage=None, substantiveness=None,
             )
         else:
             if not out["roles"]:
@@ -192,6 +192,8 @@ def adjudicate(labels_by_coder: dict[str, list[dict]]) -> tuple[list[dict], dict
                 out["risk_types"] = []
             elif not out["risk_types"]:
                 disputed.append("risk_types")
+            if not out["ai_kinds"]:
+                disputed.append("ai_kinds")
             if "adoption" not in out["roles"]:
                 out["adoption_stage"] = None
                 out["business_functions"] = []

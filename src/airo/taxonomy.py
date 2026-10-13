@@ -15,7 +15,7 @@ from typing import Literal, Optional
 
 from pydantic import BaseModel, Field, model_validator
 
-TAXONOMY_VERSION = "0.7"
+TAXONOMY_VERSION = "0.8"
 
 # Each value: (definition, criteria). A value applies only if all its criteria hold.
 Definition = tuple[str, tuple[str, ...]]
@@ -504,30 +504,76 @@ GOVERNANCE_RESPONSES: dict[str, Definition] = {
     ),
 }
 
+# v0.8: the kinds of AI a passage names, one or more. A kind is coded only when a term for it is
+# in the passage; nothing is estimated from context, industry or product. `unspecified` is the
+# answer for "AI" without further detail, and it stands alone.
 AI_KINDS: dict[str, Definition] = {
-    "generative": (
-        "Generative AI, LLMs, chatbots, copilots.",
+    "traditional_ml": (
+        "Machine learning other than generative models: predictive, analytical or optimising models that "
+        "learn from data.",
         (
-            "the passage names generative AI, large language models, chatbots, copilots, content-generating "
-            "tools or a named product of that kind",
+            "the passage names machine learning, deep learning, neural networks, reinforcement learning, a "
+            "learning or trained algorithm, or a named predictive or analytical model",
+            "no narrower kind in this list is named for the same term (vision, language, recommendation and "
+            "agents have their own values)",
+        ),
+    ),
+    "generative_llm": (
+        "Generative AI, large language models, chatbots, copilots, content-generating tools.",
+        (
+            "the passage names generative AI, a large language model, a chatbot, a copilot, a "
+            "content-generating tool or a named product of that kind (ChatGPT, Gemini, Claude, Copilot)",
             "that AI is the one the roles refer to (the company's own use when `adoption` is a role)",
         ),
     ),
-    "non_generative": (
-        "Predictive or analytical machine learning, computer vision, optimisation.",
+    "computer_vision": (
+        "Image, video or visual perception techniques.",
         (
-            "the passage names machine learning, predictive analytics, computer vision, optimisation, "
-            "recommendation, forecasting, automation or a similar non-generative technique",
-            "that AI is the one the roles refer to (the company's own use when `adoption` is a role)",
-            "no generative kind is named for the same actor (`generative` wins otherwise)",
+            "the passage names computer vision, image or video recognition, image classification, object "
+            "detection, facial recognition or another visual-perception technique",
+            "that AI is the one the roles refer to",
+        ),
+    ),
+    "nlp": (
+        "Natural language processing other than a generative model: text or speech understanding.",
+        (
+            "the passage names natural language processing, speech recognition, text analysis, sentiment "
+            "analysis, translation or another language-understanding technique by name",
+            "a large language model or chatbot named without such a term is `generative_llm` only",
+        ),
+    ),
+    "recommendation": (
+        "Recommendation or personalisation systems.",
+        (
+            "the passage names a recommendation engine, system or algorithm, or a personalisation or ranking "
+            "engine",
+            "that AI is the one the roles refer to",
+        ),
+    ),
+    "agentic": (
+        "AI agents: systems that plan, act or complete tasks on their own.",
+        (
+            "the passage names AI agents, agentic AI, autonomous agents, or AI that takes actions or completes "
+            "tasks on its own",
+            "an autonomous vehicle, device or process named without an AI-agent term is not `agentic`",
+        ),
+    ),
+    "other": (
+        "A named kind or technique of AI that fits none of the above.",
+        (
+            "the passage names a kind or technique of AI (expert system, genetic algorithm, AI-driven "
+            "robotics, quantum machine learning, ...)",
+            "no other value in this list fits it",
+            "`note` names it",
         ),
     ),
     "unspecified": (
         "\"AI\" without further detail.",
         (
-            "the passage names AI only generically",
-            "no technique or product that fits `generative` or `non_generative` is named for the actor the "
-            "roles refer to",
+            "the passage names AI only generically (AI, artificial intelligence, AI tools, AI technologies, "
+            "AI capabilities)",
+            "no term for a kind in this list appears for the actor the roles refer to",
+            "only alone: never combined with another value",
         ),
     ),
 }
@@ -635,6 +681,10 @@ BusinessFunction = Literal[
     "customer_service", "marketing_sales", "operations", "finance", "hr_workforce", "legal_compliance",
     "rd_product", "it_cybersecurity", "supply_chain", "manufacturing", "decision_analytics", "other", "not_stated",
 ]
+AiKind = Literal[
+    "traditional_ml", "generative_llm", "computer_vision", "nlp", "recommendation", "agentic", "other",
+    "unspecified",
+]
 GovernanceResponse = Literal[
     "oversight_structure", "policies_processes", "technical_controls", "third_party_controls",
     "workforce_measures", "transparency_accountability", "other",
@@ -651,7 +701,7 @@ class Label(BaseModel):
     adoption_stage: Optional[Literal["planned", "piloting", "deployed", "unclear"]] = None
     business_functions: list[BusinessFunction] = Field(default_factory=list)
     governance_responses: list[GovernanceResponse] = Field(default_factory=list)
-    ai_kind: Optional[Literal["generative", "non_generative", "unspecified"]] = None
+    ai_kinds: list[AiKind] = Field(default_factory=list)  # one or more when the passage is about AI
     disclosure_traits: list[DisclosureTrait] = Field(default_factory=list)
     substantiveness: Optional[Substantiveness] = None  # required when the passage is about AI
     entities: list[str] = Field(default_factory=list)
@@ -663,7 +713,7 @@ class Label(BaseModel):
     def _consistent(self) -> "Label":
         if self.ai_reference == "none":
             filled = (
-                self.frame or self.roles or self.risk_types or self.adoption_stage or self.ai_kind
+                self.frame or self.roles or self.risk_types or self.adoption_stage or self.ai_kinds
                 or self.business_functions or self.governance_responses
                 or self.disclosure_traits or self.substantiveness or self.evidence
             )
@@ -688,8 +738,10 @@ class Label(BaseModel):
             raise ValueError("governance_responses must be given if and only if 'governance' is among the roles")
         if "externalisation" in self.disclosure_traits and self.frame == "market":
             raise ValueError("'externalisation' is not applicable in frame 'market'")
-        if self.ai_kind is None or not self.evidence:
-            raise ValueError("ai_kind and evidence are required when the passage is about AI")
+        if not self.ai_kinds or not self.evidence:
+            raise ValueError("ai_kinds and evidence are required when the passage is about AI")
+        if "unspecified" in self.ai_kinds and len(self.ai_kinds) > 1:
+            raise ValueError("'unspecified' cannot be combined with other kinds of AI")
         if self.substantiveness is None:
             raise ValueError("substantiveness is required when the passage is about AI")
         if len(self.evidence) > 3 or any(not q.strip() for q in self.evidence):
@@ -737,8 +789,8 @@ def codebook() -> str:
                 AI_REFERENCE,
             ),
             "If `ai_reference` is `none`: set `roles`, `risk_types`, `business_functions`, `governance_responses`, "
-            "`disclosure_traits`, `entities` and `evidence` to `[]`, leave `frame`, `adoption_stage`, `ai_kind` "
-            "and `substantiveness` as `null`, and still give "
+            "`ai_kinds`, `disclosure_traits`, `entities` and `evidence` to `[]`, leave `frame`, "
+            "`adoption_stage` and `substantiveness` as `null`, and still give "
             "`confidence`; `note` may still be used.\n",
             _table(
                 "Step 1: determine the frame", "frame",
@@ -820,11 +872,13 @@ def codebook() -> str:
                 GOVERNANCE_RESPONSES,
             ),
             _table(
-                "What kind of AI?", "ai_kind",
-                "Exactly one value. It describes the AI the roles refer to; if `adoption` is among the roles, "
-                "it describes the company's OWN use. AI attributed only to vendors, customers or attackers does "
-                "not make the company's use generative. `generative` wins if both kinds appear for the same "
-                "actor.",
+                "What kinds of AI?", "ai_kinds",
+                "One or more values when `ai_reference` is `explicit`; `[]` when it is `none`. They describe "
+                "the AI the roles refer to; if `adoption` is among the roles, the company's OWN use. A kind is "
+                "coded only when a term for it is in the passage: give every kind named, and do not estimate a "
+                "kind from the context, the industry, the product or the year. \"We want to use more AI in "
+                "customer service\" is `unspecified`. AI attributed only to vendors, customers or attackers "
+                "does not give the company's use a kind. `unspecified` only alone.",
                 AI_KINDS,
             ),
             _table(

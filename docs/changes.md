@@ -532,3 +532,49 @@ corpus) plus the v0.6 fields.
   undecided; each is a one-line glossary change once decided.
 - v0.7 has not been run on a corpus.
 
+---
+
+## 14. Kinds of AI as a list, coded only when named (v0.8)
+
+**Original.** The UK pipeline estimated the kind of AI from the context: `adoption_signals`
+with `non_llm`, `llm`, `agentic` and `ambiguous`, each scored 0 to 3 by the model.
+
+**Before (v0.4 to v0.7).** `ai_kind`, exactly one value: `generative`, `non_generative`,
+`unspecified`; `generative` won when both appeared. On `us-2025h1_V2`, 18,083 of 25,362 AI
+chunks were `unspecified` (71 %), 4,425 `generative`, 2,854 `non_generative`. No value for
+agents.
+
+**New** (`src/airo/taxonomy.py`, `classify.py`, `aggregate.py`). `ai_kinds`, one or more of
+`traditional_ml`, `generative_llm`, `computer_vision`, `nlp`, `recommendation`, `agentic`,
+`other`, `unspecified`; `unspecified` only alone; `[]` when `ai_reference` is `none`. The rule
+in the codebook: a kind is coded only when a term for it is in the passage; nothing is
+estimated from the context, the industry, the product or the year. Adjudication votes per
+kind, as for the other list fields.
+
+**Why.** The team's question, put by the author of the UK pipeline on 2026-10-13: "We want to
+use more AI in our customer service" does not say whether that is classical algorithms,
+machine learning, LLM-based systems or agents, and these distinctions matter; so either an
+ambiguous category or an estimate from context. The pipeline keeps the ambiguous category,
+for the reason given in entries 12 and 13: an estimate cannot be checked against the text,
+two coders estimating give two answers, and the estimate drifts with the year ("AI" read as
+generative in 2025, not in 2020) while the filings do not. The 71 % `unspecified` is itself a
+finding about disclosure. What was missing was the granularity: one value per passage, and no
+`agentic`. The list is the one the policy team's operationalisation sheet uses for "What type
+of AI?", which also allows several labels per disclosure; the sheet's "Predictive analytics"
+is not a kind here because its term is not an AI term (entry 13), so a passage that names only
+it is not in the dataset.
+
+**Better.** A passage that names an LLM-based agent for customer service is `generative_llm`
+and `agentic`, not `generative`. The share of `unspecified` can be reported per year and sector
+as the measure of how much companies say about the AI they mean.
+
+**Not better / open.**
+
+- v0.8 has not been run on a corpus; the 60-passage and 40-filing tests of the same day were
+  made with v0.6 and v0.7.
+- `traditional_ml` and `nlp` overlap in wording (a "language model" that is not large; "text
+  analytics"); the criteria give `nlp` only to a named language-understanding technique and send
+  everything else that learns to `traditional_ml`. Whether coders hold that line is untested.
+- An `autonomous vehicle` is not `agentic` by the criteria; if the team wants autonomy as a
+  kind, it is a one-line change and a glossary decision in one.
+
