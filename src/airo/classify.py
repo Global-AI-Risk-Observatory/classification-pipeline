@@ -36,7 +36,6 @@ def tasks(docs: list[dict], passages: list[dict]) -> list[dict]:
                 "fiscal_year": d["fiscal_year"],
                 "section": " ".join(x for x in (p["section"], p["section_title"]) if x) or None,
                 "heading": p["heading"],
-                "mention": p["mention"],
                 "matched_terms": p["matched"],
                 "text": p["text"],
             }

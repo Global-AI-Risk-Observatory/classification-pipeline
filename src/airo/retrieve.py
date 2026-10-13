@@ -2,8 +2,7 @@
 
 Cheap lexical recall step. Only passages found here are sent to the (expensive)
 classifier, so a report with no hit costs no model call at all. Precision is the
-classifier's job: it can label a candidate as not about AI. Every passage found
-here is classified, whichever tier its terms have.
+classifier's job: it can label a candidate as not about AI.
 
 The vocabulary comes from the glossaries (see glossary.py): the core AI list
 plus the glossary of the company's industry.
@@ -14,12 +13,11 @@ from __future__ import annotations
 from .glossary import Matcher, load
 
 # Every passage is one of two kinds of mention:
-#   "direct"    at least one ai-tier term,
-#   "implicit"  context-tier terms only.
-# Both go to the classifier. The kind is kept on the passage, the task and the
-# report summary, so results can be split by it. (Until v0.5 implicit mentions
-# were not classified; on a sample of them the classifier found about one in
-# eight to be about AI.)
+#   "direct"    at least one ai-tier term: a candidate AI statement, goes to the
+#               classifier, which confirms it (`explicit`) or rejects it (`none`);
+#   "implicit"  context-tier terms only: context around AI (data centres,
+#               industry lingo, euphemisms), not an AI statement. Kept, counted per
+#               term and group, shown in the report; never sent to the classifier.
 MENTIONS = ("direct", "implicit")
 
 
@@ -94,6 +92,7 @@ def passages(
                 "mention": "direct" if "ai" in matched else "implicit",
                 "matched": matched,
                 "matched_text": wordings,
+                "term_groups": {term: matcher.groups.get(term, "industry") for term in wordings},
                 "text": "\n\n".join(
                     blocks[i]["text"]
                     for i in range(start, end + 1)

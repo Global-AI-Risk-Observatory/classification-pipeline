@@ -66,11 +66,14 @@ class Matcher:
 
     def __init__(self, glossaries: list[tuple[str, list[dict]]]):
         self.sources = [name for name, _ in glossaries]
+        # Canonical term -> group: the core glossary's group, "industry" for an industry glossary's term.
+        self.groups: dict[str, str] = {}
         self._terms: list[tuple[str, str, re.Pattern]] = []  # (canonical term, tier, regex)
         seen = set()
         exact_phrases, loose_phrases = [], []
         for _, terms in glossaries:
             for t in terms:
+                self.groups.setdefault(t["term"], t.get("group") or "industry")
                 exact = set(t.get("case_sensitive_variants", []))
                 for phrase in [t["term"], *t.get("variants", [])]:
                     key = (phrase if phrase in exact else phrase.casefold(), phrase in exact)

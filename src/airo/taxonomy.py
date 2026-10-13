@@ -15,7 +15,7 @@ from typing import Literal, Optional
 
 from pydantic import BaseModel, Field, model_validator
 
-TAXONOMY_VERSION = "0.6"
+TAXONOMY_VERSION = "0.7"
 
 # Each value: (definition, criteria). A value applies only if all its criteria hold.
 Definition = tuple[str, tuple[str, ...]]
@@ -67,34 +67,28 @@ FRAMES: dict[str, Definition] = {
     ),
 }
 
+# v0.7: a passage either treats AI or it does not. Passages found through context terms only
+# (data centres, industry lingo, euphemisms) are context, not AI statements, and are not labelled.
 AI_REFERENCE: dict[str, Definition] = {
     "explicit": (
-        "The passage names AI or a clearly AI-specific technique.",
+        "The passage treats AI: it names AI or an AI-specific technique and says something about it.",
         (
-            "a term for AI or an AI-specific technique appears (artificial intelligence, machine learning, "
-            "generative AI, LLM, neural network, ...)",
+            "a term for AI or an AI-specific technique appears, as listed in the matched terms (artificial "
+            "intelligence, machine learning, generative AI, LLM, neural network, computer vision, ...)",
             "the term is used in its technology sense, not as part of an unrelated name, abbreviation or "
             "keyword false positive",
-        ),
-    ),
-    "implicit": (
-        "AI is not named, but AI-linked infrastructure or demand is treated as a factor for the company's "
-        "business or market.",
-        (
-            "no AI term appears (otherwise `explicit`)",
-            "the passage names AI-linked infrastructure or demand: data centres, hyperscalers, compute, the "
-            "power they consume, or companies named as AI-infrastructure buyers",
-            "that infrastructure or demand is presented as a factor for the company's business, market or "
-            "risks, even in passing, not as the company's own facility in an unrelated sense",
+            "a statement is made about that AI for the company, its market or its risks; a word such as "
+            "analytics, data science, automation, algorithm, digital, predictive or autonomous without an "
+            "AI term is not enough, whatever it may stand for",
         ),
     ),
     "none": (
-        "Not about AI.",
+        "The passage does not treat AI.",
         (
-            "no AI term is used in its technology sense",
-            "any matched term appears in an unrelated sense (the company's own data centre in a "
-            "disaster-recovery sentence, an abbreviation, a keyword false positive)",
-            "nothing in the passage links infrastructure or demand to AI",
+            "no AI term is used in its technology sense, or the only AI term is a keyword false positive "
+            "(an abbreviation, a product or company name, a word in an unrelated sense)",
+            "nothing is said about AI for the company; descriptions of analytics, automation or algorithms "
+            "that do not name AI are `none`",
         ),
     ),
 }
@@ -106,7 +100,7 @@ ROLES: dict[str, Definition] = {
             "the passage describes demand, prices, supply, investment or market conditions on the company's "
             "selling or buying side (frame-dependent: in frame `market` this is the primary role; in any "
             "other frame an explicit demand, price or supply statement must appear in the passage)",
-            "AI (or, for `implicit`, AI-linked infrastructure) is named as a cause of that demand or condition",
+            "AI is named as a cause of that demand or condition",
             "the content is demand-side or market-side: a passage that only says the company uses, sells or "
             "governs AI does not qualify",
         ),
@@ -167,7 +161,7 @@ ROLES: dict[str, Definition] = {
     "general": (
         "AI is mentioned without any of the roles above.",
         (
-            "the passage is about AI (`explicit` or `implicit`)",
+            "the passage is about AI (`explicit`)",
             "no other role meets all its criteria (macro commentary, definitions, glossary entries, "
             "industry background)",
         ),
@@ -529,9 +523,9 @@ AI_KINDS: dict[str, Definition] = {
         ),
     ),
     "unspecified": (
-        "\"AI\" without further detail. Also the answer for `implicit` passages.",
+        "\"AI\" without further detail.",
         (
-            "the passage names AI only generically, or (for `implicit`) not at all",
+            "the passage names AI only generically",
             "no technique or product that fits `generative` or `non_generative` is named for the actor the "
             "roles refer to",
         ),
@@ -650,7 +644,7 @@ DisclosureTrait = Literal["boilerplate", "hedging", "externalisation", "vaguenes
 
 class Label(BaseModel):
     passage_id: str
-    ai_reference: Literal["explicit", "implicit", "none"]
+    ai_reference: Literal["explicit", "none"]
     frame: Optional[Frame] = None  # required when the passage is about AI; decided before the roles
     roles: list[Role] = Field(default_factory=list)
     risk_types: list[RiskType] = Field(default_factory=list)
@@ -738,7 +732,8 @@ def codebook() -> str:
             _table(
                 "Is the passage about AI?", "ai_reference",
                 "Exactly one value, judged from the passage alone: not from other passages, and not from "
-                "outside knowledge about the company.",
+                "outside knowledge about the company. Every task contains at least one matched AI term; your "
+                "job is to decide whether the passage treats AI or the term is a false positive.",
                 AI_REFERENCE,
             ),
             "If `ai_reference` is `none`: set `roles`, `risk_types`, `business_functions`, `governance_responses`, "
@@ -829,12 +824,12 @@ def codebook() -> str:
                 "Exactly one value. It describes the AI the roles refer to; if `adoption` is among the roles, "
                 "it describes the company's OWN use. AI attributed only to vendors, customers or attackers does "
                 "not make the company's use generative. `generative` wins if both kinds appear for the same "
-                "actor. For `implicit` passages give `unspecified`.",
+                "actor.",
                 AI_KINDS,
             ),
             _table(
                 "Which disclosure traits does the AI statement show?", "disclosure_traits",
-                "Zero or more values when `ai_reference` is `explicit` or `implicit`; `[]` when it is `none`. "
+                "Zero or more values when `ai_reference` is `explicit`; `[]` when it is `none`. "
                 "Judged on the AI-related statements of the passage: a trait applies if any AI-related "
                 "statement meets all its criteria. `[]` means none of the traits apply: the statement is "
                 "specific, it names systems, counterparties, products, figures, dates or actions. "
@@ -845,7 +840,7 @@ def codebook() -> str:
             ),
             _table(
                 "How substantive is the AI statement?", "substantiveness",
-                "Exactly one value when `ai_reference` is `explicit` or `implicit`; `null` when it is `none`. "
+                "Exactly one value when `ai_reference` is `explicit`; `null` when it is `none`. "
                 "Five levels, ordered from 1 (`boilerplate`) to 5 (`quantified`). Judged on the AI-related "
                 "statements of the passage as a whole: give the highest level whose criteria they meet. "
                 "Particulars that are not about AI (the company's revenue, the date of the report) do not "
@@ -855,8 +850,8 @@ def codebook() -> str:
             "### Other fields",
             "- `passage_id`: copied from the task.",
             "- `entities`: organisations or AI products the passage names in connection with AI "
-            "(e.g. `[\"Microsoft\", \"Nvidia\"]`); `[]` if none. Allowed for `implicit` passages; `[]` for "
-            "`none` passages. Not the reporting company itself, not sources of statistics.",
+            "(e.g. `[\"Microsoft\", \"Nvidia\"]`); `[]` if none, and `[]` for `none` passages. Not the "
+            "reporting company itself, not sources of statistics.",
             "- `evidence`: a list of 1 to 3 quotes copied verbatim from the passage that support your labels, "
             "one per role where the roles rest on different sentences (each quote is checked as an exact "
             "substring, whitespace aside; do not paraphrase, do not add ellipses). `[]` if and only if "

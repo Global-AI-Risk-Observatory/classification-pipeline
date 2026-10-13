@@ -477,7 +477,7 @@ def test_sdk_accepts_the_label_class_as_response_schema():
 
     schema = t_schema(None, Label).model_dump(exclude_none=True)
     assert schema["type"] == "OBJECT"
-    assert schema["properties"]["ai_reference"]["enum"] == ["explicit", "implicit", "none"]
+    assert schema["properties"]["ai_reference"]["enum"] == ["explicit", "none"]
     assert schema["properties"]["adoption_stage"]["nullable"] is True
     assert schema["properties"]["roles"]["items"]["enum"][0] == "market_driver"
     assert set(schema["properties"]) == set(Label.model_fields)

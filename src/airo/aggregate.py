@@ -10,12 +10,14 @@ from .taxonomy import DISCLOSURE_TRAITS
 def summarise(doc: dict, passages: list[dict], labels: list[dict]) -> dict:
     """Roll the final labels of one document up to report level.
 
-    `passages` are all candidates of the document, direct and implicit mentions
-    alike; every one of them is a task for the coders.
+    `passages` are all candidates of the document. Direct mentions carry labels;
+    implicit mentions are context and are counted by term and glossary group.
     """
     label_by_id = {l["passage_id"]: l for l in labels}
+    context = [p for p in passages if p["mention"] == "implicit"]
+    passages = [p for p in passages if p["mention"] == "direct"]
     mine = [(p, label_by_id[p["passage_id"]]) for p in passages if p["passage_id"] in label_by_id]
-    about_ai = [(p, l) for p, l in mine if l["ai_reference"] in ("explicit", "implicit")]
+    about_ai = [(p, l) for p, l in mine if l["ai_reference"] == "explicit"]
 
     def count(field: str) -> dict:
         c = Counter()
@@ -34,12 +36,9 @@ def summarise(doc: dict, passages: list[dict], labels: list[dict]) -> dict:
         "fiscal_year": doc["fiscal_year"],
         "n_words": doc["n_words"],
         "n_candidates": len(passages),
-        "n_direct_mentions": sum(p["mention"] == "direct" for p in passages),
-        "n_implicit_mentions": sum(p["mention"] == "implicit" for p in passages),
+        "n_context_passages": len(context),
         "n_unlabelled": len(passages) - len(mine),
         "n_ai_passages": n_ai,
-        # AI passages the glossaries found through context terms only: what a run without them would miss.
-        "n_ai_passages_from_implicit_mentions": sum(p["mention"] == "implicit" for p, _ in about_ai),
         "n_false_candidates": sum(l["ai_reference"] == "none" for _, l in mine),
         "n_needs_review": sum(l["needs_review"] for _, l in mine),
         "ai_reference": dict(Counter(l["ai_reference"] or "disputed" for _, l in mine)),
@@ -59,6 +58,12 @@ def summarise(doc: dict, passages: list[dict], labels: list[dict]) -> dict:
         "trait_rates": {t: round(traits.get(t, 0) / n_ai, 3) for t in DISCLOSURE_TRAITS} if n_ai else {},
         "sections": dict(Counter(p["section"] or "unknown" for p, _ in about_ai).most_common()),
         "entities": sorted({e for _, l in about_ai for e in l["entities"]}),
+        # Context, counted without a model: passages per term and per glossary group.
+        "context_terms": dict(Counter(t for p in context for t in p["matched"].get("context", [])).most_common()),
+        "context_groups": dict(Counter(
+            p.get("term_groups", {}).get(t, "industry") for p in context for t in p["matched"].get("context", [])
+        ).most_common()),
+        "context_sections": dict(Counter(p["section"] or "unknown" for p in context).most_common()),
         "recall_check": doc.get("recall_check"),
         "mentions_ai": bool(about_ai),
         "ai_as_market_driver": "market_driver" in roles,
@@ -68,8 +73,11 @@ def summarise(doc: dict, passages: list[dict], labels: list[dict]) -> dict:
 
 
 def render(doc: dict, passages: list[dict], labels: list[dict], summary: dict) -> str:
-    """Markdown view of one report: summary, then every candidate passage with its labels."""
+    """Markdown view of one report: summary, every direct mention with its labels,
+    then the context passages (implicit mentions) with their text."""
     label_by_id = {l["passage_id"]: l for l in labels}
+    context = [p for p in passages if p["mention"] == "implicit"]
+    passages = [p for p in passages if p["mention"] == "direct"]
 
     def fmt(d: dict) -> str:
         return ", ".join(f"{k} ({v})" for k, v in d.items()) or "none"
@@ -80,10 +88,9 @@ def render(doc: dict, passages: list[dict], labels: list[dict], summary: dict) -
         f"# {doc['company']} | {doc['form']} | fiscal year {doc['fiscal_year']}",
         "",
         f"- Report length: {doc['n_words']:,} words",
-        f"- Candidate passages: {summary['n_candidates']} ({summary['n_direct_mentions']} direct, "
-        f"{summary['n_implicit_mentions']} implicit mentions), of which about AI: {summary['n_ai_passages']} "
-        f"({summary['n_ai_passages_from_implicit_mentions']} from implicit mentions), "
+        f"- Direct AI mentions (classified): {summary['n_candidates']}, of which about AI: {summary['n_ai_passages']}, "
         f"false candidates: {summary['n_false_candidates']}, flagged for review: {summary['n_needs_review']}",
+        f"- Context passages (not classified): {summary['n_context_passages']}; groups: {fmt(summary['context_groups'])}",
         f"- Frames: {fmt(summary['frames'])}",
         f"- Roles: {fmt(summary['roles'])}",
         f"- Risk types: {fmt(summary['risk_types'])}",
@@ -101,7 +108,7 @@ def render(doc: dict, passages: list[dict], labels: list[dict], summary: dict) -
     for p in passages:
         l = label_by_id.get(p["passage_id"])
         where = " ".join(x for x in (p["section"], p["section_title"]) if x) or "unknown section"
-        lines += [f"## {where} (blocks {p['blocks'][0]}-{p['blocks'][1]}, {p['mention']} mention)", ""]
+        lines += [f"## {where} (blocks {p['blocks'][0]}-{p['blocks'][1]})", ""]
         if l is None:
             lines += ["**Not labelled.**", ""]
         else:
@@ -131,4 +138,13 @@ def render(doc: dict, passages: list[dict], labels: list[dict], summary: dict) -
                 lines += [f"> {quote}", ""]
             lines += [f"- Note ({n})" for n in l["notes"]] + ([""] if l["notes"] else [])
         lines += ["<details><summary>Passage</summary>", "", p["text"], "", "</details>", ""]
+    if context:
+        lines += ["# Context passages: implicit mentions, not classified", ""]
+        for p in context:
+            where = " ".join(x for x in (p["section"], p["section_title"]) if x) or "unknown section"
+            terms = ", ".join(
+                f"{t} ({', '.join(p.get('matched_text', {}).get(t, []))})" if p.get("matched_text", {}).get(t) else t
+                for t in p["matched"].get("context", [])
+            )
+            lines += [f"## {where} (blocks {p['blocks'][0]}-{p['blocks'][1]})", "", f"**Terms: {terms}**", "", p["text"], ""]
     return "\n".join(lines)

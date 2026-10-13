@@ -458,3 +458,77 @@ for them.
   eight kinds of AI from the policy team's sheet were left out (the last can be derived from the
   matched terms).
 
+---
+
+## 13. Explicit means treats AI; implicit means context and is not labelled (v0.7)
+
+**Before (entry 12, v0.6, same day).** Every candidate passage went to the classifier, and
+`ai_reference` had three values: `explicit` (names AI), `implicit` (AI not named, but AI-linked
+infrastructure or demand is a factor) and `none`. The retrieval kind of a passage (`direct`:
+an `ai`-tier term; `implicit`: `context`-tier terms only) and the label value `implicit` shared
+a word and were read as the same thing.
+
+**New.**
+
+- `ai_reference` has two values. `explicit`: the passage treats AI, that is, a matched AI term
+  is used in its technology sense and a statement is made about it for the company. `none`:
+  it does not. The `explicit` criteria name what is not enough: analytics, data science,
+  automation, algorithm, digital, predictive or autonomous wording without an AI term.
+- Passages found through context terms only are context, not AI statements. They are not
+  sent to the classifier (entry 12's change is reversed; `hints.jsonl` is back). They are
+  counted per filing by term and by glossary group (`context_terms`, `context_groups`,
+  `context_sections` in the report summary; the group comes from the core glossary, industry
+  glossaries count as `industry`) and shown in the report view with their text.
+- Everything else of v0.6 stays: `business_functions`, `governance_responses`,
+  `national_security`, the recall check, `autonomous` and `multimodal` as context terms.
+
+**Why.** The sample of 3,321 context passages (entry 12) was read again, this time passage by
+passage. Of the 124 `explicit` labels in the random stratum, which has no AI term by
+construction, the classifier's evidence quotes rest on "analytics" (16), "data science" (15),
+"algorithm" (14), "automation" (12), "predictive" (11); several quote sentences with no
+technology word at all ("If we are unable to identify, hire and retain technical resources",
+"Mr. Pharis has been working in quantitative finance for over 20 years", "Quantum Computing
+Inc."). The 208 of 209 `explicit` on `predictive analytics` are the same reading; the UK
+pipeline's classifier labelled the same chunks `none`. The `implicit` labels sat almost
+entirely on data-centre and compute terms (98 of 124 on "data center") and 180 of them on
+`autonomous`, outside the value's own definition. So the model was deciding, differently from
+run to run, what counts as AI, and 439 of the 563 context terms in the random stratum (1,203
+of 1,997 passages: loyalty programme, truckload, EU MDR, fair lending, ...) yielded no AI
+passage at all and would have been paid for in every run.
+
+The definition now follows the rule both the research plan's codebook and the policy team's
+sheet state ("code what the company discloses, not what you infer"), and the coding principle
+of the MIT AI Risk Repository, which sorts risks "based on how they are presented in the
+source material, without imposing additional interpretation" and files what a source does not
+specify under "Other" rather than inferring it
+([December 2024 update](https://airisk.mit.edu/blog/framework-updates-december-2024);
+[Slattery et al. 2024](https://www.arxiv.org/pdf/2408.12622)). The repository has no
+explicit/implicit axis; what it has is the decision to code the stated and not the implied,
+which is what `explicit` now means here.
+
+**Decisions.**
+
+| Decision | Alternative considered | Reason |
+|---|---|---|
+| Context passages are never labelled | Label them and keep `implicit` for infrastructure demand (entry 12); label only context terms with measured yield | Whatever is labelled with the AI taxonomy becomes part of the AI dataset. A context passage is not an AI statement, so its labels would be either `none` (paid for nothing) or an inference. Counting context by term costs nothing and serves the one question that needs it (research plan 6, AI as demand driver), next to the explicit passages with role `market_driver`. |
+| `explicit` is decided from the `ai`-tier term list, the classifier only rejects false positives | Let the classifier judge analytics wording case by case | Two classifiers on the same sentences gave opposite answers (predictive analytics: 100 % `none` in the UK pipeline, 99.5 % `explicit` here). A measure that depends on the model's reading drifts with the model and with the grouping of a request; a term list is the same in 2020 and 2025 and can be published. |
+| `predictive analytics` stays a context term | Move it to tier `ai` because the policy team's sheet lists it as a type of AI | Whether a filing that says "predictive analytics" and not "AI" discloses AI is a definition the team has to own; the sheet is one input, not the decision. Until it is decided, the term is counted as context (euphemisms group), so the figure exists either way. |
+| No `infrastructure` value | A third value for AI-driven demand without an AI term | It would re-create a labelled class of passages that do not treat AI. The demand phenomenon is visible in the context counts (compute_infrastructure group) and, where AI is named as the cause, in explicit passages with `market_driver`. |
+
+**Better.** The AI dataset contains only passages that treat AI, and whether a passage is in
+it is decided by a word list plus a false-positive check, not by what a model takes a word to
+stand for. Run size and cost return to those of `us-2025h1_V2` (about 28,400 tasks on that
+corpus) plus the v0.6 fields.
+
+**Not better / open.**
+
+- A passage that treats AI with a term the `ai` tier lacks is context and gets no label. The
+  recall check (entry 12) shows such terms per run; adding one is a glossary decision, not a
+  model decision.
+- The 63,801 context passages of `us-2025h1_V2` are, under this definition, the context
+  dataset of that run; their 3,321 sampled labels are a study of the classifier's reading, not
+  data.
+- Whether "predictive analytics", "recommendation systems" or "autonomous" count as AI is
+  undecided; each is a one-line glossary change once decided.
+- v0.7 has not been run on a corpus.
+

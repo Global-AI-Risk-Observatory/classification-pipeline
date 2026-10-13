@@ -62,7 +62,7 @@ def test_the_core_glossary_finds_the_terms_the_check_showed_missing():
     matcher = glossary.load()
     assert matcher.find("An autonomous haulage fleet operates in the pit.") == {"context": ["autonomous"]}
     assert matcher.find("Our multi-modal freight network grew.") == {"context": ["multimodal"]}
-    # They are context terms: on their own they make an implicit mention, which is classified like any other.
+    # They are context terms: on their own they make an implicit mention, which is context and is not classified.
     doc = {"doc_id": "d1", "sections": {}, "isic_class": None}
     (p,) = retrieve.passages(doc, [block(0, "An autonomous haulage fleet operates in the pit.")], matcher=matcher)
     assert p["mention"] == "implicit"

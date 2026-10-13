@@ -43,7 +43,7 @@ BigQuery once the first cloud runs are done.
 |---|---|---|---|
 | 0 download | `fetch <out> --types T` | the data provider's API (US companies, Markdown only), the names already in `<out>` | `<out>/markdown/<filing id>.md`, `<out>/manifest/<filing id>.json`, once `<out>/companies/us.jsonl` |
 | 1+2 ingest, retrieve | `run <dir-or-files...>` | Markdown filings (also HTML / inline XBRL), `index/files.jsonl` | `docs/<doc_id>/document.json`, `docs/<doc_id>/blocks.jsonl`, `docs/<doc_id>/passages.jsonl`, `index/files.jsonl` |
-| 3 classify | `tasks` | `docs/*/document.json`, `docs/*/passages.jsonl` | `tasks.jsonl`, `codebook.md` |
+| 3 classify | `tasks` | `docs/*/document.json`, `docs/*/passages.jsonl` | `tasks.jsonl`, `hints.jsonl`, `codebook.md` |
 | | `accept <file> --coder X` | a coder's JSONL file, `docs/*/passages.jsonl` | `labels/X.jsonl` |
 | | `adjudicate` | `labels/*.jsonl` | `labels_final.jsonl`, `agreement.json` |
 | 4 aggregate | `aggregate` | `docs/*/document.json`, `docs/*/passages.jsonl`, `labels_final.jsonl` | `report_summary.jsonl`, `reports/<doc_id>.md`, `recall_check.json` |
@@ -196,9 +196,11 @@ The container runs `python -m airo <command>` with `AIRO_GLOSSARIES=/app/glossar
   structure), including that file's `class_terms` for the exact class. Terms have a tier: `ai` (the term
   itself denotes AI) or `context` (industry lingo around which AI is discussed, such as "data center" for
   a uranium miner). This gives two kinds of mention: a passage with at least one `ai` hit is a **direct
-  mention**; a passage with `context` hits only is an **implicit mention**. Both go to the classifier
-  as tasks: the tier decides what is found, the classifier decides whether it is about AI. The kind of
-  mention stays on the passage, the task and the report summary, so results can be split by it. Phrases match
+  mention**: a candidate AI statement that goes to the classifier as a task, which confirms it (`explicit`)
+  or rejects it (`none`). A passage with `context` hits only is an **implicit mention**: context around AI
+  (data-centre demand, industry lingo, euphemisms), not an AI statement. It is never classified; it is
+  handed on with its text in `hints.jsonl`, counted per term and glossary group in the report summary
+  (`context_terms`, `context_groups`), and shown at the end of the report view. Phrases match
   as whole words with plural and hyphen/space variation; short acronyms are case-sensitive. A trie-merged
   pre-filter keeps the search at about one second per 10-K. A hit block and its neighbours form a passage
   (page furniture is skipped, a following heading ends the window); overlapping or touching windows merge,
@@ -210,7 +212,7 @@ The container runs `python -m airo <command>` with `AIRO_GLOSSARIES=/app/glossar
   `document.json`), and `aggregate` adds the counts up in `recall_check.json`. The hits do not become
   passages; a term that turns up there is added to a glossary.
 - **The classifier stage is defined by two files, not by who codes.** `tasks.jsonl` (passage plus company,
-  form, fiscal year, section, heading, kind of mention, matched terms) and `codebook.md` go in; one label per passage comes
+  form, fiscal year, section, heading, matched terms) and `codebook.md` go in; one label per passage comes
   back as JSONL. A coder can be a person, an agent or a batch job against a model API.
 - **Every accepted label is validated.** `accept` checks each line against the schema in `taxonomy.py`,
   rejects unknown and duplicate passage ids and evidence that is not a verbatim quote from the passage
@@ -222,7 +224,7 @@ The container runs `python -m airo <command>` with `AIRO_GLOSSARIES=/app/glossar
   field, the share of passages on which all coders agree, the share of coder pairs with identical labels,
   and the passages to review.
 
-## Taxonomy v0.6
+## Taxonomy v0.7
 
 One label per passage. `taxonomy.py` is the single definition; `python -m airo tasks` renders it as the
 full codebook, with a definition and a checklist of criteria for every value (a value applies only if all
@@ -230,11 +232,12 @@ its criteria hold) and the decision rules, to `data/codebook.md`. Since v0.4 the
 of the AI statement before judging any role or trait; criteria marked "frame-dependent" in the codebook
 (`market_driver`, `adoption`, `governance`, `externalisation`) are read in that frame. v0.5 added
 `substantiveness`; v0.6 added `business_functions`, `governance_responses` and the risk type
-`national_security`.
+`national_security`; v0.7 removed `implicit` from `ai_reference`: a passage either treats AI or it does
+not, and context passages are not labelled at all.
 
 | Field | Allowed values | Rule |
 |---|---|---|
-| `ai_reference` | `explicit`, `implicit`, `none` | exactly one, judged from the passage alone; with `none` the next nine fields and `evidence` stay empty |
+| `ai_reference` | `explicit`, `none` | exactly one, judged from the passage alone: `explicit` needs a matched AI term in its technology sense and a statement about AI; analytics, automation or algorithm wording without an AI term is `none`; with `none` the next nine fields and `evidence` stay empty |
 | `frame` | `risk_factor`, `governance`, `business`, `market` | exactly one when the passage is about AI, decided from section, heading and sentence function before any role or trait; `null` if and only if `ai_reference` is `none` |
 | `roles` | `market_driver`, `adoption`, `offering`, `risk`, `governance`, `incident`, `general` | one or more; `general` only alone |
 | `risk_types` | `market_demand`, `strategic_competitive`, `operational_reliability`, `cybersecurity`, `third_party`, `regulatory_legal`, `workforce`, `reputational_ethical`, `information_integrity`, `environmental`, `national_security`, `other` | one or more if and only if `risk` is a role |
