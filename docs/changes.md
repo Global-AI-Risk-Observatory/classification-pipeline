@@ -713,7 +713,22 @@ with the number in hand, not one the coder takes for every passage as it goes. D
 2026-10-14 after the cost of the subset was compared with that of `us-2025h1_V2`
 (USD 0.0021 against 0.0012 per task).
 
+**Amended 2026-10-14, after pass 1 of `us-2025h1_V3`.** 26,884 tasks, 23,791 labelled, 3,093
+deferred (11.5 %), USD 28.21. The deferred by reason: 1,807 labels with more than three evidence
+quotes (4 to 35, none empty, all `explicit`); 598 quotes not verbatim; 482 a field given without
+its role or missing; 206 missing from the batch answer. Two decisions:
+- A label with more than three quotes is complete; only its list is too long. Acceptance now
+  keeps the first three instead of refusing (`taxonomy.py`), like `unspecified` next to a named
+  kind (entry 14). The 1,807 are accepted from their stored answers without a model call.
+- `--repairs-from` no longer sends one request per passage with the whole codebook. It asks the
+  deferred passages again as a batch pass, 40 per request in a new grouping, without the previous
+  answer; what is rejected again is deferred again. A single request costs about forty times a
+  batch share, and most rejections (a field without its role, a label missing from the answer)
+  do not repeat in a new grouping. The single re-ask with the rejected answer remains available
+  without `--defer-repairs`, as before.
+
 **Not better / open.** The deferred passages have no label until the repairs run; a dataset
 exported in between is complete in chunks and incomplete in labels, which `chunks_without_label`
-in the filing metrics shows. Not yet used on a run.
+in the filing metrics shows. Quotes that the model cannot reproduce verbatim fail in every
+grouping; those passages stay without a label.
 

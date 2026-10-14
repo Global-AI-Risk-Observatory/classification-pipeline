@@ -695,19 +695,21 @@ def test_deferred_repairs_are_not_asked_and_are_written_to_a_sidecar(tmp_path):
     assert [(d["passage_id"], d["answer"] is None) for d in deferred] == [(rejected_id, False), (missing_id, True)]
 
 
-def test_repair_runs_the_deferred_re_asks_one_request_per_task():
+def test_repair_asks_the_deferred_passages_again_as_one_batch_and_defers_what_fails_again():
     rejected_id, missing_id = TASKS[0]["passage_id"], TASKS[1]["passage_id"]
     deferred = [
         {"passage_id": rejected_id, "answer": json.dumps({**LABELS[rejected_id], "evidence": ["x"]}), "error": "rejected by validate: evidence[0] is not a verbatim quote"},
         {"passage_id": missing_id, "answer": None, "error": "no label in the batch answer"},
     ]
-    client = BatchClient()
-    results = gemini.repair(TASKS, deferred, CODEBOOK, model="m", client=client, backoff=0)
+    # The second passage comes back fine this time; the first is rejected again.
+    client = BatchClient(lambda pid, n, batch: {**LABELS[pid], "evidence": ["still not in the passage"]} if pid == rejected_id else LABELS[pid])
+    results = gemini.repair(TASKS, deferred, CODEBOOK, model="m", client=client, backoff=0, batch_size=40)
 
-    assert [c["batch"] for c in client.calls] == [False, False]
-    assert "Your previous answer to this task was rejected" in client.calls[0]["contents"]
-    assert "Your previous answer" not in client.calls[1]["contents"]
-    assert [(r["passage_id"], r["error"], r["repairs"]) for r in results] == [(rejected_id, None, 1), (missing_id, None, 0)]
+    assert [c["batch"] for c in client.calls] == [True]  # one batch request, no single re-asks
+    assert [c["ids"] for c in client.calls] == [[rejected_id, missing_id]]  # only the deferred passages, in task order
+    assert [(r["passage_id"], r["error"] is None, r.get("deferred", False)) for r in results] == [
+        (rejected_id, False, True), (missing_id, True, False),
+    ]
 
 
 def test_the_command_line_can_defer_and_later_run_the_repairs(tmp_path, monkeypatch, capsys):
@@ -718,7 +720,7 @@ def test_the_command_line_can_defer_and_later_run_the_repairs(tmp_path, monkeypa
     calls = []
 
     def label(pid, n, batch):
-        return {**LABELS[pid], "evidence": ["not in the passage"]} if (pid == rejected_id and batch) else LABELS[pid]
+        return {**LABELS[pid], "evidence": ["not in the passage"]} if (pid == rejected_id and n == 1) else LABELS[pid]
 
     client = BatchClient(label)
     monkeypatch.setattr(gemini, "make_client", lambda project, location: client)
@@ -733,9 +735,9 @@ def test_the_command_line_can_defer_and_later_run_the_repairs(tmp_path, monkeypa
     rc = gemini.main(["--tasks", str(tasks_file), "--codebook", str(codebook_file), "--out", str(out2),
                       "--model", "m", "--project", "p", "--repairs-from", str(out) + ".deferred.jsonl"])
     assert rc == 0
-    assert [c["batch"] for c in client.calls] == [True, False]
+    assert [c["batch"] for c in client.calls] == [True, True]  # the repairs are a batch pass too
     labels = [json.loads(l) for l in out2.read_text().splitlines()]
     assert [l["passage_id"] for l in labels] == [rejected_id]
     summary = json.loads((tmp_path / "gemini_repairs.jsonl.run.json").read_text(encoding="utf-8"))
-    assert (summary["tasks"], summary["succeeded"], summary["asked_again"]) == (1, 1, 1)
+    assert (summary["tasks"], summary["succeeded"], summary["asked_again"], summary["deferred"]) == (1, 1, 0, 0)
 

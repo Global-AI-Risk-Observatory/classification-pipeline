@@ -1106,8 +1106,10 @@ class Label(BaseModel):
             self.ai_kinds = [k for k in self.ai_kinds if k != "unspecified"]
         if self.substantiveness is None:
             raise ValueError("substantiveness is required when the passage is about AI")
-        if len(self.evidence) > 3 or any(not q.strip() for q in self.evidence):
+        if any(not q.strip() for q in self.evidence):
             raise ValueError("evidence must be a list of 1 to 3 non-empty quotes")
+        # More than three quotes: the label is complete, the list is too long. The first three are kept.
+        self.evidence = self.evidence[:3]
         return self
 
 
@@ -1279,7 +1281,8 @@ def codebook() -> str:
             "- `entities`: organisations or AI products the passage names in connection with AI "
             "(e.g. `[\"Microsoft\", \"Nvidia\"]`); `[]` if none, and `[]` for `none` passages. Not the "
             "reporting company itself, not sources of statistics.",
-            "- `evidence`: a list of 1 to 3 quotes copied verbatim from the passage that support your labels, "
+            "- `evidence`: a list of 1 to 3 quotes copied verbatim from the passage that support your labels "
+            "(more than 3 are cut to the first 3 on acceptance), "
             "one per role where the roles rest on different sentences (each quote is checked as an exact "
             "substring, whitespace aside; do not paraphrase, do not add ellipses). `[]` if and only if "
             "`ai_reference` is `none`.",

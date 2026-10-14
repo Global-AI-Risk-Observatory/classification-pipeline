@@ -133,8 +133,10 @@ evidence) are listed in the run file and left out of the labels file; re-run wit
 filtered task file to retry them. A label the acceptance check rejects is asked again on its own with the
 reason, up to `--max-repairs` times; each such re-ask sends the whole codebook again, so with
 `--defer-repairs` the coder asks nothing on its own and writes the rejected and missing labels to
-`<out>.deferred.jsonl` instead, and `--repairs-from <that file>` runs the re-asks later, once their number
-and cost are known. The live call is exercised: `us-2025h1_V2` (taxonomy v0.5, 7,794
+`<out>.deferred.jsonl` instead, and `--repairs-from <that file>` asks those passages again later as a batch
+pass (40 per request, a new grouping, no previous answer), once their number is known; what is rejected
+again is deferred again. A label with more than three evidence quotes is cut to the first three on
+acceptance, not refused. The live call is exercised: `us-2025h1_V2` (taxonomy v0.5, 7,794
 filings), the 3,321-passage sample of context passages, the 40-filing tests and `us-2025h1_V3` (taxonomy
 v0.9) all ran with it against Vertex AI, 40 passages per request, temperature 0, thinking off; measured
 cost about USD 0.002 per passage. The unit tests use a fake client.

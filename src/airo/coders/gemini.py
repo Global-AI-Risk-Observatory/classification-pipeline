@@ -429,27 +429,23 @@ def code(tasks: list[dict], codebook: str, *, model: str, client, workers: int =
 def repair(tasks: list[dict], deferred: list[dict], codebook: str, *, model: str, client, workers: int = 4,
            max_retries: int = 5, thinking_budget: Optional[int] = None,
            max_output_tokens: int = MAX_OUTPUT_TOKENS, backoff: float = 1.0, max_repairs: int = 2,
+           batch_size: int = BATCH_SIZE,
            on_result: Optional[Callable[[dict], None]] = None) -> list[dict]:
-    """The deferred re-asks: one request per task, with the rejected answer and the reason when there was one.
+    """The deferred passages again, as a batch pass: `batch_size` per request, the codebook once per request.
 
     `deferred` are the rows of a `<out>.deferred.jsonl` file ({"passage_id", "answer", "error"});
-    tasks not among them are skipped. Returns one result per deferred task, in that order.
+    tasks not among them are skipped. The passages are asked afresh, in a new grouping, without
+    the rejected answer: on the runs so far most rejections (a field given without its role, a
+    label missing from the answer) do not repeat in a new grouping, and a single request with the
+    whole codebook per passage costs about forty times a batch share. What is rejected again is
+    deferred again, so the output has its own `.deferred.jsonl`. Returns one result per deferred
+    task, in task order.
     """
-    config = request_config(thinking_budget, max_output_tokens)
-    by_id = {t["passage_id"]: t for t in tasks}
-    todo = [d for d in deferred if d["passage_id"] in by_id]
-
-    def run(d: dict) -> dict:
-        task = by_id[d["passage_id"]]
-        rejected = (d["answer"], d["error"]) if d.get("answer") else None
-        result = code_one(task, codebook, model=model, client=client, config=config, max_retries=max_retries,
-                          backoff=backoff, max_repairs=max_repairs, rejected=rejected)
-        if on_result:
-            on_result(result)
-        return result
-
-    with ThreadPoolExecutor(max_workers=max(1, workers)) as pool:
-        return list(pool.map(run, todo))
+    wanted = {d["passage_id"] for d in deferred}
+    todo = [t for t in tasks if t["passage_id"] in wanted]
+    return code(todo, codebook, model=model, client=client, workers=workers, max_retries=max_retries,
+                thinking_budget=thinking_budget, max_output_tokens=max_output_tokens, backoff=backoff,
+                max_repairs=max_repairs, batch_size=max(2, batch_size), defer=True, on_result=on_result)
 
 
 # --------------------------------------------------------------------------
@@ -562,8 +558,9 @@ def parse_args(argv: Optional[list[str]] = None) -> argparse.Namespace:
                    help="do not ask rejected or missing labels again on their own; write them to <out>.deferred.jsonl "
                         "and decide later (each single re-ask sends the whole codebook)")
     p.add_argument("--repairs-from", type=Path, default=None,
-                   help="run the deferred re-asks of this <out>.deferred.jsonl file (one request per task) and write "
-                        "their labels to --out")
+                   help="ask the passages of this <out>.deferred.jsonl file again, as a batch pass (--batch-size per "
+                        "request, codebook once per request), and write their labels to --out; what is rejected "
+                        "again goes to <out>.deferred.jsonl")
     args = p.parse_args(argv)
     if args.defer_repairs and args.repairs_from:
         p.error("--defer-repairs and --repairs-from exclude each other")
@@ -600,7 +597,7 @@ def main(argv: Optional[list[str]] = None) -> int:
         results = repair(
             tasks, deferred, codebook, model=args.model, client=client, workers=args.workers,
             max_retries=args.max_retries, max_repairs=args.max_repairs, thinking_budget=args.thinking_budget,
-            max_output_tokens=args.max_output_tokens, on_result=progress,
+            max_output_tokens=args.max_output_tokens, batch_size=args.batch_size, on_result=progress,
         )
     else:
         results = code(

@@ -832,9 +832,10 @@ def test_label_rejects_evidence_that_is_not_a_list():
         Label(**label_fields(evidence="Demand for AI data centers is growing."))
 
 
-def test_label_rejects_more_than_three_evidence_quotes():
-    with pytest.raises(ValidationError, match="1 to 3 non-empty quotes"):
-        Label(**label_fields(evidence=["a", "b", "c", "d"]))
+def test_label_keeps_the_first_three_of_more_than_three_evidence_quotes():
+    # The label is complete, only the list is too long: cut on acceptance, not refused and asked again.
+    assert Label(**label_fields(evidence=["a", "b", "c", "d", "e"])).evidence == ["a", "b", "c"]
+    assert Label(**label_fields(evidence=["a", "b", "c"])).evidence == ["a", "b", "c"]
 
 
 def test_label_rejects_empty_evidence_quote():
