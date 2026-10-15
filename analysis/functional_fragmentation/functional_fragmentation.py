@@ -43,6 +43,125 @@ MODEL = "gemini-2.5-flash"
 EMBEDDING_MODEL = "gemini-embedding-001"
 BATCH = 40
 
+# AI risk mitigation subcategories: number -> (name, definition).
+# 1.1 to 4.6: Saeri, Lloyd George, Graham, Lacarriere, Slattery, Noetel, Thompson, "Mapping AI Risk
+# Mitigations: Evidence Scan and Preliminary AI Risk Mitigation Taxonomy", arXiv 2512.11931, Table 1
+# (4 categories, 23 subcategories; also airisk.mit.edu/ai-risk-mitigations, CC BY 4.0).
+# 3.7, 4.7 and 5.1 to 8.1: Popchanovska, Gjorgjevikj, Rizinski, Chitkushev, Vodenska, Trajanov,
+# "When AI Fails, What Works? A Data-Driven Taxonomy of Real-World AI Risk Mitigation Strategies",
+# arXiv 2603.04259v1, Appendix A (nine subcategories added from incident reports; 32 in total).
+# `other` is this analysis's open category for a measure that fits none of them.
+MITIGATION_CATEGORIES = {
+    "1": "Governance & Oversight",
+    "2": "Technical & Security",
+    "3": "Operational Process",
+    "4": "Transparency & Accountability",
+    "5": "Corrective & Restrictive Actions",
+    "6": "Legal, Regulatory & Enforcement Actions",
+    "7": "Financial, Economic & Market Controls",
+    "8": "Avoidance & Denial",
+}
+MITIGATIONS: dict[str, tuple[str, str]] = {
+    "1.1": ("Board Structure & Oversight",
+            "Governance structures and leadership roles that establish executive accountability for AI safety and "
+            "risk management."),
+    "1.2": ("Risk Management",
+            "Systematic methods that identify, evaluate, and manage AI risks for comprehensive risk governance "
+            "across organizations."),
+    "1.3": ("Conflict of Interest Protections",
+            "Governance mechanisms that manage financial interests and organizational structures to ensure "
+            "leadership can prioritize safety over profit motives in critical situations."),
+    "1.4": ("Whistleblower Reporting & Protection",
+            "Policies and systems that enable confidential reporting of safety concerns or ethical violations to "
+            "prevent retaliation and encourage disclosure of risks."),
+    "1.5": ("Safety Decision Frameworks",
+            "Protocols and commitments that constrain decision-making about model development, deployment, and "
+            "capability scaling, and govern safety-capability resource allocation to prevent unsafe AI advancement."),
+    "1.6": ("Environmental Impact Management",
+            "Processes for measuring, reporting, and reducing the environmental footprint of AI systems to ensure "
+            "sustainability and responsible resource use."),
+    "1.7": ("Societal Impact Assessment",
+            "Processes that assess AI systems' effects on society, including impacts on employment, power "
+            "dynamics, political processes, and cultural values."),
+    "2.1": ("Model & Infrastructure Security",
+            "Technical and physical safeguards that secure AI models, weights, and infrastructure to prevent "
+            "unauthorized access, theft, tampering, and espionage."),
+    "2.2": ("Model Alignment",
+            "Technical methods to ensure AI systems understand and adhere to human values and intentions."),
+    "2.3": ("Model Safety Engineering",
+            "Technical methods and safeguards that constrain model behaviors and protect against exploitation and "
+            "vulnerabilities."),
+    "2.4": ("Content Safety Controls",
+            "Technical systems and processes that detect, filter, and label AI-generated content to identify misuse "
+            "and enable content provenance tracking."),
+    "3.1": ("Testing & Auditing",
+            "Systematic internal and external evaluations that assess AI systems, infrastructure, and compliance "
+            "processes to identify risks, verify safety, and ensure performance meets standards."),
+    "3.2": ("Data Governance",
+            "Policies and procedures that govern responsible data acquisition, curation, and usage to ensure "
+            "compliance, quality, user privacy, and removal of harmful content."),
+    "3.3": ("Access Management",
+            "Operational policies and verification systems that govern who can use AI systems and for what "
+            "purposes to prevent safety circumvention, deliberate misuse, and deployment in high-risk contexts."),
+    "3.4": ("Staged Deployment",
+            "Implementation protocols that deploy AI systems in stages, requiring safety validation before "
+            "expanding user access or capabilities."),
+    "3.5": ("Post-Deployment Monitoring",
+            "Ongoing monitoring processes that track AI behavior, user interactions, and societal impacts "
+            "post-deployment to detect misuse, emergent dangerous capabilities, and harmful effects."),
+    "3.6": ("Incident Response & Recovery",
+            "Protocols and technical systems that respond to security incidents, safety failures, or capability "
+            "misuse to contain harm and restore safe operations."),
+    "3.7": ("Incident Investigation",
+            "Post-incident analyses and investigations that assess system behavior, organizational processes, and "
+            "third-party contributions to identify causes and prevent recurrence."),
+    "4.1": ("System Documentation",
+            "Comprehensive documentation protocols that record technical specifications, intended uses, "
+            "capabilities, and limitations of AI systems to enable informed evaluation and governance."),
+    "4.2": ("Risk Disclosure",
+            "Formal reporting protocols and notification systems that communicate risk information, mitigation "
+            "plans, safety evaluations, and significant AI activities to enable external oversight and inform "
+            "stakeholders."),
+    "4.3": ("Incident Reporting",
+            "Formal processes and protocols that document and share AI safety incidents, security breaches, "
+            "near-misses, and relevant threat intelligence with appropriate stakeholders to enable coordinated "
+            "responses and systemic improvements."),
+    "4.4": ("Governance Disclosure",
+            "Formal disclosure mechanisms that communicate governance structures, decision frameworks, and safety "
+            "commitments to enhance transparency and enable external oversight of high-stakes AI decisions."),
+    "4.5": ("Third-Party System Access",
+            "Mechanisms granting controlled system access to vetted external parties to enable independent "
+            "assessment, validation, and safety research of AI models and capabilities."),
+    "4.6": ("User Rights & Recourse",
+            "Frameworks and procedures that enable users to identify and understand AI system interactions, report "
+            "issues, request explanations, and seek recourse or remediation when affected by AI systems."),
+    "4.7": ("Training & Supportive Measures",
+            "Human-centered measures for training and supporting, including help for workers, users of systems, "
+            "the public, etc."),
+    "5.1": ("System & Feature Restrictions",
+            "Technical or product-level actions that limit, disable, or remove AI system capabilities or features "
+            "to reduce harm, prevent misuse, or manage risk."),
+    "5.2": ("Usage & Access Limitations",
+            "Organizational or operational actions that restrict, pause, or limit the deployment or use of AI "
+            "systems in specific contexts, regions, sectors, or high-risk scenarios, to manage risk."),
+    "6.1": ("Court & Law Enforcement Interventions",
+            "AI-incident mitigations involving courts and law-enforcement authorities that enforce legally binding "
+            "accountability through litigation, criminal proceedings, or coercive legal powers."),
+    "6.2": ("Regulatory Policy & Legal Mandates",
+            "AI-incident mitigations imposed by regulators or governments to ensure compliance, restrict AI use, "
+            "or reshape the legal and market environment."),
+    "7.1": ("Financial, Economic & Compensation Remedies",
+            "AI-incident mitigations that impose financial costs, economic constraints, or monetary redress to "
+            "deter harm or compensate affected parties."),
+    "7.2": ("Market Access & Commercial Restrictions",
+            "AI-incident mitigations that limit or prohibit participation in commercial or institutional markets "
+            "to reduce risk or exposure."),
+    "8.1": ("Denial & Defensive-Based Actions",
+            "Defensive actions or actions and statements referring to refusal of risks and harms."),
+    "other": ("Open category",
+              "A measure that fits none of the subcategories above."),
+}
+
 # Evalet's step 4 ("Abstract Fragments into Features"), with the evaluation criterion replaced by
 # the question what the sentence states, because the passages are not rated, only described.
 DESCRIBE_PROMPT = """You read sentences quoted from the annual reports (Form 10-K) of US companies. Every sentence
