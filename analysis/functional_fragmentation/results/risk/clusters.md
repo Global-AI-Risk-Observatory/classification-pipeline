@@ -1,0 +1,12 @@
+# Functional fragmentation: role `risk`
+
+18996 quotes from 10748 passages; 6 clusters; 1397 quotes (7%) in no cluster.
+
+| # | Cluster | Quotes | Share | Top ISIC divisions | Summary |
+|---|---|---|---|---|---|
+| 4 | AI Technology Risks and Negative Consequences | 4007 | 21% | 64 (760), 62 (534), 63 (488) | These statements identify and describe various potential negative consequences, challenges, and inherent risks associated with the development, integration, and use of AI technologies, distinguishing them from statements focusing on competitive, regulatory, or cybersecurity-specific risks. |
+| 5 | AI Competitive and Market Risks | 3553 | 19% | 62 (639), 63 (570), 64 (442) | These sentences describe how the rapid evolution and adoption of AI technology, both by the company and its competitors, creates competitive pressures, market risks, and operational challenges that could impact the company's success and market position. |
+| 2 | AI Regulatory Landscape Risks | 3399 | 18% | 63 (597), 62 (536), 64 (348) | These statements describe how the uncertain, evolving, and inconsistent regulatory landscape for AI, including new laws and international trade restrictions, poses risks such as increased costs, compliance burdens, and limitations on business operations and revenue. |
+| 1 | AI's Role in Heightened Cybersecurity Risks | 3286 | 17% | 64 (563), 21 (275), 62 (264) | These sentences describe how AI, both in its development and use by threat actors, increases the sophistication, frequency, and severity of cybersecurity risks and attacks, potentially leading to financial, reputational, and operational damage, distinguishing them from statements about other AI-related business, regulatory, or ethical risks. |
+| 3 | AI Integration and Use | 2197 | 12% | 64 (333), 63 (325), 62 (320) | These sentences describe a company's current or planned integration and use of AI technologies in its operations, products, and services, including acknowledgments of third-party AI use and associated risks, distinguishing them from statements focused on broader AI risks, regulatory impacts, or competitive landscape. |
+| 0 | AI Data and IP Disclosure Risks | 1157 | 6% | 21 (217), 62 (195), 63 (156) | These sentences describe how AI, particularly generative AI, introduces or exacerbates risks related to the disclosure of sensitive data and intellectual property infringement, often due to employee use or third-party platforms, distinguishing them from broader cybersecurity, competitive, or financial risks. |
