@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Taxonomy v0.9</title>
+<style>
+  :root {
+    --ink: #1a1a1a; --muted: #5a5a5a; --line: #c9c9c9; --bg: #ffffff;
+    --card: #f7f7f5; --hl: #1f4e79; --hlbg: #e3ecf5; --quote: #333333;
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); color: var(--ink);
+         font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; width: 1800px; padding: 48px 56px; }
+  h1 { font-size: 30px; font-weight: 600; margin: 0 0 6px; letter-spacing: -0.01em; }
+  .sub { font-size: 16px; color: var(--muted); margin: 0 0 30px; }
+  .tier { display: grid; grid-template-columns: 170px 1fr; column-gap: 22px; margin-bottom: 22px; align-items: start; }
+  .tier-label { font-size: 13px; text-transform: uppercase; letter-spacing: 0.08em; color: var(--muted);
+                padding-top: 14px; line-height: 1.45; border-top: 2px solid var(--ink); }
+  .tier-label b { display: block; color: var(--ink); font-size: 14px; letter-spacing: 0.06em; margin-bottom: 4px; }
+  .cards { display: grid; gap: 16px; }
+  .c1 { grid-template-columns: 1fr; }
+  .c2 { grid-template-columns: 1fr 1fr; }
+  .c3 { grid-template-columns: 1fr 1fr 1fr; }
+  .card { background: var(--card); border: 1px solid var(--line); border-radius: 6px; padding: 16px 18px 14px; }
+  .card.cond { border-top: 4px solid var(--hl); }
+  .field { font-family: "SF Mono", Menlo, Consolas, monospace; font-size: 16px; font-weight: 700; }
+  .q { font-size: 14px; color: var(--muted); margin: 2px 0 10px; }
+  .vals { display: flex; flex-wrap: wrap; gap: 5px; margin-bottom: 12px; }
+  .v { font-family: "SF Mono", Menlo, Consolas, monospace; font-size: 12px; padding: 2px 7px; border: 1px solid var(--line);
+       border-radius: 3px; background: #fff; color: var(--muted); }
+  .v.on { background: var(--hlbg); border-color: var(--hl); color: var(--hl); font-weight: 700; }
+  .ex { border-left: 3px solid var(--hl); padding: 4px 0 4px 12px; }
+  .ex .t { font-size: 14px; line-height: 1.45; color: var(--quote); }
+  .ex .src { font-size: 12px; color: var(--muted); margin-top: 5px; }
+  .ex .src b { color: var(--ink); font-weight: 600; }
+  .rule { font-size: 12px; color: var(--muted); margin-top: 8px; }
+  .foot { font-size: 12px; color: var(--muted); margin-top: 8px; line-height: 1.5; }
+  .pair { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+</style>
+</head>
+<body>
+<h1>AI disclosure taxonomy v0.9: eleven fields, one example each</h1>
+<p class="sub">One label per passage. Fields are coded in the order shown; the fields with a blue top edge exist only when the role above them was given. Every quote is a verbatim evidence quote from a filing in the 2025 H1 corpus (US pipeline run us-2025h1_V3), with the filing's form and filing date.</p>
+
+<div class="tier">
+  <div class="tier-label"><b>Gate</b>Is the passage about AI?</div>
+  <div class="cards c2">
+    <div class="card">
+      <div class="field">ai_reference</div>
+      <div class="q">Exactly one value. <code>none</code> leaves every other field empty.</div>
+      <div class="vals"><span class="v on">explicit</span><span class="v">none</span></div>
+      <div class="ex"><div class="t">“We use traditional artificial intelligence ("AI") methods, such as machine learning, to increase organizational efficiency and speed of decision-making, enabling us to reallocate resources to high-value-driven initiatives.”</div>
+      <div class="src"><b>Selective Insurance Group</b>, 10-K, filed 2025-02-10, Item 1 Business</div></div>
+    </div>
+    <div class="card">
+      <div class="field">ai_reference</div>
+      <div class="q">The counter-case: a matched term that is not AI in its technology sense.</div>
+      <div class="vals"><span class="v">explicit</span><span class="v on">none</span></div>
+      <div class="ex"><div class="t">“AI Titan Group Holdings, LP - Class A-2 Common Units | (4) | 8/28/2024 | 44 | 44 | 45 | 0.00”</div>
+      <div class="src"><b>Blackstone Secured Lending Fund</b>, 10-K, filed 2025-02-26, table row. Matched term: “AI” as part of a portfolio company's name.</div></div>
+    </div>
+  </div>
+</div>
+
+<div class="tier">
+  <div class="tier-label"><b>Step 1</b>Which function does the AI sentence have?</div>
+  <div class="cards c1">
+    <div class="card">
+      <div class="field">frame</div>
+      <div class="q">Exactly one value, fixed before any role or trait is judged. Order of tests: a possible harm is <code>risk_factor</code>; an oversight remit is <code>governance</code>; demand, prices or supply is <code>market</code>; otherwise <code>business</code>.</div>
+      <div class="vals"><span class="v on">risk_factor</span><span class="v">governance</span><span class="v">business</span><span class="v">market</span></div>
+      <div class="ex"><div class="t">“Future artificial intelligence (“AI”) or technology characteristics and regulations could negatively impact our business.”</div>
+      <div class="src"><b>Beeline Holdings</b>, 10-K, filed 2025-04-15, Item 1A Risk Factors, heading “Regulatory Risks”</div></div>
+    </div>
+  </div>
+</div>
+
+<div class="tier">
+  <div class="tier-label"><b>Step 2</b>What role does AI play for the company?</div>
+  <div class="cards c1">
+    <div class="card">
+      <div class="field">roles</div>
+      <div class="q">One or more values; <code>general</code> only alone. Three roles open the conditional fields below: <code>risk</code> and <code>incident</code> → risk fields, <code>adoption</code> → adoption fields, <code>governance</code> → governance field.</div>
+      <div class="vals"><span class="v">market_driver</span><span class="v on">adoption</span><span class="v">offering</span><span class="v">risk</span><span class="v">governance</span><span class="v">incident</span><span class="v">general</span></div>
+      <div class="ex"><div class="t">“Recommendations - we utilize AI and big data algorithms to match buyers to the right products, enhancing our seller's overall recovery.”</div>
+      <div class="src"><b>Liquidity Services</b>, ARS, filed 2025-01-17, Item 1 Business</div></div>
+    </div>
+  </div>
+</div>
+
+<div class="tier">
+  <div class="tier-label"><b>Conditional</b>Only with the role that opens the field</div>
+  <div class="cards c3">
+    <div class="card cond">
+      <div class="field">risk_types</div>
+      <div class="q">With role <code>risk</code>. Firm-centric: which risk to the company, coded by mechanism.</div>
+      <div class="vals"><span class="v">market_demand</span><span class="v">strategic_competitive</span><span class="v">operational_reliability</span><span class="v on">cybersecurity</span><span class="v">third_party</span><span class="v">regulatory_legal</span><span class="v">workforce</span><span class="v">reputational_ethical</span><span class="v">information_integrity</span><span class="v">environmental</span><span class="v">national_security</span><span class="v">other</span></div>
+      <div class="ex"><div class="t">“In addition, the rapid evolution and increased adoption of artificial intelligence technologies may intensify our cybersecurity risks.”</div>
+      <div class="src"><b>Dine Brands Global</b>, 10-K, filed 2025-03-05, Item 1A Risk Factors</div></div>
+    </div>
+    <div class="card cond">
+      <div class="field">mit_subdomains</div>
+      <div class="q">With role <code>risk</code> or <code>incident</code>. The stated harm in the MIT AI Risk Repository's Domain Taxonomy: 24 subdomains (1.1 to 7.6) plus <code>other</code>.</div>
+      <div class="vals"><span class="v">1.1 unfair_discrimination…</span><span class="v">1.2</span><span class="v">1.3</span><span class="v">2.1 compromise_of_privacy</span><span class="v">2.2</span><span class="v">3.1 false_or_misleading…</span><span class="v">3.2</span><span class="v">4.1</span><span class="v">4.2</span><span class="v on">4.3 fraud_scams_targeted_manipulation</span><span class="v">5.1</span><span class="v">5.2</span><span class="v">6.1</span><span class="v">6.2</span><span class="v">6.3</span><span class="v">6.4</span><span class="v">6.5</span><span class="v">6.6</span><span class="v">7.1</span><span class="v">7.2</span><span class="v">7.3</span><span class="v">7.4</span><span class="v">7.5</span><span class="v">7.6</span><span class="v">other</span></div>
+      <div class="ex"><div class="t">“Moreover, the increasing sophistication of AI technologies poses a greater risk of identity fraud, as malicious actors may exploit AI to create convincing false identities or manipulate verification processes.”</div>
+      <div class="src"><b>Walmart</b>, 10-K, filed 2025-03-14, Item 1A Risk Factors</div></div>
+    </div>
+    <div class="card cond">
+      <div class="field">governance_responses</div>
+      <div class="q">With role <code>governance</code>. What the company reports doing to manage AI.</div>
+      <div class="vals"><span class="v on">oversight_structure</span><span class="v">policies_processes</span><span class="v">technical_controls</span><span class="v">third_party_controls</span><span class="v">workforce_measures</span><span class="v">transparency_accountability</span><span class="v">other</span></div>
+      <div class="ex"><div class="t">“An AI committee to set Company-wide policy and drive the safe use of AI technologies.”</div>
+      <div class="src"><b>Daktronics</b>, 10-K, filed 2025-06-25, Item 1C Cybersecurity</div></div>
+    </div>
+    <div class="card cond">
+      <div class="field">adoption_stage</div>
+      <div class="q">With role <code>adoption</code>. Exactly one value; the most advanced stage stated.</div>
+      <div class="vals"><span class="v">planned</span><span class="v on">piloting</span><span class="v">deployed</span><span class="v">unclear</span></div>
+      <div class="ex"><div class="t">“Additionally, we are piloting generative AI solutions to accelerate and scale content production efficiently.”</div>
+      <div class="src"><b>MoneyHero</b>, 20-F, filed 2025-05-06, Item 4 Information on the Company</div></div>
+    </div>
+    <div class="card cond">
+      <div class="field">business_functions</div>
+      <div class="q">With role <code>adoption</code>. Where in the business the company's own use sits; <code>not_stated</code> only alone.</div>
+      <div class="vals"><span class="v on">customer_service</span><span class="v">marketing_sales</span><span class="v">operations</span><span class="v">finance</span><span class="v">hr_workforce</span><span class="v">legal_compliance</span><span class="v">rd_product</span><span class="v">it_cybersecurity</span><span class="v">supply_chain</span><span class="v">manufacturing</span><span class="v">decision_analytics</span><span class="v">other</span><span class="v">not_stated</span></div>
+      <div class="ex"><div class="t">“Meanwhile, Baozun actively embraces the AI development, vigorously promoting the application of AI-generated content (AIGC) in the customer service.”</div>
+      <div class="src"><b>Baozun</b>, 20-F, filed 2025-04-23, Item 4 Information on the Company, heading “Customer Service”</div></div>
+    </div>
+    <div class="card" style="background:transparent;border:none;"></div>
+  </div>
+</div>
+
+<div class="tier">
+  <div class="tier-label"><b>Every AI passage</b>Coded whenever the passage is about AI</div>
+  <div class="cards c3">
+    <div class="card">
+      <div class="field">ai_kinds</div>
+      <div class="q">One or more, only when a term for the kind is in the passage; <code>unspecified</code> only alone.</div>
+      <div class="vals"><span class="v">traditional_ml</span><span class="v on">generative_llm</span><span class="v">computer_vision</span><span class="v">nlp</span><span class="v">recommendation</span><span class="v">agentic</span><span class="v">other</span><span class="v">unspecified</span></div>
+      <div class="ex"><div class="t">“More recently, emerging generative AI capabilities, such as synthetic voice and conversation generation, introduced new fraud risks, especially in the form of identity fraud.”</div>
+      <div class="src"><b>Bread Financial Holdings</b>, ARS, filed 2025-04-02, Item 1 Business</div></div>
+    </div>
+    <div class="card">
+      <div class="field">disclosure_traits</div>
+      <div class="q">Zero or more. How the AI statement is written; an empty list means none applies.</div>
+      <div class="vals"><span class="v">boilerplate</span><span class="v on">hedging</span><span class="v">externalisation</span><span class="v">vagueness</span><span class="v">safe_harbour</span></div>
+      <div class="ex"><div class="t">“We may not be as successful as our competitors incorporating artificial intelligence into our business.”</div>
+      <div class="src"><b>Postal Realty Trust</b>, ARS, filed 2025-04-02, Item 1 Business, heading “Risks Related to Our Business and Operations”</div></div>
+    </div>
+    <div class="card">
+      <div class="field">substantiveness</div>
+      <div class="q">Exactly one of five ordered levels; each level includes what the level below requires.</div>
+      <div class="vals"><span class="v">1 boilerplate</span><span class="v">2 generic</span><span class="v">3 specific</span><span class="v">4 detailed</span><span class="v on">5 quantified</span></div>
+      <div class="ex"><div class="t">“Research and development expenses through our AI Solution segment of operation decreased by the amount of $2.0 million to $3.9 million for the year ended December 31, 2024, from $5.9 million for the year ended December 31, 2023.”</div>
+      <div class="src"><b>Nano-X Imaging</b>, 20-F, filed 2025-04-09, Item 5 Operating and Financial Review</div></div>
+    </div>
+  </div>
+</div>
+
+<p class="foot">Not shown: <code>entities</code> (organisations or AI products named), <code>evidence</code> (1 to 3 verbatim quotes), <code>confidence</code> and <code>note</code>. Every value in the codebook carries a one-line definition and a checklist of criteria that must all hold. Source: src/airo/taxonomy.py, taxonomy version 0.9.</p>
+</body>
+</html>
