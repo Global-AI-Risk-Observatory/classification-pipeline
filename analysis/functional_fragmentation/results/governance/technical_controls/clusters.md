@@ -1,0 +1,49 @@
+# Functional fragmentation: governance response `technical_controls` (what the company does to manage AI)
+
+323 quotes from 145 passages; 18 clusters; 22 quotes (7%) in no cluster.
+
+| # | Cluster | Quotes | Share | Top ISIC divisions | Top risk types | Assigned (model) | Proposed category | Summary |
+|---|---|---|---|---|---|---|---|---|
+| 2 | AI-Enhanced Cybersecurity Technical Controls | 83 | 26% | 21 (9), 27 (7), 62 (6) | cybersecurity (10), regulatory_legal (2), third_party (1) | `1.2`, `2.1` |  | These sentences describe the technical measures and organizational structures a company implements to manage cybersecurity risks, often highlighting the integration of AI and machine learning technologies, distinguishing them from statements about general AI product features or broader AI-related risks. |
+| 0 | AI Adoption, Investment, and Application | 50 | 16% | 63 (15), 62 (7), 64 (5) | regulatory_legal (28), operational_reliability (25), reputational_ethical (24) | `other` | AI Adoption and Investment | These statements describe the company's current and future adoption, investment, and application of AI technologies across various business functions, products, and services, distinguishing them from statements about AI risks, governance, or cybersecurity measures. |
+| 9 | AI Regulatory Landscape and Compliance Impact | 21 | 6% | 63 (6), 21 (5), 66 (4) | regulatory_legal (17), reputational_ethical (11), information_integrity (7) | `6.2` |  | These statements describe the evolving regulatory landscape for AI, detailing specific regulations, compliance requirements, and their potential impact on business operations and costs, distinguishing them from statements about internal AI governance, risk identification, or AI's operational uses. |
+| 3 | AI Model Risk and Flaws | 21 | 6% | 64 (13), 62 (3), 63 (2) | operational_reliability (21), regulatory_legal (21), cybersecurity (19) | `other` | AI Model Flaws and Biases | These statements explain how AI introduces model risk through flawed algorithms, biased data, or inherent complexities, leading to potential negative outcomes like inaccuracy, bias, or discrimination, distinguishing them from statements about technical safeguards, governance structures, or broader business risks. |
+| 13 | AI Governance Structures, Policies, and Oversight | 17 | 5% | 64 (4), 86 (3), 63 (2) | operational_reliability (2), regulatory_legal (2), reputational_ethical (2) | `1.1`, `1.2` |  | These sentences describe the company's internal structures, committees, policies, and roles established to govern and manage AI responsibly, ensuring ethical and compliant AI deployment. |
+| 14 | Warnings of AI Risks and Negative Impacts | 13 | 4% | 63 (3), 58 (2), 21 (2) | regulatory_legal (13), reputational_ethical (12), operational_reliability (10) | `4.2` |  | These statements warn about various potential negative consequences, risks, and harms that could arise from the development, deployment, or failure of AI technologies, distinguishing them from statements that describe specific AI tools, acknowledge general risks, or discuss regulatory landscapes. |
+| 16 | AI Risk Mitigation Technical Controls and Governance | 12 | 4% | 64 (9), 86 (1), 62 (1) | cybersecurity (6), operational_reliability (6), regulatory_legal (6) | `1.2`, `3.1` |  | These statements describe the specific technical controls, frameworks, and processes a company implements to manage, mitigate, and govern AI-related risks, distinguishing them from general AI use, risk acknowledgments, or ethical commitments. |
+| 15 | Acknowledging General AI Risks and Challenges | 10 | 3% | 64 (4), 52 (1), 62 (1) | regulatory_legal (9), cybersecurity (8), operational_reliability (8) | `1.2`, `4.2` |  | These statements acknowledge the general risks and challenges associated with the company's adoption and use of AI, balancing potential benefits with inherent uncertainties and negative impacts. |
+| 8 | AI System Cybersecurity Threats and Vulnerabilities | 10 | 3% | 64 (7), 28 (1), 07 (1) | cybersecurity (10), regulatory_legal (8), operational_reliability (7) | `2.1` |  | These sentences identify cybersecurity threats and vulnerabilities specifically related to AI systems, especially when handling sensitive information, distinguishing them from general AI risks, broader cybersecurity measures, or the use of AI in cybersecurity. |
+| 5 | AI Data Disclosure and Security Risks | 10 | 3% | 28 (2), 66 (2), 27 (1) | regulatory_legal (8), reputational_ethical (7), cybersecurity (6) | `2.1`, `3.2` |  | These statements describe the risks of data disclosure and security breaches when using AI, especially third-party AI, and the need to protect confidential information from unauthorized AI use, distinguishing them from statements about general AI risks, governance, or specific AI applications. |
+| 12 | AI and Automated Content Moderation | 9 | 3% | 63 (8), 79 (1) |  | `2.4` |  | These statements describe how companies use AI and automated tools, often in conjunction with human oversight, for content moderation, governance, and policy compliance, distinguishing them from general AI risk disclosures or broader governance structures. |
+| 7 | AI in Cyber Threats by Malicious Actors | 8 | 2% | 68 (2), 64 (1), 49 (1) | cybersecurity (6), operational_reliability (1), other (1) | `other` | AI in Cyber Threats | These statements describe how malicious actors leverage AI to enhance and automate cyber threats, distinguishing them from statements about a company's internal AI use, governance, or general AI risks. |
+| 1 | AI Opportunities and Risks Identification | 8 | 2% | 64 (8) | cybersecurity (8), operational_reliability (8), regulatory_legal (8) | `1.2` |  | These statements identify AI adoption as a source of both opportunities and risks for operations and compliance, distinguishing them from statements that detail specific AI governance processes, AI use cases, or general risk acknowledgments. |
+| 10 | AI Risk Identification and Elaboration | 7 | 2% | 62 (2), 63 (2), 26 (1) | cybersecurity (7), operational_reliability (7), regulatory_legal (7) | `1.2` |  | These statements identify and elaborate on the various risks, particularly reputational, legal, and operational, that the company associates with the development and deployment of AI technologies, especially generative AI, distinguishing them from statements about general AI governance, specific AI applications, or broader cybersecurity measures. |
+| 4 | Third-Party AI Vendor Risks | 7 | 2% | 21 (2), 66 (2), 63 (2) | third_party (6), cybersecurity (5), regulatory_legal (5) | `1.2`, `3.2` |  | These statements describe the risks associated with integrating third-party AI tools and vendors, focusing on potential data leaks, non-compliance, and limited oversight, distinguishing them from internal governance structures, general AI risks, or strategic benefits. |
+| 11 | AI Technical Controls for Identity and Age Verification | 5 | 2% | 63 (4), 60 (1) |  | `3.3` |  | These sentences describe the implementation of AI-powered technical controls, such as facial recognition and other AI measures, specifically for identity and age verification to comply with regulatory requirements, distinguishing them from broader AI applications, risk discussions, or governance structures. |
+| 6 | Commitments and Safeguards for Ethical AI Deployment | 5 | 2% | 62 (2), 32 (1), 21 (1) | cybersecurity (2), operational_reliability (2), regulatory_legal (2) | `1.2`, `2.3`, `3.1`, `3.2`, `3.3`, `4.4`, `4.7` |  | These sentences describe the company's proactive commitments and implemented safeguards to ensure ethical, transparent, and secure AI deployment and risk mitigation. |
+| 17 | AI Solution Assessment and Monitoring Procedures | 5 | 2% | 72 (3), 35 (1), 65 (1) | cybersecurity (1), information_integrity (1), regulatory_legal (1) | `1.2`, `3.1` |  | These statements describe the company's established processes and procedures for assessing, evaluating, monitoring, and auditing AI solutions and activities, particularly focusing on risk, errors, and bias. |
+
+## Quotes per filing month
+
+Share of each cluster's quotes by the month the filing was submitted.
+
+| # | Cluster | 2025-01 | 2025-02 | 2025-03 | 2025-04 | 2025-05 | 2025-06 |
+|---|---|---|---|---|---|---|---|
+| 2 | AI-Enhanced Cybersecurity Technical Controls | 4% | 36% | 30% | 25% | 4% | 1% |
+| 0 | AI Adoption, Investment, and Application | 6% | 30% | 28% | 28% | 8% | 0% |
+| 9 | AI Regulatory Landscape and Compliance Impact | 0% | 29% | 38% | 33% | 0% | 0% |
+| 3 | AI Model Risk and Flaws | 0% | 10% | 48% | 33% | 5% | 5% |
+| 13 | AI Governance Structures, Policies, and Oversight | 0% | 35% | 24% | 35% | 6% | 0% |
+| 14 | Warnings of AI Risks and Negative Impacts | 0% | 31% | 15% | 54% | 0% | 0% |
+| 16 | AI Risk Mitigation Technical Controls and Governance | 0% | 33% | 42% | 25% | 0% | 0% |
+| 15 | Acknowledging General AI Risks and Challenges | 0% | 30% | 50% | 10% | 10% | 0% |
+| 8 | AI System Cybersecurity Threats and Vulnerabilities | 0% | 20% | 40% | 30% | 0% | 10% |
+| 5 | AI Data Disclosure and Security Risks | 0% | 30% | 40% | 20% | 10% | 0% |
+| 12 | AI and Automated Content Moderation | 0% | 0% | 0% | 100% | 0% | 0% |
+| 7 | AI in Cyber Threats by Malicious Actors | 0% | 38% | 38% | 25% | 0% | 0% |
+| 1 | AI Opportunities and Risks Identification | 0% | 0% | 38% | 50% | 0% | 12% |
+| 10 | AI Risk Identification and Elaboration | 0% | 29% | 29% | 29% | 14% | 0% |
+| 4 | Third-Party AI Vendor Risks | 0% | 43% | 29% | 14% | 14% | 0% |
+| 11 | AI Technical Controls for Identity and Age Verification | 0% | 0% | 0% | 100% | 0% | 0% |
+| 6 | Commitments and Safeguards for Ethical AI Deployment | 0% | 40% | 20% | 40% | 0% | 0% |
+| 17 | AI Solution Assessment and Monitoring Procedures | 0% | 100% | 0% | 0% | 0% | 0% |

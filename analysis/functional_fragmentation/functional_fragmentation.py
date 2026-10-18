@@ -17,10 +17,22 @@ Steps, each one a sub-command writing one file under work/<subset>/:
     embed     embed the function sentences (Vertex AI)                           -> embeddings.npy
     cluster   HDBSCAN on the embeddings, UMAP to 2-D for the plot                -> clusters.jsonl
     name      a name and a one-sentence summary per cluster (Gemini)            -> names.jsonl
+    assign    per cluster, the reference categories it fits (Gemini; --question only) -> assignments.jsonl
     report    cluster table and plots                                           -> results/<subset>/
 
     python functional_fragmentation.py all --run gs://<bucket>/<run> --subdomain <value> \
         --project <gcp project> [--location us-central1]
+
+--question runs one of the research plan's questions instead of a single label; it splits the
+subset into groups where the question asks for it and writes work/<question>/<group>/ and
+results/<question>/<group>/:
+
+    residual    1.1  risk passages whose only MIT subdomain is `other`
+    governance  1.2  governance passages, one group per governance response; clusters assigned
+                     to the AI risk mitigation subcategories (MITIGATIONS)
+    hedging     1.3  passages with the trait `hedging`; clusters assigned to the five traits or none
+    adoption    1.4  adoption passages with business function `not_stated`, `rd_product`,
+                     `operations`; `not_stated` clusters assigned to the business functions or none
 
 Model calls go through Vertex AI in the given project. Quotes stay in work/ (git-ignored); the
 results folder holds counts, names, summaries and plots only.
@@ -162,6 +174,59 @@ MITIGATIONS: dict[str, tuple[str, str]] = {
               "A measure that fits none of the subcategories above."),
 }
 
+# The research plan's questions: per question, the groups to cluster separately, each with its
+# selection on a passage's label, its description for the prompts, and the reference list its
+# clusters are assigned to (None: no assignment).
+GOVERNANCE_GROUPS = ("policies_processes", "oversight_structure", "technical_controls", "workforce_measures",
+                     "third_party_controls", "transparency_accountability")
+QUESTIONS = ("residual", "governance", "hedging", "adoption")
+
+
+def question_groups(question: str) -> list[dict]:
+    if question == "residual":
+        return [{"name": "residual", "reference": None,
+                 "select": lambda r: (r.get("mit_subdomains") or []) == ["other"],
+                 "description": "a risk whose only MIT AI Risk Repository subdomain is `other` (it fits none of the 24)"}]
+    if question == "governance":
+        return [{"name": g, "reference": "mitigations",
+                 "select": lambda r, g=g: g in (r.get("governance_responses") or []),
+                 "description": f"governance response `{g}` (what the company does to manage AI)"}
+                for g in GOVERNANCE_GROUPS]
+    if question == "hedging":
+        return [{"name": "hedging", "reference": "traits",
+                 "select": lambda r: "hedging" in (r.get("disclosure_traits") or []),
+                 "description": "disclosure trait `hedging` (uncertainty language that avoids commitment)"}]
+    if question == "adoption":
+        return [{"name": f, "reference": "functions" if f == "not_stated" else None,
+                 "select": lambda r, f=f: "adoption" in (r.get("roles") or []) and f in (r.get("business_functions") or []),
+                 "description": f"the company's own AI use, business function `{f}`"}
+                for f in ("not_stated", "rd_product", "operations")]
+    raise ValueError(question)
+
+
+def taxonomy():
+    """The US pipeline's taxonomy module (src/airo/taxonomy.py), for the trait and function definitions."""
+    sys.path.insert(0, str(Path(__file__).resolve().parents[2] / "src"))
+    from airo import taxonomy as t
+    return t
+
+
+def reference_list(reference: str) -> tuple[str, str]:
+    """The reference categories as prompt text, and the key that stands for "none fits"."""
+    if reference == "mitigations":
+        return "\n".join(f"- `{k}` {n}: {d}" for k, (n, d) in MITIGATIONS.items()), "other"
+    t = taxonomy()
+    if reference == "traits":
+        rows = [f"- `{k}`: {d} Criteria: {'; '.join(c)}." for k, (d, c) in t.DISCLOSURE_TRAITS.items()]
+        rows.append("- `none`: the sentences show none of the traits above.")
+        return "\n".join(rows), "none"
+    if reference == "functions":
+        rows = [f"- `{k}`: {d} Criteria: {'; '.join(c)}." for k, (d, c) in t.BUSINESS_FUNCTIONS.items()
+                if k != "not_stated"]
+        rows.append("- `none`: the sentences name no business function, process or purpose of the AI use.")
+        return "\n".join(rows), "none"
+    raise ValueError(reference)
+
 # Evalet's step 4 ("Abstract Fragments into Features"), with the evaluation criterion replaced by
 # the question what the sentence states, because the passages are not rated, only described.
 DESCRIBE_PROMPT = """You read sentences quoted from the annual reports (Form 10-K) of US companies. Every sentence
@@ -203,6 +268,22 @@ Return exactly one JSON object: {{"summary": "<one sentence>", "name": "<at most
 ### Contrastive statements from other groups
 {contrast}"""
 
+ASSIGN_PROMPT = """A group of sentences quoted from the annual reports (Form 10-K) of US companies shares the label:
+{subset_description}. The group was formed by clustering what the sentences do in the disclosure.
+Its name is "{name}"; its summary: {summary}
+
+Assign the group to the reference categories below that fit most of its sentences: one or more
+keys, or `{none}` if none fits. If you give `{none}` or `other`, propose in "proposed" a name of at
+most eight words for the category these sentences would need; otherwise leave "proposed" empty.
+
+### Reference categories
+{reference}
+
+### Sample sentences of the group
+{quotes}
+
+Return exactly one JSON object: {{"values": ["<key>", ...], "proposed": "<name or empty>", "reason": "<one sentence>"}}."""
+
 
 def read_jsonl(path: Path) -> list[dict]:
     with open(path, encoding="utf-8") as fh:
@@ -227,7 +308,8 @@ def gcs_lines(url: str):
 
 def client(project: str, location: str):
     from google import genai
-    return genai.Client(vertexai=True, project=project, location=location)
+    # A request without a timeout can hang forever; 120 s lets the retries in ask_json take over.
+    return genai.Client(vertexai=True, project=project, location=location, http_options={"timeout": 120_000})
 
 
 def ask_json(c, prompt: str, retries: int = 5) -> dict:
@@ -253,7 +335,10 @@ def ask_json(c, prompt: str, retries: int = 5) -> dict:
 
 
 def fetch(args) -> None:
-    """The quotes of the subset, with the passage's labels and the filing's industry and month."""
+    """The quotes of each group, with the passage's labels and the filing's industry and month.
+
+    One pass over the run serves all groups of a question; a passage can fall in several groups.
+    """
     docs = {}
     manifest = json.loads(subprocess.run(["gcloud", "storage", "cat", f"{args.run}/documents_manifest.json"],
                                          capture_output=True, check=True).stdout)["documents"]
@@ -263,29 +348,30 @@ def fetch(args) -> None:
     for r in gcs_lines(f"{args.run}/results/classified_chunks.jsonl"):
         if r.get("ai_reference") != "explicit":
             continue
-        if args.subdomain and args.subdomain not in (r.get("mit_subdomains") or []):
-            continue
-        if args.role and args.role not in (r.get("roles") or []):
-            continue
-        if args.trait and args.trait not in (r.get("disclosure_traits") or []):
-            continue
-        keep[r["chunk_id"]] = r
-    rows = []
+        groups = [g["name"] for g in args.groups if g["select"](r)]
+        if groups:
+            keep[r["chunk_id"]] = (r, groups)
+    rows = defaultdict(list)
     for c in gcs_lines(f"{args.run}/chunks.jsonl"):
-        r = keep.get(c["chunk_id"])
+        r, groups = keep.get(c["chunk_id"], (None, None))
         if r is None:
             continue
         d = docs.get(c["document_id"], {})
         for i, q in enumerate(r.get("evidence") or []):
-            rows.append({
+            row = {
                 "id": f"{c['chunk_id']}#{i}", "chunk_id": c["chunk_id"], "quote": q,
                 "roles": r.get("roles"), "risk_types": r.get("risk_types"), "mit_subdomains": r.get("mit_subdomains"),
+                "business_functions": r.get("business_functions"), "governance_responses": r.get("governance_responses"),
                 "disclosure_traits": r.get("disclosure_traits"), "substantiveness": r.get("substantiveness"),
                 "isic_division": d.get("isic_division"), "month": (d.get("filing_date") or "")[:7] or None,
                 "form": d.get("form"),
-            })
-    write_jsonl(args.work / "quotes.jsonl", rows)
-    print(f"fetch: {len(keep)} passages, {len(rows)} quotes -> {args.work / 'quotes.jsonl'}")
+            }
+            for g in groups:
+                rows[g].append(row)
+    for g in args.groups:
+        write_jsonl(g["work"] / "quotes.jsonl", rows[g["name"]])
+        passages = sum(1 for _, gs in keep.values() if g["name"] in gs)
+        print(f"fetch: {g['name']}: {passages} passages, {len(rows[g['name']])} quotes -> {g['work'] / 'quotes.jsonl'}")
 
 
 def describe(args) -> None:
@@ -300,7 +386,11 @@ def describe(args) -> None:
         for i in range(0, len(todo), BATCH):
             batch = todo[i:i + BATCH]
             sentences = "\n".join(f"{k + 1}. {q['quote']}" for k, q in enumerate(batch))
-            answer = ask_json(c, DESCRIBE_PROMPT.format(subset_description=args.subset_description, sentences=sentences))
+            try:
+                answer = ask_json(c, DESCRIBE_PROMPT.format(subset_description=args.subset_description, sentences=sentences))
+            except Exception as e:  # noqa: BLE001 - the batch is left undone; a rerun resumes it
+                print(f"describe: batch {i // BATCH} skipped after retries: {type(e).__name__}: {e}", file=sys.stderr)
+                continue
             by_id = {}
             for f in answer.get("functions") or []:
                 try:
@@ -343,9 +433,14 @@ def cluster(args) -> None:
     rows = read_jsonl(args.work / "functions.jsonl")
     x = normalize(np.load(args.work / "embeddings.npy"))
     min_size = args.min_cluster_size or max(5, len(rows) // 100)
-    x10 = umap.UMAP(n_components=10, n_neighbors=15, min_dist=0.0, random_state=42, metric="cosine").fit_transform(x)
-    labels = HDBSCAN(min_cluster_size=min_size, min_samples=5).fit_predict(x10)
-    xy = umap.UMAP(n_components=2, random_state=42, metric="cosine").fit_transform(x)
+    if len(rows) >= 50:
+        x10 = umap.UMAP(n_components=10, n_neighbors=15, min_dist=0.0, random_state=42, metric="cosine").fit_transform(x)
+        xy = umap.UMAP(n_components=2, random_state=42, metric="cosine").fit_transform(x)
+    else:  # too few points for UMAP's neighbourhood graph: principal components instead
+        from sklearn.decomposition import PCA
+        x10 = PCA(n_components=min(10, len(rows) - 1), random_state=42).fit_transform(x)
+        xy = PCA(n_components=2, random_state=42).fit_transform(x)
+    labels = HDBSCAN(min_cluster_size=min(min_size, len(rows)), min_samples=min(5, len(rows))).fit_predict(x10)
     for r, lab, p in zip(rows, labels, xy):
         r["cluster"] = int(lab)
         r["x"], r["y"] = float(p[0]), float(p[1])
@@ -381,6 +476,32 @@ def name(args) -> None:
     print(f"name: {len(names)} clusters named -> {args.work / 'names.jsonl'}")
 
 
+def assign(args) -> None:
+    """Per cluster, the reference categories its sentences fit, from its name, summary and 15 quotes."""
+    if not args.reference:
+        return
+    rows = read_jsonl(args.work / "clusters.jsonl")
+    by_cluster = defaultdict(list)
+    for r in rows:
+        if r["cluster"] >= 0:
+            by_cluster[r["cluster"]].append(r["quote"])
+    reference, none = reference_list(args.reference)
+    rng = np.random.default_rng(0)
+    c = client(args.project, args.location)
+    out = []
+    for n in read_jsonl(args.work / "names.jsonl"):
+        quotes = by_cluster[n["cluster"]]
+        sample = list(rng.choice(quotes, size=min(15, len(quotes)), replace=False))
+        answer = ask_json(c, ASSIGN_PROMPT.format(
+            subset_description=args.subset_description, name=n["name"], summary=n["summary"], none=none,
+            reference=reference, quotes="\n".join(f"- {q}" for q in sample)))
+        out.append({"cluster": n["cluster"], "values": answer.get("values") or [],
+                    "proposed": answer.get("proposed") or "", "reason": answer.get("reason") or ""})
+        print(f"assign: cluster {n['cluster']}: {out[-1]['values']} {out[-1]['proposed']}", file=sys.stderr)
+    write_jsonl(args.work / "assignments.jsonl", out)
+    print(f"assign: {len(out)} clusters against {args.reference} -> {args.work / 'assignments.jsonl'}")
+
+
 def report(args) -> None:
     import matplotlib
     matplotlib.use("Agg")
@@ -396,43 +517,110 @@ def report(args) -> None:
         by_cluster[r["cluster"]].append(r)
     noise = len(by_cluster.pop(-1, []))
 
-    # Cluster table: name, size, share, industries, months, example functions (model text, no quotes).
+    assigned = ({a["cluster"]: a for a in read_jsonl(args.work / "assignments.jsonl")}
+                if (args.work / "assignments.jsonl").exists() else {})
+
+    # Cluster table: name, size, share, industries, months, risk types, assigned reference
+    # categories, example functions (model text, no quotes).
     table = []
     for k, members in sorted(by_cluster.items(), key=lambda kv: -len(kv[1])):
         divisions = Counter(m["isic_division"] or "?" for m in members).most_common(3)
         passages = len({m["chunk_id"] for m in members})
+        risk_types = Counter(t for m in members for t in m.get("risk_types") or []).most_common(3)
         table.append({
             "cluster": k, "name": names[k]["name"], "summary": names[k]["summary"],
             "quotes": len(members), "passages": passages, "share": round(len(members) / total, 3),
             "top_isic_divisions": [f"{d} ({n})" for d, n in divisions],
+            "top_risk_types": [f"{t} ({n})" for t, n in risk_types],
             "months": dict(sorted(Counter(m["month"] for m in members).items())),
+            "assigned": assigned.get(k, {}).get("values", []), "proposed": assigned.get(k, {}).get("proposed", ""),
             "example_functions": [m["function"] for m in members[:3]],
         })
     write_jsonl(out / "clusters.jsonl", table)
+    with_risk = any(t["top_risk_types"] for t in table)
+    months = sorted({m for t in table for m in t["months"] if m})
     with open(out / "clusters.md", "w", encoding="utf-8") as fh:
         fh.write(f"# Functional fragmentation: {args.subset_description}\n\n")
         fh.write(f"{total} quotes from {len({r['chunk_id'] for r in rows})} passages; {len(table)} clusters; "
-                 f"{noise} quotes ({noise / total:.0%}) in no cluster.\n\n")
-        fh.write("| # | Cluster | Quotes | Share | Top ISIC divisions | Summary |\n|---|---|---|---|---|---|\n")
+                 f"{noise} quotes ({noise / max(total, 1):.0%}) in no cluster.\n\n")
+        cols = ["#", "Cluster", "Quotes", "Share", "Top ISIC divisions"]
+        cols += ["Top risk types"] if with_risk else []
+        cols += ["Assigned (model)", "Proposed category"] if assigned else []
+        cols += ["Summary"]
+        fh.write("| " + " | ".join(cols) + " |\n|" + "---|" * len(cols) + "\n")
         for t in table:
-            fh.write(f"| {t['cluster']} | {t['name']} | {t['quotes']} | {t['share']:.0%} | "
-                     f"{', '.join(t['top_isic_divisions'])} | {t['summary']} |\n")
+            cells = [str(t["cluster"]), t["name"], str(t["quotes"]), f"{t['share']:.0%}", ", ".join(t["top_isic_divisions"])]
+            cells += [", ".join(t["top_risk_types"])] if with_risk else []
+            cells += [", ".join(f"`{v}`" for v in t["assigned"]), t["proposed"]] if assigned else []
+            cells += [t["summary"]]
+            fh.write("| " + " | ".join(cells) + " |\n")
+        if months:
+            fh.write("\n## Quotes per filing month\n\nShare of each cluster's quotes by the month the filing was "
+                     "submitted.\n\n| # | Cluster | " + " | ".join(months) + " |\n|---|---|" + "---|" * len(months) + "\n")
+            for t in table:
+                fh.write(f"| {t['cluster']} | {t['name']} | "
+                         + " | ".join(f"{t['months'].get(m, 0) / t['quotes']:.0%}" for m in months) + " |\n")
 
-    # Plot 1: the 2-D map, one colour per cluster, the ten largest clusters labelled.
-    fig, ax = plt.subplots(figsize=(11, 8))
+    # Example quotes per cluster: filing text, so in work/ (git-ignored), not in results/.
+    rng = np.random.default_rng(0)
+    with open(args.work / "examples.md", "w", encoding="utf-8") as fh:
+        fh.write(f"# Example quotes: {args.subset_description}\n\n")
+        for t in table:
+            members = by_cluster[t["cluster"]]
+            fh.write(f"## {t['cluster']}: {t['name']} ({t['quotes']} quotes)\n\n")
+            for i in rng.choice(len(members), size=min(5, len(members)), replace=False):
+                m = members[i]
+                fh.write(f"- \"{m['quote']}\" (ISIC {m['isic_division']}, {m['month']}; function: {m['function']})\n")
+            fh.write("\n")
+
+    # Plot 1: the 2-D map, one colour per cluster, the ten largest clusters labelled. Labels are
+    # wrapped, anchored towards the centre of the plot and moved back inside the frame if they overflow.
+    import textwrap
+    fig, ax = plt.subplots(figsize=(14, 10))
     cmap = plt.get_cmap("tab20")
     noise_rows = [r for r in rows if r["cluster"] < 0]
     ax.scatter([r["x"] for r in noise_rows], [r["y"] for r in noise_rows], s=6, c="#c8c8c8", label=f"no cluster ({noise})")
+    xs, ys = [r["x"] for r in rows], [r["y"] for r in rows]
+    mid_x, mid_y = (min(xs) + max(xs)) / 2, (min(ys) + max(ys)) / 2
+    labels = []
     for i, t in enumerate(table):
         m = by_cluster[t["cluster"]]
         ax.scatter([r["x"] for r in m], [r["y"] for r in m], s=8, color=cmap(i % 20))
         if i < 10:
             cx, cy = np.mean([r["x"] for r in m]), np.mean([r["y"] for r in m])
-            ax.annotate(f"{t['cluster']}: {t['name']}", (cx, cy), fontsize=8,
-                        bbox=dict(boxstyle="round,pad=0.2", fc="white", ec=cmap(i % 20), alpha=0.9))
-    ax.set_title(f"Functions of {total} quotes, {args.subset_description}\n{len(table)} HDBSCAN clusters on function embeddings, UMAP for display")
+            labels.append(ax.text(
+                cx, cy, textwrap.fill(f"{t['cluster']}: {t['name']}", 26), fontsize=16,
+                ha="left" if cx < mid_x else "right", va="bottom" if cy < mid_y else "top",
+                bbox=dict(boxstyle="round,pad=0.3", fc="white", ec=cmap(i % 20), alpha=0.9)))
+    ax.set_title(f"Functions of {total} quotes, {args.subset_description}\n{len(table)} HDBSCAN clusters on function embeddings, "
+                 f"{'UMAP' if total >= 50 else 'PCA'} for display",
+                 fontsize=17)
     ax.set_xticks([]); ax.set_yticks([])
-    fig.tight_layout(); fig.savefig(out / "map.png", dpi=150); plt.close(fig)
+    fig.tight_layout()
+    fig.canvas.draw()
+    # Place labels one by one, largest cluster first: each takes the nearest offset from its
+    # cluster centre (in pixels) at which its box lies inside the frame and clear of every label
+    # placed before it. The box is the text extent plus the bbox padding and a small gap.
+    renderer = fig.canvas.get_renderer()
+    frame = ax.get_window_extent(renderer)
+    pad = 0.3 * 16 * fig.dpi / 72 + 4
+    step = 6
+    offsets = sorted(((dx, dy) for dx in range(-60, 61, step) for dy in range(-600, 601, step)),
+                     key=lambda o: o[0] ** 2 + o[1] ** 2)
+    placed = []
+    for label in labels:
+        anchor = ax.transData.transform(label.get_position())
+        for dx, dy in offsets:
+            label.set_position(ax.transData.inverted().transform((anchor[0] + dx, anchor[1] + dy)))
+            b = label.get_window_extent(renderer).expanded(1, 1)
+            x0, y0, x1, y1 = b.x0 - pad, b.y0 - pad, b.x1 + pad, b.y1 + pad
+            if x0 < frame.x0 or x1 > frame.x1 or y0 < frame.y0 or y1 > frame.y1:
+                continue
+            if any(x0 < p[2] and p[0] < x1 and y0 < p[3] and p[1] < y1 for p in placed):
+                continue
+            placed.append((x0, y0, x1, y1))
+            break
+    fig.savefig(out / "map.png", dpi=150); plt.close(fig)
 
     # Plot 2: cluster sizes.
     fig, ax = plt.subplots(figsize=(10, max(4, 0.35 * len(table) + 1)))
@@ -442,34 +630,65 @@ def report(args) -> None:
     print(f"report: {len(table)} clusters, {noise} unclustered -> {out}/clusters.md, map.png, sizes.png")
 
 
-STEPS = {"fetch": fetch, "describe": describe, "embed": embed, "cluster": cluster, "name": name, "report": report}
+STEPS = {"fetch": fetch, "describe": describe, "embed": embed, "cluster": cluster, "name": name, "assign": assign,
+         "report": report}
 
 
 def main(argv=None) -> None:
     p = argparse.ArgumentParser(description=__doc__.split("\n")[0])
     p.add_argument("step", choices=[*STEPS, "all"])
     p.add_argument("--run", required=True, help="gs://bucket/run folder with chunks.jsonl, documents_manifest.json, results/")
+    p.add_argument("--question", choices=QUESTIONS, help="a question of the research plan (see the module docstring)")
+    p.add_argument("--group", help="with --question: run only this group")
     p.add_argument("--subdomain", help="keep passages with this MIT subdomain value")
     p.add_argument("--role", help="keep passages with this role")
     p.add_argument("--trait", help="keep passages with this disclosure trait")
-    p.add_argument("--project", help="Google Cloud project for Vertex AI (describe, embed, name)")
+    p.add_argument("--project", help="Google Cloud project for Vertex AI (describe, embed, name, assign)")
     p.add_argument("--location", default="us-central1")
-    p.add_argument("--min-cluster-size", type=int, default=None, help="HDBSCAN minimum cluster size (default: quotes/60, at least 5)")
-    p.add_argument("--work", type=Path, default=None, help="working directory (default: work/<subset>)")
+    p.add_argument("--min-cluster-size", type=int, default=None, help="HDBSCAN minimum cluster size (default: quotes/100, at least 5)")
+    p.add_argument("--work", type=Path, default=None, help="working directory (default: work/<subset>; not with --question)")
     args = p.parse_args(argv)
-    subset = args.subdomain or args.role or args.trait or "all"
-    args.subset_description = (
-        f"MIT AI Risk Repository subdomain `{args.subdomain}`" if args.subdomain
-        else f"role `{args.role}`" if args.role else f"disclosure trait `{args.trait}`" if args.trait
-        else "all passages about AI"
-    )
-    args.work = args.work or Path("work") / re.sub(r"[^a-z0-9_]+", "_", subset.lower())
-    args.results = Path("results") / args.work.name
-    args.work.mkdir(parents=True, exist_ok=True)
-    for step in (list(STEPS) if args.step == "all" else [args.step]):
-        if step in ("describe", "embed", "name") and not args.project:
+    if args.question:
+        groups = question_groups(args.question)
+        if args.group:
+            groups = [g for g in groups if g["name"] == args.group] or p.error(f"no group {args.group}")
+        for g in groups:
+            g["work"] = Path("work") / args.question / g["name"]
+            g["results"] = Path("results") / args.question / g["name"]
+    else:
+        subset = args.subdomain or args.role or args.trait or "all"
+        description = (
+            f"MIT AI Risk Repository subdomain `{args.subdomain}`" if args.subdomain
+            else f"role `{args.role}`" if args.role else f"disclosure trait `{args.trait}`" if args.trait
+            else "all passages about AI"
+        )
+        work = args.work or Path("work") / re.sub(r"[^a-z0-9_]+", "_", subset.lower())
+        groups = [{
+            "name": subset, "description": description, "reference": None, "work": work,
+            "results": Path("results") / work.name,
+            "select": lambda r: ((not args.subdomain or args.subdomain in (r.get("mit_subdomains") or []))
+                                 and (not args.role or args.role in (r.get("roles") or []))
+                                 and (not args.trait or args.trait in (r.get("disclosure_traits") or []))),
+        }]
+    for g in groups:
+        g["work"].mkdir(parents=True, exist_ok=True)
+    steps = list(STEPS) if args.step == "all" else [args.step]
+    for step in steps:
+        if step in ("describe", "embed", "name", "assign") and not args.project:
             p.error(f"{step} needs --project")
-        STEPS[step](args)
+    if "fetch" in steps:
+        args.groups = groups
+        fetch(args)
+    for g in groups:
+        quotes = g["work"] / "quotes.jsonl"
+        if quotes.exists() and not quotes.stat().st_size:
+            print(f"{g['name']}: no quotes, nothing to cluster")
+            continue
+        args.work, args.results = g["work"], g["results"]
+        args.subset_description, args.reference = g["description"], g["reference"]
+        for step in steps:
+            if step != "fetch":
+                STEPS[step](args)
 
 
 if __name__ == "__main__":

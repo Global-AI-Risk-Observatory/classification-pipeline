@@ -1,0 +1,67 @@
+{
+ "run": "gs://airo-pipeline-data/us-2025h1_V3",
+ "out": "gs://airo-pipeline-data/us-2025h1_V3/human_validation",
+ "passages": 290,
+ "double_rated": 60,
+ "raters": 7,
+ "per_rater": {
+  "1": 50,
+  "2": 50,
+  "3": 50,
+  "4": 50,
+  "5": 50,
+  "6": 50,
+  "7": 50
+ },
+ "max_words": 400,
+ "strata": {
+  "risk": 90,
+  "adoption": 70,
+  "governance": 40,
+  "other_roles": 50,
+  "none": 40
+ },
+ "left_out_over_max_words": {
+  "risk": 3815,
+  "adoption": 2524,
+  "governance": 557,
+  "other_roles": 1980,
+  "none": 584
+ },
+ "pool_within_max_words": {
+  "risk": 4348,
+  "adoption": 3874,
+  "governance": 728,
+  "other_roles": 6939,
+  "none": 2559
+ },
+ "sections": {
+  "G": 16,
+  "C": 76,
+  "D": 6,
+  "K": 68,
+  "F": 3,
+  "J": 71,
+  "M": 13,
+  "P": 3,
+  "L": 7,
+  "I": 3,
+  "H": 6,
+  "N": 5,
+  "B": 5,
+  "Q": 6,
+  "?": 1,
+  "R": 1
+ },
+ "forms": {
+  "20-F": 20,
+  "ARS": 104,
+  "10-K": 151,
+  "N-CSR": 6,
+  "10-K/A": 4,
+  "Financial Statements/ESG Information - [Annual Report]": 2,
+  "not provided by the data provider": 1,
+  "Announcements and Notices - [Overseas Regulatory Announcement - Other]": 1,
+  "120": 1
+ }
+}
