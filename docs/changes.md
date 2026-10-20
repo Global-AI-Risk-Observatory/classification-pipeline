@@ -1362,6 +1362,43 @@ removed); and `results/duplicate_check.json` with repeats before and after colla
 **Not better / open.** Exact matching does not end the duplication: near duplicates remain, and whether to merge
 them is open. A copy's label is consistent with its original, not more accurate. No figure uses `primary_filing` yet.
 
+## 28. Batch mode: the same requests through Vertex AI batch prediction
+
+**Original.** The UK pipeline sent its classifications through the Gemini Batch API
+(`pipeline/src/utils/batch_api.py`), one passage per request, thousands of requests per job.
+
+**Before, here.** `src/airo/coders/gemini.py` sends synchronous `generate_content` requests, 40
+passages per request, 16 in parallel. Run `us-2025h1_V3` (28,378 passages) cost about USD 33 this
+way; the one-against-40 validation of 2026-10-20 (11,500 passages) USD 14.79 in 21 minutes.
+
+**New** (`src/airo/coders/gemini_batch.py`; written on the branch `gemini-batch` on 2026-10-20, on `main` since 2026-11-03). Two
+commands. `submit` renders the requests of the synchronous coder (`build_batch_prompt`, the
+codebook once per 40 tasks, JSON mode with the `Labels` schema, temperature 0, thinking budget)
+in the REST form, writes them as `requests.jsonl` to a bucket location and creates a batch
+prediction job (`client.batches.create`); the job's name and locations go to a job file.
+`collect` reads the job's state and, once it is done, the prediction files; every label is
+matched by `passage_id` and checked with the same acceptance check (`gemini._check`). Nothing is
+asked again in batch mode: rejected and missing labels and the tasks of failed requests are
+deferred to `<out>.deferred.jsonl`, the input of the existing `--repairs-from` (online) or of
+`submit --repairs-from` (a second job). Output files and `run.json` keep the synchronous coder's
+form (plus `mode`, `job`, `job_state`), so `accept` and the cost figures are unchanged. The
+response schema is derived from the pydantic `Labels` class (`vertex_schema`: `$ref`s inlined,
+`Optional` as `nullable`, types upper case). `DirStore` and `GcsStore` in `fetch.py` got
+`files(prefix)`, a recursive listing, because Vertex AI writes the output into a subfolder named
+after the job.
+
+**Why.** Batch prediction is billed at half the online price and has no request rate limit; a
+whole run goes out at once. The team asked for it on 2026-10-20. Prompt, codebook, schema,
+grouping and model are unchanged, so batch labels stay comparable with the online runs.
+
+**Not better / open.** Not exercised live yet: written against the documented SDK and REST
+interfaces and tested with a fake client and a directory in place of the bucket. Latency is
+minutes to hours instead of minutes, and the requests must pass through a bucket. The
+one-against-40 comparison showed that labels depend on the grouping of the request
+(`docs/one-vs-40-passages-per-request.md`); batch mode keeps the grouping of 40 and inherits
+that. It takes `tasks.jsonl` as it stands, so the copies of entry 26 are not sent. Batch labels have not been compared
+with online labels on the same passages.
+
 ## To be decided
 
 Open decisions after the v0.10 subset tests of 2026-10-31 (entries 18 to 22), with the figures they

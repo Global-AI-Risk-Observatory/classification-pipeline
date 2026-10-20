@@ -94,6 +94,11 @@ class DirStore:
         d = self.root / prefix
         return {p.name for p in d.iterdir() if not p.name.startswith(".")} if d.is_dir() else set()
 
+    def files(self, prefix: str) -> set[str]:
+        """The file names under `prefix`, at any depth, relative to the root."""
+        d = self.root / prefix
+        return {str(p.relative_to(self.root)) for p in d.rglob("*") if p.is_file() and not p.name.startswith(".")} if d.is_dir() else set()
+
     def read(self, name: str) -> bytes | None:
         """The content of `name`, or None if there is no such file."""
         path = self.root / name
@@ -137,6 +142,11 @@ class GcsStore:
     def names(self, prefix: str) -> set[str]:
         full = f"{self.prefix}{prefix.strip('/')}/"
         return {b.name[len(full):] for b in self.bucket.list_blobs(prefix=full) if "/" not in b.name[len(full):]}
+
+    def files(self, prefix: str) -> set[str]:
+        """The object names under `prefix`, at any depth, relative to the store's prefix."""
+        full = f"{self.prefix}{prefix.strip('/')}/"
+        return {b.name[len(self.prefix):] for b in self.bucket.list_blobs(prefix=full) if not b.name.endswith("/")}
 
     def read(self, name: str) -> bytes | None:
         from google.api_core.exceptions import NotFound

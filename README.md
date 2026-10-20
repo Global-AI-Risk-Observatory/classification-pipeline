@@ -141,6 +141,32 @@ filings), the 3,321-passage sample of context passages, the 40-filing tests and 
 v0.9) all ran with it against Vertex AI, 40 passages per request, temperature 0, thinking off; measured
 cost about USD 0.002 per passage. The unit tests use a fake client.
 
+### Batch mode (Vertex AI batch prediction)
+
+`airo.coders.gemini_batch` sends the same requests through Vertex AI batch prediction instead of one
+synchronous call at a time: half the online price, no request rate limit, the whole run submitted at once;
+in return the output arrives later (Vertex AI promises it within 24 hours) and the requests pass through a
+bucket, because batch prediction reads its input from Cloud Storage and writes its output next to it.
+
+    python -m airo.coders.gemini_batch submit --tasks data/tasks.jsonl --codebook data/codebook.md \
+        --model gemini-2.5-flash --thinking-budget 0 --project <project> --location us-central1 \
+        --dest gs://<bucket>/<run>/batch --job-file data/labels_in/gemini.batch.json
+    python -m airo.coders.gemini_batch collect --job-file data/labels_in/gemini.batch.json \
+        --tasks data/tasks.jsonl --out data/labels_in/gemini.jsonl --project <project> \
+        [--price-input X --price-output Y]
+    python -m airo --data data accept data/labels_in/gemini.jsonl --coder gemini
+
+`submit` writes `requests.jsonl` to `--dest` (one line per 40 tasks: the codebook once, the tasks, JSON mode
+with the `Labels` schema, temperature 0) and creates the job; `--dest` must be new for every job. `collect`
+exits with 2 while the job runs; once it is done it reads the prediction files, matches the labels to the
+tasks by `passage_id` and runs each through the acceptance check. Nothing is asked again in batch mode: a
+rejected or missing label and the tasks of a failed request go to `<out>.deferred.jsonl`, for
+`airo.coders.gemini --repairs-from` (online, single re-asks) or `submit --repairs-from` (a second batch job).
+`<out>.run.json` has the synchronous coder's fields plus `mode`, `job` and `job_state`; give the batch prices
+with `--price-input` and `--price-output`. Prompt, codebook, schema, grouping and model are the same as online,
+so batch labels are comparable with the online runs. The live path has not been exercised yet; the unit tests
+use a fake client and a directory in place of the bucket.
+
 ## Google Cloud
 
 The pipeline is deployed on Google Cloud; the settings are in `cloud/config.env` (no secrets).
