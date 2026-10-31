@@ -1,8 +1,8 @@
 """The label schema. Single source of truth for the codebook given to coders
 (human, agent or API model) and for validating what they return.
 
-One label per passage, produced in one pass. Every label carries the taxonomy
-version, so results from different versions never get mixed silently.
+One label per passage. Every label carries the taxonomy version, so results from
+different versions never get mixed silently.
 
 Every value is defined as a one-line definition plus a short checklist of
 criteria that must all hold (modelled on how PRISON, Wu et al., ICLR 2026,
@@ -15,57 +15,16 @@ from typing import Literal, Optional
 
 from pydantic import BaseModel, Field, model_validator
 
-TAXONOMY_VERSION = "0.9"
+TAXONOMY_VERSION = "0.10"
 
 # Each value: (definition, criteria). A value applies only if all its criteria hold.
 Definition = tuple[str, tuple[str, ...]]
 
-# v0.4: the frame of the AI statement is fixed before any role or trait is judged. Criteria
-# marked "frame-dependent" below are read in that frame.
-FRAMES: dict[str, Definition] = {
-    "risk_factor": (
-        "The AI statement sits in a risk disclosure: a risk-factor section or a sentence stating possible harm.",
-        (
-            "the passage is in a risk-factor section or under a heading naming risks (Item 1A, \"Risk Factors\"), "
-            "or the sentence states a possible harm, loss, cost, failure or shortfall for the company",
-            "the AI statement is part of that risk disclosure, not a business description or an oversight "
-            "remit that happens to be near it",
-        ),
-    ),
-    "governance": (
-        "The AI statement describes an oversight structure, policy, control, review, committee remit or "
-        "assigned responsibility.",
-        (
-            "the sentence names an oversight structure, policy, control, review, committee, framework or "
-            "assigned responsibility of the company (board, audit committee, management review, cybersecurity "
-            "programme)",
-            "AI appears within what that structure covers, as its subject or as an item in its remit",
-            "the function of the sentence is to describe the oversight, not the company's operations and not "
-            "a harm",
-        ),
-    ),
-    "business": (
-        "The AI statement describes the company's own operations, products, services, projects or plans.",
-        (
-            "the sentence describes what the company does, makes, sells, builds or plans (operations, products, "
-            "services, projects, strategy)",
-            "the company (or \"we\") is the actor of that description",
-            "the function of the sentence is to describe the business, not a harm (`risk_factor`), an oversight "
-            "remit (`governance`) or a market (`market`)",
-        ),
-    ),
-    "market": (
-        "The AI statement describes demand, prices, supply, investment or market conditions for what the "
-        "company sells or buys.",
-        (
-            "the sentence describes demand, prices, supply, investment or market conditions",
-            "those conditions concern what the company sells or buys (its customers' or suppliers' side), and AI "
-            "or AI-linked infrastructure is their subject or cause",
-            "the function of the sentence is to describe the market, not a harm (`risk_factor`) and not the "
-            "company's own operations (`business`)",
-        ),
-    ),
-}
+# v0.10: the field `frame` of v0.4 to v0.9 (risk_factor, governance, business, market; fixed before the
+# roles) is gone. What it did for the roles is now in the role criteria themselves: an assertion of
+# use inside an oversight remit is `governance`, not `adoption`; `market_driver` needs an explicit
+# demand, price or supply statement; `externalisation` applies only with a role that puts the AI in
+# the company's own hands or risks.
 
 # v0.7: a passage either treats AI or it does not. Passages found through context terms only
 # (data centres, industry lingo, euphemisms) are context, not AI statements, and are not labelled.
@@ -97,9 +56,9 @@ ROLES: dict[str, Definition] = {
     "market_driver": (
         "AI drives demand, prices or market conditions for what the company sells or buys.",
         (
-            "the passage describes demand, prices, supply, investment or market conditions on the company's "
-            "selling or buying side (frame-dependent: in frame `market` this is the primary role; in any "
-            "other frame an explicit demand, price or supply statement must appear in the passage)",
+            "an explicit demand, price, supply, investment or market-condition statement on the company's "
+            "selling or buying side appears in the passage; a risk-factor heading or sentence that only "
+            "implies demand does not count",
             "AI is named as a cause of that demand or condition",
             "the content is demand-side or market-side: a passage that only says the company uses, sells or "
             "governs AI does not qualify",
@@ -109,9 +68,9 @@ ROLES: dict[str, Definition] = {
         "The company itself uses, pilots or plans to use AI.",
         (
             "the passage names the company (or \"we\") as the user, not vendors, customers or attackers",
-            "a use, trial or stated intention is asserted, not merely a possibility inside a risk statement "
-            "(frame-dependent: in frame `governance` the assertion must come from a clause outside the "
-            "governance remit; \"AI usage\" named inside a review or control remit does not count)",
+            "a use, trial or stated intention is asserted, not merely a possibility inside a risk statement, "
+            "and the assertion stands in a clause outside any oversight, review or control remit (\"our "
+            "evaluation reviews AI usage\" asserts oversight, not use, and is `governance` only)",
             "the use concerns AI as defined under `ai_reference` `explicit`",
         ),
     ),
@@ -143,9 +102,7 @@ ROLES: dict[str, Definition] = {
             "assigned responsibility of the company",
             "AI is within its remit, either as its subject or as an item inside a broader remit "
             "(cybersecurity programme, enterprise risk review, board oversight)",
-            "the structure is the company's own, not a regulator's rule or a vendor's control "
-            "(frame-dependent: the role applies in any frame if its criteria hold; in frame `governance` it "
-            "is the primary role)",
+            "the structure is the company's own, not a regulator's rule or a vendor's control",
         ),
     ),
     "incident": (
@@ -929,9 +886,8 @@ DISCLOSURE_TRAITS: dict[str, Definition] = {
         "Responsibility or origin of the AI risk is placed outside the company.",
         (
             "the AI and its risk are attributed to vendors, service providers, customers, developers or "
-            "attackers (frame-dependent: evaluated only when the roles include `adoption`, `offering`, "
-            "`governance` or `risk` and the frame is not `market`; in frame `market` the trait is not "
-            "applicable and is never set)",
+            "attackers (evaluated only when the roles include `adoption`, `offering`, `governance`, `risk` or "
+            "`incident`; with `market_driver` or `general` alone the trait is not applicable and is never set)",
             "the company's own use or control is not stated",
             "no own mitigation is described",
         ),
@@ -954,7 +910,6 @@ DISCLOSURE_TRAITS: dict[str, Definition] = {
     ),
 }
 
-# Ordered from 1 (least) to 5 (most): every level includes what the level below requires.
 SUBSTANTIVENESS: dict[str, Definition] = {
     "boilerplate": (
         "Level 1. A general statement that could appear unchanged in any company's report.",
@@ -999,7 +954,6 @@ SUBSTANTIVENESS: dict[str, Definition] = {
 }
 SUBSTANTIVENESS_LEVELS = {name: level for level, name in enumerate(SUBSTANTIVENESS, 1)}
 
-Frame = Literal["risk_factor", "governance", "business", "market"]
 Substantiveness = Literal["boilerplate", "generic", "specific", "detailed", "quantified"]
 Role = Literal["market_driver", "adoption", "offering", "risk", "governance", "incident", "general"]
 RiskType = Literal[
@@ -1052,7 +1006,6 @@ DisclosureTrait = Literal["boilerplate", "hedging", "externalisation", "vaguenes
 class Label(BaseModel):
     passage_id: str
     ai_reference: Literal["explicit", "none"]
-    frame: Optional[Frame] = None  # required when the passage is about AI; decided before the roles
     roles: list[Role] = Field(default_factory=list)
     risk_types: list[RiskType] = Field(default_factory=list)
     mit_subdomains: list[MitSubdomain] = Field(default_factory=list)  # with role risk or incident
@@ -1071,15 +1024,13 @@ class Label(BaseModel):
     def _consistent(self) -> "Label":
         if self.ai_reference == "none":
             filled = (
-                self.frame or self.roles or self.risk_types or self.mit_subdomains or self.adoption_stage or self.ai_kinds
+                self.roles or self.risk_types or self.mit_subdomains or self.adoption_stage or self.ai_kinds
                 or self.business_functions or self.governance_responses
                 or self.disclosure_traits or self.substantiveness or self.evidence
             )
             if filled:
                 raise ValueError("ai_reference 'none' must leave all other label fields empty")
             return self
-        if self.frame is None:
-            raise ValueError("frame is required when the passage is about AI")
         if not self.roles:
             raise ValueError("at least one role is required when the passage is about AI")
         if "general" in self.roles and len(self.roles) > 1:
@@ -1097,8 +1048,9 @@ class Label(BaseModel):
             self.business_functions = [f for f in self.business_functions if f != "not_stated"]
         if bool(self.governance_responses) != ("governance" in self.roles):
             raise ValueError("governance_responses must be given if and only if 'governance' is among the roles")
-        if "externalisation" in self.disclosure_traits and self.frame == "market":
-            raise ValueError("'externalisation' is not applicable in frame 'market'")
+        # v0.10: what frame `market` excluded in v0.9 is now a condition on the roles.
+        if "externalisation" in self.disclosure_traits and not set(self.roles) & {"adoption", "offering", "governance", "risk", "incident"}:
+            raise ValueError("'externalisation' applies only with the roles adoption, offering, governance, risk or incident")
         if not self.ai_kinds or not self.evidence:
             raise ValueError("ai_kinds and evidence are required when the passage is about AI")
         if "unspecified" in self.ai_kinds and len(self.ai_kinds) > 1:
@@ -1139,9 +1091,8 @@ def codebook() -> str:
             "Label what the passage itself says. Do not use outside knowledge about the company, and do not "
             "carry assumptions over from other passages. Ignore page numbers, \"Table of Contents\" lines, "
             "running headers and a heading of the following section that may trail the passage. "
-            "A value applies only if all its criteria hold. The frame is fixed first: once you have decided "
-            "whether the passage is about AI, determine the frame of the AI statement (Step 1) before you "
-            "judge any role or trait; criteria marked \"frame-dependent\" are read in that frame.",
+            "A value applies only if all its criteria hold. Decide first whether the passage is about AI, "
+            "then the roles AI plays for the company; every other field follows from the roles.",
             "",
             "Return exactly one JSON object per passage, one per line (JSONL), with these fields:",
             "",
@@ -1153,46 +1104,30 @@ def codebook() -> str:
                 AI_REFERENCE,
             ),
             "If `ai_reference` is `none`: set `roles`, `risk_types`, `mit_subdomains`, `business_functions`, `governance_responses`, "
-            "`ai_kinds`, `disclosure_traits`, `entities` and `evidence` to `[]`, leave `frame`, "
+            "`ai_kinds`, `disclosure_traits`, `entities` and `evidence` to `[]`, leave "
             "`adoption_stage` and `substantiveness` as `null`, and still give "
             "`confidence`; `note` may still be used.\n",
             _table(
-                "Step 1: determine the frame", "frame",
-                "Exactly one value per passage, chosen for the AI statement that carries the labels. Decide it "
-                "from the report section, the nearest heading and the function of the sentence (does it state "
-                "a harm, describe an oversight remit, describe the company's own business, or describe a "
-                "market?) BEFORE any role or trait is judged. `null` if and only if `ai_reference` is `none`. "
-                "Criteria marked \"frame-dependent\" in the fields below are read in this frame.",
-                FRAMES,
-                decisions=(
-                    "Order of tests: a sentence that states a possible harm is `risk_factor`; otherwise a "
-                    "sentence that describes an oversight remit is `governance`; otherwise a sentence about "
-                    "demand, prices, supply or investment is `market`; otherwise `business`.",
-                    "Section and heading set the default (a risk-factor section is `risk_factor`; a board "
-                    "oversight, risk management or cybersecurity governance heading is `governance`; Business "
-                    "or MD&A is `business` or `market`); the function of the sentence overrides the default.",
-                    "Several AI statements with different functions in one passage: take the frame of the "
-                    "statement the labels rest on (the one your first `evidence` quote is taken from).",
-                ),
-            ),
-            _table(
                 "What role does AI play for the company?", "roles",
-                "One or more values. `general` only alone. A risk-factor heading or sentence that says an "
-                "AI-driven market may not develop is both `market_driver` and `risk`.",
+                "One or more values. `general` only alone. Judge each role from the function of the sentence "
+                "the AI statement stands in (does it state a harm, describe an oversight remit, describe the "
+                "company's own business, or describe a market?), with the report section and the nearest heading "
+                "as context. Several AI statements in one passage can give several roles; each needs its own "
+                "sentence that meets the criteria. A risk-factor heading or sentence that says an AI-driven "
+                "market may not develop is both `market_driver` and `risk`.",
                 ROLES,
                 decisions=(
                     "`adoption` counts only when the company states its own use or intention. A possibility "
                     "voiced only inside a risk statement (\"use of AI may expose us\") is not adoption. "
-                    "Frame-dependent: in frame `governance`, \"AI usage\" named inside a review or control "
-                    "remit (\"our evaluation reviews AI usage\") is `governance` only; `adoption` applies only "
-                    "if a clause outside the governance remit asserts the company's own use or intention.",
+                    "\"AI usage\" named inside a review or control remit (\"our evaluation reviews AI usage\") "
+                    "is `governance` only; `adoption` applies only if a clause outside the remit asserts the "
+                    "company's own use or intention.",
                     "`governance`: AI named as an item inside a broader control, review or committee remit "
                     "counts as governance (usually with the `vagueness` trait); no AI-specific policy is "
-                    "required. Frame-dependent: the role applies in any frame if its criteria hold; in frame "
-                    "`governance` it is the primary role, and other roles are added only for clauses outside "
-                    "the remit that meet their own criteria.",
-                    "`market_driver` is frame-dependent: in frame `market` it is the primary role; in any "
-                    "other frame it requires an explicit demand, price or supply statement in the passage.",
+                    "required. In a passage that describes an oversight remit, other roles are added only for "
+                    "clauses outside the remit that meet their own criteria.",
+                    "`market_driver` requires an explicit demand, price, supply or investment statement in the "
+                    "passage; a risk-factor sentence that implies demand without stating it does not qualify.",
                 ),
             ),
             _table(
@@ -1262,9 +1197,8 @@ def codebook() -> str:
                 "Judged on the AI-related statements of the passage: a trait applies if any AI-related "
                 "statement meets all its criteria. `[]` means none of the traits apply: the statement is "
                 "specific, it names systems, counterparties, products, figures, dates or actions. "
-                "`externalisation` is frame-dependent: evaluate it only when the roles include `adoption`, "
-                "`offering`, `governance` or `risk` and the frame is not `market`; in frame `market` it is not "
-                "applicable and is never set.",
+                "`externalisation` is evaluated only when the roles include `adoption`, `offering`, `governance`, "
+                "`risk` or `incident`; with `market_driver` or `general` alone it is not applicable and is never set.",
                 DISCLOSURE_TRAITS,
             ),
             _table(

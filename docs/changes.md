@@ -732,3 +732,265 @@ exported in between is complete in chunks and incomplete in labels, which `chunk
 in the filing metrics shows. Quotes that the model cannot reproduce verbatim fail in every
 grouping; those passages stay without a label.
 
+---
+
+## 18. `frame` removed; its conditions sit on the roles (v0.10)
+
+**Status: adopted as taxonomy v0.10 on 2026-10-31, tested on the 290-passage human-validation
+subset of `us-2025h1_V3`, not yet run on a corpus.** The test rounds that led to it are documented
+at the end of this entry; two other candidate changes tested in the same rounds and not adopted are
+in entry 19.
+
+**Before (v0.4 to v0.9, entry 10).** A required field `frame` (`risk_factor`, `governance`,
+`business`, `market`), fixed from section, heading and sentence function before any role or trait
+was judged, and four criteria read in that frame: `adoption` in frame `governance` needed a clause
+outside the remit; `governance` was the primary role in its frame; `market_driver` was the primary
+role in frame `market` and needed an explicit demand statement elsewhere; `externalisation` was
+never set in frame `market`. On `us-2025h1_V3` the raters agreed with each other on `frame` at
+kappa 0.72 and with the model at 0.68 (`analysis/human_validation/results/us-2025h1_V3/agreement.md`).
+
+**New** (`src/airo/taxonomy.py`, `classify.py`, `aggregate.py`, `export.py`; team decision of
+2026-10-31, J. Pilcher and D. Kozachek). The field is gone from the schema, the codebook, the
+adjudication, the report summary and the export. The order of coding is `ai_reference`, `roles`,
+then the role-dependent fields (`risk_types`, `mit_subdomains`, `adoption_stage`,
+`business_functions`, `governance_responses`). What the frame did for the roles is now in the role
+criteria and decision rules:
+
+- `market_driver` needs an explicit demand, price, supply or investment statement in the passage;
+  a risk-factor sentence that only implies demand does not qualify.
+- `adoption` needs the company's use or intention asserted in a clause outside any oversight,
+  review or control remit; "our evaluation reviews AI usage" is `governance` only.
+- `governance` is unchanged in its criteria; in a passage that describes an oversight remit, other
+  roles are added only for clauses outside the remit that meet their own criteria.
+- `externalisation` applies only with a role that puts the AI in the company's own hands or risks
+  (`adoption`, `offering`, `governance`, `risk`, `incident`); the schema enforces this in place of
+  the old frame rule.
+
+The codebook asks the coder to judge each role from the function of the sentence the AI statement
+stands in (does it state a harm, describe an oversight remit, describe the company's own business,
+or describe a market?), with section and heading as context: the frame decision without a field
+for it. Everything else (`substantiveness` with five levels, one call per 40 passages, the Gemini
+coder) is as in v0.9.
+
+**Why.** The frame was an intermediate step whose only consumers were the role criteria. A field
+that is not reported, with its own disagreement (kappa 0.72 among raters), costs rating time and
+gives a disagreement a place to start before the roles. The subset test below shows the roles
+agree better with the raters without it.
+
+**Better.** On the 290 passages of the V3 validation sample, labelled with the v0.10 codebook as
+it is in the repository (round 3 below), agreement with the seven raters, Cohen's kappa:
+
+| Field | V3 model, v0.9 | v0.10 (round 3) |
+|---|---|---|
+| ai_reference | 0.75 | 0.79 |
+| roles (exact set) | 0.50 | 0.55 |
+| roles:risk | 0.75 | 0.76 |
+| roles:adoption | 0.55 | 0.67 |
+| roles:offering | 0.44 | 0.50 |
+| roles:governance | 0.55 | 0.57 |
+| roles:market_driver | 0.49 | 0.48 |
+| risk_types (exact set) | 0.52 | 0.55 |
+| mit_subdomains (exact set) | 0.34 | 0.31 |
+| adoption_stage | 0.43 | 0.45 |
+| business_functions (exact set) | 0.30 | 0.35 |
+| governance_responses (exact set) | 0.34 | 0.42 |
+| substantiveness (five levels) | 0.30 | 0.31 |
+| disclosure_traits (exact set) | 0.21 | 0.20 |
+
+The roles as a set move from 0.50 to 0.55, carried by `adoption` (0.55 to 0.67) and `offering`;
+the dependent fields `business_functions` and `governance_responses` follow. `substantiveness`,
+the traits, `risk` and `market_driver` are where they were. One field fewer for raters and coders.
+
+**Not better / open.** `mit_subdomains` is 0.03 lower, within what 290 passages can resolve, as
+are all differences below about 0.05 here. The v0.4 argument for the frame was that it gives a
+disagreement a location one step earlier ("we disagree on the frame" before "we disagree on the
+role"); that location is gone, and a disagreement on `adoption` against `governance` has to be
+read from the role criteria alone. The V3 human-validation sheets carry `frame`; the collection
+code keeps reading it (`FRAMES_V09` in `analysis/human_validation/human_validation.py`). Labels of
+v0.9 and earlier have the field, v0.10 labels do not; a comparison across versions drops it. Not
+run on a corpus; the cloud configuration still names v0.9's model settings.
+
+### The subset test (2026-10-31)
+
+**Setup.** The 290 passages of the V3 human validation
+(`gs://airo-pipeline-data/us-2025h1_V3/human_validation/sample.jsonl`; 7 raters, 348 ratings,
+each passage rated by one or two raters, under taxonomy v0.9) were rebuilt as tasks by
+`analysis/v010_subset/subset_test.py tasks` from the run's `chunks.jsonl` and
+`documents_manifest.json` (one difference from the live run's tasks: the matched terms are shown
+as one list under `ai`, since the exported chunk rows do not keep the `ai` / `context` split).
+Each variant labelled the same tasks; `subset_test.py compare` scores every label file against
+the raters with Cohen's kappa per field (list fields as exact set and per value), next to the V3
+model's own labels of the same passages (`results/labels_final.jsonl`), whose figures reproduce
+the published validation. 40 passages per request throughout. Tasks, codebooks, labels, run files,
+logs and agreement tables of every round are in `gs://version10test/` (`round1_with_frame/`,
+`round2_no_frame/`, `round3_v010_final/`); the code of the two designs that were not adopted is
+kept in the repository under `analysis/v010_subset/not_adopted/`.
+
+**Three candidate changes, three rounds.** Three changes to v0.9 were on the table: removing
+`frame`, splitting the label into a roles call and a details call, and counting substantiveness
+instead of rating it (entry 19 for the last two). Round 1 kept `frame` and tested the other two,
+so that round 2, which removed `frame` with everything else held constant, would show the effect
+of the field on its own: an ablation of the frame rather than one run with all three changes,
+whose result could not have been attributed to any of them. Round 3 ran the codebook as adopted.
+
+| Round | `frame` | substantiveness | calls | models |
+|---|---|---|---|---|
+| 1 | kept | ten particulars, three derived levels | two calls and, for comparison, one call | roles: `gemini-3.5-flash`, thinking at the model's default, endpoint `global` (the model is listed for `us-central1` but answers 404 there); details and one call: `gemini-2.5-flash`, thinking off, `us-central1` |
+| 2 | removed | as round 1 | as round 1 | as round 1; the details call deferred its re-asks and ran them as one batch pass |
+| 3 | removed | five levels as in v0.9 | one call | `gemini-2.5-flash`, thinking off, `us-central1` (as in V3) |
+
+**Results, Cohen's kappa against the raters.** Rounds 1 and 2 had three-level substantiveness, so
+the raters' five levels and the V3 model's were mapped to three for those rounds (`boilerplate`,
+`generic` to `generic`; `specific` to `company_specific`; `detailed`, `quantified` to `detailed`);
+the V3 figure for `substantiveness` is therefore 0.35 in those columns and 0.30 on five levels
+in round 3 and in the published validation.
+
+| Field | V3, v0.9 | R1 two calls | R1 one call | R2 two calls | R2 one call | R3 (v0.10) |
+|---|---|---|---|---|---|---|
+| ai_reference | 0.75 | 0.86 | 0.76 | 0.89 | 0.84 | 0.79 |
+| frame | 0.68 | 0.72 | 0.69 | – | – | – |
+| roles (exact set) | 0.50 | 0.52 | 0.52 | 0.56 | 0.56 | 0.55 |
+| roles:risk | 0.75 | 0.77 | 0.77 | 0.76 | 0.75 | 0.76 |
+| roles:adoption | 0.55 | 0.54 | 0.57 | 0.59 | 0.64 | 0.67 |
+| roles:offering | 0.44 | 0.45 | – | 0.48 | 0.52 | 0.50 |
+| roles:governance | 0.55 | 0.52 | 0.53 | 0.55 | 0.60 | 0.57 |
+| roles:market_driver | 0.49 | 0.55 | 0.48 | 0.65 | 0.49 | 0.48 |
+| risk_types (exact set) | 0.52 | 0.56 | 0.54 | 0.53 | 0.54 | 0.55 |
+| mit_subdomains (exact set) | 0.34 | 0.38 | 0.34 | 0.35 | 0.36 | 0.31 |
+| adoption_stage | 0.43 | 0.42 | 0.38 | 0.47 | 0.47 | 0.45 |
+| business_functions (exact set) | 0.30 | 0.32 | 0.31 | 0.36 | 0.36 | 0.35 |
+| governance_responses (exact set) | 0.34 | 0.36 | 0.38 | 0.44 | 0.43 | 0.42 |
+| substantiveness | 0.35 / 0.30 | 0.22 | 0.22 | 0.21 | 0.23 | 0.31 |
+| disclosure_traits (exact set) | 0.21 | 0.15 | 0.24 | 0.13 | 0.21 | 0.20 |
+
+Labelled: 290 (V3); 288 in each round-1 variant (two evidence quotes not verbatim); 290 in each
+round-2 variant; 289 in round 3 (one quote not verbatim after two re-asks). `roles:offering` was not
+recorded for the round-1 one-call variant.
+
+Tokens: round 1, roles call 143,121 input / 28,024 output / 83,874 thinking (290 passages), details
+call 546,521 / 54,526 (239 passages, of which 31 single re-asks with the whole codebook made up most
+of the input), one call 308,421 / 69,371; round 2, roles call 137,634 / 33,882 / 75,177 thinking,
+details call 171,906 + 12,726 / 51,309 + 1,109 (242 passages asked, 48 labelled from their `none`
+roles label without a request, 4 re-asked in one batch pass), one call 235,040 / 64,129; round 3,
+one call 250,062 / 61,903, 60 seconds wall time.
+
+**Reading.** Removing `frame` is what moves the roles: from 0.50 (V3) and 0.52 (round 1, both
+variants) to 0.55 or 0.56 in every frame-free variant, with `adoption`, `offering` and
+`governance` up and `risk` unchanged, and the dependent fields `business_functions` and
+`governance_responses` up with them. The effect is the same whether the roles are decided by a
+stronger model in a call of their own or by `gemini-2.5-flash` in one call, which is what round 2
+was set up to tell apart. The gains in `market_driver` (0.65) and `ai_reference` (0.89) belong to
+the stronger roles model, not to the field; with one call they stay at V3's level.
+
+---
+
+## 19. Tested and not adopted: two calls, and substantiveness as a count (v0.10 candidates)
+
+**Status: implemented, run in rounds 1 and 2 of the subset test of entry 18 on 2026-10-31, and
+taken out of the code again on the same day.** This entry records both designs and their results so
+the decision can be checked and either design picked up again. The implementation is kept in
+`analysis/v010_subset/not_adopted/two_calls_and_count_substantiveness.patch` (against the v0.9 code)
+with the test script of those rounds, `subset_test_rounds_1_2.py`, beside it.
+
+### Two calls, roles first
+
+**Design.** `RolesLabel` (`ai_reference`, `roles`, evidence, confidence, note) was the answer of a
+first call with a codebook of about 7,700 characters (11,000 with `frame`); `DetailsLabel` (every
+role-dependent field, `ai_kinds`, the traits, the substantiveness particulars, `entities`) the
+answer of a second call with the rest of the codebook (about 45,000 characters, the MIT table being
+most of it), for the passages the first call found to be about AI, with `ai_reference` and `roles`
+shown in each task as given ("do not judge again, do not return"). A `none` passage got its label
+without a request. `merge` joined the two answers (the details could not override the roles; quotes
+of both calls, the lower confidence, both notes) and the result was validated as one `Label`, so
+the cross-field rules and `airo accept` were unchanged. `--stage roles|details|single` and
+`--roles-from` in the Gemini coder; `airo tasks` wrote one codebook per call.
+
+**Why it was considered.** Roles gate every dependent field and are where the raters disagree
+(human-human kappa 0.48 on `us-2025h1_V3`). In one call a disagreement on roles cannot be separated
+from its consequences, every change to the roles criteria costs a run over the whole label, and the
+first call could go to a stronger model with reasoning while the second goes to a cheaper one
+(discussion of 2026-10-31, J. Pilcher and D. Kozachek).
+
+**Result.** Entry 18, table of rounds 1 and 2. Two calls against one call on the same codebook and
+passages, both without `frame` (round 2): roles as a set 0.56 in both; two calls ahead on
+`ai_reference` (0.89 against 0.84) and `market_driver` (0.65 against 0.49), one call ahead on
+`adoption` (0.64 against 0.59), `offering` (0.52 against 0.48), `governance` (0.60 against 0.55)
+and the disclosure traits (0.21 against 0.13); the other eight fields within 0.02 of each other.
+The two-call run cost the roles call on top (137,634 input and 75,177 thinking tokens on the
+stronger model) for the same roles agreement. With 290 passages, differences of 0.05 are not
+resolvable; `market_driver` and the traits are the only ones that stand out, one each way.
+
+**Why not adopted.** The split was meant to buy roles agreement; it did not, and the one-call design
+with `gemini-2.5-flash` is as good on the roles at lower cost. Its remaining advantages (iterating
+the roles codebook alone, a stronger model for the roles) have no measured value yet. The roles
+error now propagating into a separate call that cannot correct it, and the details codebook still
+carrying the whole MIT table for the cheaper model, were the open points in any case.
+
+**To pick it up again.** The patch above applies the whole design; the `single` stage was kept in
+it so both can be compared on the same codebook. What would justify it is a measured gain on the
+roles from a model that one call cannot use, or a roles codebook that changes often enough that
+re-running the whole label is the cost that matters.
+
+### Substantiveness as a count of particulars
+
+**Design.** Instead of rating one of five levels, the coder ticked which of ten particulars the AI
+statement gives, each backed by the passage: group S, what singles the statement out as this
+company's (`named_system`, `named_function`, `named_counterparty`, `mechanism`, `figure`), and group
+D, what the company does or has seen (`own_measure`, `responsibility`, `time_reference`,
+`realised_outcome`, `scope`). On acceptance the pipeline derived `substantiveness_score` (the number
+of ticks, 0 to 10) and `substantiveness` with three levels: `generic` (no tick), `company_specific`
+(ticks in one group only), `detailed` (ticks in both). A level or score given by the coder was
+checked against the ticks and rejected if it contradicted them; adjudication voted per particular;
+export and aggregation carried the score (mean and maximum per filing) next to the level. The three
+levels were the field for the policy team's three categories; the score was to keep the differences
+the three categories hide.
+
+**Why it was considered.** A rating on an ordinal scale has no criterion a second coder can check,
+and the human-human kappa of 0.36 on five levels says people do not apply them the same way either.
+Hope, Hu and Lu (2016, Review of Accounting Studies 21: 1005-1045) measure the specificity of
+risk-factor disclosure as a count of named entities (Stanford NER: persons, locations,
+organisations, percentages, money, times, dates) per word and validate the count against student
+ratings on a five-point scale (correlation 0.51); the measure itself is a count, not a rating, and
+the paper has no three categories. Counting defined particulars makes every disagreement a
+disagreement about one particular, gives an ordinal score, and lets the three categories be defined
+by the kind of particulars present rather than by cut points chosen after seeing the distribution.
+A free 1-to-10 rating by the model was considered and set aside for the same reason as the five
+levels: nothing in it can be checked against the text. The "Kraft" source named in the discussion
+was not identified.
+
+**Result.** Against the raters' levels mapped to three, kappa 0.22 (round 1) and 0.21 to 0.23
+(round 2) against 0.35 for the V3 model's five levels mapped the same way; the same in the two-call
+and the one-call variant, so it is the criteria and not the call design. The cross-tabulation of
+round 1 (two calls; passages about AI on both sides; rows the rater's v0.9 level, columns the derived
+level): `boilerplate` 50 ratings, of which `company_specific` 38, `generic` 7, `detailed` 5;
+`generic` 126: `company_specific` 103, `detailed` 13, `generic` 10; `specific` 58:
+`company_specific` 40, `detailed` 16, `generic` 2; `detailed` 29: `company_specific` 19, `detailed`
+10; `quantified` 6: `detailed` 4, `company_specific` 2. Where a rater said `boilerplate` or `generic`
+(176 ratings), the ticks were `mechanism` 101, `named_function` 45, `named_counterparty` 14,
+`own_measure` 12, `time_reference` 10, `responsibility` 8, the four others 11 together. Read against
+the passages, `mechanism` was ticked for generic causal chains ("as we increase the use of AI tools,
+the risk of unauthorized access may increase") although its criterion asks for a step particular to
+this company, and `named_function` for "our operations", "our platforms", "our business". The mean
+score did rise with the rater's level (1.06, 1.17, 1.71, 1.97, 2.67 from `boilerplate` to
+`quantified`), so the count orders the passages the way the raters do, with the scale compressed:
+the model's distribution was 176 `company_specific`, 45 `detailed`, 16 `generic`, scores 0 to 4,
+and in round 2 170 / 60 / 12 (two calls) and 161 / 43 / 39 (one call). Part of the gap is
+definitional: v0.9's `generic` was "names an area, nothing specific to the company", so a rater's
+`generic` for "AI in customer service" maps to `generic`, while the count ticks `named_function` for
+the same words.
+
+**Why not adopted.** As written, the count agrees with the raters worse than the rated levels, and
+its three derived levels put 59 to 61 % of the passages in the middle category, the outcome it was
+meant to avoid. Two criteria account for most of it and could be tightened (`mechanism` with its
+exclusions written out; `named_function` narrowed or moved out of group S), but that is a new
+design to be tested, not a correction of this one, and the five levels of v0.9 were at hand with
+the better figure. The raters' five levels also remain comparable with v0.9 and earlier runs
+without a mapping.
+
+**To pick it up again.** The patch above carries the particulars, the derivation, the validator,
+the adjudication, the export columns and the tests; `SUBSTANTIVENESS_V09_TO_V010` in the round-2
+test script maps the raters' levels for the comparison. Before any re-run: tighten `mechanism` and
+`named_function`, decide whether a named function alone should make a passage `company_specific`,
+and build rater sheets with columns for the particulars, since a count can only be validated
+against raters who tick the same particulars.
+

@@ -20,10 +20,11 @@ def passage(doc_id: str, blocks: tuple, mention: str, text: str, **extra) -> dic
 
 
 def label(pid: str, **fields) -> dict:
-    base = {"passage_id": pid, "taxonomy_version": "0.9", "coders": ["gemini"], "ai_reference": "explicit",
-            "frame": "risk_factor", "roles": ["risk"], "risk_types": ["cybersecurity"], "mit_subdomains": ["ai_system_security_vulnerabilities_attacks"],
+    base = {"passage_id": pid, "taxonomy_version": "0.10", "coders": ["gemini"], "ai_reference": "explicit",
+            "roles": ["risk"], "risk_types": ["cybersecurity"], "mit_subdomains": ["ai_system_security_vulnerabilities_attacks"],
             "adoption_stage": None, "business_functions": [], "governance_responses": [], "ai_kinds": ["unspecified"],
-            "substantiveness": "specific", "disclosure_traits": ["hedging"], "entities": [], "evidence": ["AI"],
+            "substantiveness": "specific",
+            "disclosure_traits": ["hedging"], "entities": [], "evidence": ["AI"],
             "confidence": {"gemini": "high"}, "notes": [], "disputed": [], "needs_review": False}
     return {**base, **fields}
 
@@ -76,7 +77,8 @@ def test_export_writes_the_bucket_layout(tmp_path):
 
     classified = [json.loads(l) for l in (out / "results" / "classified_chunks.jsonl").read_text().splitlines()]
     assert classified[0]["chunk_id"] == "d1:0-2" and classified[0]["mit_subdomains"] == ["ai_system_security_vulnerabilities_attacks"]
-    assert "coders" not in classified[0] and classified[0]["taxonomy_version"] == "0.9"
+    assert "coders" not in classified[0] and classified[0]["taxonomy_version"] == "0.10"
+    assert "frame" not in classified[0]
 
     manifest_rows = json.loads((out / "documents_manifest.json").read_text())["documents"]
     assert [(r["document_id"], r["form"], r["text_id"]) for r in manifest_rows] == [("11", "10-K", "d1"), ("12", "ARS", "d1"), ("13", "10-K", "d2")]
@@ -95,7 +97,7 @@ def test_export_writes_the_bucket_layout(tmp_path):
 
     monthly = json.loads((out / "results" / "us-filing-metrics.json").read_text())
     assert (monthly["runId"], monthly["chunksTotal"], monthly["chunksClassified"], monthly["invalidRows"], monthly["filingsTotal"]) == ("us-test_V3", 2, 2, 0, 3)
-    assert "gemini-2.5-flash" in monthly["source"] and "taxonomy v0.9" in monthly["source"]
+    assert "gemini-2.5-flash" in monthly["source"] and "taxonomy v0.10" in monthly["source"]
     march, april = monthly["months"]
     assert (march["month"], march["filings"], march["aiMentionShare"], march["llmAdoptionShare"]) == ("2025-03", 2, 1.0, 1.0)
     assert (april["month"], april["filings"], april["aiMentionShare"]) == ("2025-04", 1, 0.0)

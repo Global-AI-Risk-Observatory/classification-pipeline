@@ -1,0 +1,237 @@
+"""Subset test of taxonomy v0.10 on the 290 passages of the us-2025h1_V3 human validation.
+
+Everything is read from and written to the bucket; nothing of the data stays on the machine.
+
+    # 1. the tasks of the 290 passages and the three v0.10 codebooks, into a bucket folder of your choice
+    python analysis/v010_subset/subset_test.py tasks --run gs://airo-pipeline-data/us-2025h1_V3 --out gs://<bucket>/<folder>
+
+    # 2. label them (the coder reads and writes local paths; mount or copy the folder, e.g. with gsutil cp)
+    python -m airo.coders.gemini --stage roles   --tasks tasks.jsonl --codebook codebook_roles.md   --out roles.jsonl  --model <A> --project gario-1
+    python -m airo.coders.gemini --stage details --tasks tasks.jsonl --codebook codebook_details.md --out two_call.jsonl --model <B> --project gario-1 --roles-from roles.jsonl
+    python -m airo.coders.gemini --stage single  --tasks tasks.jsonl --codebook codebook.md         --out single.jsonl --model <B> --project gario-1
+
+    # 3. agreement of each variant with the seven raters, next to the V3 model's, per field
+    python analysis/v010_subset/subset_test.py compare --run gs://airo-pipeline-data/us-2025h1_V3 \
+        --labels two_call=gs://<bucket>/<folder>/two_call.jsonl single=gs://<bucket>/<folder>/single.jsonl \
+        --out gs://<bucket>/<folder>/agreement.md
+
+The raters scored v0.9's five substantiveness levels; they are compared with v0.10's three through
+`SUBSTANTIVENESS_V09_TO_V010` (boilerplate, generic -> generic; specific -> company_specific; detailed,
+quantified -> detailed), and the V3 model's labels the same way.
+"""
+
+from __future__ import annotations
+
+import argparse
+import json
+import subprocess
+import sys
+from collections import Counter
+from pathlib import Path
+
+sys.path.insert(0, str(Path(__file__).resolve().parents[2] / "src"))
+sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "human_validation"))
+
+from airo import taxonomy as tx  # noqa: E402
+from human_validation import SUBSTANTIVENESS_V09_TO_V010, kappa  # noqa: E402
+
+FIELDS_SINGLE = ("ai_reference", "adoption_stage", "substantiveness")  # `frame` is gone in v0.10
+FIELDS_MULTI = ("roles", "risk_types", "mit_subdomains", "business_functions", "governance_responses", "disclosure_traits")
+
+
+# --------------------------------------------------------------------------
+# bucket I/O through gsutil, so no extra dependency and the same credentials as the rest
+# --------------------------------------------------------------------------
+
+
+def read_text(path: str) -> str:
+    if path.startswith("gs://"):
+        return subprocess.run(["gsutil", "cat", path], capture_output=True, check=True).stdout.decode("utf-8")
+    return Path(path).read_text(encoding="utf-8")
+
+
+def read_jsonl(path: str) -> list[dict]:
+    return [json.loads(line) for line in read_text(path).splitlines() if line.strip()]
+
+
+def write_text(path: str, text: str) -> None:
+    if path.startswith("gs://"):
+        subprocess.run(["gsutil", "cp", "-", path], input=text.encode("utf-8"), check=True)
+    else:
+        Path(path).parent.mkdir(parents=True, exist_ok=True)
+        Path(path).write_text(text, encoding="utf-8")
+
+
+def write_jsonl(path: str, rows: list[dict]) -> None:
+    write_text(path, "".join(json.dumps(r, ensure_ascii=False) + "\n" for r in rows))
+
+
+# --------------------------------------------------------------------------
+# tasks
+# --------------------------------------------------------------------------
+
+
+def build_tasks(run: str) -> list[dict]:
+    """The 290 sample passages as tasks, in the shape `airo tasks` writes.
+
+    Context comes from the run's `chunks.jsonl` (text, section, heading, matched terms) and
+    `documents_manifest.json` (form, fiscal year); `sample.jsonl` gives the passage ids and the
+    stratum. The run's chunk rows carry the matched terms as one flat list, so the task shows them
+    under `ai`; the live run showed `ai` and `context` terms apart. That is the one difference
+    from the tasks of the run.
+    """
+    sample = read_jsonl(f"{run}/human_validation/sample.jsonl")
+    wanted = {s["passage_id"]: s for s in sample}
+    docs = {d["document_id"]: d for d in json.loads(read_text(f"{run}/documents_manifest.json"))["documents"]}
+    tasks = []
+    # chunks.jsonl is about 100 MB: streamed, one line at a time.
+    proc = subprocess.Popen(["gsutil", "cat", f"{run}/chunks.jsonl"], stdout=subprocess.PIPE)
+    assert proc.stdout is not None
+    for raw in proc.stdout:
+        line = raw.decode("utf-8")
+        if not line.strip():
+            continue
+        c = json.loads(line)
+        s = wanted.get(c["chunk_id"])
+        if s is None:
+            continue
+        d = docs.get(c["document_id"], {})
+        tasks.append({
+            "passage_id": c["chunk_id"],
+            "company": c.get("company_name"),
+            "form": d.get("form") or s.get("form"),
+            "fiscal_year": c.get("report_year") or d.get("year"),
+            "section": " ".join(c.get("report_sections") or []) or None,
+            "heading": c.get("heading"),
+            "matched_terms": {"ai": c.get("matched_keywords") or []},
+            "text": c["chunk_text"],
+            "stratum": s.get("stratum"),
+        })
+        wanted.pop(c["chunk_id"])
+        if not wanted:
+            proc.stdout.close()
+            proc.terminate()
+            break
+    proc.wait()
+    if wanted:
+        print(f"tasks: {len(wanted)} sample passages not found in chunks.jsonl: {sorted(wanted)[:5]} ...", file=sys.stderr)
+    tasks.sort(key=lambda t: t["passage_id"])
+    return tasks
+
+
+def cmd_tasks(args) -> None:
+    tasks = build_tasks(args.run)
+    out = args.out.rstrip("/")
+    write_jsonl(f"{out}/tasks.jsonl", tasks)
+    for stage, name in (("single", "codebook.md"), ("roles", "codebook_roles.md"), ("details", "codebook_details.md")):
+        write_text(f"{out}/{name}", tx.codebook(stage))
+    strata = Counter(t["stratum"] for t in tasks)
+    print(f"tasks: {len(tasks)} passages -> {out}/tasks.jsonl; strata {dict(strata)}; codebooks v{tx.TAXONOMY_VERSION} beside it")
+
+
+# --------------------------------------------------------------------------
+# compare
+# --------------------------------------------------------------------------
+
+
+def to_v010(label: dict) -> dict:
+    """A v0.9 label (a rater's or the V3 model's) with its substantiveness mapped to the three levels."""
+    s = label.get("substantiveness")
+    return {**label, "substantiveness": SUBSTANTIVENESS_V09_TO_V010.get(s, s)}
+
+
+def units(a: dict, b: dict) -> dict[str, tuple[str, str]]:
+    out = {}
+    for f in FIELDS_SINGLE:
+        out[f] = (str(a.get(f) or ""), str(b.get(f) or ""))
+    for f in FIELDS_MULTI:
+        out[f + " (exact set)"] = (",".join(sorted(a.get(f) or [])), ",".join(sorted(b.get(f) or [])))
+        values = {
+            "roles": tx.ROLES, "risk_types": tx.RISK_TYPES, "mit_subdomains": tx.MIT_SUBDOMAINS,
+            "business_functions": tx.BUSINESS_FUNCTIONS, "governance_responses": tx.GOVERNANCE_RESPONSES,
+            "disclosure_traits": tx.DISCLOSURE_TRAITS,
+        }[f]
+        for v in values:
+            out[f"{f}:{v}"] = (str(v in (a.get(f) or [])), str(v in (b.get(f) or [])))
+    return out
+
+
+def agreement(humans: list[dict], model: dict[str, dict]) -> dict[str, tuple[float | None, float | None, int]]:
+    """Per unit: (kappa, share identical, n pairs) of every human rating against the model's label of the same passage."""
+    pairs: dict[str, list[tuple[str, str]]] = {}
+    for h in humans:
+        m = model.get(h["passage_id"])
+        if m is None:
+            continue
+        for unit, pair in units(h, m).items():
+            pairs.setdefault(unit, []).append(pair)
+    return {u: (kappa(p), sum(a == b for a, b in p) / len(p) if p else None, len(p)) for u, p in pairs.items()}
+
+
+def cmd_compare(args) -> None:
+    run = args.run.rstrip("/")
+    humans = [to_v010(l) for k in range(1, 8) for l in read_jsonl(f"{run}/human_validation/labels/human_{k}.jsonl")]
+    sample_ids = {s["passage_id"] for s in read_jsonl(f"{run}/human_validation/sample.jsonl")}
+    variants: dict[str, dict[str, dict]] = {
+        # The run's final labels (one coder, passed through adjudication); `results/gemini.jsonl` holds the first pass only.
+        "V3 model (v0.9)": {l["passage_id"]: to_v010(l) for l in read_jsonl(f"{run}/results/labels_final.jsonl") if l["passage_id"] in sample_ids},
+    }
+    for spec in args.labels:
+        name, path = spec.split("=", 1)
+        variants[name] = {l["passage_id"]: l for l in read_jsonl(path)}
+    tables = {name: agreement(humans, labels) for name, labels in variants.items()}
+    order = [u for u in tables["V3 model (v0.9)"]]
+    for t in tables.values():
+        order += [u for u in t if u not in order]
+
+    def cell(t, u, i):
+        v = t.get(u)
+        if v is None or v[i] is None:
+            return ""
+        return f"{v[i]:.2f}"
+
+    names = list(tables)
+    lines = [
+        f"# Taxonomy v0.10 subset test: agreement with the seven raters of us-2025h1_V3",
+        "",
+        f"{len(humans)} human ratings on {len(sample_ids)} passages. Cohen's kappa and share of identical ratings, human against model, "
+        "per field; list fields as exact set and per value. The raters' five substantiveness levels and the V3 model's are mapped to "
+        "v0.10's three (boilerplate, generic -> generic; specific -> company_specific; detailed, quantified -> detailed).",
+        "",
+        "| Field | " + " | ".join(f"{n} kappa | {n} agree | n" for n in names) + " |",
+        "|---|" + "---|" * (3 * len(names)),
+    ]
+    for u in order:
+        lines.append(f"| {u} | " + " | ".join(
+            f"{cell(tables[n], u, 0)} | {cell(tables[n], u, 1)} | {tables[n][u][2] if u in tables[n] else ''}" for n in names) + " |")
+    lines += ["", "## Labelled passages per variant", ""]
+    for n, labels in variants.items():
+        lines.append(f"- {n}: {len(labels)} of {len(sample_ids)}")
+    lines += ["", "## Substantiveness distribution per variant (passages about AI)", ""]
+    for n, labels in variants.items():
+        dist = Counter(l.get("substantiveness") for l in labels.values() if l.get("ai_reference") == "explicit")
+        scores = Counter(l.get("substantiveness_score") for l in labels.values() if l.get("substantiveness_score") is not None)
+        lines.append(f"- {n}: levels {dict(dist.most_common())}" + (f"; scores {dict(sorted(scores.items()))}" if scores else ""))
+    text = "\n".join(lines) + "\n"
+    write_text(args.out, text)
+    print(text)
+
+
+def main(argv=None) -> None:
+    p = argparse.ArgumentParser(description=__doc__.split("\n")[0])
+    sub = p.add_subparsers(dest="command", required=True)
+    t = sub.add_parser("tasks", help="write the tasks of the 290 sample passages and the v0.10 codebooks to --out")
+    t.add_argument("--run", required=True, help="the run folder, e.g. gs://airo-pipeline-data/us-2025h1_V3")
+    t.add_argument("--out", required=True, help="bucket folder (or directory) to write tasks.jsonl and the codebooks to")
+    t.set_defaults(func=cmd_tasks)
+    c = sub.add_parser("compare", help="agreement of label files with the seven raters, next to the V3 model")
+    c.add_argument("--run", required=True)
+    c.add_argument("--labels", nargs="+", required=True, help="name=path of a labels file (gs:// or local), one or more")
+    c.add_argument("--out", required=True, help="where to write agreement.md (gs:// or local)")
+    c.set_defaults(func=cmd_compare)
+    args = p.parse_args(argv)
+    args.func(args)
+
+
+if __name__ == "__main__":
+    main()

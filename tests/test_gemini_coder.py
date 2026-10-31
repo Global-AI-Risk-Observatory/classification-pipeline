@@ -61,7 +61,6 @@ LABELS = {
     "abc123:10-12": {
         "passage_id": "abc123:10-12",
         "ai_reference": "explicit",
-        "frame": "risk_factor",
         "roles": ["adoption", "risk"],
         "risk_types": ["operational_reliability", "reputational_ethical"],
         "mit_subdomains": ["lack_of_capability_robustness", "unfair_discrimination_misrepresentation"],
@@ -78,7 +77,6 @@ LABELS = {
     "abc123:40-41": {
         "passage_id": "abc123:40-41",
         "ai_reference": "none",
-        "frame": None,
         "roles": [],
         "risk_types": [],
         "adoption_stage": None,
@@ -92,7 +90,6 @@ LABELS = {
     "abc123:77-77": {
         "passage_id": "abc123:77-77",
         "ai_reference": "explicit",
-        "frame": "business",
         "roles": ["offering"],
         "risk_types": [],
         "adoption_stage": None,

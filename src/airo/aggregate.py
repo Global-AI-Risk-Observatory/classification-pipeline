@@ -22,7 +22,7 @@ def summarise(doc: dict, passages: list[dict], labels: list[dict]) -> dict:
     def count(field: str) -> dict:
         c = Counter()
         for _, l in about_ai:
-            value = l[field]
+            value = l.get(field)
             c.update(value if isinstance(value, list) else [value] if value else [])
         return dict(c.most_common())
 
@@ -42,7 +42,6 @@ def summarise(doc: dict, passages: list[dict], labels: list[dict]) -> dict:
         "n_false_candidates": sum(l["ai_reference"] == "none" for _, l in mine),
         "n_needs_review": sum(l["needs_review"] for _, l in mine),
         "ai_reference": dict(Counter(l["ai_reference"] or "disputed" for _, l in mine)),
-        "frames": count("frame"),
         "roles": roles,
         "risk_types": count("risk_types"),
         "mit_subdomains": count("mit_subdomains"),
@@ -92,7 +91,6 @@ def render(doc: dict, passages: list[dict], labels: list[dict], summary: dict) -
         f"- Direct AI mentions (classified): {summary['n_candidates']}, of which about AI: {summary['n_ai_passages']}, "
         f"false candidates: {summary['n_false_candidates']}, flagged for review: {summary['n_needs_review']}",
         f"- Context passages (not classified): {summary['n_context_passages']}; groups: {fmt(summary['context_groups'])}",
-        f"- Frames: {fmt(summary['frames'])}",
         f"- Roles: {fmt(summary['roles'])}",
         f"- Risk types: {fmt(summary['risk_types'])}",
         f"- MIT subdomains: {fmt(summary['mit_subdomains'])}",
@@ -115,8 +113,6 @@ def render(doc: dict, passages: list[dict], labels: list[dict], summary: dict) -
             lines += ["**Not labelled.**", ""]
         else:
             tags = [f"AI reference: {l['ai_reference'] or 'disputed'}"]
-            if l["frame"]:
-                tags.append(f"frame: {l['frame']}")
             if l["roles"]:
                 tags.append("roles: " + ", ".join(l["roles"]))
             if l["risk_types"]:

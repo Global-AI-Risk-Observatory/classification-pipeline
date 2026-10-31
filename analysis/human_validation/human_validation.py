@@ -59,9 +59,12 @@ NONE_LOW_CONFIDENCE = 20  # of the `none` stratum: passages the model labelled w
 # Fields the raters fill, in sheet order. Every cell has a drop-down: a single-value field is one
 # column, a list field is one column per value slot (`roles 1`, `roles 2`, ...), as many slots as
 # cover at least 94 % of the model's non-empty labels of that field on us-2025h1_V3.
+# `frame` was a field of v0.4 to v0.9 and was rated on the us-2025h1_V3 sheets; v0.10 has none. It stays
+# here so the V3 sheets still read and the field still appears in the V3 agreement tables.
+FRAMES_V09 = ["risk_factor", "governance", "business", "market"]
 SINGLE = {
     "ai_reference": list(tx.AI_REFERENCE),
-    "frame": list(tx.FRAMES),
+    "frame": FRAMES_V09,
     "adoption_stage": list(tx.ADOPTION_STAGES),
     "substantiveness": list(tx.SUBSTANTIVENESS),
     "confidence": ["low", "medium", "high"],
@@ -95,7 +98,7 @@ def sheet_columns() -> list[tuple[str, str, int]]:
 
 RATING_COLUMNS = sheet_columns()
 DEFINITIONS = {
-    "ai_reference": tx.AI_REFERENCE, "frame": tx.FRAMES, "roles": tx.ROLES, "risk_types": tx.RISK_TYPES,
+    "ai_reference": tx.AI_REFERENCE, "roles": tx.ROLES, "risk_types": tx.RISK_TYPES,
     "mit_subdomains": tx.MIT_SUBDOMAINS, "adoption_stage": tx.ADOPTION_STAGES,
     "business_functions": tx.BUSINESS_FUNCTIONS, "governance_responses": tx.GOVERNANCE_RESPONSES,
     "substantiveness": tx.SUBSTANTIVENESS, "disclosure_traits": tx.DISCLOSURE_TRAITS,

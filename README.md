@@ -238,22 +238,27 @@ The container runs `python -m airo <command>` with `AIRO_GLOSSARIES=/app/glossar
   field, the share of passages on which all coders agree, the share of coder pairs with identical labels,
   and the passages to review.
 
-## Taxonomy v0.9
+## Taxonomy v0.10
 
 One label per passage. `taxonomy.py` is the single definition; `python -m airo tasks` renders it as the
 full codebook, with a definition and a checklist of criteria for every value (a value applies only if all
-its criteria hold) and the decision rules, to `data/codebook.md`. Since v0.4 the coder fixes the `frame`
-of the AI statement before judging any role or trait; criteria marked "frame-dependent" in the codebook
-(`market_driver`, `adoption`, `governance`, `externalisation`) are read in that frame. v0.5 added
-`substantiveness`; v0.6 added `business_functions`, `governance_responses` and the risk type
+its criteria hold) and the decision rules, to `data/codebook.md`. The coder decides first whether the
+passage is about AI, then the roles AI plays for the company; every other field follows from the roles.
+v0.5 added `substantiveness`; v0.6 added `business_functions`, `governance_responses` and the risk type
 `national_security`; v0.7 removed `implicit` from `ai_reference`: a passage either treats AI or it does
 not, and context passages are not labelled at all; v0.8 made `ai_kinds` a list of eight kinds, coded only
-when named; v0.9 added `mit_subdomains`, the shared key to the MIT AI Risk Repository.
+when named; v0.9 added `mit_subdomains`, the shared key to the MIT AI Risk Repository. v0.10 removed the
+field `frame` that v0.4 to v0.9 fixed before any role was judged, and wrote what it did into the role
+criteria: `market_driver` needs an explicit demand, price, supply or investment statement; use asserted
+inside an oversight, review or control remit is `governance` and not `adoption`; `externalisation` applies
+only with a role that puts the AI in the company's own hands or risks. On the 290 passages of the
+`us-2025h1_V3` human validation, agreement with the raters on the roles as a set rose from kappa 0.50 to
+0.55 (`docs/changes.md`, entry 18, with the test rounds that led to it; entry 19 records the two-call
+design and the count-based substantiveness that were tested in the same rounds and not adopted).
 
 | Field | Allowed values | Rule |
 |---|---|---|
 | `ai_reference` | `explicit`, `none` | exactly one, judged from the passage alone: `explicit` needs a matched AI term in its technology sense and a statement about AI; analytics, automation or algorithm wording without an AI term is `none`; with `none` the next nine fields and `evidence` stay empty |
-| `frame` | `risk_factor`, `governance`, `business`, `market` | exactly one when the passage is about AI, decided from section, heading and sentence function before any role or trait; `null` if and only if `ai_reference` is `none` |
 | `roles` | `market_driver`, `adoption`, `offering`, `risk`, `governance`, `incident`, `general` | one or more; `general` only alone |
 | `risk_types` | `market_demand`, `strategic_competitive`, `operational_reliability`, `cybersecurity`, `third_party`, `regulatory_legal`, `workforce`, `reputational_ethical`, `information_integrity`, `environmental`, `national_security`, `other` | one or more if and only if `risk` is a role |
 | `mit_subdomains` | the 24 subdomains of the MIT AI Risk Repository by name (`unfair_discrimination_misrepresentation` … `multi_agent_risks`; `MIT_SUBDOMAIN_NUMBERS` maps them to `1.1` … `7.6`), `other` | one or more if and only if `risk` or `incident` is a role; coded from the stated harm, next to `risk_types` |
@@ -261,7 +266,7 @@ when named; v0.9 added `mit_subdomains`, the shared key to the MIT AI Risk Repos
 | `business_functions` | `customer_service`, `marketing_sales`, `operations`, `finance`, `hr_workforce`, `legal_compliance`, `rd_product`, `it_cybersecurity`, `supply_chain`, `manufacturing`, `decision_analytics`, `other`, `not_stated` | one or more if and only if `adoption` is a role; the company's own use; `not_stated` only alone |
 | `governance_responses` | `oversight_structure`, `policies_processes`, `technical_controls`, `third_party_controls`, `workforce_measures`, `transparency_accountability`, `other` | one or more if and only if `governance` is a role |
 | `ai_kinds` | `traditional_ml`, `generative_llm`, `computer_vision`, `nlp`, `recommendation`, `agentic`, `other`, `unspecified` | one or more when the passage is about AI; a kind only when a term for it is in the passage, nothing estimated from context; `unspecified` only alone |
-| `disclosure_traits` | `boilerplate`, `hedging`, `externalisation`, `vagueness`, `safe_harbour` | zero or more; `[]` when no trait applies (the statement is specific) and always when `ai_reference` is `none`; `externalisation` never in frame `market` |
+| `disclosure_traits` | `boilerplate`, `hedging`, `externalisation`, `vagueness`, `safe_harbour` | zero or more; `[]` when no trait applies (the statement is specific) and always when `ai_reference` is `none`; `externalisation` only with the roles `adoption`, `offering`, `governance`, `risk` or `incident` |
 | `substantiveness` | `boilerplate`, `generic`, `specific`, `detailed`, `quantified` | exactly one when the passage is about AI; five ordered levels, the highest whose criteria the AI statements meet |
 | `entities` | list of names | organisations or AI products named in connection with AI |
 | `evidence` | list of 1 to 3 quotes | verbatim quotes from the passage, one per role where the roles rest on different sentences; `[]` if and only if `ai_reference` is `none` |

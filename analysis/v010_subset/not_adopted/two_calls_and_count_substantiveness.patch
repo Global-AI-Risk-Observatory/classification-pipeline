@@ -1,0 +1,2699 @@
+diff --git a/README.md b/README.md
+index 846a5c3..5b73bd0 100644
+--- a/README.md
++++ b/README.md
+@@ -122,6 +122,19 @@ run's totals (tasks, succeeded, failed, tokens by kind, wall time, model, estima
+         [--workers 4] [--thinking-budget N] [--price-input X --price-output Y] [--limit N]
+     python -m airo --data data accept data/labels_in/gemini.jsonl --coder gemini
+ 
++Two calls instead of one (taxonomy v0.10, `--stage`): the roles call decides whether the passage is about
++AI, its frame and its roles with the short codebook `codebook_roles.md`; the details call codes every other
++field for the passages about AI with `codebook_details.md`, the roles shown in each task as given, and
++writes complete labels (a passage the roles call found not to be about AI gets its label without a
++request). The two calls may use different models.
++
++    python -m airo.coders.gemini --stage roles --tasks data/tasks.jsonl --codebook data/codebook_roles.md \
++        --out data/labels_in/roles.jsonl --model <stronger model> --project gario-1
++    python -m airo.coders.gemini --stage details --roles-from data/labels_in/roles.jsonl \
++        --tasks data/tasks.jsonl --codebook data/codebook_details.md \
++        --out data/labels_in/gemini.jsonl --model <cheaper model> --project gario-1
++    python -m airo --data data accept data/labels_in/gemini.jsonl --coder gemini
++
+ It needs: the `google-genai` package (`pip install google-genai`); a Google Cloud project with the
+ Vertex AI API enabled; credentials from `gcloud auth application-default login` (or a service account
+ set in `GOOGLE_APPLICATION_CREDENTIALS`); and a model name available in the chosen region. Prices are not
+@@ -238,22 +251,27 @@ The container runs `python -m airo <command>` with `AIRO_GLOSSARIES=/app/glossar
+   field, the share of passages on which all coders agree, the share of coder pairs with identical labels,
+   and the passages to review.
+ 
+-## Taxonomy v0.9
++## Taxonomy v0.10
+ 
+ One label per passage. `taxonomy.py` is the single definition; `python -m airo tasks` renders it as the
+ full codebook, with a definition and a checklist of criteria for every value (a value applies only if all
+-its criteria hold) and the decision rules, to `data/codebook.md`. Since v0.4 the coder fixes the `frame`
+-of the AI statement before judging any role or trait; criteria marked "frame-dependent" in the codebook
+-(`market_driver`, `adoption`, `governance`, `externalisation`) are read in that frame. v0.5 added
++its criteria hold) and the decision rules, to `data/codebook.md`, and as one codebook per call of the
++two-call design to `data/codebook_roles.md` and `data/codebook_details.md`. From v0.4 to v0.9 the coder fixed a
++`frame` of the AI statement before judging any role or trait; v0.10 removed the field and wrote what it did into
++the role criteria (`market_driver` needs an explicit demand statement, use asserted inside an oversight remit is
++`governance` and not `adoption`, `externalisation` only with a role that puts the AI in the company's hands or
++risks). v0.5 added
+ `substantiveness`; v0.6 added `business_functions`, `governance_responses` and the risk type
+ `national_security`; v0.7 removed `implicit` from `ai_reference`: a passage either treats AI or it does
+ not, and context passages are not labelled at all; v0.8 made `ai_kinds` a list of eight kinds, coded only
+-when named; v0.9 added `mit_subdomains`, the shared key to the MIT AI Risk Repository.
++when named; v0.9 added `mit_subdomains`, the shared key to the MIT AI Risk Repository; v0.10 replaced the
++rated five-level `substantiveness` by ten particulars the coder ticks, from which the pipeline derives a
++score (0 to 10) and three levels, split the label into a roles call and a details call, and removed `frame`
++(`docs/changes.md`, entries 18 and 19; not yet run on a corpus).
+ 
+ | Field | Allowed values | Rule |
+ |---|---|---|
+-| `ai_reference` | `explicit`, `none` | exactly one, judged from the passage alone: `explicit` needs a matched AI term in its technology sense and a statement about AI; analytics, automation or algorithm wording without an AI term is `none`; with `none` the next nine fields and `evidence` stay empty |
+-| `frame` | `risk_factor`, `governance`, `business`, `market` | exactly one when the passage is about AI, decided from section, heading and sentence function before any role or trait; `null` if and only if `ai_reference` is `none` |
++| `ai_reference` | `explicit`, `none` | exactly one, judged from the passage alone: `explicit` needs a matched AI term in its technology sense and a statement about AI; analytics, automation or algorithm wording without an AI term is `none`; with `none` every field down to `substantiveness` and `evidence` stay empty |
+ | `roles` | `market_driver`, `adoption`, `offering`, `risk`, `governance`, `incident`, `general` | one or more; `general` only alone |
+ | `risk_types` | `market_demand`, `strategic_competitive`, `operational_reliability`, `cybersecurity`, `third_party`, `regulatory_legal`, `workforce`, `reputational_ethical`, `information_integrity`, `environmental`, `national_security`, `other` | one or more if and only if `risk` is a role |
+ | `mit_subdomains` | the 24 subdomains of the MIT AI Risk Repository by name (`unfair_discrimination_misrepresentation` … `multi_agent_risks`; `MIT_SUBDOMAIN_NUMBERS` maps them to `1.1` … `7.6`), `other` | one or more if and only if `risk` or `incident` is a role; coded from the stated harm, next to `risk_types` |
+@@ -262,7 +280,8 @@ when named; v0.9 added `mit_subdomains`, the shared key to the MIT AI Risk Repos
+ | `governance_responses` | `oversight_structure`, `policies_processes`, `technical_controls`, `third_party_controls`, `workforce_measures`, `transparency_accountability`, `other` | one or more if and only if `governance` is a role |
+ | `ai_kinds` | `traditional_ml`, `generative_llm`, `computer_vision`, `nlp`, `recommendation`, `agentic`, `other`, `unspecified` | one or more when the passage is about AI; a kind only when a term for it is in the passage, nothing estimated from context; `unspecified` only alone |
+ | `disclosure_traits` | `boilerplate`, `hedging`, `externalisation`, `vagueness`, `safe_harbour` | zero or more; `[]` when no trait applies (the statement is specific) and always when `ai_reference` is `none`; `externalisation` never in frame `market` |
+-| `substantiveness` | `boilerplate`, `generic`, `specific`, `detailed`, `quantified` | exactly one when the passage is about AI; five ordered levels, the highest whose criteria the AI statements meet |
++| `substantiveness_particulars` | group S: `named_system`, `named_function`, `named_counterparty`, `mechanism`, `figure`; group D: `own_measure`, `responsibility`, `time_reference`, `realised_outcome`, `scope` | zero or more when the passage is about AI; every particular the AI statement gives, each backed by the passage |
++| `substantiveness` | `generic`, `company_specific`, `detailed` | derived, not coded: `generic` with no particular, `company_specific` with particulars of one group only, `detailed` with both; `substantiveness_score` is the number of particulars, 0 to 10 |
+ | `entities` | list of names | organisations or AI products named in connection with AI |
+ | `evidence` | list of 1 to 3 quotes | verbatim quotes from the passage, one per role where the roles rest on different sentences; `[]` if and only if `ai_reference` is `none` |
+ | `confidence` | `low`, `medium`, `high` | always required |
+diff --git a/analysis/human_validation/human_validation.py b/analysis/human_validation/human_validation.py
+index 454338f..dc95fc6 100644
+--- a/analysis/human_validation/human_validation.py
++++ b/analysis/human_validation/human_validation.py
+@@ -11,6 +11,7 @@ Steps, each a sub-command:
+     sheets     create one Google Sheet per rater from those files      -> work/<name>/sheets.json
+     collect    read the raters' sheets back, check the values against the taxonomy, write one
+                coder file per rater (the format `python -m airo accept` reads) -> work/<name>/labels/
++               and, from Drive's revision history, who edited each sheet when   -> results/<name>/activity.md
+     agreement  kappa and accuracy per field                            -> results/<name>/
+ 
+     python human_validation.py sample --run gs://<bucket>/<run> --out gs://<bucket>/<run>/human_validation
+@@ -59,11 +60,19 @@ NONE_LOW_CONFIDENCE = 20  # of the `none` stratum: passages the model labelled w
+ # Fields the raters fill, in sheet order. Every cell has a drop-down: a single-value field is one
+ # column, a list field is one column per value slot (`roles 1`, `roles 2`, ...), as many slots as
+ # cover at least 94 % of the model's non-empty labels of that field on us-2025h1_V3.
++# The us-2025h1_V3 sheets were rated with taxonomy v0.9, whose `substantiveness` had five levels;
++# v0.10 derives three levels from ten particulars. `collect` accepts both so the V3 sheets still
++# read; sheets for a v0.10 validation need columns for the particulars (not built yet).
++SUBSTANTIVENESS_V09 = ["boilerplate", "generic", "specific", "detailed", "quantified"]
++SUBSTANTIVENESS_V09_TO_V010 = {"boilerplate": "generic", "generic": "generic", "specific": "company_specific",
++                               "detailed": "detailed", "quantified": "detailed"}
++# `frame` was a field of v0.4 to v0.9 and was rated on the V3 sheets; v0.10 has none.
++FRAMES_V09 = ["risk_factor", "governance", "business", "market"]
+ SINGLE = {
+     "ai_reference": list(tx.AI_REFERENCE),
+-    "frame": list(tx.FRAMES),
++    "frame": FRAMES_V09,
+     "adoption_stage": list(tx.ADOPTION_STAGES),
+-    "substantiveness": list(tx.SUBSTANTIVENESS),
++    "substantiveness": SUBSTANTIVENESS_V09 + [v for v in tx.SUBSTANTIVENESS if v not in SUBSTANTIVENESS_V09],
+     "confidence": ["low", "medium", "high"],
+ }
+ MULTI = {
+@@ -95,7 +104,7 @@ def sheet_columns() -> list[tuple[str, str, int]]:
+ 
+ RATING_COLUMNS = sheet_columns()
+ DEFINITIONS = {
+-    "ai_reference": tx.AI_REFERENCE, "frame": tx.FRAMES, "roles": tx.ROLES, "risk_types": tx.RISK_TYPES,
++    "ai_reference": tx.AI_REFERENCE, "roles": tx.ROLES, "risk_types": tx.RISK_TYPES,
+     "mit_subdomains": tx.MIT_SUBDOMAINS, "adoption_stage": tx.ADOPTION_STAGES,
+     "business_functions": tx.BUSINESS_FUNCTIONS, "governance_responses": tx.GOVERNANCE_RESPONSES,
+     "substantiveness": tx.SUBSTANTIVENESS, "disclosure_traits": tx.DISCLOSURE_TRAITS,
+@@ -399,8 +408,56 @@ def parse_multi(field: str, rec: dict) -> tuple[list[str], list[str]]:
+     return values, bad
+ 
+ 
++def revisions(spreadsheet_id: str, project: str) -> list[dict]:
++    """The spreadsheet's revisions from the Drive API: who saved when. Google merges edits made
++    within a short time into one revision, so a revision is a stretch of work, not a cell."""
++    url = f"https://www.googleapis.com/drive/v3/files/{spreadsheet_id}/revisions?pageSize=1000&fields=nextPageToken,revisions(id,modifiedTime,lastModifyingUser(emailAddress))"
++    out, token_ = [], None
++    while True:
++        got = api("GET", url + (f"&pageToken={token_}" if token_ else ""), project)
++        out += got.get("revisions", [])
++        token_ = got.get("nextPageToken")
++        if not token_:
++            return out
++
++
++def activity(sheets_meta: dict, project: str, created_by: str) -> dict:
++    """Per rater: the revisions after the sheet was set up, by editor, with first and last time."""
++    out = {}
++    for k, meta in sheets_meta.items():
++        revs = [r for r in revisions(meta["spreadsheetId"], project)]
++        setup = [r for r in revs if r.get("lastModifyingUser", {}).get("emailAddress") == created_by][:3]
++        edits = [r for r in revs if r not in setup]
++        by_editor = Counter(r.get("lastModifyingUser", {}).get("emailAddress") or "anonymous" for r in edits)
++        times = sorted(r["modifiedTime"] for r in edits)
++        by_hour = Counter(t[:13] for t in times)
++        out[k] = {"revisions": len(edits), "first": times[0] if times else None, "last": times[-1] if times else None,
++                  "editors": dict(by_editor), "revisions_per_hour": dict(sorted(by_hour.items()))}
++    return out
++
++
+ def collect(args) -> None:
+     sheets_meta = json.loads((args.work / "sheets.json").read_text(encoding="utf-8"))
++    me = subprocess.run(["gcloud", "config", "get-value", "account"], capture_output=True, check=True).stdout.decode().strip()
++    act = activity(sheets_meta, args.project, me)
++    (args.work / "labels").mkdir(parents=True, exist_ok=True)
++    (args.work / "labels" / "activity.json").write_text(json.dumps(act, indent=1), encoding="utf-8")
++    lines = ["# Editing activity per rater sheet", "",
++             "Revisions saved by Google Drive after the sheet was set up; edits within a short time merge into one revision. "
++             "A sheet rated in one sitting from a paste shows one or two revisions in one hour; rating by hand shows revisions spread over the session.", "",
++             "| Rater | Revisions | First edit (UTC) | Last edit (UTC) | Hours spanned | Editors | Revisions per hour |", "|---|---|---|---|---|---|---|"]
++    for k, a in act.items():
++        span = ""
++        if a["first"]:
++            from datetime import datetime
++            f, l = (datetime.fromisoformat(a[x].replace("Z", "+00:00")) for x in ("first", "last"))
++            span = f"{(l - f).total_seconds() / 3600:.1f}"
++        lines.append(f"| {k} | {a['revisions']} | {a['first'] or ''} | {a['last'] or ''} | {span} | {len(a['editors'])} | "
++                     + ", ".join(f"{h[11:]}h: {n}" for h, n in a["revisions_per_hour"].items()) + " |")
++    args.results.mkdir(parents=True, exist_ok=True)
++    (args.results / "activity.md").write_text("\n".join(lines) + "\n", encoding="utf-8")
++    for k, a in act.items():
++        print(f"collect: rater {k}: {a['revisions']} revisions, {len(a['editors'])} editor(s), {a['first'] or '-'} to {a['last'] or '-'}")
+     problems = []
+     for k, meta in sheets_meta.items():
+         got = api("GET", f"https://sheets.googleapis.com/v4/spreadsheets/{meta['spreadsheetId']}/values/Rating", args.project)
+@@ -436,7 +493,8 @@ def collect(args) -> None:
+         print(f"collect: {len(problems)} value problems -> labels/problems.txt")
+     summary = json.loads((args.work / "summary.json").read_text(encoding="utf-8"))
+     if summary.get("out"):
+-        gcs_copy(sorted((args.work / "labels").glob("human_*.jsonl")), summary["out"].rstrip("/") + "/labels")
++        gcs_copy(sorted((args.work / "labels").glob("human_*.jsonl")) + [args.work / "labels" / "activity.json"],
++                 summary["out"].rstrip("/") + "/labels")
+ 
+ 
+ # --------------------------------------------------------------------------
+diff --git a/docs/changes.md b/docs/changes.md
+index 39e471b..c590f37 100644
+--- a/docs/changes.md
++++ b/docs/changes.md
+@@ -732,3 +732,230 @@ exported in between is complete in chunks and incomplete in labels, which `chunk
+ in the filing metrics shows. Quotes that the model cannot reproduce verbatim fail in every
+ grouping; those passages stay without a label.
+ 
++---
++
++## 18. Two calls, roles first; substantiveness counted, not rated (v0.10)
++
++**Status: implemented locally and run on the 290-passage subset (2026-10-31), not on a corpus.** The
++subset results are at the end of this entry; they decide what changes before v0.10 replaces v0.9.
++
++**Before (v0.4 to v0.9).** One call per 40 passages returned the whole label. The schema enforced
++that the role-dependent fields are given if and only if their role is (`risk_types` with `risk`,
++`adoption_stage` and `business_functions` with `adoption`, `governance_responses` with
++`governance`, `mit_subdomains` with `risk` or `incident`), so a wrong role took its fields with it
++inside the same answer. `substantiveness` was one of five ordered levels (`boilerplate`,
++`generic`, `specific`, `detailed`, `quantified`), rated by the coder against cumulative criteria.
++
++**What the validation of `us-2025h1_V3` showed** (`analysis/human_validation/results/us-2025h1_V3/agreement.md`;
++290 passages, 7 raters, 59 human-human pairs): `roles` as a set has human-human kappa 0.48 and
++human-model 0.50; `risk` alone 0.79 / 0.75, `adoption` 0.37 / 0.55, `governance` 0.40 / 0.55,
++`general` below zero. `substantiveness` has human-human kappa 0.36 and human-model 0.30, the
++weakest field after the disclosure traits; on the one-against-40 comparison
++(`docs/one-vs-40-passages-per-request.md`) the same model agreed with itself on it at 0.49 only.
++
++**New.**
++
++- *Two calls* (`src/airo/taxonomy.py`: `RolesLabel`, `DetailsLabel`, `merge`; `codebook(stage)`;
++  `src/airo/coders/gemini.py`: `--stage roles|details|single`, `--roles-from`). The roles call
++  decides `ai_reference`, `frame` and `roles` with a codebook of about 11,000 characters
++  (`codebook_roles.md`). The details call gets the roles as given in each task ("do not judge
++  again, do not return") and codes every other field with `codebook_details.md` (about 45,000
++  characters, the MIT subdomains being most of it), for the passages the roles call found to be
++  about AI; a `none` passage gets its label without a request. Each answer is merged with its
++  roles label and validated as one `Label`, so the cross-field rules are unchanged and `airo
++  accept` reads the output as before. The two calls may use different models. `single` is the
++  one-call design as before, under the same taxonomy, so the two can be compared on the same
++  passages. `airo tasks` writes all three codebooks.
++- *Substantiveness as a count* (`SUBSTANTIVENESS_PARTICULARS`, `substantiveness_of`). The coder
++  ticks which of ten particulars the AI statement gives, each backed by the passage: group S, what
++  singles the statement out as this company's (`named_system`, `named_function`,
++  `named_counterparty`, `mechanism`, `figure`), and group D, what the company does or has seen
++  (`own_measure`, `responsibility`, `time_reference`, `realised_outcome`, `scope`). On acceptance
++  the pipeline derives `substantiveness_score` (the number of ticks, 0 to 10) and
++  `substantiveness` with three levels: `generic` (no tick), `company_specific` (ticks in one group
++  only), `detailed` (ticks in both). A level or score the coder gives is checked against the ticks
++  and rejected if it contradicts them; adjudication votes per particular and derives level and
++  score from the vote. Export and aggregation carry the score (mean and maximum per filing, mean per
++  report) next to the level. The level is the field the policy team's three categories map to; the
++  score is what keeps the differences the three categories hide.
++
++**Why.**
++
++- Roles gate every dependent field, and roles are where the raters disagree. In one call a
++  disagreement on roles cannot be separated from its consequences, and every refinement of the
++  roles codebook costs a run over the whole label. In two calls the roles codebook is a quarter of
++  the length, can be iterated on its own, and the first call can go to a stronger model with
++  reasoning while the second goes to a cheaper one (team decision of 2026-10-31, J. Pilcher and
++  D. Kozachek: agreement on roles is the one figure the results cannot be reported without).
++- A rating on an ordinal scale has no criterion a second coder can check, and the human-human
++  kappa of 0.36 says people do not apply the five levels the same way either. Hope, Hu and Lu
++  (2016) measure the specificity of risk-factor disclosure as a count of named entities per word
++  and validate it against student ratings on a five-point scale (correlation 0.51); the measure
++  itself is a count, not a rating. Counting defined particulars makes every disagreement a
++  disagreement about one particular, gives an ordinal score for weighted kappa and regressions,
++  and lets the three categories be defined by the kind of particulars present rather than by cut
++  points chosen after seeing the distribution. A free 1-to-10 rating by the model was considered
++  and set aside for the same reason the five levels are: nothing in it can be checked against the
++  text.
++
++**Decisions.**
++
++| Decision | Alternative considered | Reason |
++|---|---|---|
++| Roles call: `ai_reference`, `frame`, `roles`; details call: everything else | Also `ai_kinds` and the traits in the first call | They do not gate anything; keeping the first call to what gates the rest keeps its codebook short for the stronger model. |
++| Three levels from the kind of particulars (S only or D only against both) | Cut points on the score (0, 1-3, 4+) | Cut points would be set to the distribution and would move with it; the kind-based rule is fixed and mirrors the cumulative logic of v0.9 (level 4 presupposed level 3). |
++| "D only" is `company_specific`, not `generic` | `generic` (nothing singles the statement out as this company's) | "We adopted an AI acceptable-use policy and trained staff" says more than a statement any firm could make; it names what the company did. |
++| Score and particulars are columns next to the level | Only the level, as the policy team asked | The level alone cannot show that one `company_specific` passage gives one particular and another five. The level stays the field the policy team sees. |
++| `single` stage kept under v0.10 | Remove the one-call path | Without it the two-call design cannot be compared on the same codebook and passages. |
++
++**Better.** Nothing measured yet. What can be said: a complete v0.10 label passes the same
++acceptance check as before; the level can no longer be given without the ticks that justify it;
++the roles codebook can be changed without touching the details codebook.
++
++**Not better / open.**
++
++- Not run on any passage. Model names for the two calls are open (all runs so far used
++  `gemini-2.5-flash`; `cloud/config.env` names `gemini-3.8-flash`, unused).
++- Cost is not known. The first call goes to every passage, the second to all passages about AI
++  (about 90 % on `us-2025h1_V3`), so the saving is in codebook length per call, not in requests;
++  whether a stronger first model makes the run dearer than V3 is to be measured on the subset.
++- A roles error now propagates into a separate call instead of the same answer; the details call
++  cannot correct it. Entry 12 measured that adding fields moves the roles; removing fields from
++  the call may move them too.
++- The ten particulars were written from the definitions of v0.9 and from Hope et al.'s entity
++  classes, not from data; whether coders tick them consistently is untested. The V3 raters scored
++  five levels, so on the subset only the derived three levels are comparable with the human labels
++  (`boilerplate` and `generic` to `generic`, `specific` to `company_specific`, `detailed` and
++  `quantified` to `detailed`; `SUBSTANTIVENESS_V09_TO_V010` in `analysis/human_validation/human_validation.py`).
++  Rater sheets for a v0.10 validation need columns for the particulars; not built.
++- The details codebook still carries the whole MIT table (45,000 characters) and is read by the
++  cheaper model.
++
++**Subset test (2026-10-31).** The 290 passages of the V3 validation sample
++(`gs://airo-pipeline-data/us-2025h1_V3/human_validation/sample.jsonl`), labelled two ways under v0.10
++with `analysis/v010_subset/subset_test.py`; tasks, codebooks, labels, run files and the agreement
++table are in `gs://version10test/`. Two calls: roles with `gemini-3.5-flash` (thinking at the model's
++default, endpoint `global`; the model is listed for `us-central1` but answers 404 there), details with
++`gemini-2.5-flash` (thinking off, `us-central1`, as in V3). One call: `gemini-2.5-flash` with the
++v0.10 single codebook. 40 passages per request in both. Agreement with the seven raters (348 human
++ratings; the raters' five substantiveness levels mapped to three), Cohen's kappa:
++
++| Field | V3 model, v0.9 | two calls | one call |
++|---|---|---|---|
++| ai_reference | 0.75 | 0.86 | 0.76 |
++| frame | 0.68 | 0.72 | 0.69 |
++| roles (exact set) | 0.50 | 0.52 | 0.52 |
++| roles:risk | 0.75 | 0.77 | 0.77 |
++| roles:adoption | 0.55 | 0.54 | 0.57 |
++| roles:governance | 0.55 | 0.52 | 0.53 |
++| roles:market_driver | 0.49 | 0.55 | 0.48 |
++| risk_types (exact set) | 0.52 | 0.56 | 0.54 |
++| mit_subdomains (exact set) | 0.34 | 0.38 | 0.34 |
++| adoption_stage | 0.43 | 0.42 | 0.38 |
++| business_functions (exact set) | 0.30 | 0.32 | 0.31 |
++| governance_responses (exact set) | 0.34 | 0.36 | 0.38 |
++| substantiveness (three levels) | 0.35 | 0.22 | 0.22 |
++| disclosure_traits (exact set) | 0.21 | 0.15 | 0.24 |
++
++Labelled: 290 of 290 (V3), 288 of 290 (each v0.10 variant; two evidence quotes not verbatim).
++Tokens: roles call 143,121 input, 28,024 output, 83,874 thinking for 290 passages; details call
++546,521 input, 54,526 output for 239 passages, of which 31 were asked again on their own with the
++whole details codebook (29 then accepted), so the re-asks are most of its input; one call 308,421
++input, 69,371 output for 290 passages.
++
++What the figures say:
++
++- The stronger roles model moves `ai_reference` (0.75 to 0.86) and `frame` (0.68 to 0.72) and
++  `market_driver`; the roles as a set move from 0.50 to 0.52 in both variants, within what 290
++  passages can resolve. The two calls did not lower any dependent field; `risk_types` and
++  `mit_subdomains` are slightly higher with the roles given.
++- The count-based substantiveness is worse against the raters than the five rated levels mapped to
++  three (0.22 against 0.35), in both variants, so it is the criteria and not the call design. The
++  cross-tabulation (two calls, explicit on both sides): where a rater said `boilerplate` or
++  `generic` (176 ratings), the model gave `company_specific` 141 times and `generic` 17 times; the
++  ticks behind that are `mechanism` (101) and `named_function` (45). Read against the passages,
++  `mechanism` was ticked for generic causal chains ("as we increase the use of AI tools, the risk of
++  unauthorized access may increase") although its criterion asks for a step particular to this
++  company, and `named_function` for "our operations", "our platforms", "our business". The two
++  criteria need the exclusions written out; the eight others were ticked rarely enough that the
++  subset says little about them. The model's distribution (176 `company_specific`, 45 `detailed`,
++  16 `generic`; scores 0 to 4) is the result of these two ticks.
++- Part of the gap is definitional: v0.9's `generic` was "names an area, nothing specific to the
++  company", so a rater's `generic` for "AI in customer service" maps to `generic`, while v0.10
++  ticks `named_function` for the same words. Whether a named function alone should make a passage
++  `company_specific` is a decision, not a model error.
++
++Open after the subset: tighten `mechanism` and `named_function` (or move `named_function` out of
++group S) and re-run the details call only (the roles labels stand); fix the details re-asks, which
++sent the whole codebook 31 times; decide the `global` endpoint for the roles model in
++`cloud/config.env`.
++
++---
++
++## 19. `frame` removed (v0.10)
++
++**Before (v0.4 to v0.9, entry 10).** A required field `frame` (`risk_factor`, `governance`,
++`business`, `market`), fixed from section, heading and sentence function before any role or trait,
++and four criteria that were read in that frame: `adoption` in frame `governance` needed a clause
++outside the remit; `governance` was the primary role in its frame; `market_driver` was the primary
++role in frame `market` and needed an explicit demand statement elsewhere; `externalisation` was never
++set in frame `market`. On `us-2025h1_V3` the raters agreed with each other on `frame` at kappa 0.72
++and with the model at 0.68.
++
++**New** (team decision of 2026-10-31; `src/airo/taxonomy.py`, `classify.py`, `aggregate.py`,
++`export.py`, `coders/gemini.py`). The field is gone from the schema, the codebooks, the adjudication,
++the report summary and the export. The order of coding is `ai_reference`, `roles`, then the
++role-dependent fields (`risk_types`, `mit_subdomains`, ...). What the frame did for the roles is now in
++the role criteria and decision rules: use asserted inside an oversight, review or control remit is
++`governance` and not `adoption`; `market_driver` needs an explicit demand, price, supply or investment
++statement in the passage; `externalisation` applies only with a role that puts the AI in the company's
++own hands or risks (`adoption`, `offering`, `governance`, `risk`, `incident`), which the schema enforces
++in place of the old frame rule. The roles codebook asks the coder to judge each role from the function
++of the sentence the AI statement stands in, with section and heading as context; that is the frame
++decision without a field for it.
++
++**Why.** The frame was an intermediate step whose only consumers were the role criteria. A field that
++is not reported, with its own disagreement (kappa 0.72 among raters), costs rating time and a place
++where a disagreement can start before the roles.
++
++**Better.** Subset re-run under this version on 2026-10-31 (same 290 passages, models and settings as
++in entry 18; the details call now defers its re-asks and runs them as one batch pass: 4 of 242 passages,
++12,726 input tokens instead of the 31 single re-asks of round 1). Agreement with the seven raters,
++Cohen's kappa, next to the V3 model and round 1:
++
++| Field | V3 model, v0.9 | two calls, with frame (round 1) | two calls, no frame | one call, no frame |
++|---|---|---|---|---|
++| ai_reference | 0.75 | 0.86 | 0.89 | 0.84 |
++| roles (exact set) | 0.50 | 0.52 | 0.56 | 0.56 |
++| roles:risk | 0.75 | 0.77 | 0.76 | 0.75 |
++| roles:adoption | 0.55 | 0.54 | 0.59 | 0.64 |
++| roles:offering | 0.44 | 0.45 | 0.48 | 0.52 |
++| roles:governance | 0.55 | 0.52 | 0.55 | 0.60 |
++| roles:market_driver | 0.49 | 0.55 | 0.65 | 0.49 |
++| risk_types (exact set) | 0.52 | 0.56 | 0.53 | 0.54 |
++| mit_subdomains (exact set) | 0.34 | 0.38 | 0.35 | 0.36 |
++| adoption_stage | 0.43 | 0.42 | 0.47 | 0.47 |
++| business_functions (exact set) | 0.30 | 0.32 | 0.36 | 0.36 |
++| governance_responses (exact set) | 0.34 | 0.36 | 0.44 | 0.43 |
++| substantiveness (three levels) | 0.35 | 0.22 | 0.21 | 0.23 |
++| disclosure_traits (exact set) | 0.21 | 0.15 | 0.13 | 0.21 |
++
++All 290 passages labelled in both frame-free variants. Tokens, no frame: roles call 137,634 input,
++33,882 output, 75,177 thinking (290 passages); details call 171,906 + 12,726 input, 51,309 + 1,109
++output (242 passages asked, 48 labelled without a request); one call 235,040 input, 64,129 output.
++Without the frame the roles as a set move from 0.50 (V3) and 0.52 (round 1) to 0.56 in both variants,
++with `adoption`, `offering`, `governance` and `market_driver` up and `risk` unchanged; the dependent
++fields `business_functions` and `governance_responses` follow the roles up. The one-call variant with
++the cheaper model is level with the two calls on the roles and ahead on `adoption` and `governance`;
++the stronger roles model is ahead on `ai_reference` and `market_driver`. `substantiveness` is
++unchanged at 0.21 to 0.23: the two criteria named in entry 18 are still open. The disclosure traits
++fall to 0.13 in the two-call variant, which the subset cannot explain; the traits were the weakest
++field in every run so far (human-human kappa 0.15). One field fewer for raters and for the roles call.
++
++**Not better / open.** The v0.4 argument for the frame was that it gives a disagreement a location one
++step earlier ("we disagree on the frame" before "we disagree on the role"); that location is gone, and
++a disagreement on `adoption` against `governance` now has to be read from the role criteria alone. The
++human-validation sheets of V3 carry `frame`; the collection code keeps reading it
++(`FRAMES_V09` in `analysis/human_validation/human_validation.py`). Labels of v0.9 and earlier have the
++field, v0.10 labels do not; a comparison across versions drops it.
++
+diff --git a/src/airo/aggregate.py b/src/airo/aggregate.py
+index e9d25e5..00173f5 100644
+--- a/src/airo/aggregate.py
++++ b/src/airo/aggregate.py
+@@ -22,7 +22,7 @@ def summarise(doc: dict, passages: list[dict], labels: list[dict]) -> dict:
+     def count(field: str) -> dict:
+         c = Counter()
+         for _, l in about_ai:
+-            value = l[field]
++            value = l.get(field)
+             c.update(value if isinstance(value, list) else [value] if value else [])
+         return dict(c.most_common())
+ 
+@@ -42,7 +42,6 @@ def summarise(doc: dict, passages: list[dict], labels: list[dict]) -> dict:
+         "n_false_candidates": sum(l["ai_reference"] == "none" for _, l in mine),
+         "n_needs_review": sum(l["needs_review"] for _, l in mine),
+         "ai_reference": dict(Counter(l["ai_reference"] or "disputed" for _, l in mine)),
+-        "frames": count("frame"),
+         "roles": roles,
+         "risk_types": count("risk_types"),
+         "mit_subdomains": count("mit_subdomains"),
+@@ -51,6 +50,11 @@ def summarise(doc: dict, passages: list[dict], labels: list[dict]) -> dict:
+         "governance_responses": count("governance_responses"),
+         "ai_kinds": count("ai_kinds"),
+         "substantiveness": count("substantiveness"),
++        "substantiveness_particulars": count("substantiveness_particulars"),
++        "substantiveness_score_mean": round(
++            sum(l["substantiveness_score"] for _, l in about_ai if l.get("substantiveness_score") is not None)
++            / max(1, sum(1 for _, l in about_ai if l.get("substantiveness_score") is not None)), 3,
++        ) if any(l.get("substantiveness_score") is not None for _, l in about_ai) else None,
+         "disclosure_traits": traits,
+         # Analogue of PRISON's activation rate: share of AI passages with at least one trait, and per trait.
+         "trait_activation_rate": round(sum(bool(l["disclosure_traits"]) for _, l in about_ai) / n_ai, 3)
+@@ -92,7 +96,6 @@ def render(doc: dict, passages: list[dict], labels: list[dict], summary: dict) -
+         f"- Direct AI mentions (classified): {summary['n_candidates']}, of which about AI: {summary['n_ai_passages']}, "
+         f"false candidates: {summary['n_false_candidates']}, flagged for review: {summary['n_needs_review']}",
+         f"- Context passages (not classified): {summary['n_context_passages']}; groups: {fmt(summary['context_groups'])}",
+-        f"- Frames: {fmt(summary['frames'])}",
+         f"- Roles: {fmt(summary['roles'])}",
+         f"- Risk types: {fmt(summary['risk_types'])}",
+         f"- MIT subdomains: {fmt(summary['mit_subdomains'])}",
+@@ -100,7 +103,9 @@ def render(doc: dict, passages: list[dict], labels: list[dict], summary: dict) -
+         f"- Business functions: {fmt(summary['business_functions'])}",
+         f"- Governance responses: {fmt(summary['governance_responses'])}",
+         f"- Kinds of AI: {fmt(summary['ai_kinds'])}",
+-        f"- Substantiveness: {fmt(summary['substantiveness'])}",
++        f"- Substantiveness: {fmt(summary['substantiveness'])}; mean score "
++        f"{summary.get('substantiveness_score_mean') if summary.get('substantiveness_score_mean') is not None else 'n/a'}; "
++        f"particulars: {fmt(summary.get('substantiveness_particulars', {}))}",
+         f"- Disclosure traits: {fmt(summary['disclosure_traits'])}",
+         f"- Trait activation rate: {activation_line}",
+         f"- Sections: {fmt(summary['sections'])}",
+@@ -115,8 +120,6 @@ def render(doc: dict, passages: list[dict], labels: list[dict], summary: dict) -
+             lines += ["**Not labelled.**", ""]
+         else:
+             tags = [f"AI reference: {l['ai_reference'] or 'disputed'}"]
+-            if l["frame"]:
+-                tags.append(f"frame: {l['frame']}")
+             if l["roles"]:
+                 tags.append("roles: " + ", ".join(l["roles"]))
+             if l["risk_types"]:
+@@ -132,7 +135,8 @@ def render(doc: dict, passages: list[dict], labels: list[dict], summary: dict) -
+             if l["ai_kinds"]:
+                 tags.append("kinds: " + ", ".join(l["ai_kinds"]))
+             if l["substantiveness"]:
+-                tags.append(f"substantiveness: {l['substantiveness']}")
++                score = l.get("substantiveness_score")
++                tags.append(f"substantiveness: {l['substantiveness']}" + (f" ({score}/10)" if score is not None else ""))
+             if l["disclosure_traits"]:
+                 tags.append("traits: " + ", ".join(l["disclosure_traits"]))
+             if l["needs_review"]:
+diff --git a/src/airo/classify.py b/src/airo/classify.py
+index aec327c..ba27a3b 100644
+--- a/src/airo/classify.py
++++ b/src/airo/classify.py
+@@ -16,11 +16,12 @@ from itertools import combinations
+ 
+ from pydantic import ValidationError
+ 
+-from .taxonomy import TAXONOMY_VERSION, Label
++from .taxonomy import TAXONOMY_VERSION, Label, substantiveness_of
+ 
+ _WS = re.compile(r"\s+")
+-_SINGLE = ("ai_reference", "frame", "adoption_stage", "substantiveness")
+-_MULTI = ("roles", "risk_types", "mit_subdomains", "ai_kinds", "business_functions", "governance_responses", "disclosure_traits")
++_SINGLE = ("ai_reference", "adoption_stage", "substantiveness")
++_MULTI = ("roles", "risk_types", "mit_subdomains", "ai_kinds", "business_functions", "governance_responses",
++          "disclosure_traits", "substantiveness_particulars")
+ 
+ 
+ def tasks(docs: list[dict], passages: list[dict]) -> list[dict]:
+@@ -88,7 +89,7 @@ def _reason(e: Exception) -> str:
+     )
+ 
+ 
+-def validate(raw_lines: list[str], passages: list[dict], coder: str) -> tuple[list[dict], list[str]]:
++def validate(raw_lines: list[str], passages: list[dict], coder: str, schema: type = Label) -> tuple[list[dict], list[str]]:
+     """Check a coder's JSONL against the schema and the task list.
+ 
+     Returns (accepted labels, problems). A label is rejected if it is not valid
+@@ -99,6 +100,9 @@ def validate(raw_lines: list[str], passages: list[dict], coder: str) -> tuple[li
+     A quote that differs from the passage only in its quotation marks,
+     apostrophes or dashes is accepted and stored as the passage has it (see
+     `_locate`), so stored evidence is always a verbatim stretch of the passage.
++
++    `schema` is the complete `Label` by default; the roles call of the two-call
++    design checks its answers against `taxonomy.RolesLabel`.
+     """
+     text_by_id = {p["passage_id"]: _squash(p["text"]) for p in passages}
+     accepted: dict[str, dict] = {}
+@@ -107,7 +111,7 @@ def validate(raw_lines: list[str], passages: list[dict], coder: str) -> tuple[li
+         if not line.strip():
+             continue
+         try:
+-            label = Label.model_validate(json.loads(line))
++            label = schema.model_validate(json.loads(line))
+         except (json.JSONDecodeError, ValidationError) as e:
+             problems.append(f"line {n}: {_reason(e)}")
+             continue
+@@ -182,10 +186,13 @@ def adjudicate(labels_by_coder: dict[str, list[dict]]) -> tuple[list[dict], dict
+         # Keep the voted label internally consistent with the schema's rules.
+         if out["ai_reference"] in (None, "none"):
+             out.update(
+-                frame=None, roles=[], risk_types=[], mit_subdomains=[], business_functions=[], governance_responses=[],
++                roles=[], risk_types=[], mit_subdomains=[], business_functions=[], governance_responses=[],
+                 ai_kinds=[], disclosure_traits=[], adoption_stage=None, substantiveness=None,
++                substantiveness_particulars=[], substantiveness_score=None,
+             )
+         else:
++            # The level and the score follow from the voted particulars, as they do for one coder.
++            out["substantiveness"], out["substantiveness_score"] = substantiveness_of(out["substantiveness_particulars"])
+             if not out["roles"]:
+                 disputed.append("roles")
+             if "risk" not in out["roles"]:
+diff --git a/src/airo/cli.py b/src/airo/cli.py
+index 66c0f2e..0160355 100644
+--- a/src/airo/cli.py
++++ b/src/airo/cli.py
+@@ -49,7 +49,8 @@ def _direct(passages: list[dict]) -> list[dict]:
+ def cmd_fetch(args) -> None:
+     fetch.fetch(
+         args.out, fetch.api_key(), args.types, form=args.form,
+-        since=args.since, until=args.until, limit=args.limit,
++        since=args.since, until=args.until, limit=args.limit, sectors=args.sectors,
++        ciks={line.strip().zfill(10) for line in Path(args.ciks).read_text().splitlines() if line.strip()} if args.ciks else None,
+     )
+ 
+ 
+@@ -77,8 +78,12 @@ def cmd_tasks(args) -> None:
+             for row in classify.tasks([doc], [p for p in passages if p["mention"] == "implicit"]):
+                 hh.write(json.dumps(row, ensure_ascii=False) + "\n")
+                 hints += 1
++    # One codebook for a one-call coder, and one per call of the two-call design (roles, then details).
+     (args.data / "codebook.md").write_text(taxonomy.codebook(), encoding="utf-8")
+-    print(f"{n} task(s) from direct mentions, {hints} context passage(s) as hints, codebook v{taxonomy.TAXONOMY_VERSION}")
++    (args.data / "codebook_roles.md").write_text(taxonomy.codebook("roles"), encoding="utf-8")
++    (args.data / "codebook_details.md").write_text(taxonomy.codebook("details"), encoding="utf-8")
++    print(f"{n} task(s) from direct mentions, {hints} context passage(s) as hints, codebook v{taxonomy.TAXONOMY_VERSION} "
++          "(codebook.md; codebook_roles.md and codebook_details.md for the two-call coder)")
+ 
+ 
+ def cmd_accept(args) -> None:
+@@ -132,10 +137,12 @@ def main(argv: list[str] | None = None) -> None:
+     p = sub.add_parser("fetch", help="store the Markdown of US companies' filings from the data provider, each filing once")
+     p.add_argument("out", help="gs://bucket[/prefix] or a directory; receives markdown/ and manifest/")
+     p.add_argument("--types", required=True, help="the provider's filing type codes, comma-separated (e.g. 10-K,10-Q)")
+-    p.add_argument("--form", help="only filings submitted as this form (e.g. 10-K, which leaves out 10-K/A, 20-F, ARS)")
++    p.add_argument("--form", help="only filings submitted as this form (e.g. 10-K, which leaves out 10-K/A, 20-F, ARS); several comma-separated (e.g. 10-K,10-Q)")
+     p.add_argument("--since", help="released on or after this date (YYYY-MM-DD)")
+     p.add_argument("--until", help="released on or before this date (YYYY-MM-DD)")
+     p.add_argument("--limit", type=int, default=10, help="filings to store at most in this call (default 10)")
++    p.add_argument("--sectors", help="only filings of companies in these ISIC sections, comma-separated letters (e.g. C,K,L)")
++    p.add_argument("--ciks", help="only filings of the companies whose CIKs this file lists, one per line")
+     p.set_defaults(func=cmd_fetch)
+     p = sub.add_parser("run", help="parse filings and find candidate passages, one directory per document")
+     p.add_argument("inputs", nargs="+", help="Markdown or HTML files, or directories containing them")
+diff --git a/src/airo/coders/gemini.py b/src/airo/coders/gemini.py
+index aabe3ba..3f10f5f 100644
+--- a/src/airo/coders/gemini.py
++++ b/src/airo/coders/gemini.py
+@@ -11,14 +11,23 @@ per task; it runs in JSON mode (`response_mime_type="application/json"`,
+ own. A task whose label is missing or rejected is asked again on its own, with the
+ codebook and the reason (see `code_one`), so one bad label costs one extra request and
+ not the batch. With `--batch-size 1` every task is a request of its own
+-(`build_prompt`, `response_schema=Label`).
+-The SDK converts the pydantic `Label` class itself: `Optional[Literal[...]]` fields
++(`build_prompt`, `response_schema=LabelAnswer`).
++The SDK converts the pydantic answer class itself: `Optional[Literal[...]]` fields
+ become nullable enums and `list[Literal[...]]` arrays of enums, so no flattening is
+ needed. The schema cannot express the cross-field rules of `Label` (risk_types only
+ with the `risk` role, ...), nor that `evidence` must be a verbatim quote; every
+ response is therefore checked with `classify.validate`, and a label that fails is
+ reported as that task's error rather than written out.
+ 
++Two calls instead of one (taxonomy v0.10, `--stage`): `--stage roles` asks only whether
++the passage is about AI and its roles (`codebook_roles.md`, schema
++`RolesLabel`) and writes those answers to `--out`; `--stage details --roles-from <that
++file>` then asks every other field for the passages found to be about AI
++(`codebook_details.md`, schema `DetailsLabel`), with the roles shown in the task as
++given, merges each answer with its roles label (`taxonomy.merge`) and writes complete
++labels, ready for `airo accept`. Passages whose roles label is `none` get their label
++without a request. The two stages may use different models (`--model` per invocation).
++
+ Output: `--out` receives the successful labels as JSONL (one `Label` per line, ready
+ for `python -m airo accept <out> --coder gemini`), and `<out>.run.json` the totals of
+ the run (tasks, succeeded, failed, tokens by kind, wall time, model, estimated cost).
+@@ -51,7 +60,7 @@ from typing import Any, Callable, Optional
+ from pydantic import BaseModel
+ 
+ from .. import classify
+-from ..taxonomy import Label
++from ..taxonomy import DetailsLabel, Label, LabelAnswer, RolesLabel, merge
+ 
+ CODER = "gemini"
+ MAX_OUTPUT_TOKENS = 4096
+@@ -61,9 +70,34 @@ _TOKENS_PER_LABEL = 600
+ 
+ 
+ class Labels(BaseModel):
+-    """The answer to a batch request: one label per task."""
++    """The answer to a batch request of the one-call coder: one label per task."""
++
++    labels: list[LabelAnswer]
++
++
++class RolesLabels(BaseModel):
++    """The answer to a batch request of the roles call."""
++
++    labels: list[RolesLabel]
++
++
++class DetailsLabels(BaseModel):
++    """The answer to a batch request of the details call."""
++
++    labels: list[DetailsLabel]
+ 
+-    labels: list[Label]
++
++# v0.10: the label can be coded in one call (`single`) or in two: `roles` (is it about AI,
++# roles; `--out` receives RolesLabel rows) and then `details` (every other field, for the
++# passages the roles call found to be about AI, with those roles given in the task; `--out`
++# receives complete labels, merged with the roles). Each stage has its own codebook
++# (`taxonomy.codebook(stage)`) and response schema; the two calls may use different models.
++STAGES: dict[str, tuple[type, type]] = {
++    "single": (LabelAnswer, Labels),
++    "roles": (RolesLabel, RolesLabels),
++    "details": (DetailsLabel, DetailsLabels),
++}
++GIVEN_FIELDS = ("ai_reference", "roles")
+ # HTTP status codes worth retrying: rate limit, timeout, and server-side failures.
+ RETRY_CODES = {408, 429, 500, 502, 503, 504}
+ _MAX_BACKOFF = 60.0
+@@ -82,8 +116,12 @@ _TASK_FIELDS = (
+ # --------------------------------------------------------------------------
+ 
+ 
+-def render_task(task: dict) -> str:
+-    """One task as the coders see it: context fields, matched terms, passage text."""
++def render_task(task: dict, given: Optional[dict] = None) -> str:
++    """One task as the coders see it: context fields, matched terms, passage text.
++
++    `given` is the roles call's label of the passage, shown to the details call as decided:
++    `ai_reference` and `roles`.
++    """
+     lines = [f"passage_id: {task['passage_id']}"]
+     for title, key in _TASK_FIELDS:
+         value = task.get(key)
+@@ -91,11 +129,17 @@ def render_task(task: dict) -> str:
+     matched = task.get("matched_terms") or {}
+     terms = ", ".join(f"{lex}: {', '.join(ts)}" for lex, ts in matched.items() if ts) or "(none)"
+     lines.append(f"Matched terms: {terms}")
++    if given is not None:
++        lines.append(
++            "Given, decided in the roles call (do not judge again, do not return): "
++            f"ai_reference: {given.get('ai_reference')}; "
++            f"roles: {', '.join(given.get('roles') or []) or '(none)'}"
++        )
+     lines += ["", "Passage:", "<<<", task["text"], ">>>"]
+     return "\n".join(lines)
+ 
+ 
+-def build_prompt(codebook: str, task: dict) -> str:
++def build_prompt(codebook: str, task: dict, given: Optional[dict] = None) -> str:
+     """The codebook, one rendered task, and the request for exactly one JSON object."""
+     return "\n".join(
+         [
+@@ -105,7 +149,7 @@ def build_prompt(codebook: str, task: dict) -> str:
+             "",
+             "# Task",
+             "",
+-            render_task(task),
++            render_task(task, given),
+             "",
+             "Label this one passage. Return exactly one JSON object for it, with every field of the "
+             "codebook and `passage_id` copied from the task, and nothing else.",
+@@ -113,7 +157,7 @@ def build_prompt(codebook: str, task: dict) -> str:
+     )
+ 
+ 
+-def build_batch_prompt(codebook: str, tasks: list[dict]) -> str:
++def build_batch_prompt(codebook: str, tasks: list[dict], given_by_id: Optional[dict[str, dict]] = None) -> str:
+     """The codebook once, the rendered tasks, and the request for one label per task."""
+     lines = [
+         codebook.rstrip(),
+@@ -126,7 +170,7 @@ def build_batch_prompt(codebook: str, tasks: list[dict]) -> str:
+         "on its own, from what that passage says: carry nothing over from one passage to another.",
+     ]
+     for n, task in enumerate(tasks, 1):
+-        lines += ["", f"## Task {n}", "", render_task(task)]
++        lines += ["", f"## Task {n}", "", render_task(task, (given_by_id or {}).get(task["passage_id"]))]
+     lines += [
+         "",
+         "---",
+@@ -196,12 +240,15 @@ def _finish_reason(response) -> str:
+     return getattr(reason, "name", None) or str(reason)
+ 
+ 
+-def _check(text: str, task: dict) -> tuple[Optional[dict], Optional[str]]:
++def _check(text: str, task: dict, stage: str = "single",
++           given: Optional[dict] = None) -> tuple[Optional[dict], Optional[str]]:
+     """Parse the model's text and run the pipeline's own acceptance check on it.
+ 
+-    Returns (label, error). On success the label is the normalised Label dict with
+-    passage_id forced to the task's. On a schema or evidence failure the label is the
+-    model's parsed JSON (for inspection) and error says why `accept` would reject it.
++    Returns (label, error). On success the label is the normalised label dict with
++    passage_id forced to the task's: a complete `Label` for the stages `single` and
++    `details` (the details answer merged with the `given` roles label), a `RolesLabel`
++    for the stage `roles`. On a schema or evidence failure the label is the model's
++    parsed JSON (for inspection) and error says why `accept` would reject it.
+     """
+     try:
+         parsed = json.loads(text)
+@@ -210,7 +257,17 @@ def _check(text: str, task: dict) -> tuple[Optional[dict], Optional[str]]:
+     if not isinstance(parsed, dict):
+         return None, f"invalid JSON: expected an object, got {type(parsed).__name__}"
+     parsed["passage_id"] = task["passage_id"]
+-    accepted, problems = classify.validate([json.dumps(parsed)], [task], CODER)
++    if stage == "details":
++        if given is None:
++            return parsed, "no roles label for this passage"
++        try:
++            to_check = merge(given, parsed)
++        except ValueError as e:
++            return parsed, f"rejected by validate: {e}"
++    else:
++        to_check = parsed
++    schema = RolesLabel if stage == "roles" else Label
++    accepted, problems = classify.validate([json.dumps(to_check)], [task], CODER, schema=schema)
+     if not accepted:
+         reason = problems[0].split(": ", 1)[-1] if problems else "rejected"
+         return parsed, f"rejected by validate: {reason}"
+@@ -218,6 +275,17 @@ def _check(text: str, task: dict) -> tuple[Optional[dict], Optional[str]]:
+     return label, None
+ 
+ 
++def without_call(task: dict, given: dict, *, model: str) -> dict:
++    """The details-stage result of a passage the roles call found not to be about AI: its label
++    is the roles label with every details field empty, and no request is made."""
++    label, error = _check(json.dumps({}), task, "details", given)
++    return {
++        "passage_id": task["passage_id"], "label": label, "error": error,
++        "usage": {"input_tokens": 0, "output_tokens": 0, "thinking_tokens": 0},
++        "model": model, "latency_s": 0.0, "attempts": 0, "repairs": 0, "without_call": True,
++    }
++
++
+ def repair_prompt(prompt: str, answer: str, error: str) -> str:
+     """The task again, with the answer the acceptance check rejected and the reason."""
+     return "\n".join(
+@@ -243,7 +311,8 @@ def repair_prompt(prompt: str, answer: str, error: str) -> str:
+ 
+ def code_one(task: dict, codebook: str, *, model: str, client, config: dict,
+              max_retries: int = 5, backoff: float = 1.0, max_repairs: int = 2,
+-             rejected: Optional[tuple[str, str]] = None) -> dict:
++             rejected: Optional[tuple[str, str]] = None,
++             stage: str = "single", given: Optional[dict] = None) -> dict:
+     """Label one task. Never raises: failures are captured in the result's `error`.
+ 
+     `max_retries` is the number of retries after the first attempt of a request, with
+@@ -258,8 +327,9 @@ def code_one(task: dict, codebook: str, *, model: str, client, config: dict,
+ 
+     `rejected` is (answer, reason) of a label this task already got in a batch request and
+     that the check rejected: the first request here is then already the repair request.
++    `stage` and `given` (the roles label, for the details call) as in `_check`.
+     """
+-    prompt = build_prompt(codebook, task)
++    prompt = build_prompt(codebook, task, given)
+     result = {
+         "passage_id": task["passage_id"],
+         "label": None,
+@@ -300,7 +370,7 @@ def code_one(task: dict, codebook: str, *, model: str, client, config: dict,
+         if not text:
+             result["error"] = f"empty response (finish_reason={_finish_reason(response)})"
+             break
+-        result["label"], result["error"] = _check(text, task)
++        result["label"], result["error"] = _check(text, task, stage, given)
+         if result["error"] is None or result["repairs"] >= max_repairs:
+             break
+         result["repairs"] += 1
+@@ -310,7 +380,8 @@ def code_one(task: dict, codebook: str, *, model: str, client, config: dict,
+ 
+ 
+ def code_batch(tasks: list[dict], codebook: str, *, model: str, client, config: dict, single_config: dict,
+-               max_retries: int = 5, backoff: float = 1.0, max_repairs: int = 2, defer: bool = False) -> list[dict]:
++               max_retries: int = 5, backoff: float = 1.0, max_repairs: int = 2, defer: bool = False,
++               stage: str = "single", given_by_id: Optional[dict[str, dict]] = None) -> list[dict]:
+     """Label several tasks with one request. Returns one result per task, in task order.
+ 
+     The answer's labels are matched to the tasks by `passage_id` and checked one by one.
+@@ -330,7 +401,9 @@ def code_batch(tasks: list[dict], codebook: str, *, model: str, client, config:
+     for attempt in range(max_retries + 1):
+         attempts += 1
+         try:
+-            answer = client.models.generate_content(model=model, contents=build_batch_prompt(codebook, tasks), config=config)
++            answer = client.models.generate_content(
++                model=model, contents=build_batch_prompt(codebook, tasks, given_by_id), config=config,
++            )
+             break
+         except Exception as e:  # noqa: BLE001 - the tasks are then asked one by one
+             if attempt < max_retries and retryable(e):
+@@ -352,7 +425,8 @@ def code_batch(tasks: list[dict], codebook: str, *, model: str, client, config:
+ 
+     results = []
+     for task in tasks:
+-        own = {"model": model, "config": single_config, "client": client,
++        given = (given_by_id or {}).get(task["passage_id"])
++        own = {"model": model, "config": single_config, "client": client, "stage": stage, "given": given,
+                "max_retries": max_retries, "backoff": backoff, "max_repairs": max_repairs}
+         raw = by_id.get(task["passage_id"])
+         blank = {
+@@ -367,7 +441,7 @@ def code_batch(tasks: list[dict], codebook: str, *, model: str, client, config:
+                 result = code_one(task, codebook, **own)
+         else:
+             text = json.dumps(raw, ensure_ascii=False)
+-            label, error = _check(text, task)
++            label, error = _check(text, task, stage, given)
+             if error is None:
+                 result = {**blank, "label": label}
+             elif defer:
+@@ -389,6 +463,7 @@ def code(tasks: list[dict], codebook: str, *, model: str, client, workers: int =
+          max_retries: int = 5, thinking_budget: Optional[int] = None,
+          max_output_tokens: int = MAX_OUTPUT_TOKENS, backoff: float = 1.0, max_repairs: int = 2,
+          batch_size: int = 1, defer: bool = False,
++         stage: str = "single", given_by_id: Optional[dict[str, dict]] = None,
+          on_result: Optional[Callable[[dict], None]] = None) -> list[dict]:
+     """Label every task, `batch_size` tasks per request, `workers` requests at a time.
+ 
+@@ -397,39 +472,84 @@ def code(tasks: list[dict], codebook: str, *, model: str, client, workers: int =
+      "usage": {"input_tokens", "output_tokens", "thinking_tokens"}, "model", "latency_s", "repairs"}.
+     `on_result`, if given, is called with each result as it completes. `defer` (batches only)
+     leaves the single re-asks of rejected or missing labels for a later `repair` call.
++
++    `stage` selects the codebook's call (`single`, `roles`, `details`; see `STAGES`); the
++    details call needs `given_by_id`, the roles labels by passage id. In the details stage a
++    passage whose roles label is `none` gets its label without a request (`without_call`), and
++    a passage without a roles label gets an error.
+     """
+-    config = request_config(thinking_budget, max_output_tokens)
++    if stage not in STAGES:
++        raise ValueError(f"unknown stage {stage!r}; one of {', '.join(STAGES)}")
++    schema, batch_schema = STAGES[stage]
++    config = request_config(thinking_budget, max_output_tokens, schema=schema)
++    given_by_id = given_by_id or {}
++
++    settled: dict[str, dict] = {}
++    if stage == "details":
++        asked = []
++        for task in tasks:
++            given = given_by_id.get(task["passage_id"])
++            if given is None:
++                settled[task["passage_id"]] = {
++                    "passage_id": task["passage_id"], "label": None, "error": "no roles label for this passage",
++                    "usage": {"input_tokens": 0, "output_tokens": 0, "thinking_tokens": 0},
++                    "model": model, "latency_s": 0.0, "attempts": 0, "repairs": 0,
++                }
++            elif given.get("ai_reference") == "none":
++                settled[task["passage_id"]] = without_call(task, given, model=model)
++            else:
++                asked.append(task)
++        for result in settled.values():
++            if on_result:
++                on_result(result)
++        all_tasks, tasks = tasks, asked
+ 
+     def run(task: dict) -> dict:
+         result = code_one(task, codebook, model=model, client=client, config=config,
+-                          max_retries=max_retries, backoff=backoff, max_repairs=max_repairs)
++                          max_retries=max_retries, backoff=backoff, max_repairs=max_repairs,
++                          stage=stage, given=given_by_id.get(task["passage_id"]))
+         if on_result:
+             on_result(result)
+         return result
+ 
+     if batch_size <= 1:
+         with ThreadPoolExecutor(max_workers=max(1, workers)) as pool:
+-            return list(pool.map(run, tasks))
++            results = list(pool.map(run, tasks))
++    else:
++        batch_config = request_config(
++            thinking_budget, max(max_output_tokens, _TOKENS_PER_LABEL * batch_size), schema=batch_schema,
++        )
+ 
+-    batch_config = request_config(thinking_budget, max(max_output_tokens, _TOKENS_PER_LABEL * batch_size), schema=Labels)
++        def run_batch(batch: list[dict]) -> list[dict]:
++            results = code_batch(batch, codebook, model=model, client=client, config=batch_config, single_config=config,
++                                 max_retries=max_retries, backoff=backoff, max_repairs=max_repairs, defer=defer,
++                                 stage=stage, given_by_id=given_by_id)
++            if on_result:
++                for result in results:
++                    on_result(result)
++            return results
+ 
+-    def run_batch(batch: list[dict]) -> list[dict]:
+-        results = code_batch(batch, codebook, model=model, client=client, config=batch_config, single_config=config,
+-                             max_retries=max_retries, backoff=backoff, max_repairs=max_repairs, defer=defer)
+-        if on_result:
+-            for result in results:
+-                on_result(result)
++        batches = [tasks[i : i + batch_size] for i in range(0, len(tasks), batch_size)]
++        with ThreadPoolExecutor(max_workers=max(1, workers)) as pool:
++            results = [result for results in pool.map(run_batch, batches) for result in results]
++
++    if not settled:
+         return results
++    by_id = {r["passage_id"]: r for r in results}
++    return [settled.get(t["passage_id"]) or by_id[t["passage_id"]] for t in all_tasks]
++
+ 
+-    batches = [tasks[i : i + batch_size] for i in range(0, len(tasks), batch_size)]
+-    with ThreadPoolExecutor(max_workers=max(1, workers)) as pool:
+-        return [result for results in pool.map(run_batch, batches) for result in results]
++def read_roles(path) -> dict[str, dict]:
++    """The roles call's labels (`--out` of `--stage roles`, or the accepted file) by passage id."""
++    with open(path, encoding="utf-8") as fh:
++        rows = [json.loads(line) for line in fh if line.strip()]
++    return {row["passage_id"]: row for row in rows}
+ 
+ 
+ def repair(tasks: list[dict], deferred: list[dict], codebook: str, *, model: str, client, workers: int = 4,
+            max_retries: int = 5, thinking_budget: Optional[int] = None,
+            max_output_tokens: int = MAX_OUTPUT_TOKENS, backoff: float = 1.0, max_repairs: int = 2,
+-           batch_size: int = BATCH_SIZE,
++           batch_size: int = BATCH_SIZE, stage: str = "single", given_by_id: Optional[dict[str, dict]] = None,
+            on_result: Optional[Callable[[dict], None]] = None) -> list[dict]:
+     """The deferred passages again, as a batch pass: `batch_size` per request, the codebook once per request.
+ 
+@@ -445,7 +565,8 @@ def repair(tasks: list[dict], deferred: list[dict], codebook: str, *, model: str
+     todo = [t for t in tasks if t["passage_id"] in wanted]
+     return code(todo, codebook, model=model, client=client, workers=workers, max_retries=max_retries,
+                 thinking_budget=thinking_budget, max_output_tokens=max_output_tokens, backoff=backoff,
+-                max_repairs=max_repairs, batch_size=max(2, batch_size), defer=True, on_result=on_result)
++                max_repairs=max_repairs, batch_size=max(2, batch_size), defer=True,
++                stage=stage, given_by_id=given_by_id, on_result=on_result)
+ 
+ 
+ # --------------------------------------------------------------------------
+@@ -468,7 +589,7 @@ def estimate_cost(tokens: dict, prices: Optional[dict]) -> Optional[float]:
+ 
+ 
+ def run_summary(results: list[dict], *, prices: Optional[dict] = None,
+-                wall_time_s: Optional[float] = None) -> dict:
++                wall_time_s: Optional[float] = None, stage: str = "single") -> dict:
+     tokens = {"input_tokens": 0, "output_tokens": 0, "thinking_tokens": 0}
+     for r in results:
+         for k in tokens:
+@@ -479,7 +600,10 @@ def run_summary(results: list[dict], *, prices: Optional[dict] = None,
+     return {
+         "coder": CODER,
+         "model": models[0] if len(models) == 1 else models,
++        "stage": stage,
+         "tasks": len(results),
++        # Details stage: passages labelled from their `none` roles label, without a request.
++        "without_call": sum(1 for r in results if r.get("without_call") and r["error"] is None),
+         "succeeded": len(results) - len(failed) - len(deferred),
+         "failed": len(failed),
+         # Re-asks left for later (`--defer-repairs`): their answers are in <out>.deferred.jsonl.
+@@ -497,7 +621,7 @@ def run_summary(results: list[dict], *, prices: Optional[dict] = None,
+ 
+ 
+ def write_labels(results: list[dict], path, *, prices: Optional[dict] = None,
+-                 wall_time_s: Optional[float] = None) -> dict:
++                 wall_time_s: Optional[float] = None, stage: str = "single") -> dict:
+     """Write the successful labels as JSONL to `path` and the run summary to `<path>.run.json`.
+ 
+     Only results without an error are written, so the file is what
+@@ -517,7 +641,7 @@ def write_labels(results: list[dict], path, *, prices: Optional[dict] = None,
+             for r in deferred:
+                 fh.write(json.dumps({"passage_id": r["passage_id"], "answer": r.get("answer"), "error": r["error"]},
+                                     ensure_ascii=False) + "\n")
+-    summary = run_summary(results, prices=prices, wall_time_s=wall_time_s)
++    summary = run_summary(results, prices=prices, wall_time_s=wall_time_s, stage=stage)
+     with open(str(path) + ".run.json", "w", encoding="utf-8") as fh:
+         json.dump(summary, fh, indent=2, ensure_ascii=False)
+         fh.write("\n")
+@@ -561,9 +685,17 @@ def parse_args(argv: Optional[list[str]] = None) -> argparse.Namespace:
+                    help="ask the passages of this <out>.deferred.jsonl file again, as a batch pass (--batch-size per "
+                         "request, codebook once per request), and write their labels to --out; what is rejected "
+                         "again goes to <out>.deferred.jsonl")
++    p.add_argument("--stage", choices=sorted(STAGES), default="single",
++                   help="single: the whole label in one call (default). roles: the roles call of the two-call design "
++                        "(--codebook codebook_roles.md; --out receives roles labels). details: the details call "
++                        "(--codebook codebook_details.md, --roles-from <roles labels>; --out receives complete labels)")
++    p.add_argument("--roles-from", type=Path, default=None,
++                   help="the roles call's labels (--out of --stage roles), required with --stage details")
+     args = p.parse_args(argv)
+     if args.defer_repairs and args.repairs_from:
+         p.error("--defer-repairs and --repairs-from exclude each other")
++    if (args.stage == "details") != (args.roles_from is not None):
++        p.error("--roles-from is required with --stage details, and only there")
+     if (args.price_input is None) != (args.price_output is None):
+         p.error("--price-input and --price-output must be given together")
+     return args
+@@ -578,6 +710,7 @@ def main(argv: Optional[list[str]] = None) -> int:
+     codebook = args.codebook.read_text(encoding="utf-8")
+     client = make_client(args.project, args.location)
+     prices = None if args.price_input is None else {"input": args.price_input, "output": args.price_output}
++    given_by_id = read_roles(args.roles_from) if args.roles_from else None
+ 
+     done = 0
+ 
+@@ -598,6 +731,7 @@ def main(argv: Optional[list[str]] = None) -> int:
+             tasks, deferred, codebook, model=args.model, client=client, workers=args.workers,
+             max_retries=args.max_retries, max_repairs=args.max_repairs, thinking_budget=args.thinking_budget,
+             max_output_tokens=args.max_output_tokens, batch_size=args.batch_size, on_result=progress,
++            stage=args.stage, given_by_id=given_by_id,
+         )
+     else:
+         results = code(
+@@ -605,8 +739,9 @@ def main(argv: Optional[list[str]] = None) -> int:
+             max_retries=args.max_retries, max_repairs=args.max_repairs, batch_size=args.batch_size,
+             thinking_budget=args.thinking_budget, defer=args.defer_repairs,
+             max_output_tokens=args.max_output_tokens, on_result=progress,
++            stage=args.stage, given_by_id=given_by_id,
+         )
+-    summary = write_labels(results, args.out, prices=prices, wall_time_s=time.perf_counter() - start)
++    summary = write_labels(results, args.out, prices=prices, wall_time_s=time.perf_counter() - start, stage=args.stage)
+     cost = summary["estimated_cost_usd"]
+     deferred_note = f", {summary['deferred']} deferred to {args.out}.deferred.jsonl" if summary["deferred"] else ""
+     print(
+@@ -615,7 +750,8 @@ def main(argv: Optional[list[str]] = None) -> int:
+         f"{summary['tokens']['thinking_tokens']:,} thinking tokens; "
+         f"{summary['wall_time_s']}s; est. cost {'n/a' if cost is None else f'${cost:.4f}'}\n"
+         f"-> {args.out}  and  {args.out}.run.json\n"
+-        f"next: python -m airo --data <dir> accept {args.out} --coder {CODER}"
++        + (f"next: python -m airo.coders.gemini --stage details --roles-from {args.out} --codebook <dir>/codebook_details.md ..."
++           if args.stage == "roles" else f"next: python -m airo --data <dir> accept {args.out} --coder {CODER}")
+     )
+     return 0 if summary["failed"] == 0 else 1
+ 
+diff --git a/src/airo/export.py b/src/airo/export.py
+index a905cda..4a313ce 100644
+--- a/src/airo/export.py
++++ b/src/airo/export.py
+@@ -34,8 +34,9 @@ from typing import Iterator
+ from .taxonomy import SUBSTANTIVENESS, TAXONOMY_VERSION
+ 
+ LABEL_FIELDS = (
+-    "ai_reference", "frame", "roles", "risk_types", "mit_subdomains", "adoption_stage", "business_functions",
+-    "governance_responses", "ai_kinds", "substantiveness", "disclosure_traits", "entities", "evidence",
++    "ai_reference", "roles", "risk_types", "mit_subdomains", "adoption_stage", "business_functions",
++    "governance_responses", "ai_kinds", "substantiveness", "substantiveness_score", "substantiveness_particulars",
++    "disclosure_traits", "entities", "evidence",
+     "confidence", "taxonomy_version", "needs_review", "disputed",
+ )
+ METRIC_BOOLEANS = ("ai_mention", "adoption", "risk", "harm", "vendor", "llm_adoption", "cyber_risk", "regulatory_risk")
+@@ -113,6 +114,7 @@ def _filing_row(name: str, meta: dict, doc: dict, direct: list[dict], context: l
+         if l.get("substantiveness") in levels:
+             levels[l["substantiveness"]] += 1
+     highest = next((s for s in reversed(list(SUBSTANTIVENESS)) if levels[s]), None)
++    scores = [l["substantiveness_score"] for l in ai if l.get("substantiveness_score") is not None]
+     roles = tally("roles")
+     filing_date = meta.get("filing_date") or doc.get("filing_date")
+     return {
+@@ -145,6 +147,9 @@ def _filing_row(name: str, meta: dict, doc: dict, direct: list[dict], context: l
+         "governance_responses": sorted(tally("governance_responses")),
+         "substantiveness": levels,
+         "highest_substantiveness": highest,
++        # v0.10: the count behind the level, 0 to 10 per passage; mean and maximum over the AI passages.
++        "substantiveness_score_mean": round(sum(scores) / len(scores), 3) if scores else None,
++        "substantiveness_score_max": max(scores) if scores else None,
+         "trait_activation_rate": round(sum(bool(l.get("disclosure_traits")) for l in ai) / len(ai), 3) if ai else None,
+     }
+ 
+diff --git a/src/airo/fetch.py b/src/airo/fetch.py
+index 69f6a76..5c3f8fb 100644
+--- a/src/airo/fetch.py
++++ b/src/airo/fetch.py
+@@ -5,6 +5,9 @@
+ Asks the FinancialReports API (financialfilings.com) for filings of US companies
+ and stores each filing's Markdown rendering, and nothing else, as
+ 
++`--sectors C,K,L` keeps only the filings of companies in those ISIC sections
++(`ISIC_SECTIONS`); the others are left out before anything is requested for them.
++
+     <out>/markdown/<filing id>.md      the filing
+     <out>/manifest/<filing id>.json    its metadata, in the format `run --manifest` reads
+     <out>/companies/us.jsonl           the provider's US companies (CIK, ticker, exchange), fetched once
+@@ -51,6 +54,42 @@ KEY_VAR = "FR_API_KEY"
+ MISSING = "not provided by the data provider"
+ COMPANIES = "companies/us.jsonl"
+ _PAGE_SIZE = 100
++# ISIC Rev. 5 sections and their divisions, as the provider's /isic-divisions/ endpoint lists them
++# (2026-10-20). A company's `sub_industry_code` is its ISIC class; its first two digits are the division.
++ISIC_SECTIONS = {
++    "A": ("01", "02", "03"),  # Agriculture, forestry and fishing
++    "B": ("05", "06", "07", "08", "09"),  # Mining and quarrying
++    "C": tuple(f"{d:02d}" for d in range(10, 34)),  # Manufacturing
++    "D": ("35",),  # Electricity, gas, steam and air conditioning supply
++    "E": ("36", "37", "38", "39"),  # Water supply; sewerage, waste management and remediation
++    "F": ("41", "42", "43"),  # Construction
++    "G": ("46", "47"),  # Wholesale and retail trade
++    "H": ("49", "50", "51", "52", "53"),  # Transportation and storage
++    "I": ("55", "56"),  # Accommodation and food service activities
++    "J": ("58", "59", "60"),  # Publishing, broadcasting, and content production and distribution
++    "K": ("61", "62", "63"),  # Telecommunications, computer programming, computing infrastructure, information services
++    "L": ("64", "65", "66"),  # Financial and insurance activities
++    "M": ("68",),  # Real estate activities
++    "N": ("69", "70", "71", "72", "73", "74", "75"),  # Professional, scientific and technical activities
++    "O": ("77", "78", "79", "80", "81", "82"),  # Administrative and support service activities
++    "P": ("84",),  # Public administration and defence; compulsory social security
++    "Q": ("85",),  # Education
++    "R": ("86", "87", "88"),  # Human health and social work activities
++    "S": ("90", "91", "92", "93"),  # Arts, sports and recreation
++    "T": ("94", "95", "96"),  # Other service activities
++    "U": ("97", "98"),  # Activities of households as employers
++    "V": ("99",),  # Activities of extraterritorial organizations and bodies
++}
++
++
++def divisions_of(sectors: str) -> set[str]:
++    """The ISIC divisions of the sections in `sectors` (comma-separated letters, e.g. "C,K,L")."""
++    out: set[str] = set()
++    for s in (x.strip().upper() for x in sectors.split(",") if x.strip()):
++        if s not in ISIC_SECTIONS:
++            raise ValueError(f"unknown ISIC section {s!r}; sections are {', '.join(ISIC_SECTIONS)}")
++        out.update(ISIC_SECTIONS[s])
++    return out
+ _RETRY_STATUS = {429, 500, 502, 503, 504}
+ 
+ 
+@@ -297,19 +336,40 @@ def fetch(
+     since: str | None = None,
+     until: str | None = None,
+     limit: int | None = None,
++    sectors: str | None = None,
++    ciks: set[str] | None = None,
+     get: Callable = http_get,
+     log=print,
+ ) -> dict:
+-    """Store up to `limit` filings that `out` does not hold yet. Returns the counters (done, present, failed)."""
++    """Store up to `limit` filings that `out` does not hold yet. Returns the counters (done, present, failed).
++
++    With `sectors` (ISIC section letters, comma-separated), filings of companies outside those
++    sections are left out before any request is made for them; they appear in no counter.
++    With `ciks` (10-digit CIKs), only those companies' filings are kept, in the same way.
++    `form` may name several forms, comma-separated (e.g. "10-K,10-Q"); they are then checked
++    here instead of by the provider, which filters on one form only.
++    """
+     target = out if isinstance(out, (DirStore, GcsStore)) else store(out)
+     present = target.names("markdown")
+     log(f"{len(present)} filing(s) already in {target}")
+-    companies = None
++    divisions = divisions_of(sectors) if sectors else None
++    forms = {f.strip() for f in form.split(",") if f.strip()} if form and "," in form else None
++    companies = Companies(target, key, get, log) if ciks is not None else None
+     counts = {"done": 0, "present": 0, "failed": 0}
+-    for filing in listing(key, types, form, since, until, get):
++    left_out = 0
++    for filing in listing(key, types, None if forms else form, since, until, get):
+         if limit is not None and counts["done"] >= limit:
+             break
+         company = filing.get("company") or {}
++        if divisions is not None and (company.get("sub_industry_code") or "")[:2] not in divisions:
++            left_out += 1
++            continue
++        if forms is not None and filing.get("source_filing_type") not in forms:
++            left_out += 1
++            continue
++        if ciks is not None and companies[company.get("id")].get("cik") not in ciks:
++            left_out += 1
++            continue
+         name = f"{filing['id']}.md"
+         if name in present:
+             counts["present"] += 1
+@@ -337,5 +397,6 @@ def fetch(
+         else:  # someone else stored it since the names were read
+             counts["present"] += 1
+         present.add(name)
+-    log(f"stored {counts['done']}, already present {counts['present']}, failed {counts['failed']} -> {target}")
++    outside = f", left out {left_out}" if divisions is not None or forms is not None or ciks is not None else ""
++    log(f"stored {counts['done']}, already present {counts['present']}, failed {counts['failed']}{outside} -> {target}")
+     return counts
+diff --git a/src/airo/taxonomy.py b/src/airo/taxonomy.py
+index 88cdbde..029e03f 100644
+--- a/src/airo/taxonomy.py
++++ b/src/airo/taxonomy.py
+@@ -1,8 +1,12 @@
+ """The label schema. Single source of truth for the codebook given to coders
+ (human, agent or API model) and for validating what they return.
+ 
+-One label per passage, produced in one pass. Every label carries the taxonomy
+-version, so results from different versions never get mixed silently.
++One label per passage. Since v0.10 it can be produced in one pass (`Label`) or in two
++calls: the roles call (`RolesLabel`: is it about AI, roles) and the details call
++(`DetailsLabel`: the fields that depend on the roles, plus kinds, traits and the
++substantiveness particulars), merged by `merge` and validated as one `Label`. Every
++label carries the taxonomy version, so results from different versions never get mixed
++silently.
+ 
+ Every value is defined as a one-line definition plus a short checklist of
+ criteria that must all hold (modelled on how PRISON, Wu et al., ICLR 2026,
+@@ -15,57 +19,16 @@ from typing import Literal, Optional
+ 
+ from pydantic import BaseModel, Field, model_validator
+ 
+-TAXONOMY_VERSION = "0.9"
++TAXONOMY_VERSION = "0.10"
+ 
+ # Each value: (definition, criteria). A value applies only if all its criteria hold.
+ Definition = tuple[str, tuple[str, ...]]
+ 
+-# v0.4: the frame of the AI statement is fixed before any role or trait is judged. Criteria
+-# marked "frame-dependent" below are read in that frame.
+-FRAMES: dict[str, Definition] = {
+-    "risk_factor": (
+-        "The AI statement sits in a risk disclosure: a risk-factor section or a sentence stating possible harm.",
+-        (
+-            "the passage is in a risk-factor section or under a heading naming risks (Item 1A, \"Risk Factors\"), "
+-            "or the sentence states a possible harm, loss, cost, failure or shortfall for the company",
+-            "the AI statement is part of that risk disclosure, not a business description or an oversight "
+-            "remit that happens to be near it",
+-        ),
+-    ),
+-    "governance": (
+-        "The AI statement describes an oversight structure, policy, control, review, committee remit or "
+-        "assigned responsibility.",
+-        (
+-            "the sentence names an oversight structure, policy, control, review, committee, framework or "
+-            "assigned responsibility of the company (board, audit committee, management review, cybersecurity "
+-            "programme)",
+-            "AI appears within what that structure covers, as its subject or as an item in its remit",
+-            "the function of the sentence is to describe the oversight, not the company's operations and not "
+-            "a harm",
+-        ),
+-    ),
+-    "business": (
+-        "The AI statement describes the company's own operations, products, services, projects or plans.",
+-        (
+-            "the sentence describes what the company does, makes, sells, builds or plans (operations, products, "
+-            "services, projects, strategy)",
+-            "the company (or \"we\") is the actor of that description",
+-            "the function of the sentence is to describe the business, not a harm (`risk_factor`), an oversight "
+-            "remit (`governance`) or a market (`market`)",
+-        ),
+-    ),
+-    "market": (
+-        "The AI statement describes demand, prices, supply, investment or market conditions for what the "
+-        "company sells or buys.",
+-        (
+-            "the sentence describes demand, prices, supply, investment or market conditions",
+-            "those conditions concern what the company sells or buys (its customers' or suppliers' side), and AI "
+-            "or AI-linked infrastructure is their subject or cause",
+-            "the function of the sentence is to describe the market, not a harm (`risk_factor`) and not the "
+-            "company's own operations (`business`)",
+-        ),
+-    ),
+-}
++# v0.10: the field `frame` of v0.4 to v0.9 (risk_factor, governance, business, market; fixed before the
++# roles) is gone. What it did for the roles is now in the role criteria themselves: an assertion of
++# use inside an oversight remit is `governance`, not `adoption`; `market_driver` needs an explicit
++# demand, price or supply statement; `externalisation` applies only with a role that puts the AI in
++# the company's own hands or risks.
+ 
+ # v0.7: a passage either treats AI or it does not. Passages found through context terms only
+ # (data centres, industry lingo, euphemisms) are context, not AI statements, and are not labelled.
+@@ -97,9 +60,9 @@ ROLES: dict[str, Definition] = {
+     "market_driver": (
+         "AI drives demand, prices or market conditions for what the company sells or buys.",
+         (
+-            "the passage describes demand, prices, supply, investment or market conditions on the company's "
+-            "selling or buying side (frame-dependent: in frame `market` this is the primary role; in any "
+-            "other frame an explicit demand, price or supply statement must appear in the passage)",
++            "an explicit demand, price, supply, investment or market-condition statement on the company's "
++            "selling or buying side appears in the passage; a risk-factor heading or sentence that only "
++            "implies demand does not count",
+             "AI is named as a cause of that demand or condition",
+             "the content is demand-side or market-side: a passage that only says the company uses, sells or "
+             "governs AI does not qualify",
+@@ -109,9 +72,9 @@ ROLES: dict[str, Definition] = {
+         "The company itself uses, pilots or plans to use AI.",
+         (
+             "the passage names the company (or \"we\") as the user, not vendors, customers or attackers",
+-            "a use, trial or stated intention is asserted, not merely a possibility inside a risk statement "
+-            "(frame-dependent: in frame `governance` the assertion must come from a clause outside the "
+-            "governance remit; \"AI usage\" named inside a review or control remit does not count)",
++            "a use, trial or stated intention is asserted, not merely a possibility inside a risk statement, "
++            "and the assertion stands in a clause outside any oversight, review or control remit (\"our "
++            "evaluation reviews AI usage\" asserts oversight, not use, and is `governance` only)",
+             "the use concerns AI as defined under `ai_reference` `explicit`",
+         ),
+     ),
+@@ -143,9 +106,7 @@ ROLES: dict[str, Definition] = {
+             "assigned responsibility of the company",
+             "AI is within its remit, either as its subject or as an item inside a broader remit "
+             "(cybersecurity programme, enterprise risk review, board oversight)",
+-            "the structure is the company's own, not a regulator's rule or a vendor's control "
+-            "(frame-dependent: the role applies in any frame if its criteria hold; in frame `governance` it "
+-            "is the primary role)",
++            "the structure is the company's own, not a regulator's rule or a vendor's control",
+         ),
+     ),
+     "incident": (
+@@ -929,9 +890,8 @@ DISCLOSURE_TRAITS: dict[str, Definition] = {
+         "Responsibility or origin of the AI risk is placed outside the company.",
+         (
+             "the AI and its risk are attributed to vendors, service providers, customers, developers or "
+-            "attackers (frame-dependent: evaluated only when the roles include `adoption`, `offering`, "
+-            "`governance` or `risk` and the frame is not `market`; in frame `market` the trait is not "
+-            "applicable and is never set)",
++            "attackers (evaluated only when the roles include `adoption`, `offering`, `governance`, `risk` or "
++            "`incident`; with `market_driver` or `general` alone the trait is not applicable and is never set)",
+             "the company's own use or control is not stated",
+             "no own mitigation is described",
+         ),
+@@ -954,53 +914,137 @@ DISCLOSURE_TRAITS: dict[str, Definition] = {
+     ),
+ }
+ 
+-# Ordered from 1 (least) to 5 (most): every level includes what the level below requires.
+-SUBSTANTIVENESS: dict[str, Definition] = {
+-    "boilerplate": (
+-        "Level 1. A general statement that could appear unchanged in any company's report.",
++# v0.10: substantiveness is counted, not rated. The coder ticks which of ten particulars the
++# AI statement gives, each backed by the passage; the level and the score are derived from the
++# ticks by `substantiveness_of`, never given by the coder. Modelled on Hope, Hu and Lu (2016,
++# Review of Accounting Studies 21: 1005-1045), who measure the specificity of risk-factor
++# disclosure as a count of named entities (persons, locations, organisations, percentages,
++# money, times, dates) per word, a disclosure being specific "if it contains information that
++# cannot be applied to other firms". Here the count is of particulars of the AI statement in
++# one passage, in two groups: what singles the statement out as this company's (S), and what
++# the company does or has seen (D).
++SUBSTANTIVENESS_PARTICULARS: dict[str, Definition] = {
++    "named_system": (
++        "S1. A named system, product or tool: the AI, or the product it is part of, is named.",
+         (
+-            "no area of the business, system, use case, counterparty, figure, date or action is named",
+-            "the sentence would remain equally fitting in another company's report",
++            "the passage names the AI system, model, product, platform or tool by a proper name or a "
++            "description that identifies it (\"Microsoft Copilot\", \"our ClaimSense underwriting model\", "
++            "\"the chatbot on our website\")",
++            "the name belongs to the AI statement; a generic class (\"AI tools\", \"generative AI\") is not a name",
+         ),
+     ),
+-    "generic": (
+-        "Level 2. Names an area the AI statement applies to, but nothing specific to the company.",
++    "named_function": (
++        "S2. A named function, process or use case: where or for what the AI is used, feared or sold.",
+         (
+-            "an area is named (a function such as customer service, a kind of risk such as cybersecurity, "
+-            "a market)",
+-            "no concrete system, use case or mechanism of this company is named",
++            "the passage names a function, process, product line or use case of this company in which "
++            "the AI acts or would act (claims handling, drug discovery, fraud detection, the sales "
++            "platform)",
++            "the function is the company's own, not an industry generality (\"companies in our industry use "
++            "AI in operations\" does not count)",
+         ),
+     ),
+-    "specific": (
+-        "Level 3. Names a concrete system, use case or mechanism of this company.",
++    "named_counterparty": (
++        "S3. A named counterparty: a vendor, customer, partner, regulator or competitor by name.",
+         (
+-            "a named or described system, product, use case, counterparty or mechanism of effect that "
+-            "belongs to this company's own situation",
+-            "no concrete measure, responsibility or commitment is stated for it",
++            "the passage names an organisation, law or authority by its proper name in connection with "
++            "the AI statement (NVIDIA, OpenAI, the EU AI Act, the FTC, a named customer)",
++            "the name is part of the AI statement, not of an unrelated sentence of the passage",
+         ),
+     ),
+-    "detailed": (
+-        "Level 4. As level 3, and states concrete measures, responsibilities or commitments.",
++    "mechanism": (
++        "S4. A mechanism of effect: how the AI leads to the harm, benefit or change for this company.",
+         (
+-            "meets the first criterion of `specific`",
+-            "states what the company does or has decided about it: a measure, mitigation, assigned "
+-            "responsibility, policy or commitment",
+-            "no verifiable figure, amount, date or realised outcome is given",
++            "the passage states a causal chain with at least one intermediate step that is particular to "
++            "this company (\"if the model misprices policies in our Florida book, our loss ratio rises\")",
++            "a consequence word alone (\"could harm our business\", \"may affect our results\") is not a mechanism",
+         ),
+     ),
+-    "quantified": (
+-        "Level 5. As level 4, and gives verifiable particulars.",
++    "figure": (
++        "S5. A figure, amount or share about the AI statement.",
+         (
+-            "meets the first two criteria of `detailed`",
+-            "gives at least one verifiable particular about the AI statement: a figure, amount, date, "
+-            "share or an outcome that has occurred",
++            "the passage gives a number, amount, percentage or share that belongs to the AI statement "
++            "(spend, headcount, share of revenue, number of models, accuracy)",
++            "figures about other things in the passage (total revenue, the number of employees) do not count",
++        ),
++    ),
++    "own_measure": (
++        "D1. An own measure or control: what the company does about the AI statement.",
++        (
++            "the passage states a measure, control, mitigation, policy, programme or decision of the "
++            "company in respect of the AI statement (testing, a review step, a policy, an investment)",
++            "the measure is in place or decided; a measure the company may consider is not one",
++        ),
++    ),
++    "responsibility": (
++        "D2. An assigned responsibility: who in the company is accountable for the AI statement.",
++        (
++            "the passage names a body, function or role of the company that is responsible for the AI "
++            "or its oversight (the audit committee, the chief data officer, a steering committee)",
++            "the responsibility is stated, not implied by the section the passage sits in",
++        ),
++    ),
++    "time_reference": (
++        "D3. A date or time frame tied to the AI statement.",
++        (
++            "the passage gives a date, year, quarter, period or duration that belongs to the AI statement "
++            "(\"launched in 2024\", \"over the next two years\", \"since the third quarter\")",
++            "the date of the report, the fiscal year of the filing and dates of unrelated events do not count",
++        ),
++    ),
++    "realised_outcome": (
++        "D4. A realised outcome or event: something that has happened as a result of the AI.",
++        (
++            "the passage reports an outcome that has occurred (a result achieved, a cost incurred, an "
++            "incident, a product shipped, a contract won) in the past or present perfect tense",
++            "the outcome is attributed to the AI statement, not to the business as a whole",
++        ),
++    ),
++    "scope": (
++        "D5. The scope of use or exposure: how far the AI reaches in the company.",
++        (
++            "the passage states the extent of the AI's use or exposure: number or share of sites, units, "
++            "customers, employees, products or transactions, or a named part of the business it is "
++            "limited to",
++            "\"across our operations\" and \"in various parts of our business\" state no extent",
+         ),
+     ),
+ }
++# The two groups: S, what singles the statement out as this company's; D, what the company does or has seen.
++SUBSTANTIVENESS_S = ("named_system", "named_function", "named_counterparty", "mechanism", "figure")
++SUBSTANTIVENESS_D = ("own_measure", "responsibility", "time_reference", "realised_outcome", "scope")
++
++# Three levels, derived from the particulars; ordered from least to most.
++SUBSTANTIVENESS: dict[str, Definition] = {
++    "generic": (
++        "No particular of either group: the statement could appear unchanged in another company's report.",
++        ("no S particular and no D particular is ticked",),
++    ),
++    "company_specific": (
++        "Particulars of one group only: the statement is this company's, or says what the company does, "
++        "but not both.",
++        ("at least one S particular and no D particular, or at least one D particular and no S particular",),
++    ),
++    "detailed": (
++        "Particulars of both groups: the statement is this company's and says what the company does or "
++        "has seen.",
++        ("at least one S particular and at least one D particular",),
++    ),
++}
+ SUBSTANTIVENESS_LEVELS = {name: level for level, name in enumerate(SUBSTANTIVENESS, 1)}
+ 
+-Frame = Literal["risk_factor", "governance", "business", "market"]
+-Substantiveness = Literal["boilerplate", "generic", "specific", "detailed", "quantified"]
++
++def substantiveness_of(particulars: list[str]) -> tuple[str, int]:
++    """(level, score) from the ticked particulars: the score is their number, 0 to 10."""
++    ticked = set(particulars)
++    s, d = bool(ticked & set(SUBSTANTIVENESS_S)), bool(ticked & set(SUBSTANTIVENESS_D))
++    level = "detailed" if s and d else "company_specific" if s or d else "generic"
++    return level, len(ticked)
++
++Substantiveness = Literal["generic", "company_specific", "detailed"]
++SubstantivenessParticular = Literal[
++    "named_system", "named_function", "named_counterparty", "mechanism", "figure",
++    "own_measure", "responsibility", "time_reference", "realised_outcome", "scope",
++]
+ Role = Literal["market_driver", "adoption", "offering", "risk", "governance", "incident", "general"]
+ RiskType = Literal[
+     "market_demand", "strategic_competitive", "operational_reliability", "cybersecurity",
+@@ -1049,11 +1093,53 @@ GovernanceResponse = Literal[
+ DisclosureTrait = Literal["boilerplate", "hedging", "externalisation", "vagueness", "safe_harbour"]
+ 
+ 
+-class Label(BaseModel):
++def _check_evidence(evidence: list[str]) -> list[str]:
++    if any(not q.strip() for q in evidence):
++        raise ValueError("evidence must be a list of 1 to 3 non-empty quotes")
++    # More than three quotes: the label is complete, the list is too long. The first three are kept.
++    return evidence[:3]
++
++
++class RolesLabel(BaseModel):
++    """The answer of the roles call (v0.10): is the passage about AI, and its roles.
++
++    Also the first part of a one-call label. The fields that depend on the roles are not
++    here; they are the details call's (`DetailsLabel`).
++    """
++
+     passage_id: str
+     ai_reference: Literal["explicit", "none"]
+-    frame: Optional[Frame] = None  # required when the passage is about AI; decided before the roles
+     roles: list[Role] = Field(default_factory=list)
++    evidence: list[str] = Field(default_factory=list)
++    confidence: Literal["low", "medium", "high"]
++    note: str = ""
++
++    @model_validator(mode="after")
++    def _roles_consistent(self) -> "RolesLabel":
++        if self.ai_reference == "none":
++            if self.roles or self.evidence:
++                raise ValueError("ai_reference 'none' must leave all other label fields empty")
++            return self
++        if not self.roles:
++            raise ValueError("at least one role is required when the passage is about AI")
++        if "general" in self.roles and len(self.roles) > 1:
++            raise ValueError("'general' cannot be combined with other roles")
++        if not self.evidence:
++            raise ValueError("evidence is required when the passage is about AI")
++        self.evidence = _check_evidence(self.evidence)
++        return self
++
++
++class DetailsLabel(BaseModel):
++    """The answer of the details call (v0.10): every field that follows from the roles, plus the
++    kinds of AI, the disclosure traits, the substantiveness particulars and the entities.
++
++    It is validated only together with the roles it was coded for: `merge` joins the two and
++    `Label` applies the cross-field rules. The fields given here for a passage the roles call
++    found not to be about AI must be empty.
++    """
++
++    passage_id: str
+     risk_types: list[RiskType] = Field(default_factory=list)
+     mit_subdomains: list[MitSubdomain] = Field(default_factory=list)  # with role risk or incident
+     adoption_stage: Optional[Literal["planned", "piloting", "deployed", "unclear"]] = None
+@@ -1061,29 +1147,55 @@ class Label(BaseModel):
+     governance_responses: list[GovernanceResponse] = Field(default_factory=list)
+     ai_kinds: list[AiKind] = Field(default_factory=list)  # one or more when the passage is about AI
+     disclosure_traits: list[DisclosureTrait] = Field(default_factory=list)
+-    substantiveness: Optional[Substantiveness] = None  # required when the passage is about AI
++    substantiveness_particulars: list[SubstantivenessParticular] = Field(default_factory=list)
+     entities: list[str] = Field(default_factory=list)
+     evidence: list[str] = Field(default_factory=list)
+     confidence: Literal["low", "medium", "high"]
+     note: str = ""
+ 
++
++ROLES_FIELDS = tuple(RolesLabel.model_fields)
++DETAILS_FIELDS = tuple(DetailsLabel.model_fields)
++
++
++class LabelAnswer(RolesLabel):
++    """What a one-call coder returns: every field a coder fills. The response schema of the
++    single-call Gemini coder. `Label` adds the derived fields."""
++
++    risk_types: list[RiskType] = Field(default_factory=list)
++    mit_subdomains: list[MitSubdomain] = Field(default_factory=list)  # with role risk or incident
++    adoption_stage: Optional[Literal["planned", "piloting", "deployed", "unclear"]] = None
++    business_functions: list[BusinessFunction] = Field(default_factory=list)
++    governance_responses: list[GovernanceResponse] = Field(default_factory=list)
++    ai_kinds: list[AiKind] = Field(default_factory=list)  # one or more when the passage is about AI
++    disclosure_traits: list[DisclosureTrait] = Field(default_factory=list)
++    substantiveness_particulars: list[SubstantivenessParticular] = Field(default_factory=list)
++    entities: list[str] = Field(default_factory=list)
++
++
++class Label(LabelAnswer):
++    """The complete label of one passage, with the derived fields.
++
++    `substantiveness` and `substantiveness_score` are derived from `substantiveness_particulars`
++    on validation (`substantiveness_of`); a value given for them that contradicts the
++    particulars is rejected, so the three levels can never drift from the count.
++    """
++
++    substantiveness: Optional[Substantiveness] = None  # derived; required when the passage is about AI
++    substantiveness_score: Optional[int] = None  # derived: the number of particulars, 0 to 10
++
+     @model_validator(mode="after")
+     def _consistent(self) -> "Label":
+         if self.ai_reference == "none":
+             filled = (
+-                self.frame or self.roles or self.risk_types or self.mit_subdomains or self.adoption_stage or self.ai_kinds
+-                or self.business_functions or self.governance_responses
+-                or self.disclosure_traits or self.substantiveness or self.evidence
++                self.roles or self.risk_types or self.mit_subdomains or self.adoption_stage or self.ai_kinds
++                or self.business_functions or self.governance_responses or self.substantiveness_particulars
++                or self.disclosure_traits or self.substantiveness or self.substantiveness_score or self.evidence
+             )
+             if filled:
+                 raise ValueError("ai_reference 'none' must leave all other label fields empty")
+             return self
+-        if self.frame is None:
+-            raise ValueError("frame is required when the passage is about AI")
+-        if not self.roles:
+-            raise ValueError("at least one role is required when the passage is about AI")
+-        if "general" in self.roles and len(self.roles) > 1:
+-            raise ValueError("'general' cannot be combined with other roles")
++        # The roles rules have run in RolesLabel's validator (roles, general alone, evidence).
+         if bool(self.risk_types) != ("risk" in self.roles):
+             raise ValueError("risk_types must be given if and only if 'risk' is among the roles")
+         if bool(self.mit_subdomains) != ("risk" in self.roles or "incident" in self.roles):
+@@ -1097,22 +1209,55 @@ class Label(BaseModel):
+             self.business_functions = [f for f in self.business_functions if f != "not_stated"]
+         if bool(self.governance_responses) != ("governance" in self.roles):
+             raise ValueError("governance_responses must be given if and only if 'governance' is among the roles")
+-        if "externalisation" in self.disclosure_traits and self.frame == "market":
+-            raise ValueError("'externalisation' is not applicable in frame 'market'")
++        if "externalisation" in self.disclosure_traits and not set(self.roles) & {"adoption", "offering", "governance", "risk", "incident"}:
++            raise ValueError("'externalisation' applies only with the roles adoption, offering, governance, risk or incident")
+         if not self.ai_kinds or not self.evidence:
+             raise ValueError("ai_kinds and evidence are required when the passage is about AI")
+         if "unspecified" in self.ai_kinds and len(self.ai_kinds) > 1:
+             # A named kind means the kind is specified: the placeholder is dropped, not refused.
+             self.ai_kinds = [k for k in self.ai_kinds if k != "unspecified"]
+-        if self.substantiveness is None:
+-            raise ValueError("substantiveness is required when the passage is about AI")
+-        if any(not q.strip() for q in self.evidence):
+-            raise ValueError("evidence must be a list of 1 to 3 non-empty quotes")
+-        # More than three quotes: the label is complete, the list is too long. The first three are kept.
+-        self.evidence = self.evidence[:3]
++        self.substantiveness_particulars = sorted(set(self.substantiveness_particulars), key=list(SUBSTANTIVENESS_PARTICULARS).index)
++        level, score = substantiveness_of(self.substantiveness_particulars)
++        if self.substantiveness not in (None, level) or self.substantiveness_score not in (None, score):
++            raise ValueError(
++                f"substantiveness is derived from substantiveness_particulars: {level} with score {score}, "
++                f"not {self.substantiveness} with score {self.substantiveness_score}"
++            )
++        self.substantiveness, self.substantiveness_score = level, score
++        self.evidence = _check_evidence(self.evidence)
+         return self
+ 
+ 
++def merge(roles: dict, details: Optional[dict]) -> dict:
++    """One label from the roles call's answer and the details call's answer for the same passage.
++
++    `details` is None for a passage the roles call found not to be about AI: no details call is
++    made for it, and the label is the roles label with every details field empty. The result is a
++    plain dict; validate it with `Label.model_validate` (`classify.validate` does).
++    """
++    out = {k: roles.get(k) for k in ROLES_FIELDS if k in roles}
++    if details is None:
++        return out
++    if details.get("passage_id") not in (None, roles.get("passage_id")):
++        raise ValueError(f"details for {details.get('passage_id')} merged with roles for {roles.get('passage_id')}")
++    for k in DETAILS_FIELDS:
++        if k in ("passage_id", "evidence", "confidence", "note"):
++            continue
++        if k in details:
++            out[k] = details[k]
++    # Quotes of both calls, the roles call's first; the same quote once. The acceptance check keeps three.
++    quotes = {}
++    for q in list(roles.get("evidence") or []) + list(details.get("evidence") or []):
++        quotes.setdefault(" ".join(q.split()), q)
++    out["evidence"] = list(quotes.values())
++    # The label is as sure as its less sure call.
++    order = {"low": 0, "medium": 1, "high": 2}
++    out["confidence"] = min(roles.get("confidence", "high"), details.get("confidence", "high"), key=order.get)
++    notes = [n for n in (roles.get("note"), details.get("note")) if n]
++    out["note"] = " ".join(notes)
++    return out
++
++
+ def _table(
+     title: str, field: str, rule: str, values: dict[str, Definition], decisions: tuple[str, ...] = ()
+ ) -> str:
+@@ -1128,23 +1273,119 @@ def _table(
+     return out
+ 
+ 
+-def codebook() -> str:
+-    """Coding instructions, rendered from the definitions above."""
++Stage = Literal["single", "roles", "details"]
++
++_INTRO = (
++    "You label passages from company filings. Each task is one passage: one or more paragraphs "
++    "around a keyword hit, with the company, form, fiscal year, report section and nearest heading. "
++    "Label what the passage itself says. Do not use outside knowledge about the company, and do not "
++    "carry assumptions over from other passages. Ignore page numbers, \"Table of Contents\" lines, "
++    "running headers and a heading of the following section that may trail the passage. "
++    "A value applies only if all its criteria hold."
++)
++
++
++def codebook(stage: Stage = "single") -> str:
++    """Coding instructions, rendered from the definitions above.
++
++    `single`: the whole label in one pass. `roles`: the roles call of the two-call design (is the
++    passage about AI, roles). `details`: the details call, for passages the roles call found
++    to be about AI, with `ai_reference` and `roles` given in the task and not to be judged
++    again.
++    """
++    if stage == "roles":
++        return _codebook_roles()
++    if stage == "details":
++        return _codebook_details()
+     return "\n".join(
+         [
+             f"# Codebook: AI in corporate reports (taxonomy v{TAXONOMY_VERSION})",
+             "",
+-            "You label passages from company filings. Each task is one passage: one or more paragraphs "
+-            "around a keyword hit, with the company, form, fiscal year, report section and nearest heading. "
+-            "Label what the passage itself says. Do not use outside knowledge about the company, and do not "
+-            "carry assumptions over from other passages. Ignore page numbers, \"Table of Contents\" lines, "
+-            "running headers and a heading of the following section that may trail the passage. "
+-            "A value applies only if all its criteria hold. The frame is fixed first: once you have decided "
+-            "whether the passage is about AI, determine the frame of the AI statement (Step 1) before you "
+-            "judge any role or trait; criteria marked \"frame-dependent\" are read in that frame.",
++            _INTRO + " Decide first whether the passage is about AI, then the roles AI plays for the company; "
++            "every other field follows from the roles.",
++            "",
++            "Return exactly one JSON object per passage, one per line (JSONL), with these fields:",
++            "",
++            *_roles_sections(),
++            "If `ai_reference` is `none`: set `roles`, `risk_types`, `mit_subdomains`, `business_functions`, `governance_responses`, "
++            "`ai_kinds`, `disclosure_traits`, `substantiveness_particulars`, `entities` and `evidence` to `[]`, leave "
++            "`adoption_stage` as `null`, and still give `confidence`; `note` may still be used.\n",
++            *_details_sections(),
++            "### Other fields",
++            "- `passage_id`: copied from the task.",
++            _EVIDENCE_RULE + " `[]` if and only if `ai_reference` is `none`.",
++            "- `confidence`: `low`, `medium` or `high` for the label as a whole.",
++            _NOTE_RULE,
++            "",
++        ]
++    )
++
++
++_EVIDENCE_RULE = (
++    "- `evidence`: a list of 1 to 3 quotes copied verbatim from the passage that support your labels "
++    "(more than 3 are cut to the first 3 on acceptance), "
++    "one per role where the roles rest on different sentences (each quote is checked as an exact "
++    "substring, whitespace aside; do not paraphrase, do not add ellipses)."
++)
++_NOTE_RULE = (
++    "- `note`: optional, at most one sentence; `\"\"` or omitted when there is nothing to say. Use it "
++    "when the taxonomy does not fit the passage; allowed for `none` passages too."
++)
++
++
++def _codebook_roles() -> str:
++    return "\n".join(
++        [
++            f"# Codebook, roles call: AI in corporate reports (taxonomy v{TAXONOMY_VERSION})",
++            "",
++            _INTRO + " This call decides two things only: whether the passage is about AI, and the roles AI "
++            "plays for the company. The fields that follow from the roles (which risk, which stage of use, "
++            "which governance response, ...) are coded in a later call from your answer, so a role you give or "
++            "withhold decides which of those fields are coded at all.",
+             "",
+             "Return exactly one JSON object per passage, one per line (JSONL), with these fields:",
+             "",
++            *_roles_sections(),
++            "If `ai_reference` is `none`: set `roles` and `evidence` to `[]`, and still give "
++            "`confidence`; `note` may still be used.\n",
++            "### Other fields",
++            "- `passage_id`: copied from the task.",
++            _EVIDENCE_RULE + " `[]` if and only if `ai_reference` is `none`.",
++            "- `confidence`: `low`, `medium` or `high` for `ai_reference` and `roles` together.",
++            _NOTE_RULE,
++            "",
++        ]
++    )
++
++
++def _codebook_details() -> str:
++    return "\n".join(
++        [
++            f"# Codebook, details call: AI in corporate reports (taxonomy v{TAXONOMY_VERSION})",
++            "",
++            _INTRO + " Every passage in this call is about AI. Its task states, as given, the roles AI plays "
++            "for the company (`ai_reference`, `roles`), decided in an earlier call. Do not judge them again and "
++            "do not return them: code the fields below for those roles. A field that is coded \"if and only "
++            "if\" a role is among the roles refers to the roles given in the task. The roles for reference:",
++            "",
++            "\n".join(f"- `{k}`: {definition}" for k, (definition, _) in ROLES.items()),
++            "",
++            "Return exactly one JSON object per passage, one per line (JSONL), with these fields:",
++            "",
++            *_details_sections(),
++            "### Other fields",
++            "- `passage_id`: copied from the task.",
++            _EVIDENCE_RULE.replace("support your labels", "support the labels of this call, including the "
++                                   "substantiveness particulars you tick"),
++            "- `confidence`: `low`, `medium` or `high` for the fields of this call together.",
++            _NOTE_RULE,
++            "",
++        ]
++    )
++
++
++def _roles_sections() -> list[str]:
++    return [
+             _table(
+                 "Is the passage about AI?", "ai_reference",
+                 "Exactly one value, judged from the passage alone: not from other passages, and not from "
+@@ -1152,49 +1393,34 @@ def codebook() -> str:
+                 "job is to decide whether the passage treats AI or the term is a false positive.",
+                 AI_REFERENCE,
+             ),
+-            "If `ai_reference` is `none`: set `roles`, `risk_types`, `mit_subdomains`, `business_functions`, `governance_responses`, "
+-            "`ai_kinds`, `disclosure_traits`, `entities` and `evidence` to `[]`, leave `frame`, "
+-            "`adoption_stage` and `substantiveness` as `null`, and still give "
+-            "`confidence`; `note` may still be used.\n",
+-            _table(
+-                "Step 1: determine the frame", "frame",
+-                "Exactly one value per passage, chosen for the AI statement that carries the labels. Decide it "
+-                "from the report section, the nearest heading and the function of the sentence (does it state "
+-                "a harm, describe an oversight remit, describe the company's own business, or describe a "
+-                "market?) BEFORE any role or trait is judged. `null` if and only if `ai_reference` is `none`. "
+-                "Criteria marked \"frame-dependent\" in the fields below are read in this frame.",
+-                FRAMES,
+-                decisions=(
+-                    "Order of tests: a sentence that states a possible harm is `risk_factor`; otherwise a "
+-                    "sentence that describes an oversight remit is `governance`; otherwise a sentence about "
+-                    "demand, prices, supply or investment is `market`; otherwise `business`.",
+-                    "Section and heading set the default (a risk-factor section is `risk_factor`; a board "
+-                    "oversight, risk management or cybersecurity governance heading is `governance`; Business "
+-                    "or MD&A is `business` or `market`); the function of the sentence overrides the default.",
+-                    "Several AI statements with different functions in one passage: take the frame of the "
+-                    "statement the labels rest on (the one your first `evidence` quote is taken from).",
+-                ),
+-            ),
+             _table(
+                 "What role does AI play for the company?", "roles",
+-                "One or more values. `general` only alone. A risk-factor heading or sentence that says an "
+-                "AI-driven market may not develop is both `market_driver` and `risk`.",
++                "One or more values. `general` only alone. Judge each role from the function of the sentence "
++                "the AI statement stands in (does it state a harm, describe an oversight remit, describe the "
++                "company's own business, or describe a market?), with the report section and the nearest heading "
++                "as context. Several AI statements in one passage can give several roles; each needs its own "
++                "sentence that meets the criteria. A risk-factor heading or sentence that says an AI-driven "
++                "market may not develop is both `market_driver` and `risk`.",
+                 ROLES,
+                 decisions=(
+                     "`adoption` counts only when the company states its own use or intention. A possibility "
+                     "voiced only inside a risk statement (\"use of AI may expose us\") is not adoption. "
+-                    "Frame-dependent: in frame `governance`, \"AI usage\" named inside a review or control "
+-                    "remit (\"our evaluation reviews AI usage\") is `governance` only; `adoption` applies only "
+-                    "if a clause outside the governance remit asserts the company's own use or intention.",
++                    "\"AI usage\" named inside a review or control remit (\"our evaluation reviews AI usage\") "
++                    "is `governance` only; `adoption` applies only if a clause outside the remit asserts the "
++                    "company's own use or intention.",
+                     "`governance`: AI named as an item inside a broader control, review or committee remit "
+                     "counts as governance (usually with the `vagueness` trait); no AI-specific policy is "
+-                    "required. Frame-dependent: the role applies in any frame if its criteria hold; in frame "
+-                    "`governance` it is the primary role, and other roles are added only for clauses outside "
+-                    "the remit that meet their own criteria.",
+-                    "`market_driver` is frame-dependent: in frame `market` it is the primary role; in any "
+-                    "other frame it requires an explicit demand, price or supply statement in the passage.",
++                    "required. In a passage that describes an oversight remit, other roles are added only for "
++                    "clauses outside the remit that meet their own criteria.",
++                    "`market_driver` requires an explicit demand, price, supply or investment statement in the "
++                    "passage; a risk-factor sentence that implies demand without stating it does not qualify.",
+                 ),
+             ),
++    ]
++
++
++def _details_sections() -> list[str]:
++    return [
+             _table(
+                 "Which risk?", "risk_types",
+                 "One or more values if and only if `risk` is among the roles; otherwise `[]`. Only risks the "
+@@ -1262,33 +1488,27 @@ def codebook() -> str:
+                 "Judged on the AI-related statements of the passage: a trait applies if any AI-related "
+                 "statement meets all its criteria. `[]` means none of the traits apply: the statement is "
+                 "specific, it names systems, counterparties, products, figures, dates or actions. "
+-                "`externalisation` is frame-dependent: evaluate it only when the roles include `adoption`, "
+-                "`offering`, `governance` or `risk` and the frame is not `market`; in frame `market` it is not "
+-                "applicable and is never set.",
++                "`externalisation` is evaluated only when the roles include `adoption`, `offering`, `governance`, "
++                "`risk` or `incident`; with `market_driver` or `general` alone it is not applicable and is never set.",
+                 DISCLOSURE_TRAITS,
+             ),
+             _table(
+-                "How substantive is the AI statement?", "substantiveness",
+-                "Exactly one value when `ai_reference` is `explicit`; `null` when it is `none`. "
+-                "Five levels, ordered from 1 (`boilerplate`) to 5 (`quantified`). Judged on the AI-related "
+-                "statements of the passage as a whole: give the highest level whose criteria they meet. "
+-                "Particulars that are not about AI (the company's revenue, the date of the report) do not "
+-                "count.",
+-                SUBSTANTIVENESS,
++                "Which particulars does the AI statement give?", "substantiveness_particulars",
++                "Zero or more values when `ai_reference` is `explicit`; `[]` when it is `none`. Tick every "
++                "particular the AI-related statements of the passage give, and only those: each tick must be "
++                "backed by words of the passage (quote them in `evidence` where they are not already quoted). "
++                "Particulars that are not about the AI statement (the company's total revenue, the date of the "
++                "report, a named customer in an unrelated sentence) do not count. You do not rate how "
++                "substantive the statement is: the level (`generic`, `company_specific`, `detailed`) and the "
++                "score (the number of ticks, 0 to 10) are derived from your ticks on acceptance. S1 to S5 are "
++                "what singles the statement out as this company's; D1 to D5 are what the company does or has seen.",
++                SUBSTANTIVENESS_PARTICULARS,
+             ),
+-            "### Other fields",
+-            "- `passage_id`: copied from the task.",
++            "Derived on acceptance from the ticks, not coded (`substantiveness`, `substantiveness_score`):\n"
++            + "\n".join(f"- `{k}`: {definition} ({criteria[0]})" for k, (definition, criteria) in SUBSTANTIVENESS.items())
++            + "\n",
+             "- `entities`: organisations or AI products the passage names in connection with AI "
+             "(e.g. `[\"Microsoft\", \"Nvidia\"]`); `[]` if none, and `[]` for `none` passages. Not the "
+             "reporting company itself, not sources of statistics.",
+-            "- `evidence`: a list of 1 to 3 quotes copied verbatim from the passage that support your labels "
+-            "(more than 3 are cut to the first 3 on acceptance), "
+-            "one per role where the roles rest on different sentences (each quote is checked as an exact "
+-            "substring, whitespace aside; do not paraphrase, do not add ellipses). `[]` if and only if "
+-            "`ai_reference` is `none`.",
+-            "- `confidence`: `low`, `medium` or `high` for the label as a whole.",
+-            "- `note`: optional, at most one sentence; `\"\"` or omitted when there is nothing to say. Use it "
+-            "when the taxonomy does not fit the passage; allowed for `none` passages too.",
+             "",
+-        ]
+-    )
++    ]
+diff --git a/tests/test_export.py b/tests/test_export.py
+index 85fcd0c..fb88e67 100644
+--- a/tests/test_export.py
++++ b/tests/test_export.py
+@@ -20,10 +20,11 @@ def passage(doc_id: str, blocks: tuple, mention: str, text: str, **extra) -> dic
+ 
+ 
+ def label(pid: str, **fields) -> dict:
+-    base = {"passage_id": pid, "taxonomy_version": "0.9", "coders": ["gemini"], "ai_reference": "explicit",
+-            "frame": "risk_factor", "roles": ["risk"], "risk_types": ["cybersecurity"], "mit_subdomains": ["ai_system_security_vulnerabilities_attacks"],
++    base = {"passage_id": pid, "taxonomy_version": "0.10", "coders": ["gemini"], "ai_reference": "explicit",
++            "roles": ["risk"], "risk_types": ["cybersecurity"], "mit_subdomains": ["ai_system_security_vulnerabilities_attacks"],
+             "adoption_stage": None, "business_functions": [], "governance_responses": [], "ai_kinds": ["unspecified"],
+-            "substantiveness": "specific", "disclosure_traits": ["hedging"], "entities": [], "evidence": ["AI"],
++            "substantiveness": "company_specific", "substantiveness_score": 1, "substantiveness_particulars": ["named_function"],
++            "disclosure_traits": ["hedging"], "entities": [], "evidence": ["AI"],
+             "confidence": {"gemini": "high"}, "notes": [], "disputed": [], "needs_review": False}
+     return {**base, **fields}
+ 
+@@ -48,7 +49,8 @@ def test_export_writes_the_bucket_layout(tmp_path):
+     write_jsonl(data / "docs" / "d2" / "passages.jsonl", [passage("d2", (3, 4), "implicit", "Our data center is in Ohio.")])
+     write_jsonl(data / "labels_final.jsonl", [
+         label("d1:0-2", roles=["adoption", "risk"], adoption_stage="deployed", business_functions=["finance"],
+-              ai_kinds=["generative_llm"], entities=["OpenAI"], substantiveness="detailed"),
++              ai_kinds=["generative_llm"], entities=["OpenAI"], substantiveness="detailed", substantiveness_score=3,
++              substantiveness_particulars=["named_system", "named_function", "own_measure"]),
+         label("d1:5-6", risk_types=["regulatory_legal"], mit_subdomains=["regulation_lagging_behind_ai"]),
+     ])
+     (data / "codebook.md").write_text("# codebook", encoding="utf-8")
+@@ -76,7 +78,8 @@ def test_export_writes_the_bucket_layout(tmp_path):
+ 
+     classified = [json.loads(l) for l in (out / "results" / "classified_chunks.jsonl").read_text().splitlines()]
+     assert classified[0]["chunk_id"] == "d1:0-2" and classified[0]["mit_subdomains"] == ["ai_system_security_vulnerabilities_attacks"]
+-    assert "coders" not in classified[0] and classified[0]["taxonomy_version"] == "0.9"
++    assert "coders" not in classified[0] and classified[0]["taxonomy_version"] == "0.10"
++    assert (classified[0]["substantiveness_score"], classified[0]["substantiveness_particulars"]) == (3, ["named_system", "named_function", "own_measure"])
+ 
+     manifest_rows = json.loads((out / "documents_manifest.json").read_text())["documents"]
+     assert [(r["document_id"], r["form"], r["text_id"]) for r in manifest_rows] == [("11", "10-K", "d1"), ("12", "ARS", "d1"), ("13", "10-K", "d2")]
+@@ -88,14 +91,16 @@ def test_export_writes_the_bucket_layout(tmp_path):
+     assert (m11["cyber_risk"], m11["regulatory_risk"]) == (True, True)
+     assert m11["mit_subdomains"] == ["ai_system_security_vulnerabilities_attacks", "regulation_lagging_behind_ai"]
+     assert m11["business_functions"] == ["finance"] and m11["ai_kinds"] == ["generative_llm", "unspecified"]
+-    assert m11["substantiveness"] == {"boilerplate": 0, "generic": 0, "specific": 1, "detailed": 1, "quantified": 0}
++    assert m11["substantiveness"] == {"generic": 0, "company_specific": 1, "detailed": 1}
+     assert (m11["highest_substantiveness"], m11["trait_activation_rate"]) == ("detailed", 1.0)
++    assert (m11["substantiveness_score_mean"], m11["substantiveness_score_max"]) == (2.0, 3)
++    assert (m13["substantiveness_score_mean"], m13["substantiveness_score_max"]) == (None, None)
+     assert m12["document_id"] == "12" and m12["form"] == "ARS" and m12["month"] == "2025-03" and m12["ai_mention"] is True  # same text
+     assert (m13["chunks"], m13["chunks_context"], m13["ai_mention"], m13["highest_substantiveness"]) == (0, 1, False, None)
+ 
+     monthly = json.loads((out / "results" / "us-filing-metrics.json").read_text())
+     assert (monthly["runId"], monthly["chunksTotal"], monthly["chunksClassified"], monthly["invalidRows"], monthly["filingsTotal"]) == ("us-test_V3", 2, 2, 0, 3)
+-    assert "gemini-2.5-flash" in monthly["source"] and "taxonomy v0.9" in monthly["source"]
++    assert "gemini-2.5-flash" in monthly["source"] and "taxonomy v0.10" in monthly["source"]
+     march, april = monthly["months"]
+     assert (march["month"], march["filings"], march["aiMentionShare"], march["llmAdoptionShare"]) == ("2025-03", 2, 1.0, 1.0)
+     assert (april["month"], april["filings"], april["aiMentionShare"]) == ("2025-04", 1, 0.0)
+diff --git a/tests/test_fetch.py b/tests/test_fetch.py
+index 4e87b79..a848707 100644
+--- a/tests/test_fetch.py
++++ b/tests/test_fetch.py
+@@ -239,6 +239,31 @@ def test_a_filing_of_another_country_is_never_stored(tmp_path):
+     assert [p.name for p in (tmp_path / "markdown").iterdir()] == ["2.md"]
+ 
+ 
++def test_with_sectors_only_filings_of_companies_in_those_isic_sections_are_requested(tmp_path):
++    manufacturing, software, bank, mining = "2100", "6201", "6419", "0721"
++    api = FakeApi([api_filing(i, company={"id": 100 + i, "name": f"Acme {i}", "lei": "", "sub_industry_code": code, "country_code": "US"})
++                   for i, code in enumerate([manufacturing, software, bank, mining], start=1)])
++    counts = run(tmp_path, api, sectors="C,L")
++
++    assert counts == {"done": 2, "present": 0, "failed": 0}
++    assert api.downloads() == [1, 3]
++    assert sorted(p.name for p in (tmp_path / "manifest").iterdir()) == ["1.json", "3.json"]
++    assert {json.loads((tmp_path / "manifest" / n).read_text())["isic_division"] for n in ("1.json", "3.json")} == {"21", "64"}
++
++
++def test_an_unknown_isic_section_is_rejected_before_any_request(tmp_path):
++    api = FakeApi([api_filing(1)])
++    with pytest.raises(ValueError, match="unknown ISIC section 'X'"):
++        run(tmp_path, api, sectors="C,X")
++    assert api.requests == []
++
++
++def test_every_isic_division_belongs_to_exactly_one_section():
++    divisions = [d for ds in fetch.ISIC_SECTIONS.values() for d in ds]
++    assert len(divisions) == len(set(divisions)) == 87  # the provider's /isic-divisions/ count
++    assert fetch.divisions_of("c, k ,L") == set(fetch.ISIC_SECTIONS["C"]) | {"61", "62", "63", "64", "65", "66"}
++
++
+ def test_a_filing_without_markdown_is_counted_and_the_rest_continues(tmp_path):
+     api = FakeApi([api_filing(1), api_filing(2), api_filing(3)], {1: OSError("HTTP Error 404"), 2: b"  \n"})
+     counts = run(tmp_path, api)
+diff --git a/tests/test_gemini_coder.py b/tests/test_gemini_coder.py
+index e597431..9945e45 100644
+--- a/tests/test_gemini_coder.py
++++ b/tests/test_gemini_coder.py
+@@ -17,7 +17,7 @@ import pytest
+ 
+ from airo import classify
+ from airo.coders import gemini
+-from airo.taxonomy import Label
++from airo.taxonomy import Label, LabelAnswer, RolesLabel
+ 
+ # --------------------------------------------------------------------------
+ # Fixtures
+@@ -61,7 +61,6 @@ LABELS = {
+     "abc123:10-12": {
+         "passage_id": "abc123:10-12",
+         "ai_reference": "explicit",
+-        "frame": "risk_factor",
+         "roles": ["adoption", "risk"],
+         "risk_types": ["operational_reliability", "reputational_ethical"],
+         "mit_subdomains": ["lack_of_capability_robustness", "unfair_discrimination_misrepresentation"],
+@@ -69,7 +68,7 @@ LABELS = {
+         "business_functions": ["operations"],
+         "ai_kinds": ["traditional_ml"],
+         "disclosure_traits": ["hedging"],
+-        "substantiveness": "specific",
++        "substantiveness_particulars": ["named_function"],
+         "entities": [],
+         "evidence": ["Our AI models may produce inaccurate results, which could harm our reputation."],
+         "confidence": "high",
+@@ -78,7 +77,6 @@ LABELS = {
+     "abc123:40-41": {
+         "passage_id": "abc123:40-41",
+         "ai_reference": "none",
+-        "frame": None,
+         "roles": [],
+         "risk_types": [],
+         "adoption_stage": None,
+@@ -92,13 +90,12 @@ LABELS = {
+     "abc123:77-77": {
+         "passage_id": "abc123:77-77",
+         "ai_reference": "explicit",
+-        "frame": "business",
+         "roles": ["offering"],
+         "risk_types": [],
+         "adoption_stage": None,
+         "ai_kinds": ["generative_llm"],
+         "disclosure_traits": ["hedging"],
+-        "substantiveness": "specific",
++        "substantiveness_particulars": ["named_function"],
+         "entities": ["Azure OpenAI"],
+         "evidence": ["We launched a generative AI assistant for customers in 2025, built on Azure OpenAI."],
+         "confidence": "high",
+@@ -207,7 +204,7 @@ def test_request_is_json_mode_with_label_schema_at_temperature_zero():
+     cfg = call["config"]
+     assert cfg["temperature"] == 0
+     assert cfg["response_mime_type"] == "application/json"
+-    assert cfg["response_schema"] is Label
++    assert cfg["response_schema"] is LabelAnswer  # what the coder fills; Label adds the derived fields
+     assert cfg["max_output_tokens"] >= 4096
+     assert "thinking_config" not in cfg
+ 
+@@ -476,12 +473,15 @@ def test_sdk_accepts_the_label_class_as_response_schema():
+     assert cfg.thinking_config.thinking_budget == 256
+     assert cfg.response_mime_type == "application/json"
+ 
+-    schema = t_schema(None, Label).model_dump(exclude_none=True)
++    schema = t_schema(None, LabelAnswer).model_dump(exclude_none=True)
+     assert schema["type"] == "OBJECT"
+     assert schema["properties"]["ai_reference"]["enum"] == ["explicit", "none"]
+     assert schema["properties"]["adoption_stage"]["nullable"] is True
+     assert schema["properties"]["roles"]["items"]["enum"][0] == "market_driver"
+-    assert set(schema["properties"]) == set(Label.model_fields)
++    assert set(schema["properties"]) == set(LabelAnswer.model_fields)
++    assert "substantiveness" not in schema["properties"]  # derived on acceptance, never asked of the model
++    for cls in (RolesLabel, gemini.DetailsLabel):
++        assert t_schema(None, cls).model_dump(exclude_none=True)["type"] == "OBJECT"
+ 
+ 
+ def test_real_sdk_errors_are_classified():
+@@ -741,3 +741,144 @@ def test_the_command_line_can_defer_and_later_run_the_repairs(tmp_path, monkeypa
+     summary = json.loads((tmp_path / "gemini_repairs.jsonl.run.json").read_text(encoding="utf-8"))
+     assert (summary["tasks"], summary["succeeded"], summary["asked_again"], summary["deferred"]) == (1, 1, 0, 0)
+ 
++
++
++# --------------------------------------------------------------------------
++# Two calls (v0.10): the roles call, then the details call with the roles given
++# --------------------------------------------------------------------------
++
++ROLES_FIELDS = ("passage_id", "ai_reference", "roles", "evidence", "confidence", "note")
++
++
++def roles_answer(pid: str) -> dict:
++    return {k: v for k, v in LABELS[pid].items() if k in ROLES_FIELDS}
++
++
++def details_answer(pid: str) -> dict:
++    return {k: v for k, v in LABELS[pid].items() if k not in ("ai_reference", "roles")}
++
++
++def test_the_roles_stage_asks_only_for_roles_and_writes_roles_labels():
++    client = FakeClient(lambda pid, n: FakeResponse(json.dumps(roles_answer(pid))))
++    results = gemini.code(TASKS, CODEBOOK, model="strong", client=client, backoff=0, stage="roles")
++
++    assert all(r["error"] is None for r in results)
++    assert client.models.calls[0]["config"]["response_schema"] is RolesLabel
++    assert "Given, decided in the roles call" not in client.models.calls[0]["contents"]
++    assert set(results[0]["label"]) == set(ROLES_FIELDS)
++    assert results[0]["label"]["roles"] == ["adoption", "risk"] and results[1]["label"]["ai_reference"] == "none"
++    # The roles labels pass the acceptance check of their own schema, not the complete one.
++    lines = [json.dumps(r["label"]) for r in results]
++    assert classify.validate(lines, TASKS, "gemini", schema=RolesLabel)[1] == []
++    assert classify.validate(lines, TASKS, "gemini")[1] != []  # a complete label needs ai_kinds etc.
++
++
++def test_the_roles_stage_rejects_an_answer_that_breaks_the_roles_rules():
++    client = FakeClient(lambda pid, n: FakeResponse(json.dumps({**roles_answer(pid), "roles": ["general", "risk"]})))
++    results = gemini.code(TASKS[:1], CODEBOOK, model="m", client=client, backoff=0, stage="roles", max_repairs=0)
++    assert "general" in results[0]["error"]
++
++
++def test_the_details_stage_shows_the_given_roles_and_writes_complete_labels():
++    given = {t["passage_id"]: roles_answer(t["passage_id"]) for t in TASKS}
++    client = FakeClient(lambda pid, n: FakeResponse(json.dumps(details_answer(pid))))
++    results = gemini.code(TASKS, CODEBOOK, model="cheap", client=client, backoff=0, stage="details", given_by_id=given)
++
++    assert [r["passage_id"] for r in results] == [t["passage_id"] for t in TASKS]
++    assert all(r["error"] is None for r in results)
++    # Only the two passages about AI are asked; the `none` passage is labelled from its roles label.
++    assert len(client.models.calls) == 2
++    assert client.models.calls[0]["config"]["response_schema"] is gemini.DetailsLabel
++    prompt = client.models.calls[0]["contents"]
++    assert "Given, decided in the roles call (do not judge again, do not return): ai_reference: explicit; " \
++           "roles: adoption, risk" in prompt
++    none = next(r for r in results if r["passage_id"] == "abc123:40-41")
++    assert none["attempts"] == 0 and none["label"]["ai_reference"] == "none" and none["label"]["roles"] == []
++    first = results[0]["label"]
++    assert first["roles"] == ["adoption", "risk"] and first["risk_types"] == ["operational_reliability", "reputational_ethical"]
++    assert (first["substantiveness"], first["substantiveness_score"]) == ("company_specific", 1)
++    # Complete labels: they pass the acceptance check of `airo accept` as they are.
++    assert classify.validate([json.dumps(r["label"]) for r in results], TASKS, "gemini")[1] == []
++    summary = gemini.run_summary(results, stage="details")
++    assert (summary["stage"], summary["tasks"], summary["succeeded"], summary["without_call"]) == ("details", 3, 3, 1)
++
++
++def test_the_details_stage_merges_evidence_and_takes_the_lower_confidence():
++    pid = TASKS[2]["passage_id"]
++    given = {pid: {**roles_answer(pid), "evidence": ["We launched a generative AI assistant for customers in 2025"], "confidence": "medium"}}
++    answer = {**details_answer(pid), "evidence": ["built on Azure OpenAI."], "substantiveness_particulars": ["named_counterparty", "time_reference"]}
++    client = FakeClient(lambda p, n: FakeResponse(json.dumps(answer)))
++    results = gemini.code(TASKS[2:], CODEBOOK, model="m", client=client, backoff=0, stage="details", given_by_id=given)
++    label = results[0]["label"]
++    assert results[0]["error"] is None
++    assert label["evidence"] == ["We launched a generative AI assistant for customers in 2025", "built on Azure OpenAI."]
++    assert label["confidence"] == "medium"
++    assert (label["substantiveness"], label["substantiveness_score"]) == ("detailed", 2)
++
++
++def test_the_details_stage_rejects_fields_that_do_not_fit_the_given_roles():
++    pid = TASKS[2]["passage_id"]  # roles: offering
++    given = {pid: roles_answer(pid)}
++    client = FakeClient(lambda p, n: FakeResponse(json.dumps({**details_answer(pid), "risk_types": ["cybersecurity"]})))
++    results = gemini.code(TASKS[2:], CODEBOOK, model="m", client=client, backoff=0, stage="details", given_by_id=given, max_repairs=0)
++    assert "risk_types" in results[0]["error"]
++    assert len(client.models.calls) == 1
++
++
++def test_a_passage_without_a_roles_label_is_an_error_in_the_details_stage_and_is_not_asked():
++    given = {TASKS[2]["passage_id"]: roles_answer(TASKS[2]["passage_id"])}
++    client = FakeClient(lambda pid, n: FakeResponse(json.dumps(details_answer(pid))))
++    results = gemini.code(TASKS, CODEBOOK, model="m", client=client, backoff=0, stage="details", given_by_id=given)
++    assert [r["error"] for r in results[:2]] == ["no roles label for this passage"] * 2
++    assert results[2]["error"] is None and len(client.models.calls) == 1
++
++
++def test_the_details_stage_works_in_batches_with_the_roles_given_per_task():
++    given = {t["passage_id"]: roles_answer(t["passage_id"]) for t in TASKS}
++    client = BatchClient(lambda pid, n, batch: details_answer(pid))
++    results = gemini.code(TASKS, CODEBOOK, model="m", client=client, backoff=0, batch_size=40, stage="details", given_by_id=given)
++
++    assert len(client.calls) == 1 and client.calls[0]["ids"] == [TASKS[0]["passage_id"], TASKS[2]["passage_id"]]
++    assert client.calls[0]["config"]["response_schema"] is gemini.DetailsLabels
++    assert client.calls[0]["contents"].count("Given, decided in the roles call") == 2
++    assert all(r["error"] is None for r in results) and [r["passage_id"] for r in results] == [t["passage_id"] for t in TASKS]
++
++
++def test_unknown_stage_is_refused():
++    with pytest.raises(ValueError, match="unknown stage"):
++        gemini.code(TASKS, CODEBOOK, model="m", client=FakeClient(respond_with_labels), stage="both")
++
++
++def test_the_command_line_runs_the_two_calls_one_after_the_other(tmp_path, monkeypatch, capsys):
++    tasks_file = tmp_path / "tasks.jsonl"
++    tasks_file.write_text("".join(json.dumps(t) + "\n" for t in TASKS), encoding="utf-8")
++    for name in ("codebook_roles.md", "codebook_details.md"):
++        (tmp_path / name).write_text(f"# {name}\n", encoding="utf-8")
++    roles_out, out = tmp_path / "roles.jsonl", tmp_path / "gemini.jsonl"
++    clients = {"strong": FakeClient(lambda pid, n: FakeResponse(json.dumps(roles_answer(pid)))),
++               "cheap": FakeClient(lambda pid, n: FakeResponse(json.dumps(details_answer(pid))))}
++    monkeypatch.setattr(gemini, "make_client", lambda project, location: clients[project])
++
++    with pytest.raises(SystemExit):  # --roles-from is required with --stage details
++        gemini.parse_args(["--tasks", "t", "--codebook", "c", "--out", "o", "--model", "m", "--project", "p", "--stage", "details"])
++    with pytest.raises(SystemExit):  # and only there
++        gemini.parse_args(["--tasks", "t", "--codebook", "c", "--out", "o", "--model", "m", "--project", "p", "--roles-from", "r"])
++
++    rc = gemini.main(["--tasks", str(tasks_file), "--codebook", str(tmp_path / "codebook_roles.md"), "--out", str(roles_out),
++                      "--model", "strong-model", "--project", "strong", "--stage", "roles", "--batch-size", "1"])
++    assert rc == 0
++    roles_rows = [json.loads(l) for l in roles_out.read_text(encoding="utf-8").splitlines()]
++    assert [r["ai_reference"] for r in roles_rows] == ["explicit", "none", "explicit"] and "ai_kinds" not in roles_rows[0]
++    assert json.loads((tmp_path / "roles.jsonl.run.json").read_text())["stage"] == "roles"
++    assert "--stage details --roles-from" in capsys.readouterr().out
++
++    rc = gemini.main(["--tasks", str(tasks_file), "--codebook", str(tmp_path / "codebook_details.md"), "--out", str(out),
++                      "--model", "cheap-model", "--project", "cheap", "--stage", "details", "--roles-from", str(roles_out),
++                      "--batch-size", "1"])
++    assert rc == 0
++    rows = [json.loads(l) for l in out.read_text(encoding="utf-8").splitlines()]
++    assert len(rows) == 3 and len(clients["cheap"].models.calls) == 2
++    assert classify.validate([json.dumps(r) for r in rows], TASKS, "gemini")[1] == []
++    summary = json.loads((tmp_path / "gemini.jsonl.run.json").read_text())
++    assert (summary["stage"], summary["model"], summary["without_call"]) == ("details", "cheap-model", 1)
++    assert "accept" in capsys.readouterr().out
+diff --git a/tests/test_pipeline.py b/tests/test_pipeline.py
+index cc0e7b4..3ec6195 100644
+--- a/tests/test_pipeline.py
++++ b/tests/test_pipeline.py
+@@ -688,11 +688,10 @@ def label_fields(**overrides) -> dict:
+     fields = {
+         "passage_id": "d1:0-2",
+         "ai_reference": "explicit",
+-        "frame": "risk_factor",
+         "roles": ["market_driver"],
+         "ai_kinds": ["unspecified"],
+         "disclosure_traits": ["hedging"],
+-        "substantiveness": "generic",
++        "substantiveness_particulars": [],
+         "evidence": ["Demand for AI data centers is growing."],
+         "confidence": "high",
+     }
+@@ -726,36 +725,10 @@ def test_label_accepts_valid_labels():
+ 
+     none = Label(passage_id="d1:0-2", ai_reference="none", confidence="high", note="keyword false positive")
+     assert none.roles == [] and none.ai_kinds == [] and none.evidence == [] and none.disclosure_traits == []
+-    assert none.frame is None
+ 
+ 
+-@pytest.mark.parametrize("ai_reference", ["explicit"])
+-def test_label_requires_frame_when_the_passage_is_about_ai(ai_reference):
+-    assert Label(**label_fields(ai_reference=ai_reference, frame="market")).frame == "market"
+-    with pytest.raises(ValidationError, match="frame is required"):
+-        Label(**label_fields(ai_reference=ai_reference, frame=None))
+-    fields = label_fields(ai_reference=ai_reference)
+-    del fields["frame"]
+-    with pytest.raises(ValidationError, match="frame is required"):
+-        Label(**fields)
+ 
+ 
+-def test_label_rejects_none_reference_with_frame():
+-    with pytest.raises(ValidationError, match="must leave all other label fields empty"):
+-        Label(passage_id="d1:0-2", ai_reference="none", frame="business", confidence="high")
+-
+-
+-def test_label_rejects_unknown_frame():
+-    with pytest.raises(ValidationError, match="frame"):
+-        Label(**label_fields(frame="outlook"))
+-
+-
+-def test_label_rejects_externalisation_in_market_frame():
+-    ok = Label(**label_fields(frame="risk_factor", roles=["risk"], risk_types=["third_party"],
+-                              disclosure_traits=["externalisation"]))
+-    assert ok.disclosure_traits == ["externalisation"]
+-    with pytest.raises(ValidationError, match="not applicable in frame 'market'"):
+-        Label(**label_fields(frame="market", disclosure_traits=["externalisation"]))
+ 
+ 
+ def test_label_accepts_empty_disclosure_traits_for_a_specific_statement():
+@@ -823,7 +796,7 @@ def test_label_rejects_general_combined_with_another_role():
+ 
+ 
+ def test_label_rejects_about_ai_label_without_evidence():
+-    with pytest.raises(ValidationError, match="evidence are required"):
++    with pytest.raises(ValidationError, match="evidence is required"):
+         Label(**label_fields(evidence=[]))
+ 
+ 
+@@ -860,13 +833,14 @@ def test_taxonomy_definitions_and_schema_list_the_same_values():
+         return {v for v in _literal_values(Label.model_fields[field].annotation) if v is not None}
+ 
+     assert allowed("ai_reference") == set(taxonomy.AI_REFERENCE)
+-    assert allowed("frame") == set(taxonomy.FRAMES)
+     assert allowed("roles") == set(taxonomy.ROLES)
+     assert allowed("risk_types") == set(taxonomy.RISK_TYPES)
+     assert allowed("mit_subdomains") == set(taxonomy.MIT_SUBDOMAINS)
+     assert allowed("adoption_stage") == set(taxonomy.ADOPTION_STAGES)
+     assert allowed("ai_kinds") == set(taxonomy.AI_KINDS)
+     assert allowed("substantiveness") == set(taxonomy.SUBSTANTIVENESS)
++    assert allowed("substantiveness_particulars") == set(taxonomy.SUBSTANTIVENESS_PARTICULARS)
++    assert set(taxonomy.SUBSTANTIVENESS_S) | set(taxonomy.SUBSTANTIVENESS_D) == set(taxonomy.SUBSTANTIVENESS_PARTICULARS)
+     assert allowed("disclosure_traits") == set(taxonomy.DISCLOSURE_TRAITS)
+ 
+ 
+@@ -880,7 +854,6 @@ def _literal_values(annotation) -> list:
+ 
+ ALL_DEFINITIONS = (
+     taxonomy.AI_REFERENCE,
+-    taxonomy.FRAMES,
+     taxonomy.ROLES,
+     taxonomy.RISK_TYPES,
+     taxonomy.MIT_SUBDOMAINS,
+@@ -889,7 +862,7 @@ ALL_DEFINITIONS = (
+     taxonomy.GOVERNANCE_RESPONSES,
+     taxonomy.AI_KINDS,
+     taxonomy.DISCLOSURE_TRAITS,
+-    taxonomy.SUBSTANTIVENESS,
++    taxonomy.SUBSTANTIVENESS_PARTICULARS,
+ )
+ 
+ 
+@@ -922,14 +895,6 @@ def test_codebook_renders_criteria_as_a_numbered_checklist():
+     assert text.count("Criteria (all required): (1) ") == sum(len(v) for v in ALL_DEFINITIONS)
+ 
+ 
+-def test_codebook_puts_the_frame_step_before_the_roles():
+-    text = taxonomy.codebook()
+-
+-    step = text.index("### Step 1: determine the frame (`frame`)")
+-    assert text.index("(`ai_reference`)") < step < text.index("(`roles`)")
+-    assert "frame-dependent" in text.split("(`roles`)")[1]  # the roles are read in the frame
+-    assert "presupposed use" not in text  # the v0.3 rule that made "AI usage" in a remit adoption is gone
+-
+ 
+ # --------------------------------------------------------------------------
+ # classify.validate
+@@ -1005,7 +970,7 @@ def test_validate_rejects_empty_evidence_unless_none():
+     labels, problems = classify.validate([line(evidence=[]), none_with_evidence], PASSAGES, coder="alice")
+ 
+     assert labels == []
+-    assert "evidence are required" in problems[0]
++    assert "evidence is required" in problems[0]
+     assert "must leave all other label fields empty" in problems[1]
+ 
+ 
+@@ -1171,24 +1136,6 @@ def test_adjudicate_majority_wins_on_single_valued_fields():
+     assert (p2["disputed"], p2["needs_review"]) == ([], False)
+ 
+ 
+-def test_adjudicate_majority_wins_on_frame():
+-    final, agreement = adjudicated(
+-        by_coder(
+-            coded(P1, "a", frame="governance", roles=["governance"]),
+-            coded(P1, "b", frame="governance", roles=["governance"]),
+-            coded(P1, "c", frame="business", roles=["adoption"], adoption_stage="deployed"),
+-            coded(P2, "a", frame="risk_factor"),
+-            coded(P2, "b", frame="market"),
+-            coded(P2, "c", frame="business"),
+-        )
+-    )
+-
+-    assert final[P1]["frame"] == "governance"
+-    assert (final[P1]["disputed"], final[P1]["needs_review"]) == ([], False)
+-    assert final[P2]["frame"] is None
+-    assert (final[P2]["disputed"], final[P2]["needs_review"]) == (["frame"], True)
+-    assert agreement["unanimous_share"]["frame"] == 0.0
+-
+ 
+ def test_adjudicate_majority_wins_per_value_on_multi_valued_fields():
+     final, _ = adjudicated(three_coders())
+@@ -1250,7 +1197,7 @@ def test_adjudicate_split_on_ai_reference_clears_the_label():
+     # without an agreed ai_reference the voted label must not carry roles or risk types.
+     assert p1["ai_reference"] is None
+     assert (p1["roles"], p1["risk_types"], p1["disclosure_traits"]) == ([], [], [])
+-    assert (p1["frame"], p1["adoption_stage"], p1["ai_kinds"]) == (None, None, [])
++    assert (p1["adoption_stage"], p1["ai_kinds"]) == (None, [])
+     assert "ai_reference" in p1["disputed"]
+     assert p1["needs_review"] is True
+ 
+@@ -1288,7 +1235,7 @@ def test_adjudicate_majority_none_against_one_explicit_needs_no_review():
+     p1 = final[P1]
+ 
+     assert p1["ai_reference"] == "none"
+-    assert (p1["frame"], p1["roles"], p1["ai_kinds"], p1["disclosure_traits"]) == (None, [], [], [])
++    assert (p1["roles"], p1["ai_kinds"], p1["disclosure_traits"]) == ([], [], [])
+     assert p1["disputed"] == []
+     assert p1["needs_review"] is False
+     assert agreement["needs_review"] == []
+@@ -1325,10 +1272,10 @@ def test_adjudicate_agreement_report():
+     assert agreement["n_passages"] == 4
+     assert agreement["unanimous_share"] == {
+         "ai_reference": 1.0,  # P1 P2 P3 P4
+-        "frame": 1.0,  # P1 P2 P3 P4 (the fixture's default)
+         "adoption_stage": 0.75,  # P1 P3 P4 (all empty)
+         "ai_kinds": 0.5,  # P1 P4
+         "substantiveness": 1.0,  # P1 P2 P3 P4 (the fixture's default)
++        "substantiveness_particulars": 1.0,  # P1 P2 P3 P4 (the fixture's default: none ticked)
+         "roles": 0.5,  # P1 P3
+         "risk_types": 0.5,  # P1 P3
+         "mit_subdomains": 0.5,  # P1 P3 (the fixture's default `other` wherever risk is a role)
+@@ -1363,17 +1310,18 @@ def passage(pid: str, section: str | None, mention: str = "direct") -> dict:
+             "mention": mention, "matched": {"ai": ["artificial intelligence"]} if mention == "direct" else {"context": ["data center"]}}
+ 
+ 
+-def final_label(pid: str, ai_reference: str | None, frame=None, roles=(), risk_types=(), adoption_stage=None,
++def final_label(pid: str, ai_reference: str | None, roles=(), risk_types=(), adoption_stage=None,
+                 ai_kinds=(), disclosure_traits=(), entities=(), needs_review=False, substantiveness=None,
+                 business_functions=(), governance_responses=(), mit_subdomains=()) -> dict:
+     """A label in the shape classify.adjudicate writes to labels_final.jsonl."""
+     return {
+-        "passage_id": pid, "ai_reference": ai_reference, "frame": frame, "roles": list(roles),
++        "passage_id": pid, "ai_reference": ai_reference, "roles": list(roles),
+         "risk_types": list(risk_types), "adoption_stage": adoption_stage, "ai_kinds": list(ai_kinds),
+         "business_functions": list(business_functions), "governance_responses": list(governance_responses),
+         "mit_subdomains": list(mit_subdomains) or (["other"] if "risk" in roles or "incident" in roles else []),
+         "disclosure_traits": list(disclosure_traits), "entities": list(entities), "needs_review": needs_review,
+         "substantiveness": substantiveness or ("generic" if ai_reference == "explicit" else None),
++        "substantiveness_particulars": [], "substantiveness_score": 0 if ai_reference == "explicit" else None,
+     }
+ 
+ 
+@@ -1387,17 +1335,17 @@ def test_summarise_counts_and_flags():
+         passage("d1:30-31", "Item 7"),
+     ]
+     labels = [
+-        final_label("d1:0-2", "explicit", frame="market", roles=["market_driver"], ai_kinds=["unspecified"],
++        final_label("d1:0-2", "explicit", roles=["market_driver"], ai_kinds=["unspecified"],
+                     disclosure_traits=["vagueness"], entities=["Nvidia"]),
+-        final_label("d1:5-7", "explicit", frame="risk_factor", roles=["market_driver", "risk"],
++        final_label("d1:5-7", "explicit", roles=["market_driver", "risk"],
+                     risk_types=["market_demand"], ai_kinds=["unspecified"],
+                     disclosure_traits=["boilerplate", "hedging"], entities=["Microsoft", "Nvidia"],
+                     needs_review=True),
+         final_label("d1:9-9", "none"),  # keyword false positive
+-        final_label("d1:12-14", "explicit", frame="market", roles=["general"], ai_kinds=["generative_llm"]),  # no trait
++        final_label("d1:12-14", "explicit", roles=["general"], ai_kinds=["generative_llm"]),  # no trait
+         final_label("d1:20-22", None, needs_review=True),  # coders split on ai_reference
+         # d1:30-31 has no label yet; the next label belongs to another report.
+-        final_label("d2:0-2", "explicit", frame="business", roles=["adoption"], adoption_stage="deployed",
++        final_label("d2:0-2", "explicit", roles=["adoption"], adoption_stage="deployed",
+                     ai_kinds=["generative_llm"], disclosure_traits=["safe_harbour"]),
+     ]
+ 
+@@ -1412,7 +1360,7 @@ def test_summarise_counts_and_flags():
+     assert s["n_false_candidates"] == 1
+     assert s["n_needs_review"] == 2
+     assert s["ai_reference"] == {"explicit": 3, "none": 1, "disputed": 1}
+-    assert s["frames"] == {"market": 2, "risk_factor": 1}  # AI passages of this report only
++    assert "frames" not in s  # v0.10: no frame
+     assert s["roles"] == {"market_driver": 2, "risk": 1, "general": 1}
+     assert s["risk_types"] == {"market_demand": 1}
+     assert s["adoption_stage"] == {}
+@@ -1454,7 +1402,7 @@ def test_summarise_report_with_only_false_candidates_does_not_mention_ai():
+     s = aggregate.summarise(REPORT, passages, labels)
+ 
+     assert (s["n_candidates"], s["n_ai_passages"], s["n_false_candidates"]) == (2, 0, 2)
+-    assert s["frames"] == {} and s["roles"] == {} and s["sections"] == {} and s["entities"] == []
++    assert s["roles"] == {} and s["sections"] == {} and s["entities"] == []
+     assert (s["disclosure_traits"], s["trait_activation_rate"], s["trait_rates"]) == ({}, None, {})
+     assert (s["mentions_ai"], s["ai_as_market_driver"], s["ai_adoption"], s["ai_as_risk"]) == (
+         False, False, False, False,
+@@ -1474,7 +1422,7 @@ def test_render_quotes_every_piece_of_evidence():
+         {**passage("d1:5-5", "Item 7"), "section_title": None, "blocks": [5, 5], "text": "Backup site."},
+     ]
+     labels = [
+-        {**final_label("d1:0-2", "explicit", frame="risk_factor", roles=["market_driver", "risk"],
++        {**final_label("d1:0-2", "explicit", roles=["market_driver", "risk"],
+                        risk_types=["market_demand"], ai_kinds=["unspecified"],
+                        disclosure_traits=["boilerplate", "hedging"]),
+          "evidence": ["AI.", "Power."], "notes": ["a: two sentences"], "disputed": []},
+@@ -1485,8 +1433,7 @@ def test_render_quotes_every_piece_of_evidence():
+ 
+     assert "> AI.\n\n> Power.\n\n- Note (a: two sentences)\n" in text
+     assert text.count("> ") == 2
+-    assert "- Frames: risk_factor (1)\n" in text
+-    assert "**AI reference: explicit | frame: risk_factor | roles: market_driver, risk" in text
++    assert "**AI reference: explicit | roles: market_driver, risk" in text
+     assert "- Disclosure traits: boilerplate (1), hedging (1)\n" in text
+     assert "- Trait activation rate: 1.0 (boilerplate (1.0), hedging (1.0), externalisation (0.0), " \
+            "vagueness (0.0), safe_harbour (0.0))\n" in text
+@@ -1591,27 +1538,60 @@ def test_cli_runs_all_stages_through_their_files(tmp_path, capsys):
+     capsys.readouterr()  # the stages print progress; keep it out of the test output
+ 
+ 
+-def test_substantiveness_has_five_ordered_levels_and_is_required_for_ai_passages():
+-    assert taxonomy.SUBSTANTIVENESS_LEVELS == {"boilerplate": 1, "generic": 2, "specific": 3, "detailed": 4, "quantified": 5}
+-    for level in taxonomy.SUBSTANTIVENESS:
+-        assert Label(**label_fields(substantiveness=level)).substantiveness == level
+-        assert f"`{level}`" in taxonomy.codebook()
+-    with pytest.raises(ValidationError, match="substantiveness is required"):
+-        Label(**label_fields(substantiveness=None))
++def test_substantiveness_is_derived_from_the_particulars_in_three_ordered_levels():
++    # v0.10: the coder ticks particulars (two groups of five); level and score follow from the ticks.
++    assert taxonomy.SUBSTANTIVENESS_LEVELS == {"generic": 1, "company_specific": 2, "detailed": 3}
++    assert len(taxonomy.SUBSTANTIVENESS_PARTICULARS) == 10
++    cases = {
++        (): ("generic", 0),
++        ("named_function",): ("company_specific", 1),
++        ("own_measure", "time_reference"): ("company_specific", 2),  # D only: what the company does, not whose
++        ("named_system", "own_measure"): ("detailed", 2),
++        tuple(taxonomy.SUBSTANTIVENESS_PARTICULARS): ("detailed", 10),
++    }
++    for ticks, (level, score) in cases.items():
++        assert taxonomy.substantiveness_of(list(ticks)) == (level, score)
++        label = Label(**label_fields(substantiveness_particulars=list(ticks)))
++        assert (label.substantiveness, label.substantiveness_score) == (level, score)
++    # A tick given twice counts once, and the list is stored in the codebook's order.
++    label = Label(**label_fields(substantiveness_particulars=["own_measure", "named_system", "own_measure"]))
++    assert label.substantiveness_particulars == ["named_system", "own_measure"] and label.substantiveness_score == 2
++    # A level or score the coder gives is checked against the ticks, never taken on its own.
++    assert Label(**label_fields(substantiveness_particulars=["figure"], substantiveness="company_specific", substantiveness_score=1)).substantiveness_score == 1
++    with pytest.raises(ValidationError, match="derived from substantiveness_particulars"):
++        Label(**label_fields(substantiveness_particulars=["figure"], substantiveness="detailed"))
++    with pytest.raises(ValidationError, match="derived from substantiveness_particulars"):
++        Label(**label_fields(substantiveness_particulars=[], substantiveness_score=3))
+     with pytest.raises(ValidationError):
+-        Label(**label_fields(substantiveness="moderate"))
++        Label(**label_fields(substantiveness_particulars=["specific"]))
+     with pytest.raises(ValidationError, match="must leave all other label fields empty"):
+-        Label(passage_id="d1:0-2", ai_reference="none", confidence="high", substantiveness="generic")
+-
+-
+-def test_adjudicate_takes_the_majority_substantiveness_and_flags_a_three_way_split():
+-    final, _ = adjudicated(by_coder(
+-        coded(P1, "a", substantiveness="specific"), coded(P1, "b", substantiveness="specific"), coded(P1, "c", substantiveness="detailed"),
+-        coded(P2, "a", substantiveness="boilerplate"), coded(P2, "b", substantiveness="specific"), coded(P2, "c", substantiveness="quantified"),
++        Label(passage_id="d1:0-2", ai_reference="none", confidence="high", substantiveness_particulars=["figure"])
++    none = Label(passage_id="d1:0-2", ai_reference="none", confidence="high")
++    assert none.substantiveness is None and none.substantiveness_score is None
++    text = taxonomy.codebook()
++    for particular in taxonomy.SUBSTANTIVENESS_PARTICULARS:
++        assert f"`{particular}`" in text
++    for level in taxonomy.SUBSTANTIVENESS:
++        assert f"`{level}`" in text
++    assert "(`substantiveness_particulars`)" in text and "(`substantiveness`)" not in text  # the level is not coded
++
++
++def test_adjudicate_votes_on_each_particular_and_derives_the_level_from_the_vote():
++    final, agreement = adjudicated(by_coder(
++        coded(P1, "a", substantiveness_particulars=["named_system", "own_measure"]),
++        coded(P1, "b", substantiveness_particulars=["named_system", "own_measure", "figure"]),
++        coded(P1, "c", substantiveness_particulars=["named_system"]),
++        coded(P2, "a", substantiveness_particulars=["figure"]),
++        coded(P2, "b", substantiveness_particulars=["own_measure"]),
++        coded(P2, "c", substantiveness_particulars=["scope"]),
+     ))
+     p1, p2 = final[P1], final[P2]
+-    assert p1["substantiveness"] == "specific" and "substantiveness" not in p1["disputed"]
+-    assert p2["substantiveness"] is None and "substantiveness" in p2["disputed"]
++    # P1: named_system 3 of 3, own_measure 2 of 3, figure 1 of 3 -> detailed, score 2 (coders said 2, 3 and 1).
++    assert p1["substantiveness_particulars"] == ["named_system", "own_measure"]
++    assert (p1["substantiveness"], p1["substantiveness_score"]) == ("detailed", 2)
++    # P2: no particular has a majority -> generic with score 0, from the vote; the level itself is not disputed.
++    assert p2["substantiveness_particulars"] == [] and (p2["substantiveness"], p2["substantiveness_score"]) == ("generic", 0)
++    assert agreement["unanimous_share"]["substantiveness_particulars"] == 0.0
+ 
+ 
+ def test_a_quote_that_differs_only_in_quotation_marks_or_dashes_is_stored_as_the_passage_has_it():
+@@ -1668,11 +1648,11 @@ def test_not_stated_is_the_only_business_function_when_none_is_named():
+ 
+ 
+ def test_governance_responses_are_given_if_and_only_if_governance_is_a_role():
+-    label = Label(**label_fields(frame="governance", roles=["governance"],
++    label = Label(**label_fields(roles=["governance"],
+                                  governance_responses=["oversight_structure", "policies_processes"]))
+     assert label.governance_responses == ["oversight_structure", "policies_processes"]
+     with pytest.raises(ValidationError, match="governance_responses must be given if and only if"):
+-        Label(**label_fields(frame="governance", roles=["governance"], governance_responses=[]))
++        Label(**label_fields(roles=["governance"], governance_responses=[]))
+     with pytest.raises(ValidationError, match="governance_responses must be given if and only if"):
+         Label(**label_fields(roles=["market_driver"], governance_responses=["technical_controls"]))
+ 
+@@ -1735,7 +1715,7 @@ def test_summarise_counts_the_new_fields_and_the_context_passages():
+          "term_groups": {"data center": "compute_infrastructure", "truckload": "industry"}},
+     ]
+     labels = [
+-        final_label("d1:0-2", "explicit", frame="business", roles=["adoption", "governance"],
++        final_label("d1:0-2", "explicit", roles=["adoption", "governance"],
+                     adoption_stage="deployed", ai_kinds=["generative_llm"],
+                     business_functions=["customer_service", "finance"], governance_responses=["policies_processes"]),
+     ]
+@@ -1859,9 +1839,9 @@ def test_adjudicate_votes_per_subdomain_and_clears_them_without_risk_or_incident
+ def test_summarise_counts_the_subdomains():
+     passages = [passage("d1:0-2", "Item 1A"), passage("d1:5-7", "Item 1A")]
+     labels = [
+-        final_label("d1:0-2", "explicit", frame="risk_factor", roles=["risk"], risk_types=["cybersecurity"],
++        final_label("d1:0-2", "explicit", roles=["risk"], risk_types=["cybersecurity"],
+                     ai_kinds=["unspecified"], mit_subdomains=["ai_system_security_vulnerabilities_attacks", "fraud_scams_targeted_manipulation"]),
+-        final_label("d1:5-7", "explicit", frame="risk_factor", roles=["risk"], risk_types=["workforce"],
++        final_label("d1:5-7", "explicit", roles=["risk"], risk_types=["workforce"],
+                     ai_kinds=["unspecified"], mit_subdomains=["inequality_decline_employment_quality"]),
+     ]
+     s = aggregate.summarise(REPORT, passages, labels)
+@@ -1870,3 +1850,71 @@ def test_summarise_counts_the_subdomains():
+                                 [{**l, "evidence": [], "notes": [], "disputed": []} for l in labels], s)
+     assert "- MIT subdomains: ai_system_security_vulnerabilities_attacks (1), fraud_scams_targeted_manipulation (1), inequality_decline_employment_quality (1)\n" in rendered and "| mit: ai_system_security_vulnerabilities_attacks, fraud_scams_targeted_manipulation" in rendered
+ 
++
++
++# --------------------------------------------------------------------------
++# taxonomy v0.10: the two-call design (roles call, details call) and merge
++# --------------------------------------------------------------------------
++
++
++def test_codebook_has_a_variant_per_call_and_the_single_variant_holds_both():
++    single, roles, details = (taxonomy.codebook(s) for s in ("single", "roles", "details"))
++    assert taxonomy.codebook() == single
++    assert "roles call" in roles and "(`roles`)" in roles and "(`ai_reference`)" in roles
++    for field in ("risk_types", "mit_subdomains", "adoption_stage", "business_functions", "governance_responses",
++                  "ai_kinds", "disclosure_traits", "substantiveness_particulars"):
++        assert f"(`{field}`)" not in roles, field
++        assert f"(`{field}`)" in details and f"(`{field}`)" in single, field
++    assert "details call" in details and "(`roles`)" not in details
++    assert "do not return them" in details  # the given fields are not judged again
++    assert "- `risk`: " in details  # the roles are listed for reference
++    assert len(roles) < len(details) < len(single)
++
++
++def test_roles_label_applies_the_roles_rules_and_nothing_else():
++    ok = taxonomy.RolesLabel(passage_id=P1, ai_reference="explicit", roles=["adoption"],
++                             evidence=["we use AI", "a", "b", "c"], confidence="high")
++    assert ok.evidence == ["we use AI", "a", "b"]  # cut to three, as for a complete label
++    assert set(ok.model_dump()) == set(taxonomy.ROLES_FIELDS)
++    none = taxonomy.RolesLabel(passage_id=P1, ai_reference="none", confidence="low")
++    assert none.roles == []
++    for bad, match in (
++        (dict(ai_reference="explicit", evidence=["x"]), "at least one role"),
++        (dict(ai_reference="explicit", roles=["general", "risk"], evidence=["x"]), "general"),
++        (dict(ai_reference="explicit", roles=["risk"]), "evidence is required"),
++        (dict(ai_reference="none", roles=["risk"]), "must leave all other label fields empty"),
++    ):
++        with pytest.raises(ValidationError, match=match):
++            taxonomy.RolesLabel(passage_id=P1, confidence="high", **bad)
++
++
++def test_merge_joins_the_two_answers_into_a_label_that_passes_the_complete_check():
++    roles = taxonomy.RolesLabel(passage_id=P1, ai_reference="explicit", roles=["risk"],
++                                evidence=["AI may fail"], confidence="high", note="roles note").model_dump()
++    details = {"passage_id": P1, "risk_types": ["operational_reliability"], "mit_subdomains": ["lack_of_capability_robustness"],
++               "ai_kinds": ["unspecified"], "disclosure_traits": ["hedging"], "substantiveness_particulars": ["named_system"],
++               "entities": ["Acme Model"], "evidence": ["AI may fail", "the Acme Model"], "confidence": "medium", "note": "details note"}
++    merged = taxonomy.merge(roles, details)
++    label = Label.model_validate(merged)
++    assert label.roles == ["risk"] and label.risk_types == ["operational_reliability"] and label.entities == ["Acme Model"]
++    assert label.evidence == ["AI may fail", "the Acme Model"]  # the same quote once
++    assert label.confidence == "medium" and label.note == "roles note details note"
++    assert (label.substantiveness, label.substantiveness_score) == ("company_specific", 1)
++    # The details answer cannot overrule the roles call.
++    assert Label.model_validate(taxonomy.merge(roles, {**details, "roles": ["adoption"], "ai_reference": "none"})).roles == ["risk"]
++    # A `none` roles label needs no details.
++    none = taxonomy.merge(taxonomy.RolesLabel(passage_id=P2, ai_reference="none", confidence="high").model_dump(), None)
++    assert Label.model_validate(none).ai_reference == "none"
++    with pytest.raises(ValueError, match="merged with roles for"):
++        taxonomy.merge(roles, {**details, "passage_id": P2})
++
++
++def test_externalisation_needs_a_role_that_puts_the_ai_in_the_companys_hands_or_risks():
++    ok = Label(**label_fields(roles=["risk"], risk_types=["third_party"], disclosure_traits=["externalisation"]))
++    assert "externalisation" in ok.disclosure_traits
++    with pytest.raises(ValidationError, match="externalisation"):
++        Label(**label_fields(roles=["market_driver"], disclosure_traits=["externalisation"]))
++    with pytest.raises(ValidationError, match="externalisation"):
++        Label(**label_fields(roles=["general"], disclosure_traits=["externalisation"]))
++    assert "frame" not in Label.model_fields and "frame" not in taxonomy.RolesLabel.model_fields
++    assert "(`frame`)" not in taxonomy.codebook() and "frame-dependent" not in taxonomy.codebook()

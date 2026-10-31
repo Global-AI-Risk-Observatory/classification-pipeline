@@ -34,7 +34,7 @@ from typing import Iterator
 from .taxonomy import SUBSTANTIVENESS, TAXONOMY_VERSION
 
 LABEL_FIELDS = (
-    "ai_reference", "frame", "roles", "risk_types", "mit_subdomains", "adoption_stage", "business_functions",
+    "ai_reference", "roles", "risk_types", "mit_subdomains", "adoption_stage", "business_functions",
     "governance_responses", "ai_kinds", "substantiveness", "disclosure_traits", "entities", "evidence",
     "confidence", "taxonomy_version", "needs_review", "disputed",
 )

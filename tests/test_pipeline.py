@@ -688,7 +688,6 @@ def label_fields(**overrides) -> dict:
     fields = {
         "passage_id": "d1:0-2",
         "ai_reference": "explicit",
-        "frame": "risk_factor",
         "roles": ["market_driver"],
         "ai_kinds": ["unspecified"],
         "disclosure_traits": ["hedging"],
@@ -726,36 +725,10 @@ def test_label_accepts_valid_labels():
 
     none = Label(passage_id="d1:0-2", ai_reference="none", confidence="high", note="keyword false positive")
     assert none.roles == [] and none.ai_kinds == [] and none.evidence == [] and none.disclosure_traits == []
-    assert none.frame is None
 
 
-@pytest.mark.parametrize("ai_reference", ["explicit"])
-def test_label_requires_frame_when_the_passage_is_about_ai(ai_reference):
-    assert Label(**label_fields(ai_reference=ai_reference, frame="market")).frame == "market"
-    with pytest.raises(ValidationError, match="frame is required"):
-        Label(**label_fields(ai_reference=ai_reference, frame=None))
-    fields = label_fields(ai_reference=ai_reference)
-    del fields["frame"]
-    with pytest.raises(ValidationError, match="frame is required"):
-        Label(**fields)
 
 
-def test_label_rejects_none_reference_with_frame():
-    with pytest.raises(ValidationError, match="must leave all other label fields empty"):
-        Label(passage_id="d1:0-2", ai_reference="none", frame="business", confidence="high")
-
-
-def test_label_rejects_unknown_frame():
-    with pytest.raises(ValidationError, match="frame"):
-        Label(**label_fields(frame="outlook"))
-
-
-def test_label_rejects_externalisation_in_market_frame():
-    ok = Label(**label_fields(frame="risk_factor", roles=["risk"], risk_types=["third_party"],
-                              disclosure_traits=["externalisation"]))
-    assert ok.disclosure_traits == ["externalisation"]
-    with pytest.raises(ValidationError, match="not applicable in frame 'market'"):
-        Label(**label_fields(frame="market", disclosure_traits=["externalisation"]))
 
 
 def test_label_accepts_empty_disclosure_traits_for_a_specific_statement():
@@ -860,7 +833,6 @@ def test_taxonomy_definitions_and_schema_list_the_same_values():
         return {v for v in _literal_values(Label.model_fields[field].annotation) if v is not None}
 
     assert allowed("ai_reference") == set(taxonomy.AI_REFERENCE)
-    assert allowed("frame") == set(taxonomy.FRAMES)
     assert allowed("roles") == set(taxonomy.ROLES)
     assert allowed("risk_types") == set(taxonomy.RISK_TYPES)
     assert allowed("mit_subdomains") == set(taxonomy.MIT_SUBDOMAINS)
@@ -880,7 +852,6 @@ def _literal_values(annotation) -> list:
 
 ALL_DEFINITIONS = (
     taxonomy.AI_REFERENCE,
-    taxonomy.FRAMES,
     taxonomy.ROLES,
     taxonomy.RISK_TYPES,
     taxonomy.MIT_SUBDOMAINS,
@@ -921,14 +892,6 @@ def test_codebook_renders_criteria_as_a_numbered_checklist():
     assert rendered in text
     assert text.count("Criteria (all required): (1) ") == sum(len(v) for v in ALL_DEFINITIONS)
 
-
-def test_codebook_puts_the_frame_step_before_the_roles():
-    text = taxonomy.codebook()
-
-    step = text.index("### Step 1: determine the frame (`frame`)")
-    assert text.index("(`ai_reference`)") < step < text.index("(`roles`)")
-    assert "frame-dependent" in text.split("(`roles`)")[1]  # the roles are read in the frame
-    assert "presupposed use" not in text  # the v0.3 rule that made "AI usage" in a remit adoption is gone
 
 
 # --------------------------------------------------------------------------
@@ -1171,24 +1134,6 @@ def test_adjudicate_majority_wins_on_single_valued_fields():
     assert (p2["disputed"], p2["needs_review"]) == ([], False)
 
 
-def test_adjudicate_majority_wins_on_frame():
-    final, agreement = adjudicated(
-        by_coder(
-            coded(P1, "a", frame="governance", roles=["governance"]),
-            coded(P1, "b", frame="governance", roles=["governance"]),
-            coded(P1, "c", frame="business", roles=["adoption"], adoption_stage="deployed"),
-            coded(P2, "a", frame="risk_factor"),
-            coded(P2, "b", frame="market"),
-            coded(P2, "c", frame="business"),
-        )
-    )
-
-    assert final[P1]["frame"] == "governance"
-    assert (final[P1]["disputed"], final[P1]["needs_review"]) == ([], False)
-    assert final[P2]["frame"] is None
-    assert (final[P2]["disputed"], final[P2]["needs_review"]) == (["frame"], True)
-    assert agreement["unanimous_share"]["frame"] == 0.0
-
 
 def test_adjudicate_majority_wins_per_value_on_multi_valued_fields():
     final, _ = adjudicated(three_coders())
@@ -1250,7 +1195,7 @@ def test_adjudicate_split_on_ai_reference_clears_the_label():
     # without an agreed ai_reference the voted label must not carry roles or risk types.
     assert p1["ai_reference"] is None
     assert (p1["roles"], p1["risk_types"], p1["disclosure_traits"]) == ([], [], [])
-    assert (p1["frame"], p1["adoption_stage"], p1["ai_kinds"]) == (None, None, [])
+    assert (p1["adoption_stage"], p1["ai_kinds"]) == (None, [])
     assert "ai_reference" in p1["disputed"]
     assert p1["needs_review"] is True
 
@@ -1288,7 +1233,7 @@ def test_adjudicate_majority_none_against_one_explicit_needs_no_review():
     p1 = final[P1]
 
     assert p1["ai_reference"] == "none"
-    assert (p1["frame"], p1["roles"], p1["ai_kinds"], p1["disclosure_traits"]) == (None, [], [], [])
+    assert (p1["roles"], p1["ai_kinds"], p1["disclosure_traits"]) == ([], [], [])
     assert p1["disputed"] == []
     assert p1["needs_review"] is False
     assert agreement["needs_review"] == []
@@ -1325,7 +1270,6 @@ def test_adjudicate_agreement_report():
     assert agreement["n_passages"] == 4
     assert agreement["unanimous_share"] == {
         "ai_reference": 1.0,  # P1 P2 P3 P4
-        "frame": 1.0,  # P1 P2 P3 P4 (the fixture's default)
         "adoption_stage": 0.75,  # P1 P3 P4 (all empty)
         "ai_kinds": 0.5,  # P1 P4
         "substantiveness": 1.0,  # P1 P2 P3 P4 (the fixture's default)
@@ -1363,12 +1307,12 @@ def passage(pid: str, section: str | None, mention: str = "direct") -> dict:
             "mention": mention, "matched": {"ai": ["artificial intelligence"]} if mention == "direct" else {"context": ["data center"]}}
 
 
-def final_label(pid: str, ai_reference: str | None, frame=None, roles=(), risk_types=(), adoption_stage=None,
+def final_label(pid: str, ai_reference: str | None, roles=(), risk_types=(), adoption_stage=None,
                 ai_kinds=(), disclosure_traits=(), entities=(), needs_review=False, substantiveness=None,
                 business_functions=(), governance_responses=(), mit_subdomains=()) -> dict:
     """A label in the shape classify.adjudicate writes to labels_final.jsonl."""
     return {
-        "passage_id": pid, "ai_reference": ai_reference, "frame": frame, "roles": list(roles),
+        "passage_id": pid, "ai_reference": ai_reference, "roles": list(roles),
         "risk_types": list(risk_types), "adoption_stage": adoption_stage, "ai_kinds": list(ai_kinds),
         "business_functions": list(business_functions), "governance_responses": list(governance_responses),
         "mit_subdomains": list(mit_subdomains) or (["other"] if "risk" in roles or "incident" in roles else []),
@@ -1387,17 +1331,17 @@ def test_summarise_counts_and_flags():
         passage("d1:30-31", "Item 7"),
     ]
     labels = [
-        final_label("d1:0-2", "explicit", frame="market", roles=["market_driver"], ai_kinds=["unspecified"],
+        final_label("d1:0-2", "explicit", roles=["market_driver"], ai_kinds=["unspecified"],
                     disclosure_traits=["vagueness"], entities=["Nvidia"]),
-        final_label("d1:5-7", "explicit", frame="risk_factor", roles=["market_driver", "risk"],
+        final_label("d1:5-7", "explicit", roles=["market_driver", "risk"],
                     risk_types=["market_demand"], ai_kinds=["unspecified"],
                     disclosure_traits=["boilerplate", "hedging"], entities=["Microsoft", "Nvidia"],
                     needs_review=True),
         final_label("d1:9-9", "none"),  # keyword false positive
-        final_label("d1:12-14", "explicit", frame="market", roles=["general"], ai_kinds=["generative_llm"]),  # no trait
+        final_label("d1:12-14", "explicit", roles=["general"], ai_kinds=["generative_llm"]),  # no trait
         final_label("d1:20-22", None, needs_review=True),  # coders split on ai_reference
         # d1:30-31 has no label yet; the next label belongs to another report.
-        final_label("d2:0-2", "explicit", frame="business", roles=["adoption"], adoption_stage="deployed",
+        final_label("d2:0-2", "explicit", roles=["adoption"], adoption_stage="deployed",
                     ai_kinds=["generative_llm"], disclosure_traits=["safe_harbour"]),
     ]
 
@@ -1412,7 +1356,7 @@ def test_summarise_counts_and_flags():
     assert s["n_false_candidates"] == 1
     assert s["n_needs_review"] == 2
     assert s["ai_reference"] == {"explicit": 3, "none": 1, "disputed": 1}
-    assert s["frames"] == {"market": 2, "risk_factor": 1}  # AI passages of this report only
+    assert "frames" not in s  # v0.10: no frame
     assert s["roles"] == {"market_driver": 2, "risk": 1, "general": 1}
     assert s["risk_types"] == {"market_demand": 1}
     assert s["adoption_stage"] == {}
@@ -1454,7 +1398,7 @@ def test_summarise_report_with_only_false_candidates_does_not_mention_ai():
     s = aggregate.summarise(REPORT, passages, labels)
 
     assert (s["n_candidates"], s["n_ai_passages"], s["n_false_candidates"]) == (2, 0, 2)
-    assert s["frames"] == {} and s["roles"] == {} and s["sections"] == {} and s["entities"] == []
+    assert s["roles"] == {} and s["sections"] == {} and s["entities"] == []
     assert (s["disclosure_traits"], s["trait_activation_rate"], s["trait_rates"]) == ({}, None, {})
     assert (s["mentions_ai"], s["ai_as_market_driver"], s["ai_adoption"], s["ai_as_risk"]) == (
         False, False, False, False,
@@ -1474,7 +1418,7 @@ def test_render_quotes_every_piece_of_evidence():
         {**passage("d1:5-5", "Item 7"), "section_title": None, "blocks": [5, 5], "text": "Backup site."},
     ]
     labels = [
-        {**final_label("d1:0-2", "explicit", frame="risk_factor", roles=["market_driver", "risk"],
+        {**final_label("d1:0-2", "explicit", roles=["market_driver", "risk"],
                        risk_types=["market_demand"], ai_kinds=["unspecified"],
                        disclosure_traits=["boilerplate", "hedging"]),
          "evidence": ["AI.", "Power."], "notes": ["a: two sentences"], "disputed": []},
@@ -1485,8 +1429,7 @@ def test_render_quotes_every_piece_of_evidence():
 
     assert "> AI.\n\n> Power.\n\n- Note (a: two sentences)\n" in text
     assert text.count("> ") == 2
-    assert "- Frames: risk_factor (1)\n" in text
-    assert "**AI reference: explicit | frame: risk_factor | roles: market_driver, risk" in text
+    assert "**AI reference: explicit | roles: market_driver, risk" in text
     assert "- Disclosure traits: boilerplate (1), hedging (1)\n" in text
     assert "- Trait activation rate: 1.0 (boilerplate (1.0), hedging (1.0), externalisation (0.0), " \
            "vagueness (0.0), safe_harbour (0.0))\n" in text
@@ -1668,11 +1611,11 @@ def test_not_stated_is_the_only_business_function_when_none_is_named():
 
 
 def test_governance_responses_are_given_if_and_only_if_governance_is_a_role():
-    label = Label(**label_fields(frame="governance", roles=["governance"],
+    label = Label(**label_fields(roles=["governance"],
                                  governance_responses=["oversight_structure", "policies_processes"]))
     assert label.governance_responses == ["oversight_structure", "policies_processes"]
     with pytest.raises(ValidationError, match="governance_responses must be given if and only if"):
-        Label(**label_fields(frame="governance", roles=["governance"], governance_responses=[]))
+        Label(**label_fields(roles=["governance"], governance_responses=[]))
     with pytest.raises(ValidationError, match="governance_responses must be given if and only if"):
         Label(**label_fields(roles=["market_driver"], governance_responses=["technical_controls"]))
 
@@ -1735,7 +1678,7 @@ def test_summarise_counts_the_new_fields_and_the_context_passages():
          "term_groups": {"data center": "compute_infrastructure", "truckload": "industry"}},
     ]
     labels = [
-        final_label("d1:0-2", "explicit", frame="business", roles=["adoption", "governance"],
+        final_label("d1:0-2", "explicit", roles=["adoption", "governance"],
                     adoption_stage="deployed", ai_kinds=["generative_llm"],
                     business_functions=["customer_service", "finance"], governance_responses=["policies_processes"]),
     ]
@@ -1859,9 +1802,9 @@ def test_adjudicate_votes_per_subdomain_and_clears_them_without_risk_or_incident
 def test_summarise_counts_the_subdomains():
     passages = [passage("d1:0-2", "Item 1A"), passage("d1:5-7", "Item 1A")]
     labels = [
-        final_label("d1:0-2", "explicit", frame="risk_factor", roles=["risk"], risk_types=["cybersecurity"],
+        final_label("d1:0-2", "explicit", roles=["risk"], risk_types=["cybersecurity"],
                     ai_kinds=["unspecified"], mit_subdomains=["ai_system_security_vulnerabilities_attacks", "fraud_scams_targeted_manipulation"]),
-        final_label("d1:5-7", "explicit", frame="risk_factor", roles=["risk"], risk_types=["workforce"],
+        final_label("d1:5-7", "explicit", roles=["risk"], risk_types=["workforce"],
                     ai_kinds=["unspecified"], mit_subdomains=["inequality_decline_employment_quality"]),
     ]
     s = aggregate.summarise(REPORT, passages, labels)
@@ -1870,3 +1813,27 @@ def test_summarise_counts_the_subdomains():
                                 [{**l, "evidence": [], "notes": [], "disputed": []} for l in labels], s)
     assert "- MIT subdomains: ai_system_security_vulnerabilities_attacks (1), fraud_scams_targeted_manipulation (1), inequality_decline_employment_quality (1)\n" in rendered and "| mit: ai_system_security_vulnerabilities_attacks, fraud_scams_targeted_manipulation" in rendered
 
+
+
+# --------------------------------------------------------------------------
+# taxonomy v0.10: no frame; its conditions sit on the roles
+# --------------------------------------------------------------------------
+
+
+def test_externalisation_needs_a_role_that_puts_the_ai_in_the_companys_hands_or_risks():
+    ok = Label(**label_fields(roles=["risk"], risk_types=["third_party"], disclosure_traits=["externalisation"]))
+    assert "externalisation" in ok.disclosure_traits
+    with pytest.raises(ValidationError, match="externalisation"):
+        Label(**label_fields(roles=["market_driver"], disclosure_traits=["externalisation"]))
+    with pytest.raises(ValidationError, match="externalisation"):
+        Label(**label_fields(roles=["general"], disclosure_traits=["externalisation"]))
+
+
+def test_v010_has_no_frame_and_the_roles_carry_its_conditions():
+    text = taxonomy.codebook()
+    assert "frame" not in Label.model_fields and not hasattr(taxonomy, "FRAMES")
+    assert "(`frame`)" not in text and "frame-dependent" not in text
+    roles = text.split("(`roles`)")[1].split("(`risk_types`)")[0]
+    assert "explicit demand, price, supply or investment statement" in roles  # market_driver without a market frame
+    assert "is `governance` only" in roles  # use asserted inside an oversight remit
+    assert "presupposed use" not in text  # the v0.3 rule that made "AI usage" in a remit adoption is gone
