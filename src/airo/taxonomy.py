@@ -954,6 +954,21 @@ SUBSTANTIVENESS: dict[str, Definition] = {
 }
 SUBSTANTIVENESS_LEVELS = {name: level for level, name in enumerate(SUBSTANTIVENESS, 1)}
 
+# v0.10: the scale's source as illustration in the codebook. Hope, Hu and Lu (2016, Review of Accounting
+# Studies 21: 1005-1045) define a risk disclosure as specific "if it contains information that cannot be
+# applied to other firms" and illustrate their five-point rating with constructed sentences (Appendix B),
+# given here verbatim with their score, least to most specific. On the 290-passage subset these five
+# sentences raised agreement with the raters from kappa 0.31 to 0.36; anchor passages from the corpus,
+# alone or next to them, did less (docs/changes.md, entry 21).
+SUBSTANTIVENESS_SOURCE_ILLUSTRATION: tuple[tuple[int, str], ...] = (
+    (1, "The firm\u2019s main business is facing fierce competition globally from other firms."),
+    (2, "The firm\u2019s main business in United States is facing fierce competition from other firms."),
+    (3, "Google\u2019s main business in United States is facing fierce competition from Microsoft."),
+    (4, "Google\u2019s main business in United States Google Search is facing fierce competition from Microsoft\u2019s Bing."),
+    (5, "Google\u2019s main business in United States Google Search, accounting 30% of the profit, is facing fierce "
+        "competition from Microsoft\u2019s Bing."),
+)
+
 Substantiveness = Literal["boilerplate", "generic", "specific", "detailed", "quantified"]
 Role = Literal["market_driver", "adoption", "offering", "risk", "governance", "incident", "general"]
 RiskType = Literal[
@@ -1210,6 +1225,11 @@ def codebook() -> str:
                 "count.",
                 SUBSTANTIVENESS,
             ),
+            "The scale follows Hope, Hu and Lu (2016): a disclosure is specific if it contains information that cannot "
+            "be applied to other firms. Their illustration, constructed sentences from least (1) to most (5) specific:",
+            "",
+            "\n".join(f"- ({score}) {sentence}" for score, sentence in SUBSTANTIVENESS_SOURCE_ILLUSTRATION),
+            "",
             "### Other fields",
             "- `passage_id`: copied from the task.",
             "- `entities`: organisations or AI products the passage names in connection with AI "

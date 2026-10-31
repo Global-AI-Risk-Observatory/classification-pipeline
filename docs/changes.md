@@ -1072,3 +1072,60 @@ definitions were written for this test and not iterated; a definition tuned on d
 of the gap, as could tuned particulars in entry 19. The raters' human-human kappa on five levels was
 0.36 (`us-2025h1_V3`), so 0.34 against the raters is close to what the raters give each other.
 
+---
+
+## 21. Examples in the substantiveness section: the source's sentences, not corpus anchors (v0.10)
+
+**Status: adopted on 2026-10-31 after round 5 of the subset test (entry 18); `src/airo/taxonomy.py`,
+`SUBSTANTIVENESS_SOURCE_ILLUSTRATION`.**
+
+**Before.** The substantiveness section of the codebook had the five levels with definition and
+criteria and no examples (through round 3). Round 4 (entry 20) showed that one anchor passage per
+level from the corpus raised agreement with the raters (0.31 to 0.34 on five levels) and that the
+scale's source, Hope, Hu and Lu (2016), had not been drawn on for examples.
+
+**Question.** Which examples serve the coder in this corpus: the source's own illustration of its
+specificity scale, anchor passages from the filings rated by the project's coders, or both?
+
+**Setup.** Hope, Hu and Lu (2016), Appendix B, illustrate their five-point rating for the students of
+their validity test with five constructed sentences on one firm, from "The firm's main business is
+facing fierce competition globally from other firms" (1) to "Google's main business in United States
+Google Search, accounting 30% of the profit, is facing fierce competition from Microsoft's Bing" (5)
+(copy of the paper: University of Toronto repository, `utoronto.scholaris.ca`, item
+c3089f3f-31dd-4e0a-8ddb-a9775d5ba33c). Two codebooks were built from v0.10: `hope_only`, the five
+levels followed by the source's definition of specific disclosure and the five sentences with their
+score; `both`, the same followed by the five corpus anchors of round 4 with their level. Round 3 (no
+examples) and round 4 `five_examples` (anchors only) are the other two variants. Same model and
+settings as round 3; the five anchor passages are left out of the scoring of every variant. Files in
+`gs://version10test/round5_examples_source/`.
+
+**Result.** 339 human ratings on 285 passages, Cohen's kappa (share identical):
+
+| Examples in the section | on five levels | mapped to three |
+|---|---|---|
+| none (round 3) | 0.31 (0.47) | 0.37 (0.54) |
+| corpus anchors, one per level (round 4) | 0.34 (0.50) | 0.38 (0.57) |
+| the source's five sentences | 0.36 (0.52) | 0.42 (0.60) |
+| both | 0.30 (0.46) | 0.35 (0.53) |
+
+Distributions on the passages about AI (`boilerplate` / `generic` / `specific` / `detailed` /
+`quantified`): none 0 / 97 / 81 / 59 / 1; anchors 2 / 113 / 46 / 78 / 0; source sentences 4 / 110 /
+68 / 58 / 1; both 3 / 94 / 77 / 67 / 1; the raters 50 / 125 / 59 / 28 / 5. Labelled 288 (source
+sentences) and 290 (both) of 290. Tokens 311,957 / 62,503 and 280,793 / 62,757 input / output.
+The other fields did not move.
+
+**Decision.** The source's five sentences go into the codebook, as the illustration of the scale
+under the five levels; the corpus anchors do not. The sentences are the best of the four variants on
+both readings and the only one whose gain over no examples (0.05 on five levels, 0.05 mapped) is
+consistent across kappa and share identical. Both together were worse than either alone and worse
+than none; one run cannot say why, and the two sets of examples pull in different directions (the
+anchors moved passages from `specific` to `detailed`, the sentences left `detailed` where it was).
+The anchors stay documented in entry 20 and in `analysis/v010_subset/substantiveness_3_vs_5.py`.
+
+**Not better / open.** Single runs on 285 passages; the differences between the variants are at the
+edge of what the sample resolves, and the ordering could change with another five anchors or a
+different trimming of the sentences. The source's sentences are about competition, not AI, and
+about specificity alone, while levels 4 and 5 of this taxonomy also ask for the company's measures;
+the sentences illustrate the direction of the scale, not its criteria. `boilerplate` is still given
+far less often by the model (4) than by the raters (50); the examples did not change that.
+

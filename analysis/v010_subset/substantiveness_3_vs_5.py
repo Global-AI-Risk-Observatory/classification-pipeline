@@ -1,6 +1,7 @@
 """Substantiveness: three levels against five, each with anchor examples in the codebook.
 
-Round 4 of the v0.10 subset test (2026-10-31; docs/changes.md entry 20). The 290 passages of the
+Rounds 4 and 5 of the v0.10 subset test (2026-10-31; docs/changes.md entries 20 and 21; round 5 reused `compare`
+on four example variants of the five-level codebook). The 290 passages of the
 us-2025h1_V3 human validation are labelled with three variants of the v0.10 codebook that differ
 only in the `substantiveness` section:
 

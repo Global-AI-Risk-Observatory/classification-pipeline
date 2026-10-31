@@ -171,7 +171,7 @@ def cmd_compare(args) -> None:
     }
     for spec in args.labels:
         name, path = spec.split("=", 1)
-        variants[name] = {l["passage_id"]: l for l in read_jsonl(path)}
+        variants[name] = {l["passage_id"]: l for l in read_jsonl(path) if l["passage_id"] in sample_ids}
     tables = {name: agreement(humans, labels) for name, labels in variants.items()}
     order = [u for u in tables["V3 model (v0.9)"]]
     for t in tables.values():

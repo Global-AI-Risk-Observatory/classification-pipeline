@@ -1837,3 +1837,13 @@ def test_v010_has_no_frame_and_the_roles_carry_its_conditions():
     assert "explicit demand, price, supply or investment statement" in roles  # market_driver without a market frame
     assert "is `governance` only" in roles  # use asserted inside an oversight remit
     assert "presupposed use" not in text  # the v0.3 rule that made "AI usage" in a remit adoption is gone
+
+
+def test_codebook_shows_the_substantiveness_scale_with_its_sources_illustration():
+    text = taxonomy.codebook()
+    section = text.split("(`substantiveness`)")[1].split("### Other fields")[0]
+    assert "Hope, Hu and Lu (2016)" in section
+    assert [score for score, _ in taxonomy.SUBSTANTIVENESS_SOURCE_ILLUSTRATION] == [1, 2, 3, 4, 5]
+    for score, sentence in taxonomy.SUBSTANTIVENESS_SOURCE_ILLUSTRATION:
+        assert f"- ({score}) {sentence}" in section
+    assert "Anchors" not in section  # corpus anchors were tested and did worse (entry 21)
