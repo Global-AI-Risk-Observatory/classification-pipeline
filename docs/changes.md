@@ -994,3 +994,81 @@ test script maps the raters' levels for the comparison. Before any re-run: tight
 and build rater sheets with columns for the particulars, since a count can only be validated
 against raters who tick the same particulars.
 
+---
+
+## 20. Substantiveness: three levels against five, with and without anchor examples (tested; five kept)
+
+**Status: tested on the 290-passage subset on 2026-10-31 (round 4 of the v0.10 subset test, entry 18);
+v0.10 keeps the five levels. Nothing in the code changed.**
+
+**Question.** The policy team asked for three substantiveness categories (generic, company-specific,
+detailed). Entry 19 records that deriving them from a count of particulars agreed worse with the
+raters than the five rated levels. Two questions remained: whether coding three levels directly does
+better than coding five, and whether anchor examples in the codebook improve either. Hope, Hu and Lu
+(2016) was to supply the examples; the paper has no example passages that could be found (the copies
+at core.ac.uk and SSRN are blocked to automated download; the published text is paywalled), so the
+anchors come from the test set itself.
+
+**Setup** (`analysis/v010_subset/substantiveness_3_vs_5.py`). Three variants of the v0.10 codebook
+that differ only in the substantiveness section: `five_examples` (the five levels, plus one anchor
+passage per level), `three_examples` (three levels written in the taxonomy's definition-and-criteria
+form with the content of the five levels joined two by two: `generic` = boilerplate and generic,
+`company_specific` = specific, `detailed` = detailed and quantified; plus the same anchors with their
+three-level value), `three_plain` (three levels, no examples). Round 3 is the reference for five
+levels without examples. The anchors are five passages of the test set on which the raters agreed
+(both raters where there were two): an audit-committee remit that lists AI (`boilerplate`), a
+sentence on regulators considering AI rules (`generic`), a named investee whose product checks
+documents with AI (`specific`), a bank's named AI fraud-detection tool next to its cyber controls
+(`detailed`), a named joint venture with dates and ownership shares (`quantified`). They are left out
+of the scoring of every variant, including the references, so no variant is scored on its own
+examples. The three-level variants are validated and requested with a three-level schema that the
+script substitutes in-process; `gemini-2.5-flash`, thinking off, 40 passages per request, as in
+round 3. Files in `gs://version10test/round4_substantiveness_3_vs_5/`.
+
+**Result.** 339 human ratings on 285 passages. Cohen's kappa, human against model, share of identical
+ratings in brackets:
+
+| Variant | on five levels | mapped to three |
+|---|---|---|
+| V3 model, v0.9 (five, no examples) | 0.29 (0.45) | 0.35 (0.53) |
+| five, no examples (round 3) | 0.31 (0.47) | 0.37 (0.54) |
+| five, with examples | 0.34 (0.50) | 0.38 (0.57) |
+| three, no examples | – | 0.24 (0.40) |
+| three, with examples | – | 0.32 (0.49) |
+
+"Mapped to three" maps the raters' and the model's five levels with the same rule the three-level
+codebook was written from. The other fields did not move (roles as a set 0.54 to 0.57, `ai_reference`
+0.79 to 0.84 across the four v0.10 variants). Distributions on the passages about AI: five with
+examples 113 `generic`, 46 `specific`, 78 `detailed`, 2 `boilerplate`; three without examples 42 /
+123 / 69 (`generic` / `company_specific` / `detailed`); three with examples 68 / 101 / 68; the raters
+50 `boilerplate`, 125 `generic`, 59 `specific`, 28 `detailed`, 5 `quantified`. Labelled: 287, 288 and
+287 of 290 (evidence quotes not verbatim). Tokens: 315,352 / 63,516, 266,227 / 63,246 and 297,236 /
+61,802 input / output.
+
+**Reading.**
+
+- Five levels agree better with the raters than three, with or without examples, and even when the
+  five are mapped to three afterwards: coding three directly gives 0.24 (0.32 with examples), coding
+  five and mapping gives 0.37 (0.38 with examples). Three coded levels put 53 % of the passages about
+  AI in the middle category without examples and 43 % with them; five coded levels, mapped, put 34 %
+  (no examples) and 19 % (with examples) there; the raters put 22 % there.
+- Examples help in both designs, and most where the levels are coarsest: three levels gain 0.08, five
+  levels gain 0.03 on five levels and 0.01 after mapping. With examples the five-level model moves
+  passages from `specific` to `generic` and `detailed`, towards the raters' distribution.
+- The gain from examples on five levels (0.31 to 0.34) is within what 285 passages resolve; the loss
+  from three levels (0.37 to 0.24) is not.
+
+**Decision.** Five levels stay. The three categories, where needed, are a mapping of the five at
+reporting time (boilerplate and generic to generic; specific to company-specific; detailed and
+quantified to detailed), which keeps the information and gives the better agreement. Anchor examples
+are worth adding to the codebook; before that, they have to come from outside the validation sample,
+so that the sample stays usable for scoring, and one per level is a minimum (the two coarsest levels
+showed the largest effect). Not done in this entry.
+
+**Not better / open.** The anchors were taken from the test set and excluded from the scoring, so
+the examples test is on 285 passages instead of 290 and the anchors are not independent of the
+raters. Five anchors are one codebook; another five could give other figures. The three-level
+definitions were written for this test and not iterated; a definition tuned on data could close part
+of the gap, as could tuned particulars in entry 19. The raters' human-human kappa on five levels was
+0.36 (`us-2025h1_V3`), so 0.34 against the raters is close to what the raters give each other.
+
