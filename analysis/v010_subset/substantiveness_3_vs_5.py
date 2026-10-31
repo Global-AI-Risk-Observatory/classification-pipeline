@@ -1,7 +1,8 @@
 """Substantiveness: three levels against five, each with anchor examples in the codebook.
 
-Rounds 4 and 5 of the v0.10 subset test (2026-10-31; docs/changes.md entries 20 and 21; round 5 reused `compare`
-on four example variants of the five-level codebook). The 290 passages of the
+Rounds 4 to 6 of the v0.10 subset test (2026-10-31; docs/changes.md entries 20 to 22; round 5 reused `compare`
+on four example variants of the five-level codebook, round 6 ran `five_hope` and `three_hope` with gemini-3.5-flash
+at its default thinking, `--thinking-budget -1 --location global`). The 290 passages of the
 us-2025h1_V3 human validation are labelled with three variants of the v0.10 codebook that differ
 only in the `substantiveness` section:
 
@@ -134,14 +135,26 @@ def three_level_table() -> str:
     )
 
 
+def source_block(base: str) -> str:
+    """The source's illustration as the current codebook renders it (entry 21), from 'The scale follows' to the end of the section."""
+    start, end = section_bounds(base)
+    section = base[start:end]
+    return section[section.index("The scale follows"):]
+
+
 def codebooks(anchors: dict[str, str]) -> dict[str, str]:
     base = tx.codebook()
     start, end = section_bounds(base)
-    five_section = base[start:end]
+    section = base[start:end]
+    plain_five = section[:section.index("The scale follows")]  # the five levels without the illustration
     return {
-        "five_examples": base[:start] + five_section + examples_block(anchors, 5) + "\n" + base[end:],
+        # rounds 4 and 5: corpus anchors, with the five levels as they were before entry 21 (no illustration)
+        "five_examples": base[:start] + plain_five + examples_block(anchors, 5) + "\n" + base[end:],
         "three_examples": base[:start] + three_level_table() + "\n" + examples_block(anchors, 3) + "\n" + base[end:],
         "three_plain": base[:start] + three_level_table() + "\n" + base[end:],
+        # round 6: the source's sentences (entry 21) under five and under three levels
+        "five_hope": base,
+        "three_hope": base[:start] + three_level_table() + "\n" + source_block(base) + base[end:],
     }
 
 
@@ -171,7 +184,7 @@ def three_level_schema():
 
 
 def run_variant(name: str, tasks: str, codebook: str, out: str, *, model: str, project: str, location: str,
-                batch_size: int) -> None:
+                batch_size: int, thinking_budget: Optional[int]) -> None:
     from airo import classify
     from airo.coders import gemini
 
@@ -181,16 +194,22 @@ def run_variant(name: str, tasks: str, codebook: str, out: str, *, model: str, p
         classify.Label, gemini.Label, gemini.Labels = label3, label3, labels3
         gemini.request_config.__defaults__ = (None, gemini.MAX_OUTPUT_TOKENS, label3)
     try:
-        gemini.main(["--tasks", tasks, "--codebook", codebook, "--out", out, "--model", model,
-                     "--thinking-budget", "0", "--batch-size", str(batch_size), "--project", project, "--location", location])
+        argv = ["--tasks", tasks, "--codebook", codebook, "--out", out, "--model", model,
+                "--batch-size", str(batch_size), "--project", project, "--location", location]
+        if thinking_budget is not None:
+            argv += ["--thinking-budget", str(thinking_budget)]
+        gemini.main(argv)
     finally:
         classify.Label, gemini.Label, gemini.Labels, gemini.request_config.__defaults__ = original
 
 
 def cmd_run(args) -> None:
+    if args.thinking_budget is not None and args.thinking_budget < 0:
+        args.thinking_budget = None
     for name in args.variants:
         run_variant(name, args.tasks, str(Path(args.codebooks) / f"codebook_{name}.md"), str(Path(args.out) / f"{name}.jsonl"),
-                    model=args.model, project=args.project, location=args.location, batch_size=args.batch_size)
+                    model=args.model, project=args.project, location=args.location, batch_size=args.batch_size,
+                    thinking_budget=args.thinking_budget)
 
 
 # --------------------------------------------------------------------------
@@ -276,6 +295,7 @@ def main(argv=None) -> None:
     r.add_argument("--project", required=True)
     r.add_argument("--location", default="us-central1")
     r.add_argument("--batch-size", type=int, default=40)
+    r.add_argument("--thinking-budget", type=int, default=0, help="0 = thinking off (default); omit thinking with -1 to use the model's default")
     r.set_defaults(func=cmd_run)
     m = sub.add_parser("compare")
     m.add_argument("--run", required=True)

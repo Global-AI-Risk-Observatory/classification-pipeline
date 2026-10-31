@@ -1129,3 +1129,122 @@ about specificity alone, while levels 4 and 5 of this taxonomy also ask for the 
 the sentences illustrate the direction of the scale, not its criteria. `boilerplate` is still given
 far less often by the model (4) than by the raters (50); the examples did not change that.
 
+---
+
+## 22. Substantiveness, three against five levels, with a reasoning model (tested; nothing changed)
+
+**Status: round 6 of the subset test (entry 18), 2026-10-31. No change to the code; the figures bear
+on the choice of model for a corpus run, which is open.**
+
+**Question.** Entries 20 and 21 compared three and five levels and the examples with
+`gemini-2.5-flash`, thinking off, the model of every corpus run so far. Does a reasoning model change
+the picture, and does it change the order of three against five?
+
+**Setup** (`analysis/v010_subset/substantiveness_3_vs_5.py`, variants `five_hope` and `three_hope`).
+Two codebooks: v0.10 as in the repository (five levels, the source's five sentences, entry 21) and the
+same with the three levels of entry 20 in place of the five, the sentences kept. `gemini-3.5-flash` at
+the model's default thinking, endpoint `global`, 40 passages per request. Scored on the 285 passages
+of rounds 4 and 5 so the columns compare. Files in `gs://version10test/round6_gemini35_reasoning/`.
+
+**Result.** Cohen's kappa against the raters (share identical):
+
+| Codebook, model | on five levels | mapped to three |
+|---|---|---|
+| 5 levels, no examples, 2.5-flash (round 3) | 0.31 (0.47) | 0.37 (0.54) |
+| 5 levels + source sentences, 2.5-flash (round 5) | 0.36 (0.52) | 0.42 (0.60) |
+| 5 levels + source sentences, 3.5-flash reasoning | 0.36 (0.51) | 0.49 (0.67) |
+| 3 levels, no examples, 2.5-flash (round 4) | – | 0.24 (0.40) |
+| 3 levels + corpus anchors, 2.5-flash (round 4) | – | 0.32 (0.49) |
+| 3 levels + source sentences, 3.5-flash reasoning | – | 0.49 (0.67) |
+
+Distributions of the reasoning model on the passages about AI: five levels 49 `boilerplate`, 95
+`generic`, 72 `specific`, 13 `detailed`, 7 `quantified` (the raters: 50 / 125 / 59 / 28 / 5); three
+levels 145 `generic`, 62 `company_specific`, 28 `detailed`. The other fields did not move (roles as a
+set 0.54 and 0.55). 290 of 290 labelled in both runs. Tokens: 1,812,696 input / 85,462 output /
+397,504 thinking (five levels, 10 passages asked again, 617 s) and 2,235,103 / 100,359 / 457,804
+(three levels, 6 asked again, 594 s): six to seven times the input of the 2.5-flash runs on the same
+tasks, which the re-asks alone do not explain; the usage is summed over attempts, and the cause was
+not traced in this round.
+
+**Reading.**
+
+- With reasoning, three and five levels come out level once both are read on three levels (0.49
+  each). The reasoning model closes the gap that three coded levels showed with the cheaper model
+  (0.24 to 0.32 against 0.37 to 0.42 for five mapped).
+- On five levels the reasoning model agrees with the raters no better than the cheaper model with
+  the same codebook (0.36 both), but its distribution is the raters': it gives `boilerplate` 49
+  times where the cheaper model gave it 4 times and the raters 50. What it does differently sits at
+  the top of the scale: 13 `detailed` against the raters' 28, and the five-level kappa does not move.
+- Five levels still lose nothing against three: coding five and mapping gives the same 0.49 as coding
+  three, and keeps the five.
+
+**Decision.** None in this entry. The codebook stays at five levels with the source's sentences.
+Whether the corpus is run with the reasoning model is a cost question: on this subset its input
+tokens were six to seven times those of `gemini-2.5-flash`, plus thinking tokens, for a gain of 0.07
+on the three-level reading of `substantiveness` and none on its five-level reading or on the roles
+(entries 18 and 19 found the same for the roles call).
+
+**Not better / open.** Single runs; the input-token volume of the reasoning runs needs tracing
+before a cost per passage can be stated (`asked_again` accounts for about 130,000 of the extra
+1,500,000 input tokens). The three-level codebook was written for entry 20 and not iterated. The
+reasoning model's distribution matching the raters' while its kappa on five levels does not improve
+says the remaining disagreement is on individual passages, not on the use of the scale.
+
+---
+
+## To be decided
+
+Open decisions after the v0.10 subset tests of 2026-10-31 (entries 18 to 22), with the figures they
+rest on. Every figure is Cohen's kappa against the seven raters of `us-2025h1_V3` on the same 285
+passages (the five anchor passages of round 4 left out); "mapped to three" reads the raters' and the
+model's five levels as `generic` (boilerplate, generic), `company_specific` (specific), `detailed`
+(detailed, quantified). Files of every round in `gs://version10test/`.
+
+### Substantiveness: all variants tested
+
+| Codebook | Model | on five levels | mapped to three |
+|---|---|---|---|
+| 5 levels, no examples (round 3) | gemini-2.5-flash, thinking off | 0.31 | 0.37 |
+| 5 levels + corpus anchors (round 4) | gemini-2.5-flash, thinking off | 0.34 | 0.38 |
+| 5 levels + source sentences, the codebook as it stands (round 5) | gemini-2.5-flash, thinking off | 0.36 | 0.42 |
+| 5 levels + source sentences (round 6) | gemini-3.5-flash, default thinking | 0.36 | 0.49 |
+| 3 levels, no examples (round 4) | gemini-2.5-flash, thinking off | – | 0.24 |
+| 3 levels + corpus anchors (round 4) | gemini-2.5-flash, thinking off | – | 0.32 |
+| 3 levels + source sentences (round 6) | gemini-3.5-flash, default thinking | – | 0.49 |
+| V3 model, v0.9, for reference | gemini-2.5-flash, thinking off | 0.29 | 0.35 |
+
+The raters' human-human kappa on five levels is 0.36. Distributions on the passages about AI, five
+levels (`boilerplate` / `generic` / `specific` / `detailed` / `quantified`): the raters 50 / 125 / 59 /
+28 / 5; 2.5-flash with the current codebook 4 / 110 / 68 / 58 / 1; 3.5-flash with the current
+codebook 49 / 95 / 72 / 13 / 7.
+
+What the figures settle: five levels are kept (they never do worse than three, and mapping them to
+three gives the same or a better figure than coding three); the source's sentences stay in the
+codebook (best of the example variants with the cheaper model). What the source settles: Hope, Hu and
+Lu (2016) have no three categories; their measure is a count validated against a five-point rating.
+The three categories are the policy team's, and are served by the mapping at reporting time.
+
+### Decisions open
+
+1. **Model for the corpus run: `gemini-2.5-flash` without thinking, or `gemini-3.5-flash` with
+   reasoning.** Reasoning gains 0.07 on the three-level reading of `substantiveness` (0.42 to 0.49),
+   nothing on its five-level reading (0.36 both) and nothing on the roles (entries 18 and 19: 0.56
+   against 0.56 for the roles as a set). It brings the distribution of `boilerplate` to the raters'
+   (49 against 50; the cheaper model gives 4). On the subset its input tokens were six to seven times
+   the cheaper model's (1.8 and 2.2 million against about 0.3 million for 290 passages) plus 0.4 to
+   0.5 million thinking tokens; `asked_again` explains about 130,000 of the difference and the rest
+   is not traced. `cloud/config.env` still carries v0.9's settings. To decide: which model, and if the
+   reasoning model, after the token volume is traced and a cost per passage is known.
+2. **Whether the three categories are reported at all, and how.** The mapping of the five levels is
+   the only route the figures support. A column `substantiveness_3` in the export (the five levels
+   stay) is a small change, not made. To decide: whether the policy team's view needs the column, or
+   whether a note in the dataset README that the three categories are a mapping of the five is enough.
+3. **A corpus run under v0.10.** Everything above is from 290 passages labelled under v0.9's sample
+   design; the subset cannot say how the v0.10 codebook distributes over 26,884 tasks or what it costs.
+   To decide: run a corpus pass under v0.10 (which model, which filing types), and whether the human
+   validation is repeated under v0.10 (rater sheets without `frame`, the five levels unchanged, so the
+   V3 sheets' design carries over).
+4. **The two designs not adopted** (entry 19: two calls; substantiveness as a count). Both have a
+   path back (tightened criteria for `mechanism` and `named_function`; a measured gain from a model
+   only a roles call can afford). To decide: whether either is pursued, or closed.
+
