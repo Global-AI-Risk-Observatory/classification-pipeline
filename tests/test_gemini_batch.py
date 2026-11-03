@@ -60,6 +60,15 @@ def test_vertex_schema_inlines_refs_marks_optionals_nullable_and_uses_upper_case
     assert "passage_id" in label["required"] and "confidence" in label["required"]
 
 
+def test_vertex_schema_keeps_the_field_order_of_the_label_as_online_requests_do():
+    from google.genai import _transformers
+    label = gemini_batch.vertex_schema(gemini.Labels)["properties"]["labels"]["items"]
+    assert label["propertyOrdering"] == list(gemini.Label.model_fields)
+    assert label["propertyOrdering"].index("roles") < label["propertyOrdering"].index("adoption_stage")
+    online = _transformers.t_schema(None, gemini.Label)
+    assert online.property_ordering == label["propertyOrdering"]
+
+
 def test_vertex_schema_rejects_a_union_it_cannot_express():
     with pytest.raises(ValueError):
         gemini_batch.vertex_schema({"anyOf": [{"type": "string"}, {"type": "integer"}]})

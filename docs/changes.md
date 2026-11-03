@@ -1399,6 +1399,35 @@ one-against-40 comparison showed that labels depend on the grouping of the reque
 that. It takes `tasks.jsonl` as it stands, so the copies of entry 26 are not sent. Batch labels have not been compared
 with online labels on the same passages.
 
+## 29. Batch mode: the field order of the codebook
+
+**Status: fixed on 2026-11-03. Run `us-2026_V4` used the batch mode before this fix; it is replaced by `us-2026_V5`.**
+
+**Fault.** `vertex_schema` left out `propertyOrdering`, which the SDK sets itself for online requests. Vertex AI then
+answered with the required fields first and the rest alphabetically, so `adoption_stage` came before `roles` and
+`roles` and `substantiveness` last. Entry 28's statement that the requests are the same as online was wrong in this.
+
+**Effect.** On the 290 validation passages, five raters, 284 passages labelled by all three variants (online = round 12;
+`gs://version10test/round13_batch_mode/`, `round14_batch_ordered/`):
+
+| | Batch before | Batch fixed | Online |
+|---|---|---|---|
+| rejected in the first pass | 44 of 290 | 4 of 290 | not comparable, asked again at once |
+| without a label after the second pass | 6 | 0 | 0 |
+| `roles:adoption` | 0.56 | 0.63 | 0.67 |
+| `disclosure_traits:hedging` | 0.43 | 0.53 | 0.55 |
+| `roles:risk` | 0.83 | 0.87 | 0.83 |
+| `risk_types` (exact set) | 0.59 | 0.62 | 0.60 |
+| `governance_responses` (exact set) | 0.42 | 0.39 | 0.49 |
+| `substantiveness` | 0.36 | 0.35 | 0.38 |
+
+Labels identical to online: `roles` 77% before and 91% fixed, `substantiveness` 74% and 88%. Single runs on one
+sample; `governance_responses` stays lower than online, and whether that is more than variation is not known. In
+`us-2026_V4`, 8,502 of 39,833 tasks were rejected in the first pass and 2,859 of 47,037 chunks stayed without a label.
+
+**Open.** `collect` counts every task not in a repair job as deferred, so `<out>.deferred.jsonl` of a second pass is
+too long; the labels are not affected.
+
 ## To be decided
 
 Open decisions after the v0.10 subset tests of 2026-10-31 (entries 18 to 22), with the figures they

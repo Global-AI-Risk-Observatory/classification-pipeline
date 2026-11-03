@@ -72,8 +72,8 @@ def vertex_schema(model: type[BaseModel] | dict) -> dict:
 
     pydantic's JSON schema is rewritten: `$ref`s are inlined, `anyOf [X, null]` becomes X with
     `nullable`, a `const` becomes a one-value `enum`, types are upper case, and `title` and
-    `default` are dropped. Supported keys only: type, enum, items, properties, required,
-    nullable, description, minItems, maxItems.
+    `default` are dropped. Supported keys only: type, enum, items, properties, propertyOrdering,
+    required, nullable, description, minItems, maxItems.
     """
     schema = model if isinstance(model, dict) else model.model_json_schema()
     defs = schema.get("$defs", {})
@@ -102,6 +102,10 @@ def vertex_schema(model: type[BaseModel] | dict) -> dict:
         if "properties" in node:
             out["properties"] = {k: convert(v) for k, v in node["properties"].items()}
             out["required"] = list(node.get("required", []))
+            # The order of the codebook. Without it Vertex AI fills the required fields first and the
+            # rest alphabetically; the SDK sets this itself for online requests.
+            if len(out["properties"]) > 1:
+                out["propertyOrdering"] = list(out["properties"])
         return out
 
     return convert({k: v for k, v in schema.items() if k != "$defs"})
