@@ -747,7 +747,8 @@ was judged, and four criteria read in that frame: `adoption` in frame `governanc
 outside the remit; `governance` was the primary role in its frame; `market_driver` was the primary
 role in frame `market` and needed an explicit demand statement elsewhere; `externalisation` was
 never set in frame `market`. On `us-2025h1_V3` the raters agreed with each other on `frame` at
-kappa 0.72 and with the model at 0.68 (`analysis/human_validation/results/us-2025h1_V3/agreement.md`).
+kappa 0.72 and with the model at 0.68 (`analysis/human_validation/results/us-2025h1_V3/agreement.md`; that
+file was removed because it refers to taxonomy v0.9, see entry 25).
 
 **New** (`src/airo/taxonomy.py`, `classify.py`, `aggregate.py`, `export.py`; team decision of
 2026-10-31, J. Pilcher and D. Kozachek). The field is gone from the schema, the codebook, the
@@ -1274,6 +1275,26 @@ with these categories was found (the search was not exhaustive).
 
 Before citing in the article, the sources without a full-text check are to be read.
 
+## 25. Local files of taxonomy v0.9 removed; `cloud/config.env` set for v0.10
+
+**Status: done on 2026-11-03.**
+
+**Removed**, because the data they describe refer to taxonomy v0.9. None of them was in the repository;
+they lay in working copies only:
+- `docs/us-2025h1_V3-dataset.md`
+- `analysis/human_validation/results/us-2025h1_V3/agreement.md`, `agreement.json` and `activity.md`
+- `cloud/us-2025h1_V2.job.json`
+
+`docs/pipeline_flowchart.py` and `docs/pipeline_flowchart_technical.py` still name
+`docs/us-2025h1_V3-dataset.md`. The committed files of earlier versions stay for comparison
+(`docs/us-2025h1_V2-dataset.md`, `docs/us-2025h1-dataset.md`, `docs/taxonomy-v0.9-examples.*`), and so do
+the earlier runs in the buckets.
+
+**`cloud/config.env`.** It gains `TAXONOMY_VERSION=0.10` and `GEMINI_THINKING_BUDGET=0`; `GEMINI_MODEL`
+changes from `gemini-3.8-flash` to `gemini-2.5-flash`, the model of the v0.10 tests in rounds 11 and 12.
+The file is documentation: no code reads it, and `TAXONOMY_VERSION` in `src/airo/taxonomy.py` stays what
+labels carry. The model for the corpus run remains open (below, decision 1).
+
 ## To be decided
 
 Open decisions after the v0.10 subset tests of 2026-10-31 (entries 18 to 22), with the figures they
@@ -1315,7 +1336,8 @@ The three categories are the policy team's, and are served by the mapping at rep
    (49 against 50; the cheaper model gives 4). On the subset its input tokens were six to seven times
    the cheaper model's (1.8 and 2.2 million against about 0.3 million for 290 passages) plus 0.4 to
    0.5 million thinking tokens; `asked_again` explains about 130,000 of the difference and the rest
-   is not traced. `cloud/config.env` still carries v0.9's settings. To decide: which model, and if the
+   is not traced. `cloud/config.env` names `gemini-2.5-flash` without thinking since entry 25, the settings the
+   v0.10 codebook was tested with. To decide: which model, and if the
    reasoning model, after the token volume is traced and a cost per passage is known.
 2. **Whether the three categories are reported at all, and how.** The mapping of the five levels is
    the only route the figures support. A column `substantiveness_3` in the export (the five levels
