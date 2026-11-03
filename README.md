@@ -163,9 +163,13 @@ tasks by `passage_id` and runs each through the acceptance check. Nothing is ask
 rejected or missing label and the tasks of a failed request go to `<out>.deferred.jsonl`, for
 `airo.coders.gemini --repairs-from` (online, single re-asks) or `submit --repairs-from` (a second batch job).
 `<out>.run.json` has the synchronous coder's fields plus `mode`, `job` and `job_state`; give the batch prices
-with `--price-input` and `--price-output`. Prompt, codebook, schema, grouping and model are the same as online,
-so batch labels are comparable with the online runs. The live path has not been exercised yet; the unit tests
-use a fake client and a directory in place of the bucket.
+with `--price-input` and `--price-output`. Prompt, codebook, schema with its field order, grouping and model are
+the same as online. The live path is exercised: runs `us-2026_V4` and `us-2026_V5` and two tests on the 290 validation
+passages (`docs/changes.md`, entries 28 and 29). `us-2026_V4` predates the fix of the field order and is replaced by
+`us-2026_V5`. Batch and online labels have been compared on those 290 passages only, in one run each. A second pass
+is a separate job: its `<out>.deferred.jsonl` also lists every task that was not in that job, so read the count of
+what stays unlabelled from the labels, not from that file. The unit tests use a fake client and a directory in place
+of the bucket.
 
 ## Google Cloud
 
@@ -188,11 +192,15 @@ Set up and pending:
 - Done: project, billing, IAM for the team, buckets, service accounts, APIs, Gemini access, GitHub
   connection, build trigger; builds on every push to `main`; `fetch` of the 7,794 filings of 2025 H1 into
   the raw bucket; the runs `us-2025h1` (UK pipeline), `us-2025h1_V2` (taxonomy v0.5) and `us-2025h1_V3`
-  (taxonomy v0.9) in the pipeline-data bucket.
-- Not done: a Cloud Batch run. `us-2025h1_V2` and `us-2025h1_V3` were run on a workstation with the
-  buckets as source and target. Three Batch job attempts on 2026-10-13 failed before the container's
-  script started; the cause is not established (probably the mount path `/mnt/out`, which lies outside
-  `/mnt/disks` on the Batch VM image). Also not done: the BigQuery tables for labels and summaries.
+  (taxonomy v0.9) in the pipeline-data bucket; the filings by release year in
+  `gs://airo-filings-raw/airo-filings-<year>/` (2020 to 2026, same layout); Cloud Batch runs with the buckets
+  mounted under `/mnt/disks`: `us-2026_V4` and `us-2026_V5` (taxonomy v0.10, the 8,294 filings of 2026).
+- Not done: the other years under taxonomy v0.10; the BigQuery tables for labels and summaries. The Batch job
+  definitions are not in this repository, and a job writes nothing to Cloud Logging, because the pipeline's
+  service account has no logging role; progress shows in the run's `checkpoint/` folder. `us-2025h1_V2` and
+  `us-2025h1_V3` were run on a workstation with the buckets as source and target. Three Batch attempts on
+  2026-10-13 failed with the mount path `/mnt/out`; the jobs under `/mnt/disks` run, which fits that cause but
+  does not prove it.
 
 The data provider's API key is not stored in the cloud (Secret Manager holds no secret): the provider
 counts requests per key, so every team member runs `fetch` from their own machine with their own key, and
@@ -200,8 +208,8 @@ the filings go straight into the raw bucket. All five team members can write to 
 their project roles.
 
 The container runs `python -m airo <command>` with `AIRO_GLOSSARIES=/app/glossaries` and includes
-`google-cloud-storage`. A Batch job mounts the two buckets and calls `run` (on the raw bucket's
-`markdown/` and `manifest/`), `tasks`, the Gemini coder, `accept`, `adjudicate`, `aggregate` in that order.
+`google-cloud-storage`. A Batch job mounts the two buckets and calls `run` (on a year folder's `markdown/` and
+`manifest/`), `tasks`, the Gemini coder in batch mode, `accept`, `adjudicate`, `aggregate`, `export` in that order.
 
 ## Design
 
@@ -259,6 +267,10 @@ The container runs `python -m airo <command>` with `AIRO_GLOSSARIES=/app/glossar
   as the same if they differ at most in whitespace and in quotation marks, apostrophes or dashes. `adjudicate`
   gives each copy the label of its original, marked `copied_from`, so every filing keeps its counts and a count
   per passage can leave the copies out. `agreement.json` covers the labelled tasks only.
+- **One main report per company and release year.** `export` marks it with `primary_filing` in the manifest and in
+  `filing_metrics.jsonl` (the first form of `_FORM_ORDER`, then more chunks, then the lower id). No filing is removed.
+  Chunks, manifest and metrics carry `release_year` (from `released`, else `filing_date`), because the fiscal year is
+  missing on about 40% of ARS. `results/duplicate_check.json` reports repeated and near-duplicate chunks per run.
 - **Every accepted label is validated.** `accept` checks each line against the schema in `taxonomy.py`,
   rejects unknown and duplicate passage ids and evidence that is not a verbatim quote from the passage
   (whitespace differences are tolerated), and reports passages without a label. Accepted labels and
@@ -285,7 +297,9 @@ inside an oversight, review or control remit is `governance` and not `adoption`;
 only with a role that puts the AI in the company's own hands or risks. On the 290 passages of the
 `us-2025h1_V3` human validation, agreement with the raters on the roles as a set rose from kappa 0.50 to
 0.55 (`docs/changes.md`, entry 18, with the test rounds that led to it; entry 19 records the two-call
-design and the count-based substantiveness that were tested in the same rounds and not adopted).
+design and the count-based substantiveness that were tested in the same rounds and not adopted). Also within
+v0.10, the disclosure traits lost `safe_harbour`, three of them have loosened criteria, and each has one
+constructed example for and one against (entries 23 and 24).
 
 | Field | Allowed values | Rule |
 |---|---|---|
@@ -315,9 +329,12 @@ Sources of the disclosure traits (`DISCLOSURE_TRAIT_SOURCES` in `taxonomy.py`): 
   have been exercised on the 2025 H1 corpus; the review so far is the recall check of each run and the
   2026-10-13 sample of 3,321 context passages (`docs/changes.md`, entries 12 and 13). A review per
   industry against real reports is still open.
-- No human-labelled US passage exists yet: every label so far is the model's. The three-coder runs of
-  the case study were agents handing in label files. Agreement with people is the open item 3 of the
-  research plan.
+- Agreement with people is measured on 290 passages of `us-2025h1_V3` only (348 ratings by seven raters; figures
+  from entry 24 on use five of them). The raters coded under taxonomy v0.9, the criteria were revised on the
+  same sample, so the figures are a calibration and not a held-out test, and `substantiveness` and
+  `disclosure_traits` stay well below the target of kappa 0.61. No run after 2025 H1 has been compared with raters.
+- The same text can get different labels: on identical chunks in `us-2025h1_V3`, `roles` agree in 77% of pairs and
+  `substantiveness` in 66% (`docs/changes.md`, entry 27, taxonomy v0.9).
 - Input is the provider's Markdown (or HTML / inline XBRL). There is no PDF reader. A Markdown filing has no
   XBRL facts: its metadata comes from the manifest. The filer category (large accelerated filer, ...) is in
   neither the provider's data nor read from the cover page, so it is empty. A manifest field without a value
@@ -325,9 +342,10 @@ Sources of the disclosure traits (`DISCLOSURE_TRAIT_SOURCES` in `taxonomy.py`): 
 - `companies/us.jsonl` is written once and not refreshed: a ticker or exchange the provider adds later to a
   company in the list is not picked up until the file is deleted from the bucket.
 - `fetch` recognises a filing by the provider's filing id. The same report under two ids (a 10-K and the ARS
-  that reprints it) is stored twice; `run` merges only files whose extracted text is identical.
-- `run` parallelises over the cores of one machine; distribution over several machines comes with
-  the Cloud Batch job definition, which is not written yet.
+  that reprints it) is stored twice; `run` merges only files whose extracted text is identical, and `tasks` only
+  chunks that are the same within a company and release year. Near duplicates stay: in `us-2026_V4`, 35.7% of the
+  tasks have a partner with at least 90% of the words in common.
+- `run` parallelises over the cores of one machine; there is no distribution over several machines.
   Two `run` commands on the same `--data` directory at the same time are not supported: each reads the
   index once at start and removes the other's temporary directories. The skip is by file hash, so a file
   is re-processed only if its bytes change or `--retry-failed` is given; a changed glossary or parser
