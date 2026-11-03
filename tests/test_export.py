@@ -65,11 +65,11 @@ def test_export_writes_the_bucket_layout(tmp_path):
     out = tmp_path / "us-test_V3"
     counts = export.export(data, out, run_id="us-test_V3", manifest=manifest, model="gemini-2.5-flash", log=lambda *_: None)
 
-    assert counts == {"documents": 2, "chunks": 2, "labels": 2, "explicit": 2, "context": 2, "filings": 3}
+    assert counts == {"documents": 2, "chunks": 2, "labels": 2, "explicit": 2, "context": 2, "filings": 3, "primary_filings": 2}
     chunks = [json.loads(l) for l in (out / "chunks.jsonl").read_text().splitlines()]
     assert [c["chunk_id"] for c in chunks] == ["d1:0-2", "d1:5-6"]
     assert chunks[0] == {"chunk_id": "d1:0-2", "document_id": "11", "company_id": "0000000001", "company_name": "ACME",
-                         "report_year": 2024, "report_sections": ["Item 1A Risk Factors"], "heading": None,
+                         "report_year": 2024, "release_year": "2025", "report_sections": ["Item 1A Risk Factors"], "heading": None,
                          "chunk_text": "We use artificial intelligence in underwriting.", "chunk_word_len": 6,
                          "matched_keywords": ["artificial intelligence"], "blocks": [0, 2]}
     context = [json.loads(l) for l in (out / "context_passages.jsonl").read_text().splitlines()]
@@ -123,7 +123,8 @@ def test_export_without_manifest_uses_the_document_record(tmp_path):
     rows = json.loads((tmp_path / "out" / "documents_manifest.json").read_text())["documents"]
     assert counts["labels"] == 0 and counts["chunks"] == 1
     assert rows == [{"document_id": "99", "company_id": "0000000001", "company_name": "ACME", "year": 2024, "market_segment": "NYSE",
-                     "filing_date": "2025-03-04", "form": "10-K", "isic_division": "07", "isic_class": "0721", "ticker": "ACM", "text_id": "d9"}]
+                     "filing_date": "2025-03-04", "release_year": "2025", "form": "10-K", "isic_division": "07", "isic_class": "0721", "ticker": "ACM", "text_id": "d9",
+                     "primary_filing": True}]
     monthly = json.loads((tmp_path / "out" / "results" / "us-filing-metrics.json").read_text())
     assert monthly["invalidRows"] == 1 and monthly["months"][0]["aiMentionShare"] == 0.0
 

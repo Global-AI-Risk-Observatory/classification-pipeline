@@ -17,7 +17,7 @@ from typing import get_args
 import pytest
 from pydantic import ValidationError
 
-from airo import aggregate, classify, cli, glossary, ingest, retrieve, taxonomy
+from airo import aggregate, classify, cli, export, glossary, ingest, retrieve, taxonomy
 from airo.taxonomy import Label
 
 # --------------------------------------------------------------------------
@@ -1847,3 +1847,161 @@ def test_codebook_shows_the_substantiveness_scale_with_its_sources_illustration(
     for score, sentence in taxonomy.SUBSTANTIVENESS_SOURCE_ILLUSTRATION:
         assert f"- ({score}) {sentence}" in section
     assert "Anchors" not in section  # corpus anchors were tested and did worse (entry 21)
+
+
+def _task(pid, text, form="10-K"):
+    return {"passage_id": pid, "form": form, "text": text}
+
+
+def _doc(cik="1", day="2025-03-01"):
+    return {"cik": cik, "filing_date": day}
+
+
+def test_the_same_text_of_a_company_and_filing_year_is_one_task_and_the_10k_keeps_it():
+    text = "We use AI in claims."
+    tasks, copies = classify.collapse_copies([
+        (_task("ars:1-1", text, "ARS"), _doc()),
+        (_task("tenk:1-1", "We  use AI\nin claims.", "10-K"), _doc()),
+    ])
+    assert [t["passage_id"] for t in tasks] == ["tenk:1-1"]
+    assert copies == [{"passage_id": "ars:1-1", "copy_of": "tenk:1-1"}]
+
+
+def test_typographic_marks_do_not_separate_copies_but_other_differences_do():
+    a, b, c = "The \u201cAI\u201d model.", 'The "AI" model.', "The AI model."
+    tasks, copies = classify.collapse_copies([(_task("a:1-1", a), _doc()), (_task("b:1-1", b), _doc()), (_task("c:1-1", c), _doc())])
+    assert [t["passage_id"] for t in tasks] == ["a:1-1", "c:1-1"]
+    assert copies == [{"passage_id": "b:1-1", "copy_of": "a:1-1"}]
+
+
+@pytest.mark.parametrize("other", [_doc(cik="2"), _doc(day="2026-03-01")])
+def test_another_company_or_filing_year_keeps_its_own_task(other):
+    tasks, copies = classify.collapse_copies([(_task("a:1-1", "Same."), _doc()), (_task("b:1-1", "Same."), other)])
+    assert len(tasks) == 2 and copies == []
+
+
+@pytest.mark.parametrize("unknown", [
+    {"cik": None, "filing_date": "2025-03-01"},
+    {"cik": "not provided by the data provider", "filing_date": "2025-03-01"},
+    {"cik": "1", "filing_date": "not provided by the data provider", "released": "not provided by the data provider"},
+    {"cik": "1"},
+])
+def test_without_a_known_company_or_filing_date_nothing_collapses(unknown):
+    tasks, copies = classify.collapse_copies([(_task("a:1-1", "Same."), unknown), (_task("b:1-1", "Same."), unknown)])
+    assert len(tasks) == 2 and copies == []
+
+
+def test_a_copy_takes_the_label_with_evidence_in_its_own_characters():
+    final = [{"passage_id": "a:1-1", "ai_reference": "explicit", "evidence": ["The \u201cAI\u201d model."]}]
+    copies = [{"passage_id": "b:1-1", "copy_of": "a:1-1"}, {"passage_id": "c:1-1", "copy_of": "unlabelled:1-1"}]
+    out, n = classify.copy_labels(final, copies, {"b:1-1": 'See.\n\nThe "AI" model.', "c:1-1": "x"})
+    assert n == 1 and [l["passage_id"] for l in out] == ["a:1-1", "b:1-1"]
+    assert out[1]["evidence"] == ['The "AI" model.'] and out[1]["copied_from"] == "a:1-1"
+    assert "copied_from" not in out[0]
+
+
+def test_cli_labels_a_repeated_passage_once_and_every_filing_gets_the_label(tmp_path, capsys):
+    data = tmp_path / "work"
+    text = "We use artificial intelligence to route claims."
+    for name, form, doc_id in (("a", "ARS", "aaaa"), ("b", "10-K", "bbbb")):
+        d = data / "docs" / doc_id
+        d.mkdir(parents=True)
+        (d / "document.json").write_text(json.dumps({"doc_id": doc_id, "company": "ACME", "form": form, "fiscal_year": 2024,
+                                                     "cik": "1", "filing_date": "2025-03-01", "source_files": [name + ".md"]}), encoding="utf-8")
+        (d / "passages.jsonl").write_text(json.dumps({
+            "passage_id": f"{doc_id}:1-1", "doc_id": doc_id, "section": None, "section_title": None, "heading": None,
+            "mention": "direct", "matched": {"ai": ["artificial intelligence"]}, "text": text}) + "\n", encoding="utf-8")
+
+    def run(*args):
+        cli.main(["--data", str(data), *args])
+
+    run("tasks")
+    assert [t["passage_id"] for t in read_jsonl(data / "tasks.jsonl")] == ["bbbb:1-1"]
+    assert read_jsonl(data / "copies.jsonl") == [{"passage_id": "aaaa:1-1", "copy_of": "bbbb:1-1"}]
+    coder = tmp_path / "alice.jsonl"
+    coder.write_text(line(passage_id="bbbb:1-1", evidence=[text]) + "\n", encoding="utf-8")
+    run("accept", str(coder), "--coder", "alice")  # no complaint about the copy
+    run("adjudicate")
+    final = {l["passage_id"]: l for l in read_jsonl(data / "labels_final.jsonl")}
+    assert set(final) == {"aaaa:1-1", "bbbb:1-1"} and final["aaaa:1-1"]["copied_from"] == "bbbb:1-1"
+    assert final["aaaa:1-1"]["roles"] == final["bbbb:1-1"]["roles"]
+    agreement = json.loads((data / "agreement.json").read_text(encoding="utf-8"))
+    assert (agreement["n_passages"], agreement["n_copies_labelled"]) == (1, 1)
+    capsys.readouterr()
+
+
+def test_the_release_year_comes_from_the_release_time_then_the_filing_date():
+    assert classify.release_year({"released": "2025-02-14T21:05:00+00:00", "filing_date": "2024-12-31"}) == "2025"
+    assert classify.release_year({"released": "not provided by the data provider", "filing_date": "2024-12-31"}) == "2024"
+    assert classify.release_year({"released": None}) is None
+
+
+def _filing(doc, form, chunks=1, company="1", year="2025"):
+    return {"document_id": doc, "company_id": company, "release_year": year, "form": form, "chunks": chunks}
+
+
+def test_one_main_report_per_company_and_release_year_and_the_10k_comes_first():
+    rows = [_filing("a", "ARS", 9), _filing("b", "10-K", 1), _filing("c", "10-K/A", 5)]
+    assert classify.primary_filings(rows) == {1}
+
+
+def test_an_ars_is_the_main_report_when_the_company_has_nothing_else_that_year():
+    rows = [_filing("a", "ARS"), _filing("b", "10-K", year="2024")]
+    assert classify.primary_filings(rows) == {0, 1}
+
+
+def test_two_filings_of_one_form_keep_the_one_with_more_chunks_then_the_lower_id():
+    assert classify.primary_filings([_filing("a", "10-K", 1), _filing("b", "10-K", 3)]) == {1}
+    assert classify.primary_filings([_filing("b", "10-K", 3), _filing("a", "10-K", 3)]) == {1}
+
+
+def test_a_filing_without_company_or_release_year_counts_as_its_own_main_report():
+    rows = [_filing("a", "ARS", company=None), _filing("b", "ARS", company=None), _filing("c", "ARS", year=None)]
+    assert classify.primary_filings(rows) == {0, 1, 2}
+
+
+def _chunk(cid, text, company="1", copied=False, year="2025"):
+    return {"chunk_id": cid, "company_id": company, "release_year": year, "text": text, "copied": copied}
+
+
+def test_the_duplicate_check_counts_repeats_before_and_after_and_near_pairs():
+    long = "we use machine learning models to route incoming insurance claims across all our regional offices"
+    rows = [
+        _chunk("a", long), _chunk("b", long, copied=True),         # a copy, gone after collapsing
+        _chunk("c", long.upper()),                                  # differs in case: a repeat that stays
+        _chunk("d", long + " today"),                               # near pair with a and c
+        _chunk("e", long, company="2"),                             # another company: not a repeat
+        _chunk("f", "a wholly different statement about something else entirely with many other words here"),
+    ]
+    got = classify.duplicate_check(rows)
+    assert (got["chunks"], got["copies"], got["tasks"]) == (6, 1, 5)
+    assert (got["repeats_before"], got["repeats_after"]) == (2, 1)
+    assert got["near_pairs"] == 3 and got["tasks_in_near_pairs"] == 3
+    assert got["near_share_of_tasks"] == 0.6
+
+
+def test_export_marks_one_main_report_and_writes_the_duplicate_check(tmp_path):
+    data = tmp_path / "work"
+    text = "We use artificial intelligence to route claims."
+    for name, form, doc_id in (("7", "ARS", "aaaa"), ("8", "10-K", "bbbb")):
+        d = data / "docs" / doc_id
+        d.mkdir(parents=True)
+        (d / "document.json").write_text(json.dumps({
+            "doc_id": doc_id, "company": "ACME", "form": form, "fiscal_year": 2024, "cik": "1", "filing_id": int(name),
+            "released": "2025-03-01T00:00:00+00:00", "filing_date": "2025-03-01", "source_files": [name + ".md"]}), encoding="utf-8")
+        (d / "passages.jsonl").write_text(json.dumps({
+            "passage_id": f"{doc_id}:1-1", "doc_id": doc_id, "section": None, "section_title": None, "heading": None, "blocks": [1, 1],
+            "mention": "direct", "matched": {"ai": ["artificial intelligence"]}, "text": text}) + "\n", encoding="utf-8")
+    (data / "labels_final.jsonl").write_text(
+        json.dumps({"passage_id": "bbbb:1-1", "ai_reference": "none", "roles": []}) + "\n"
+        + json.dumps({"passage_id": "aaaa:1-1", "ai_reference": "none", "roles": [], "copied_from": "bbbb:1-1"}) + "\n", encoding="utf-8")
+    out = tmp_path / "out"
+    export.export(data, out, run_id="r", log=lambda *_: None)
+    rows = {r["form"]: r for r in json.loads((out / "documents_manifest.json").read_text())["documents"]}
+    assert (rows["10-K"]["primary_filing"], rows["ARS"]["primary_filing"]) == (True, False)
+    assert rows["ARS"]["release_year"] == "2025"
+    check = json.loads((out / "results" / "duplicate_check.json").read_text())
+    assert (check["chunks"], check["copies"], check["tasks"], check["repeats_after"]) == (2, 1, 1, 0)
+    assert read_jsonl(out / "chunks.jsonl")[0]["release_year"] == "2025"
+    labelled = read_jsonl(out / "results" / "classified_chunks.jsonl")
+    assert {l["chunk_id"]: l.get("copied_from") for l in labelled} == {"aaaa:1-1": "bbbb:1-1", "bbbb:1-1": None}

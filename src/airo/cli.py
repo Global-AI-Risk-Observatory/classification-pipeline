@@ -64,26 +64,31 @@ def cmd_run(args) -> None:
 
 
 def cmd_tasks(args) -> None:
-    n = hints = 0
-    with open(args.data / "tasks.jsonl", "w", encoding="utf-8") as fh, open(
-        args.data / "hints.jsonl", "w", encoding="utf-8"
-    ) as hh:
+    hints = 0
+    entries = []
+    with open(args.data / "hints.jsonl", "w", encoding="utf-8") as hh:
         for doc, passages in _docs(args.data):
-            for row in classify.tasks([doc], _direct(passages)):
-                fh.write(json.dumps(row, ensure_ascii=False) + "\n")
-                n += 1
+            entries += [(row, doc) for row in classify.tasks([doc], _direct(passages))]
             # Implicit mentions are context, not AI statements: handed on with
             # their text for a reader, never classified.
             for row in classify.tasks([doc], [p for p in passages if p["mention"] == "implicit"]):
                 hh.write(json.dumps(row, ensure_ascii=False) + "\n")
                 hints += 1
+    # The same text within a company and release year is labelled once; the copies take its label in `adjudicate`.
+    tasks, copies = classify.collapse_copies(entries)
+    _write(args.data / "tasks.jsonl", tasks)
+    _write(args.data / "copies.jsonl", copies)
     (args.data / "codebook.md").write_text(taxonomy.codebook(), encoding="utf-8")
-    print(f"{n} task(s) from direct mentions, {hints} context passage(s) as hints, codebook v{taxonomy.TAXONOMY_VERSION}")
+    print(
+        f"{len(tasks)} task(s) from direct mentions, {len(copies)} copies take the label of another task, "
+        f"{hints} context passage(s) as hints, codebook v{taxonomy.TAXONOMY_VERSION}"
+    )
 
 
 def cmd_accept(args) -> None:
     lines = Path(args.file).read_text(encoding="utf-8").splitlines()
-    passages = [p for _, found in _docs(args.data) for p in _direct(found)]
+    copies = {c["passage_id"] for c in _read(args.data / "copies.jsonl")} if (args.data / "copies.jsonl").exists() else set()
+    passages = [p for _, found in _docs(args.data) for p in _direct(found) if p["passage_id"] not in copies]
     labels, problems = classify.validate(lines, passages, args.coder)
     for p in problems:
         print("REJECTED:", p)
@@ -96,6 +101,11 @@ def cmd_accept(args) -> None:
 def cmd_adjudicate(args) -> None:
     by_coder = {p.stem: _read(p) for p in sorted((args.data / "labels").glob("*.jsonl"))}
     final, agreement = classify.adjudicate(by_coder)
+    copies = _read(args.data / "copies.jsonl") if (args.data / "copies.jsonl").exists() else []
+    if copies:
+        wanted = {c["passage_id"] for c in copies}
+        text_by_id = {p["passage_id"]: p["text"] for _, found in _docs(args.data) for p in found if p["passage_id"] in wanted}
+        final, agreement["n_copies_labelled"] = classify.copy_labels(final, copies, text_by_id)
     _write(args.data / "labels_final.jsonl", final)
     (args.data / "agreement.json").write_text(json.dumps(agreement, indent=2), encoding="utf-8")
     print(json.dumps(agreement, indent=2))

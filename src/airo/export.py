@@ -31,12 +31,13 @@ from datetime import date
 from pathlib import Path
 from typing import Iterator
 
+from .classify import duplicate_check, primary_filings, release_year
 from .taxonomy import SUBSTANTIVENESS, TAXONOMY_VERSION
 
 LABEL_FIELDS = (
     "ai_reference", "roles", "risk_types", "mit_subdomains", "adoption_stage", "business_functions",
     "governance_responses", "ai_kinds", "substantiveness", "disclosure_traits", "entities", "evidence",
-    "confidence", "taxonomy_version", "needs_review", "disputed",
+    "confidence", "taxonomy_version", "needs_review", "disputed", "copied_from",
 )
 METRIC_BOOLEANS = ("ai_mention", "adoption", "risk", "harm", "vendor", "llm_adoption", "cyber_risk", "regulatory_risk")
 
@@ -87,6 +88,7 @@ def _chunk(doc: dict, p: dict) -> dict:
         "company_id": doc.get("cik"),
         "company_name": doc.get("company"),
         "report_year": doc.get("fiscal_year"),
+        "release_year": release_year(doc),
         "report_sections": [x for x in (" ".join(y for y in (p["section"], p["section_title"]) if y),) if x],
         "heading": p.get("heading"),
         "chunk_text": p["text"],
@@ -122,6 +124,7 @@ def _filing_row(name: str, meta: dict, doc: dict, direct: list[dict], context: l
         "company_id": meta.get("cik") or doc.get("cik"),
         "company_name": meta.get("company") or doc.get("company"),
         "filing_date": filing_date,
+        "release_year": release_year(meta) or release_year(doc),
         "month": filing_date[:7] if filing_date else None,
         "form": meta.get("form") or doc.get("form"),
         "isic_division": meta.get("isic_division") or doc.get("isic_division"),
@@ -246,7 +249,7 @@ def export(data: Path, out: Path, *, run_id: str, manifest: Path | None = None, 
     labels = {l["passage_id"]: l for l in _read(data / "labels_final.jsonl")}
 
     counts = Counter({k: 0 for k in ("filings", "documents", "chunks", "labels", "explicit", "context")})
-    manifest_rows, metric_rows = [], []
+    manifest_rows, metric_rows, check_rows = [], [], []
     with open(out / "chunks.jsonl", "w", encoding="utf-8") as chunks, open(
         out / "context_passages.jsonl", "w", encoding="utf-8"
     ) as context_fh, open(out / "results" / "classified_chunks.jsonl", "w", encoding="utf-8") as classified:
@@ -257,6 +260,10 @@ def export(data: Path, out: Path, *, run_id: str, manifest: Path | None = None, 
             for p in direct:
                 chunks.write(json.dumps(_chunk(doc, p), ensure_ascii=False) + "\n")
                 counts["chunks"] += 1
+                check_rows.append({
+                    "chunk_id": p["passage_id"], "company_id": doc.get("cik"), "release_year": release_year(doc),
+                    "text": p["text"], "copied": "copied_from" in labels.get(p["passage_id"], {}),
+                })
                 if l := labels.get(p["passage_id"]):
                     row = {"chunk_id": p["passage_id"], **{k: l.get(k) for k in LABEL_FIELDS if k in l}}
                     classified.write(json.dumps(row, ensure_ascii=False) + "\n")
@@ -276,6 +283,7 @@ def export(data: Path, out: Path, *, run_id: str, manifest: Path | None = None, 
                     "year": meta.get("fiscal_year", doc.get("fiscal_year")),
                     "market_segment": meta.get("exchange") or doc.get("exchange"),
                     "filing_date": row["filing_date"],
+                    "release_year": row["release_year"],
                     "form": row["form"],
                     "isic_division": row["isic_division"],
                     "isic_class": meta.get("isic_class") or doc.get("isic_class"),
@@ -284,6 +292,12 @@ def export(data: Path, out: Path, *, run_id: str, manifest: Path | None = None, 
                 })
                 counts["filings"] += 1
 
+    # One main report per company and release year; the other filings stay, marked.
+    primary = primary_filings(metric_rows)
+    for i, (metric, row) in enumerate(zip(metric_rows, manifest_rows)):
+        metric["primary_filing"] = row["primary_filing"] = i in primary
+    counts["primary_filings"] = len(primary)
+    (out / "results" / "duplicate_check.json").write_text(json.dumps(duplicate_check(check_rows), indent=2) + "\n", encoding="utf-8")
     (out / "documents_manifest.json").write_text(
         json.dumps({"documents": manifest_rows}, ensure_ascii=False, indent=1) + "\n", encoding="utf-8"
     )

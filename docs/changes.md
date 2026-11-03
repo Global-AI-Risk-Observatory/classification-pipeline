@@ -1295,6 +1295,73 @@ changes from `gemini-3.8-flash` to `gemini-2.5-flash`, the model of the v0.10 te
 The file is documentation: no code reads it, and `TAXONOMY_VERSION` in `src/airo/taxonomy.py` stays what
 labels carry. The model for the corpus run remains open (below, decision 1).
 
+## 26. A repeated passage is labelled once within a company and release year
+
+**Status: built on 2026-11-03, tested with unit tests and on the chunks of `us-2025h1_V3` without model calls.
+Not yet in a run.**
+
+**Why.** QA by Rahul found many duplicated chunks. Filings were deduplicated only as whole texts (entry 1); an
+ARS that repeats a 10-K differs elsewhere, for example in its letter to shareholders, so its chunks stayed. Of the
+28,378 chunks of `us-2025h1_V3`, 5,833 repeat another chunk's text, ignoring case and punctuation.
+
+**Change.** `tasks` writes one task per text within a company and release year to `tasks.jsonl` and the others to
+`copies.jsonl`. `accept` does not expect labels for copies. `adjudicate` writes a label for each copy into
+`labels_final.jsonl`, with `copied_from` and the evidence in the copy's own characters. `agreement.json` covers the
+labelled tasks. `aggregate` and `export` read the labels as before; `classified_chunks.jsonl` carries `copied_from`.
+The task stays with the first form in `_FORM_ORDER` (10-K first, ARS last), so it has Item sections where one exists.
+
+**Choices.**
+- Release year (`released`, else `filing_date`), not fiscal year: the fiscal year is missing on 4,151 of the chunks,
+  mostly on ARS. With the fiscal year 2,812 copies are found (2,266 between 10-K and ARS), with the year of release
+  4,202 (3,555). The UK pipeline keys its deduplication on the release year too (`merge_fr_bulk_to_clean.py`).
+- Texts count as the same if they differ at most in whitespace and in quotation marks, apostrophes or dashes,
+  so evidence can be located in every copy. Ignoring case and all punctuation would find more but could leave a
+  quote not verbatim in the copy.
+- A document without a known company or filing date keeps all its tasks.
+
+**Better.** On `us-2025h1_V3`: 24,176 tasks instead of 28,378, 4,202 copies (14.8%), 3,557 of them ARS; 3,953
+originals are 10-K. Filing-level counts are unchanged in design, since each filing keeps a label per chunk.
+
+**Not better / open.**
+- A copy takes the label although its section and heading may differ, and the model sees those.
+- Near duplicates stay, and so does the same text across years or between companies (1,714 and 524 of the copies
+  above, by fiscal year): this is kept on purpose, as it is what a computed `boilerplate` would measure.
+- Figures per passage have to leave out rows with `copied_from` to count a statement once; no figure does so yet.
+- `analysis/human_validation/human_validation.py` samples from a run's chunks and does not yet skip copies.
+
+## 27. Main report per company and release year; tests of the duplicate handling
+
+**Status: built on 2026-11-03; the exports of existing runs do not have the new fields. Tested on
+`us-2025h1_V3` without model calls; labels are of taxonomy v0.9.**
+
+**Change.** `export` adds `release_year` to chunks, the manifest and `filing_metrics.jsonl`; `primary_filing` to the
+manifest and `filing_metrics.jsonl` (first form in `_FORM_ORDER`, then more chunks, then the lower id; no filing is
+removed); and `results/duplicate_check.json` with repeats before and after collapsing and near-duplicate pairs.
+
+**Tests.**
+- Repeats within a company and release year, ignoring case and punctuation: 5,965 before, 1,763 after.
+- Near duplicates (at least 90% of words shared, at least 8 distinct words): 3,915 pairs among the remaining tasks,
+  7,387 tasks (30.6%); on the earlier count 3,760 of 3,935 pairs lie between filings, 3,413 of them 10-K and ARS.
+  Of those 3,760: small edit 1,383, only case or punctuation 1,092, one contains the other 644, wider difference 641.
+  Merging all across filings would leave 20,505 tasks; 5,250 of 5,704 quotes can be found in the partner.
+- Labels on identical text: 4,122 copy and original pairs with independent labels agree on `ai_reference` 97.8%,
+  `ai_kinds` 93.1%, `risk_types` 80.6%, `roles` 76.5%, `disclosure_traits` 74.3%, `substantiveness` 66.3%, all
+  fields 30.8%. With the same section and heading (1,955 pairs), `roles` 77.9%. So a difference between two runs on
+  `substantiveness` such as the 26% in entry 24 lies within what one run shows on identical text.
+- Main reports: 4,761 of 7,794 filings, at most one per company and release year: 10-K 3,974, 20-F 389, N-CSR 224,
+  ARS 90. Shares of all filings against main reports: `ai_mention` 63.2% and 65.3%, `risk` 51.3% and 52.5%,
+  `adoption` 34.6% and 33.9%, `llm_adoption` 14.5% and 14.1%.
+- Of 9,237 chunks about AI outside main reports: 4,609 exact and 2,289 near copies of one in the main report, 863
+  partly the same, 1,476 new text (mostly `adoption` and `offering`; samples also show director biographies).
+- Reports filed twice, from the manifests of `airo-filings-2023` to `2025` (26,004 filings, 13,304 10-K with a known
+  company): more than one 10-K for a company and fiscal year in 117 of 13,157 cases, 11 of them released in
+  different years; more than one for a company and release year in 145 of 13,117, 42 of them with different fiscal
+  years. Text was not compared. `filing_date` and `released` differ in year on 1 of 26,004. The fiscal year is
+  missing on 39.9% of ARS and on no 10-K.
+
+**Not better / open.** Exact matching does not end the duplication: near duplicates remain, and whether to merge
+them is open. A copy's label is consistent with its original, not more accurate. No figure uses `primary_filing` yet.
+
 ## To be decided
 
 Open decisions after the v0.10 subset tests of 2026-10-31 (entries 18 to 22), with the figures they

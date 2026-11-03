@@ -228,6 +228,11 @@ The container runs `python -m airo <command>` with `AIRO_GLOSSARIES=/app/glossar
 - **The classifier stage is defined by two files, not by who codes.** `tasks.jsonl` (passage plus company,
   form, fiscal year, section, heading, matched terms) and `codebook.md` go in; one label per passage comes
   back as JSONL. A coder can be a person, an agent or a batch job against a model API.
+- **A repeated passage is labelled once.** `tasks` puts one task per text within a company and filing year
+  into `tasks.jsonl` and writes the others to `copies.jsonl`; a 10-K keeps the task before an ARS. Texts count
+  as the same if they differ at most in whitespace and in quotation marks, apostrophes or dashes. `adjudicate`
+  gives each copy the label of its original, marked `copied_from`, so every filing keeps its counts and a count
+  per passage can leave the copies out. `agreement.json` covers the labelled tasks only.
 - **Every accepted label is validated.** `accept` checks each line against the schema in `taxonomy.py`,
   rejects unknown and duplicate passage ids and evidence that is not a verbatim quote from the passage
   (whitespace differences are tolerated), and reports passages without a label. Accepted labels and

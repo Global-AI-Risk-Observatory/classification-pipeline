@@ -47,6 +47,133 @@ def _squash(text: str) -> str:
     return _WS.sub(" ", text).strip()
 
 
+# Which filing of a company keeps the task when several carry the same passage: the form that has
+# Item sections and is the primary report goes first. An ARS often repeats the 10-K under another filing id.
+_FORM_ORDER = ("10-K", "20-F", "40-F", "10-KT", "N-CSR", "10-K/A", "20-F/A", "ARS")
+_UNKNOWN = "not provided by the data provider"
+
+
+def release_year(doc: dict) -> str | None:
+    """The year the filing appeared (release time, else filing date), or None. Many ARS have no fiscal year."""
+    for field in ("released", "filing_date"):
+        day = str(doc.get(field) or "")
+        if day[:4].isdigit():
+            return day[:4]
+    return None
+
+
+def primary_filings(rows: list[dict]) -> set[int]:
+    """Positions of the main report per company and release year; `rows` have company_id, release_year, form, chunks, document_id.
+
+    The first form in `_FORM_ORDER` wins, then the filing with more chunks, then the lower id. A row
+    without a known company or release year cannot be compared and counts as its own main report.
+    """
+    rank = {form: i for i, form in enumerate(_FORM_ORDER)}
+    groups: dict[tuple, list[int]] = {}
+    out = set()
+    for i, r in enumerate(rows):
+        company = r.get("company_id")
+        if company and company != _UNKNOWN and r.get("release_year"):
+            groups.setdefault((company, r["release_year"]), []).append(i)
+        else:
+            out.add(i)
+    for members in groups.values():
+        out.add(min(members, key=lambda i: (rank.get(rows[i].get("form"), len(rank)), -(rows[i].get("chunks") or 0), str(rows[i].get("document_id")))))
+    return out
+
+
+_NEAR_TOKENS = re.compile(r"[a-z0-9]+")
+_NEAR_MIN_WORDS = 8
+_NEAR_MAX_GROUP = 400  # pairs grow with the square; a larger group is reported as not checked
+
+
+def duplicate_check(rows: list[dict], threshold: float = 0.9) -> dict:
+    """How far chunks repeat within a company and release year; `rows` have chunk_id, company_id, release_year, text, copied.
+
+    `repeats` counts texts that are the same ignoring case and punctuation, over all chunks and over the
+    tasks left after `collapse_copies`; `near_pairs` counts pairs of those tasks whose word sets overlap by at least `threshold`.
+    """
+    groups: dict[tuple, list[dict]] = {}
+    for r in rows:
+        if r.get("company_id") and r["company_id"] != _UNKNOWN and r.get("release_year"):
+            groups.setdefault((r["company_id"], r["release_year"]), []).append(r)
+
+    def repeats(items: list[dict]) -> int:
+        return len(items) - len({" ".join(_NEAR_TOKENS.findall(i["text"].lower())) for i in items})
+
+    near = before = after = unchecked = 0
+    involved = set()
+    for items in groups.values():
+        left = [r for r in items if not r.get("copied")]
+        before += repeats(items)
+        after += repeats(left)
+        if len(left) > _NEAR_MAX_GROUP:
+            unchecked += 1
+            continue
+        words = [(r["chunk_id"], set(_NEAR_TOKENS.findall(r["text"].lower()))) for r in left]
+        for (a, x), (b, y) in combinations(words, 2):
+            if len(x) >= _NEAR_MIN_WORDS and len(y) >= _NEAR_MIN_WORDS and len(x & y) / len(x | y) >= threshold:
+                near += 1
+                involved |= {a, b}
+    tasks = sum(not r.get("copied") for r in rows)
+    return {
+        "chunks": len(rows),
+        "copies": len(rows) - tasks,
+        "tasks": tasks,
+        "repeats_before": before,
+        "repeats_after": after,
+        "near_threshold": threshold,
+        "near_pairs": near,
+        "tasks_in_near_pairs": len(involved),
+        "near_share_of_tasks": round(len(involved) / tasks, 4) if tasks else None,
+        "groups_not_checked": unchecked,
+    }
+
+
+def collapse_copies(entries: list[tuple[dict, dict]]) -> tuple[list[dict], list[dict]]:
+    """One task per text within a company and filing year.
+
+    `entries` are (task, its document). Texts count as the same if they differ at most in whitespace
+    and in which quotation marks, apostrophes or dashes they have, so that the evidence of a label
+    can be found again in every copy (see `_locate`). A document without a known company or filing
+    date keeps all its tasks. Returns (tasks to label, in the given order; copies, one row
+    `{"passage_id", "copy_of"}` per passage that takes the label of another).
+    """
+    rank = {form: i for i, form in enumerate(_FORM_ORDER)}
+    groups: dict[tuple, list[int]] = {}
+    for i, (task, doc) in enumerate(entries):
+        company, year = doc.get("cik"), release_year(doc)
+        if company and company != _UNKNOWN and year:
+            key = (company, year, _MARKS.sub('"', _squash(task["text"])))
+            groups.setdefault(key, []).append(i)
+    copy_of: dict[int, int] = {}
+    for members in groups.values():
+        keep = min(members, key=lambda i: (rank.get(entries[i][0]["form"], len(rank)), i))
+        copy_of.update({i: keep for i in members if i != keep})
+    tasks_ = [task for i, (task, _) in enumerate(entries) if i not in copy_of]
+    copies = [{"passage_id": entries[i][0]["passage_id"], "copy_of": entries[k][0]["passage_id"]} for i, k in sorted(copy_of.items())]
+    return tasks_, copies
+
+
+def copy_labels(final: list[dict], copies: list[dict], text_by_id: dict[str, str]) -> tuple[list[dict], int]:
+    """`final` plus one label per copy whose original has one, marked `copied_from`.
+
+    A copy's evidence is stored in its own passage's characters. Returns (labels, copies labelled).
+    """
+    by_id = {l["passage_id"]: l for l in final}
+    out = list(final)
+    n = 0
+    for c in copies:
+        original = by_id.get(c["copy_of"])
+        if original is None:
+            continue
+        text = _squash(text_by_id[c["passage_id"]])
+        evidence = [_locate(q, text) or q for q in original["evidence"]]
+        out.append({**original, "passage_id": c["passage_id"], "evidence": evidence, "copied_from": c["copy_of"]})
+        n += 1
+    return out, n
+
+
 # Quotation marks, apostrophes and dashes in all their typographic forms. A model
 # asked for JSON tends to return other ones than the passage has.
 _MARKS = re.compile("[\"'`\u00b4\u2018-\u201f\u2010-\u2015\u2212-]+")
