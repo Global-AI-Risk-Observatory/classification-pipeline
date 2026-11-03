@@ -266,12 +266,14 @@ design and the count-based substantiveness that were tested in the same rounds a
 | `business_functions` | `customer_service`, `marketing_sales`, `operations`, `finance`, `hr_workforce`, `legal_compliance`, `rd_product`, `it_cybersecurity`, `supply_chain`, `manufacturing`, `decision_analytics`, `other`, `not_stated` | one or more if and only if `adoption` is a role; the company's own use; `not_stated` only alone |
 | `governance_responses` | `oversight_structure`, `policies_processes`, `technical_controls`, `third_party_controls`, `workforce_measures`, `transparency_accountability`, `other` | one or more if and only if `governance` is a role |
 | `ai_kinds` | `traditional_ml`, `generative_llm`, `computer_vision`, `nlp`, `recommendation`, `agentic`, `other`, `unspecified` | one or more when the passage is about AI; a kind only when a term for it is in the passage, nothing estimated from context; `unspecified` only alone |
-| `disclosure_traits` | `boilerplate`, `hedging`, `externalisation`, `vagueness`, `safe_harbour` | zero or more; `[]` when no trait applies (the statement is specific) and always when `ai_reference` is `none`; `externalisation` only with the roles `adoption`, `offering`, `governance`, `risk` or `incident` |
+| `disclosure_traits` | `boilerplate`, `hedging`, `externalisation`, `vagueness` | zero or more; `[]` when no trait applies (the statement is specific) and always when `ai_reference` is `none`; `externalisation` only with the roles `adoption`, `offering`, `governance`, `risk` or `incident` |
 | `substantiveness` | `boilerplate`, `generic`, `specific`, `detailed`, `quantified` | exactly one when the passage is about AI; five ordered levels, the highest whose criteria the AI statements meet; the codebook illustrates the scale with the five constructed sentences of Hope, Hu and Lu (2016), which raised agreement with the raters on the subset (`docs/changes.md`, entries 20 and 21) |
 | `entities` | list of names | organisations or AI products named in connection with AI |
 | `evidence` | list of 1 to 3 quotes | verbatim quotes from the passage, one per role where the roles rest on different sentences; `[]` if and only if `ai_reference` is `none` |
 | `confidence` | `low`, `medium`, `high` | always required |
 | `note` | text | optional |
+
+Sources of the disclosure traits (`DISCLOSURE_TRAIT_SOURCES` in `taxonomy.py`): `boilerplate`: Lang and Stice-Lawrence (2015), Dyer, Lang and Stice-Lawrence (2017); `hedging`: Loughran and McDonald (2011); `externalisation`: Merkl-Davies and Brennan (2007); `vagueness`: no source of its own, Hope, Hu and Lu (2016) define the opposite, specificity. The four traits as a set are this project's; see `docs/changes.md`, entry 24.
 
 ## Known limits
 

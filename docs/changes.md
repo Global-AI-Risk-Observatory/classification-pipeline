@@ -1192,6 +1192,88 @@ says the remaining disagreement is on individual passages, not on the use of the
 
 ---
 
+## 23. `safe_harbour` removed from the disclosure traits (v0.10)
+
+**Status: adopted on 2026-11-03. `TAXONOMY_VERSION` stays 0.10; no corpus run exists under it. Not re-run
+on the subset.**
+
+**Change.** The value `safe_harbour` is gone from `DISCLOSURE_TRAITS`, the `DisclosureTrait` type, the
+README and the research plan. The other four traits are unchanged.
+
+**Why.** On five of the seven raters against `round5_examples_source/hope_only.jsonl`,
+on the 196 ratings where both call the passage `explicit`: the raters give it 13 times, the model never,
+kappa 0.00; rater against rater also 0.00 (21 double-rated passages, one rater only in 2). Its criterion
+"disclaimer language" overlaps `hedging` ("no assurance"), and no source for the category was found.
+
+**Better.** `disclosure_traits` as an exact set, with `safe_harbour` taken out of the raters' ratings
+(the round 5 labels contain none): five raters 0.22 to 0.23, seven raters 0.19 to 0.20.
+
+**Not better / open.** The field stays weak; the other three weak traits are untouched. The V3 rater
+sheets contain the value, so `human_validation.py collect` on them now reports it as a value problem.
+Labels of earlier runs carry it (`us-2025h1_V3`: 99 passages) and do not validate against the current
+`Label`.
+
+## 24. Disclosure traits: loosened criteria, constructed examples, sources (v0.10)
+
+**Status: adopted on 2026-11-03. `TAXONOMY_VERSION` stays 0.10. Tested on the subset in the one full call
+(`gs://version10test/round12_traits_full_call/`) and in a call for the traits alone
+(`gs://version10test/round11_traits_only/`, `analysis/v010_subset/traits_only.py`). From this entry on,
+agreement is reported against five of the seven raters of `us-2025h1_V3`.**
+
+**Change.**
+- `boilerplate`: the criterion "no sector-specific mechanism" is dropped.
+- `externalisation`: "the company's own use or control is not stated" and "no own mitigation is described"
+  are replaced by "the statement presents them, not the company's own decisions, as the source of the risk".
+  The role condition stays in the section's lead and in `Label`.
+- `vagueness`: the criterion "no stage, scope or timeframe is given" is dropped.
+- `hedging`: criteria unchanged.
+- One constructed example for and one against each trait (`DISCLOSURE_TRAITS_EXAMPLES`, in the codebook).
+- `DISCLOSURE_TRAIT_SOURCES` names the literature per trait (not in the codebook).
+
+**Why.** The model gave the traits far less often than the raters: on the five raters' 247 ratings,
+`externalisation` 1 against 27, `vagueness` 18 against 55, `boilerplate` 15 against 44.
+
+**Better.** Five raters, 288 passages labelled by both runs, gemini-2.5-flash, thinking off, 40 per
+request. Cohen's kappa (how often the model gives the trait; raters in the first column):
+
+| Trait | Raters | Round 5 | Round 12, adopted codebook |
+|---|---|---|---|
+| hedging | 61 | 0.45 (53) | 0.55 (65) |
+| externalisation | 27 | 0.06 (1) | 0.22 (10) |
+| vagueness | 55 | 0.15 (18) | 0.21 (33) |
+| boilerplate | 44 | 0.16 (15) | 0.12 (11) |
+| exact set | | 0.23 | 0.26 |
+
+Asked for the traits alone (round 11, revised codebook): hedging 0.60, externalisation 0.22, vagueness
+0.22, boilerplate 0.13, exact set 0.28, at 99,131 input and 19,804 output tokens for 246 passages.
+
+**Not better / open.**
+- `substantiveness` falls from 0.44 to 0.37 between round 5 and round 12, though its section did not
+  change: `generic` 112 to 86, `specific` 70 to 94, and 74 of 288 passages change level. Whether this is
+  the traits' examples or the difference between two runs is not known; no repeat was run. On 2026-11-03
+  the first 7 of the 29 `generic` to `specific` moves were reviewed by hand with both labels visible: 6
+  favour the new label, 1 the old. The five raters mostly gave `generic` on these (rated passages: 5 of 6
+  `generic` only, 1 split between `specific` and `generic`; 1 of the 7 not rated). Decision: the new
+  labels are kept. The review is not blind and covers one kind of move; the reported figure against the
+  raters stays 0.37.
+- `boilerplate` does not gain; computing it from phrases shared across filers remains untried.
+- The criteria were loosened after looking at trait frequencies on these same passages, so none of this
+  is held out. Differences below about 0.05 are within what the sample can resolve. The field stays below
+  the 0.61 target. Other fields in round 12 move by at most 0.04.
+- The raters coded under the earlier criteria.
+
+**Sources per trait, and how far each carries.** The four traits as a set are this project's; no source
+with these categories was found (the search was not exhaustive).
+
+| Trait | Source | What it supports | Checked |
+|---|---|---|---|
+| `externalisation` | Merkl-Davies and Brennan (2007), Journal of Accounting Literature 26: 116-196 | Attribution: negative outcomes attributed to external factors. Concerns outcomes that occurred; here mostly risks | Full text, pp. 11-13 of the repository version |
+| `boilerplate` | Lang and Stice-Lawrence (2015), JAE 60(2-3): 110-135; Dyer, Lang and Stice-Lawrence (2017), JAE 64(2-3): 221-245 | The concept; both measure it from text across firms, here it is judged per passage | Citation in Crossref; content through secondary sources, full text not read |
+| `hedging` | Loughran and McDonald (2011), The Journal of Finance 66(1): 35-65 | Uncertainty and weak modal word lists; a dictionary, not a judgement on the AI statement | Citation in Crossref; content through search results, full text not read |
+| `vagueness` | Hope, Hu and Lu (2016), Review of Accounting Studies 21(4): 1005-1045 | Only the opposite, specificity; no source of its own found | Citation in Crossref; scale from the appendix excerpt |
+
+Before citing in the article, the sources without a full-text check are to be read.
+
 ## To be decided
 
 Open decisions after the v0.10 subset tests of 2026-10-31 (entries 18 to 22), with the figures they

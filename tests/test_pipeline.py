@@ -1342,7 +1342,7 @@ def test_summarise_counts_and_flags():
         final_label("d1:20-22", None, needs_review=True),  # coders split on ai_reference
         # d1:30-31 has no label yet; the next label belongs to another report.
         final_label("d2:0-2", "explicit", roles=["adoption"], adoption_stage="deployed",
-                    ai_kinds=["generative_llm"], disclosure_traits=["safe_harbour"]),
+                    ai_kinds=["generative_llm"], disclosure_traits=["vagueness"]),
     ]
 
     s = aggregate.summarise(REPORT, passages, labels)
@@ -1387,7 +1387,7 @@ def test_summarise_trait_activation_rate_and_rate_per_trait():
     assert s["n_ai_passages"] == 3
     assert s["trait_activation_rate"] == 0.667  # two of three AI passages carry at least one trait
     assert s["trait_rates"] == {
-        "boilerplate": 0.333, "hedging": 0.333, "externalisation": 0.0, "vagueness": 0.333, "safe_harbour": 0.0,
+        "boilerplate": 0.333, "hedging": 0.333, "externalisation": 0.0, "vagueness": 0.333,
     }
 
 
@@ -1432,7 +1432,7 @@ def test_render_quotes_every_piece_of_evidence():
     assert "**AI reference: explicit | roles: market_driver, risk" in text
     assert "- Disclosure traits: boilerplate (1), hedging (1)\n" in text
     assert "- Trait activation rate: 1.0 (boilerplate (1.0), hedging (1.0), externalisation (0.0), " \
-           "vagueness (0.0), safe_harbour (0.0))\n" in text
+           "vagueness (0.0))\n" in text
     assert "| traits: boilerplate, hedging" in text
 
 

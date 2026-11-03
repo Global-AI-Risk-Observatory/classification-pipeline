@@ -870,7 +870,6 @@ DISCLOSURE_TRAITS: dict[str, Definition] = {
         "Generic language that could appear unchanged in any company's report.",
         (
             "no company-specific system, counterparty, figure, date or action",
-            "no sector-specific mechanism",
             "the sentence would remain equally fitting in another company's report",
         ),
     ),
@@ -885,11 +884,8 @@ DISCLOSURE_TRAITS: dict[str, Definition] = {
     "externalisation": (
         "Responsibility or origin of the AI risk is placed outside the company.",
         (
-            "the AI and its risk are attributed to vendors, service providers, customers, developers or "
-            "attackers (evaluated only when the roles include `adoption`, `offering`, `governance`, `risk` or "
-            "`incident`; with `market_driver` or `general` alone the trait is not applicable and is never set)",
-            "the company's own use or control is not stated",
-            "no own mitigation is described",
+            "the AI or its risk is attributed to vendors, service providers, customers, developers or attackers",
+            "the statement presents them, not the company's own decisions, as the source of the risk",
         ),
     ),
     "vagueness": (
@@ -897,17 +893,36 @@ DISCLOSURE_TRAITS: dict[str, Definition] = {
         (
             "AI is named only as a category (\"emerging technologies such as AI\", \"AI tools\")",
             "no function, process or purpose is given",
-            "no stage, scope or timeframe is given",
         ),
     ),
-    "safe_harbour": (
-        "The statement is framed to limit liability rather than to inform.",
-        (
-            "explicit forward-looking or cautionary framing tied to the AI statement",
-            "disclaimer language (no assurance, cannot guarantee, not fully tested)",
-            "the framing adds no information about the risk mechanism",
-        ),
+}
+
+# v0.10: constructed sentences, none from the corpus (docs/changes.md, entry 24).
+DISCLOSURE_TRAITS_EXAMPLES = """Constructed examples, one for and one against each trait:
+
+- `boilerplate`
+  applies: "Artificial intelligence may affect our business and the markets in which we operate."
+  does not apply: "Our claims unit uses a machine-learning model to route incoming claims."
+- `hedging`
+  applies: "Our use of AI could fail to deliver the benefits we expect."
+  does not apply: "We deployed an AI assistant to our support staff in March and it handled 12% of tickets." (nothing is uncertain)
+- `externalisation`
+  applies: "Third-party AI vendors may introduce errors into the tools we rely on."
+  does not apply: "Our decision to build our own AI models exposes us to errors in those models." (the source is the company's own decision)
+- `vagueness`
+  applies: "We continue to invest in emerging technologies such as AI."
+  does not apply: "We use AI to forecast demand for spare parts." (a purpose is given)"""
+
+# v0.10: the literature each trait leans on. Not part of the codebook; how far each source carries is in
+# docs/changes.md, entry 24. The traits are this project's categories: no source has these four as a set.
+DISCLOSURE_TRAIT_SOURCES: dict[str, tuple[str, ...]] = {
+    "boilerplate": (
+        "Lang and Stice-Lawrence (2015), Journal of Accounting and Economics 60(2-3): 110-135",
+        "Dyer, Lang and Stice-Lawrence (2017), Journal of Accounting and Economics 64(2-3): 221-245",
     ),
+    "hedging": ("Loughran and McDonald (2011), The Journal of Finance 66(1): 35-65",),
+    "externalisation": ("Merkl-Davies and Brennan (2007), Journal of Accounting Literature 26: 116-196",),
+    "vagueness": ("Hope, Hu and Lu (2016), Review of Accounting Studies 21(4): 1005-1045 (specificity, the opposite)",),
 }
 
 SUBSTANTIVENESS: dict[str, Definition] = {
@@ -1015,7 +1030,7 @@ GovernanceResponse = Literal[
     "oversight_structure", "policies_processes", "technical_controls", "third_party_controls",
     "workforce_measures", "transparency_accountability", "other",
 ]
-DisclosureTrait = Literal["boilerplate", "hedging", "externalisation", "vagueness", "safe_harbour"]
+DisclosureTrait = Literal["boilerplate", "hedging", "externalisation", "vagueness"]
 
 
 class Label(BaseModel):
@@ -1216,6 +1231,8 @@ def codebook() -> str:
                 "`risk` or `incident`; with `market_driver` or `general` alone it is not applicable and is never set.",
                 DISCLOSURE_TRAITS,
             ),
+            DISCLOSURE_TRAITS_EXAMPLES,
+            "",
             _table(
                 "How substantive is the AI statement?", "substantiveness",
                 "Exactly one value when `ai_reference` is `explicit`; `null` when it is `none`. "

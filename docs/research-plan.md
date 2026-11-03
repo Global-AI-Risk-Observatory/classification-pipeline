@@ -30,7 +30,7 @@ boundaries for non-10-K formats.
 ## 2. Activation rate and detection accuracy as report-level metrics
 
 **Activation rate.** Per report: the share of AI passages with at least one disclosure trait, and
-the share per trait (boilerplate, hedging, externalisation, vagueness, safe harbour). Ten lines in
+the share per trait (boilerplate, hedging, externalisation, vagueness). Ten lines in
 `aggregate.py`; reported per report, then per year and ISIC division.
 
 **Detection accuracy.** Per field: the share of passages on which the passage-only label equals
