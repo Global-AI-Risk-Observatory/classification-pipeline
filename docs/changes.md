@@ -1428,7 +1428,7 @@ sample; `governance_responses` stays lower than online, and whether that is more
 **Open.** `collect` counts every task not in a repair job as deferred, so `<out>.deferred.jsonl` of a second pass is
 too long; the labels are not affected.
 
-## 30. Near copies take their original's label if its evidence is in their text
+## 30. A near copy takes its original's label
 
 **Status: built on 2026-11-06, tested with unit tests and on the chunks and labels of `us-2023_V5` to
 `us-2026_V5` without model calls. Not yet in a run.**
@@ -1438,9 +1438,10 @@ too long; the labels are not affected.
 each was labelled on its own.
 
 **Before.** Measured on the four runs (`gs://airo-pipeline-data/us-<year>_V5/`), joining near pairs within a company
-and release year into groups and keeping one task per group (10-K first):
+and release year into groups and keeping one task per group (10-K first); original and copy were labelled
+independently:
 
-| Year | Tasks | Would be copies | Evidence quotes of the kept task not in the copy | All label fields the same, original and copy labelled independently |
+| Year | Tasks | Would be copies | Evidence quotes of the kept task not in the copy | All label fields the same |
 |---|---|---|---|---|
 | 2023 | 13,558 | 2,516 (18.6%) | 402 of 3,095 | 39.6% |
 | 2024 | 20,929 | 3,706 (17.7%) | 491 of 5,255 | 30.4% |
@@ -1451,30 +1452,27 @@ Per field on 2026: `ai_reference` 97.9%, `ai_kinds` 92.7%, `risk_types` 81.4%, `
 `disclosure_traits` 74.4%, `substantiveness` 65.7%. The pair and task counts in near pairs are the same as in each
 run's `duplicate_check.json`.
 
-**Change.** `tasks` holds the near copies back (`hold_near`, written to `near_held.jsonl`); `tasks.jsonl` has the
-rest. After the first `adjudicate`, the new command `near` (`release_near`) makes a held task a copy if its original
-has a label and every quote of that label's evidence is in the held task's text, as `_locate` finds quotes; it adds
-these copies to `copies.jsonl` with `"match": "near"` and writes the others to `tasks_near.jsonl`. The coder labels
-`tasks_near.jsonl`, `accept --tasks tasks_near.jsonl --append` adds those labels to the coder's file, and
-`adjudicate` again gives every copy its label; a near copy's label carries `copy_match: "near"`, which `export`
-writes to `classified_chunks.jsonl`. An exact copy of a near copy takes the label too. `accept` now checks labels
-against the task file the coder was given instead of all direct passages less the copies. Groups of more than 400
-tasks of one company and year are not checked, as in `duplicate_check`.
+**Change.** `tasks` joins the near copies (`collapse_near`) after the exact ones (`collapse_copies`, entry 26) and
+writes them to `copies.jsonl` with `"match": "near"`; `tasks.jsonl` has the rest. `adjudicate` gives every copy its
+original's label (`copy_labels`); a near copy's label carries `copy_match: "near"`, which `export` writes to
+`classified_chunks.jsonl`. If a quote of the original's evidence is not in the near copy's text, the quote is kept as
+the original has it and the label is flagged `needs_review`, with `near_copy_evidence` in `disputed`. An exact copy of
+a near copy takes the label too. `accept` checks labels against `tasks.jsonl` instead of all direct passages less the
+copies. Groups of more than 400 tasks of one company and year are not checked, as in `duplicate_check`. The order
+of the commands is unchanged.
 
-**Better.** With the existing labels of the four runs as first round:
+**Better.** With the existing labels of the four runs:
 
-| Year | Tasks before | Held | Near copies | `tasks_near.jsonl` | Fewer model calls |
-|---|---|---|---|---|---|
-| 2023 | 13,558 | 2,516 | 2,103 | 413 | 15.5% |
-| 2024 | 20,929 | 3,706 | 3,182 | 524 | 15.2% |
-| 2025 | 29,091 | 4,856 | 4,055 | 801 | 13.9% |
-| 2026 | 39,864 | 7,009 | 5,874 | 1,135 | 14.7% |
+| Year | Near copies | Fewer model calls | Flagged `near_copy_evidence` | Without label (original has none) |
+|---|---|---|---|---|
+| 2023 | 2,516 | 18.6% | 373 | 40 |
+| 2024 | 3,706 | 17.7% | 460 | 64 |
+| 2025 | 4,856 | 16.7% | 677 | 124 |
+| 2026 | 7,009 | 17.6% | 1,040 | 95 |
 
 **Not better / open.**
-- A near copy's label is consistent with its original, not more accurate; the quotes are found in the copy, the
-  rest of the copy's text is not checked.
-- Two Gemini rounds instead of one; the Batch job definitions outside this repository need the steps `near`,
-  the coder on `tasks_near.jsonl`, `accept --tasks tasks_near.jsonl --append` and `adjudicate`.
+- A near copy's label is consistent with its original, not more accurate; the words that differ are not looked at.
+- A flagged near copy has evidence that is not verbatim in its own text.
 - Same text across years or between companies stays as it is (entry 26).
 
 ## To be decided

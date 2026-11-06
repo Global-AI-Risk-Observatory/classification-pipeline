@@ -43,10 +43,9 @@ BigQuery once the first cloud runs are done.
 |---|---|---|---|
 | 0 download | `fetch <out> --types T` | the data provider's API (US companies, Markdown only), the names already in `<out>` | `<out>/markdown/<filing id>.md`, `<out>/manifest/<filing id>.json`, once `<out>/companies/us.jsonl` |
 | 1+2 ingest, retrieve | `run <dir-or-files...>` | Markdown filings (also HTML / inline XBRL), `index/files.jsonl` | `docs/<doc_id>/document.json`, `docs/<doc_id>/blocks.jsonl`, `docs/<doc_id>/passages.jsonl`, `index/files.jsonl` |
-| 3 classify | `tasks` | `docs/*/document.json`, `docs/*/passages.jsonl` | `tasks.jsonl`, `copies.jsonl`, `near_held.jsonl`, `hints.jsonl`, `codebook.md` |
-| | `accept <file> --coder X [--tasks F --append]` | a coder's JSONL file, the task file it labelled (default `tasks.jsonl`) | `labels/X.jsonl` |
+| 3 classify | `tasks` | `docs/*/document.json`, `docs/*/passages.jsonl` | `tasks.jsonl`, `copies.jsonl`, `hints.jsonl`, `codebook.md` |
+| | `accept <file> --coder X` | a coder's JSONL file, `tasks.jsonl` | `labels/X.jsonl` |
 | | `adjudicate` | `labels/*.jsonl`, `copies.jsonl` | `labels_final.jsonl`, `agreement.json` |
-| | `near` | `near_held.jsonl`, `labels_final.jsonl` | `copies.jsonl` (near copies added), `tasks_near.jsonl` |
 | 4 aggregate | `aggregate` | `docs/*/document.json`, `docs/*/passages.jsonl`, `labels_final.jsonl` | `report_summary.jsonl`, `reports/<doc_id>.md`, `recall_check.json` |
 | 5 export | `export <out> --run-id X [--manifest <raw>/manifest]` | the working directory | the run's dataset layout under `<out>`: `chunks.jsonl`, `context_passages.jsonl`, `documents_manifest.json`, `README.md`, `docs.tar.gz`, `reports.tar.gz`, `results/` (`classified_chunks.jsonl`, `filing_metrics.jsonl`, `us-filing-metrics.json`, codebook, labels, agreement, summaries, the coder's files) |
 
@@ -58,10 +57,6 @@ under which the raw bucket is mounted (in a Batch job; `run` reads files, not `g
     python -m airo --data data tasks
     # a coder labels data/tasks.jsonl following data/codebook.md and returns one JSON object per line
     python -m airo --data data accept alice.jsonl --coder alice
-    python -m airo --data data adjudicate
-    python -m airo --data data near
-    # the coder labels data/tasks_near.jsonl
-    python -m airo --data data accept alice_near.jsonl --coder alice --tasks data/tasks_near.jsonl --append
     python -m airo --data data adjudicate
     python -m airo --data data aggregate
     python -m airo --data data export <out> --run-id <run> --manifest <raw>/manifest --model <model>
@@ -111,8 +106,7 @@ under which the raw bucket is mounted (in a Batch job; `run` reads files, not `g
   dropped into the directory. A file that failed is skipped as well, unless `--retry-failed` is given.
   The run prints a line per processed file and ends with the done / duplicate / skipped / failed counts
   and the files per second.
-- `accept` is run once per coder and task file. If any line is rejected it writes nothing, unless `--partial` is
-  given. `--append` adds the labels of `tasks_near.jsonl` to the coder's labels of `tasks.jsonl`.
+- `accept` is run once per coder. If any line is rejected it writes nothing, unless `--partial` is given.
 - `adjudicate` is needed with a single coder too: `aggregate` reads `labels_final.jsonl`.
 
 ## Automated coder (Gemini on Vertex AI)
@@ -216,9 +210,6 @@ their project roles.
 The container runs `python -m airo <command>` with `AIRO_GLOSSARIES=/app/glossaries` and includes
 `google-cloud-storage`. A Batch job mounts the two buckets and calls `run` (on a year folder's `markdown/` and
 `manifest/`), `tasks`, the Gemini coder in batch mode, `accept`, `adjudicate`, `aggregate`, `export` in that order.
-From entry 30 of `docs/changes.md` on, `near`, the coder on `tasks_near.jsonl`, `accept --tasks tasks_near.jsonl
---append` and `adjudicate` again come after the first `adjudicate`; the job definitions outside this repository
-have to add these steps.
 
 ## Design
 
@@ -276,12 +267,11 @@ have to add these steps.
   as the same if they differ at most in whitespace and in quotation marks, apostrophes or dashes. `adjudicate`
   gives each copy the label of its original, marked `copied_from`, so every filing keeps its counts and a count
   per passage can leave the copies out. `agreement.json` covers the labelled tasks only.
-- **A near copy is labelled once if the evidence allows it.** `tasks` also holds back tasks whose word sets
-  overlap by at least 90% with another task of the same company and release year (at least 8 distinct words;
-  near pairs are joined into groups, one task per group stays) and writes them to `near_held.jsonl`. After the
-  first `adjudicate`, `near` gives a held task the label of its original, marked `copied_from` and
-  `copy_match: "near"`, if every evidence quote of that label is in the held task's text; the others go to
-  `tasks_near.jsonl` and are labelled like any task.
+- **A near copy is labelled once too.** `tasks` also joins tasks whose word sets overlap by at least 90% within a
+  company and release year (at least 8 distinct words) into groups, keeps one task per group (10-K first) and
+  writes the others to `copies.jsonl` with `"match": "near"`. `adjudicate` gives them the label of their original,
+  marked `copied_from` and `copy_match: "near"`; a near copy whose text lacks a quote of that label's evidence is
+  flagged `needs_review`, with `near_copy_evidence` in `disputed`.
 - **One main report per company and release year.** `export` marks it with `primary_filing` in the manifest and in
   `filing_metrics.jsonl` (the first form of `_FORM_ORDER`, then more chunks, then the lower id). No filing is removed.
   Chunks, manifest and metrics carry `release_year` (from `released`, else `filing_date`), because the fiscal year is

@@ -1935,32 +1935,33 @@ _NEAR_A = ("We use artificial intelligence models to route insurance claims, to 
 _NEAR_B = _NEAR_A[:-1] + " daily."
 
 
-def test_a_near_copy_is_held_back_and_the_10k_keeps_the_task():
-    tasks, held = classify.hold_near([
+def test_a_near_copy_takes_the_task_of_the_10k():
+    tasks, copies = classify.collapse_near([
         (_task("ars:1-1", _NEAR_B, "ARS"), _doc()),
         (_task("tenk:1-1", _NEAR_A), _doc()),
         (_task("other:1-1", "A different passage about cloud software and its pricing for customers."), _doc()),
     ])
     assert [t["passage_id"] for t in tasks] == ["tenk:1-1", "other:1-1"]
-    assert [(h["passage_id"], h["copy_of"], h["task"]["text"]) for h in held] == [("ars:1-1", "tenk:1-1", _NEAR_B)]
+    assert copies == [{"passage_id": "ars:1-1", "copy_of": "tenk:1-1", "match": "near"}]
 
 
-def test_near_copies_are_not_held_across_companies_or_below_the_threshold():
-    tasks, held = classify.hold_near([(_task("a:1-1", _NEAR_A), _doc()), (_task("b:1-1", _NEAR_B), _doc(cik="2"))])
-    assert len(tasks) == 2 and held == []
-    tasks, held = classify.hold_near([(_task("a:1-1", _NEAR_A), _doc()), (_task("b:1-1", _NEAR_B), _doc())], threshold=0.99)
-    assert len(tasks) == 2 and held == []
+def test_near_copies_are_not_joined_across_companies_or_below_the_threshold():
+    tasks, copies = classify.collapse_near([(_task("a:1-1", _NEAR_A), _doc()), (_task("b:1-1", _NEAR_B), _doc(cik="2"))])
+    assert len(tasks) == 2 and copies == []
+    tasks, copies = classify.collapse_near([(_task("a:1-1", _NEAR_A), _doc()), (_task("b:1-1", _NEAR_B), _doc())], threshold=0.99)
+    assert len(tasks) == 2 and copies == []
 
 
-def test_a_near_copy_takes_the_label_only_if_every_quote_is_in_its_text():
-    held = [{"passage_id": "b:1-1", "copy_of": "a:1-1", "task": _task("b:1-1", _NEAR_B)},
-            {"passage_id": "c:1-1", "copy_of": "x:1-1", "task": _task("c:1-1", _NEAR_B)},
-            {"passage_id": "d:1-1", "copy_of": "y:1-1", "task": _task("d:1-1", _NEAR_B)}]
-    final = [{"passage_id": "a:1-1", "evidence": ["route insurance claims"]},
-             {"passage_id": "x:1-1", "evidence": ["route insurance claims", "detect fraud in card payments"]}]
-    copies, tasks = classify.release_near(held, final)
-    assert copies == [{"passage_id": "b:1-1", "copy_of": "a:1-1", "match": "near"}]
-    assert [t["passage_id"] for t in tasks] == ["c:1-1", "d:1-1"]  # a quote not in the text; no label for y
+def test_a_near_copy_whose_quote_is_not_in_its_text_is_flagged_for_review():
+    final = [{"passage_id": "a:1-1", "ai_reference": "explicit", "evidence": ["route insurance claims"], "disputed": [], "needs_review": False},
+             {"passage_id": "x:1-1", "ai_reference": "explicit", "evidence": ["route insurance claims", "card payments"], "disputed": [], "needs_review": False}]
+    copies = [{"passage_id": "b:1-1", "copy_of": "a:1-1", "match": "near"}, {"passage_id": "c:1-1", "copy_of": "x:1-1", "match": "near"}]
+    out, n = classify.copy_labels(final, copies, {"b:1-1": _NEAR_B, "c:1-1": _NEAR_B})
+    by_id = {l["passage_id"]: l for l in out}
+    assert n == 2
+    assert (by_id["b:1-1"]["copy_match"], by_id["b:1-1"]["needs_review"], by_id["b:1-1"]["disputed"]) == ("near", False, [])
+    assert (by_id["c:1-1"]["needs_review"], by_id["c:1-1"]["disputed"]) == (True, ["near_copy_evidence"])
+    assert by_id["c:1-1"]["evidence"] == ["route insurance claims", "card payments"]
 
 
 def test_an_exact_copy_of_a_near_copy_takes_the_label_too():
@@ -1972,7 +1973,7 @@ def test_an_exact_copy_of_a_near_copy_takes_the_label_too():
     assert "copy_match" not in by_id["c:1-1"]
 
 
-def test_cli_labels_near_copies_in_two_rounds(tmp_path, capsys):
+def test_cli_labels_near_copies_in_one_round(tmp_path, capsys):
     data = tmp_path / "work"
     rows = (("aaaa", "10-K", _NEAR_A), ("bbbb", "ARS", _NEAR_B), ("cccc", "ARS", _NEAR_B.replace("route", "sort")))
     for doc_id, form, text in rows:
@@ -1989,24 +1990,15 @@ def test_cli_labels_near_copies_in_two_rounds(tmp_path, capsys):
 
     run("tasks")
     assert [t["passage_id"] for t in read_jsonl(data / "tasks.jsonl")] == ["aaaa:1-1"]
-    assert [h["passage_id"] for h in read_jsonl(data / "near_held.jsonl")] == ["bbbb:1-1", "cccc:1-1"]
+    assert [(c["passage_id"], c["match"]) for c in read_jsonl(data / "copies.jsonl")] == [("bbbb:1-1", "near"), ("cccc:1-1", "near")]
     coder = tmp_path / "alice.jsonl"
     coder.write_text(line(passage_id="aaaa:1-1", evidence=["route insurance claims"]) + "\n", encoding="utf-8")
-    run("accept", str(coder), "--coder", "alice")  # no complaint about the held passages
-    run("adjudicate")
-    run("near")
-    assert read_jsonl(data / "copies.jsonl") == [{"passage_id": "bbbb:1-1", "copy_of": "aaaa:1-1", "match": "near"}]
-    assert [t["passage_id"] for t in read_jsonl(data / "tasks_near.jsonl")] == ["cccc:1-1"]
-    coder.write_text(line(passage_id="cccc:1-1", evidence=["sort insurance claims"]) + "\n", encoding="utf-8")
-    run("accept", str(coder), "--coder", "alice", "--tasks", str(data / "tasks_near.jsonl"), "--append")
-    assert [l["passage_id"] for l in read_jsonl(data / "labels" / "alice.jsonl")] == ["aaaa:1-1", "cccc:1-1"]
+    run("accept", str(coder), "--coder", "alice")  # no complaint about the near copies
     run("adjudicate")
     final = {l["passage_id"]: l for l in read_jsonl(data / "labels_final.jsonl")}
     assert set(final) == {"aaaa:1-1", "bbbb:1-1", "cccc:1-1"}
-    assert (final["bbbb:1-1"]["copied_from"], final["bbbb:1-1"]["copy_match"]) == ("aaaa:1-1", "near")
-    assert "copied_from" not in final["cccc:1-1"]
-    run("near")  # again: the same decision, no copy listed twice
-    assert len(read_jsonl(data / "copies.jsonl")) == 1
+    assert (final["bbbb:1-1"]["copied_from"], final["bbbb:1-1"]["copy_match"], final["bbbb:1-1"]["needs_review"]) == ("aaaa:1-1", "near", False)
+    assert (final["cccc:1-1"]["needs_review"], final["cccc:1-1"]["disputed"]) == (True, ["near_copy_evidence"])
     capsys.readouterr()
 
 

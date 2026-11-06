@@ -163,14 +163,14 @@ def _near(x: set[str], y: set[str], threshold: float) -> bool:
     return len(x) >= _NEAR_MIN_WORDS and len(y) >= _NEAR_MIN_WORDS and len(x & y) / len(x | y) >= threshold
 
 
-def hold_near(entries: list[tuple[dict, dict]], threshold: float = 0.9) -> tuple[list[dict], list[dict]]:
-    """Hold back near copies within a company and release year, for `release_near` to decide after labelling.
+def collapse_near(entries: list[tuple[dict, dict]], threshold: float = 0.9) -> tuple[list[dict], list[dict]]:
+    """One task per group of near copies within a company and release year; the others take its label in `adjudicate`.
 
     `entries` are (task, its document), the tasks left after `collapse_copies`. Two tasks are near if their word
     sets overlap by at least `threshold` (the measure of `duplicate_check`); near pairs are joined into groups and
     each group keeps one task, the first form in `_FORM_ORDER`, then the earlier one. A group of more than
-    `_NEAR_MAX_GROUP` tasks of one company and year is not checked. Returns (tasks to label now, in the given
-    order; held, one row `{"passage_id", "copy_of", "task"}` per task held back).
+    `_NEAR_MAX_GROUP` tasks of one company and year is not checked. Returns (tasks to label, in the given order;
+    copies, one row `{"passage_id", "copy_of", "match": "near"}` per task that takes the label of another).
     """
     rank = {form: i for i, form in enumerate(_FORM_ORDER)}
     groups: dict[tuple, list[int]] = {}
@@ -201,35 +201,18 @@ def hold_near(entries: list[tuple[dict, dict]], threshold: float = 0.9) -> tuple
         keep = min(members, key=lambda i: (rank.get(entries[i][0]["form"], len(rank)), i))
         copy_of.update({i: keep for i in members if i != keep})
     tasks_ = [task for i, (task, _) in enumerate(entries) if i not in copy_of]
-    held = [{"passage_id": entries[i][0]["passage_id"], "copy_of": entries[k][0]["passage_id"], "task": entries[i][0]}
-            for i, k in sorted(copy_of.items())]
-    return tasks_, held
-
-
-def release_near(held: list[dict], final: list[dict]) -> tuple[list[dict], list[dict]]:
-    """Decide the held near copies once their originals are labelled.
-
-    A held task becomes a copy if its original has a label and every quote of that label's evidence is in the
-    held task's own text (see `_locate`); otherwise it is a task of its own. Returns (copies, one row
-    `{"passage_id", "copy_of", "match": "near"}` each; tasks to label).
-    """
-    by_id = {l["passage_id"]: l for l in final}
-    copies, tasks_ = [], []
-    for h in held:
-        original = by_id.get(h["copy_of"])
-        text = _squash(h["task"]["text"])
-        if original is not None and all(_locate(q, text) is not None for q in original["evidence"]):
-            copies.append({"passage_id": h["passage_id"], "copy_of": h["copy_of"], "match": "near"})
-        else:
-            tasks_.append(h["task"])
-    return copies, tasks_
+    copies = [{"passage_id": entries[i][0]["passage_id"], "copy_of": entries[k][0]["passage_id"], "match": "near"}
+              for i, k in sorted(copy_of.items())]
+    return tasks_, copies
 
 
 def copy_labels(final: list[dict], copies: list[dict], text_by_id: dict[str, str]) -> tuple[list[dict], int]:
     """`final` plus one label per copy whose original has one, marked `copied_from` (and `copy_match` "near" for a near copy).
 
-    A copy's evidence is stored in its own passage's characters. A copy of a copy (an exact copy of a passage that
-    is itself a near copy) takes the label once its original has one. Returns (labels, copies labelled).
+    A copy's evidence is stored in its own passage's characters. A near copy with a quote of its original's evidence
+    that is not in its own text keeps the quote as the original has it and is flagged `needs_review`, with
+    `near_copy_evidence` in `disputed`. A copy of a copy takes the label once its original has one.
+    Returns (labels, copies labelled).
     """
     by_id = {l["passage_id"]: l for l in final}
     out = list(final)
@@ -243,11 +226,15 @@ def copy_labels(final: list[dict], copies: list[dict], text_by_id: dict[str, str
                 left.append(c)
                 continue
             text = _squash(text_by_id[c["passage_id"]])
-            evidence = [_locate(q, text) or q for q in original["evidence"]]
+            found = [_locate(q, text) for q in original["evidence"]]
             label = {k: v for k, v in original.items() if k not in ("copied_from", "copy_match")}
-            label.update(passage_id=c["passage_id"], evidence=evidence, copied_from=c["copy_of"])
+            label.update(passage_id=c["passage_id"], evidence=[f or q for f, q in zip(found, original["evidence"])],
+                         copied_from=c["copy_of"])
             if c.get("match") == "near":
                 label["copy_match"] = "near"
+                if None in found:
+                    label["disputed"] = sorted({*label.get("disputed", []), "near_copy_evidence"})
+                    label["needs_review"] = True
             out.append(label)
             by_id[c["passage_id"]] = label
             n += 1
