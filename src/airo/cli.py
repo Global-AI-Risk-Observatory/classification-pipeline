@@ -2,9 +2,11 @@
 
     python -m airo fetch <out> --types T      -> <out>/markdown/<filing id>.md, <out>/manifest/<filing id>.json
     python -m airo run <dir-or-files...>      -> docs/<doc_id>/{document.json,blocks.jsonl,passages.jsonl}, index/files.jsonl
-    python -m airo tasks                      -> tasks.jsonl, codebook.md, hints.jsonl
+    python -m airo tasks                      -> tasks.jsonl, copies.jsonl, near_held.jsonl, codebook.md, hints.jsonl
     python -m airo accept <file> --coder X    -> labels/X.jsonl (validated)
     python -m airo adjudicate                 -> labels_final.jsonl, agreement.json
+    python -m airo near                       -> copies.jsonl (near copies added), tasks_near.jsonl
+    (the coder on tasks_near.jsonl, `accept --tasks tasks_near.jsonl --append`, `adjudicate` again)
     python -m airo aggregate                  -> report_summary.jsonl, reports/<doc_id>.md, recall_check.json
     python -m airo export <out> --run-id X    -> the dataset layout of the run under <out>
 
@@ -76,26 +78,47 @@ def cmd_tasks(args) -> None:
                 hints += 1
     # The same text within a company and release year is labelled once; the copies take its label in `adjudicate`.
     tasks, copies = classify.collapse_copies(entries)
+    # A near copy waits until its original is labelled; `near` then decides whether it takes that label.
+    kept = {t["passage_id"] for t in tasks}
+    tasks, held = classify.hold_near([(t, d) for t, d in entries if t["passage_id"] in kept])
     _write(args.data / "tasks.jsonl", tasks)
     _write(args.data / "copies.jsonl", copies)
+    _write(args.data / "near_held.jsonl", held)
+    (args.data / "tasks_near.jsonl").unlink(missing_ok=True)
     (args.data / "codebook.md").write_text(taxonomy.codebook(), encoding="utf-8")
     print(
         f"{len(tasks)} task(s) from direct mentions, {len(copies)} copies take the label of another task, "
-        f"{hints} context passage(s) as hints, codebook v{taxonomy.TAXONOMY_VERSION}"
+        f"{len(held)} near copies held for `near`, {hints} context passage(s) as hints, codebook v{taxonomy.TAXONOMY_VERSION}"
     )
 
 
 def cmd_accept(args) -> None:
     lines = Path(args.file).read_text(encoding="utf-8").splitlines()
-    copies = {c["passage_id"] for c in _read(args.data / "copies.jsonl")} if (args.data / "copies.jsonl").exists() else set()
-    passages = [p for _, found in _docs(args.data) for p in _direct(found) if p["passage_id"] not in copies]
+    # Labels are checked against the tasks the coder was given (tasks.jsonl, or tasks_near.jsonl in the second round).
+    passages = _read(args.tasks or args.data / "tasks.jsonl")
     labels, problems = classify.validate(lines, passages, args.coder)
     for p in problems:
         print("REJECTED:", p)
     if problems and not args.partial:
         sys.exit(f"{len(problems)} problem(s); nothing written. Fix the file or pass --partial.")
-    _write(args.data / "labels" / f"{args.coder}.jsonl", labels)
-    print(f"{len(labels)} label(s) accepted for coder {args.coder}")
+    out = args.data / "labels" / f"{args.coder}.jsonl"
+    if args.append and out.exists():
+        new = {l["passage_id"] for l in labels}
+        labels = [l for l in _read(out) if l["passage_id"] not in new] + labels
+    _write(out, labels)
+    print(f"{len(labels)} label(s) for coder {args.coder}")
+
+
+def cmd_near(args) -> None:
+    held = _read(args.data / "near_held.jsonl") if (args.data / "near_held.jsonl").exists() else []
+    copies, tasks = classify.release_near(held, _read(args.data / "labels_final.jsonl"))
+    exact = [c for c in _read(args.data / "copies.jsonl") if c.get("match") != "near"] if (args.data / "copies.jsonl").exists() else []
+    _write(args.data / "copies.jsonl", exact + copies)
+    _write(args.data / "tasks_near.jsonl", tasks)
+    print(
+        f"{len(held)} near copies held: {len(copies)} take the label of their original, "
+        f"{len(tasks)} are tasks in tasks_near.jsonl (an evidence quote of the original is not in their text, or the original has no label)"
+    )
 
 
 def cmd_adjudicate(args) -> None:
@@ -159,8 +182,11 @@ def main(argv: list[str] | None = None) -> None:
     p.add_argument("file")
     p.add_argument("--coder", required=True)
     p.add_argument("--partial", action="store_true", help="write the valid labels even if some were rejected")
+    p.add_argument("--tasks", type=Path, help="the task file the coder labelled (default: tasks.jsonl in the working directory)")
+    p.add_argument("--append", action="store_true", help="add to the coder's accepted labels instead of replacing them")
     p.set_defaults(func=cmd_accept)
     sub.add_parser("adjudicate").set_defaults(func=cmd_adjudicate)
+    sub.add_parser("near", help="after `adjudicate`: near copies take their original's label or become tasks_near.jsonl").set_defaults(func=cmd_near)
     sub.add_parser("aggregate").set_defaults(func=cmd_aggregate)
     p = sub.add_parser("export", help="write the dataset layout of the run (as kept in the bucket) to a directory")
     p.add_argument("out", help="target directory, e.g. the mounted bucket folder of the run")

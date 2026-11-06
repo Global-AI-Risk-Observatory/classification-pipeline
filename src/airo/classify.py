@@ -110,9 +110,9 @@ def duplicate_check(rows: list[dict], threshold: float = 0.9) -> dict:
         if len(left) > _NEAR_MAX_GROUP:
             unchecked += 1
             continue
-        words = [(r["chunk_id"], set(_NEAR_TOKENS.findall(r["text"].lower()))) for r in left]
+        words = [(r["chunk_id"], _words(r["text"])) for r in left]
         for (a, x), (b, y) in combinations(words, 2):
-            if len(x) >= _NEAR_MIN_WORDS and len(y) >= _NEAR_MIN_WORDS and len(x & y) / len(x | y) >= threshold:
+            if _near(x, y, threshold):
                 near += 1
                 involved |= {a, b}
     tasks = sum(not r.get("copied") for r in rows)
@@ -155,22 +155,105 @@ def collapse_copies(entries: list[tuple[dict, dict]]) -> tuple[list[dict], list[
     return tasks_, copies
 
 
-def copy_labels(final: list[dict], copies: list[dict], text_by_id: dict[str, str]) -> tuple[list[dict], int]:
-    """`final` plus one label per copy whose original has one, marked `copied_from`.
+def _words(text: str) -> set[str]:
+    return set(_NEAR_TOKENS.findall(text.lower()))
 
-    A copy's evidence is stored in its own passage's characters. Returns (labels, copies labelled).
+
+def _near(x: set[str], y: set[str], threshold: float) -> bool:
+    return len(x) >= _NEAR_MIN_WORDS and len(y) >= _NEAR_MIN_WORDS and len(x & y) / len(x | y) >= threshold
+
+
+def hold_near(entries: list[tuple[dict, dict]], threshold: float = 0.9) -> tuple[list[dict], list[dict]]:
+    """Hold back near copies within a company and release year, for `release_near` to decide after labelling.
+
+    `entries` are (task, its document), the tasks left after `collapse_copies`. Two tasks are near if their word
+    sets overlap by at least `threshold` (the measure of `duplicate_check`); near pairs are joined into groups and
+    each group keeps one task, the first form in `_FORM_ORDER`, then the earlier one. A group of more than
+    `_NEAR_MAX_GROUP` tasks of one company and year is not checked. Returns (tasks to label now, in the given
+    order; held, one row `{"passage_id", "copy_of", "task"}` per task held back).
+    """
+    rank = {form: i for i, form in enumerate(_FORM_ORDER)}
+    groups: dict[tuple, list[int]] = {}
+    for i, (task, doc) in enumerate(entries):
+        company, year = doc.get("cik"), release_year(doc)
+        if company and company != _UNKNOWN and year:
+            groups.setdefault((company, year), []).append(i)
+    parent: dict[int, int] = {}
+
+    def find(i: int) -> int:
+        while parent.setdefault(i, i) != i:
+            parent[i] = parent[parent[i]]
+            i = parent[i]
+        return i
+
+    for members in groups.values():
+        if len(members) > _NEAR_MAX_GROUP:
+            continue
+        words = [(i, _words(entries[i][0]["text"])) for i in members]
+        for (a, x), (b, y) in combinations(words, 2):
+            if _near(x, y, threshold):
+                parent[find(a)] = find(b)
+    components: dict[int, list[int]] = {}
+    for i in parent:
+        components.setdefault(find(i), []).append(i)
+    copy_of: dict[int, int] = {}
+    for members in components.values():
+        keep = min(members, key=lambda i: (rank.get(entries[i][0]["form"], len(rank)), i))
+        copy_of.update({i: keep for i in members if i != keep})
+    tasks_ = [task for i, (task, _) in enumerate(entries) if i not in copy_of]
+    held = [{"passage_id": entries[i][0]["passage_id"], "copy_of": entries[k][0]["passage_id"], "task": entries[i][0]}
+            for i, k in sorted(copy_of.items())]
+    return tasks_, held
+
+
+def release_near(held: list[dict], final: list[dict]) -> tuple[list[dict], list[dict]]:
+    """Decide the held near copies once their originals are labelled.
+
+    A held task becomes a copy if its original has a label and every quote of that label's evidence is in the
+    held task's own text (see `_locate`); otherwise it is a task of its own. Returns (copies, one row
+    `{"passage_id", "copy_of", "match": "near"}` each; tasks to label).
+    """
+    by_id = {l["passage_id"]: l for l in final}
+    copies, tasks_ = [], []
+    for h in held:
+        original = by_id.get(h["copy_of"])
+        text = _squash(h["task"]["text"])
+        if original is not None and all(_locate(q, text) is not None for q in original["evidence"]):
+            copies.append({"passage_id": h["passage_id"], "copy_of": h["copy_of"], "match": "near"})
+        else:
+            tasks_.append(h["task"])
+    return copies, tasks_
+
+
+def copy_labels(final: list[dict], copies: list[dict], text_by_id: dict[str, str]) -> tuple[list[dict], int]:
+    """`final` plus one label per copy whose original has one, marked `copied_from` (and `copy_match` "near" for a near copy).
+
+    A copy's evidence is stored in its own passage's characters. A copy of a copy (an exact copy of a passage that
+    is itself a near copy) takes the label once its original has one. Returns (labels, copies labelled).
     """
     by_id = {l["passage_id"]: l for l in final}
     out = list(final)
     n = 0
-    for c in copies:
-        original = by_id.get(c["copy_of"])
-        if original is None:
-            continue
-        text = _squash(text_by_id[c["passage_id"]])
-        evidence = [_locate(q, text) or q for q in original["evidence"]]
-        out.append({**original, "passage_id": c["passage_id"], "evidence": evidence, "copied_from": c["copy_of"]})
-        n += 1
+    pending = list(copies)
+    while pending:
+        left = []
+        for c in pending:
+            original = by_id.get(c["copy_of"])
+            if original is None:
+                left.append(c)
+                continue
+            text = _squash(text_by_id[c["passage_id"]])
+            evidence = [_locate(q, text) or q for q in original["evidence"]]
+            label = {k: v for k, v in original.items() if k not in ("copied_from", "copy_match")}
+            label.update(passage_id=c["passage_id"], evidence=evidence, copied_from=c["copy_of"])
+            if c.get("match") == "near":
+                label["copy_match"] = "near"
+            out.append(label)
+            by_id[c["passage_id"]] = label
+            n += 1
+        if len(left) == len(pending):
+            break
+        pending = left
     return out, n
 
 

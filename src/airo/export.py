@@ -37,7 +37,7 @@ from .taxonomy import SUBSTANTIVENESS, TAXONOMY_VERSION
 LABEL_FIELDS = (
     "ai_reference", "roles", "risk_types", "mit_subdomains", "adoption_stage", "business_functions",
     "governance_responses", "ai_kinds", "substantiveness", "disclosure_traits", "entities", "evidence",
-    "confidence", "taxonomy_version", "needs_review", "disputed", "copied_from",
+    "confidence", "taxonomy_version", "needs_review", "disputed", "copied_from", "copy_match",
 )
 METRIC_BOOLEANS = ("ai_mention", "adoption", "risk", "harm", "vendor", "llm_adoption", "cyber_risk", "regulatory_risk")
 

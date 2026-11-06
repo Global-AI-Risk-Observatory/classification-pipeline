@@ -1930,6 +1930,86 @@ def test_cli_labels_a_repeated_passage_once_and_every_filing_gets_the_label(tmp_
     capsys.readouterr()
 
 
+_NEAR_A = ("We use artificial intelligence models to route insurance claims, to detect fraud in payments, to price "
+           "policies for small business customers across three regions, and to answer questions from agents.")
+_NEAR_B = _NEAR_A[:-1] + " daily."
+
+
+def test_a_near_copy_is_held_back_and_the_10k_keeps_the_task():
+    tasks, held = classify.hold_near([
+        (_task("ars:1-1", _NEAR_B, "ARS"), _doc()),
+        (_task("tenk:1-1", _NEAR_A), _doc()),
+        (_task("other:1-1", "A different passage about cloud software and its pricing for customers."), _doc()),
+    ])
+    assert [t["passage_id"] for t in tasks] == ["tenk:1-1", "other:1-1"]
+    assert [(h["passage_id"], h["copy_of"], h["task"]["text"]) for h in held] == [("ars:1-1", "tenk:1-1", _NEAR_B)]
+
+
+def test_near_copies_are_not_held_across_companies_or_below_the_threshold():
+    tasks, held = classify.hold_near([(_task("a:1-1", _NEAR_A), _doc()), (_task("b:1-1", _NEAR_B), _doc(cik="2"))])
+    assert len(tasks) == 2 and held == []
+    tasks, held = classify.hold_near([(_task("a:1-1", _NEAR_A), _doc()), (_task("b:1-1", _NEAR_B), _doc())], threshold=0.99)
+    assert len(tasks) == 2 and held == []
+
+
+def test_a_near_copy_takes_the_label_only_if_every_quote_is_in_its_text():
+    held = [{"passage_id": "b:1-1", "copy_of": "a:1-1", "task": _task("b:1-1", _NEAR_B)},
+            {"passage_id": "c:1-1", "copy_of": "x:1-1", "task": _task("c:1-1", _NEAR_B)},
+            {"passage_id": "d:1-1", "copy_of": "y:1-1", "task": _task("d:1-1", _NEAR_B)}]
+    final = [{"passage_id": "a:1-1", "evidence": ["route insurance claims"]},
+             {"passage_id": "x:1-1", "evidence": ["route insurance claims", "detect fraud in card payments"]}]
+    copies, tasks = classify.release_near(held, final)
+    assert copies == [{"passage_id": "b:1-1", "copy_of": "a:1-1", "match": "near"}]
+    assert [t["passage_id"] for t in tasks] == ["c:1-1", "d:1-1"]  # a quote not in the text; no label for y
+
+
+def test_an_exact_copy_of_a_near_copy_takes_the_label_too():
+    final = [{"passage_id": "a:1-1", "ai_reference": "explicit", "evidence": ["route insurance claims"]}]
+    copies = [{"passage_id": "c:1-1", "copy_of": "b:1-1"}, {"passage_id": "b:1-1", "copy_of": "a:1-1", "match": "near"}]
+    out, n = classify.copy_labels(final, copies, {"b:1-1": _NEAR_B, "c:1-1": _NEAR_B})
+    by_id = {l["passage_id"]: l for l in out}
+    assert n == 2 and by_id["b:1-1"]["copy_match"] == "near" and by_id["c:1-1"]["copied_from"] == "b:1-1"
+    assert "copy_match" not in by_id["c:1-1"]
+
+
+def test_cli_labels_near_copies_in_two_rounds(tmp_path, capsys):
+    data = tmp_path / "work"
+    rows = (("aaaa", "10-K", _NEAR_A), ("bbbb", "ARS", _NEAR_B), ("cccc", "ARS", _NEAR_B.replace("route", "sort")))
+    for doc_id, form, text in rows:
+        d = data / "docs" / doc_id
+        d.mkdir(parents=True)
+        (d / "document.json").write_text(json.dumps({"doc_id": doc_id, "company": "ACME", "form": form, "fiscal_year": 2024,
+                                                     "cik": "1", "filing_date": "2025-03-01"}), encoding="utf-8")
+        (d / "passages.jsonl").write_text(json.dumps({
+            "passage_id": f"{doc_id}:1-1", "doc_id": doc_id, "section": None, "section_title": None, "heading": None,
+            "mention": "direct", "matched": {"ai": ["artificial intelligence"]}, "text": text}) + "\n", encoding="utf-8")
+
+    def run(*args):
+        cli.main(["--data", str(data), *args])
+
+    run("tasks")
+    assert [t["passage_id"] for t in read_jsonl(data / "tasks.jsonl")] == ["aaaa:1-1"]
+    assert [h["passage_id"] for h in read_jsonl(data / "near_held.jsonl")] == ["bbbb:1-1", "cccc:1-1"]
+    coder = tmp_path / "alice.jsonl"
+    coder.write_text(line(passage_id="aaaa:1-1", evidence=["route insurance claims"]) + "\n", encoding="utf-8")
+    run("accept", str(coder), "--coder", "alice")  # no complaint about the held passages
+    run("adjudicate")
+    run("near")
+    assert read_jsonl(data / "copies.jsonl") == [{"passage_id": "bbbb:1-1", "copy_of": "aaaa:1-1", "match": "near"}]
+    assert [t["passage_id"] for t in read_jsonl(data / "tasks_near.jsonl")] == ["cccc:1-1"]
+    coder.write_text(line(passage_id="cccc:1-1", evidence=["sort insurance claims"]) + "\n", encoding="utf-8")
+    run("accept", str(coder), "--coder", "alice", "--tasks", str(data / "tasks_near.jsonl"), "--append")
+    assert [l["passage_id"] for l in read_jsonl(data / "labels" / "alice.jsonl")] == ["aaaa:1-1", "cccc:1-1"]
+    run("adjudicate")
+    final = {l["passage_id"]: l for l in read_jsonl(data / "labels_final.jsonl")}
+    assert set(final) == {"aaaa:1-1", "bbbb:1-1", "cccc:1-1"}
+    assert (final["bbbb:1-1"]["copied_from"], final["bbbb:1-1"]["copy_match"]) == ("aaaa:1-1", "near")
+    assert "copied_from" not in final["cccc:1-1"]
+    run("near")  # again: the same decision, no copy listed twice
+    assert len(read_jsonl(data / "copies.jsonl")) == 1
+    capsys.readouterr()
+
+
 def test_the_release_year_comes_from_the_release_time_then_the_filing_date():
     assert classify.release_year({"released": "2025-02-14T21:05:00+00:00", "filing_date": "2024-12-31"}) == "2025"
     assert classify.release_year({"released": "not provided by the data provider", "filing_date": "2024-12-31"}) == "2024"
