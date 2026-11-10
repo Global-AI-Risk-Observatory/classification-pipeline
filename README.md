@@ -4,10 +4,11 @@
 what role AI plays for the company (market driver, own adoption, offering, risk, governance, incident),
 which risk is meant, and how specific the statement is.
 
-The filings are those of US companies. They come from one source, the FinancialReports API
-(financialfilings.com), as Markdown, and are kept in Google Cloud Storage, not on anyone's machine and not
-in this repository. Every team member fetches with their own API key; a filing that is already in the
-bucket is not fetched again.
+The filings are those of US companies and, as a region of its own, of EU companies whose reports are in
+English, German, French or Spanish (see "Regions and languages"). They come from one source, the
+FinancialReports API (financialfilings.com), as Markdown, and are kept in Google Cloud Storage, not on
+anyone's machine and not in this repository. Every team member fetches with their own API key; a filing
+that is already in the bucket is not fetched again.
 
 The pipeline is built to start with a handful of example reports and designed so that the same stages can
 be applied to millions; what is and is not in place for that is listed under "Design" and "Known limits".
@@ -41,30 +42,33 @@ BigQuery once the first cloud runs are done.
 
 | Stage | Command | Reads | Writes |
 |---|---|---|---|
-| 0 download | `fetch <out> --types T` | the data provider's API (US companies, Markdown only), the names already in `<out>` | `<out>/markdown/<filing id>.md`, `<out>/manifest/<filing id>.json`, once `<out>/companies/us.jsonl` |
+| 0 download | `fetch <out> --types T [--region R]` | the data provider's API (the companies of region `R`, default `us`; Markdown only), the names already in `<out>` | `<out>/markdown/<filing id>.md`, `<out>/manifest/<filing id>.json`, once `<out>/companies/<region>.jsonl` |
 | 1+2 ingest, retrieve | `run <dir-or-files...>` | Markdown filings (also HTML / inline XBRL), `index/files.jsonl` | `docs/<doc_id>/document.json`, `docs/<doc_id>/blocks.jsonl`, `docs/<doc_id>/passages.jsonl`, `index/files.jsonl` |
 | 3 classify | `tasks` | `docs/*/document.json`, `docs/*/passages.jsonl` | `tasks.jsonl`, `copies.jsonl`, `hints.jsonl`, `codebook.md` |
 | | `accept <file> --coder X` | a coder's JSONL file, `tasks.jsonl` | `labels/X.jsonl` |
 | | `adjudicate` | `labels/*.jsonl`, `copies.jsonl` | `labels_final.jsonl`, `agreement.json` |
 | 4 aggregate | `aggregate` | `docs/*/document.json`, `docs/*/passages.jsonl`, `labels_final.jsonl` | `report_summary.jsonl`, `reports/<doc_id>.md`, `recall_check.json` |
-| 5 export | `export <out> --run-id X [--manifest <raw>/manifest]` | the working directory | the run's dataset layout under `<out>`: `chunks.jsonl`, `context_passages.jsonl`, `documents_manifest.json`, `README.md`, `docs.tar.gz`, `reports.tar.gz`, `results/` (`classified_chunks.jsonl`, `filing_metrics.jsonl`, `us-filing-metrics.json`, codebook, labels, agreement, summaries, the coder's files) |
+| 5 export | `export <out> --run-id X [--manifest <raw>/manifest] [--region R]` | the working directory | the run's dataset layout under `<out>`: `chunks.jsonl`, `context_passages.jsonl`, `documents_manifest.json`, `README.md`, `docs.tar.gz`, `reports.tar.gz`, `results/` (`classified_chunks.jsonl`, `filing_metrics.jsonl`, `<region>-filing-metrics.json`, that is `us-filing-metrics.json` for the US, codebook, labels, agreement, summaries, the coder's files) |
 
 Run them in this order. `--data` is a global option and goes before the sub-command. `<raw>` is the path
 under which the raw bucket is mounted (in a Batch job; `run` reads files, not `gs://` locations).
 
     python -m airo fetch gs://airo-filings-raw --types 10-K --since 2025-01-01 --until 2025-03-31 --limit 100
+    python -m airo fetch gs://<bucket>/<prefix> --region eu --types 10-K,10-K-ESEF --since 2025-01-01 --limit 100
     python -m airo --data data run <raw>/markdown --manifest <raw>/manifest
     python -m airo --data data tasks
     # a coder labels data/tasks.jsonl following data/codebook.md and returns one JSON object per line
     python -m airo --data data accept alice.jsonl --coder alice
     python -m airo --data data adjudicate
     python -m airo --data data aggregate
-    python -m airo --data data export <out> --run-id <run> --manifest <raw>/manifest --model <model>
+    python -m airo --data data export <out> --run-id <run> --manifest <raw>/manifest --model <model> [--region eu]
 
-- `fetch` copies filings of US companies from the FinancialReports API (financialfilings.com) into the raw
-  bucket. It stores the provider's Markdown rendering of each filing and nothing else: `markdown/<filing id>.md`
-  and, next to it, its metadata as `manifest/<filing id>.json` (ISIC class, country, company, LEI, CIK, ticker,
-  exchange, form, fiscal year and period, period end, filing date, source filing id, release time). `<out>` is `gs://bucket[/prefix]` or a directory (the mounted bucket in a Batch job);
+- `fetch` copies filings of the companies of one region (`--region`, default `us`) from the FinancialReports API
+  (financialfilings.com) into the raw bucket. It stores the provider's Markdown rendering of each filing and
+  nothing else: `markdown/<filing id>.md` and, next to it, its metadata as `manifest/<filing id>.json` (ISIC
+  class, country, language, company, LEI, CIK, ticker, exchange, form, fiscal year and period, period end,
+  filing date, source filing id, release time). A filing without an SEC form gets the provider's type name
+  as its form ("Annual Report", "Annual Report (ESEF)"). `<out>` is `gs://bucket[/prefix]` or a directory (the mounted bucket in a Batch job);
   nothing is kept on the machine that runs the command.
   - **A filing is stored once.** Its name is the provider's filing id, so it is the same whoever fetches it.
     `fetch` first reads the names already in `<out>` and skips those filings without an API request; objects
@@ -75,12 +79,14 @@ under which the raw bucket is mounted (in a Batch job; `run` reads files, not `g
     (159,376 filings in October 2026), 10-K/A (34,958), ARS (34,003), N-CSR (6,740), 20-F (5,688), 40-F (440),
     10-KT (111). `--form 10-K` narrows to one of them; an ARS often repeats the 10-K of the same company under
     another filing id. `--since` / `--until` bound the release date, `--limit` the filings stored per call
-    (default 10).
+    (default 10). For EU companies the provider's annual reports are `10-K` and `10-K-ESEF` (the report in the
+    European electronic format); `--region eu` asks for the 27 member states and for reports in English,
+    German, French or Spanish only.
   - **Metadata costs no request per filing.** The filing's own (fiscal year, period, period end, filing date,
     source filing id) comes with the listing that is read anyway (`view=full`). The company's (CIK, ticker,
-    exchange) comes from the provider's list of US companies, which the first `fetch` reads once (about 220
-    requests for 22,027 companies, three minutes) and keeps as `companies/us.jsonl` in `<out>`; every later
-    `fetch`, by anyone, reads it from there. A company that is not in that list is asked for once and kept as
+    exchange) comes from the provider's list of the region's companies, which the first `fetch` reads once (for
+    the US about 220 requests for 22,027 companies, three minutes) and keeps as `companies/<region>.jsonl`
+    (`companies/us.jsonl` for the US) in `<out>`; every later `fetch`, by anyone, reads it from there. A company that is not in that list is asked for once and kept as
     `companies/<id>.json`. Where the provider has no value, the filing's cover page is used (form, fiscal year,
     period end, ticker, exchange). Where that has none either, the field holds the notice
     `not provided by the data provider` instead of being left out, and the line that `fetch` prints for the
@@ -108,6 +114,39 @@ under which the raw bucket is mounted (in a Batch job; `run` reads files, not `g
   and the files per second.
 - `accept` is run once per coder. If any line is rejected it writes nothing, unless `--partial` is given.
 - `adjudicate` is needed with a single coder too: `aggregate` reads `labels_final.jsonl`.
+
+## Regions and languages
+
+`src/airo/regions.py` holds what differs between the filings of one part of the world and another; every
+other part of the pipeline is the same for every filing. A filing's region follows from the country in its
+manifest; a filing without a country is treated as US.
+
+| | US | EU |
+|---|---|---|
+| Countries | `US` | the 27 member states |
+| Report languages | as the provider lists them (no filter) | English, German, French, Spanish; other languages are left out for now |
+| Company id | CIK | CIK if the company has one, else LEI |
+| Sections | SEC Item headings only | SEC Item headings where a filing has them (a 20-F), else its chapter headings: the shallowest Markdown heading level used at least three times |
+
+- **One codebook for every language.** The codebook describes concepts and stays the same; its English examples
+  are examples, not a word list. A passage not in English shows its language in the task (`Language: de`), and
+  a request with such passages has one sentence saying that the codebook applies to what they say and that
+  evidence is quoted in the passage's language.
+- **The vocabulary of a language is in its glossary.** `glossaries/core.de.json`, `core.fr.json` and
+  `core.es.json` hold AI terms (tier `ai`) with their inflected forms. A filing gets the English core glossary,
+  which matches the English terms that reports in other languages use too ("AI", "ChatGPT"), the core glossary
+  of its own language and its industry glossary. A language glossary never applies to a filing in another
+  language, so "KI" or "IA" in an English report is not a hit. The three files are drafts, to be checked by
+  native speakers.
+- **A request holds one language.** `tasks` keeps the tasks of one language together, and the coders never put
+  passages of two languages into one request.
+- **The US is handled as before.** On 300 US filings of 2025, run with the code of `main` and with this code,
+  none of 905 files differs (documents, blocks, passages, tasks, copies, codebook and the request lines sent to
+  the model).
+- **Tested on EU sample reports.** 189 annual reports released in 2025 from the 27 member states
+  (`gs://airo-eu-sample-reports`) ran through every stage with `gemini-2.5-flash` in batch mode: 810 tasks,
+  783 labeled; without a label 22 of 646 English, 3 of 85 French, 2 of 58 Spanish and 0 of 21 German tasks
+  (`docs/changes.md`, entry 31). No corpus run of EU filings has been made.
 
 ## Automated coder (Gemini on Vertex AI)
 
@@ -180,6 +219,7 @@ The pipeline is deployed on Google Cloud; the settings are in `cloud/config.env`
 | Project | `gario-1`, region `us-central1` |
 | Raw filings | bucket `airo-filings-raw` (regional, Standard, uniform access, no public access, no versioning, deleted objects recoverable for 7 days): `markdown/<filing id>.md` and `manifest/<filing id>.json`, written by `fetch`, each filing once, and the company list `companies/us.jsonl` |
 | Pipeline outputs | bucket `airo-pipeline-data` (same settings) |
+| EU sample reports | bucket `airo-eu-sample-reports` (uniform access, no public access): 189 EU annual reports of 2025 with their metadata (`<country>/<language>/<type>/<filing id>.md` and `.json`, `index.jsonl`), the measurements in `analysis/` and the EU test run in `test-run-20261110/` |
 | Pipeline identity | service account `airo-pipeline@gario-1.iam.gserviceaccount.com`: Storage Object User, Agent Platform (Vertex AI) User, Batch Job Editor, BigQuery Data Editor, BigQuery Job User, Secret Manager Secret Accessor, Artifact Registry Reader, Batch Agent Reporter, Logs Writer |
 | Model | Gemini `gemini-2.5-flash` through Vertex AI: temperature 0, thinking off, 40 passages per request, JSON output bound to the label schema |
 | Image | `us-central1-docker.pkg.dev/gario-1/airo/pipeline` (Artifact Registry repository `airo`), built from `Dockerfile` |
@@ -194,17 +234,18 @@ Set up and pending:
   the raw bucket; the runs `us-2025h1` (UK pipeline), `us-2025h1_V2` (taxonomy v0.5) and `us-2025h1_V3`
   (taxonomy v0.9) in the pipeline-data bucket; the filings by release year in
   `gs://airo-filings-raw/airo-filings-<year>/` (2020 to 2026, same layout); Cloud Batch runs with the buckets
-  mounted under `/mnt/disks`: `us-2026_V4` and `us-2026_V5` (taxonomy v0.10, the 8,294 filings of 2026).
-- Not done: the other years under taxonomy v0.10; the BigQuery tables for labels and summaries. The Batch job
+  mounted under `/mnt/disks`: `us-2026_V4` and `us-2026_V5` (taxonomy v0.10, the 8,294 filings of 2026), and
+  `us-2020_V5` to `us-2025_V5`; the EU sample reports and the EU test run (branch `multi-region`).
+- Not done: a corpus fetch and run of EU filings; the BigQuery tables for labels and summaries. The Batch job
   definitions are not in this repository, and a job writes nothing to Cloud Logging, because the pipeline's
   service account has no logging role; progress shows in the run's `checkpoint/` folder. `us-2025h1_V2` and
   `us-2025h1_V3` were run on a workstation with the buckets as source and target. Three Batch attempts on
   2026-10-13 failed with the mount path `/mnt/out`; the jobs under `/mnt/disks` run, which fits that cause but
   does not prove it.
 
-The data provider's API key is not stored in the cloud (Secret Manager holds no secret): the provider
-counts requests per key, so every team member runs `fetch` from their own machine with their own key, and
-the filings go straight into the raw bucket. All five team members can write to both buckets through
+The provider counts requests per API key, so every team member runs `fetch` with their own key, and the
+filings go straight into the raw bucket. Since 2026-11-10 Secret Manager also holds one provider key, which
+a Batch job reads when it fetches in the cloud (122 of the 189 EU sample reports were fetched that way). All five team members can write to both buckets through
 their project roles.
 
 The container runs `python -m airo <command>` with `AIRO_GLOSSARIES=/app/glossaries` and includes
@@ -238,7 +279,8 @@ The container runs `python -m airo <command>` with `AIRO_GLOSSARIES=/app/glossar
   files can be added at any time. The later stages iterate over `docs/*/` one document at a time and
   never load all blocks at once.
 - **A cheap lexical step selects what gets classified.** Every block is searched with the glossaries
-  under `glossaries/`: `core.json` (502 sector-independent AI terms) plus the glossary of the company's
+  under `glossaries/`: `core.json` (502 sector-independent AI terms), for a filing in German, French or
+  Spanish also `core.<language>.json` (see "Regions and languages"), plus the glossary of the company's
   industry, `isic/<division>.json`, chosen from the 4-digit ISIC Rev. 5 class in the manifest (the
   classification the data provider attaches to every company; `isic_rev5.json` holds the official
   structure), including that file's `class_terms` for the exact class. Terms have a tier: `ai` (the term
@@ -260,10 +302,11 @@ The container runs `python -m airo <command>` with `AIRO_GLOSSARIES=/app/glossar
   `document.json`), and `aggregate` adds the counts up in `recall_check.json`. The hits do not become
   passages; a term that turns up there is added to a glossary.
 - **The classifier stage is defined by two files, not by who codes.** `tasks.jsonl` (passage plus company,
-  form, fiscal year, section, heading, matched terms) and `codebook.md` go in; one label per passage comes
+  form, fiscal year, section, heading, matched terms, and the language of a non-US filing) and `codebook.md` go in; one label per passage comes
   back as JSONL. A coder can be a person, an agent or a batch job against a model API.
-- **A repeated passage is labelled once.** `tasks` puts one task per text within a company and filing year
-  into `tasks.jsonl` and writes the others to `copies.jsonl`; a 10-K keeps the task before an ARS. Texts count
+- **A repeated passage is labelled once.** `tasks` puts one task per text within a company (its region's company
+  id: CIK, or LEI for an EU company without one) and filing year into `tasks.jsonl` and writes the others to
+  `copies.jsonl`; a 10-K keeps the task before an ARS. Texts count
   as the same if they differ at most in whitespace and in quotation marks, apostrophes or dashes. `adjudicate`
   gives each copy the label of its original, marked `copied_from`, so every filing keeps its counts and a count
   per passage can leave the copies out. `agreement.json` covers the labelled tasks only.
@@ -327,10 +370,14 @@ Sources of the disclosure traits (`DISCLOSURE_TRAIT_SOURCES` in `taxonomy.py`): 
 
 ## Known limits
 
-- Section detection knows only Form 10-K "Item" headings ("Item 1A. Risk Factors"). A block belongs to the
-  most recent Item heading, so content after the last one, such as the financial statements, is attributed
-  to that last item. Other forms and other report formats get no sections.
-- The glossaries are English only, and were written from domain knowledge, not mined from filings. They
+- Section detection for US filings knows only Form 10-K "Item" headings ("Item 1A. Risk Factors"). A block
+  belongs to the most recent Item heading, so content after the last one, such as the financial statements, is
+  attributed to that last item. Other US forms get no sections. EU filings without Items are divided by their
+  chapter headings; in the test run 9 of 147 English and 1 of 18 German sample reports got no sections, and
+  one chapter heading was garbled text from the source.
+- The German, French and Spanish glossaries are drafts from the EU sample reports, not yet checked by native
+  speakers; the recall check (`recall.py`) has English patterns only. Other EU languages are left out.
+- The English glossaries were written from domain knowledge, not mined from filings. They
   have been exercised on the 2025 H1 corpus; the review so far is the recall check of each run and the
   2026-10-13 sample of 3,321 context passages (`docs/changes.md`, entries 12 and 13). A review per
   industry against real reports is still open.
@@ -344,7 +391,7 @@ Sources of the disclosure traits (`DISCLOSURE_TRAIT_SOURCES` in `taxonomy.py`): 
   XBRL facts: its metadata comes from the manifest. The filer category (large accelerated filer, ...) is in
   neither the provider's data nor read from the cover page, so it is empty. A manifest field without a value
   holds a notice text, also `fiscal_year`, which is otherwise a number.
-- `companies/us.jsonl` is written once and not refreshed: a ticker or exchange the provider adds later to a
+- `companies/<region>.jsonl` is written once and not refreshed: a ticker or exchange the provider adds later to a
   company in the list is not picked up until the file is deleted from the bucket.
 - `fetch` recognises a filing by the provider's filing id. The same report under two ids (a 10-K and the ARS
   that reprints it) is stored twice; `run` merges only files whose extracted text is identical, and `tasks` only
