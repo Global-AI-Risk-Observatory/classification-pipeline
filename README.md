@@ -12,6 +12,17 @@ bucket is not fetched again.
 The pipeline is built to start with a handful of example reports and designed so that the same stages can
 be applied to millions; what is and is not in place for that is listed under "Design" and "Known limits".
 
+## EU extension: branch `multi-region`
+
+The branch [`multi-region`](https://github.com/Global-AI-Risk-Observatory/classification-pipeline/tree/multi-region)
+extends the pipeline to EU companies whose reports are in English, German, French or Spanish. It is not merged
+into `main`; everything below describes `main`. On the branch, `src/airo/regions.py` holds what differs per region
+(countries, report languages, company id, how a filing is divided into sections), `glossaries/core.de.json`,
+`core.fr.json` and `core.es.json` add AI terms in those languages, and `fetch` and `export` take `--region`; the
+codebook is the same for every language. Its README describes it under "Regions and languages", and
+`docs/changes.md` entry 31 has the measurements and the test results: the US stages give identical output on 300
+US filings, and 189 EU sample reports (`gs://airo-eu-sample-reports`) ran through every stage.
+
 ## Install
 
 Python 3.10 or later; depends on `lxml` and `pydantic`, and on `pytest` for the tests.
