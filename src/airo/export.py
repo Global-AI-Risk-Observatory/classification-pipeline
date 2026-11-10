@@ -12,7 +12,7 @@ Writes, under `<out>` (a directory; in a Batch job the mounted bucket folder), t
     docs.tar.gz, reports.tar.gz   the per-document files and the report views of the working directory
     results/classified_chunks.jsonl   one row per labelled passage: every label field
     results/filing_metrics.jsonl      one row per filing: counts, booleans, per-field tallies
-    results/us-filing-metrics.json    shares per filing month
+    results/<region>-filing-metrics.json  shares per filing month (us-filing-metrics.json for the US)
     results/codebook.md, classification_prompt.md, labels_final.jsonl, agreement.json,
     results/report_summary.jsonl, recall_check.json, and the coder's files from labels_in/
 
@@ -32,6 +32,7 @@ from pathlib import Path
 from typing import Iterator
 
 from .classify import duplicate_check, primary_filings, release_year
+from .regions import US, Region, company_key
 from .taxonomy import SUBSTANTIVENESS, TAXONOMY_VERSION
 
 LABEL_FIELDS = (
@@ -85,7 +86,7 @@ def _chunk(doc: dict, p: dict) -> dict:
     return {
         "chunk_id": p["passage_id"],
         "document_id": str(doc.get("filing_id") or _filing_id(doc["source_files"][0])),
-        "company_id": doc.get("cik"),
+        "company_id": company_key(doc),
         "company_name": doc.get("company"),
         "report_year": doc.get("fiscal_year"),
         "release_year": release_year(doc),
@@ -121,7 +122,7 @@ def _filing_row(name: str, meta: dict, doc: dict, direct: list[dict], context: l
         # The filing is the file; its id comes from the manifest row or, without one, from the file name.
         "document_id": str(meta.get("filing_id") or _filing_id(name)),
         "text_id": doc["doc_id"],
-        "company_id": meta.get("cik") or doc.get("cik"),
+        "company_id": company_key(meta) or company_key(doc),
         "company_name": meta.get("company") or doc.get("company"),
         "filing_date": filing_date,
         "release_year": release_year(meta) or release_year(doc),
@@ -188,14 +189,14 @@ def _tar(src: Path, dst: Path) -> bool:
     return True
 
 
-def _readme(run_id: str, model: str | None, counts: dict, months: list[dict]) -> str:
+def _readme(run_id: str, model: str | None, counts: dict, months: list[dict], region: Region = US) -> str:
     rows = "\n".join(
         f"| {m['month']} | {m['filings']} | {m['aiMentionShare']:.0%} | {m['aiRiskShare']:.0%} | "
         f"{m['adoptionShare']:.0%} | {m['llmAdoptionShare']:.0%} |"
         for m in months
     )
     return "\n".join([
-        f"# US AI disclosure dataset, run `{run_id}`",
+        f"# {region.label} AI disclosure dataset, run `{run_id}`",
         "",
         f"Produced with the `airo` pipeline (`src/airo`, taxonomy v{TAXONOMY_VERSION})"
         + (f" and `{model}`" if model else "") + f" on {date.today().isoformat()}.",
@@ -212,7 +213,7 @@ def _readme(run_id: str, model: str | None, counts: dict, months: list[dict]) ->
         "└── results/",
         f"    ├── classified_chunks.jsonl   {counts['labels']:,} labelled passages, every label field",
         "    ├── filing_metrics.jsonl      one row per filing",
-        "    ├── us-filing-metrics.json    shares per filing month",
+        f"    ├── {region.name}-filing-metrics.json    shares per filing month",
         "    ├── codebook.md               the codebook used (classification_prompt.md is the same file)",
         "    ├── labels_final.jsonl, agreement.json, report_summary.jsonl, recall_check.json",
         "    └── the coder's label and run files",
@@ -241,7 +242,7 @@ def _readme(run_id: str, model: str | None, counts: dict, months: list[dict]) ->
 
 
 def export(data: Path, out: Path, *, run_id: str, manifest: Path | None = None, model: str | None = None,
-           log=print) -> dict:
+           log=print, region: Region = US) -> dict:
     """Write the dataset layout of a run to `out`. Returns the counts."""
     out = Path(out)
     (out / "results").mkdir(parents=True, exist_ok=True)
@@ -261,7 +262,7 @@ def export(data: Path, out: Path, *, run_id: str, manifest: Path | None = None, 
                 chunks.write(json.dumps(_chunk(doc, p), ensure_ascii=False) + "\n")
                 counts["chunks"] += 1
                 check_rows.append({
-                    "chunk_id": p["passage_id"], "company_id": doc.get("cik"), "release_year": release_year(doc),
+                    "chunk_id": p["passage_id"], "company_id": company_key(doc), "release_year": release_year(doc),
                     "text": p["text"], "copied": "copied_from" in labels.get(p["passage_id"], {}),
                 })
                 if l := labels.get(p["passage_id"]):
@@ -303,7 +304,7 @@ def export(data: Path, out: Path, *, run_id: str, manifest: Path | None = None, 
     )
     _write(out / "results" / "filing_metrics.jsonl", metric_rows)
     months = _months(metric_rows)
-    (out / "results" / "us-filing-metrics.json").write_text(
+    (out / "results" / f"{region.name}-filing-metrics.json").write_text(
         json.dumps({
             "source": f"airo pipeline (src/airo, taxonomy v{TAXONOMY_VERSION})" + (f" with {model}" if model else ""),
             "runId": run_id,
@@ -325,7 +326,7 @@ def export(data: Path, out: Path, *, run_id: str, manifest: Path | None = None, 
         shutil.copyfile(f, out / "results" / f.name)
     _tar(data / "docs", out / "docs.tar.gz")
     _tar(data / "reports", out / "reports.tar.gz")
-    (out / "README.md").write_text(_readme(run_id, model, counts, months), encoding="utf-8")
+    (out / "README.md").write_text(_readme(run_id, model, counts, months, region), encoding="utf-8")
     log(
         f"{run_id}: {counts['filings']} filing(s), {counts['documents']} text(s), {counts['chunks']} chunk(s) "
         f"({counts['labels']} labelled, {counts['explicit']} about AI), {counts['context']} context passage(s) -> {out}"

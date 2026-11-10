@@ -568,7 +568,7 @@ def test_retrieve_uses_the_glossary_of_the_document_industry_by_default(tmp_path
     (tmp_path / "isic").mkdir()
     (tmp_path / "core.json").write_text(json.dumps(core), encoding="utf-8")
     (tmp_path / "isic" / "07.json").write_text(json.dumps(mining), encoding="utf-8")
-    monkeypatch.setattr(retrieve, "load", lambda isic_class: glossary.load(isic_class, root=tmp_path))
+    monkeypatch.setattr(retrieve, "load", lambda isic_class, language=None: glossary.load(isic_class, root=tmp_path, language=language))
     blocks = make_blocks(4, {1: "Driverless trucks haul ore.", 3: "We use ISR wells."})
 
     mining = retrieve.passages({**DOC, "isic_class": "0721"}, blocks)

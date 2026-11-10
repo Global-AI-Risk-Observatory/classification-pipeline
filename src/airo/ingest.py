@@ -110,8 +110,11 @@ def _own_text(el) -> str:
     return "".join(parts)
 
 
-def _raw_blocks(body) -> Iterator[tuple[str, str]]:
-    """Yield (kind, text) in document order. kind: heading | text | row | furniture."""
+def _raw_blocks(body) -> Iterator[tuple[str, str, int | None]]:
+    """Yield (kind, text, level) in document order. kind: heading | text | row | furniture.
+
+    `level` is 1-6 for an <h1>-<h6> heading and None for every other block.
+    """
     for el in body.iter():
         tag = el.tag
         if not isinstance(tag, str):
@@ -137,23 +140,30 @@ def _raw_blocks(body) -> Iterator[tuple[str, str]]:
                 kind = "heading" if tag in _HEADINGS or _is_emphasis_only(el, text) else "text"
         else:
             continue
+        level = int(tag[1]) if tag in _HEADINGS else None
         if _FURNITURE.match(text):
             kind = "furniture"  # kept so the text hash is stable; retrieve skips it
         if text:
-            yield kind, text
+            yield kind, text, level if kind == "heading" else None
 
 
-def _md_blocks(text: str) -> Iterator[tuple[str, str]]:
-    """Yield (kind, text) per paragraph or table row of a Markdown filing, in document order."""
+def _md_blocks(text: str) -> Iterator[tuple[str, str, int | None]]:
+    """Yield (kind, text, level) per paragraph or table row of a Markdown filing, in document order.
+
+    `level` is the number of `#` of a Markdown heading and None for every other block,
+    a bold sub-heading included.
+    """
     for line in text.splitlines():
         line = line.strip()
         if not line or _MD_RULE.match(line):
             continue  # blank line, or the rule under a table's header row
+        level = None
         if line.startswith("|"):
             cells = [_norm(_MD_MARKS.sub("", c)) for c in line.strip("|").split("|")]
             text_, kind = " | ".join(c for c in cells if c), "row"
         elif _MD_HASH.match(line):
             text_, kind = _norm(_MD_MARKS.sub("", _MD_HASH.sub("", line))), "heading"
+            level = len(line) - len(line.lstrip("#"))
         else:
             body = _MD_BULLET.sub("", line)
             text_ = _norm(_MD_MARKS.sub("", body))
@@ -162,7 +172,7 @@ def _md_blocks(text: str) -> Iterator[tuple[str, str]]:
         if _FURNITURE.match(text_):
             kind = "furniture"
         if text_:
-            yield kind, text_
+            yield kind, text_, level if kind == "heading" else None
 
 
 def _md_metadata(blocks: list[dict]) -> dict:
@@ -196,11 +206,45 @@ def cover_metadata(text: str) -> dict:
     return _md_metadata(_assemble(_md_blocks(text))[0])
 
 
-def _assemble(raw: Iterator[tuple[str, str]]) -> tuple[list[dict], dict]:
-    """Number the blocks and attach the SEC item and the nearest heading to each."""
-    blocks, sections = [], {}
+SECTION_MODES = ("items", "items_or_headings")
+# A chapter level must open at least this many headings, so that a title heading printed once
+# at the top of a report does not become the only section of the whole report.
+_MIN_CHAPTERS = 3
+_MAX_SECTION_CHARS = 120
+
+
+def chapter_level(levels: list[int]) -> int | None:
+    """The heading level that divides a filing into chapters: the shallowest one used at least `_MIN_CHAPTERS` times."""
+    counts = {lv: levels.count(lv) for lv in set(levels)}
+    return min((lv for lv, n in counts.items() if n >= _MIN_CHAPTERS), default=None)
+
+
+def _chapters(blocks: list[dict], levels: list[int | None]) -> dict:
+    """Make each chapter heading (see `chapter_level`) open a section; for a filing without SEC Items."""
+    level = chapter_level([lv for lv in levels if lv is not None])
+    sections: dict[str, dict] = {}
+    section = None
+    for b, lv in zip(blocks, levels):
+        if level is not None and lv == level:
+            section = b["text"][:_MAX_SECTION_CHARS]
+            sections.setdefault(section, {"title": None, "n_words": 0})
+        b["section"] = section
+        if section:
+            sections[section]["n_words"] += len(b["text"].split())
+    return sections
+
+
+def _assemble(raw: Iterator[tuple[str, str, int | None]], sections_mode: str = "items") -> tuple[list[dict], dict]:
+    """Number the blocks and attach the section and the nearest heading to each.
+
+    The section is the SEC Item a block stands under. In `sections_mode` "items_or_headings",
+    a filing without any SEC Item is divided by its chapter headings instead (`_chapters`).
+    """
+    if sections_mode not in SECTION_MODES:
+        raise ValueError(f"sections_mode must be one of {SECTION_MODES}, not {sections_mode!r}")
+    blocks, sections, levels = [], {}, []
     section = heading = None
-    for kind, text in raw:
+    for kind, text, level in raw:
         item = _ITEM.match(text) if len(text) <= _MAX_HEADING_CHARS else None
         if item and kind == "row" and _TOC_PAGE.search(text):
             item = None  # contents entry; the real heading further down opens the section
@@ -216,6 +260,9 @@ def _assemble(raw: Iterator[tuple[str, str]]) -> tuple[list[dict], dict]:
         blocks.append(
             {"i": len(blocks), "kind": kind, "section": section, "heading": heading, "text": text}
         )
+        levels.append(level if kind == "heading" else None)
+    if sections_mode == "items_or_headings" and not sections:
+        sections = _chapters(blocks, levels)
     return blocks, sections
 
 
@@ -235,18 +282,21 @@ def _document(path: Path, meta: dict, blocks: list[dict], sections: dict, body_w
     }
 
 
-def parse_markdown(path: Path) -> tuple[dict, list[dict]]:
-    """Parse one Markdown filing into (document record, blocks)."""
+def parse_markdown(path: Path, sections_mode: str = "items") -> tuple[dict, list[dict]]:
+    """Parse one Markdown filing into (document record, blocks); `sections_mode` as in `_assemble`."""
     text = Path(path).read_text(encoding="utf-8")
-    blocks, sections = _assemble(_md_blocks(text))
+    blocks, sections = _assemble(_md_blocks(text), sections_mode)
     body_words = len(_MD_MARKS.sub("", "\n".join(l for l in text.splitlines() if not _MD_RULE.match(l.strip()))).replace("|", " ").split())
     return _document(path, _md_metadata(blocks), blocks, sections, body_words), blocks
 
 
-def parse(path: Path) -> tuple[dict, list[dict]]:
-    """Parse one filing into (document record, blocks). `.md` is read as Markdown, anything else as HTML."""
+def parse(path: Path, sections_mode: str = "items") -> tuple[dict, list[dict]]:
+    """Parse one filing into (document record, blocks). `.md` is read as Markdown, anything else as HTML.
+
+    `sections_mode` is the filing's region's `sections` (see airo.regions); the default is the US behavior.
+    """
     if Path(path).suffix.lower() == ".md":
-        return parse_markdown(path)
+        return parse_markdown(path, sections_mode)
     root = lxml.html.fromstring(Path(path).read_bytes())
     meta = _metadata(root)
     _strip_invisible(root)
@@ -254,7 +304,7 @@ def parse(path: Path) -> tuple[dict, list[dict]]:
     if body is None:
         body = root
 
-    blocks, sections = _assemble(_raw_blocks(body))
+    blocks, sections = _assemble(_raw_blocks(body), sections_mode)
     # text_content() glues "<td>a</td><td>b</td>" into one word; blocks and cells end a word.
     for el in body.iter(*_BLOCK_TAGS, "td", "th"):
         el.text, el.tail = " " + (el.text or ""), " " + (el.tail or "")

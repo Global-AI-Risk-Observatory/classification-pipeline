@@ -53,7 +53,7 @@ def passages(
     Page furniture never hits and is left out of the passage text. Each passage
     carries `mention`: "direct" or "implicit" (see MENTIONS).
     """
-    matcher = matcher or load(doc.get("isic_class"))
+    matcher = matcher or load(doc.get("isic_class"), language=doc.get("language"))
     hits = {
         b["i"]: terms
         for b in blocks

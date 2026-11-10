@@ -30,7 +30,7 @@ from datetime import datetime, timezone
 from itertools import repeat
 from pathlib import Path
 
-from . import ingest, recall, retrieve
+from . import ingest, recall, regions, retrieve
 from .glossary import load
 
 _TMP = ".tmp-"  # prefix of a document directory that is still being written
@@ -111,12 +111,15 @@ def process(
     path = Path(path)
     row = {"sha256": sha or sha256(path), "path": str(path), "started": _now()}
     try:
-        doc, blocks = ingest.parse(path)
+        # The filing's region decides how it is divided into sections (see airo.regions).
+        doc, blocks = ingest.parse(path, regions.of_country((meta or {}).get("country")).sections)
         doc.update(meta or {})
         row["doc_id"] = doc["doc_id"]
         out = data / "docs" / doc["doc_id"]
         if not out.exists():
-            passages = retrieve.passages(doc, blocks, context=context, matcher=load(doc.get("isic_class")))
+            # The English core glossary, the one of the filing's language, and the one of its industry.
+            matcher = load(doc.get("isic_class"), language=doc.get("language"))
+            passages = retrieve.passages(doc, blocks, context=context, matcher=matcher)
             doc["recall_check"] = recall.outside(blocks, passages)
             tmp = out.with_name(f"{_TMP}{doc['doc_id']}-{os.getpid()}")
             tmp.mkdir(parents=True)

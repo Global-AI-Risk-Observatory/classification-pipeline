@@ -1,0 +1,169 @@
+{
+ "id": "core.de",
+ "name": "Core AI vocabulary, German",
+ "summary": "Terms of tier `ai` in German that the English core glossary (core.json) does not match. It applies only to filings whose language is de, together with core.json, which matches the English terms these filings use as well (AI, machine learning, ChatGPT). Inflected forms are listed as variants, because the plural suffix that glossary.py adds is the English one. Status: drafted from the sample reports in gs://airo-eu-sample-reports; to be checked by a native speaker.",
+ "terms": [
+  {
+   "term": "künstliche Intelligenz",
+   "tier": "ai",
+   "group": "general",
+   "variants": [
+    "künstlicher Intelligenz",
+    "künstlichen Intelligenz",
+    "KI"
+   ],
+   "case_sensitive_variants": [
+    "KI"
+   ],
+   "why": "the core term, its inflected forms and its abbreviation; KI also opens compounds (KI-gestützt, KI-Modelle)"
+  },
+  {
+   "term": "maschinelles Lernen",
+   "tier": "ai",
+   "group": "techniques",
+   "variants": [
+    "maschinellen Lernens",
+    "maschinellem Lernen",
+    "maschinellen Lernen"
+   ],
+   "why": "machine learning"
+  },
+  {
+   "term": "neuronales Netz",
+   "tier": "ai",
+   "group": "techniques",
+   "variants": [
+    "neuronale Netze",
+    "neuronalen Netzen",
+    "neuronaler Netze",
+    "neuronalen Netzes",
+    "neuronales Netzwerk",
+    "neuronale Netzwerke",
+    "neuronalen Netzwerken",
+    "neuronalen Netzwerks"
+   ],
+   "why": "neural network"
+  },
+  {
+   "term": "Bilderkennung",
+   "tier": "ai",
+   "group": "techniques",
+   "why": "image recognition"
+  },
+  {
+   "term": "Gesichtserkennung",
+   "tier": "ai",
+   "group": "techniques",
+   "why": "facial recognition"
+  },
+  {
+   "term": "Spracherkennung",
+   "tier": "ai",
+   "group": "techniques",
+   "why": "speech recognition"
+  },
+  {
+   "term": "Verarbeitung natürlicher Sprache",
+   "tier": "ai",
+   "group": "techniques",
+   "why": "natural language processing"
+  },
+  {
+   "term": "maschinelle Übersetzung",
+   "tier": "ai",
+   "group": "techniques",
+   "variants": [
+    "maschineller Übersetzung",
+    "maschinellen Übersetzung"
+   ],
+   "why": "machine translation"
+  },
+  {
+   "term": "generative KI",
+   "tier": "ai",
+   "group": "generative",
+   "variants": [
+    "generativer KI",
+    "generativen KI"
+   ],
+   "why": "generative AI"
+  },
+  {
+   "term": "Sprachmodell",
+   "tier": "ai",
+   "group": "generative",
+   "variants": [
+    "Sprachmodelle",
+    "Sprachmodellen",
+    "Sprachmodells",
+    "großes Sprachmodell",
+    "große Sprachmodelle",
+    "großen Sprachmodellen",
+    "großer Sprachmodelle",
+    "großen Sprachmodells",
+    "grosse Sprachmodelle",
+    "grossen Sprachmodellen"
+   ],
+   "why": "(large) language model"
+  },
+  {
+   "term": "virtueller Assistent",
+   "tier": "ai",
+   "group": "agents",
+   "variants": [
+    "virtuelle Assistenten",
+    "virtuellen Assistenten",
+    "virtueller Assistenten",
+    "virtuelle Assistentin"
+   ],
+   "why": "virtual assistant"
+  },
+  {
+   "term": "Sprachassistent",
+   "tier": "ai",
+   "group": "agents",
+   "variants": [
+    "Sprachassistenten",
+    "Sprachassistentin"
+   ],
+   "why": "voice assistant"
+  },
+  {
+   "term": "algorithmische Verzerrung",
+   "tier": "ai",
+   "group": "risks_failures",
+   "variants": [
+    "algorithmischer Verzerrung",
+    "algorithmischen Verzerrungen"
+   ],
+   "why": "algorithmic bias"
+  },
+  {
+   "term": "Halluzination",
+   "tier": "ai",
+   "group": "risks_failures",
+   "variants": [
+    "Halluzinationen"
+   ],
+   "why": "hallucination of a model"
+  },
+  {
+   "term": "KI-Verordnung",
+   "tier": "ai",
+   "group": "governance_regulation",
+   "variants": [
+    "KI-VO"
+   ],
+   "case_sensitive_variants": [
+    "KI-VO"
+   ],
+   "why": "the EU AI Act in German"
+  },
+  {
+   "term": "Trainingsdaten",
+   "tier": "ai",
+   "group": "data_training",
+   "why": "training data"
+  }
+ ]
+}

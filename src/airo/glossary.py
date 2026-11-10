@@ -112,10 +112,27 @@ class Matcher:
         return {tier: hits[tier] for tier in TIERS if tier in hits}
 
 
+# The language of core.json. Every other language has its core glossary in core.<language>.json.
+CORE_LANGUAGE = "en"
+_UNKNOWN = "not provided by the data provider"
+
+
 @lru_cache(maxsize=None)
-def load(isic_class: str | None = None, root: Path = GLOSSARY_DIR) -> Matcher:
-    """Matcher for a company's 4-digit ISIC class; core vocabulary only if unknown."""
+def load(isic_class: str | None = None, root: Path = GLOSSARY_DIR, language: str | None = None) -> Matcher:
+    """Matcher for a company's 4-digit ISIC class and the language of its filing.
+
+    The English core glossary always applies: reports in other languages use English AI terms
+    too ("AI", "machine learning", "ChatGPT"). The core glossary of the filing's own `language`
+    (`core.<language>.json`) is added to it, and only to filings in that language, so that a
+    term of one language never matches in a report written in another ("KI" or "IA" in an
+    English report). Without a known language, or without a glossary for it, only the English
+    core applies, as before. The industry glossary of `isic_class` is added in every language.
+    """
     glossaries = [("core", json.loads((root / "core.json").read_text(encoding="utf-8"))["terms"])]
+    if language and language not in (CORE_LANGUAGE, _UNKNOWN):
+        own = root / f"core.{language}.json"
+        if own.exists():
+            glossaries.append((f"core.{language}", json.loads(own.read_text(encoding="utf-8"))["terms"]))
     if isic_class:
         division = root / "isic" / f"{isic_class[:2]}.json"
         if division.exists():

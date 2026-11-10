@@ -1,0 +1,174 @@
+{
+ "id": "core.es",
+ "name": "Core AI vocabulary, Spanish",
+ "summary": "Terms of tier `ai` in Spanish that the English core glossary (core.json) does not match. It applies only to filings whose language is es, together with core.json, which matches the English terms these filings use as well (AI, machine learning, ChatGPT). Inflected forms are listed as variants, because the plural suffix that glossary.py adds is the English one. Status: drafted from the sample reports in gs://airo-eu-sample-reports; to be checked by a native speaker.",
+ "terms": [
+  {
+   "term": "inteligencia artificial",
+   "tier": "ai",
+   "group": "general",
+   "variants": [
+    "inteligencias artificiales",
+    "IA",
+    "I.A."
+   ],
+   "case_sensitive_variants": [
+    "IA",
+    "I.A."
+   ],
+   "why": "the core term, its plural and its abbreviation (IA generativa, herramientas de IA)"
+  },
+  {
+   "term": "aprendizaje automático",
+   "tier": "ai",
+   "group": "techniques",
+   "variants": [
+    "aprendizaje automatico"
+   ],
+   "why": "machine learning"
+  },
+  {
+   "term": "aprendizaje profundo",
+   "tier": "ai",
+   "group": "techniques",
+   "why": "deep learning"
+  },
+  {
+   "term": "red neuronal",
+   "tier": "ai",
+   "group": "techniques",
+   "variants": [
+    "redes neuronales"
+   ],
+   "why": "neural network"
+  },
+  {
+   "term": "visión artificial",
+   "tier": "ai",
+   "group": "techniques",
+   "variants": [
+    "visión por computador",
+    "visión por computadora"
+   ],
+   "why": "computer vision"
+  },
+  {
+   "term": "reconocimiento de imágenes",
+   "tier": "ai",
+   "group": "techniques",
+   "variants": [
+    "reconocimiento de imagen"
+   ],
+   "why": "image recognition"
+  },
+  {
+   "term": "reconocimiento facial",
+   "tier": "ai",
+   "group": "techniques",
+   "why": "facial recognition"
+  },
+  {
+   "term": "reconocimiento de voz",
+   "tier": "ai",
+   "group": "techniques",
+   "why": "speech recognition"
+  },
+  {
+   "term": "procesamiento del lenguaje natural",
+   "tier": "ai",
+   "group": "techniques",
+   "variants": [
+    "procesamiento de lenguaje natural"
+   ],
+   "why": "natural language processing"
+  },
+  {
+   "term": "traducción automática",
+   "tier": "ai",
+   "group": "techniques",
+   "why": "machine translation"
+  },
+  {
+   "term": "IA generativa",
+   "tier": "ai",
+   "group": "generative",
+   "variants": [
+    "inteligencia artificial generativa"
+   ],
+   "why": "generative AI"
+  },
+  {
+   "term": "modelo de lenguaje",
+   "tier": "ai",
+   "group": "generative",
+   "variants": [
+    "modelos de lenguaje",
+    "gran modelo de lenguaje",
+    "grandes modelos de lenguaje",
+    "modelo de lenguaje grande",
+    "modelos de lenguaje de gran tamaño"
+   ],
+   "why": "(large) language model"
+  },
+  {
+   "term": "modelo fundacional",
+   "tier": "ai",
+   "group": "generative",
+   "variants": [
+    "modelos fundacionales"
+   ],
+   "why": "foundation model"
+  },
+  {
+   "term": "asistente virtual",
+   "tier": "ai",
+   "group": "agents",
+   "variants": [
+    "asistentes virtuales"
+   ],
+   "why": "virtual assistant"
+  },
+  {
+   "term": "agente conversacional",
+   "tier": "ai",
+   "group": "agents",
+   "variants": [
+    "agentes conversacionales"
+   ],
+   "why": "chatbot"
+  },
+  {
+   "term": "asistente de voz",
+   "tier": "ai",
+   "group": "agents",
+   "variants": [
+    "asistentes de voz"
+   ],
+   "why": "voice assistant"
+  },
+  {
+   "term": "alucinación",
+   "tier": "ai",
+   "group": "risks_failures",
+   "variants": [
+    "alucinaciones"
+   ],
+   "why": "hallucination of a model"
+  },
+  {
+   "term": "sesgo algorítmico",
+   "tier": "ai",
+   "group": "risks_failures",
+   "variants": [
+    "sesgos algorítmicos"
+   ],
+   "why": "algorithmic bias"
+  },
+  {
+   "term": "datos de entrenamiento",
+   "tier": "ai",
+   "group": "data_training",
+   "why": "training data"
+  }
+ ]
+}

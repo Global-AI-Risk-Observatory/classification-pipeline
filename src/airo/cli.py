@@ -20,7 +20,7 @@ import sys
 from pathlib import Path
 from typing import Iterator
 
-from . import aggregate, classify, export, fetch, recall, runner, taxonomy
+from . import aggregate, classify, export, fetch, recall, regions, runner, taxonomy
 
 
 def _read(path: Path) -> list[dict]:
@@ -49,7 +49,7 @@ def _direct(passages: list[dict]) -> list[dict]:
 def cmd_fetch(args) -> None:
     fetch.fetch(
         args.out, fetch.api_key(), args.types, form=args.form,
-        since=args.since, until=args.until, limit=args.limit,
+        since=args.since, until=args.until, limit=args.limit, region=regions.REGIONS[args.region],
     )
 
 
@@ -79,6 +79,7 @@ def cmd_tasks(args) -> None:
     # So is a near copy (at least 90% of words shared); its label is flagged in `adjudicate` if a quote is not in its text.
     kept = {t["passage_id"] for t in tasks}
     tasks, near = classify.collapse_near([(t, d) for t, d in entries if t["passage_id"] in kept])
+    tasks = classify.by_language(tasks)
     _write(args.data / "tasks.jsonl", tasks)
     _write(args.data / "copies.jsonl", copies + near)
     (args.data / "codebook.md").write_text(taxonomy.codebook(), encoding="utf-8")
@@ -134,7 +135,8 @@ def cmd_aggregate(args) -> None:
 
 
 def cmd_export(args) -> None:
-    export.export(args.data, Path(args.out), run_id=args.run_id, manifest=args.manifest, model=args.model)
+    export.export(args.data, Path(args.out), run_id=args.run_id, manifest=args.manifest, model=args.model,
+                  region=regions.REGIONS[args.region])
 
 
 def main(argv: list[str] | None = None) -> None:
@@ -142,8 +144,10 @@ def main(argv: list[str] | None = None) -> None:
     parser.add_argument("--data", type=Path, default=Path("data"), help="working directory (default: data)")
     sub = parser.add_subparsers(dest="command", required=True)
 
-    p = sub.add_parser("fetch", help="store the Markdown of US companies' filings from the data provider, each filing once")
+    p = sub.add_parser("fetch", help="store the Markdown of one region's companies' filings from the data provider, each filing once")
     p.add_argument("out", help="gs://bucket[/prefix] or a directory; receives markdown/ and manifest/")
+    p.add_argument("--region", choices=sorted(regions.REGIONS), default="us",
+                   help="whose filings: the region's countries and languages (see airo.regions; default us)")
     p.add_argument("--types", required=True, help="the provider's filing type codes, comma-separated (e.g. 10-K,10-Q)")
     p.add_argument("--form", help="only filings submitted as this form (e.g. 10-K, which leaves out 10-K/A, 20-F, ARS)")
     p.add_argument("--since", help="released on or after this date (YYYY-MM-DD)")
@@ -170,6 +174,8 @@ def main(argv: list[str] | None = None) -> None:
     p.add_argument("--run-id", required=True, help="name of the run, e.g. us-2025h1_V3")
     p.add_argument("--manifest", type=Path, help="the provider manifest given to `run`, for one row per filing")
     p.add_argument("--model", help="model name written into the README and the metrics file")
+    p.add_argument("--region", choices=sorted(regions.REGIONS), default="us",
+                   help="the region of the run, for the dataset title and the metrics file name (default us)")
     p.set_defaults(func=cmd_export)
 
     args = parser.parse_args(argv)

@@ -189,7 +189,7 @@ def test_fetch_stores_only_markdown_and_one_manifest_file_per_filing(tmp_path):
     assert (tmp_path / "markdown" / "1.md").read_text(encoding="utf-8") == MARKDOWN
     assert json.loads((tmp_path / "manifest" / "1.json").read_text(encoding="utf-8")) == {
         "file": "1.md", "isic_class": "0721", "isic_division": "07", "country": "US",
-        "source": "financialfilings.com", "filing_id": 1, "filing_type": "10-K",
+        "language": None, "source": "financialfilings.com", "filing_id": 1, "filing_type": "10-K",
         "company": "Acme 1", "lei": "LEI1", "cik": "0000012345", "ticker": "ACME", "exchange": "Nasdaq",
         "form": "10-K", "fiscal_year": 2024, "fiscal_period": "FY", "period_end": "2024-12-31",
         "filing_date": "2025-02-14", "source_filing_id": "0000000000-25-000001",

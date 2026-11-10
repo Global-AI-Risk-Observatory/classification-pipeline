@@ -1,0 +1,174 @@
+{
+ "id": "core.fr",
+ "name": "Core AI vocabulary, French",
+ "summary": "Terms of tier `ai` in French that the English core glossary (core.json) does not match. It applies only to filings whose language is fr, together with core.json, which matches the English terms these filings use as well (AI, machine learning, ChatGPT). Inflected forms are listed as variants, because the plural suffix that glossary.py adds is the English one. Status: drafted from the sample reports in gs://airo-eu-sample-reports; to be checked by a native speaker.",
+ "terms": [
+  {
+   "term": "intelligence artificielle",
+   "tier": "ai",
+   "group": "general",
+   "variants": [
+    "intelligences artificielles",
+    "IA",
+    "I.A."
+   ],
+   "case_sensitive_variants": [
+    "IA",
+    "I.A."
+   ],
+   "why": "the core term, its plural and its abbreviation (IA générative, outils d'IA)"
+  },
+  {
+   "term": "apprentissage automatique",
+   "tier": "ai",
+   "group": "techniques",
+   "why": "machine learning"
+  },
+  {
+   "term": "apprentissage profond",
+   "tier": "ai",
+   "group": "techniques",
+   "why": "deep learning"
+  },
+  {
+   "term": "réseau de neurones",
+   "tier": "ai",
+   "group": "techniques",
+   "variants": [
+    "réseaux de neurones",
+    "réseau neuronal",
+    "réseaux neuronaux"
+   ],
+   "why": "neural network"
+  },
+  {
+   "term": "vision par ordinateur",
+   "tier": "ai",
+   "group": "techniques",
+   "why": "computer vision"
+  },
+  {
+   "term": "reconnaissance d'images",
+   "tier": "ai",
+   "group": "techniques",
+   "variants": [
+    "reconnaissance d’images",
+    "reconnaissance d'image",
+    "reconnaissance d’image"
+   ],
+   "why": "image recognition"
+  },
+  {
+   "term": "reconnaissance faciale",
+   "tier": "ai",
+   "group": "techniques",
+   "why": "facial recognition"
+  },
+  {
+   "term": "reconnaissance vocale",
+   "tier": "ai",
+   "group": "techniques",
+   "why": "speech recognition"
+  },
+  {
+   "term": "traitement du langage naturel",
+   "tier": "ai",
+   "group": "techniques",
+   "variants": [
+    "traitement automatique du langage",
+    "traitement automatique des langues"
+   ],
+   "why": "natural language processing"
+  },
+  {
+   "term": "traduction automatique",
+   "tier": "ai",
+   "group": "techniques",
+   "why": "machine translation"
+  },
+  {
+   "term": "IA générative",
+   "tier": "ai",
+   "group": "generative",
+   "variants": [
+    "intelligence artificielle générative",
+    "IA generative"
+   ],
+   "why": "generative AI"
+  },
+  {
+   "term": "modèle de langage",
+   "tier": "ai",
+   "group": "generative",
+   "variants": [
+    "modèles de langage",
+    "grand modèle de langage",
+    "grands modèles de langage"
+   ],
+   "why": "(large) language model"
+  },
+  {
+   "term": "modèle de fondation",
+   "tier": "ai",
+   "group": "generative",
+   "variants": [
+    "modèles de fondation"
+   ],
+   "why": "foundation model"
+  },
+  {
+   "term": "agent conversationnel",
+   "tier": "ai",
+   "group": "agents",
+   "variants": [
+    "agents conversationnels"
+   ],
+   "why": "chatbot"
+  },
+  {
+   "term": "assistant virtuel",
+   "tier": "ai",
+   "group": "agents",
+   "variants": [
+    "assistants virtuels"
+   ],
+   "why": "virtual assistant"
+  },
+  {
+   "term": "assistant vocal",
+   "tier": "ai",
+   "group": "agents",
+   "variants": [
+    "assistants vocaux"
+   ],
+   "why": "voice assistant"
+  },
+  {
+   "term": "biais algorithmique",
+   "tier": "ai",
+   "group": "risks_failures",
+   "variants": [
+    "biais algorithmiques"
+   ],
+   "why": "algorithmic bias"
+  },
+  {
+   "term": "hypertrucage",
+   "tier": "ai",
+   "group": "security_misuse",
+   "variants": [
+    "hypertrucages"
+   ],
+   "why": "deepfake"
+  },
+  {
+   "term": "données d'entraînement",
+   "tier": "ai",
+   "group": "data_training",
+   "variants": [
+    "données d’entraînement"
+   ],
+   "why": "training data"
+  }
+ ]
+}

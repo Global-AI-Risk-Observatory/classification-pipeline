@@ -132,7 +132,7 @@ def build_requests(tasks: list[dict], codebook: str, *, batch_size: int = BATCH_
     return [
         {"request": {"contents": [{"role": "user", "parts": [{"text": gemini.build_batch_prompt(codebook, batch)}]}],
                      "generationConfig": config}}
-        for batch in (tasks[i : i + batch_size] for i in range(0, len(tasks), max(1, batch_size)))
+        for batch in gemini.batches(tasks, max(1, batch_size))
     ]
 
 

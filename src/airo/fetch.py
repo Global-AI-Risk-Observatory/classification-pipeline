@@ -1,13 +1,15 @@
-"""Stage 0: copy filings of US companies from the data provider into the raw bucket.
+"""Stage 0: copy filings of one region's companies from the data provider into the raw bucket.
 
     python -m airo fetch gs://airo-filings-raw --types 10-K --since 2025-01-01 --limit 100
+    python -m airo fetch gs://<bucket>/<prefix> --region eu --types 10-K,10-K-ESEF --since 2025-01-01
 
-Asks the FinancialReports API (financialfilings.com) for filings of US companies
-and stores each filing's Markdown rendering, and nothing else, as
+Asks the FinancialReports API (financialfilings.com) for filings of the companies of a region
+(`--region`, see airo.regions: its countries, and the languages its filings are kept in; US by
+default) and stores each filing's Markdown rendering, and nothing else, as
 
     <out>/markdown/<filing id>.md      the filing
     <out>/manifest/<filing id>.json    its metadata, in the format `run --manifest` reads
-    <out>/companies/us.jsonl           the provider's US companies (CIK, ticker, exchange), fetched once
+    <out>/companies/<region>.jsonl     the provider's companies of the region (CIK, ticker, exchange), fetched once
 
 `<out>` is a Cloud Storage location (`gs://bucket[/prefix]`) or a directory, e.g.
 the mounted bucket of a Batch job. Nothing is kept on the machine that runs it.
@@ -42,14 +44,13 @@ from pathlib import Path
 from typing import Callable, Iterator
 
 from . import ingest
+from .regions import US, Region
 
 API = "https://api.financialreports.eu"
 SOURCE = "financialfilings.com"
-COUNTRY = "US"
 KEY_VAR = "FR_API_KEY"
 # Written into a manifest field that neither the provider nor the filing's cover page fills.
 MISSING = "not provided by the data provider"
-COMPANIES = "companies/us.jsonl"
 _PAGE_SIZE = 100
 _RETRY_STATUS = {429, 500, 502, 503, 504}
 
@@ -181,17 +182,22 @@ def listing(
     since: str | None = None,
     until: str | None = None,
     get: Callable = http_get,
+    region: Region = US,
 ) -> Iterator[dict]:
-    """Every filing of a US company with one of the provider's `types`, oldest release first.
+    """Every filing of a company of `region` with one of the provider's `types`, oldest release first.
 
     `form` narrows to the form the filing was submitted as (e.g. the provider's
-    type 10-K covers the SEC forms 10-K, 10-K/A, 20-F and ARS).
+    type 10-K covers the SEC forms 10-K, 10-K/A, 20-F and ARS). Outside the US
+    region, only filings in one of the region's languages are listed.
     """
     # view=full adds fiscal year, period and source filing id to every row at no extra request.
     params = {
-        "countries": COUNTRY, "types": types, "view": "full",
+        "countries": ",".join(region.countries), "types": types, "view": "full",
         "ordering": "release_datetime", "page_size": _PAGE_SIZE,
     }
+    # The US listing has always been asked for without a language; it is left as it is.
+    if region is not US and region.languages:
+        params["languages"] = ",".join(region.languages)
     if form:
         params["source_filing_type"] = form
     if since:
@@ -219,29 +225,36 @@ def _company_row(c: dict) -> dict:
     }
 
 
+def companies_file(region: Region) -> str:
+    """Where the company list of `region` is kept in the raw store: companies/us.jsonl for the US."""
+    return f"companies/{region.name}.jsonl"
+
+
 class Companies:
     """CIK, ticker and exchange per company id, at one request per 100 companies, once.
 
-    The list of the provider's US companies is kept in `target` as `companies/us.jsonl`.
+    The list of the provider's companies of `region` is kept in `target` as `companies/<region>.jsonl`.
     Whoever fetches first reads it from the API; everyone after reads it from
     `target`. A company that joined the provider later is asked for on its own
     and kept as `companies/<id>.json`.
     """
 
-    def __init__(self, target, key: str, get: Callable = http_get, log=print):
+    def __init__(self, target, key: str, get: Callable = http_get, log=print, region: Region = US):
         self.target, self.key, self.get, self.log = target, key, get, log
-        raw = target.read(COMPANIES)
+        name = companies_file(region)
+        raw = target.read(name)
         if raw is None:
             log(f"company list not in {target} yet: reading it from the provider, once")
-            rows, url = [], f"{API}/companies/?{urllib.parse.urlencode({'countries': COUNTRY, 'view': 'full', 'page_size': _PAGE_SIZE})}"
+            query = {"countries": ",".join(region.countries), "view": "full", "page_size": _PAGE_SIZE}
+            rows, url = [], f"{API}/companies/?{urllib.parse.urlencode(query)}"
             while url:
                 page = json.loads(get(url, self._headers()))
                 rows += [_company_row(c) for c in page["results"]]
                 url = page.get("next")
-            target.create(COMPANIES, "".join(json.dumps(r, ensure_ascii=False) + "\n" for r in rows).encode("utf-8"))
-            raw = target.read(COMPANIES)  # the list that is there now, ours or someone else's
+            target.create(name, "".join(json.dumps(r, ensure_ascii=False) + "\n" for r in rows).encode("utf-8"))
+            raw = target.read(name)  # the list that is there now, ours or someone else's
         self.rows = {r["id"]: r for r in map(json.loads, raw.decode("utf-8").splitlines())}
-        log(f"{len(self.rows)} US companies in {target}/{COMPANIES}")
+        log(f"{len(self.rows)} {region.label} companies in {target}/{name}")
 
     def _headers(self) -> dict:
         return {"x-api-key": self.key, "Accept": "application/json"}
@@ -279,7 +292,8 @@ def manifest_row(filing: dict, file: str, company_meta: dict | None = None, cove
         "cik": company_meta.get("cik"),
         "ticker": company_meta.get("ticker") or cover.get("ticker"),
         "exchange": company_meta.get("exchange") or cover.get("exchange"),
-        "form": filing.get("source_filing_type") or cover.get("form"),
+        # A filing outside the SEC system has no SEC form; the provider's type ("Annual Report") stands in for it.
+        "form": filing.get("source_filing_type") or cover.get("form") or (filing.get("filing_type") or {}).get("name"),
         "fiscal_year": filing.get("fiscal_year") or cover.get("fiscal_year"),
         "fiscal_period": filing.get("fiscal_period"),
         "period_end": filing.get("period_ending_date") or cover.get("period_end"),
@@ -292,6 +306,7 @@ def manifest_row(filing: dict, file: str, company_meta: dict | None = None, cove
         "isic_class": isic,
         "isic_division": isic[:2] if isic else None,
         "country": company.get("country_code"),
+        "language": (filing.get("language") or {}).get("code"),
         "source": SOURCE,
         "filing_id": filing["id"],
         "filing_type": (filing.get("filing_type") or {}).get("code"),
@@ -309,6 +324,7 @@ def fetch(
     limit: int | None = None,
     get: Callable = http_get,
     log=print,
+    region: Region = US,
 ) -> dict:
     """Store up to `limit` filings that `out` does not hold yet. Returns the counters (done, present, failed)."""
     target = out if isinstance(out, (DirStore, GcsStore)) else store(out)
@@ -316,7 +332,7 @@ def fetch(
     log(f"{len(present)} filing(s) already in {target}")
     companies = None
     counts = {"done": 0, "present": 0, "failed": 0}
-    for filing in listing(key, types, form, since, until, get):
+    for filing in listing(key, types, form, since, until, get, region):
         if limit is not None and counts["done"] >= limit:
             break
         company = filing.get("company") or {}
@@ -325,8 +341,8 @@ def fetch(
             counts["present"] += 1
             continue
         try:
-            if company.get("country_code") != COUNTRY:
-                raise ValueError(f"not a US company ({company.get('country_code')})")
+            if company.get("country_code") not in region.countries:
+                raise ValueError(f"not a company of region {region.name} ({company.get('country_code')})")
             markdown = get(f"{API}/filings/{filing['id']}/markdown/", {"x-api-key": key})
             if not markdown.strip():
                 raise ValueError("empty Markdown")
@@ -335,7 +351,7 @@ def fetch(
             log(f"failed  {filing['id']}  {company.get('name')}: {e}")
             continue
         if companies is None:  # only once there is a filing to store
-            companies = Companies(target, key, get, log)
+            companies = Companies(target, key, get, log, region)
         row = manifest_row(filing, name, companies[company.get("id")], ingest.cover_metadata(markdown.decode("utf-8", "replace")))
         missing = sorted(k for k, v in row.items() if v == MISSING)
         # The manifest first: a filing whose Markdown is in the bucket always has its metadata.

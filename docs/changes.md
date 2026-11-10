@@ -1475,6 +1475,78 @@ of the commands is unchanged.
 - A flagged near copy has evidence that is not verbatim in its own text.
 - Same text across years or between companies stays as it is (entry 26).
 
+## 31. Regions and languages: EU filings in English, German, French and Spanish
+
+**Status: built on 2026-11-10 on the branch `multi-region`, tested with unit tests, with a regression run on US
+filings and with a test run on 189 EU sample reports. Not merged into `main`; no corpus run.**
+
+**Why.** The pipeline covered US filings in English only. Its US-specific parts were the CIK as the company id, the
+SEC Item headings as the only sections, the SEC forms in the order of the main report, the English glossary and the
+fixed country `US` in `fetch`. The data provider gives the same fields for filings of every country (country,
+language, LEI, fiscal year, filing type, ISIC class, Markdown with headings).
+
+**Facts the change rests on.** Measured on 189 EU sample reports released in 2025 (`gs://airo-eu-sample-reports`,
+27 member states, types `10-K` and `10-K-ESEF`, the smallest, a median and the largest report per country,
+language and type among the first 100 of the provider's listing) and 200 US filings of 2025:
+
+| Set | Reports | With an AI hit of the English glossary | With a native AI term | With SEC Items | With a risk heading | With guillemets « » |
+|---|---|---|---|---|---|---|
+| EU, German | 18 | 4 | 7 | 0 | 14 | 1 |
+| EU, French | 17 | 4 | 10 | 0 | 16 | 16 |
+| EU, Spanish | 7 | 2 | 4 | 0 | 6 | 2 |
+| EU, English | 147 | 79 | – | 12 | 131 | 13 |
+| US | 200 | 131 | – | 189 | 180 | 0 |
+
+"KI" appears 81 times and "IA" 46 times in the English EU reports and 10 and 24 times in the US filings; what they
+stand for there was not checked. Almost every report in every set has Markdown headings. The provider's filter
+`languages` takes several languages and `countries` several countries in one request (checked on 2026-11-10).
+
+**Change.**
+- `regions.py` names what differs per region: countries, languages, the manifest fields that identify a company,
+  and how a filing is divided into sections. US: CIK, SEC Items only, as before. EU: CIK if the company has one,
+  else LEI; SEC Items where a filing has them, else its chapter headings (the shallowest heading level used at least
+  three times). A filing whose country is unknown is treated as US.
+- `glossaries/core.de.json`, `core.fr.json`, `core.es.json`: AI terms of tier `ai` in German, French and Spanish
+  with their inflected forms. A filing gets the English core glossary, the core glossary of its own language and
+  its industry glossary; a language glossary never applies to a filing in another language. The three files are
+  drafts and are to be checked by native speakers.
+- `fetch --region eu` asks for the member states and the four languages; the company list is kept per region
+  (`companies/<region>.jsonl`; the US file keeps its name). The manifest records the filing's language; a filing
+  without an SEC form gets the provider's type name ("Annual Report (ESEF)") as its form.
+- `tasks` carries the language of a non-US filing, keeps the tasks of one language together, and a request never
+  holds passages of two languages. A passage not in English shows a `Language` line, and a request with such
+  passages has one sentence saying that the codebook applies to what they say and that evidence is quoted in the
+  passage's language. The codebook is unchanged and the same for every language.
+- The evidence check accepts guillemets as quotation marks; near copies compare words with accents as words.
+- `export --region eu` names the metrics file `eu-filing-metrics.json` and the dataset "EU AI disclosure dataset".
+
+**US unchanged.** 300 US filings of 2025, run with the image of `main` and with the new one: of 905 files compared
+(every `document.json`, `blocks.jsonl` and `passages.jsonl`, `tasks.jsonl`, `copies.jsonl`, `hints.jsonl`,
+`codebook.md` and the request lines sent to the model), none differs.
+
+**EU test run.** The 189 sample reports through run, tasks, `gemini-2.5-flash` in batch mode (thinking off),
+accept, adjudicate, aggregate and export (`gs://airo-eu-sample-reports/test-run-20261110/`):
+
+| Language | Reports | Divided into sections | With a task | Tasks | Labeled | Without label | About AI |
+|---|---|---|---|---|---|---|---|
+| English | 147 | 138 | 81 | 646 | 624 | 22 | 553 |
+| French | 17 | 17 | 10 | 85 | 82 | 3 | 80 |
+| Spanish | 7 | 7 | 4 | 58 | 56 | 2 | 54 |
+| German | 18 | 17 | 9 | 21 | 21 | 0 | 18 |
+
+23 requests, none with two languages; 4 exact and 26 near copies, one of them between a `10-K` and a `10-K-ESEF` of
+the same company; 0.78 million input and 0.17 million output tokens over both passes.
+
+**Not better / open.**
+- The three language glossaries are not yet checked by native speakers, and the labels of the test run are not
+  validated by raters.
+- The recall check (`recall.py`) has English reference patterns only.
+- One section heading of an English report is garbled text (`%20<4;6A6<;...`), probably a font encoding in the
+  source PDF.
+- Whether a `10-K` and a `10-K-ESEF` of one company and year are the same report was not measured.
+- In the Spanish and Irish samples looked at, the report began with the financial statements; whether the
+  management report is a separate filing there was not checked.
+
 ## To be decided
 
 Open decisions after the v0.10 subset tests of 2026-10-31 (entries 18 to 22), with the figures they

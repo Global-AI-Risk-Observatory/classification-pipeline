@@ -82,12 +82,45 @@ _TASK_FIELDS = (
 # --------------------------------------------------------------------------
 
 
+# The language a passage is taken to be in when its task names none: core.json's.
+_DEFAULT_LANGUAGE = "en"
+# Said once per request that holds a passage in another language. The codebook itself has no word of any
+# particular language beyond its English examples, so it stays the same for every language.
+_OTHER_LANGUAGE = (
+    "Passages with a Language field are not in English. Apply the codebook to what they say, and copy every "
+    "`evidence` quote verbatim from the passage, in the passage's own language."
+)
+
+
+def foreign(task: dict) -> bool:
+    """Whether the passage of `task` is in a language other than English."""
+    return (task.get("language") or _DEFAULT_LANGUAGE) != _DEFAULT_LANGUAGE
+
+
+def batches(tasks: list[dict], size: int) -> list[list[dict]]:
+    """`tasks` in groups of at most `size`, in order; a group never holds two languages.
+
+    Passages of one language are labeled together, so that the passages of one language cannot
+    change how those of another are read. Tasks without a language field all count as English,
+    so a run without languages is grouped exactly as it was before.
+    """
+    out: list[list[dict]] = []
+    for task in tasks:
+        if out and len(out[-1]) < size and (out[-1][-1].get("language") or _DEFAULT_LANGUAGE) == (task.get("language") or _DEFAULT_LANGUAGE):
+            out[-1].append(task)
+        else:
+            out.append([task])
+    return out
+
+
 def render_task(task: dict) -> str:
     """One task as the coders see it: context fields, matched terms, passage text."""
     lines = [f"passage_id: {task['passage_id']}"]
     for title, key in _TASK_FIELDS:
         value = task.get(key)
         lines.append(f"{title}: {value if value not in (None, '') else '(unknown)'}")
+    if foreign(task):
+        lines.append(f"Language: {task['language']}")
     matched = task.get("matched_terms") or {}
     terms = ", ".join(f"{lex}: {', '.join(ts)}" for lex, ts in matched.items() if ts) or "(none)"
     lines.append(f"Matched terms: {terms}")
@@ -105,6 +138,7 @@ def build_prompt(codebook: str, task: dict) -> str:
             "",
             "# Task",
             "",
+            *([_OTHER_LANGUAGE, ""] if foreign(task) else []),
             render_task(task),
             "",
             "Label this one passage. Return exactly one JSON object for it, with every field of the "
@@ -125,6 +159,8 @@ def build_batch_prompt(codebook: str, tasks: list[dict]) -> str:
         f"There are {len(tasks)} passages below, each under its own \"## Task\" heading. Label every passage "
         "on its own, from what that passage says: carry nothing over from one passage to another.",
     ]
+    if any(foreign(t) for t in tasks):
+        lines += ["", _OTHER_LANGUAGE]
     for n, task in enumerate(tasks, 1):
         lines += ["", f"## Task {n}", "", render_task(task)]
     lines += [
@@ -421,9 +457,8 @@ def code(tasks: list[dict], codebook: str, *, model: str, client, workers: int =
                 on_result(result)
         return results
 
-    batches = [tasks[i : i + batch_size] for i in range(0, len(tasks), batch_size)]
     with ThreadPoolExecutor(max_workers=max(1, workers)) as pool:
-        return [result for results in pool.map(run_batch, batches) for result in results]
+        return [result for results in pool.map(run_batch, batches(tasks, batch_size)) for result in results]
 
 
 def repair(tasks: list[dict], deferred: list[dict], codebook: str, *, model: str, client, workers: int = 4,

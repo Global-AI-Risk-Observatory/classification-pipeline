@@ -16,6 +16,7 @@ from itertools import combinations
 
 from pydantic import ValidationError
 
+from .regions import company_key
 from .taxonomy import TAXONOMY_VERSION, Label
 
 _WS = re.compile(r"\s+")
@@ -28,19 +29,29 @@ def tasks(docs: list[dict], passages: list[dict]) -> list[dict]:
     out = []
     for p in passages:
         d = by_id[p["doc_id"]]
-        out.append(
-            {
-                "passage_id": p["passage_id"],
-                "company": d["company"],
-                "form": d["form"],
-                "fiscal_year": d["fiscal_year"],
-                "section": " ".join(x for x in (p["section"], p["section_title"]) if x) or None,
-                "heading": p["heading"],
-                "matched_terms": p["matched"],
-                "text": p["text"],
-            }
-        )
+        task = {
+            "passage_id": p["passage_id"],
+            "company": d["company"],
+            "form": d["form"],
+            "fiscal_year": d["fiscal_year"],
+            "section": " ".join(x for x in (p["section"], p["section_title"]) if x) or None,
+            "heading": p["heading"],
+            "matched_terms": p["matched"],
+            "text": p["text"],
+        }
+        # The filing's language as the provider records it; absent for filings fetched before it was recorded.
+        if d.get("language") and d["language"] != _UNKNOWN:
+            task["language"] = d["language"]
+        out.append(task)
     return out
+
+
+def by_language(tasks: list[dict]) -> list[dict]:
+    """`tasks` with those of one language together, in their order otherwise; a task without a language counts as English.
+
+    Requests carry one language each (see `coders.gemini.batches`), so the tasks of one language are kept together.
+    """
+    return sorted(tasks, key=lambda t: t.get("language") or "en")
 
 
 def _squash(text: str) -> str:
@@ -82,7 +93,8 @@ def primary_filings(rows: list[dict]) -> set[int]:
     return out
 
 
-_NEAR_TOKENS = re.compile(r"[a-z0-9]+")
+# Words in any script and with any accent ("künstliche", "réseau"), lowercased before matching.
+_NEAR_TOKENS = re.compile(r"[^\W_]+")
 _NEAR_MIN_WORDS = 8
 _NEAR_MAX_GROUP = 400  # pairs grow with the square; a larger group is reported as not checked
 
@@ -142,7 +154,7 @@ def collapse_copies(entries: list[tuple[dict, dict]]) -> tuple[list[dict], list[
     rank = {form: i for i, form in enumerate(_FORM_ORDER)}
     groups: dict[tuple, list[int]] = {}
     for i, (task, doc) in enumerate(entries):
-        company, year = doc.get("cik"), release_year(doc)
+        company, year = company_key(doc), release_year(doc)
         if company and company != _UNKNOWN and year:
             key = (company, year, _MARKS.sub('"', _squash(task["text"])))
             groups.setdefault(key, []).append(i)
@@ -175,7 +187,7 @@ def collapse_near(entries: list[tuple[dict, dict]], threshold: float = 0.9) -> t
     rank = {form: i for i, form in enumerate(_FORM_ORDER)}
     groups: dict[tuple, list[int]] = {}
     for i, (task, doc) in enumerate(entries):
-        company, year = doc.get("cik"), release_year(doc)
+        company, year = company_key(doc), release_year(doc)
         if company and company != _UNKNOWN and year:
             groups.setdefault((company, year), []).append(i)
     parent: dict[int, int] = {}
@@ -246,7 +258,7 @@ def copy_labels(final: list[dict], copies: list[dict], text_by_id: dict[str, str
 
 # Quotation marks, apostrophes and dashes in all their typographic forms. A model
 # asked for JSON tends to return other ones than the passage has.
-_MARKS = re.compile("[\"'`\u00b4\u2018-\u201f\u2010-\u2015\u2212-]+")
+_MARKS = re.compile("[\"'`\u00b4\u00ab\u00bb\u2039\u203a\u2018-\u201f\u2010-\u2015\u2212-]+")
 
 
 def _locate(quote: str, text: str) -> str | None:
