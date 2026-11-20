@@ -155,10 +155,17 @@ def test_a_language_without_a_glossary_gets_the_english_core_only():
     assert glossary.load(None).sources == ["core"]
 
 
-@pytest.mark.parametrize("code", ["de", "fr", "es"])
-def test_language_glossaries_hold_ai_terms_with_a_reason(code):
+@pytest.mark.parametrize("code", ["de", "fr", "es", "pl"])
+def test_language_glossaries_hold_terms_of_both_tiers_with_a_reason(code):
     terms = json.loads((glossary.GLOSSARY_DIR / f"core.{code}.json").read_text(encoding="utf-8"))["terms"]
-    assert terms and all(t["tier"] == "ai" and t["why"] and t["group"] for t in terms)
+    core_groups = {t["group"] for t in json.loads((glossary.GLOSSARY_DIR / "core.json").read_text(encoding="utf-8"))["terms"]}
+    assert terms and all(t["tier"] in glossary.TIERS and t["why"] and t["group"] in core_groups for t in terms)
+    assert {t["tier"] for t in terms} == set(glossary.TIERS)
+
+
+def test_a_polish_term_hits_in_its_inflected_form_and_only_in_polish_filings():
+    assert "sztuczna inteligencja" in _hits("Spółka wdraża rozwiązania oparte na sztucznej inteligencji.", "pl")
+    assert _hits("Spółka wdraża rozwiązania oparte na sztucznej inteligencji.", "en") == []
 
 
 # --- tasks and prompts ---------------------------------------------------------------------------

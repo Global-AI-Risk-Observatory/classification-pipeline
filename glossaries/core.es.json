@@ -1,7 +1,7 @@
 {
  "id": "core.es",
  "name": "Core AI vocabulary, Spanish",
- "summary": "Terms of tier `ai` in Spanish that the English core glossary (core.json) does not match. It applies only to filings whose language is es, together with core.json, which matches the English terms these filings use as well (AI, machine learning, ChatGPT). Inflected forms are listed as variants, because the plural suffix that glossary.py adds is the English one. Status: drafted from the sample reports in gs://airo-eu-sample-reports; to be checked by a native speaker.",
+ "summary": "Spanish terms of both tiers that the English core glossary (core.json) does not match. It applies only to filings whose language is es, together with core.json, which matches the English terms these filings use unchanged (AI, machine learning, ChatGPT, deepfake, big data). Tier `ai` terms denote AI by themselves; tier `context` terms are stand-ins for AI and the wording around which it is discussed (analítica avanzada, sistemas inteligentes, tratamiento automatizado, toma de decisiones basada en datos), and terms that often mean something else in Spanish reports (agente autónomo, caja negra, phrases with modelo). Built by going through the entries of core.json group by group: a term was added, with the tier and group of its English counterpart, where a Spanish wording was found in the official Spanish text of Regulation (EU) 2024/1689 and other EU acts, in IATE, in publications of AEPD, AESIA, CNMV, Banco de España and INCIBE, in annual reports of IBEX 35 companies, in the Spanish-language sample reports in gs://airo-eu-sample-reports or in the Spanish business press; entries for which no Spanish wording was found there are left to core.json. Spanish-specific terms without an English counterpart are included (AESIA, Carta de Derechos Digitales, tratamiento automatizado, modelos analíticos). Inflected forms (plural, gender) and unaccented spellings are listed as variants, because the plural suffix that glossary.py adds is the English one; abbreviations (IA, AESIA, ENIA, RIA, EIPD, CPD, ALIA) are case-sensitive. Status: hit contexts of the tier `ai` terms were checked on the seven Spanish sample reports and on IBEX 35 annual reports; hits and misses were then checked block by block on the 30 Spanish reports of the sector sample (gs://airo-eu-sample-reports/sector-sample), after which variants that only matched non-AI text there were removed and wordings found there were added; to be checked by a native speaker.",
  "terms": [
   {
    "term": "inteligencia artificial",
@@ -10,20 +10,243 @@
    "variants": [
     "inteligencias artificiales",
     "IA",
-    "I.A."
+    "inteligencia artiﬁcial",
+    "Inteligencia artiﬁcial",
+    "Inteligencia Artiﬁcial"
    ],
    "case_sensitive_variants": [
     "IA",
-    "I.A."
+    "inteligencia artiﬁcial",
+    "Inteligencia artiﬁcial",
+    "Inteligencia Artiﬁcial"
    ],
-   "why": "the core term, its plural and its abbreviation (IA generativa, herramientas de IA)"
+   "why": "the core term, its plural and its abbreviation (IA generativa, herramientas de IA); spellings with the ligature character ﬁ (U+FB01), which PDF conversion leaves in some reports, are listed case-sensitively because the matcher treats them as duplicates otherwise"
+  },
+  {
+   "term": "inteligencia artificial general",
+   "tier": "ai",
+   "group": "general",
+   "variants": [
+    "IA general",
+    "IA fuerte",
+    "inteligencia artificial fuerte"
+   ],
+   "why": "advanced AI futures (AGI); IA fuerte is the AEPD wording"
+  },
+  {
+   "term": "superinteligencia",
+   "tier": "ai",
+   "group": "general",
+   "variants": [
+    "superinteligencia artificial",
+    "superinteligente",
+    "superinteligentes"
+   ],
+   "why": "advanced AI futures"
+  },
+  {
+   "term": "inteligencia computacional",
+   "tier": "ai",
+   "group": "general",
+   "variants": [
+    "inteligencia de las máquinas",
+    "inteligencia de máquina",
+    "inteligencia de las maquinas",
+    "inteligencia de maquina"
+   ],
+   "why": "older synonyms for AI"
+  },
+  {
+   "term": "computación cognitiva",
+   "tier": "ai",
+   "group": "general",
+   "variants": [
+    "tecnologías cognitivas",
+    "tecnología cognitiva",
+    "servicios cognitivos",
+    "soluciones cognitivas",
+    "capacidades cognitivas de las máquinas",
+    "computacion cognitiva",
+    "tecnologias cognitivas",
+    "tecnologia cognitiva",
+    "capacidades cognitivas de las maquinas"
+   ],
+   "why": "IBM-era label for AI"
+  },
+  {
+   "term": "sistemas inteligentes",
+   "tier": "context",
+   "group": "general",
+   "variants": [
+    "sistema inteligente",
+    "tecnologías inteligentes",
+    "tecnología inteligente",
+    "tecnologias inteligentes",
+    "tecnologia inteligente"
+   ],
+   "why": "stand-in for AI systems; inteligente covers both smart and intelligent"
+  },
+  {
+   "term": "máquinas inteligentes",
+   "tier": "context",
+   "group": "general",
+   "variants": [
+    "máquina inteligente",
+    "máquinas que aprenden",
+    "maquinas inteligentes",
+    "maquina inteligente",
+    "maquinas que aprenden"
+   ],
+   "why": "machines described as intelligent or learning"
+  },
+  {
+   "term": "sistema experto",
+   "tier": "ai",
+   "group": "general",
+   "variants": [
+    "sistemas expertos",
+    "sistema basado en reglas",
+    "sistemas basados en reglas",
+    "sistema basado en el conocimiento",
+    "sistemas basados en el conocimiento"
+   ],
+   "why": "rule-based and knowledge-based AI"
+  },
+  {
+   "term": "razonamiento automático",
+   "tier": "ai",
+   "group": "general",
+   "variants": [
+    "razonamiento automatizado",
+    "razonamiento simbólico",
+    "razonamiento automatico",
+    "razonamiento simbolico"
+   ],
+   "why": "symbolic AI"
+  },
+  {
+   "term": "robot humanoide",
+   "tier": "context",
+   "group": "general",
+   "variants": [
+    "robots humanoides",
+    "robótica humanoide",
+    "humanoide",
+    "robotica humanoide"
+   ],
+   "why": "embodied AI hardware"
+  },
+  {
+   "term": "ciencia de datos",
+   "tier": "context",
+   "group": "general",
+   "variants": [
+    "ciencia de los datos",
+    "científico de datos",
+    "científicos de datos",
+    "científica de datos",
+    "científicas de datos",
+    "equipo de ciencia de datos",
+    "cientifico de datos",
+    "cientificos de datos",
+    "cientifica de datos",
+    "cientificas de datos"
+   ],
+   "why": "the discipline that builds the models"
+  },
+  {
+   "term": "tecnologías emergentes",
+   "tier": "context",
+   "group": "general",
+   "variants": [
+    "tecnología emergente",
+    "tecnologías disruptivas",
+    "tecnología disruptiva",
+    "tecnologías de frontera",
+    "tecnologías de vanguardia",
+    "tecnologias emergentes",
+    "tecnologia emergente",
+    "tecnologias disruptivas",
+    "tecnologia disruptiva",
+    "tecnologias de frontera",
+    "tecnologias de vanguardia"
+   ],
+   "why": "umbrella wording that usually includes AI"
+  },
+  {
+   "term": "cuarta revolución industrial",
+   "tier": "context",
+   "group": "general",
+   "variants": [
+    "Industria 4.0",
+    "revolución industrial 4.0",
+    "4ª revolución industrial",
+    "cuarta revolucion industrial",
+    "revolucion industrial 4.0",
+    "4ª revolucion industrial"
+   ],
+   "why": "industrial framing of AI and automation"
+  },
+  {
+   "term": "tecnología de propósito general",
+   "tier": "context",
+   "group": "general",
+   "variants": [
+    "tecnologías de propósito general",
+    "tecnología de uso general",
+    "tecnologías de uso general",
+    "tecnología transformadora",
+    "tecnologías transformadoras",
+    "tecnologia de proposito general",
+    "tecnologias de proposito general",
+    "tecnologia de uso general",
+    "tecnologias de uso general",
+    "tecnologia transformadora",
+    "tecnologias transformadoras"
+   ],
+   "why": "economic framing of AI"
+  },
+  {
+   "term": "modelos basados en datos",
+   "tier": "context",
+   "group": "general",
+   "variants": [
+    "modelo basado en datos",
+    "algoritmos basados en datos",
+    "basados en aprendizaje",
+    "basado en aprendizaje",
+    "basadas en aprendizaje"
+   ],
+   "why": "learning-based systems without naming AI"
+  },
+  {
+   "term": "IA física",
+   "tier": "ai",
+   "group": "general",
+   "variants": [
+    "inteligencia artificial física",
+    "IA corpórea",
+    "IA incorporada",
+    "IA fisica",
+    "inteligencia artificial fisica",
+    "IA corporea"
+   ],
+   "why": "AI embodied in robots and machines"
   },
   {
    "term": "aprendizaje automático",
    "tier": "ai",
    "group": "techniques",
    "variants": [
-    "aprendizaje automatico"
+    "aprendizaje automatizado",
+    "aprendizaje de máquina",
+    "aprendizaje de máquinas",
+    "aprendizaje de las máquinas",
+    "aprendizaje maquinal",
+    "aprendizaje automatico",
+    "aprendizaje de maquina",
+    "aprendizaje de maquinas",
+    "aprendizaje de las maquinas"
    ],
    "why": "machine learning"
   },
@@ -31,6 +254,10 @@
    "term": "aprendizaje profundo",
    "tier": "ai",
    "group": "techniques",
+   "variants": [
+    "red neuronal profunda",
+    "redes neuronales profundas"
+   ],
    "why": "deep learning"
   },
   {
@@ -38,9 +265,185 @@
    "tier": "ai",
    "group": "techniques",
    "variants": [
-    "redes neuronales"
+    "redes neuronales",
+    "red neural",
+    "redes neurales",
+    "red neuronal artificial",
+    "redes neuronales artificiales"
    ],
    "why": "neural network"
+  },
+  {
+   "term": "red neuronal convolucional",
+   "tier": "ai",
+   "group": "techniques",
+   "variants": [
+    "redes neuronales convolucionales",
+    "red convolucional",
+    "redes convolucionales"
+   ],
+   "why": "neural network architecture for images"
+  },
+  {
+   "term": "red neuronal recurrente",
+   "tier": "ai",
+   "group": "techniques",
+   "variants": [
+    "redes neuronales recurrentes"
+   ],
+   "why": "neural network architecture for sequences"
+  },
+  {
+   "term": "arquitectura transformer",
+   "tier": "ai",
+   "group": "techniques",
+   "variants": [
+    "arquitectura de transformadores",
+    "arquitectura transformador",
+    "modelos transformer",
+    "modelo transformer"
+   ],
+   "why": "the architecture behind language models"
+  },
+  {
+   "term": "aprendizaje supervisado",
+   "tier": "ai",
+   "group": "techniques",
+   "variants": [
+    "aprendizaje semi-supervisado"
+   ],
+   "why": "training paradigm"
+  },
+  {
+   "term": "aprendizaje no supervisado",
+   "tier": "ai",
+   "group": "techniques",
+   "variants": [
+    "aprendizaje auto-supervisado"
+   ],
+   "why": "training paradigm"
+  },
+  {
+   "term": "aprendizaje por refuerzo",
+   "tier": "ai",
+   "group": "techniques",
+   "variants": [
+    "aprendizaje reforzado",
+    "aprendizaje de refuerzo"
+   ],
+   "why": "training paradigm"
+  },
+  {
+   "term": "aprendizaje federado",
+   "tier": "ai",
+   "group": "techniques",
+   "why": "privacy-preserving training"
+  },
+  {
+   "term": "máquina de vectores de soporte",
+   "tier": "ai",
+   "group": "techniques",
+   "variants": [
+    "máquinas de vectores de soporte",
+    "máquinas de soporte vectorial",
+    "máquina de soporte vectorial",
+    "maquina de vectores de soporte",
+    "maquinas de vectores de soporte",
+    "maquinas de soporte vectorial",
+    "maquina de soporte vectorial"
+   ],
+   "why": "classic machine-learning method"
+  },
+  {
+   "term": "árbol de decisión",
+   "tier": "context",
+   "group": "techniques",
+   "variants": [
+    "árboles de decisión",
+    "arbol de decision",
+    "arboles de decision"
+   ],
+   "why": "classic method, also used outside AI"
+  },
+  {
+   "term": "modelo de clasificación",
+   "tier": "context",
+   "group": "techniques",
+   "variants": [
+    "modelos de clasificación",
+    "algoritmo de clasificación",
+    "algoritmos de clasificación",
+    "algoritmo de agrupamiento",
+    "algoritmos de agrupamiento",
+    "algoritmos de clustering",
+    "modelo de clasificacion",
+    "modelos de clasificacion",
+    "algoritmo de clasificacion",
+    "algoritmos de clasificacion"
+   ],
+   "why": "classifier wording, also used for accounting classifications"
+  },
+  {
+   "term": "algoritmo de aprendizaje",
+   "tier": "ai",
+   "group": "techniques",
+   "variants": [
+    "algoritmos de aprendizaje",
+    "algoritmo entrenado",
+    "algoritmos entrenados",
+    "algoritmos que aprenden",
+    "algoritmo que aprende"
+   ],
+   "why": "an algorithm that is trained"
+  },
+  {
+   "term": "retropropagación",
+   "tier": "ai",
+   "group": "techniques",
+   "variants": [
+    "descenso de gradiente",
+    "descenso del gradiente",
+    "retropropagacion"
+   ],
+   "why": "how neural networks are trained"
+  },
+  {
+   "term": "hiperparámetro",
+   "tier": "ai",
+   "group": "techniques",
+   "variants": [
+    "hiperparametro"
+   ],
+   "why": "model-training setting"
+  },
+  {
+   "term": "modelo predictivo",
+   "tier": "context",
+   "group": "techniques",
+   "variants": [
+    "modelos predictivos",
+    "modelización predictiva",
+    "modelado predictivo",
+    "modelo de predicción",
+    "modelos de predicción",
+    "modelizacion predictiva",
+    "modelo de prediccion",
+    "modelos de prediccion"
+   ],
+   "why": "prediction models, statistical or learned"
+  },
+  {
+   "term": "algoritmo predictivo",
+   "tier": "context",
+   "group": "techniques",
+   "variants": [
+    "algoritmos predictivos",
+    "algoritmo de predicción",
+    "algoritmos de predicción",
+    "algoritmo de prediccion",
+    "algoritmos de prediccion"
+   ],
+   "why": "prediction algorithms"
   },
   {
    "term": "visión artificial",
@@ -48,7 +451,18 @@
    "group": "techniques",
    "variants": [
     "visión por computador",
-    "visión por computadora"
+    "visión por computadora",
+    "visión por ordenador",
+    "visión computacional",
+    "visión computerizada",
+    "visión mediante ordenador",
+    "vision artificial",
+    "vision por computador",
+    "vision por computadora",
+    "vision por ordenador",
+    "vision computacional",
+    "vision computerizada",
+    "vision mediante ordenador"
    ],
    "why": "computer vision"
   },
@@ -57,45 +471,454 @@
    "tier": "ai",
    "group": "techniques",
    "variants": [
-    "reconocimiento de imagen"
+    "reconocimiento de imagen",
+    "reconocimiento visual",
+    "clasificación de imágenes",
+    "segmentación de imágenes",
+    "reconocimiento de la imagen",
+    "reconocimiento de imagenes",
+    "clasificacion de imagenes",
+    "segmentacion de imagenes"
    ],
    "why": "image recognition"
+  },
+  {
+   "term": "detección de objetos",
+   "tier": "context",
+   "group": "techniques",
+   "variants": [
+    "deteccion de objetos"
+   ],
+   "why": "vision task"
   },
   {
    "term": "reconocimiento facial",
    "tier": "ai",
    "group": "techniques",
+   "variants": [
+    "análisis facial",
+    "analisis facial"
+   ],
    "why": "facial recognition"
   },
   {
-   "term": "reconocimiento de voz",
+   "term": "identificación biométrica",
+   "tier": "context",
+   "group": "techniques",
+   "variants": [
+    "reconocimiento biométrico",
+    "autenticación biométrica",
+    "verificación biométrica",
+    "identificacion biometrica",
+    "reconocimiento biometrico",
+    "autenticacion biometrica",
+    "verificacion biometrica"
+   ],
+   "why": "biometrics, often AI-based"
+  },
+  {
+   "term": "reconocimiento de emociones",
    "tier": "ai",
    "group": "techniques",
-   "why": "speech recognition"
+   "variants": [
+    "detección de emociones",
+    "computación afectiva",
+    "sistema de reconocimiento de emociones",
+    "sistemas de reconocimiento de emociones",
+    "deteccion de emociones",
+    "computacion afectiva"
+   ],
+   "why": "emotion AI; restricted by the AI Act"
+  },
+  {
+   "term": "reconocimiento óptico de caracteres",
+   "tier": "context",
+   "group": "techniques",
+   "variants": [
+    "reconocimiento inteligente de caracteres",
+    "lectura óptica de caracteres",
+    "reconocimiento optico de caracteres",
+    "lectura optica de caracteres"
+   ],
+   "why": "OCR"
+  },
+  {
+   "term": "procesamiento inteligente de documentos",
+   "tier": "ai",
+   "group": "techniques",
+   "variants": [
+    "tratamiento inteligente de documentos",
+    "procesamiento inteligente de documentación",
+    "extracción automática de información de documentos",
+    "procesamiento inteligente de documentacion",
+    "extraccion automatica de informacion de documentos"
+   ],
+   "why": "document AI"
   },
   {
    "term": "procesamiento del lenguaje natural",
    "tier": "ai",
    "group": "techniques",
    "variants": [
-    "procesamiento de lenguaje natural"
+    "procesamiento de lenguaje natural",
+    "procesado del lenguaje natural",
+    "procesado de lenguaje natural",
+    "tratamiento del lenguaje natural",
+    "tratamiento del lenguaje"
    ],
    "why": "natural language processing"
+  },
+  {
+   "term": "comprensión del lenguaje natural",
+   "tier": "ai",
+   "group": "techniques",
+   "variants": [
+    "comprensión de lenguaje natural",
+    "comprension del lenguaje natural",
+    "comprension de lenguaje natural"
+   ],
+   "why": "natural language understanding"
+  },
+  {
+   "term": "generación de lenguaje natural",
+   "tier": "ai",
+   "group": "techniques",
+   "variants": [
+    "generación del lenguaje natural",
+    "generacion de lenguaje natural",
+    "generacion del lenguaje natural"
+   ],
+   "why": "natural language generation"
+  },
+  {
+   "term": "interfaz de lenguaje natural",
+   "tier": "ai",
+   "group": "techniques",
+   "variants": [
+    "consultas en lenguaje natural",
+    "consulta en lenguaje natural",
+    "búsqueda en lenguaje natural",
+    "interacción en lenguaje natural",
+    "en lenguaje natural",
+    "busqueda en lenguaje natural",
+    "interaccion en lenguaje natural"
+   ],
+   "why": "talking to software in natural language"
+  },
+  {
+   "term": "minería de textos",
+   "tier": "context",
+   "group": "techniques",
+   "variants": [
+    "minería de texto",
+    "analítica de textos",
+    "analítica de texto",
+    "prospección de textos",
+    "mineria de textos",
+    "mineria de texto",
+    "analitica de textos",
+    "analitica de texto",
+    "prospeccion de textos"
+   ],
+   "why": "text analytics"
+  },
+  {
+   "term": "análisis de sentimiento",
+   "tier": "context",
+   "group": "techniques",
+   "variants": [
+    "análisis de sentimientos",
+    "análisis del sentimiento",
+    "minería de opinión",
+    "analisis de sentimiento",
+    "analisis de sentimientos",
+    "analisis del sentimiento",
+    "mineria de opinion"
+   ],
+   "why": "language-analysis task"
+  },
+  {
+   "term": "minería de datos",
+   "tier": "context",
+   "group": "techniques",
+   "variants": [
+    "prospección de datos",
+    "mineria de datos",
+    "prospeccion de datos"
+   ],
+   "why": "pattern discovery in data"
   },
   {
    "term": "traducción automática",
    "tier": "ai",
    "group": "techniques",
+   "variants": [
+    "traducción automatizada",
+    "traducciones automáticas",
+    "traduccion automatica",
+    "traduccion automatizada",
+    "traducciones automaticas"
+   ],
    "why": "machine translation"
+  },
+  {
+   "term": "reconocimiento de voz",
+   "tier": "ai",
+   "group": "techniques",
+   "variants": [
+    "reconocimiento del habla",
+    "reconocimiento automático del habla",
+    "reconocimiento automático de voz",
+    "voz a texto",
+    "transcripción automática",
+    "reconocimiento vocal",
+    "reconocimiento automatico del habla",
+    "reconocimiento automatico de voz",
+    "transcripcion automatica"
+   ],
+   "why": "speech recognition"
+  },
+  {
+   "term": "motor de recomendación",
+   "tier": "ai",
+   "group": "techniques",
+   "variants": [
+    "motores de recomendación",
+    "sistema de recomendación",
+    "sistemas de recomendación",
+    "algoritmo de recomendación",
+    "algoritmos de recomendación",
+    "sistema recomendador",
+    "sistemas recomendadores",
+    "motor de recomendacion",
+    "motores de recomendacion",
+    "sistema de recomendacion",
+    "sistemas de recomendacion",
+    "algoritmo de recomendacion",
+    "algoritmos de recomendacion"
+   ],
+   "why": "recommender systems"
+  },
+  {
+   "term": "detección de anomalías",
+   "tier": "context",
+   "group": "techniques",
+   "variants": [
+    "detección de valores atípicos",
+    "detección de anomalía",
+    "deteccion de anomalias",
+    "deteccion de valores atipicos",
+    "deteccion de anomalia"
+   ],
+   "why": "typical machine-learning task"
+  },
+  {
+   "term": "reconocimiento de patrones",
+   "tier": "context",
+   "group": "techniques",
+   "variants": [
+    "detección de patrones",
+    "identificación de patrones",
+    "deteccion de patrones",
+    "identificacion de patrones"
+   ],
+   "why": "typical machine-learning task"
+  },
+  {
+   "term": "mantenimiento predictivo",
+   "tier": "context",
+   "group": "techniques",
+   "variants": [
+    "mantenimiento prescriptivo",
+    "mantenimiento basado en la condición",
+    "mantenimiento basado en condición",
+    "mantenimiento basado en la condicion",
+    "mantenimiento basado en condicion"
+   ],
+   "why": "industrial use of prediction models"
+  },
+  {
+   "term": "algoritmo de previsión",
+   "tier": "context",
+   "group": "techniques",
+   "variants": [
+    "algoritmos de previsión",
+    "previsión algorítmica",
+    "modelos de previsión de la demanda",
+    "modelo de previsión de la demanda",
+    "predicción de la demanda",
+    "algoritmo de prevision",
+    "algoritmos de prevision",
+    "prevision algoritmica",
+    "modelos de prevision de la demanda",
+    "modelo de prevision de la demanda",
+    "prediccion de la demanda"
+   ],
+   "why": "forecasting done by algorithms"
+  },
+  {
+   "term": "algoritmo de optimización",
+   "tier": "context",
+   "group": "techniques",
+   "variants": [
+    "algoritmos de optimización",
+    "algoritmo de optimizacion",
+    "algoritmos de optimizacion"
+   ],
+   "why": "optimization algorithms, often learned"
+  },
+  {
+   "term": "grafo de conocimiento",
+   "tier": "context",
+   "group": "techniques",
+   "variants": [
+    "grafos de conocimiento",
+    "capa semántica",
+    "capa semantica"
+   ],
+   "why": "knowledge representation used with AI"
+  },
+  {
+   "term": "algoritmo genético",
+   "tier": "ai",
+   "group": "techniques",
+   "variants": [
+    "algoritmos genéticos",
+    "algoritmo evolutivo",
+    "algoritmos evolutivos",
+    "algoritmo genetico",
+    "algoritmos geneticos"
+   ],
+   "why": "evolutionary AI method"
+  },
+  {
+   "term": "lógica difusa",
+   "tier": "ai",
+   "group": "techniques",
+   "variants": [
+    "lógica borrosa",
+    "logica difusa",
+    "logica borrosa"
+   ],
+   "why": "classic AI method"
+  },
+  {
+   "term": "gemelo digital",
+   "tier": "context",
+   "group": "techniques",
+   "variants": [
+    "gemelos digitales",
+    "gemelo virtual",
+    "gemelos virtuales"
+   ],
+   "why": "simulation models, often AI-driven"
+  },
+  {
+   "term": "sistema autónomo",
+   "tier": "context",
+   "group": "techniques",
+   "variants": [
+    "sistemas autónomos",
+    "tecnología autónoma",
+    "tecnologías autónomas",
+    "operaciones autónomas",
+    "capacidades autónomas",
+    "sistema autonomo",
+    "sistemas autonomos",
+    "tecnologia autonoma",
+    "tecnologias autonomas",
+    "operaciones autonomas",
+    "capacidades autonomas",
+    "sistemas no tripulados",
+    "sistemas aéreos autónomos",
+    "sistemas aereos autonomos"
+   ],
+   "why": "autonomy without naming AI"
+  },
+  {
+   "term": "vehículo autónomo",
+   "tier": "context",
+   "group": "techniques",
+   "variants": [
+    "vehículos autónomos",
+    "conducción autónoma",
+    "coche autónomo",
+    "coches autónomos",
+    "conducción automatizada",
+    "coche sin conductor",
+    "coches sin conductor",
+    "vehiculo autonomo",
+    "vehiculos autonomos",
+    "conduccion autonoma",
+    "coche autonomo",
+    "coches autonomos",
+    "conduccion automatizada"
+   ],
+   "why": "self-driving technology"
+  },
+  {
+   "term": "robótica inteligente",
+   "tier": "context",
+   "group": "techniques",
+   "variants": [
+    "robótica avanzada",
+    "robótica cognitiva",
+    "robots inteligentes",
+    "robot inteligente",
+    "robótica autónoma",
+    "robots autónomos",
+    "robotica inteligente",
+    "robotica avanzada",
+    "robotica cognitiva",
+    "robotica autonoma",
+    "robots autonomos"
+   ],
+   "why": "robots with AI"
+  },
+  {
+   "term": "negociación algorítmica",
+   "tier": "context",
+   "group": "techniques",
+   "variants": [
+    "negociación algorítmica de alta frecuencia",
+    "trading algorítmico",
+    "negociación automatizada",
+    "negociacion algoritmica",
+    "negociacion algoritmica de alta frecuencia",
+    "trading algoritmico",
+    "negociacion automatizada"
+   ],
+   "why": "MiFID II term for algorithmic trading"
   },
   {
    "term": "IA generativa",
    "tier": "ai",
    "group": "generative",
    "variants": [
-    "inteligencia artificial generativa"
+    "inteligencia artificial generativa",
+    "IA gen",
+    "IAGen",
+    "GenIA",
+    "IA generativas"
    ],
    "why": "generative AI"
+  },
+  {
+   "term": "modelo generativo",
+   "tier": "ai",
+   "group": "generative",
+   "variants": [
+    "modelos generativos",
+    "tecnología generativa",
+    "tecnologías generativas",
+    "herramientas generativas",
+    "capacidades generativas",
+    "búsqueda generativa",
+    "tecnologia generativa",
+    "tecnologias generativas",
+    "busqueda generativa"
+   ],
+   "why": "generative models and tools"
   },
   {
    "term": "modelo de lenguaje",
@@ -106,7 +929,25 @@
     "gran modelo de lenguaje",
     "grandes modelos de lenguaje",
     "modelo de lenguaje grande",
-    "modelos de lenguaje de gran tamaño"
+    "modelos de lenguaje grandes",
+    "modelos de lenguaje de gran tamaño",
+    "modelo de lenguaje de gran tamaño",
+    "modelo grande de lenguaje",
+    "modelos grandes de lenguaje",
+    "modelos de lenguaje extensos",
+    "modelo de lenguaje extenso",
+    "modelos de lenguaje masivos",
+    "modelos masivos de lenguaje",
+    "modelo lingüístico de gran tamaño",
+    "modelos lingüísticos de gran tamaño",
+    "grandes modelos lingüísticos",
+    "modelos del lenguaje",
+    "modelo del lenguaje",
+    "modelos largos de lenguaje",
+    "modelo largo de lenguaje",
+    "modelo linguistico de gran tamaño",
+    "modelos linguisticos de gran tamaño",
+    "grandes modelos linguisticos"
    ],
    "why": "(large) language model"
   },
@@ -115,9 +956,431 @@
    "tier": "ai",
    "group": "generative",
    "variants": [
-    "modelos fundacionales"
+    "modelos fundacionales",
+    "modelo de frontera",
+    "modelos de frontera",
+    "modelo de razonamiento",
+    "modelos de razonamiento"
    ],
    "why": "foundation model"
+  },
+  {
+   "term": "modelo multimodal",
+   "tier": "ai",
+   "group": "generative",
+   "variants": [
+    "modelos multimodales",
+    "IA multimodal"
+   ],
+   "why": "models handling text, image and audio"
+  },
+  {
+   "term": "modelo pre-entrenado",
+   "tier": "ai",
+   "group": "generative",
+   "variants": [
+    "modelos pre-entrenados",
+    "pre-entrenamiento",
+    "transformador generativo pre-entrenado"
+   ],
+   "why": "pre-trained model"
+  },
+  {
+   "term": "modelo de código abierto",
+   "tier": "context",
+   "group": "generative",
+   "variants": [
+    "modelos de código abierto",
+    "modelos abiertos",
+    "modelo abierto",
+    "modelo de codigo abierto",
+    "modelos de codigo abierto"
+   ],
+   "why": "open models"
+  },
+  {
+   "term": "proveedor de modelos",
+   "tier": "context",
+   "group": "generative",
+   "variants": [
+    "proveedores de modelos",
+    "desarrollador de modelos",
+    "desarrolladores de modelos",
+    "modelos de terceros",
+    "modelo de terceros"
+   ],
+   "why": "who supplies the model; AI Act wording for GPAI providers"
+  },
+  {
+   "term": "generación de imágenes",
+   "tier": "ai",
+   "group": "generative",
+   "variants": [
+    "generador de imágenes",
+    "generadores de imágenes",
+    "texto a imagen",
+    "generacion de imagenes",
+    "generador de imagenes",
+    "generadores de imagenes"
+   ],
+   "why": "image generation"
+  },
+  {
+   "term": "generación de vídeo",
+   "tier": "ai",
+   "group": "generative",
+   "variants": [
+    "generación de vídeos",
+    "texto a vídeo",
+    "generacion de video",
+    "generacion de videos",
+    "texto a video"
+   ],
+   "why": "video generation"
+  },
+  {
+   "term": "síntesis de voz",
+   "tier": "ai",
+   "group": "generative",
+   "variants": [
+    "voz sintética",
+    "voces sintéticas",
+    "texto a voz",
+    "generación de voz",
+    "síntesis del habla",
+    "sintesis de voz",
+    "voz sintetica",
+    "voces sinteticas",
+    "generacion de voz",
+    "sintesis del habla"
+   ],
+   "why": "synthetic speech"
+  },
+  {
+   "term": "generación de texto",
+   "tier": "ai",
+   "group": "generative",
+   "variants": [
+    "generación de textos",
+    "generador de texto",
+    "generadores de texto",
+    "generación de lenguaje",
+    "generacion de texto",
+    "generacion de textos",
+    "generacion de lenguaje"
+   ],
+   "why": "text generation"
+  },
+  {
+   "term": "red generativa adversaria",
+   "tier": "ai",
+   "group": "generative",
+   "variants": [
+    "redes generativas adversarias",
+    "red generativa antagónica",
+    "redes generativas antagónicas",
+    "red generativa adversarial",
+    "redes generativas adversariales",
+    "redes adversarias generativas",
+    "red generativa antagonica",
+    "redes generativas antagonicas"
+   ],
+   "why": "GAN"
+  },
+  {
+   "term": "ingeniería de prompts",
+   "tier": "ai",
+   "group": "generative",
+   "variants": [
+    "ingeniería de instrucciones",
+    "ingeniero de prompts",
+    "diseño de prompts",
+    "biblioteca de prompts",
+    "instrucciones del sistema",
+    "ingenieria de prompts",
+    "ingenieria de instrucciones"
+   ],
+   "why": "writing instructions for a model"
+  },
+  {
+   "term": "generación aumentada por recuperación",
+   "tier": "ai",
+   "group": "generative",
+   "variants": [
+    "generación aumentada con recuperación",
+    "generación mejorada por recuperación",
+    "generación aumentada de recuperación",
+    "generación aumentada por la recuperación",
+    "generación de recuperación aumentada",
+    "generacion aumentada por recuperacion",
+    "generacion aumentada con recuperacion",
+    "generacion mejorada por recuperacion",
+    "generacion aumentada de recuperacion",
+    "generacion aumentada por la recuperacion",
+    "generacion de recuperacion aumentada"
+   ],
+   "why": "RAG"
+  },
+  {
+   "term": "base de datos vectorial",
+   "tier": "ai",
+   "group": "generative",
+   "variants": [
+    "bases de datos vectoriales",
+    "búsqueda vectorial",
+    "representaciones vectoriales",
+    "busqueda vectorial"
+   ],
+   "why": "retrieval infrastructure for language models"
+  },
+  {
+   "term": "búsqueda semántica",
+   "tier": "context",
+   "group": "generative",
+   "variants": [
+    "buscador semántico",
+    "busqueda semantica",
+    "buscador semantico",
+    "análisis semántico",
+    "analisis semantico"
+   ],
+   "why": "meaning-based search"
+  },
+  {
+   "term": "ventana de contexto",
+   "tier": "ai",
+   "group": "generative",
+   "variants": [
+    "ventana contextual",
+    "ventanas de contexto"
+   ],
+   "why": "model input limit"
+  },
+  {
+   "term": "contenido sintético",
+   "tier": "ai",
+   "group": "generative",
+   "variants": [
+    "contenidos sintéticos",
+    "medios sintéticos",
+    "generado o manipulado artificialmente",
+    "generados o manipulados artificialmente",
+    "generado artificialmente",
+    "generados artificialmente",
+    "generada artificialmente",
+    "generadas artificialmente",
+    "generado sintéticamente",
+    "contenido sintetico",
+    "contenidos sinteticos",
+    "medios sinteticos",
+    "generado sinteticamente"
+   ],
+   "why": "AI Act wording for generated or manipulated content"
+  },
+  {
+   "term": "generado por IA",
+   "tier": "ai",
+   "group": "generative",
+   "variants": [
+    "generada por IA",
+    "generados por IA",
+    "generadas por IA",
+    "generado con IA",
+    "generada con IA",
+    "generados con IA",
+    "generadas con IA",
+    "creado por IA",
+    "creados por IA",
+    "creado con IA",
+    "creados con IA",
+    "contenido generado por IA",
+    "contenidos generados por IA",
+    "generado por inteligencia artificial",
+    "generados por inteligencia artificial",
+    "generado mediante IA",
+    "generados mediante IA"
+   ],
+   "why": "content made by AI"
+  },
+  {
+   "term": "generado por ordenador",
+   "tier": "context",
+   "group": "generative",
+   "variants": [
+    "generados por ordenador",
+    "generada por ordenador",
+    "generadas por ordenador",
+    "generado por máquina",
+    "generados por máquinas",
+    "generado automáticamente",
+    "generados automáticamente",
+    "generada automáticamente",
+    "generadas automáticamente",
+    "generado algorítmicamente",
+    "generados algorítmicamente",
+    "generado por maquina",
+    "generados por maquinas",
+    "generado automaticamente",
+    "generados automaticamente",
+    "generada automaticamente",
+    "generadas automaticamente",
+    "generado algoritmicamente",
+    "generados algoritmicamente"
+   ],
+   "why": "generation without naming AI"
+  },
+  {
+   "term": "generación de contenidos",
+   "tier": "context",
+   "group": "generative",
+   "variants": [
+    "generación de contenido",
+    "generación automática de contenidos",
+    "generación automática de contenido",
+    "generación automatizada de contenidos",
+    "creación automatizada de contenidos",
+    "creación automática de contenidos",
+    "generacion de contenidos",
+    "generacion de contenido",
+    "generacion automatica de contenidos",
+    "generacion automatica de contenido",
+    "generacion automatizada de contenidos",
+    "creacion automatizada de contenidos",
+    "creacion automatica de contenidos"
+   ],
+   "why": "content creation, often by generative tools"
+  },
+  {
+   "term": "generación de código",
+   "tier": "context",
+   "group": "generative",
+   "variants": [
+    "generación automática de código",
+    "auto-completado de código",
+    "programación asistida",
+    "generacion de codigo",
+    "generacion automatica de codigo",
+    "auto-completado de codigo",
+    "programacion asistida"
+   ],
+   "why": "software written by a model"
+  },
+  {
+   "term": "resumen automático",
+   "tier": "context",
+   "group": "generative",
+   "variants": [
+    "resúmenes automáticos",
+    "resumen automatizado",
+    "resúmenes automatizados",
+    "resumen de documentos",
+    "síntesis de documentos",
+    "generación de resúmenes",
+    "resumen automatico",
+    "resumenes automaticos",
+    "resumenes automatizados",
+    "sintesis de documentos",
+    "generacion de resumenes"
+   ],
+   "why": "summarization by a model"
+  },
+  {
+   "term": "avatar digital",
+   "tier": "context",
+   "group": "generative",
+   "variants": [
+    "avatares digitales",
+    "humano digital",
+    "humanos digitales",
+    "humano virtual",
+    "humanos virtuales",
+    "avatar virtual",
+    "avatares virtuales"
+   ],
+   "why": "synthetic persons"
+  },
+  {
+   "term": "IA agéntica",
+   "tier": "ai",
+   "group": "agents",
+   "variants": [
+    "inteligencia artificial agéntica",
+    "IA agentiva",
+    "IA agencial",
+    "IA de agentes",
+    "inteligencia artificial agentiva",
+    "agéntico",
+    "agéntica",
+    "agénticos",
+    "agénticas",
+    "IA agentica",
+    "inteligencia artificial agentica",
+    "agentico",
+    "agentica",
+    "agenticos",
+    "agenticas"
+   ],
+   "why": "agentic AI; AEPD wording"
+  },
+  {
+   "term": "agente de IA",
+   "tier": "ai",
+   "group": "agents",
+   "variants": [
+    "agentes de IA",
+    "agente de inteligencia artificial",
+    "agentes de inteligencia artificial",
+    "agente inteligente",
+    "agentes inteligentes",
+    "agente IA",
+    "agentes IA"
+   ],
+   "why": "AI agents"
+  },
+  {
+   "term": "agente autónomo",
+   "tier": "context",
+   "group": "agents",
+   "variants": [
+    "agentes autónomos",
+    "agente autonomo",
+    "agentes autonomos"
+   ],
+   "why": "autonomous software agent; also a self-employed sales agent"
+  },
+  {
+   "term": "agente informático",
+   "tier": "context",
+   "group": "agents",
+   "variants": [
+    "agentes informáticos",
+    "agente de software",
+    "agentes de software",
+    "agente software",
+    "agentes software",
+    "agente informatico",
+    "agentes informaticos"
+   ],
+   "why": "software agents; IATE wording"
+  },
+  {
+   "term": "asistente de IA",
+   "tier": "ai",
+   "group": "agents",
+   "variants": [
+    "asistentes de IA",
+    "asistente inteligente",
+    "asistentes inteligentes",
+    "asistente virtual inteligente",
+    "asistentes virtuales inteligentes",
+    "asistente de inteligencia artificial",
+    "asistentes de inteligencia artificial",
+    "asistente basado en IA",
+    "asistente con IA",
+    "asistentes con IA",
+    "asistente IA"
+   ],
+   "why": "AI assistants"
   },
   {
    "term": "asistente virtual",
@@ -129,46 +1392,4002 @@
    "why": "virtual assistant"
   },
   {
-   "term": "agente conversacional",
-   "tier": "ai",
-   "group": "agents",
-   "variants": [
-    "agentes conversacionales"
-   ],
-   "why": "chatbot"
-  },
-  {
    "term": "asistente de voz",
    "tier": "ai",
    "group": "agents",
    "variants": [
-    "asistentes de voz"
+    "asistentes de voz",
+    "bot de voz",
+    "agente de voz",
+    "agentes de voz"
    ],
    "why": "voice assistant"
+  },
+  {
+   "term": "agente conversacional",
+   "tier": "ai",
+   "group": "agents",
+   "variants": [
+    "agentes conversacionales",
+    "asistente conversacional",
+    "asistentes conversacionales",
+    "interfaz conversacional",
+    "interfaces conversacionales",
+    "bot conversacional",
+    "bots conversacionales",
+    "robot conversacional",
+    "robots conversacionales"
+   ],
+   "why": "chatbot; robot conversacional is the AI Act wording"
+  },
+  {
+   "term": "copiloto de IA",
+   "tier": "ai",
+   "group": "agents",
+   "variants": [
+    "copilotos de IA",
+    "copiloto digital",
+    "copilotos digitales",
+    "copiloto inteligente",
+    "copilotos inteligentes",
+    "copiloto virtual"
+   ],
+   "why": "AI copilots"
+  },
+  {
+   "term": "trabajador digital",
+   "tier": "context",
+   "group": "agents",
+   "variants": [
+    "trabajadores digitales",
+    "empleado digital",
+    "empleados digitales",
+    "fuerza laboral digital",
+    "fuerza de trabajo digital",
+    "mano de obra digital",
+    "empleado virtual",
+    "empleados virtuales",
+    "compañero digital"
+   ],
+   "why": "software described as staff"
+  },
+  {
+   "term": "sistema multi-agente",
+   "tier": "ai",
+   "group": "agents",
+   "variants": [
+    "sistemas multi-agente",
+    "sistemas multi-agentes",
+    "multi-agente",
+    "multi-agentes",
+    "arquitectura multi-agente",
+    "plataforma multi-agente",
+    "plataforma multi-agentes"
+   ],
+   "why": "several agents working together"
+  },
+  {
+   "term": "toma de decisiones autónoma",
+   "tier": "context",
+   "group": "agents",
+   "variants": [
+    "toma autónoma de decisiones",
+    "decisiones autónomas",
+    "decisión autónoma",
+    "actuar de forma autónoma",
+    "actúan de forma autónoma",
+    "actúa de forma autónoma",
+    "actuar de manera autónoma",
+    "actúan de manera autónoma",
+    "tomar decisiones de forma autónoma",
+    "toman decisiones de forma autónoma",
+    "toma de decisiones autonoma",
+    "toma autonoma de decisiones",
+    "decisiones autonomas",
+    "decision autonoma",
+    "actuar de forma autonoma",
+    "actuan de forma autonoma",
+    "actua de forma autonoma",
+    "actuar de manera autonoma",
+    "actuan de manera autonoma",
+    "tomar decisiones de forma autonoma",
+    "toman decisiones de forma autonoma"
+   ],
+   "why": "autonomy without naming AI"
+  },
+  {
+   "term": "asesoramiento automatizado",
+   "tier": "context",
+   "group": "agents",
+   "variants": [
+    "asesor automatizado",
+    "asesores automatizados",
+    "asesoramiento financiero automatizado",
+    "gestión de carteras automatizada",
+    "asesoramiento o gestión de carteras automatizada",
+    "gestor automatizado",
+    "gestores automatizados",
+    "gestión automatizada de carteras",
+    "asesoramiento robotizado",
+    "asesor robotizado",
+    "asesor digital",
+    "asesores digitales",
+    "asesor virtual",
+    "asesores virtuales",
+    "gestion de carteras automatizada",
+    "asesoramiento o gestion de carteras automatizada",
+    "gestion automatizada de carteras"
+   ],
+   "why": "robo-advice; CNMV wording"
+  },
+  {
+   "term": "ejecución autónoma de tareas",
+   "tier": "ai",
+   "group": "agents",
+   "variants": [
+    "realizar tareas de forma autónoma",
+    "realizan tareas de forma autónoma",
+    "ejecutar tareas de forma autónoma",
+    "ejecutan tareas de forma autónoma",
+    "ejecución de tareas de forma autónoma",
+    "tareas de manera autónoma",
+    "tareas de forma autónoma",
+    "ejecucion autonoma de tareas",
+    "realizar tareas de forma autonoma",
+    "realizan tareas de forma autonoma",
+    "ejecutar tareas de forma autonoma",
+    "ejecutan tareas de forma autonoma",
+    "ejecucion de tareas de forma autonoma",
+    "tareas de manera autonoma",
+    "tareas de forma autonoma"
+   ],
+   "why": "what agents do"
+  },
+  {
+   "term": "identidad no humana",
+   "tier": "context",
+   "group": "agents",
+   "variants": [
+    "identidades no humanas",
+    "identidad de máquina",
+    "identidades de máquina",
+    "identidad de maquina",
+    "identidades de maquina"
+   ],
+   "why": "machine identities, including agents"
+  },
+  {
+   "term": "ALIA",
+   "tier": "ai",
+   "group": "products_vendors",
+   "variants": [
+    "modelos ALIA",
+    "modelo ALIA"
+   ],
+   "case_sensitive_variants": [
+    "ALIA"
+   ],
+   "why": "Spain's public family of language models"
+  },
+  {
+   "term": "MareNostrum",
+   "tier": "context",
+   "group": "products_vendors",
+   "variants": [
+    "Barcelona Supercomputing Center",
+    "Centro Nacional de Supercomputación",
+    "Centro Nacional de Supercomputacion"
+   ],
+   "why": "the supercomputer of the Barcelona Supercomputing Center, used for AI"
+  },
+  {
+   "term": "procesador gráfico",
+   "tier": "context",
+   "group": "compute_infrastructure",
+   "variants": [
+    "procesadores gráficos",
+    "unidad de procesamiento gráfico",
+    "unidades de procesamiento gráfico",
+    "tarjeta gráfica",
+    "tarjetas gráficas",
+    "procesador grafico",
+    "procesadores graficos",
+    "unidad de procesamiento grafico",
+    "unidades de procesamiento grafico",
+    "tarjeta grafica",
+    "tarjetas graficas"
+   ],
+   "why": "the main hardware for AI (GPU); IATE wording"
+  },
+  {
+   "term": "neuromórfico",
+   "tier": "ai",
+   "group": "compute_infrastructure",
+   "variants": [
+    "neuromórfica",
+    "neuromórficos",
+    "neuromórficas",
+    "computación neuromórfica",
+    "neuromorfico",
+    "neuromorfica",
+    "neuromorficos",
+    "neuromorficas",
+    "computacion neuromorfica"
+   ],
+   "why": "brain-inspired chips"
+  },
+  {
+   "term": "centro de datos",
+   "tier": "context",
+   "group": "compute_infrastructure",
+   "variants": [
+    "centros de datos",
+    "centro de proceso de datos",
+    "centros de proceso de datos",
+    "centro de procesamiento de datos",
+    "centros de procesamiento de datos",
+    "CPD"
+   ],
+   "case_sensitive_variants": [
+    "CPD"
+   ],
+   "why": "where AI runs"
+  },
+  {
+   "term": "fábrica de IA",
+   "tier": "ai",
+   "group": "compute_infrastructure",
+   "variants": [
+    "fábricas de IA",
+    "factoría de IA",
+    "factorías de IA",
+    "gigafactoría de IA",
+    "gigafactorías de IA",
+    "fábrica de inteligencia artificial",
+    "fábricas de inteligencia artificial",
+    "factoría de inteligencia artificial",
+    "factorías de inteligencia artificial",
+    "fabrica de IA",
+    "fabricas de IA",
+    "factoria de IA",
+    "factorias de IA",
+    "gigafactoria de IA",
+    "gigafactorias de IA",
+    "fabrica de inteligencia artificial",
+    "fabricas de inteligencia artificial",
+    "factoria de inteligencia artificial",
+    "factorias de inteligencia artificial"
+   ],
+   "why": "EU AI Factories and similar sites"
+  },
+  {
+   "term": "hiperescalador",
+   "tier": "context",
+   "group": "compute_infrastructure",
+   "variants": [
+    "hiperescaladores",
+    "hiperescala",
+    "hiperescalar",
+    "hiperescalares"
+   ],
+   "why": "the large cloud providers"
+  },
+  {
+   "term": "capacidad de computación",
+   "tier": "context",
+   "group": "compute_infrastructure",
+   "variants": [
+    "capacidades de computación",
+    "capacidad de cómputo",
+    "capacidades de cómputo",
+    "capacidad de cálculo",
+    "potencia de cálculo",
+    "potencia de cómputo",
+    "potencia de computación",
+    "capacidad computacional",
+    "capacidades computacionales",
+    "recursos de computación",
+    "recursos computacionales",
+    "capacidad informática",
+    "infraestructura de computación",
+    "infraestructuras de computación",
+    "poder de cómputo",
+    "potencia computacional",
+    "capacidad de computacion",
+    "capacidades de computacion",
+    "capacidad de computo",
+    "capacidades de computo",
+    "capacidad de calculo",
+    "potencia de calculo",
+    "potencia de computo",
+    "potencia de computacion",
+    "recursos de computacion",
+    "capacidad informatica",
+    "infraestructura de computacion",
+    "infraestructuras de computacion",
+    "poder de computo"
+   ],
+   "why": "compute as a resource and constraint"
+  },
+  {
+   "term": "supercomputador",
+   "tier": "context",
+   "group": "compute_infrastructure",
+   "variants": [
+    "supercomputadores",
+    "superordenador",
+    "superordenadores",
+    "supercomputadora",
+    "supercomputadoras",
+    "supercomputación",
+    "computación de alto rendimiento",
+    "computación de altas prestaciones",
+    "informática de alto rendimiento",
+    "supercomputacion",
+    "computacion de alto rendimiento",
+    "computacion de altas prestaciones",
+    "informatica de alto rendimiento"
+   ],
+   "why": "large-scale computing used for AI"
+  },
+  {
+   "term": "carga de trabajo de IA",
+   "tier": "ai",
+   "group": "compute_infrastructure",
+   "variants": [
+    "cargas de trabajo de IA",
+    "cargas de trabajo de inteligencia artificial",
+    "inferencia de modelos",
+    "costes de inferencia",
+    "capacidad de inferencia"
+   ],
+   "why": "running and training models as a workload"
+  },
+  {
+   "term": "infraestructura de IA",
+   "tier": "ai",
+   "group": "compute_infrastructure",
+   "variants": [
+    "infraestructuras de IA",
+    "infraestructura de inteligencia artificial",
+    "infraestructuras de inteligencia artificial",
+    "infraestructura para IA",
+    "infraestructuras para IA",
+    "computación de IA",
+    "hardware de IA",
+    "servidores de IA",
+    "computacion de IA"
+   ],
+   "why": "hardware and facilities for AI"
+  },
+  {
+   "term": "computación en el borde",
+   "tier": "context",
+   "group": "compute_infrastructure",
+   "variants": [
+    "computación en el extremo",
+    "computación perimetral",
+    "computación de borde",
+    "computación en la frontera",
+    "computación en la periferia",
+    "computación periférica",
+    "computacion en el borde",
+    "computacion en el extremo",
+    "computacion perimetral",
+    "computacion de borde",
+    "computacion en la frontera",
+    "computacion en la periferia",
+    "computacion periferica"
+   ],
+   "why": "edge computing"
+  },
+  {
+   "term": "computación cuántica",
+   "tier": "context",
+   "group": "compute_infrastructure",
+   "variants": [
+    "ordenador cuántico",
+    "ordenadores cuánticos",
+    "tecnologías cuánticas",
+    "informática cuántica",
+    "computacion cuantica",
+    "ordenador cuantico",
+    "ordenadores cuanticos",
+    "tecnologias cuanticas",
+    "informatica cuantica"
+   ],
+   "why": "adjacent frontier technology"
+  },
+  {
+   "term": "IA soberana",
+   "tier": "ai",
+   "group": "compute_infrastructure",
+   "variants": [
+    "soberanía en IA",
+    "soberanía de la IA",
+    "inteligencia artificial soberana",
+    "soberanía en inteligencia artificial",
+    "soberania en IA",
+    "soberania de la IA",
+    "soberania en inteligencia artificial"
+   ],
+   "why": "national or European control over AI"
+  },
+  {
+   "term": "nube soberana",
+   "tier": "context",
+   "group": "compute_infrastructure",
+   "variants": [
+    "soberanía digital",
+    "soberanía tecnológica",
+    "cibersoberanía",
+    "soberania digital",
+    "soberania tecnologica",
+    "cibersoberania"
+   ],
+   "why": "sovereignty framing around cloud and AI"
+  },
+  {
+   "term": "inversión en IA",
+   "tier": "ai",
+   "group": "compute_infrastructure",
+   "variants": [
+    "inversiones en IA",
+    "inversión en inteligencia artificial",
+    "inversiones en inteligencia artificial",
+    "gasto en IA",
+    "inversión en infraestructura de IA",
+    "inversiones en infraestructura de IA",
+    "inversiones en infraestructuras de IA",
+    "inversion en IA",
+    "inversion en inteligencia artificial",
+    "inversion en infraestructura de IA"
+   ],
+   "why": "capital spent on AI"
+  },
+  {
+   "term": "demanda eléctrica de los centros de datos",
+   "tier": "context",
+   "group": "compute_infrastructure",
+   "variants": [
+    "demanda de los centros de datos",
+    "demanda energética de los centros de datos",
+    "consumo eléctrico de los centros de datos",
+    "consumo energético de los centros de datos",
+    "demanda de centros de datos",
+    "consumo de los centros de datos",
+    "demanda electrica de los centros de datos",
+    "demanda energetica de los centros de datos",
+    "consumo electrico de los centros de datos",
+    "consumo energetico de los centros de datos"
+   ],
+   "why": "utilities' wording for AI-driven load growth"
+  },
+  {
+   "term": "refrigeración líquida",
+   "tier": "context",
+   "group": "compute_infrastructure",
+   "variants": [
+    "refrigeración por inmersión",
+    "enfriamiento líquido",
+    "refrigeracion liquida",
+    "refrigeracion por inmersion",
+    "enfriamiento liquido"
+   ],
+   "why": "cooling for AI hardware"
+  },
+  {
+   "term": "semiconductores avanzados",
+   "tier": "context",
+   "group": "compute_infrastructure",
+   "variants": [
+    "chips avanzados",
+    "semiconductores de última generación",
+    "semiconductores de ultima generacion"
+   ],
+   "why": "chips subject to AI export controls"
+  },
+  {
+   "term": "datos de entrenamiento",
+   "tier": "ai",
+   "group": "data_training",
+   "variants": [
+    "conjunto de datos de entrenamiento",
+    "conjuntos de datos de entrenamiento",
+    "datos utilizados para entrenar",
+    "datos usados para entrenar",
+    "datos para entrenar",
+    "datos para el entrenamiento",
+    "corpus de entrenamiento"
+   ],
+   "why": "training data; AI Act wording"
+  },
+  {
+   "term": "entrenamiento de modelos",
+   "tier": "ai",
+   "group": "data_training",
+   "variants": [
+    "entrenamiento del modelo",
+    "entrenamiento de los modelos",
+    "entrenamiento de modelo",
+    "entrenar modelos",
+    "entrenar los modelos",
+    "entrenar el modelo",
+    "modelo entrenado",
+    "modelos entrenados",
+    "entrenamiento de algoritmos",
+    "entrenamiento de los algoritmos",
+    "entrenar algoritmos",
+    "entrenamiento de la IA",
+    "entrenamiento de sistemas de IA",
+    "entrenar sus modelos",
+    "entrenar nuestros modelos",
+    "entrenamiento de sus modelos"
+   ],
+   "why": "training a model"
+  },
+  {
+   "term": "reentrenamiento de modelos",
+   "tier": "ai",
+   "group": "data_training",
+   "variants": [
+    "reentrenamiento del modelo",
+    "reentrenamiento de los modelos",
+    "reentrenar el modelo",
+    "reentrenar los modelos",
+    "modelo reentrenado",
+    "re-entrenamiento del modelo"
+   ],
+   "why": "updating a model with new data"
+  },
+  {
+   "term": "etiquetado de datos",
+   "tier": "ai",
+   "group": "data_training",
+   "variants": [
+    "etiquetado de los datos",
+    "anotación de datos",
+    "datos etiquetados",
+    "datos anotados",
+    "anotacion de datos"
+   ],
+   "why": "preparing data for supervised learning"
+  },
+  {
+   "term": "datos sintéticos",
+   "tier": "ai",
+   "group": "data_training",
+   "variants": [
+    "dato sintético",
+    "conjunto de datos sintéticos",
+    "conjuntos de datos sintéticos",
+    "datos sinteticos",
+    "dato sintetico",
+    "conjunto de datos sinteticos",
+    "conjuntos de datos sinteticos"
+   ],
+   "why": "artificially generated data"
+  },
+  {
+   "term": "conjunto de datos de validación",
+   "tier": "ai",
+   "group": "data_training",
+   "variants": [
+    "conjuntos de datos de validación",
+    "conjunto de datos de prueba",
+    "conjuntos de datos de prueba",
+    "datos de entrenamiento, validación y prueba",
+    "datos de entrenamiento y prueba",
+    "conjunto de datos de validacion",
+    "conjuntos de datos de validacion",
+    "datos de entrenamiento, validacion y prueba"
+   ],
+   "why": "AI Act wording for validation and testing data"
+  },
+  {
+   "term": "pesos del modelo",
+   "tier": "ai",
+   "group": "data_training",
+   "variants": [
+    "pesos de los modelos",
+    "pesos de modelo",
+    "millones de parámetros",
+    "millones de parametros"
+   ],
+   "why": "the learned parameters"
+  },
+  {
+   "term": "aprende de los datos",
+   "tier": "ai",
+   "group": "data_training",
+   "variants": [
+    "aprenden de los datos",
+    "aprender de los datos",
+    "aprendizaje a partir de datos",
+    "aprendizaje a partir de los datos",
+    "aprenden a partir de datos",
+    "aprender a partir de datos"
+   ],
+   "why": "learning from data described in plain words"
+  },
+  {
+   "term": "raspado de datos",
+   "tier": "context",
+   "group": "data_training",
+   "variants": [
+    "raspado web",
+    "extracción masiva de datos",
+    "extracción no selectiva",
+    "rastreador web",
+    "rastreadores web",
+    "recopilación masiva de datos",
+    "extracción de datos web",
+    "rastreo web",
+    "extraccion masiva de datos",
+    "extraccion no selectiva",
+    "recopilacion masiva de datos",
+    "extraccion de datos web"
+   ],
+   "why": "collecting web data for training"
+  },
+  {
+   "term": "datos personales para entrenar",
+   "tier": "ai",
+   "group": "data_training",
+   "variants": [
+    "datos personales para el entrenamiento",
+    "entrenamiento con datos personales",
+    "entrenar con datos personales",
+    "datos personales en el entrenamiento",
+    "datos de clientes para entrenar",
+    "datos de los clientes para entrenar"
+   ],
+   "why": "personal data used in training"
+  },
+  {
+   "term": "entrenado con datos",
+   "tier": "ai",
+   "group": "data_training",
+   "variants": [
+    "entrenados con datos",
+    "entrenada con datos",
+    "entrenadas con datos",
+    "entrenado con los datos",
+    "entrenados con los datos"
+   ],
+   "why": "what a model was trained on"
+  },
+  {
+   "term": "datos no estructurados",
+   "tier": "context",
+   "group": "data_training",
+   "variants": [
+    "información no estructurada",
+    "dato no estructurado",
+    "datos desestructurados",
+    "informacion no estructurada"
+   ],
+   "why": "the raw material of language and vision models"
+  },
+  {
+   "term": "grandes volúmenes de datos",
+   "tier": "context",
+   "group": "data_training",
+   "variants": [
+    "gran volumen de datos",
+    "grandes cantidades de datos",
+    "grandes conjuntos de datos",
+    "ingentes cantidades de datos",
+    "volúmenes masivos de datos",
+    "cantidades masivas de datos",
+    "enormes cantidades de datos",
+    "grandes volúmenes de información",
+    "enormes volúmenes de datos",
+    "ingentes volúmenes de datos",
+    "grandes volumenes de datos",
+    "volumenes masivos de datos",
+    "grandes volumenes de informacion",
+    "enormes volumenes de datos",
+    "ingentes volumenes de datos"
+   ],
+   "why": "scale of data behind models"
+  },
+  {
+   "term": "linaje de datos",
+   "tier": "context",
+   "group": "data_training",
+   "variants": [
+    "linaje del dato",
+    "linaje de los datos",
+    "procedencia de los datos"
+   ],
+   "why": "where the data came from"
+  },
+  {
+   "term": "preparación de datos",
+   "tier": "context",
+   "group": "data_training",
+   "variants": [
+    "preparación de los datos",
+    "curación de datos",
+    "depuración de datos",
+    "limpieza de datos",
+    "preparacion de datos",
+    "preparacion de los datos",
+    "curacion de datos",
+    "depuracion de datos"
+   ],
+   "why": "curating data for models"
+  },
+  {
+   "term": "ingesta de datos",
+   "tier": "context",
+   "group": "data_training",
+   "variants": [
+    "canalización de datos",
+    "flujo de datos automatizado",
+    "canalizacion de datos"
+   ],
+   "why": "data plumbing behind models"
+  },
+  {
+   "term": "gobierno del dato",
+   "tier": "context",
+   "group": "data_training",
+   "variants": [
+    "gobierno de datos",
+    "gobierno de los datos",
+    "gobernanza de datos",
+    "gobernanza del dato",
+    "gobernanza de los datos"
+   ],
+   "why": "data governance, the precondition banks name for analytics and AI; gobernanza de datos is the AI Act wording"
+  },
+  {
+   "term": "representatividad de los datos",
+   "tier": "context",
+   "group": "data_training",
+   "variants": [
+    "datos representativos",
+    "datos no representativos",
+    "conjuntos de datos representativos",
+    "suficientemente representativos",
+    "diversidad de los datos"
+   ],
+   "why": "data quality requirement of the AI Act"
+  },
+  {
+   "term": "monetización de datos",
+   "tier": "context",
+   "group": "data_training",
+   "variants": [
+    "monetización de los datos",
+    "monetización del dato",
+    "monetizar los datos",
+    "el dato como activo",
+    "mercado de datos",
+    "valor del dato",
+    "monetizacion de datos",
+    "monetizacion de los datos",
+    "monetizacion del dato"
+   ],
+   "why": "data treated as a product"
+  },
+  {
+   "term": "despliegue de modelos",
+   "tier": "context",
+   "group": "deployment_operations",
+   "variants": [
+    "despliegue de los modelos",
+    "desplegar modelos",
+    "modelo desplegado",
+    "modelos desplegados",
+    "puesta en producción de modelos",
+    "puesta en producción de los modelos",
+    "puesta en produccion de modelos",
+    "puesta en produccion de los modelos"
+   ],
+   "why": "putting models into production; modelo also means a business or governance model, hence context"
+  },
+  {
+   "term": "seguimiento de modelos",
+   "tier": "context",
+   "group": "deployment_operations",
+   "variants": [
+    "seguimiento de los modelos",
+    "monitorización de modelos",
+    "monitorización del modelo",
+    "monitorización de los modelos",
+    "seguimiento posterior a la comercialización",
+    "seguimiento poscomercialización",
+    "monitorizacion de modelos",
+    "monitorizacion del modelo",
+    "monitorizacion de los modelos",
+    "seguimiento posterior a la comercializacion",
+    "seguimiento poscomercializacion"
+   ],
+   "why": "monitoring models in use; vigilancia poscomercialización is the AI Act wording"
+  },
+  {
+   "term": "deriva del modelo",
+   "tier": "ai",
+   "group": "deployment_operations",
+   "variants": [
+    "deriva de modelos",
+    "deriva de los modelos",
+    "deriva de datos",
+    "deriva de los datos",
+    "deriva del dato",
+    "deriva conceptual",
+    "degradación del modelo",
+    "degradación de los modelos",
+    "deterioro del modelo",
+    "desviación del modelo",
+    "degradacion del modelo",
+    "degradacion de los modelos",
+    "desviacion del modelo"
+   ],
+   "why": "model performance degrading over time"
+  },
+  {
+   "term": "validación de modelos",
+   "tier": "context",
+   "group": "deployment_operations",
+   "variants": [
+    "validación de los modelos",
+    "evaluación de modelos",
+    "evaluación de los modelos",
+    "verificación de modelos",
+    "validacion de modelos",
+    "validacion de los modelos",
+    "evaluacion de modelos",
+    "evaluacion de los modelos",
+    "verificacion de modelos"
+   ],
+   "why": "testing models; also used for banks' internal models"
+  },
+  {
+   "term": "ciclo de vida del modelo",
+   "tier": "context",
+   "group": "deployment_operations",
+   "variants": [
+    "ciclo de vida de los modelos",
+    "ciclo de vida de modelos",
+    "inventario de modelos",
+    "registro de modelos",
+    "catálogo de modelos",
+    "catalogo de modelos"
+   ],
+   "why": "model lifecycle and inventory"
+  },
+  {
+   "term": "rendimiento del modelo",
+   "tier": "context",
+   "group": "deployment_operations",
+   "variants": [
+    "rendimiento de los modelos",
+    "precisión del modelo",
+    "precisión de los modelos",
+    "desempeño del modelo",
+    "desempeño de los modelos",
+    "precision del modelo",
+    "precision de los modelos"
+   ],
+   "why": "how well a model works"
+  },
+  {
+   "term": "humano en el bucle",
+   "tier": "ai",
+   "group": "deployment_operations",
+   "variants": [
+    "humano en el circuito",
+    "persona en el bucle",
+    "humano en el lazo",
+    "humanos en el bucle",
+    "intervención humana en el bucle",
+    "intervencion humana en el bucle"
+   ],
+   "why": "human-in-the-loop"
+  },
+  {
+   "term": "supervisión humana",
+   "tier": "context",
+   "group": "deployment_operations",
+   "variants": [
+    "vigilancia humana",
+    "intervención humana",
+    "control humano",
+    "revisión humana",
+    "control humano significativo",
+    "juicio humano",
+    "criterio humano",
+    "supervisión por parte de humanos",
+    "supervision humana",
+    "intervencion humana",
+    "revision humana",
+    "supervision por parte de humanos"
+   ],
+   "why": "human oversight; vigilancia humana is the wording of Article 14 of the AI Act"
+  },
+  {
+   "term": "caso de uso de IA",
+   "tier": "ai",
+   "group": "deployment_operations",
+   "variants": [
+    "casos de uso de IA",
+    "casos de uso de inteligencia artificial",
+    "caso de uso de inteligencia artificial",
+    "casos de uso de IA generativa",
+    "piloto de IA",
+    "pilotos de IA",
+    "prueba de concepto de IA",
+    "pruebas de concepto de IA",
+    "proyecto de IA",
+    "proyectos de IA",
+    "proyectos de inteligencia artificial",
+    "despliegue de la IA",
+    "despliegue de IA",
+    "implantación de la IA",
+    "implantación de IA",
+    "implementación de la IA",
+    "implementación de IA",
+    "integración de la IA",
+    "integración de IA",
+    "hoja de ruta de IA",
+    "implantacion de la IA",
+    "implantacion de IA",
+    "implementacion de la IA",
+    "implementacion de IA",
+    "integracion de la IA",
+    "integracion de IA"
+   ],
+   "why": "AI projects and pilots"
+  },
+  {
+   "term": "centro de excelencia de IA",
+   "tier": "ai",
+   "group": "deployment_operations",
+   "variants": [
+    "centro de excelencia en IA",
+    "centro de excelencia de inteligencia artificial",
+    "centro de excelencia en inteligencia artificial",
+    "laboratorio de IA",
+    "hub de IA",
+    "centro de competencia de IA",
+    "centro de competencias de IA",
+    "centro de inteligencia artificial",
+    "centro de IA"
+   ],
+   "why": "organizational units for AI"
+  },
+  {
+   "term": "plataforma de IA",
+   "tier": "ai",
+   "group": "deployment_operations",
+   "variants": [
+    "plataformas de IA",
+    "plataforma de inteligencia artificial",
+    "plataformas de inteligencia artificial",
+    "IA empresarial",
+    "IA corporativa"
+   ],
+   "why": "AI platforms for the company"
+  },
+  {
+   "term": "proveedor de IA",
+   "tier": "ai",
+   "group": "deployment_operations",
+   "variants": [
+    "proveedores de IA",
+    "proveedor de sistemas de IA",
+    "proveedores de sistemas de IA",
+    "proveedor de inteligencia artificial",
+    "proveedores de inteligencia artificial",
+    "herramientas de IA de terceros",
+    "IA de terceros"
+   ],
+   "why": "who supplies the AI"
+  },
+  {
+   "term": "sistema de apoyo a las decisiones",
+   "tier": "context",
+   "group": "deployment_operations",
+   "variants": [
+    "sistemas de apoyo a las decisiones",
+    "sistema de apoyo a la decisión",
+    "sistemas de apoyo a la decisión",
+    "sistema de ayuda a la decisión",
+    "sistemas de ayuda a la decisión",
+    "sistema de soporte a la decisión",
+    "sistemas de soporte a la decisión",
+    "herramienta de apoyo a la decisión",
+    "herramientas de apoyo a la decisión",
+    "sistema de apoyo a la decision",
+    "sistemas de apoyo a la decision",
+    "sistema de ayuda a la decision",
+    "sistemas de ayuda a la decision",
+    "sistema de soporte a la decision",
+    "sistemas de soporte a la decision",
+    "herramienta de apoyo a la decision",
+    "herramientas de apoyo a la decision"
+   ],
+   "why": "decision support systems; IATE wording"
+  },
+  {
+   "term": "automatización de procesos",
+   "tier": "context",
+   "group": "deployment_operations",
+   "variants": [
+    "automatización de los procesos",
+    "automatización de flujos de trabajo",
+    "flujos de trabajo automatizados",
+    "automatización de procesos de negocio",
+    "automatizacion de procesos",
+    "automatizacion de los procesos",
+    "automatizacion de flujos de trabajo",
+    "automatizacion de procesos de negocio"
+   ],
+   "why": "process automation"
+  },
+  {
+   "term": "adopción de la IA",
+   "tier": "ai",
+   "group": "deployment_operations",
+   "variants": [
+    "adopción de IA",
+    "adopción de la inteligencia artificial",
+    "adopción de inteligencia artificial",
+    "estrategia de IA",
+    "estrategia de inteligencia artificial",
+    "iniciativas de IA",
+    "uso de la IA",
+    "uso de IA",
+    "uso de la inteligencia artificial",
+    "uso de inteligencia artificial",
+    "utilización de la IA",
+    "aplicación de la IA",
+    "aplicación de IA",
+    "aplicación de la inteligencia artificial",
+    "aplicaciones de IA",
+    "aplicaciones de inteligencia artificial",
+    "desarrollo de la IA",
+    "desarrollo de IA",
+    "adopcion de la IA",
+    "adopcion de IA",
+    "adopcion de la inteligencia artificial",
+    "adopcion de inteligencia artificial",
+    "utilizacion de la IA",
+    "aplicacion de la IA",
+    "aplicacion de IA",
+    "aplicacion de la inteligencia artificial"
+   ],
+   "why": "AI strategy and uptake"
+  },
+  {
+   "term": "herramientas de IA",
+   "tier": "ai",
+   "group": "deployment_operations",
+   "variants": [
+    "herramienta de IA",
+    "soluciones de IA",
+    "solución de IA",
+    "capacidades de IA",
+    "tecnologías de IA",
+    "tecnología de IA",
+    "funcionalidades de IA",
+    "sistema de IA",
+    "sistemas de IA",
+    "productos de IA",
+    "servicios de IA",
+    "modelo de IA",
+    "modelos de IA",
+    "algoritmos de IA",
+    "componentes de IA",
+    "componente de IA",
+    "herramientas de inteligencia artificial",
+    "soluciones de inteligencia artificial",
+    "sistemas de inteligencia artificial",
+    "sistema de inteligencia artificial",
+    "tecnologías de inteligencia artificial",
+    "modelos de inteligencia artificial",
+    "algoritmos de inteligencia artificial",
+    "solucion de IA",
+    "tecnologias de IA",
+    "tecnologia de IA",
+    "tecnologias de inteligencia artificial"
+   ],
+   "why": "AI in products and tools; sistema de IA is the AI Act wording"
+  },
+  {
+   "term": "basado en IA",
+   "tier": "ai",
+   "group": "deployment_operations",
+   "variants": [
+    "basada en IA",
+    "basados en IA",
+    "basadas en IA",
+    "basado en inteligencia artificial",
+    "basada en inteligencia artificial",
+    "basados en inteligencia artificial",
+    "basadas en inteligencia artificial",
+    "impulsado por IA",
+    "impulsada por IA",
+    "impulsados por IA",
+    "impulsadas por IA",
+    "impulsado por inteligencia artificial",
+    "potenciado por IA",
+    "potenciada por IA",
+    "potenciados por IA",
+    "potenciadas por IA",
+    "apoyado en IA",
+    "apoyados en IA"
+   ],
+   "why": "products described as AI-based"
+  },
+  {
+   "term": "despliegue responsable",
+   "tier": "context",
+   "group": "deployment_operations",
+   "variants": [
+    "despliegue seguro",
+    "despliegue controlado",
+    "despliegue gradual"
+   ],
+   "why": "controlled introduction of systems"
+  },
+  {
+   "term": "clasificación automática",
+   "tier": "context",
+   "group": "deployment_operations",
+   "variants": [
+    "clasificación automatizada",
+    "cribado automatizado",
+    "cribado automático",
+    "triaje automatizado",
+    "revisión automatizada",
+    "inspección automatizada",
+    "detección automática",
+    "detección automatizada",
+    "clasificacion automatica",
+    "clasificacion automatizada",
+    "cribado automatico",
+    "revision automatizada",
+    "inspeccion automatizada",
+    "deteccion automatica",
+    "deteccion automatizada"
+   ],
+   "why": "automated screening and review"
+  },
+  {
+   "term": "minería de procesos",
+   "tier": "context",
+   "group": "deployment_operations",
+   "variants": [
+    "minería de tareas",
+    "mineria de procesos",
+    "mineria de tareas"
+   ],
+   "why": "process analytics"
+  },
+  {
+   "term": "madurez en IA",
+   "tier": "ai",
+   "group": "deployment_operations",
+   "variants": [
+    "madurez de IA",
+    "madurez en inteligencia artificial",
+    "preparación para la IA",
+    "preparacion para la IA"
+   ],
+   "why": "how ready an organization is for AI"
   },
   {
    "term": "alucinación",
    "tier": "ai",
    "group": "risks_failures",
    "variants": [
-    "alucinaciones"
+    "alucinaciones",
+    "alucinar",
+    "alucinan",
+    "alucina",
+    "alucinacion"
    ],
    "why": "hallucination of a model"
+  },
+  {
+   "term": "resultados sesgados",
+   "tier": "context",
+   "group": "risks_failures",
+   "variants": [
+    "resultado sesgado",
+    "decisiones sesgadas",
+    "respuestas sesgadas",
+    "resultados inexactos o sesgados",
+    "resultados sesgados o inexactos",
+    "resultados discriminatorios"
+   ],
+   "why": "biased outputs; also a statistics term"
+  },
+  {
+   "term": "resultados de salida",
+   "tier": "context",
+   "group": "risks_failures",
+   "variants": [
+    "resultado de salida",
+    "información de salida",
+    "salidas del modelo",
+    "salidas de los modelos",
+    "respuestas del modelo",
+    "respuestas generadas",
+    "informacion de salida"
+   ],
+   "why": "AI Act wording for model outputs"
+  },
+  {
+   "term": "respuestas incorrectas",
+   "tier": "context",
+   "group": "risks_failures",
+   "variants": [
+    "respuestas erróneas",
+    "respuestas inexactas",
+    "respuestas erroneas"
+   ],
+   "why": "wrong outputs"
   },
   {
    "term": "sesgo algorítmico",
    "tier": "ai",
    "group": "risks_failures",
    "variants": [
-    "sesgos algorítmicos"
+    "sesgos algorítmicos",
+    "sesgo de los algoritmos",
+    "sesgos de los algoritmos",
+    "sesgo en los algoritmos",
+    "sesgos en los algoritmos",
+    "algoritmo sesgado",
+    "algoritmos sesgados",
+    "discriminación algorítmica",
+    "equidad algorítmica",
+    "sesgo del modelo",
+    "sesgos del modelo",
+    "sesgo de los modelos",
+    "sesgos de los modelos",
+    "sesgos en los modelos",
+    "sesgo de la IA",
+    "sesgos de la IA",
+    "sesgos en la IA",
+    "sesgos de los sistemas de IA",
+    "sesgo algoritmico",
+    "sesgos algoritmicos",
+    "discriminacion algoritmica",
+    "equidad algoritmica"
    ],
    "why": "algorithmic bias"
   },
   {
-   "term": "datos de entrenamiento",
+   "term": "sesgos discriminatorios",
+   "tier": "context",
+   "group": "risks_failures",
+   "variants": [
+    "sesgo discriminatorio",
+    "sesgos no deseados",
+    "sesgos injustos",
+    "efectos discriminatorios",
+    "impacto discriminatorio"
+   ],
+   "why": "unfair outcomes of automated systems"
+  },
+  {
+   "term": "datos sesgados",
+   "tier": "context",
+   "group": "risks_failures",
+   "variants": [
+    "dato sesgado",
+    "conjuntos de datos sesgados",
+    "sesgos en los datos",
+    "sesgo en los datos",
+    "sesgo de los datos",
+    "sesgos de los datos",
+    "mala calidad de los datos",
+    "baja calidad de los datos"
+   ],
+   "why": "bias and quality problems in the data"
+  },
+  {
+   "term": "mitigación de sesgos",
+   "tier": "context",
+   "group": "risks_failures",
+   "variants": [
+    "mitigación del sesgo",
+    "mitigación de los sesgos",
+    "mitigar sesgos",
+    "mitigar los sesgos",
+    "detección de sesgos",
+    "detección de sesgo",
+    "evitar sesgos",
+    "evitar los sesgos",
+    "prevención de sesgos",
+    "corrección de sesgos",
+    "reducir los sesgos",
+    "reducir sesgos",
+    "mitigacion de sesgos",
+    "mitigacion del sesgo",
+    "mitigacion de los sesgos",
+    "deteccion de sesgos",
+    "deteccion de sesgo",
+    "prevencion de sesgos",
+    "correccion de sesgos"
+   ],
+   "why": "work against bias"
+  },
+  {
+   "term": "explicabilidad",
    "tier": "ai",
-   "group": "data_training",
-   "why": "training data"
+   "group": "risks_failures",
+   "variants": [
+    "IA explicable",
+    "inteligencia artificial explicable",
+    "aprendizaje automático explicable",
+    "modelos explicables",
+    "modelo explicable",
+    "modelos interpretables",
+    "modelo interpretable",
+    "algoritmos explicables",
+    "aprendizaje automatico explicable"
+   ],
+   "why": "whether a model's output can be explained"
+  },
+  {
+   "term": "caja negra",
+   "tier": "context",
+   "group": "risks_failures",
+   "variants": [
+    "cajas negras",
+    "modelo opaco",
+    "modelos opacos",
+    "algoritmos opacos",
+    "opacidad de los algoritmos",
+    "opacidad algorítmica",
+    "opacidad de los modelos",
+    "opacidad del modelo",
+    "opacidad algoritmica"
+   ],
+   "why": "opacity of models; also a flight recorder"
+  },
+  {
+   "term": "riesgo de modelo",
+   "tier": "context",
+   "group": "risks_failures",
+   "variants": [
+    "riesgo de modelos",
+    "riesgo del modelo",
+    "gestión del riesgo de modelo",
+    "error del modelo",
+    "errores del modelo",
+    "fallo del modelo",
+    "limitaciones del modelo",
+    "limitaciones de los modelos",
+    "incertidumbre del modelo",
+    "gestion del riesgo de modelo"
+   ],
+   "why": "banks' risk category for models, which now includes AI models"
+  },
+  {
+   "term": "sesgo de automatización",
+   "tier": "ai",
+   "group": "risks_failures",
+   "variants": [
+    "sesgo de la automatización",
+    "exceso de confianza en la automatización",
+    "dependencia excesiva de los sistemas automatizados",
+    "confianza excesiva en los sistemas automatizados",
+    "sesgo de automatizacion",
+    "sesgo de la automatizacion",
+    "exceso de confianza en la automatizacion"
+   ],
+   "why": "over-trusting automated output; AI Act wording"
+  },
+  {
+   "term": "riesgos de la IA",
+   "tier": "ai",
+   "group": "risks_failures",
+   "variants": [
+    "riesgo de la IA",
+    "riesgos de IA",
+    "riesgo de IA",
+    "riesgos de la inteligencia artificial",
+    "riesgos asociados a la IA",
+    "riesgos derivados de la IA",
+    "riesgos asociados a la inteligencia artificial",
+    "riesgos derivados de la inteligencia artificial",
+    "riesgos relacionados con la IA",
+    "riesgos asociados al uso de la IA",
+    "riesgos derivados del uso de la IA",
+    "incidente de IA",
+    "incidentes de IA",
+    "fallos de la IA",
+    "errores de la IA",
+    "IA segura"
+   ],
+   "why": "AI named as a risk"
+  },
+  {
+   "term": "comportamiento inesperado",
+   "tier": "context",
+   "group": "risks_failures",
+   "variants": [
+    "comportamientos inesperados",
+    "comportamiento imprevisto",
+    "comportamientos imprevistos",
+    "resultados imprevisibles",
+    "resultados no deseados",
+    "resultados inesperados",
+    "comportamiento impredecible"
+   ],
+   "why": "outputs nobody intended"
+  },
+  {
+   "term": "comportamiento emergente",
+   "tier": "context",
+   "group": "risks_failures",
+   "variants": [
+    "comportamientos emergentes",
+    "capacidades emergentes"
+   ],
+   "why": "capabilities nobody designed"
+  },
+  {
+   "term": "no determinista",
+   "tier": "context",
+   "group": "risks_failures",
+   "variants": [
+    "no deterministas",
+    "no determinístico",
+    "no determinísticos",
+    "resultados probabilísticos",
+    "naturaleza probabilística",
+    "carácter probabilístico",
+    "no deterministico",
+    "no deterministicos",
+    "resultados probabilisticos",
+    "naturaleza probabilistica",
+    "caracter probabilistico"
+   ],
+   "why": "same input, different output"
+  },
+  {
+   "term": "protegido por derechos de autor",
+   "tier": "context",
+   "group": "risks_failures",
+   "variants": [
+    "protegidos por derechos de autor",
+    "protegida por derechos de autor",
+    "protegidas por derechos de autor",
+    "obras protegidas",
+    "contenidos protegidos",
+    "contenido protegido",
+    "protegidos por propiedad intelectual",
+    "protegidos por derechos de propiedad intelectual"
+   ],
+   "why": "copyright questions around training and outputs"
+  },
+  {
+   "term": "introducir información confidencial",
+   "tier": "context",
+   "group": "risks_failures",
+   "variants": [
+    "introducir datos confidenciales",
+    "introducir datos personales",
+    "introducción de información confidencial",
+    "introducción de datos confidenciales",
+    "compartir información confidencial",
+    "introducir información sensible",
+    "introducir informacion confidencial",
+    "introduccion de informacion confidencial",
+    "introduccion de datos confidenciales",
+    "compartir informacion confidencial",
+    "introducir informacion sensible"
+   ],
+   "why": "staff putting secrets into a tool"
+  },
+  {
+   "term": "fuga de datos",
+   "tier": "context",
+   "group": "risks_failures",
+   "variants": [
+    "fugas de datos",
+    "fuga de información",
+    "fugas de información",
+    "filtración de datos",
+    "filtraciones de datos",
+    "fuga de información confidencial",
+    "filtración de información confidencial",
+    "fuga de informacion",
+    "fugas de informacion",
+    "filtracion de datos",
+    "fuga de informacion confidencial",
+    "filtracion de informacion confidencial"
+   ],
+   "why": "data leakage"
+  },
+  {
+   "term": "IA en la sombra",
+   "tier": "ai",
+   "group": "risks_failures",
+   "variants": [
+    "IA no autorizada",
+    "uso no autorizado de IA",
+    "uso no autorizado de la IA",
+    "herramientas de IA no autorizadas",
+    "IA oculta",
+    "herramientas de IA no aprobadas"
+   ],
+   "why": "AI used without approval"
+  },
+  {
+   "term": "riesgo existencial",
+   "tier": "context",
+   "group": "risks_failures",
+   "variants": [
+    "riesgos existenciales",
+    "pérdida de control humano",
+    "pérdida del control humano",
+    "perdida de control humano",
+    "perdida del control humano"
+   ],
+   "why": "catastrophic AI risk"
+  },
+  {
+   "term": "contenido tóxico",
+   "tier": "context",
+   "group": "risks_failures",
+   "variants": [
+    "contenidos tóxicos",
+    "contenido ofensivo",
+    "contenidos ofensivos",
+    "contenido nocivo",
+    "contenidos nocivos",
+    "contenido dañino",
+    "contenidos dañinos",
+    "contenido toxico",
+    "contenidos toxicos"
+   ],
+   "why": "harmful model outputs"
+  },
+  {
+   "term": "propagación de errores",
+   "tier": "context",
+   "group": "risks_failures",
+   "variants": [
+    "errores en cascada",
+    "errores acumulativos",
+    "propagacion de errores"
+   ],
+   "why": "errors compounding through automated steps"
+  },
+  {
+   "term": "disrupción de la IA",
+   "tier": "ai",
+   "group": "risks_failures",
+   "variants": [
+    "disrupción por la IA",
+    "disrupción de la inteligencia artificial",
+    "irrupción de la IA",
+    "irrupción de la inteligencia artificial",
+    "competidores nativos de IA",
+    "empresas nativas de IA",
+    "nativas en IA",
+    "nativos en IA",
+    "disrupcion de la IA",
+    "disrupcion por la IA",
+    "disrupcion de la inteligencia artificial",
+    "irrupcion de la IA",
+    "irrupcion de la inteligencia artificial"
+   ],
+   "why": "AI as a competitive threat"
+  },
+  {
+   "term": "dilemas éticos",
+   "tier": "context",
+   "group": "risks_failures",
+   "variants": [
+    "dilema ético",
+    "implicaciones éticas",
+    "cuestiones éticas",
+    "desafíos éticos",
+    "retos éticos",
+    "preocupaciones éticas",
+    "dilemas eticos",
+    "dilema etico",
+    "implicaciones eticas",
+    "cuestiones eticas",
+    "desafios eticos",
+    "retos eticos",
+    "preocupaciones eticas"
+   ],
+   "why": "ethics wording around technology"
+  },
+  {
+   "term": "dependencia de proveedores tecnológicos",
+   "tier": "context",
+   "group": "risks_failures",
+   "variants": [
+    "dependencia de terceros proveedores",
+    "dependencia de un número reducido de proveedores",
+    "dependencia de proveedores de modelos",
+    "dependencia de proveedores tecnologicos",
+    "dependencia de un numero reducido de proveedores"
+   ],
+   "why": "concentration in a few technology and model providers"
+  },
+  {
+   "term": "ultrasuplantación",
+   "tier": "ai",
+   "group": "security_misuse",
+   "variants": [
+    "ultrasuplantaciones",
+    "ultrafalsificación",
+    "ultrafalsificaciones",
+    "ultrafalso",
+    "ultrafalsos",
+    "falsificación profunda",
+    "falsificaciones profundas",
+    "vídeos manipulados",
+    "vídeo manipulado",
+    "audios manipulados",
+    "audio manipulado",
+    "imágenes manipuladas",
+    "intercambio de rostros",
+    "falsedad profunda",
+    "ultrasuplantacion",
+    "ultrafalsificacion",
+    "falsificacion profunda",
+    "videos manipulados",
+    "video manipulado",
+    "imagenes manipuladas"
+   ],
+   "why": "deepfake in the Spanish text of the AI Act; ultrafalsificación is the IATE wording"
+  },
+  {
+   "term": "clonación de voz",
+   "tier": "ai",
+   "group": "security_misuse",
+   "variants": [
+    "clonación de voces",
+    "clonación de la voz",
+    "clonado de voz",
+    "voz clonada",
+    "voces clonadas",
+    "suplantación de voz",
+    "suplantación de la voz",
+    "clonar la voz",
+    "clonacion de voz",
+    "clonacion de voces",
+    "clonacion de la voz",
+    "suplantacion de voz",
+    "suplantacion de la voz"
+   ],
+   "why": "voice cloning"
+  },
+  {
+   "term": "identidad sintética",
+   "tier": "context",
+   "group": "security_misuse",
+   "variants": [
+    "identidades sintéticas",
+    "identidad falsa",
+    "identidades falsas",
+    "identidad ficticia",
+    "identidades ficticias",
+    "identidad sintetica",
+    "identidades sinteticas"
+   ],
+   "why": "fabricated identities"
+  },
+  {
+   "term": "fraude con IA",
+   "tier": "ai",
+   "group": "security_misuse",
+   "variants": [
+    "fraudes con IA",
+    "fraude mediante IA",
+    "fraude basado en IA",
+    "fraude impulsado por IA",
+    "estafas con IA",
+    "estafa con IA",
+    "estafas con inteligencia artificial",
+    "fraude con inteligencia artificial",
+    "fraudes con inteligencia artificial",
+    "fraudes basados en IA",
+    "fraudes basadas en IA",
+    "fraude asistido por IA"
+   ],
+   "why": "AI-enabled fraud"
+  },
+  {
+   "term": "ciberataques con IA",
+   "tier": "ai",
+   "group": "security_misuse",
+   "variants": [
+    "ciberataque con IA",
+    "ciberataques basados en IA",
+    "ciberataques impulsados por IA",
+    "ciberataques mediante IA",
+    "ataques basados en IA",
+    "ataques impulsados por IA",
+    "ataques con IA",
+    "ataques potenciados por IA",
+    "amenazas basadas en IA",
+    "ciberamenazas basadas en IA",
+    "ciberataques asistidos por IA",
+    "ataques asistidos por IA"
+   ],
+   "why": "AI-enabled attacks"
+  },
+  {
+   "term": "suplantación de identidad",
+   "tier": "context",
+   "group": "security_misuse",
+   "variants": [
+    "suplantaciones de identidad",
+    "suplantación de directivos",
+    "suplantación del CEO",
+    "fraude del CEO",
+    "suplantación de la identidad",
+    "hiperrealista",
+    "hiperrealistas",
+    "suplantacion de identidad",
+    "suplantacion de directivos",
+    "suplantacion del CEO",
+    "suplantacion de la identidad"
+   ],
+   "why": "impersonation, increasingly done with generated voice and video"
+  },
+  {
+   "term": "inyección de prompts",
+   "tier": "ai",
+   "group": "security_misuse",
+   "variants": [
+    "inyección de prompt",
+    "inyección de instrucciones",
+    "inyección de peticiones",
+    "inyecciones de prompt",
+    "prompts maliciosos",
+    "instrucciones maliciosas",
+    "inyeccion de prompts",
+    "inyeccion de prompt",
+    "inyeccion de instrucciones",
+    "inyeccion de peticiones"
+   ],
+   "why": "attacks through model instructions"
+  },
+  {
+   "term": "envenenamiento de datos",
+   "tier": "ai",
+   "group": "security_misuse",
+   "variants": [
+    "envenenamiento de los datos",
+    "envenenamiento de modelos",
+    "envenenamiento del modelo",
+    "datos envenenados",
+    "ataque de envenenamiento",
+    "ataques de envenenamiento"
+   ],
+   "why": "attacks on training data; AI Act wording"
+  },
+  {
+   "term": "robo de modelos",
+   "tier": "ai",
+   "group": "security_misuse",
+   "variants": [
+    "robo del modelo",
+    "robo de modelo",
+    "exfiltración de modelos",
+    "exfiltración del modelo",
+    "robo de los pesos",
+    "exfiltracion de modelos",
+    "exfiltracion del modelo"
+   ],
+   "why": "stealing a model"
+  },
+  {
+   "term": "inferencia de pertenencia",
+   "tier": "ai",
+   "group": "security_misuse",
+   "variants": [
+    "ataque por inferencia de pertenencia",
+    "ataques de inferencia de pertenencia",
+    "ataque de inferencia",
+    "ataques de inferencia",
+    "ataque de inversión de modelo",
+    "ataques de inversión de modelos",
+    "ataques de inversión del modelo",
+    "extracción de modelos",
+    "extracción del modelo",
+    "ataque de inversion de modelo",
+    "ataques de inversion de modelos",
+    "ataques de inversion del modelo",
+    "extraccion de modelos",
+    "extraccion del modelo"
+   ],
+   "why": "attacks that extract training data or the model; AEPD and IATE wording"
+  },
+  {
+   "term": "manipulación de modelos",
+   "tier": "ai",
+   "group": "security_misuse",
+   "variants": [
+    "manipulación del modelo",
+    "manipulación de los modelos",
+    "manipulacion de modelos",
+    "manipulacion del modelo",
+    "manipulacion de los modelos"
+   ],
+   "why": "tampering with a model"
+  },
+  {
+   "term": "ataque adversario",
+   "tier": "ai",
+   "group": "security_misuse",
+   "variants": [
+    "ataques adversarios",
+    "ataque adversarial",
+    "ataques adversariales",
+    "ataque antagónico",
+    "ataques antagónicos",
+    "ejemplos adversarios",
+    "ejemplos adversariales",
+    "ataques de evasión",
+    "ataque de evasión",
+    "evasión de modelos",
+    "aprendizaje automático adversario",
+    "robustez adversaria",
+    "ataque antagonico",
+    "ataques antagonicos",
+    "ataques de evasion",
+    "ataque de evasion",
+    "evasion de modelos",
+    "aprendizaje automatico adversario"
+   ],
+   "why": "adversarial machine learning; AI Act wording"
+  },
+  {
+   "term": "uso malicioso de la IA",
+   "tier": "ai",
+   "group": "security_misuse",
+   "variants": [
+    "uso malintencionado de la IA",
+    "uso indebido de la IA",
+    "mal uso de la IA",
+    "uso fraudulento de la IA",
+    "uso ilícito de la IA",
+    "uso malicioso de IA",
+    "uso indebido de IA",
+    "uso malicioso de la inteligencia artificial",
+    "uso malintencionado de la inteligencia artificial",
+    "uso indebido de la inteligencia artificial",
+    "mal uso de la inteligencia artificial",
+    "malware generado por IA",
+    "uso ilicito de la IA"
+   ],
+   "why": "AI as a tool for attackers"
+  },
+  {
+   "term": "malware polimórfico",
+   "tier": "context",
+   "group": "security_misuse",
+   "variants": [
+    "código malicioso polimórfico",
+    "malware polimorfico",
+    "codigo malicioso polimorfico"
+   ],
+   "why": "self-changing malware, now AI-assisted"
+  },
+  {
+   "term": "seguridad de la IA",
+   "tier": "ai",
+   "group": "security_misuse",
+   "variants": [
+    "seguridad de los sistemas de IA",
+    "seguridad de la inteligencia artificial",
+    "ciberseguridad de la IA",
+    "ciberseguridad de los sistemas de IA",
+    "seguridad en IA",
+    "seguridad de IA"
+   ],
+   "why": "securing AI systems; in Spanish also AI safety"
+  },
+  {
+   "term": "pruebas adversarias",
+   "tier": "context",
+   "group": "security_misuse",
+   "variants": [
+    "prueba adversaria",
+    "pruebas adversariales",
+    "pruebas de adversario",
+    "simulación de adversarios",
+    "equipo rojo",
+    "equipos rojos",
+    "simulacion de adversarios"
+   ],
+   "why": "adversarial testing; AI Act wording"
+  },
+  {
+   "term": "desinformación",
+   "tier": "context",
+   "group": "security_misuse",
+   "variants": [
+    "noticias falsas",
+    "bulo",
+    "desinformacion"
+   ],
+   "why": "information threats amplified by generated content"
+  },
+  {
+   "term": "campañas de desinformación",
+   "tier": "context",
+   "group": "security_misuse",
+   "variants": [
+    "campaña de desinformación",
+    "operaciones de influencia",
+    "injerencia electoral",
+    "injerencias electorales",
+    "manipulación electoral",
+    "campañas de desinformacion",
+    "campaña de desinformacion",
+    "manipulacion electoral"
+   ],
+   "why": "influence operations"
+  },
+  {
+   "term": "procedencia de los contenidos",
+   "tier": "context",
+   "group": "security_misuse",
+   "variants": [
+    "procedencia del contenido",
+    "autenticidad de los contenidos",
+    "autenticidad del contenido",
+    "credenciales de contenido",
+    "origen de los contenidos"
+   ],
+   "why": "proving what is real"
+  },
+  {
+   "term": "marca de agua",
+   "tier": "context",
+   "group": "security_misuse",
+   "variants": [
+    "marcas de agua",
+    "marca de agua digital",
+    "marcas de agua digitales"
+   ],
+   "why": "marking generated content; AI Act wording"
+  },
+  {
+   "term": "prueba de vida",
+   "tier": "context",
+   "group": "security_misuse",
+   "variants": [
+    "pruebas de vida",
+    "detección de vida",
+    "ataque de presentación",
+    "ataques de presentación",
+    "suplantación biométrica",
+    "deteccion de vida",
+    "ataque de presentacion",
+    "ataques de presentacion",
+    "suplantacion biometrica"
+   ],
+   "why": "defenses against biometric spoofing"
+  },
+  {
+   "term": "documentos falsos",
+   "tier": "context",
+   "group": "security_misuse",
+   "variants": [
+    "documentos falsificados",
+    "documentación falsa",
+    "documentación falsificada",
+    "falsificación de documentos",
+    "falsificación documental",
+    "documentacion falsa",
+    "documentacion falsificada",
+    "falsificacion de documentos",
+    "falsificacion documental"
+   ],
+   "why": "forged documents, now easier with generative tools"
+  },
+  {
+   "term": "reseñas falsas",
+   "tier": "context",
+   "group": "security_misuse",
+   "variants": [
+    "reseña falsa",
+    "cuentas falsas",
+    "perfiles falsos",
+    "cuentas no auténticas",
+    "opiniones falsas",
+    "cuentas no autenticas"
+   ],
+   "why": "fabricated accounts and reviews"
+  },
+  {
+   "term": "material de abuso sexual infantil",
+   "tier": "context",
+   "group": "security_misuse",
+   "variants": [
+    "material de abuso sexual de menores",
+    "abuso sexual infantil",
+    "pornografía infantil",
+    "abusos sexuales de menores",
+    "pornografia infantil"
+   ],
+   "why": "content-safety category for generative models"
+  },
+  {
+   "term": "contenido falso",
+   "tier": "context",
+   "group": "security_misuse",
+   "variants": [
+    "contenidos falsos",
+    "imágenes falsas",
+    "vídeos falsos",
+    "audios falsos",
+    "audio falso",
+    "vídeo falso",
+    "contenido falsificado",
+    "imagenes falsas",
+    "videos falsos",
+    "video falso"
+   ],
+   "why": "fabricated media"
+  },
+  {
+   "term": "biometría de voz",
+   "tier": "context",
+   "group": "security_misuse",
+   "variants": [
+    "biometría vocal",
+    "huella de voz",
+    "huella vocal",
+    "biometria de voz",
+    "biometria vocal"
+   ],
+   "why": "voice biometrics, exposed to cloning"
+  },
+  {
+   "term": "Reglamento de Inteligencia Artificial",
+   "tier": "ai",
+   "group": "governance_regulation",
+   "variants": [
+    "Reglamento de IA",
+    "Reglamento de la IA",
+    "Reglamento de la Inteligencia Artificial",
+    "Reglamento Europeo de Inteligencia Artificial",
+    "Reglamento Europeo de IA",
+    "Reglamento Europeo de la IA",
+    "Reglamento (UE) 2024/1689",
+    "Reglamento UE 2024/1689",
+    "Ley de Inteligencia Artificial",
+    "Ley de IA",
+    "Ley Europea de Inteligencia Artificial",
+    "Ley Europea de IA",
+    "Reglamento sobre Inteligencia Artificial",
+    "Reglamento sobre IA",
+    "normativa europea de IA"
+   ],
+   "why": "the EU AI Act as it is named in Spain"
+  },
+  {
+   "term": "RIA",
+   "tier": "context",
+   "group": "governance_regulation",
+   "case_sensitive_variants": [
+    "RIA"
+   ],
+   "why": "abbreviation of Reglamento de IA used by AESIA; has other meanings"
+  },
+  {
+   "term": "sistema de IA de alto riesgo",
+   "tier": "ai",
+   "group": "governance_regulation",
+   "variants": [
+    "sistemas de IA de alto riesgo",
+    "IA de alto riesgo",
+    "sistema de alto riesgo",
+    "sistemas de alto riesgo",
+    "sistemas de inteligencia artificial de alto riesgo",
+    "prácticas de IA prohibidas",
+    "prácticas prohibidas de IA",
+    "sistemas de IA prohibidos",
+    "IA de riesgo limitado",
+    "practicas de IA prohibidas",
+    "practicas prohibidas de IA"
+   ],
+   "why": "AI Act risk classes"
+  },
+  {
+   "term": "modelo de IA de uso general",
+   "tier": "ai",
+   "group": "governance_regulation",
+   "variants": [
+    "modelos de IA de uso general",
+    "IA de uso general",
+    "inteligencia artificial de uso general",
+    "modelo de uso general",
+    "modelos de uso general",
+    "sistema de IA de uso general",
+    "sistemas de IA de uso general",
+    "IA de propósito general",
+    "modelos de IA de propósito general",
+    "modelo de IA de propósito general",
+    "modelos de propósito general",
+    "inteligencia artificial de propósito general",
+    "IA de proposito general",
+    "modelos de IA de proposito general",
+    "modelo de IA de proposito general",
+    "modelos de proposito general",
+    "inteligencia artificial de proposito general"
+   ],
+   "why": "AI Act category for foundation models"
+  },
+  {
+   "term": "responsable del despliegue",
+   "tier": "ai",
+   "group": "governance_regulation",
+   "variants": [
+    "responsables del despliegue",
+    "proveedores y responsables del despliegue"
+   ],
+   "why": "the AI Act role of the deployer"
+  },
+  {
+   "term": "evaluación de impacto relativa a los derechos fundamentales",
+   "tier": "ai",
+   "group": "governance_regulation",
+   "variants": [
+    "evaluación de impacto en los derechos fundamentales",
+    "evaluación de impacto sobre los derechos fundamentales",
+    "evaluación del impacto en los derechos fundamentales",
+    "evaluación de impacto en derechos fundamentales",
+    "evaluación de impacto de derechos fundamentales",
+    "evaluacion de impacto relativa a los derechos fundamentales",
+    "evaluacion de impacto en los derechos fundamentales",
+    "evaluacion de impacto sobre los derechos fundamentales",
+    "evaluacion del impacto en los derechos fundamentales",
+    "evaluacion de impacto en derechos fundamentales",
+    "evaluacion de impacto de derechos fundamentales"
+   ],
+   "why": "AI Act duty for deployers of high-risk systems"
+  },
+  {
+   "term": "evaluación de la conformidad",
+   "tier": "context",
+   "group": "governance_regulation",
+   "variants": [
+    "evaluación de conformidad",
+    "evaluaciones de la conformidad",
+    "evaluacion de la conformidad",
+    "evaluacion de conformidad"
+   ],
+   "why": "product-law procedure the AI Act uses"
+  },
+  {
+   "term": "espacio controlado de pruebas",
+   "tier": "context",
+   "group": "governance_regulation",
+   "variants": [
+    "espacios controlados de pruebas",
+    "entorno controlado de pruebas",
+    "entornos controlados de pruebas",
+    "sandbox regulatorio",
+    "entorno de pruebas normativo"
+   ],
+   "why": "regulatory sandbox in EU and Spanish law"
+  },
+  {
+   "term": "Ómnibus Digital",
+   "tier": "context",
+   "group": "governance_regulation",
+   "variants": [
+    "paquete ómnibus digital",
+    "Omnibus Digital",
+    "paquete omnibus digital"
+   ],
+   "why": "EU package amending the digital rulebook, including the AI Act"
+  },
+  {
+   "term": "Oficina de IA",
+   "tier": "ai",
+   "group": "governance_regulation",
+   "variants": [
+    "Oficina Europea de IA",
+    "Oficina Europea de Inteligencia Artificial",
+    "Oficina de Inteligencia Artificial",
+    "Consejo de IA",
+    "Consejo Europeo de Inteligencia Artificial",
+    "Comité Europeo de Inteligencia Artificial",
+    "Pacto de IA",
+    "Pacto sobre la IA",
+    "Pacto Europeo de IA",
+    "sandbox de IA",
+    "sandbox regulatorio de IA",
+    "espacio controlado de pruebas para la IA",
+    "espacios controlados de pruebas para la IA",
+    "código de buenas prácticas de IA de uso general",
+    "Comite Europeo de Inteligencia Artificial",
+    "codigo de buenas practicas de IA de uso general"
+   ],
+   "why": "EU bodies and instruments of the AI Act"
+  },
+  {
+   "term": "AESIA",
+   "tier": "ai",
+   "group": "governance_regulation",
+   "variants": [
+    "Agencia Española de Supervisión de la Inteligencia Artificial",
+    "Agencia Española de Supervisión de Inteligencia Artificial",
+    "Agencia Española de Supervision de la Inteligencia Artificial",
+    "Agencia Española de Supervision de Inteligencia Artificial"
+   ],
+   "case_sensitive_variants": [
+    "AESIA"
+   ],
+   "why": "the Spanish AI supervisory agency"
+  },
+  {
+   "term": "puntuación ciudadana",
+   "tier": "ai",
+   "group": "governance_regulation",
+   "variants": [
+    "sistemas de puntuación ciudadana",
+    "puntuacion ciudadana",
+    "sistemas de puntuacion ciudadana"
+   ],
+   "why": "practice prohibited by the AI Act (social scoring)"
+  },
+  {
+   "term": "actuación policial predictiva",
+   "tier": "ai",
+   "group": "governance_regulation",
+   "variants": [
+    "policía predictiva",
+    "vigilancia policial predictiva",
+    "actuacion policial predictiva",
+    "policia predictiva"
+   ],
+   "why": "practice restricted by the AI Act; IATE wording"
+  },
+  {
+   "term": "categorización biométrica",
+   "tier": "ai",
+   "group": "governance_regulation",
+   "variants": [
+    "sistema de categorización biométrica",
+    "sistemas de categorización biométrica",
+    "identificación biométrica remota",
+    "identificación biométrica a distancia",
+    "categorizacion biometrica",
+    "sistema de categorizacion biometrica",
+    "sistemas de categorizacion biometrica",
+    "identificacion biometrica remota",
+    "identificacion biometrica a distancia"
+   ],
+   "why": "AI Act biometric categories"
+  },
+  {
+   "term": "técnicas subliminales",
+   "tier": "ai",
+   "group": "governance_regulation",
+   "variants": [
+    "técnica subliminal",
+    "técnicas manipuladoras",
+    "técnicas deliberadamente manipuladoras",
+    "tecnicas subliminales",
+    "tecnica subliminal",
+    "tecnicas manipuladoras",
+    "tecnicas deliberadamente manipuladoras"
+   ],
+   "why": "manipulative practices prohibited by the AI Act"
+  },
+  {
+   "term": "Estrategia Nacional de Inteligencia Artificial",
+   "tier": "ai",
+   "group": "governance_regulation",
+   "variants": [
+    "ENIA",
+    "Estrategia Nacional de IA",
+    "Estrategia de Inteligencia Artificial 2024",
+    "Estrategia de IA 2024",
+    "Estrategia Española de Inteligencia Artificial"
+   ],
+   "case_sensitive_variants": [
+    "ENIA"
+   ],
+   "why": "Spain's national AI strategy"
+  },
+  {
+   "term": "Carta de Derechos Digitales",
+   "tier": "context",
+   "group": "governance_regulation",
+   "variants": [
+    "Carta de Derechos Digitales de España",
+    "Carta Española de Derechos Digitales"
+   ],
+   "why": "Spain's charter with a section on rights before AI"
+  },
+  {
+   "term": "buen uso y la gobernanza de la inteligencia artificial",
+   "tier": "ai",
+   "group": "governance_regulation",
+   "variants": [
+    "buen uso y gobernanza de la inteligencia artificial",
+    "buen uso y la gobernanza de la IA",
+    "buen uso y gobernanza de la IA"
+   ],
+   "why": "the Spanish draft law implementing the AI Act"
+  },
+  {
+   "term": "Convenio Marco del Consejo de Europa",
+   "tier": "ai",
+   "group": "governance_regulation",
+   "variants": [
+    "Convenio Marco sobre Inteligencia Artificial",
+    "Convenio Marco del Consejo de Europa sobre Inteligencia Artificial"
+   ],
+   "why": "international AI treaty"
+  },
+  {
+   "term": "Principios de la OCDE sobre IA",
+   "tier": "ai",
+   "group": "governance_regulation",
+   "variants": [
+    "Principios de IA de la OCDE",
+    "Principios de la OCDE sobre inteligencia artificial",
+    "Recomendación de la OCDE sobre inteligencia artificial",
+    "principios de la OCDE sobre la IA",
+    "Recomendacion de la OCDE sobre inteligencia artificial"
+   ],
+   "why": "international AI principles"
+  },
+  {
+   "term": "Recomendación sobre la ética de la inteligencia artificial",
+   "tier": "ai",
+   "group": "governance_regulation",
+   "variants": [
+    "Recomendación de la UNESCO sobre la ética de la inteligencia artificial",
+    "Recomendación sobre la Ética de la IA",
+    "Recomendacion sobre la etica de la inteligencia artificial",
+    "Recomendacion de la UNESCO sobre la etica de la inteligencia artificial",
+    "Recomendacion sobre la Etica de la IA"
+   ],
+   "why": "UNESCO recommendation"
+  },
+  {
+   "term": "IA responsable",
+   "tier": "ai",
+   "group": "governance_regulation",
+   "variants": [
+    "inteligencia artificial responsable",
+    "uso responsable de la IA",
+    "uso responsable de la inteligencia artificial",
+    "principios de IA responsable",
+    "IA ética y responsable",
+    "uso responsable de IA",
+    "uso ético y responsable de la IA",
+    "uso ético y responsable de la inteligencia artificial",
+    "IA etica y responsable",
+    "uso etico y responsable de la IA",
+    "uso etico y responsable de la inteligencia artificial"
+   ],
+   "why": "responsible AI"
+  },
+  {
+   "term": "IA fiable",
+   "tier": "ai",
+   "group": "governance_regulation",
+   "variants": [
+    "IA confiable",
+    "IA de confianza",
+    "IA digna de confianza",
+    "inteligencia artificial fiable",
+    "inteligencia artificial confiable",
+    "inteligencia artificial digna de confianza",
+    "IA centrada en el ser humano",
+    "IA centrada en las personas",
+    "inteligencia artificial centrada en el ser humano",
+    "inteligencia artificial centrada en las personas",
+    "IA humanista",
+    "inteligencia artificial humanista",
+    "IA segura y fiable"
+   ],
+   "why": "trustworthy AI; the EU wording"
+  },
+  {
+   "term": "IA ética",
+   "tier": "ai",
+   "group": "governance_regulation",
+   "variants": [
+    "inteligencia artificial ética",
+    "ética de la IA",
+    "ética de la inteligencia artificial",
+    "ética en IA",
+    "ética en la IA",
+    "uso ético de la IA",
+    "uso ético de la inteligencia artificial",
+    "principios de IA",
+    "principios de inteligencia artificial",
+    "principios éticos de IA",
+    "principios éticos de la IA",
+    "IA etica",
+    "inteligencia artificial etica",
+    "etica de la IA",
+    "etica de la inteligencia artificial",
+    "etica en IA",
+    "etica en la IA",
+    "uso etico de la IA",
+    "uso etico de la inteligencia artificial",
+    "principios eticos de IA",
+    "principios eticos de la IA"
+   ],
+   "why": "AI ethics"
+  },
+  {
+   "term": "ética digital",
+   "tier": "context",
+   "group": "governance_regulation",
+   "variants": [
+    "ética de los datos",
+    "ética del dato",
+    "ética de datos",
+    "ética tecnológica",
+    "ética desde el diseño",
+    "responsabilidad digital corporativa",
+    "ética algorítmica",
+    "etica digital",
+    "etica de los datos",
+    "etica del dato",
+    "etica de datos",
+    "etica tecnologica",
+    "etica desde el diseño",
+    "etica algoritmica"
+   ],
+   "why": "ethics of data and technology"
+  },
+  {
+   "term": "gobernanza de la IA",
+   "tier": "ai",
+   "group": "governance_regulation",
+   "variants": [
+    "gobernanza de IA",
+    "gobierno de la IA",
+    "gobierno de IA",
+    "gobernanza de la inteligencia artificial",
+    "gobierno de la inteligencia artificial",
+    "marco de gobernanza de IA",
+    "marco de gobierno de IA",
+    "modelo de gobierno de IA",
+    "modelo de gobernanza de IA",
+    "supervisión de la IA",
+    "gestión de riesgos de IA",
+    "gestión de riesgos de la IA",
+    "gestión del riesgo de IA",
+    "regulación de la IA",
+    "regulación de la inteligencia artificial",
+    "normativa de IA",
+    "normativa sobre IA",
+    "materia de IA",
+    "materia de inteligencia artificial",
+    "supervision de la IA",
+    "gestion de riesgos de IA",
+    "gestion de riesgos de la IA",
+    "gestion del riesgo de IA",
+    "regulacion de la IA",
+    "regulacion de la inteligencia artificial"
+   ],
+   "why": "how AI is governed"
+  },
+  {
+   "term": "gobierno de modelos",
+   "tier": "context",
+   "group": "governance_regulation",
+   "variants": [
+    "gobierno de los modelos",
+    "gobernanza de modelos",
+    "gobernanza de los modelos",
+    "marco de gobierno de modelos",
+    "política de riesgo de modelo",
+    "aprobación de modelos",
+    "aprobación de los modelos",
+    "supervisión de modelos",
+    "supervisión de los modelos",
+    "politica de riesgo de modelo",
+    "aprobacion de modelos",
+    "aprobacion de los modelos",
+    "supervision de modelos",
+    "supervision de los modelos"
+   ],
+   "why": "model governance"
+  },
+  {
+   "term": "política de IA",
+   "tier": "ai",
+   "group": "governance_regulation",
+   "variants": [
+    "política de inteligencia artificial",
+    "política de uso de IA",
+    "política de uso de la IA",
+    "política de uso de inteligencia artificial",
+    "política de IA generativa",
+    "política de uso responsable de la IA",
+    "política de uso responsable de la inteligencia artificial",
+    "política sobre inteligencia artificial",
+    "política sobre IA",
+    "directrices de IA",
+    "directrices sobre IA",
+    "directrices de uso de la IA",
+    "código de conducta de IA",
+    "normativa interna de IA",
+    "guía de uso de IA",
+    "política global de IA",
+    "politica de IA",
+    "politica de inteligencia artificial",
+    "politica de uso de IA",
+    "politica de uso de la IA",
+    "politica de uso de inteligencia artificial",
+    "politica de IA generativa",
+    "politica de uso responsable de la IA",
+    "politica de uso responsable de la inteligencia artificial",
+    "politica sobre inteligencia artificial",
+    "politica sobre IA",
+    "codigo de conducta de IA",
+    "guia de uso de IA",
+    "politica global de IA"
+   ],
+   "why": "internal AI rules"
+  },
+  {
+   "term": "política de uso aceptable",
+   "tier": "context",
+   "group": "governance_regulation",
+   "variants": [
+    "políticas de uso aceptable",
+    "normas de uso aceptable",
+    "politica de uso aceptable",
+    "politicas de uso aceptable"
+   ],
+   "why": "usage rules, often covering AI tools"
+  },
+  {
+   "term": "comisión de tecnología",
+   "tier": "context",
+   "group": "governance_regulation",
+   "variants": [
+    "comité de tecnología",
+    "comisión de tecnología e innovación",
+    "comité de tecnología e innovación",
+    "comisión de innovación y tecnología",
+    "comisión de tecnología y ciberseguridad",
+    "comisión de innovación, tecnología y transformación digital",
+    "comité de ética digital",
+    "comisión de tecnología y transformación digital",
+    "comision de tecnologia",
+    "comite de tecnologia",
+    "comision de tecnologia e innovacion",
+    "comite de tecnologia e innovacion",
+    "comision de innovacion y tecnologia",
+    "comision de tecnologia y ciberseguridad",
+    "comision de innovacion, tecnologia y transformacion digital",
+    "comite de etica digital",
+    "comision de tecnologia y transformacion digital"
+   ],
+   "why": "board committees that cover technology and AI"
+  },
+  {
+   "term": "director de IA",
+   "tier": "ai",
+   "group": "governance_regulation",
+   "variants": [
+    "directora de IA",
+    "director de inteligencia artificial",
+    "directora de inteligencia artificial",
+    "director de datos e IA",
+    "directora de datos e IA",
+    "director global de IA",
+    "responsable global de IA"
+   ],
+   "why": "executive roles for AI"
+  },
+  {
+   "term": "evaluación de impacto relativa a la protección de datos",
+   "tier": "context",
+   "group": "governance_regulation",
+   "variants": [
+    "evaluaciones de impacto relativas a la protección de datos",
+    "evaluación de impacto en la protección de datos",
+    "evaluación de impacto en protección de datos",
+    "evaluaciones de impacto en protección de datos",
+    "evaluación de impacto de protección de datos",
+    "evaluación de impacto de privacidad",
+    "evaluación de impacto en la privacidad",
+    "evaluaciones de impacto de privacidad",
+    "EIPD",
+    "evaluacion de impacto relativa a la proteccion de datos",
+    "evaluaciones de impacto relativas a la proteccion de datos",
+    "evaluacion de impacto en la proteccion de datos",
+    "evaluacion de impacto en proteccion de datos",
+    "evaluaciones de impacto en proteccion de datos",
+    "evaluacion de impacto de proteccion de datos",
+    "evaluacion de impacto de privacidad",
+    "evaluacion de impacto en la privacidad"
+   ],
+   "case_sensitive_variants": [
+    "EIPD"
+   ],
+   "why": "GDPR assessment that covers AI processing"
+  },
+  {
+   "term": "auditoría de IA",
+   "tier": "ai",
+   "group": "governance_regulation",
+   "variants": [
+    "auditorías de IA",
+    "auditoría de la IA",
+    "auditoría algorítmica",
+    "auditorías algorítmicas",
+    "auditoría de algoritmos",
+    "auditorías de algoritmos",
+    "auditoría de sistemas de IA",
+    "certificación de IA",
+    "inventario de IA",
+    "inventario de sistemas de IA",
+    "inventario de casos de uso de IA",
+    "registro de sistemas de IA",
+    "registro de algoritmos",
+    "auditorías de tratamientos que incluyan IA",
+    "auditoria de IA",
+    "auditorias de IA",
+    "auditoria de la IA",
+    "auditoria algoritmica",
+    "auditorias algoritmicas",
+    "auditoria de algoritmos",
+    "auditorias de algoritmos",
+    "auditoria de sistemas de IA",
+    "certificacion de IA",
+    "auditorias de tratamientos que incluyan IA"
+   ],
+   "why": "auditing and inventorying AI"
+  },
+  {
+   "term": "alfabetización en materia de IA",
+   "tier": "ai",
+   "group": "governance_regulation",
+   "variants": [
+    "alfabetización en IA",
+    "alfabetización en inteligencia artificial",
+    "alfabetización en materia de inteligencia artificial",
+    "alfabetización sobre IA",
+    "alfabetización de IA",
+    "alfabetizacion en materia de IA",
+    "alfabetizacion en IA",
+    "alfabetizacion en inteligencia artificial",
+    "alfabetizacion en materia de inteligencia artificial",
+    "alfabetizacion sobre IA",
+    "alfabetizacion de IA"
+   ],
+   "why": "AI literacy; AI Act wording"
+  },
+  {
+   "term": "decisiones automatizadas",
+   "tier": "ai",
+   "group": "governance_regulation",
+   "variants": [
+    "decisión automatizada",
+    "toma de decisiones automatizada",
+    "toma de decisiones automatizadas",
+    "toma automatizada de decisiones",
+    "decisiones individuales automatizadas",
+    "decisión individual automatizada",
+    "decisión basada únicamente en el tratamiento automatizado",
+    "decisiones basadas únicamente en el tratamiento automatizado",
+    "únicamente en el tratamiento automatizado",
+    "decisiones totalmente automatizadas",
+    "decisiones exclusivamente automatizadas",
+    "decisiones únicamente automatizadas",
+    "mecanismos de toma de decisión automatizados",
+    "sistemas automatizados de toma de decisiones",
+    "sistema automatizado de toma de decisiones",
+    "sistemas de decisión automatizada",
+    "sistemas de decisión automatizados",
+    "sistemas de toma de decisiones automatizadas",
+    "decision automatizada",
+    "decision individual automatizada",
+    "decision basada unicamente en el tratamiento automatizado",
+    "decisiones basadas unicamente en el tratamiento automatizado",
+    "unicamente en el tratamiento automatizado",
+    "decisiones unicamente automatizadas",
+    "mecanismos de toma de decision automatizados",
+    "sistemas de decision automatizada",
+    "sistemas de decision automatizados"
+   ],
+   "why": "automated decision-making; GDPR and Spanish Ley 15/2022 wording"
+  },
+  {
+   "term": "tratamiento automatizado",
+   "tier": "context",
+   "group": "governance_regulation",
+   "variants": [
+    "tratamientos automatizados",
+    "tratamiento automatizado de datos",
+    "tratamiento automatizado de datos personales",
+    "tratamiento automatizado de los datos"
+   ],
+   "why": "GDPR and AEPD wording for automated processing of personal data; also data-protection boilerplate"
+  },
+  {
+   "term": "artículo 22 del RGPD",
+   "tier": "ai",
+   "group": "governance_regulation",
+   "variants": [
+    "artículo 22 RGPD",
+    "art. 22 RGPD",
+    "art. 22 del RGPD",
+    "artículo 22 del Reglamento General de Protección de Datos",
+    "articulo 22 del RGPD",
+    "articulo 22 RGPD",
+    "articulo 22 del Reglamento General de Proteccion de Datos"
+   ],
+   "why": "the GDPR rule on automated decisions"
+  },
+  {
+   "term": "elaboración de perfiles",
+   "tier": "context",
+   "group": "governance_regulation",
+   "variants": [
+    "elaboración automatizada de perfiles",
+    "elaborar perfiles",
+    "perfilado automatizado",
+    "perfilado de clientes",
+    "perfilado de usuarios",
+    "perfilados automatizados",
+    "elaboracion de perfiles",
+    "elaboracion automatizada de perfiles"
+   ],
+   "why": "profiling; GDPR wording"
+  },
+  {
+   "term": "derecho a obtener una explicación",
+   "tier": "ai",
+   "group": "governance_regulation",
+   "variants": [
+    "derecho a una explicación",
+    "derecho a la explicación",
+    "derecho a explicación",
+    "derecho a obtener intervención humana",
+    "derecho a la intervención humana",
+    "información significativa sobre la lógica aplicada",
+    "derecho a obtener una explicacion",
+    "derecho a una explicacion",
+    "derecho a la explicacion",
+    "derecho a explicacion",
+    "derecho a obtener intervencion humana",
+    "derecho a la intervencion humana",
+    "informacion significativa sobre la logica aplicada"
+   ],
+   "why": "rights against automated decisions"
+  },
+  {
+   "term": "transparencia algorítmica",
+   "tier": "ai",
+   "group": "governance_regulation",
+   "variants": [
+    "transparencia de los algoritmos",
+    "transparencia de algoritmos",
+    "transparencia en los algoritmos",
+    "responsabilidad algorítmica",
+    "rendición de cuentas algorítmica",
+    "gobernanza algorítmica",
+    "decisión algorítmica",
+    "decisiones algorítmicas",
+    "toma de decisiones algorítmica",
+    "sistema algorítmico",
+    "sistemas algorítmicos",
+    "información algorítmica",
+    "transparencia algoritmica",
+    "responsabilidad algoritmica",
+    "rendicion de cuentas algoritmica",
+    "gobernanza algoritmica",
+    "decision algoritmica",
+    "decisiones algoritmicas",
+    "toma de decisiones algoritmica",
+    "sistema algoritmico",
+    "sistemas algoritmicos",
+    "informacion algoritmica"
+   ],
+   "why": "accountability for algorithms; información algorítmica is the Spanish labor-law duty"
+  },
+  {
+   "term": "responsabilidad en materia de IA",
+   "tier": "ai",
+   "group": "governance_regulation",
+   "variants": [
+    "Directiva sobre responsabilidad en materia de IA",
+    "responsabilidad civil de la IA",
+    "responsabilidad por IA",
+    "responsabilidad civil en materia de IA",
+    "responsabilidad civil en materia de inteligencia artificial"
+   ],
+   "why": "liability for AI"
+  },
+  {
+   "term": "responsabilidad por los daños causados por productos defectuosos",
+   "tier": "context",
+   "group": "governance_regulation",
+   "variants": [
+    "Directiva sobre responsabilidad por productos defectuosos",
+    "Directiva de responsabilidad por productos defectuosos",
+    "responsabilidad por productos defectuosos"
+   ],
+   "why": "product liability directive, which now covers software and AI"
+  },
+  {
+   "term": "transparencia de la IA",
+   "tier": "ai",
+   "group": "governance_regulation",
+   "variants": [
+    "transparencia en IA",
+    "transparencia en la IA",
+    "transparencia en el uso de la IA",
+    "transparencia en el uso de IA",
+    "etiquetado de contenidos generados por IA",
+    "etiquetado de IA",
+    "divulgación del uso de IA",
+    "transparencia de los sistemas de IA",
+    "divulgacion del uso de IA"
+   ],
+   "why": "disclosing AI use"
+  },
+  {
+   "term": "minería de textos y datos",
+   "tier": "context",
+   "group": "governance_regulation",
+   "variants": [
+    "minería de textos y de datos",
+    "minería de datos y textos",
+    "minería de texto y datos",
+    "prospección de texto y datos",
+    "derechos de autor en el mercado único digital",
+    "mineria de textos y datos",
+    "mineria de textos y de datos",
+    "mineria de datos y textos",
+    "mineria de texto y datos",
+    "prospeccion de texto y datos",
+    "derechos de autor en el mercado unico digital"
+   ],
+   "why": "copyright exception relevant to training"
+  },
+  {
+   "term": "datos biométricos",
+   "tier": "context",
+   "group": "governance_regulation",
+   "variants": [
+    "dato biométrico",
+    "datos biometricos",
+    "dato biometrico"
+   ],
+   "why": "biometric data rules"
+  },
+  {
+   "term": "Reglamento de Servicios Digitales",
+   "tier": "context",
+   "group": "governance_regulation",
+   "variants": [
+    "Ley de Servicios Digitales",
+    "Reglamento (UE) 2022/2065",
+    "Reglamento UE 2022/2065"
+   ],
+   "why": "platform regulation touching algorithms"
+  },
+  {
+   "term": "sustituidos por la IA",
+   "tier": "ai",
+   "group": "workforce_society",
+   "variants": [
+    "sustituido por la IA",
+    "sustituidas por la IA",
+    "reemplazados por la IA",
+    "reemplazado por la IA",
+    "sustitución por la IA",
+    "sustitución por IA",
+    "despidos por la IA",
+    "despidos por IA",
+    "despidos atribuidos a la IA",
+    "pérdida de empleos por la IA",
+    "destrucción de empleo por la IA",
+    "sustituidos por la inteligencia artificial",
+    "reemplazados por la inteligencia artificial",
+    "sustitucion por la IA",
+    "sustitucion por IA",
+    "perdida de empleos por la IA",
+    "destruccion de empleo por la IA"
+   ],
+   "why": "AI named as a cause of job loss"
+  },
+  {
+   "term": "destrucción de empleo",
+   "tier": "context",
+   "group": "workforce_society",
+   "variants": [
+    "destrucción de puestos de trabajo",
+    "desplazamiento de trabajadores",
+    "desplazamiento laboral",
+    "desplazamiento de empleos",
+    "desplazamiento de puestos de trabajo",
+    "desempleo tecnológico",
+    "destrucción de empleos",
+    "destruccion de empleo",
+    "destruccion de puestos de trabajo",
+    "desempleo tecnologico",
+    "destruccion de empleos"
+   ],
+   "why": "jobs lost to technology"
+  },
+  {
+   "term": "sustitución de trabajadores",
+   "tier": "context",
+   "group": "workforce_society",
+   "variants": [
+    "sustituir a los trabajadores",
+    "sustituir a trabajadores",
+    "sustitución de personas por máquinas",
+    "sustituidos por máquinas",
+    "reemplazo de trabajadores",
+    "sustitución del trabajo humano",
+    "sustituir el trabajo humano",
+    "reemplazar a los humanos",
+    "sustituir a las personas",
+    "sustitución de mano de obra",
+    "reemplazar a las personas",
+    "sustitucion de trabajadores",
+    "sustitucion de personas por maquinas",
+    "sustituidos por maquinas",
+    "sustitucion del trabajo humano",
+    "sustitucion de mano de obra"
+   ],
+   "why": "replacing people with machines"
+  },
+  {
+   "term": "recualificación",
+   "tier": "context",
+   "group": "workforce_society",
+   "variants": [
+    "recualificación profesional",
+    "reciclaje profesional",
+    "readaptación profesional",
+    "reconversión profesional",
+    "recualificacion",
+    "recualificacion profesional",
+    "readaptacion profesional",
+    "reconversion profesional"
+   ],
+   "why": "retraining staff for new work"
+  },
+  {
+   "term": "capacitación digital",
+   "tier": "context",
+   "group": "workforce_society",
+   "variants": [
+    "competencias digitales",
+    "habilidades digitales",
+    "alfabetización digital",
+    "capacitacion digital",
+    "alfabetizacion digital"
+   ],
+   "why": "raising digital skills"
+  },
+  {
+   "term": "formación en IA",
+   "tier": "ai",
+   "group": "workforce_society",
+   "variants": [
+    "formación en inteligencia artificial",
+    "formación sobre IA",
+    "formación en IA generativa",
+    "capacitación en IA",
+    "capacitación en inteligencia artificial",
+    "competencias en IA",
+    "competencias en inteligencia artificial",
+    "habilidades en IA",
+    "habilidades de IA",
+    "academia de IA",
+    "programa de formación en IA",
+    "formación en materia de IA",
+    "formacion en IA",
+    "formacion en inteligencia artificial",
+    "formacion sobre IA",
+    "formacion en IA generativa",
+    "capacitacion en IA",
+    "capacitacion en inteligencia artificial",
+    "programa de formacion en IA",
+    "formacion en materia de IA"
+   ],
+   "why": "training people for AI"
+  },
+  {
+   "term": "talento en IA",
+   "tier": "ai",
+   "group": "workforce_society",
+   "variants": [
+    "talento de IA",
+    "talento en inteligencia artificial",
+    "talento IA",
+    "expertos en IA",
+    "expertos en inteligencia artificial",
+    "especialistas en IA",
+    "especialistas en inteligencia artificial",
+    "ingenieros de IA",
+    "investigadores en IA",
+    "profesionales de IA",
+    "perfiles de IA",
+    "conocimientos de IA"
+   ],
+   "why": "competition for AI skills"
+  },
+  {
+   "term": "talento digital",
+   "tier": "context",
+   "group": "workforce_society",
+   "variants": [
+    "perfiles digitales",
+    "talento en datos"
+   ],
+   "why": "scarce technology skills"
+  },
+  {
+   "term": "automatización de tareas",
+   "tier": "context",
+   "group": "workforce_society",
+   "variants": [
+    "automatización de las tareas",
+    "automatizar tareas",
+    "automatización del trabajo",
+    "automatización de puestos de trabajo",
+    "automatización de empleos",
+    "automatización del empleo",
+    "automatización laboral",
+    "tareas automatizables",
+    "puestos automatizables",
+    "automatizacion de tareas",
+    "automatizacion de las tareas",
+    "automatizacion del trabajo",
+    "automatizacion de puestos de trabajo",
+    "automatizacion de empleos",
+    "automatizacion del empleo",
+    "automatizacion laboral"
+   ],
+   "why": "automating work"
+  },
+  {
+   "term": "tareas repetitivas",
+   "tier": "context",
+   "group": "workforce_society",
+   "variants": [
+    "tareas rutinarias",
+    "automatización de tareas repetitivas",
+    "automatizar tareas repetitivas",
+    "automatización de tareas rutinarias",
+    "automatizar tareas rutinarias",
+    "tareas de bajo valor añadido",
+    "tareas de menor valor añadido",
+    "tareas de poco valor añadido",
+    "tareas manuales y repetitivas",
+    "automatizacion de tareas repetitivas",
+    "automatizacion de tareas rutinarias"
+   ],
+   "why": "the usual wording for what automation takes over"
+  },
+  {
+   "term": "productividad gracias a la IA",
+   "tier": "ai",
+   "group": "workforce_society",
+   "variants": [
+    "productividad con IA",
+    "productividad de la IA",
+    "ganancias de productividad de la IA",
+    "ganancias de productividad derivadas de la IA",
+    "eficiencias derivadas de la IA",
+    "ahorros derivados de la IA",
+    "eficiencias de la IA",
+    "productividad mediante IA",
+    "productividad gracias a la inteligencia artificial"
+   ],
+   "why": "productivity claims attributed to AI"
+  },
+  {
+   "term": "gestión algorítmica",
+   "tier": "ai",
+   "group": "workforce_society",
+   "variants": [
+    "dirección algorítmica",
+    "gestión algorítmica del trabajo",
+    "gestión algorítmica de personas",
+    "contratación algorítmica",
+    "selección algorítmica",
+    "gestión laboral algorítmica",
+    "gestion algoritmica",
+    "direccion algoritmica",
+    "gestion algoritmica del trabajo",
+    "gestion algoritmica de personas",
+    "contratacion algoritmica",
+    "seleccion algoritmica",
+    "gestion laboral algoritmica"
+   ],
+   "why": "algorithms managing workers; EU platform-work wording"
+  },
+  {
+   "term": "monitorización de empleados",
+   "tier": "context",
+   "group": "workforce_society",
+   "variants": [
+    "monitorización de los empleados",
+    "monitorización de los trabajadores",
+    "vigilancia de los trabajadores",
+    "vigilancia laboral",
+    "vigilancia en el lugar de trabajo",
+    "sistemas automatizados de supervisión",
+    "sistema automatizado de supervisión",
+    "monitorización de la productividad",
+    "supervisión automatizada",
+    "monitorizacion de empleados",
+    "monitorizacion de los empleados",
+    "monitorizacion de los trabajadores",
+    "sistemas automatizados de supervision",
+    "sistema automatizado de supervision",
+    "monitorizacion de la productividad",
+    "supervision automatizada"
+   ],
+   "why": "monitoring of workers by automated systems"
+  },
+  {
+   "term": "colaboración humano-máquina",
+   "tier": "context",
+   "group": "workforce_society",
+   "variants": [
+    "colaboración hombre-máquina",
+    "colaboración persona-máquina",
+    "colaboración entre humanos y máquinas",
+    "colaboración entre personas y máquinas",
+    "interacción persona-máquina",
+    "interacción hombre-máquina",
+    "interacción humano-máquina",
+    "interfaz humano-máquina",
+    "fuerza laboral aumentada",
+    "empleado aumentado",
+    "empleados aumentados",
+    "aumentar las capacidades humanas",
+    "capacidades humanas aumentadas",
+    "personas y máquinas",
+    "colaboracion humano-maquina",
+    "colaboracion hombre-maquina",
+    "colaboracion persona-maquina",
+    "colaboracion entre humanos y maquinas",
+    "colaboracion entre personas y maquinas",
+    "interaccion persona-maquina",
+    "interaccion hombre-maquina",
+    "interaccion humano-maquina",
+    "interfaz humano-maquina",
+    "personas y maquinas"
+   ],
+   "why": "people working with AI"
+  },
+  {
+   "term": "futuro del trabajo",
+   "tier": "context",
+   "group": "workforce_society",
+   "variants": [
+    "trabajo del futuro",
+    "futuro del empleo",
+    "empleo del futuro",
+    "fuerza laboral del futuro",
+    "transformación de la fuerza laboral",
+    "transformación de la plantilla",
+    "transformacion de la fuerza laboral",
+    "transformacion de la plantilla"
+   ],
+   "why": "how work changes"
+  },
+  {
+   "term": "trabajador del conocimiento",
+   "tier": "context",
+   "group": "workforce_society",
+   "variants": [
+    "trabajadores del conocimiento",
+    "trabajo del conocimiento"
+   ],
+   "why": "the work generative AI touches"
+  },
+  {
+   "term": "empleos de cuello blanco",
+   "tier": "context",
+   "group": "workforce_society",
+   "variants": [
+    "trabajadores de cuello blanco",
+    "trabajos de cuello blanco",
+    "empleo de cuello blanco"
+   ],
+   "why": "office and entry-level jobs exposed to AI"
+  },
+  {
+   "term": "impacto en el empleo",
+   "tier": "context",
+   "group": "workforce_society",
+   "variants": [
+    "impacto sobre el empleo",
+    "impacto en el mercado laboral",
+    "impacto sobre el mercado laboral",
+    "impacto en el mercado de trabajo",
+    "impacto sobre el mercado de trabajo",
+    "efectos sobre el empleo",
+    "disrupción del mercado laboral",
+    "disrupcion del mercado laboral"
+   ],
+   "why": "labor-market effects"
+  },
+  {
+   "term": "consumo energético de la IA",
+   "tier": "ai",
+   "group": "workforce_society",
+   "variants": [
+    "consumo de energía de la IA",
+    "consumo eléctrico de la IA",
+    "huella energética de la IA",
+    "consumo energético de la inteligencia artificial",
+    "consumo de energía de la inteligencia artificial",
+    "consumo energetico de la IA",
+    "consumo de energia de la IA",
+    "consumo electrico de la IA",
+    "huella energetica de la IA",
+    "consumo energetico de la inteligencia artificial",
+    "consumo de energia de la inteligencia artificial"
+   ],
+   "why": "AI's energy use"
+  },
+  {
+   "term": "huella de carbono de la IA",
+   "tier": "ai",
+   "group": "workforce_society",
+   "variants": [
+    "huella ambiental de la IA",
+    "impacto ambiental de la IA",
+    "impacto medioambiental de la IA",
+    "emisiones de la IA",
+    "consumo de agua de la IA",
+    "huella hídrica de la IA",
+    "IA sostenible",
+    "IA verde",
+    "algoritmos verdes",
+    "inteligencia artificial sostenible",
+    "inteligencia artificial verde",
+    "huella hidrica de la IA"
+   ],
+   "why": "AI's environmental footprint; algoritmos verdes is a Spanish government program"
+  },
+  {
+   "term": "burbuja de la IA",
+   "tier": "ai",
+   "group": "workforce_society",
+   "variants": [
+    "burbuja de IA",
+    "burbuja de la inteligencia artificial",
+    "burbuja de inteligencia artificial",
+    "valoraciones de la IA",
+    "fiebre de la IA",
+    "burbuja en torno a la IA"
+   ],
+   "why": "doubts about AI valuations"
+  },
+  {
+   "term": "auge de la IA",
+   "tier": "ai",
+   "group": "workforce_society",
+   "variants": [
+    "auge de la inteligencia artificial",
+    "boom de la IA",
+    "boom de la inteligencia artificial",
+    "ciclo de inversión en IA",
+    "demanda de IA",
+    "revolución de la IA",
+    "revolución de la inteligencia artificial",
+    "era de la IA",
+    "era de la inteligencia artificial",
+    "carrera de la IA",
+    "carrera por la IA",
+    "ciclo de inversion en IA",
+    "revolucion de la IA",
+    "revolucion de la inteligencia artificial"
+   ],
+   "why": "the AI investment wave"
+  },
+  {
+   "term": "Siete Magníficos",
+   "tier": "context",
+   "group": "workforce_society",
+   "variants": [
+    "Siete Magníficas",
+    "7 Magníficos",
+    "7 Magníficas",
+    "Siete Magnificos",
+    "Siete Magnificas",
+    "7 Magnificos",
+    "7 Magnificas"
+   ],
+   "why": "the AI-linked megacaps"
+  },
+  {
+   "term": "grandes tecnológicas",
+   "tier": "context",
+   "group": "workforce_society",
+   "variants": [
+    "gigantes tecnológicos",
+    "gigantes tecnológicas",
+    "grandes empresas tecnológicas",
+    "grandes compañías tecnológicas",
+    "grandes plataformas tecnológicas",
+    "grandes empresas de tecnología",
+    "gran tecnológica",
+    "gran empresa tecnológica",
+    "grandes tecnologicas",
+    "gigantes tecnologicos",
+    "gigantes tecnologicas",
+    "grandes empresas tecnologicas",
+    "grandes compañias tecnologicas",
+    "grandes plataformas tecnologicas",
+    "grandes empresas de tecnologia",
+    "gran tecnologica",
+    "gran empresa tecnologica"
+   ],
+   "why": "the companies that build AI"
+  },
+  {
+   "term": "impacto social de la IA",
+   "tier": "ai",
+   "group": "workforce_society",
+   "variants": [
+    "impacto de la IA en la sociedad",
+    "impacto de la inteligencia artificial en la sociedad",
+    "impacto social de la inteligencia artificial",
+    "IA para el bien",
+    "IA para el bien común",
+    "IA y sociedad",
+    "democratización de la IA",
+    "democratizar la IA",
+    "impacto de la IA",
+    "impacto de la inteligencia artificial",
+    "IA para el bien comun",
+    "democratizacion de la IA"
+   ],
+   "why": "AI and society"
+  },
+  {
+   "term": "confianza en la IA",
+   "tier": "ai",
+   "group": "workforce_society",
+   "variants": [
+    "confianza en la inteligencia artificial",
+    "confianza de los clientes en la IA",
+    "confianza pública en la IA",
+    "percepción de la IA",
+    "aceptación de la IA",
+    "confianza publica en la IA",
+    "percepcion de la IA",
+    "aceptacion de la IA"
+   ],
+   "why": "acceptance of AI"
+  },
+  {
+   "term": "autoría humana",
+   "tier": "context",
+   "group": "workforce_society",
+   "variants": [
+    "creatividad humana",
+    "creado por humanos",
+    "creación humana",
+    "hecho por humanos",
+    "autoria humana",
+    "creacion humana"
+   ],
+   "why": "the human counterpart to generated content"
+  },
+  {
+   "term": "remuneración de los creadores",
+   "tier": "context",
+   "group": "workforce_society",
+   "variants": [
+    "remuneración de creadores",
+    "remuneración de los autores",
+    "compensación a los creadores",
+    "derechos de los creadores",
+    "derechos de los artistas",
+    "remuneracion de los creadores",
+    "remuneracion de creadores",
+    "remuneracion de los autores",
+    "compensacion a los creadores"
+   ],
+   "why": "paying those whose work trains models"
+  },
+  {
+   "term": "analítica avanzada",
+   "tier": "context",
+   "group": "euphemisms",
+   "variants": [
+    "analítica avanzada de datos",
+    "analítica de datos avanzada",
+    "análisis avanzado de datos",
+    "análisis avanzados de datos",
+    "análisis avanzado",
+    "técnicas analíticas avanzadas",
+    "capacidades analíticas avanzadas",
+    "herramientas analíticas avanzadas",
+    "modelos analíticos avanzados",
+    "analítica sofisticada",
+    "técnicas avanzadas de análisis",
+    "técnicas avanzadas de analítica",
+    "herramientas avanzadas de análisis",
+    "herramientas avanzadas de analítica",
+    "analitica avanzada",
+    "analitica avanzada de datos",
+    "analitica de datos avanzada",
+    "analisis avanzado de datos",
+    "analisis avanzados de datos",
+    "analisis avanzado",
+    "tecnicas analiticas avanzadas",
+    "capacidades analiticas avanzadas",
+    "herramientas analiticas avanzadas",
+    "modelos analiticos avanzados",
+    "analitica sofisticada",
+    "tecnicas avanzadas de analisis",
+    "tecnicas avanzadas de analitica",
+    "herramientas avanzadas de analisis",
+    "herramientas avanzadas de analitica",
+    "advanced business analytics",
+    "people analytics"
+   ],
+   "why": "the most common Spanish stand-in for machine learning"
+  },
+  {
+   "term": "modelos analíticos",
+   "tier": "context",
+   "group": "euphemisms",
+   "variants": [
+    "modelo analítico",
+    "motor analítico",
+    "motores analíticos",
+    "capacidades analíticas",
+    "inteligencia analítica",
+    "modelos analiticos",
+    "modelo analitico",
+    "motor analitico",
+    "motores analiticos",
+    "capacidades analiticas",
+    "inteligencia analitica"
+   ],
+   "why": "banks' wording for scoring and machine-learning models"
+  },
+  {
+   "term": "analítica aumentada",
+   "tier": "context",
+   "group": "euphemisms",
+   "variants": [
+    "analitica aumentada"
+   ],
+   "why": "analytics with machine-generated insight"
+  },
+  {
+   "term": "analítica prescriptiva",
+   "tier": "context",
+   "group": "euphemisms",
+   "variants": [
+    "análisis prescriptivo",
+    "analitica prescriptiva",
+    "analisis prescriptivo"
+   ],
+   "why": "analytics that recommends actions"
+  },
+  {
+   "term": "analítica predictiva",
+   "tier": "context",
+   "group": "euphemisms",
+   "variants": [
+    "análisis predictivo",
+    "análisis predictivos",
+    "capacidades predictivas",
+    "capacidad predictiva",
+    "herramientas predictivas",
+    "herramienta predictiva",
+    "tecnología predictiva",
+    "inteligencia predictiva",
+    "motor predictivo",
+    "sistemas predictivos",
+    "soluciones predictivas",
+    "técnicas predictivas",
+    "analítica predictiva y prescriptiva",
+    "analitica predictiva",
+    "analisis predictivo",
+    "analisis predictivos",
+    "tecnologia predictiva",
+    "tecnicas predictivas",
+    "analitica predictiva y prescriptiva",
+    "enfoque predictivo",
+    "análisis de riesgo predictivo",
+    "analisis de riesgo predictivo"
+   ],
+   "why": "prediction without naming the method"
+  },
+  {
+   "term": "automatización inteligente",
+   "tier": "context",
+   "group": "euphemisms",
+   "variants": [
+    "automatización inteligente de procesos",
+    "automatización avanzada",
+    "automatizaciones inteligentes",
+    "automatizacion inteligente",
+    "automatizacion inteligente de procesos",
+    "automatizacion avanzada"
+   ],
+   "why": "automation with an AI component"
+  },
+  {
+   "term": "hiper-automatización",
+   "tier": "context",
+   "group": "euphemisms",
+   "variants": [
+    "hiper-automatizacion"
+   ],
+   "why": "combined automation technologies"
+  },
+  {
+   "term": "automatización robótica de procesos",
+   "tier": "context",
+   "group": "euphemisms",
+   "variants": [
+    "automatización robotizada de procesos",
+    "robotización de procesos",
+    "robotización",
+    "robot de software",
+    "robots de software",
+    "robots software",
+    "robótica de procesos",
+    "robotización de tareas",
+    "automatizacion robotica de procesos",
+    "automatizacion robotizada de procesos",
+    "robotizacion de procesos",
+    "robotizacion",
+    "robotica de procesos",
+    "robotizacion de tareas",
+    "robotizado",
+    "robotizados",
+    "robotizada",
+    "robotizadas",
+    "automatizaciones mediante robots"
+   ],
+   "why": "RPA and software robots"
+  },
+  {
+   "term": "algoritmos inteligentes",
+   "tier": "context",
+   "group": "euphemisms",
+   "variants": [
+    "algoritmo inteligente",
+    "algoritmos avanzados",
+    "algoritmo avanzado",
+    "algoritmos sofisticados",
+    "algoritmos propios",
+    "algoritmo propio",
+    "algoritmos propietarios",
+    "algoritmos complejos",
+    "algoritmos potentes",
+    "algoritmos de inferencia",
+    "algoritmos de diagnóstico",
+    "algoritmos de diagnostico",
+    "algoritmos dinámicos",
+    "algoritmos dinamicos",
+    "algoritmos multivariantes"
+   ],
+   "why": "algorithms described by quality instead of method"
+  },
+  {
+   "term": "herramientas algorítmicas",
+   "tier": "context",
+   "group": "euphemisms",
+   "variants": [
+    "modelos algorítmicos",
+    "técnicas algorítmicas",
+    "soluciones algorítmicas",
+    "basado en algoritmos",
+    "basada en algoritmos",
+    "basados en algoritmos",
+    "basadas en algoritmos",
+    "uso de algoritmos",
+    "mediante algoritmos",
+    "algoritmos o sistemas de inteligencia artificial",
+    "herramientas algoritmicas",
+    "modelos algoritmicos",
+    "tecnicas algoritmicas",
+    "soluciones algoritmicas"
+   ],
+   "why": "algorithmic systems without naming AI"
+  },
+  {
+   "term": "toma de decisiones basada en datos",
+   "tier": "context",
+   "group": "euphemisms",
+   "variants": [
+    "toma de decisiones basadas en datos",
+    "decisiones basadas en datos",
+    "decisiones basadas en el dato",
+    "decisiones basadas en los datos",
+    "toma de decisiones basada en el dato",
+    "toma de decisiones basada en los datos",
+    "decisiones guiadas por datos",
+    "decisiones informadas por datos",
+    "decisiones apoyadas en datos",
+    "conocimiento basado en datos",
+    "cultura del dato",
+    "orientada al dato",
+    "orientado al dato",
+    "impulsada por datos",
+    "impulsado por datos",
+    "impulsada por los datos",
+    "impulsado por los datos"
+   ],
+   "why": "data-driven decisions as a stand-in for analytics and AI"
+  },
+  {
+   "term": "automatización de decisiones",
+   "tier": "context",
+   "group": "euphemisms",
+   "variants": [
+    "automatización de la toma de decisiones",
+    "automatización de las decisiones",
+    "motor de decisión",
+    "motores de decisión",
+    "motor de decisiones",
+    "decisiones automáticas",
+    "toma de decisiones automática",
+    "inteligencia de decisiones",
+    "automatizacion de decisiones",
+    "automatizacion de la toma de decisiones",
+    "automatizacion de las decisiones",
+    "motor de decision",
+    "motores de decision",
+    "decisiones automaticas",
+    "toma de decisiones automatica"
+   ],
+   "why": "decisions taken by software"
+  },
+  {
+   "term": "modelo de propensión",
+   "tier": "context",
+   "group": "euphemisms",
+   "variants": [
+    "modelos de propensión",
+    "modelo de scoring",
+    "modelos de scoring",
+    "scoring de clientes",
+    "scoring crediticio",
+    "puntuación de clientes",
+    "scoring automático",
+    "modelo de propension",
+    "modelos de propension",
+    "puntuacion de clientes",
+    "scoring automatico"
+   ],
+   "why": "scoring models in sales and credit"
+  },
+  {
+   "term": "sistema de auto-aprendizaje",
+   "tier": "context",
+   "group": "euphemisms",
+   "variants": [
+    "sistemas de auto-aprendizaje",
+    "algoritmo de auto-aprendizaje",
+    "algoritmos de auto-aprendizaje",
+    "auto-aprendizaje automático",
+    "algoritmo adaptativo",
+    "algoritmos adaptativos",
+    "sistemas que aprenden",
+    "sistema que aprende",
+    "sistemas capaces de aprender",
+    "auto-adaptativo",
+    "auto-adaptativos",
+    "capacidad de adaptación tras el despliegue",
+    "auto-aprendizaje automatico",
+    "capacidad de adaptacion tras el despliegue"
+   ],
+   "why": "learning systems without naming AI"
+  },
+  {
+   "term": "asistente digital",
+   "tier": "context",
+   "group": "euphemisms",
+   "variants": [
+    "asistentes digitales",
+    "asistente automatizado",
+    "asistentes automatizados",
+    "conserje virtual"
+   ],
+   "why": "assistants without naming AI"
+  },
+  {
+   "term": "agente virtual",
+   "tier": "context",
+   "group": "euphemisms",
+   "variants": [
+    "agentes virtuales",
+    "agente digital",
+    "agentes digitales",
+    "agente automatizado",
+    "agentes automatizados",
+    "gestor virtual",
+    "gestores virtuales"
+   ],
+   "why": "bots described as agents"
+  },
+  {
+   "term": "tecnología conversacional",
+   "tier": "context",
+   "group": "euphemisms",
+   "variants": [
+    "tecnologías conversacionales",
+    "plataforma conversacional",
+    "plataformas conversacionales",
+    "experiencia conversacional",
+    "soluciones conversacionales",
+    "canales conversacionales",
+    "banca conversacional",
+    "comercio conversacional",
+    "chat automatizado",
+    "autoservicio conversacional",
+    "tecnologia conversacional",
+    "tecnologias conversacionales"
+   ],
+   "why": "chat technology without naming AI"
+  },
+  {
+   "term": "soluciones inteligentes",
+   "tier": "context",
+   "group": "euphemisms",
+   "variants": [
+    "solución inteligente",
+    "herramientas inteligentes",
+    "herramienta inteligente",
+    "funciones inteligentes",
+    "funcionalidades inteligentes",
+    "plataforma inteligente",
+    "plataformas inteligentes",
+    "capacidades inteligentes",
+    "solucion inteligente"
+   ],
+   "why": "smart as a stand-in for AI"
+  },
+  {
+   "term": "gestión inteligente",
+   "tier": "context",
+   "group": "euphemisms",
+   "variants": [
+    "flujo de trabajo inteligente",
+    "flujos de trabajo inteligentes",
+    "operaciones inteligentes",
+    "procesos inteligentes",
+    "proceso inteligente",
+    "enrutamiento inteligente",
+    "orquestación inteligente",
+    "optimización inteligente",
+    "gestion inteligente",
+    "orquestacion inteligente",
+    "optimizacion inteligente"
+   ],
+   "why": "operations described as intelligent"
+  },
+  {
+   "term": "búsqueda inteligente",
+   "tier": "context",
+   "group": "euphemisms",
+   "variants": [
+    "buscador inteligente",
+    "búsqueda cognitiva",
+    "busqueda inteligente",
+    "busqueda cognitiva"
+   ],
+   "why": "search with an AI component"
+  },
+  {
+   "term": "recomendaciones personalizadas",
+   "tier": "context",
+   "group": "euphemisms",
+   "variants": [
+    "recomendación personalizada",
+    "recomendaciones inteligentes",
+    "recomendaciones automáticas",
+    "recomendaciones automatizadas",
+    "recomendacion personalizada",
+    "recomendaciones automaticas"
+   ],
+   "why": "recommendation without naming the system"
+  },
+  {
+   "term": "hiper-personalización",
+   "tier": "context",
+   "group": "euphemisms",
+   "variants": [
+    "hiper-personalizado",
+    "hiper-personalizada",
+    "hiper-personalizados",
+    "hiper-personalizadas",
+    "personalización a escala",
+    "personalización en tiempo real",
+    "personalización masiva",
+    "hiper-personalizacion",
+    "personalizacion a escala",
+    "personalizacion en tiempo real",
+    "personalizacion masiva"
+   ],
+   "why": "personalization at a scale only models deliver"
+  },
+  {
+   "term": "inteligencia embebida",
+   "tier": "context",
+   "group": "euphemisms",
+   "variants": [
+    "inteligencia integrada",
+    "inteligencia incorporada",
+    "capa de inteligencia",
+    "capa inteligente",
+    "nube inteligente",
+    "inteligencia conectada"
+   ],
+   "why": "intelligence as a product layer"
+  },
+  {
+   "term": "macrodatos",
+   "tier": "context",
+   "group": "euphemisms",
+   "variants": [
+    "datos masivos",
+    "análisis masivo de datos",
+    "análisis de datos masivos",
+    "análisis de datos a gran escala",
+    "inteligencia de datos",
+    "inteligencia del dato",
+    "capacidades de datos y analítica",
+    "tratamiento masivo de datos",
+    "megadatos",
+    "analisis masivo de datos",
+    "analisis de datos masivos",
+    "analisis de datos a gran escala",
+    "capacidades de datos y analitica"
+   ],
+   "why": "big data; macrodatos is the EU wording"
+  },
+  {
+   "term": "modelización avanzada",
+   "tier": "context",
+   "group": "euphemisms",
+   "variants": [
+    "modelización estadística avanzada",
+    "técnicas estadísticas avanzadas",
+    "modelos estadísticos avanzados",
+    "modelos matemáticos avanzados",
+    "técnicas avanzadas de modelización",
+    "ciencia de datos avanzada",
+    "técnicas avanzadas de análisis de datos",
+    "modelos matemáticos complejos",
+    "técnicas matemáticas avanzadas",
+    "modelizacion avanzada",
+    "modelizacion estadistica avanzada",
+    "tecnicas estadisticas avanzadas",
+    "modelos estadisticos avanzados",
+    "modelos matematicos avanzados",
+    "tecnicas avanzadas de modelizacion",
+    "tecnicas avanzadas de analisis de datos",
+    "modelos matematicos complejos",
+    "tecnicas matematicas avanzadas"
+   ],
+   "why": "modeling described by sophistication instead of method"
+  },
+  {
+   "term": "asistido por ordenador",
+   "tier": "context",
+   "group": "euphemisms",
+   "variants": [
+    "asistida por ordenador",
+    "asistidos por ordenador",
+    "asistidas por ordenador",
+    "asistido por computadora",
+    "asistida por computadora",
+    "asistido por máquina",
+    "asistido por algoritmos",
+    "asistida por algoritmos",
+    "revisión asistida por tecnología",
+    "asistido por maquina",
+    "revision asistida por tecnologia"
+   ],
+   "why": "machine help without naming AI"
+  },
+  {
+   "term": "sistema basado en una máquina",
+   "tier": "context",
+   "group": "euphemisms",
+   "variants": [
+    "sistema basado en máquinas",
+    "sistemas basados en máquinas",
+    "modelo computacional",
+    "modelos computacionales",
+    "métodos computacionales",
+    "técnicas computacionales",
+    "sistema basado en una maquina",
+    "sistema basado en maquinas",
+    "sistemas basados en maquinas",
+    "metodos computacionales",
+    "tecnicas computacionales"
+   ],
+   "why": "the AI Act definition of an AI system"
+  },
+  {
+   "term": "sistemas automatizados",
+   "tier": "context",
+   "group": "euphemisms",
+   "variants": [
+    "sistema automatizado",
+    "herramientas automatizadas",
+    "herramienta automatizada",
+    "tecnologías automatizadas",
+    "medios automatizados",
+    "mecanismos automatizados",
+    "procedimientos automatizados",
+    "tecnologias automatizadas"
+   ],
+   "why": "regulators' stand-in for AI; medios automatizados is the GDPR and DSA wording"
+  },
+  {
+   "term": "sin intervención humana",
+   "tier": "context",
+   "group": "euphemisms",
+   "variants": [
+    "sin intervención manual",
+    "sin intervención de personas",
+    "sin necesidad de intervención humana",
+    "totalmente automatizado",
+    "totalmente automatizada",
+    "totalmente automatizados",
+    "totalmente automatizadas",
+    "completamente automatizado",
+    "completamente automatizada",
+    "completamente automatizados",
+    "completamente automatizadas",
+    "de forma totalmente automática",
+    "sin intervencion humana",
+    "sin intervencion manual",
+    "sin intervencion de personas",
+    "sin necesidad de intervencion humana",
+    "de forma totalmente automatica"
+   ],
+   "why": "full-automation claims"
+  },
+  {
+   "term": "tecnologías digitales avanzadas",
+   "tier": "context",
+   "group": "euphemisms",
+   "variants": [
+    "tecnologías habilitadoras digitales",
+    "tecnologías habilitadoras",
+    "habilitadores digitales",
+    "tecnologias digitales avanzadas",
+    "tecnologias habilitadoras digitales",
+    "tecnologias habilitadoras"
+   ],
+   "why": "EU and Spanish policy wording for AI, cloud and data"
   }
  ]
 }
