@@ -34,6 +34,23 @@
    "why": "advanced AI futures (AGI); IA fuerte is the AEPD wording"
   },
   {
+   "term": "inicios de la IA",
+   "tier": "ai",
+   "group": "general",
+   "variants": [
+    "inicios de la inteligencia artificial",
+    "orígenes de la IA",
+    "orígenes de la inteligencia artificial",
+    "comienzos de la IA",
+    "comienzos de la inteligencia artificial",
+    "historia de la IA",
+    "historia de la inteligencia artificial",
+    "origenes de la IA",
+    "origenes de la inteligencia artificial"
+   ],
+   "why": "historical references to the origins of AI"
+  },
+  {
    "term": "superinteligencia",
    "tier": "ai",
    "group": "general",
@@ -74,6 +91,17 @@
    "why": "IBM-era label for AI"
   },
   {
+   "term": "solución cognitiva",
+   "tier": "context",
+   "group": "general",
+   "variants": [
+    "solucion cognitiva",
+    "herramienta cognitiva",
+    "herramientas cognitivas"
+   ],
+   "why": "cognitive wording can describe AI, cognitive accessibility or other services"
+  },
+  {
    "term": "sistemas inteligentes",
    "tier": "context",
    "group": "general",
@@ -111,6 +139,17 @@
     "sistemas basados en el conocimiento"
    ],
    "why": "rule-based and knowledge-based AI"
+  },
+  {
+   "term": "motor de reglas",
+   "tier": "context",
+   "group": "general",
+   "variants": [
+    "motores de reglas",
+    "sistema de reglas de negocio",
+    "sistemas de reglas de negocio"
+   ],
+   "why": "business rules and rule engines can implement conventional automation"
   },
   {
    "term": "razonamiento automático",
@@ -337,7 +376,12 @@
    "term": "aprendizaje federado",
    "tier": "ai",
    "group": "techniques",
-   "why": "privacy-preserving training"
+   "why": "privacy-preserving training",
+   "variants": [
+    "entrenamiento federado",
+    "aprendizaje automático federado",
+    "aprendizaje automatico federado"
+   ]
   },
   {
    "term": "máquina de vectores de soporte",
@@ -515,6 +559,17 @@
     "verificacion biometrica"
    ],
    "why": "biometrics, often AI-based"
+  },
+  {
+   "term": "autenticación",
+   "tier": "context",
+   "group": "techniques",
+   "variants": [
+    "autentificación",
+    "autenticacion",
+    "autentificacion"
+   ],
+   "why": "identity and access control, including methods that do not use AI"
   },
   {
    "term": "reconocimiento de emociones",
@@ -852,7 +907,11 @@
     "conduccion autonoma",
     "coche autonomo",
     "coches autonomos",
-    "conduccion automatizada"
+    "conduccion automatizada",
+    "vehículo sin conductor",
+    "vehículos sin conductor",
+    "vehiculo sin conductor",
+    "vehiculos sin conductor"
    ],
    "why": "self-driving technology"
   },
@@ -871,7 +930,11 @@
     "robotica avanzada",
     "robotica cognitiva",
     "robotica autonoma",
-    "robots autonomos"
+    "robots autonomos",
+    "robot móvil autónomo",
+    "robots móviles autónomos",
+    "robot movil autonomo",
+    "robots moviles autonomos"
    ],
    "why": "robots with AI"
   },
@@ -899,7 +962,9 @@
     "IA gen",
     "IAGen",
     "GenIA",
-    "IA generativas"
+    "IA generativas",
+    "AI generativa",
+    "generativa AI"
    ],
    "why": "generative AI"
   },
@@ -947,7 +1012,9 @@
     "modelo largo de lenguaje",
     "modelo linguistico de gran tamaño",
     "modelos linguisticos de gran tamaño",
-    "grandes modelos linguisticos"
+    "grandes modelos linguisticos",
+    "modelo de lenguaje largo",
+    "modelos de lenguaje largos"
    ],
    "why": "(large) language model"
   },
@@ -970,7 +1037,8 @@
    "group": "generative",
    "variants": [
     "modelos multimodales",
-    "IA multimodal"
+    "IA multimodal",
+    "AI multimodal"
    ],
    "why": "models handling text, image and audio"
   },
@@ -994,9 +1062,31 @@
     "modelos abiertos",
     "modelo abierto",
     "modelo de codigo abierto",
-    "modelos de codigo abierto"
+    "modelos de codigo abierto",
+    "modelo open source",
+    "modelos open source",
+    "modelo opensource",
+    "modelos opensource",
+    "modelo de open source",
+    "modelos de open source",
+    "LLM de código abierto",
+    "LLM de codigo abierto",
+    "LLM open source"
    ],
    "why": "open models"
+  },
+  {
+   "term": "modelo de pesos abiertos",
+   "tier": "ai",
+   "group": "generative",
+   "variants": [
+    "modelos de pesos abiertos",
+    "modelo con pesos abiertos",
+    "modelos con pesos abiertos",
+    "modelo open weight",
+    "modelos open weight"
+   ],
+   "why": "model with publicly available weights"
   },
   {
    "term": "proveedor de modelos",
@@ -1039,6 +1129,34 @@
    "why": "video generation"
   },
   {
+   "term": "imagen a texto",
+   "tier": "context",
+   "group": "generative",
+   "variants": [
+    "de imagen a texto",
+    "conversión de imagen a texto",
+    "conversion de imagen a texto",
+    "descripción automática de imágenes",
+    "descripcion automatica de imagenes"
+   ],
+   "why": "image-to-text tasks can include character recognition and automatic description"
+  },
+  {
+   "term": "vídeo a texto",
+   "tier": "context",
+   "group": "generative",
+   "variants": [
+    "video a texto",
+    "conversión de vídeo a texto",
+    "conversión de video a texto",
+    "conversion de video a texto",
+    "transcripción de vídeo",
+    "transcripción de video",
+    "transcripcion de video"
+   ],
+   "why": "video-to-text tasks can include transcription of a video's audio"
+  },
+  {
    "term": "síntesis de voz",
    "tier": "ai",
    "group": "generative",
@@ -1052,7 +1170,13 @@
     "voz sintetica",
     "voces sinteticas",
     "generacion de voz",
-    "sintesis del habla"
+    "sintesis del habla",
+    "síntesis de la voz",
+    "sintetización de voz",
+    "sintetización de la voz",
+    "sintesis de la voz",
+    "sintetizacion de voz",
+    "sintetizacion de la voz"
    ],
    "why": "synthetic speech"
   },
@@ -1117,9 +1241,35 @@
     "generacion mejorada por recuperacion",
     "generacion aumentada de recuperacion",
     "generacion aumentada por la recuperacion",
-    "generacion de recuperacion aumentada"
+    "generacion de recuperacion aumentada",
+    "generación aumentada por recuperación de información",
+    "generacion aumentada por recuperacion de informacion",
+    "arquitectura RAG",
+    "sistema RAG",
+    "sistemas RAG"
    ],
    "why": "RAG"
+  },
+  {
+   "term": "destilación del modelo",
+   "tier": "ai",
+   "group": "generative",
+   "variants": [
+    "destilación de modelos",
+    "destilación de conocimiento",
+    "destilación del conocimiento",
+    "distilación del modelo",
+    "distilación de modelos",
+    "modelo destilado",
+    "modelos destilados",
+    "destilacion del modelo",
+    "destilacion de modelos",
+    "destilacion de conocimiento",
+    "destilacion del conocimiento",
+    "distilacion del modelo",
+    "distilacion de modelos"
+   ],
+   "why": "model distillation, including transfer of learned behavior to a student model"
   },
   {
    "term": "base de datos vectorial",
@@ -1198,7 +1348,17 @@
     "generado por inteligencia artificial",
     "generados por inteligencia artificial",
     "generado mediante IA",
-    "generados mediante IA"
+    "generados mediante IA",
+    "generado por AI",
+    "generada por AI",
+    "generados por AI",
+    "generadas por AI",
+    "generado con AI",
+    "generada con AI",
+    "generados con AI",
+    "generadas con AI",
+    "generado mediante AI",
+    "generados mediante AI"
    ],
    "why": "content made by AI"
   },
@@ -1246,7 +1406,11 @@
     "generacion automatica de contenido",
     "generacion automatizada de contenidos",
     "creacion automatizada de contenidos",
-    "creacion automatica de contenidos"
+    "creacion automatica de contenidos",
+    "máquina generadora de contenido",
+    "máquinas generadoras de contenido",
+    "maquina generadora de contenido",
+    "maquinas generadoras de contenido"
    ],
    "why": "content creation, often by generative tools"
   },
@@ -1516,7 +1680,17 @@
     "asesores virtuales",
     "gestion de carteras automatizada",
     "asesoramiento o gestion de carteras automatizada",
-    "gestion automatizada de carteras"
+    "gestion automatizada de carteras",
+    "automatización de la asesoría",
+    "automatización de la asesoría financiera",
+    "automatización del asesoramiento",
+    "asesoría automatizada",
+    "asesoría financiera automatizada",
+    "automatizacion de la asesoria",
+    "automatizacion de la asesoria financiera",
+    "automatizacion del asesoramiento",
+    "asesoria automatizada",
+    "asesoria financiera automatizada"
    ],
    "why": "robo-advice; CNMV wording"
   },
@@ -1595,9 +1769,31 @@
     "unidad de procesamiento grafico",
     "unidades de procesamiento grafico",
     "tarjeta grafica",
-    "tarjetas graficas"
+    "tarjetas graficas",
+    "procesador de gráficos",
+    "procesadores de gráficos",
+    "unidad de procesamiento de gráficos",
+    "unidades de procesamiento de gráficos",
+    "procesador de graficos",
+    "procesadores de graficos",
+    "unidad de procesamiento de graficos",
+    "unidades de procesamiento de graficos"
    ],
    "why": "the main hardware for AI (GPU); IATE wording"
+  },
+  {
+   "term": "unidad central de procesamiento",
+   "tier": "context",
+   "group": "compute_infrastructure",
+   "variants": [
+    "unidades centrales de procesamiento",
+    "unidad central de proceso",
+    "CPU"
+   ],
+   "case_sensitive_variants": [
+    "CPU"
+   ],
+   "why": "general-purpose processor used for AI and other workloads"
   },
   {
    "term": "neuromórfico",
@@ -1726,9 +1922,28 @@
     "supercomputacion",
     "computacion de alto rendimiento",
     "computacion de altas prestaciones",
-    "informatica de alto rendimiento"
+    "informatica de alto rendimiento",
+    "supercómputo",
+    "supercomputo",
+    "computación de alto desempeño",
+    "computacion de alto desempeno"
    ],
    "why": "large-scale computing used for AI"
+  },
+  {
+   "term": "computación puntera",
+   "tier": "context",
+   "group": "compute_infrastructure",
+   "variants": [
+    "computación de vanguardia",
+    "computación avanzada",
+    "cómputo avanzado",
+    "computacion puntera",
+    "computacion de vanguardia",
+    "computacion avanzada",
+    "computo avanzado"
+   ],
+   "why": "advanced computing infrastructure may serve AI and other workloads"
   },
   {
    "term": "carga de trabajo de IA",
@@ -1886,6 +2101,15 @@
     "semiconductores de ultima generacion"
    ],
    "why": "chips subject to AI export controls"
+  },
+  {
+   "term": "semiconductor",
+   "tier": "context",
+   "group": "compute_infrastructure",
+   "variants": [
+    "microchip"
+   ],
+   "why": "general chip technology, including hardware for AI and other applications"
   },
   {
    "term": "datos de entrenamiento",
@@ -2190,6 +2414,26 @@
    "why": "putting models into production; modelo also means a business or governance model, hence context"
   },
   {
+   "term": "lanzamiento de modelos",
+   "tier": "context",
+   "group": "deployment_operations",
+   "variants": [
+    "lanzamiento del modelo",
+    "lanzamiento de un modelo",
+    "lanzamiento de los modelos",
+    "salida al mercado de los modelos",
+    "salida al mercado del modelo",
+    "puesta en el mercado de modelos",
+    "puesta en el mercado de los modelos",
+    "puesta en el mercado del modelo",
+    "introducción en el mercado de modelos",
+    "introduccion en el mercado de modelos",
+    "publicación de modelos",
+    "publicacion de modelos"
+   ],
+   "why": "market release or publication of models, including models outside AI"
+  },
+  {
    "term": "seguimiento de modelos",
    "tier": "context",
    "group": "deployment_operations",
@@ -2204,7 +2448,8 @@
     "monitorizacion del modelo",
     "monitorizacion de los modelos",
     "seguimiento posterior a la comercializacion",
-    "seguimiento poscomercializacion"
+    "seguimiento poscomercializacion",
+    "seguimiento del modelo"
    ],
    "why": "monitoring models in use; vigilancia poscomercialización is the AI Act wording"
   },
@@ -2494,7 +2739,17 @@
     "solucion de IA",
     "tecnologias de IA",
     "tecnologia de IA",
-    "tecnologias de inteligencia artificial"
+    "tecnologias de inteligencia artificial",
+    "herramienta de AI",
+    "herramientas de AI",
+    "solución de AI",
+    "solucion de AI",
+    "soluciones de AI",
+    "sistema de AI",
+    "sistemas de AI",
+    "modelo de AI",
+    "modelos de AI",
+    "algoritmos de AI"
    ],
    "why": "AI in products and tools; sistema de IA is the AI Act wording"
   },
@@ -2788,6 +3043,20 @@
    "why": "over-trusting automated output; AI Act wording"
   },
   {
+   "term": "exceso de confianza en la IA",
+   "tier": "ai",
+   "group": "risks_failures",
+   "variants": [
+    "exceso de confianza en la inteligencia artificial",
+    "confianza excesiva en la IA",
+    "confianza excesiva en la inteligencia artificial",
+    "dependencia excesiva de la IA",
+    "dependencia excesiva de la inteligencia artificial",
+    "dependencia excesiva de sistemas de IA"
+   ],
+   "why": "over-reliance on AI systems or their outputs"
+  },
+  {
    "term": "riesgos de la IA",
    "tier": "ai",
    "group": "risks_failures",
@@ -2810,6 +3079,26 @@
     "IA segura"
    ],
    "why": "AI named as a risk"
+  },
+  {
+   "term": "alineación de la IA",
+   "tier": "ai",
+   "group": "risks_failures",
+   "variants": [
+    "alineamiento de la IA",
+    "alineación de la inteligencia artificial",
+    "alineación de modelos de IA",
+    "IA alineada",
+    "inteligencia artificial alineada",
+    "IA desalineada",
+    "inteligencia artificial desalineada",
+    "desalineación de la IA",
+    "desalineacion de la IA",
+    "alineacion de la IA",
+    "alineacion de la inteligencia artificial",
+    "alineacion de modelos de IA"
+   ],
+   "why": "alignment and misalignment of AI behavior with intended goals or values"
   },
   {
    "term": "comportamiento inesperado",
@@ -3273,6 +3562,19 @@
    "why": "AI as a tool for attackers"
   },
   {
+   "term": "IA manipulativa",
+   "tier": "ai",
+   "group": "security_misuse",
+   "variants": [
+    "IA manipuladora",
+    "inteligencia artificial manipulativa",
+    "inteligencia artificial manipuladora",
+    "manipulación mediante IA",
+    "manipulacion mediante IA"
+   ],
+   "why": "AI used to manipulate people or influence their behavior"
+  },
+  {
    "term": "malware polimórfico",
    "tier": "context",
    "group": "security_misuse",
@@ -3293,7 +3595,13 @@
     "ciberseguridad de la IA",
     "ciberseguridad de los sistemas de IA",
     "seguridad en IA",
-    "seguridad de IA"
+    "seguridad de IA",
+    "IA securizada",
+    "inteligencia artificial securizada",
+    "sistema de IA securizado",
+    "sistemas de IA securizados",
+    "protección de sistemas de IA",
+    "proteccion de sistemas de IA"
    ],
    "why": "securing AI systems; in Spanish also AI safety"
   },
@@ -3319,7 +3627,8 @@
    "variants": [
     "noticias falsas",
     "bulo",
-    "desinformacion"
+    "desinformacion",
+    "noticia falsa"
    ],
    "why": "information threats amplified by generated content"
   },
@@ -3359,9 +3668,23 @@
    "variants": [
     "marcas de agua",
     "marca de agua digital",
-    "marcas de agua digitales"
+    "marcas de agua digitales",
+    "marcado de agua",
+    "marcado de agua digital"
    ],
    "why": "marking generated content; AI Act wording"
+  },
+  {
+   "term": "huella digital",
+   "tier": "context",
+   "group": "security_misuse",
+   "variants": [
+    "huellas digitales",
+    "huella digital del contenido",
+    "huella digital de contenidos",
+    "huella digital de archivos"
+   ],
+   "why": "digital fingerprints for identification or content provenance, alongside other uses of the phrase"
   },
   {
    "term": "prueba de vida",
@@ -3581,7 +3904,10 @@
     "entorno controlado de pruebas",
     "entornos controlados de pruebas",
     "sandbox regulatorio",
-    "entorno de pruebas normativo"
+    "entorno de pruebas normativo",
+    "sandbox",
+    "sandbox interno",
+    "sandboxes internos"
    ],
    "why": "regulatory sandbox in EU and Spanish law"
   },
@@ -3905,7 +4231,9 @@
     "aprobacion de modelos",
     "aprobacion de los modelos",
     "supervision de modelos",
-    "supervision de los modelos"
+    "supervision de los modelos",
+    "supervisión del modelo",
+    "supervision del modelo"
    ],
    "why": "model governance"
   },
@@ -5062,7 +5390,11 @@
     "motor de decision",
     "motores de decision",
     "decisiones automaticas",
-    "toma de decisiones automatica"
+    "toma de decisiones automatica",
+    "decisión automática",
+    "decision automatica",
+    "toma automática de decisiones",
+    "toma automatica de decisiones"
    ],
    "why": "decisions taken by software"
   },
@@ -5266,7 +5598,10 @@
     "analisis masivo de datos",
     "analisis de datos masivos",
     "analisis de datos a gran escala",
-    "capacidades de datos y analitica"
+    "capacidades de datos y analitica",
+    "datos a gran escala",
+    "analítica de datos masivos",
+    "analitica de datos masivos"
    ],
    "why": "big data; macrodatos is the EU wording"
   },
